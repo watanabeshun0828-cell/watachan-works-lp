@@ -235,6 +235,33 @@
   .final h2 { font-size: clamp(21px, 2.8vw, 28px); margin: 0 0 12px; color: inherit; }
   .final p { max-width: 48ch; opacity: 0.82; margin: 0 0 26px; font-size: 14.5px; }
 
+  .contact-form { display: flex; flex-direction: column; gap: 16px; max-width: 480px; }
+  .contact-form .field { display: flex; flex-direction: column; gap: 6px; }
+  .contact-form label { font-size: 12.5px; letter-spacing: 0.04em; opacity: 0.75; }
+  .contact-form input, .contact-form textarea {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 2px;
+    padding: 11px 13px;
+    font-size: 14.5px;
+    color: inherit;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.15s ease;
+  }
+  @media (prefers-color-scheme: dark) {
+    .contact-form input, .contact-form textarea { background: rgba(0, 0, 0, 0.25); border-color: rgba(237, 230, 210, 0.2); }
+  }
+  .contact-form input::placeholder, .contact-form textarea::placeholder { color: currentColor; opacity: 0.4; }
+  .contact-form input:focus, .contact-form textarea:focus { border-color: var(--vermillion-soft); }
+  .contact-form textarea { resize: vertical; min-height: 100px; }
+  .contact-form button { align-self: flex-start; }
+  .contact-form .honey { position: absolute; left: -9999px; }
+  .form-status { font-size: 13.5px; margin-top: 4px; display: none; }
+  .form-status.show { display: block; }
+  .form-status.ok { color: #8FA37F; }
+  .form-status.err { color: var(--vermillion-soft); }
+
   footer { padding: 36px 0 56px; font-size: 12.5px; color: var(--ink-soft); }
   .footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
 
@@ -362,7 +389,7 @@
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">提供サービス</span>
-      <h2>「伝わらない」を、構成から立て直します。</h2>
+      <h2>「伝わらない」を、<br />構成から立て直します。</h2>
     </div>
     <div class="services">
       <div class="service-card reveal">
@@ -411,7 +438,7 @@
         </div>
         <div class="sample-body">
           <span class="genre">美容・コスメ体験談</span>
-          <h3>スキンケア迷子だった私が、やっと「これでいい」と思えるまで</h3>
+          <h3>スキンケア迷子だった私が、<br />やっと「これでいい」と思えるまで</h3>
           <blockquote>「新作が出るたびに気になって、また買っちゃった」友達にそう話したら、「それ、去年も同じこと言ってなかった？」と笑われた。</blockquote>
           <span class="meta">約1,600字・20代OL向け</span>
         </div>
@@ -449,7 +476,7 @@
         </div>
         <div class="sample-body">
           <span class="genre">資産形成・経営者向けコラム</span>
-          <h3>50代を迎える前に、経営者が「資産の設計図」を見直すべき理由</h3>
+          <h3>50代を迎える前に、経営者が<br />「資産の設計図」を見直すべき理由</h3>
           <blockquote>決算書は毎月チェックしていても、自分自身の資産については「なんとなく」で済ませていないだろうか。</blockquote>
           <span class="meta">約1,600字・40代重役向け</span>
         </div>
@@ -523,7 +550,27 @@
       <span class="eyebrow" style="color: var(--vermillion-soft);">お問い合わせ</span>
       <h2>「こんなこと頼めるかな」から、<br />お気軽にどうぞ。</h2>
       <p>個人事業主・小規模事業者・店舗・クリエイターの方向けに、Web制作と文章制作のお手伝いをしています。まずは一度、ご相談ください。一緒に考えるところから始めます。</p>
-      <a class="btn btn-primary" href="#" onclick="return false;">メッセージで相談する</a>
+
+      <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="1663e859-395f-426f-b2ee-bc2f1cb81d98">
+        <input type="hidden" name="subject" value="【わたちゃんWorks】LPからのお問い合わせ">
+        <input type="checkbox" name="botcheck" class="honey" tabindex="-1" autocomplete="off">
+
+        <div class="field">
+          <label for="cf-name">お名前</label>
+          <input type="text" id="cf-name" name="name" placeholder="山田 太郎" required>
+        </div>
+        <div class="field">
+          <label for="cf-email">メールアドレス（返信先）</label>
+          <input type="email" id="cf-email" name="email" placeholder="you@example.com" required>
+        </div>
+        <div class="field">
+          <label for="cf-message">ご相談内容</label>
+          <textarea id="cf-message" name="message" placeholder="こんなことを頼めますか？　など、お気軽にどうぞ" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">メッセージを送る</button>
+        <p class="form-status" id="form-status"></p>
+      </form>
     </div>
   </div>
 </section>
@@ -536,6 +583,46 @@
 </footer>
 
 <script>
+  (function () {
+    var form = document.getElementById("contact-form");
+    var status = document.getElementById("form-status");
+    if (!form) return;
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var submitBtn = form.querySelector("button[type=submit]");
+      submitBtn.disabled = true;
+      submitBtn.textContent = "送信しています…";
+      status.className = "form-status show";
+      var formData = new FormData(form);
+      var payload = Object.fromEntries(formData.entries());
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(payload)
+      })
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+          if (data.success) {
+            form.reset();
+            status.textContent = "送信しました。ありがとうございます、追ってご連絡いたします。";
+            status.className = "form-status show ok";
+            form.querySelectorAll(".field, button[type=submit]").forEach(function (el) { el.style.display = "none"; });
+          } else {
+            status.textContent = "送信に失敗しました。お手数ですが時間をおいて再度お試しください。";
+            status.className = "form-status show err";
+            submitBtn.disabled = false;
+            submitBtn.textContent = "メッセージを送る";
+          }
+        })
+        .catch(function () {
+          status.textContent = "送信に失敗しました。お手数ですが時間をおいて再度お試しください。";
+          status.className = "form-status show err";
+          submitBtn.disabled = false;
+          submitBtn.textContent = "メッセージを送る";
+        });
+    });
+  })();
+
   (function () {
     var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var els = document.querySelectorAll(".reveal");
