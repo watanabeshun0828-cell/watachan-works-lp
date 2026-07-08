@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>わたちゃんWorks｜あなたのサービスの魅力を、言葉と形に変える</title>
+<style>
+  :root {
+    --ink: #1B2340;
+    --ink-soft: #5A6180;
+    --paper: #F1ECDD;
+    --paper-deep: #E4DCC5;
+    --paper-card: #F8F4E9;
+    --vermillion: #B6412A;
+    --vermillion-soft: #C96A54;
+    --sage: #5C6E54;
+    --line: rgba(27, 35, 64, 0.16);
+    --line-soft: rgba(27, 35, 64, 0.09);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #EDE6D2;
+      --ink-soft: #B7AF97;
+      --paper: #1A1712;
+      --paper-deep: #262019;
+      --paper-card: #221D16;
+      --vermillion: #DB6A44;
+      --vermillion-soft: #C4805F;
+      --sage: #8FA37F;
+      --line: rgba(237, 230, 210, 0.16);
+      --line-soft: rgba(237, 230, 210, 0.08);
+    }
+  }
+
+  * { box-sizing: border-box; margin: 0; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.85;
+    letter-spacing: 0.01em;
+  }
+  h1, h2, h3, .serif {
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+    font-weight: 600;
+    text-wrap: balance;
+    letter-spacing: 0.03em;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 26px; }
+
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 0.6em;
+    font-size: 12.5px; letter-spacing: 0.22em; color: var(--vermillion); font-weight: 600;
+  }
+  .eyebrow::before { content: ""; width: 18px; height: 1px; background: var(--vermillion); display: inline-block; }
+
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } }
+
+  /* Nav */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(241, 236, 221, 0.86);
+    -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line);
+  }
+  @media (prefers-color-scheme: dark) {
+    nav { background: rgba(26, 23, 18, 0.86); }
+  }
+  .nav-inner {
+    max-width: 860px; margin: 0 auto; padding: 0 26px; height: 56px;
+    display: flex; align-items: center; justify-content: space-between; font-size: 13.5px;
+  }
+  .nav-brand { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-weight: 600; text-decoration: none; letter-spacing: 0.04em; }
+  .nav-links { display: flex; gap: 26px; align-items: center; }
+  .nav-links a { color: var(--ink-soft); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-cta { border: 1px solid var(--vermillion); color: var(--vermillion) !important; padding: 6px 14px; border-radius: 2px; font-size: 12.5px; }
+  .nav-cta:hover { background: var(--vermillion); color: var(--paper) !important; }
+
+  /* Hero */
+  .hero {
+    position: relative; padding: 92px 0 76px;
+    background-image:
+      repeating-linear-gradient(var(--line-soft) 0 1px, transparent 1px 42px),
+      repeating-linear-gradient(90deg, var(--line-soft) 0 1px, transparent 1px 42px);
+  }
+  .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, var(--paper) 100%); pointer-events: none; }
+  .hero-inner { position: relative; }
+  .hero h1 { font-size: clamp(32px, 5.2vw, 52px); line-height: 1.55; margin: 20px 0 18px; }
+  .hero h1 em { font-style: normal; color: var(--vermillion); }
+  .hero p.lede { max-width: 50ch; color: var(--ink-soft); font-size: 16.5px; }
+  .cta-row { display: flex; gap: 14px; margin-top: 30px; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px; border-radius: 2px; font-size: 14.5px; font-weight: 600; letter-spacing: 0.04em; text-decoration: none; border: 1px solid transparent; cursor: pointer; transition: transform 0.15s ease, opacity 0.15s ease; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn:focus-visible { outline: 2px solid var(--vermillion); outline-offset: 3px; }
+  .btn-primary { background: var(--vermillion); color: #FBF6EC; }
+  .btn-primary:hover { opacity: 0.92; }
+  .btn-ghost { border-color: var(--line); color: var(--ink); background: transparent; }
+
+  section { padding: 80px 0; }
+  section + section { border-top: 1px solid var(--line); }
+  .section-head { max-width: 58ch; margin-bottom: 44px; }
+  .section-head h2 { font-size: clamp(23px, 3vw, 30px); margin: 12px 0 0; }
+  .section-head p.desc { color: var(--ink-soft); font-size: 15px; margin-top: 12px; }
+
+  /* Founder story */
+  .story { background: var(--paper-deep); }
+  .story-inner { display: grid; grid-template-columns: 200px 1fr; gap: 40px; }
+  .story-label { font-size: 12.5px; color: var(--ink-soft); letter-spacing: 0.06em; }
+  .story-label .seal-mini {
+    margin-top: 14px; width: 54px; height: 54px; border-radius: 50%;
+    border: 1.5px solid var(--vermillion); color: var(--vermillion);
+    display: flex; align-items: center; justify-content: center;
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 11px;
+    letter-spacing: 0.1em; line-height: 1.4; text-align: center; transform: rotate(-6deg);
+  }
+  .story h2 {
+    font-size: clamp(22px, 3.2vw, 30px); line-height: 1.65; margin: 0 0 26px;
+  }
+  .story h2 em { font-style: normal; color: var(--vermillion); }
+  .story p { font-size: 15.5px; color: var(--ink-soft); max-width: 56ch; margin: 0 0 18px; }
+  .story p:last-of-type { margin-bottom: 0; }
+  .story .signoff {
+    margin-top: 26px; font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-size: 14px; color: var(--ink);
+  }
+
+  /* Case studies — the centerpiece */
+  .case {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 36px;
+    padding: 44px 0;
+  }
+  .case + .case { border-top: 1px dashed var(--line); }
+  .case-tag {
+    font-size: 12.5px; color: var(--ink-soft); letter-spacing: 0.06em;
+  }
+  .case-tag .client {
+    display: block; margin-top: 10px; font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-size: 17px; color: var(--ink); letter-spacing: 0.03em; line-height: 1.5;
+  }
+  .case-seal {
+    margin-top: 16px; display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12px; color: var(--vermillion); border: 1px solid var(--vermillion);
+    padding: 4px 10px; border-radius: 980px;
+  }
+  .case-body dl { display: grid; grid-template-columns: 84px 1fr; gap: 10px 18px; margin: 0; }
+  .case-body dt {
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 13px;
+    color: var(--vermillion); letter-spacing: 0.08em; padding-top: 2px;
+  }
+  .case-body dd { margin: 0; font-size: 15px; color: var(--ink); }
+  .case-body dd.result { font-weight: 600; }
+  .case-quote {
+    margin: 18px 0 0; padding: 14px 18px; background: var(--paper-card);
+    border-left: 2px solid var(--vermillion); font-size: 14px; color: var(--ink-soft);
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+  }
+
+  /* Services */
+  .services { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .service-card { background: var(--paper-card); border: 1px solid var(--line); border-radius: 2px; padding: 26px 24px 22px; }
+  .service-card .num { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 13px; color: var(--ink-soft); letter-spacing: 0.08em; }
+  .service-card h3 { font-size: 19px; margin: 10px 0 10px; }
+  .service-card p { font-size: 14px; color: var(--ink-soft); margin: 0 0 16px; }
+  .service-card .price { display: flex; justify-content: space-between; align-items: baseline; border-top: 1px dashed var(--line); padding-top: 12px; font-size: 13px; color: var(--ink-soft); }
+  .service-card .price strong { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 16px; color: var(--vermillion); font-variant-numeric: tabular-nums; }
+
+  /* Trust */
+  .trust { background: var(--paper-deep); border-radius: 2px; padding: 36px 38px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .trust h3 { font-size: 18px; margin: 0 0 10px; }
+  .trust p { font-size: 14px; color: var(--ink-soft); margin: 0; }
+  .trust .divider { grid-column: 1 / -1; height: 1px; background: var(--line); }
+
+  /* Sample writing */
+  .sample-note {
+    font-size: 13px; color: var(--ink-soft); margin: -18px 0 32px;
+  }
+  .samples { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+  .sample-card {
+    background: var(--paper-card); border: 1px solid var(--line); border-radius: 3px;
+    overflow: hidden; display: flex; flex-direction: column;
+  }
+  .sample-visual {
+    aspect-ratio: 16 / 9;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .sample-visual svg { width: 46px; height: 46px; position: relative; z-index: 1; stroke: var(--ink); }
+  .sample-visual::after {
+    content: ""; position: absolute; inset: 0;
+    background-image: repeating-linear-gradient(var(--line-soft) 0 1px, transparent 1px 28px),
+      repeating-linear-gradient(90deg, var(--line-soft) 0 1px, transparent 1px 28px);
+    opacity: 0.6;
+  }
+  .v-beauty { background: linear-gradient(150deg, #E9D2C9, #F3E7DC); }
+  .v-career { background: linear-gradient(150deg, #D8DEE6, #ECEFF2); }
+  .v-asset  { background: linear-gradient(150deg, #DCE2D2, #EFF2E9); }
+  .v-family { background: linear-gradient(150deg, #EAD9C4, #F5EDE0); }
+  @media (prefers-color-scheme: dark) {
+    .v-beauty { background: linear-gradient(150deg, #3A2C26, #26201B); }
+    .v-career { background: linear-gradient(150deg, #262C33, #1E211D); }
+    .v-asset  { background: linear-gradient(150deg, #2A2E22, #1F211A); }
+    .v-family { background: linear-gradient(150deg, #362B1E, #26201A); }
+  }
+
+  .sample-body { padding: 22px 24px 22px; display: flex; flex-direction: column; gap: 10px; }
+  .sample-card .genre {
+    font-size: 12px; color: var(--vermillion); letter-spacing: 0.06em;
+  }
+  .sample-card h3 { font-size: 16.5px; line-height: 1.5; margin: 0; }
+  .sample-card blockquote {
+    margin: 4px 0 0; padding: 12px 14px; background: var(--paper);
+    border-left: 2px solid var(--line); font-size: 13.5px; color: var(--ink-soft);
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; line-height: 1.9;
+  }
+  .sample-card .meta { font-size: 12px; color: var(--ink-soft); margin-top: auto; }
+
+  .table-scroll { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 480px; }
+  th, td { text-align: left; padding: 13px 16px; border-bottom: 1px solid var(--line); }
+  th { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; color: var(--ink-soft); font-weight: 600; font-size: 12.5px; letter-spacing: 0.05em; }
+  td.amount { font-variant-numeric: tabular-nums; color: var(--vermillion); font-weight: 600; }
+
+  .final { text-align: left; background: var(--ink); color: var(--paper); border-radius: 2px; padding: 52px 44px; }
+  @media (prefers-color-scheme: dark) { .final { background: #0F0D09; color: var(--ink); } }
+  .final h2 { font-size: clamp(21px, 2.8vw, 28px); margin: 0 0 12px; color: inherit; }
+  .final p { max-width: 48ch; opacity: 0.82; margin: 0 0 26px; font-size: 14.5px; }
+
+  footer { padding: 36px 0 56px; font-size: 12.5px; color: var(--ink-soft); }
+  .footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+
+  @media (max-width: 700px) {
+    .story-inner { grid-template-columns: 1fr; }
+    .story-label .seal-mini { display: none; }
+    .case { grid-template-columns: 1fr; gap: 14px; }
+    .case-body dl { grid-template-columns: 68px 1fr; }
+    .services { grid-template-columns: 1fr; }
+    .samples { grid-template-columns: 1fr; }
+    .trust { grid-template-columns: 1fr; padding: 26px 22px; }
+    .final { padding: 38px 26px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="#top">わたちゃんWorks</a>
+    <div class="nav-links">
+      <a href="#cases">制作事例</a>
+      <a href="#services">サービス</a>
+      <a href="#samples">サンプル</a>
+      <a href="#pricing">料金</a>
+      <a class="nav-cta" href="#contact">相談する</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-inner">
+    <span class="eyebrow reveal">わたちゃんWorks</span>
+    <h1 class="reveal">あなたのサービスの魅力を、<br /><em>言葉と形</em>に変える。</h1>
+    <p class="lede reveal">個人事業主・小規模店舗・クリエイターのための、LP・記事・SNS導線制作。AIで速く、人の目で確かに仕上げます。</p>
+    <div class="cta-row reveal">
+      <a class="btn btn-primary" href="#contact">まず相談してみる</a>
+      <a class="btn btn-ghost" href="#cases">制作事例を見る</a>
+    </div>
+  </div>
+</header>
+
+<section class="story">
+  <div class="wrap story-inner">
+    <div class="story-label reveal">
+      代表者より
+      <div class="seal-mini" aria-hidden="true">はじ<br />まり</div>
+    </div>
+    <div class="reveal">
+      <h2>きっかけは、<br />家族と過ごす<em>「当たり前」</em>を<br />守りたかったことでした。</h2>
+      <p>マイホームを建てて2年。家族との時間はかけがえのないものなのに、週末にちょっと遠出をするにも「お金を貯める計画」を立てなければならず、自分に投資する余裕もない——そんな生活に、ストレスと、家族への申し訳なさを感じていました。</p>
+      <p>このままではいけないと、副業を学ぶことに決めたのが始まりです。そこで最初に気づいたのは、業種を問わずあらゆる仕事の土台には「文章」があるということでした。以来、AIツールを活用しながらライティングの力を磨き、LP・記事・SNS投稿・動画台本と、幅広い分野で「言葉で伝える」技術を学び続けています。</p>
+      <p>まだ実績を積み上げている最中です。だからこそ、一件一件のご依頼を丁寧に、誠実に。会社員として本業を続けながら、限られた時間の中でも「頼んでよかった」と思っていただける仕事をお届けします。</p>
+      <p class="signoff">わたちゃんWorks　渡邊 駿</p>
+    </div>
+  </div>
+</section>
+
+<section id="cases">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">制作事例</span>
+      <h2>まだ小さな実績ですが、<br />一件一件、正直にご紹介します。</h2>
+      <p class="desc">駆け出しのライターだからこそ、誇張のない「実際の課題と結果」をお見せします。</p>
+    </div>
+
+    <div class="case reveal">
+      <div class="case-tag">
+        VIDEO SCRIPT
+        <span class="client">クライアント様<br />（YouTubeチャンネル運営）</span>
+        <span class="case-seal">テスト・一発承認</span>
+      </div>
+      <div class="case-body">
+        <dl>
+          <dt>課題</dt>
+          <dd>専門分野（資格試験対策）のYouTube台本。既存の色分けハイライト・参考文献の引用形式など、細かい独自フォーマットへの対応が求められた。</dd>
+          <dt>施策</dt>
+          <dd>過去の承認済みサンプルを分析し、フォーマット・トーン・引用ルールを忠実に再現。実在の競合予備校の情報をWeb検索で裏取りしたうえで構成。</dd>
+          <dt>結果</dt>
+          <dd class="result">テスト提出後、修正なしで承認。現在、本採用のご連絡待ち。</dd>
+        </dl>
+        <p class="case-quote">「特に修正等ございません」</p>
+      </div>
+    </div>
+
+    <div class="case reveal">
+      <div class="case-tag">
+        WEB ARTICLE
+        <span class="client">クライアント様<br />（Webメディア運営）</span>
+        <span class="case-seal">契約継続中</span>
+      </div>
+      <div class="case-body">
+        <dl>
+          <dt>課題</dt>
+          <dd>「残業削減・業務効率化AIツール紹介」記事。初稿は具体性に欠ける指摘を受けた。</dd>
+          <dt>施策</dt>
+          <dd>複数の読者視点でのレビューを実施し、指摘された「具体性不足・表現の重複」を改稿で解消。</dd>
+          <dt>結果</dt>
+          <dd class="result">校閲合格・納品、継続案件として契約中。</dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="case reveal">
+      <div class="case-tag">
+        SCRIPT
+        <span class="client">クライアント様<br />（映像制作・ショートドラマ）</span>
+        <span class="case-seal">契約成立・入金済み</span>
+      </div>
+      <div class="case-body">
+        <dl>
+          <dt>課題</dt>
+          <dd>未経験からの脚本トライアル案件。短尺ドラマ特有のテンポ・構成が求められた。</dd>
+          <dt>施策</dt>
+          <dd>「詐欺師は、嘘しかつけない」というプロット・脚本一式を制作し提出。</dd>
+          <dt>結果</dt>
+          <dd class="result">契約完了・支払い済み。わたちゃんWorks初の確定報酬。</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">提供サービス</span>
+      <h2>「伝わらない」を、構成から立て直します。</h2>
+    </div>
+    <div class="services">
+      <div class="service-card reveal">
+        <span class="num">壱</span>
+        <h3>LP制作・文章</h3>
+        <p>サービスや商品の魅力が伝わる流れを設計し、問い合わせ・申し込みにつながる文章を仕上げます。構成案の提示から丁寧に進めます。</p>
+        <div class="price"><span>基本料金の目安</span><strong>15,000円〜</strong></div>
+      </div>
+      <div class="service-card reveal">
+        <span class="num">弐</span>
+        <h3>SEO記事・ブログ</h3>
+        <p>ターゲットキーワードと読者像を確認したうえで、構成の設計から丁寧に取り組み、読みやすく内容のある記事をお届けします。</p>
+        <div class="price"><span>基本料金の目安</span><strong>5,000円〜</strong></div>
+      </div>
+      <div class="service-card reveal">
+        <span class="num">参</span>
+        <h3>SNS導線設計</h3>
+        <p>Instagram・Xのプロフィール文と、問い合わせや購入につながるSNS導線を一緒に整えます。発信コンセプトの整理も承ります。</p>
+        <div class="price"><span>基本料金の目安</span><strong>8,000円〜</strong></div>
+      </div>
+      <div class="service-card reveal">
+        <span class="num">四</span>
+        <h3>YouTube台本・シナリオ</h3>
+        <p>視聴者に届きやすい構成と言葉の流れを考え、冒頭のフックから最後のCTAまで一貫した台本を作成します。</p>
+        <div class="price"><span>基本料金の目安</span><strong>ご相談</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="samples">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">文章サンプル</span>
+      <h2>まだ受注実績のないジャンルも、<br />こんな文章が書けます。</h2>
+      <p class="desc sample-note">※以下はスキル研鑽のための自主制作サンプルです。実在の企業様との受注実績ではなく、文体・構成力をお見せするための文章としてご覧ください。</p>
+    </div>
+    <div class="samples">
+      <div class="sample-card reveal">
+        <div class="sample-visual v-beauty">
+          <svg viewBox="0 0 48 48" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="18" y="6" width="12" height="8" rx="2"></rect>
+            <path d="M20 14 L16 22 V40 a2 2 0 0 0 2 2 h12 a2 2 0 0 0 2-2 V22 L28 14"></path>
+            <line x1="16" y1="28" x2="32" y2="28"></line>
+          </svg>
+        </div>
+        <div class="sample-body">
+          <span class="genre">美容・コスメ体験談</span>
+          <h3>スキンケア迷子だった私が、やっと「これでいい」と思えるまで</h3>
+          <blockquote>「新作が出るたびに気になって、また買っちゃった」友達にそう話したら、「それ、去年も同じこと言ってなかった？」と笑われた。</blockquote>
+          <span class="meta">約1,600字・20代OL向け</span>
+        </div>
+      </div>
+      <div class="sample-card reveal">
+        <div class="sample-visual v-career">
+          <svg viewBox="0 0 48 48" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="8" y="18" width="32" height="20" rx="2"></rect>
+            <path d="M17 18 v-4 a2 2 0 0 1 2-2 h10 a2 2 0 0 1 2 2 v4"></path>
+            <line x1="8" y1="27" x2="40" y2="27"></line>
+            <line x1="22" y1="27" x2="26" y2="27"></line>
+          </svg>
+        </div>
+        <div class="sample-body">
+          <span class="genre">副業・転職・キャリア（SEO記事）</span>
+          <h3>本業と両立できる副業の選び方｜30代会社員が失敗しない5つの基準</h3>
+          <blockquote>副業選びで失敗しないためのポイントは「時間・費用・規則」で絞り込むこと。いきなり「稼げる副業」を探す前に、自分の生活リズムと照らし合わせる。</blockquote>
+          <span class="meta">約2,000字・30代男性向け</span>
+        </div>
+      </div>
+      <div class="sample-card reveal">
+        <div class="sample-visual v-asset">
+          <svg viewBox="0 0 48 48" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <ellipse cx="24" cy="34" rx="10" ry="3.5"></ellipse>
+            <path d="M14 34 V27"></path>
+            <path d="M34 34 V27"></path>
+            <ellipse cx="24" cy="27" rx="10" ry="3.5"></ellipse>
+            <path d="M14 27 V20"></path>
+            <path d="M34 27 V20"></path>
+            <ellipse cx="24" cy="20" rx="10" ry="3.5"></ellipse>
+            <path d="M14 20 V13"></path>
+            <path d="M34 20 V13"></path>
+            <ellipse cx="24" cy="13" rx="10" ry="3.5"></ellipse>
+          </svg>
+        </div>
+        <div class="sample-body">
+          <span class="genre">資産形成・経営者向けコラム</span>
+          <h3>50代を迎える前に、経営者が「資産の設計図」を見直すべき理由</h3>
+          <blockquote>決算書は毎月チェックしていても、自分自身の資産については「なんとなく」で済ませていないだろうか。</blockquote>
+          <span class="meta">約1,600字・40代重役向け</span>
+        </div>
+      </div>
+      <div class="sample-card reveal">
+        <div class="sample-visual v-family">
+          <svg viewBox="0 0 48 48" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M24 38 C14 31 8 25 8 18.5 C8 13.5 12 10 16.5 10 C19.8 10 22.4 11.8 24 14.4 C25.6 11.8 28.2 10 31.5 10 C36 10 40 13.5 40 18.5 C40 25 34 31 24 38 Z"></path>
+          </svg>
+        </div>
+        <div class="sample-body">
+          <span class="genre">子育て・暮らしエッセイ</span>
+          <h3>「あの頃、私は必死だった」――子育てを振り返って気づく、暮らしの中の小さな真実</h3>
+          <blockquote>洗濯物をたたみながら、ふと手が止まることがある。子どもの服がもう小さくて着られなくなったこと。</blockquote>
+          <span class="meta">約1,200字・50代主婦向け</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="trust">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">AI活用について</span>
+      <h2>AI任せにしない、という約束。</h2>
+    </div>
+    <div class="trust reveal">
+      <div>
+        <h3>速さは、AIで。</h3>
+        <p>制作にはAIツール（Claude・ChatGPT）を活用し、リサーチや下書きのスピードを高めています。忙しい方の「早く相談したい」に応えられる体制です。</p>
+      </div>
+      <div>
+        <h3>確かさは、人の目で。</h3>
+        <p>AIの出力をそのまま納品することはありません。ヒアリング内容と照らし合わせながら、構成・事実確認・表現の自然さを一つひとつ自分の目で確認・編集しています。</p>
+      </div>
+      <div class="divider"></div>
+      <div style="grid-column: 1 / -1;">
+        <p>現在、実績を積みながらサービスを育てている段階です。「こんなことお願いできるかな？」という段階でも構いません。まずは一度、お気軽にご相談ください。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">料金の目安</span>
+      <h2>文字数・内容に応じて、事前にお見積もりします。</h2>
+    </div>
+    <div class="table-scroll reveal">
+      <table>
+        <thead>
+          <tr><th>サービス</th><th>目安</th><th>納期目安</th><th>料金</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>SEO記事</td><td>〜2,000字</td><td>3〜5営業日</td><td class="amount">5,000円〜</td></tr>
+          <tr><td>SEO記事</td><td>2,001〜4,000字</td><td>3〜5営業日</td><td class="amount">8,000円〜</td></tr>
+          <tr><td>SEO記事</td><td>4,001〜6,000字</td><td>3〜5営業日</td><td class="amount">12,000円〜</td></tr>
+          <tr><td>LP制作</td><td>構成〜文章一式</td><td>5〜7営業日</td><td class="amount">15,000円〜30,000円</td></tr>
+          <tr><td>SNS導線設計</td><td>Instagram・X 2媒体</td><td>3〜5営業日</td><td class="amount">8,000円〜15,000円</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="final reveal">
+      <span class="eyebrow" style="color: var(--vermillion-soft);">お問い合わせ</span>
+      <h2>「こんなこと頼めるかな」から、<br />お気軽にどうぞ。</h2>
+      <p>個人事業主・小規模事業者・店舗・クリエイターの方向けに、Web制作と文章制作のお手伝いをしています。まずは一度、ご相談ください。一緒に考えるところから始めます。</p>
+      <a class="btn btn-primary" href="#" onclick="return false;">メッセージで相談する</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>わたちゃんWorks — あなたのサービスの魅力を、言葉と形に変える。</span>
+    <span>© 2026 わたちゃんWorks</span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var els = document.querySelectorAll(".reveal");
+    if (reduced || !("IntersectionObserver" in window)) {
+      els.forEach(function (el) { el.classList.add("visible"); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    els.forEach(function (el) { io.observe(el); });
+  })();
+</script>
+
+</body>
+</html>
