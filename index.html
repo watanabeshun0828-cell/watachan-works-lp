@@ -239,6 +239,33 @@
   th { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; color: var(--ink-soft); font-weight: 600; font-size: 12.5px; letter-spacing: 0.05em; }
   td.amount { font-variant-numeric: tabular-nums; color: var(--vermillion); font-weight: 600; }
 
+  /* Plan cards (松竹梅) */
+  .plan-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 40px; }
+  .plan-card { position: relative; background: var(--paper-card); border: 1px solid var(--line); border-radius: 2px; padding: 28px 22px 22px; }
+  .plan-card.featured { border-color: var(--vermillion); }
+  .plan-badge {
+    position: absolute; top: -12px; right: 20px; background: var(--vermillion); color: #FBF6EC;
+    font-size: 11px; padding: 4px 11px; border-radius: 980px; letter-spacing: 0.04em; font-weight: 600;
+  }
+  .plan-card .tag { font-size: 12px; color: var(--ink-soft); letter-spacing: 0.06em; }
+  .plan-card h3 { font-size: 19px; margin: 6px 0 2px; }
+  .plan-card .price { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 23px; color: var(--vermillion); margin: 4px 0 12px; font-variant-numeric: tabular-nums; }
+  .plan-card .for { font-size: 12.5px; color: var(--ink-soft); margin: 0 0 14px; padding-bottom: 14px; border-bottom: 1px dashed var(--line); }
+  .plan-card ul { margin: 0; padding-left: 18px; font-size: 13.5px; color: var(--ink-soft); line-height: 1.9; }
+
+  .monthly-plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 8px 0 36px; }
+  .monthly-card { background: var(--paper-deep); border-radius: 2px; padding: 20px 20px 18px; }
+  .monthly-card .tag { font-size: 12px; color: var(--vermillion); letter-spacing: 0.04em; }
+  .monthly-card h4 { font-size: 15.5px; margin: 6px 0 8px; font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; }
+  .monthly-card .was { font-size: 12px; color: var(--ink-soft); text-decoration: line-through; opacity: 0.7; }
+  .monthly-card .now { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 19px; color: var(--vermillion); margin: 2px 0 8px; }
+  .monthly-card .perk { font-size: 12px; color: var(--ink-soft); }
+
+  .option-list { display: flex; flex-wrap: wrap; gap: 10px 22px; font-size: 13.5px; color: var(--ink-soft); margin-top: 4px; }
+  .option-list span strong { color: var(--vermillion); font-variant-numeric: tabular-nums; }
+
+  .subhead { font-size: 13px; letter-spacing: 0.06em; color: var(--ink-soft); margin: 0 0 14px; font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; }
+
   .final { text-align: left; background: var(--ink); color: var(--paper); border-radius: 2px; padding: 52px 44px; }
   @media (prefers-color-scheme: dark) { .final { background: #0F0D09; color: var(--ink); } }
   .final h2 { font-size: clamp(21px, 2.8vw, 28px); margin: 0 0 12px; color: inherit; }
@@ -283,6 +310,8 @@
     .samples { grid-template-columns: 1fr; }
     .trust { grid-template-columns: 1fr; padding: 26px 22px; }
     .final { padding: 38px 26px; }
+    .plan-cards { grid-template-columns: 1fr; }
+    .monthly-plans { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -562,21 +591,97 @@
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">料金の目安</span>
-      <h2>文字数・内容に応じて、事前にお見積もりします。</h2>
+      <h2>内容に応じて選べる、3つのプラン。</h2>
+      <p class="desc">SEO記事は3段階のプランからお選びいただけます。まずはどれか迷ったら、スタンダードプランがおすすめです。</p>
     </div>
+
+    <div class="plan-cards reveal">
+      <div class="plan-card">
+        <span class="tag">ライト（梅）</span>
+        <h3>まず1本、試したい方に</h3>
+        <div class="price">5,000円〜</div>
+        <p class="for">構成案はご支給いただける方向け</p>
+        <ul>
+          <li>〜2,500文字</li>
+          <li>構成案：クライアント支給</li>
+          <li>修正1回</li>
+          <li>納期5営業日</li>
+        </ul>
+      </div>
+      <div class="plan-card featured">
+        <span class="plan-badge">★おすすめ</span>
+        <span class="tag">スタンダード（竹）</span>
+        <h3>構成からまるっとお任せ</h3>
+        <div class="price">8,000円〜</div>
+        <p class="for">キーワード調査も含めて任せたい方向け</p>
+        <ul>
+          <li>〜3,500文字</li>
+          <li>構成案作成込み</li>
+          <li>修正2回</li>
+          <li>納期7営業日</li>
+          <li>キーワード調査込み</li>
+        </ul>
+      </div>
+      <div class="plan-card">
+        <span class="tag">プレミアム（松）</span>
+        <h3>入稿・SNS展開まで一括で</h3>
+        <div class="price">15,000円〜</div>
+        <p class="for">記事をサイトへの掲載まで任せたい方向け</p>
+        <ul>
+          <li>〜5,000文字</li>
+          <li>構成案＋WordPress入稿込み</li>
+          <li>修正3回</li>
+          <li>納期10営業日</li>
+          <li>メタディスクリプション・タイトル案3パターン・SNSシェア用テキスト・内部リンク提案</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="subhead reveal">月額継続プラン（スタンダード基準）</p>
+    <div class="monthly-plans reveal">
+      <div class="monthly-card">
+        <span class="tag">ライト月額</span>
+        <h4>月3本</h4>
+        <div class="was">通常24,000円</div>
+        <div class="now">20,000円<span style="font-size:12px;">/月</span></div>
+        <div class="perk">17%オフ・優先対応</div>
+      </div>
+      <div class="monthly-card">
+        <span class="tag">スタンダード月額 ★人気</span>
+        <h4>月5本</h4>
+        <div class="was">通常40,000円</div>
+        <div class="now">32,000円<span style="font-size:12px;">/月</span></div>
+        <div class="perk">20%オフ・優先対応・月1回MTG</div>
+      </div>
+      <div class="monthly-card">
+        <span class="tag">プレミアム月額</span>
+        <h4>月10本</h4>
+        <div class="was">通常80,000円</div>
+        <div class="now">60,000円<span style="font-size:12px;">/月</span></div>
+        <div class="perk">25%オフ</div>
+      </div>
+    </div>
+
+    <p class="subhead reveal">その他のサービス</p>
     <div class="table-scroll reveal">
       <table>
         <thead>
           <tr><th>サービス</th><th>目安</th><th>納期目安</th><th>料金</th></tr>
         </thead>
         <tbody>
-          <tr><td>SEO記事</td><td>〜2,000字</td><td>3〜5営業日</td><td class="amount">5,000円〜</td></tr>
-          <tr><td>SEO記事</td><td>2,001〜4,000字</td><td>3〜5営業日</td><td class="amount">8,000円〜</td></tr>
-          <tr><td>SEO記事</td><td>4,001〜6,000字</td><td>3〜5営業日</td><td class="amount">12,000円〜</td></tr>
           <tr><td>LP制作</td><td>構成〜文章一式</td><td>5〜7営業日</td><td class="amount">15,000円〜30,000円</td></tr>
           <tr><td>SNS導線設計</td><td>Instagram・X 2媒体</td><td>3〜5営業日</td><td class="amount">8,000円〜15,000円</td></tr>
+          <tr><td>YouTube台本・シナリオ</td><td>1本</td><td>ご相談</td><td class="amount">ご相談</td></tr>
         </tbody>
       </table>
+    </div>
+
+    <p class="subhead reveal" style="margin-top:32px;">オプション</p>
+    <div class="option-list reveal">
+      <span>特急対応 <strong>+50%</strong></span>
+      <span>追加文字数（500字） <strong>+1,000円</strong></span>
+      <span>追加修正（1回） <strong>+1,500円</strong></span>
+      <span>画像選定（5枚） <strong>+1,000円</strong></span>
     </div>
   </div>
 </section>
