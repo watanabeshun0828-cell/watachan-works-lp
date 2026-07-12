@@ -205,11 +205,20 @@
   .v-career { background: linear-gradient(150deg, #D8DEE6, #ECEFF2); }
   .v-asset  { background: linear-gradient(150deg, #DCE2D2, #EFF2E9); }
   .v-family { background: linear-gradient(150deg, #EAD9C4, #F5EDE0); }
+  .v-ai     { background: linear-gradient(150deg, #DCD2E6, #EEE9F2); }
   @media (prefers-color-scheme: dark) {
     .v-beauty { background: linear-gradient(150deg, #3A2C26, #26201B); }
     .v-career { background: linear-gradient(150deg, #262C33, #1E211D); }
     .v-asset  { background: linear-gradient(150deg, #2A2E22, #1F211A); }
     .v-family { background: linear-gradient(150deg, #362B1E, #26201A); }
+    .v-ai     { background: linear-gradient(150deg, #2E2838, #211E27); }
+  }
+
+  .sample-card.featured { border-color: var(--vermillion); }
+  .sample-card .badge {
+    display: inline-flex; align-items: center; gap: 5px; align-self: flex-start;
+    font-size: 11px; color: var(--vermillion); border: 1px solid var(--vermillion);
+    padding: 3px 9px; border-radius: 980px; letter-spacing: 0.03em; margin-bottom: 2px;
   }
 
   .sample-body { padding: 22px 24px 22px; display: flex; flex-direction: column; gap: 10px; }
@@ -428,6 +437,34 @@
       <p class="desc sample-note">※以下はスキル研鑽のための自主制作サンプルです。実在の企業様との受注実績ではなく、文体・構成力をお見せするための文章としてご覧ください。</p>
     </div>
     <div class="samples">
+      <div class="sample-card featured reveal">
+        <div class="sample-visual v-ai">
+          <svg viewBox="0 0 48 48" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M24 8 L27 20 L39 23 L27 26 L24 38 L21 26 L9 23 L21 20 Z"></path>
+          </svg>
+        </div>
+        <div class="sample-body">
+          <span class="badge">専門ジャンル</span>
+          <span class="genre">会社員×AI活用・副業ノウハウ</span>
+          <h3>会社員のまま副業を始めるなら、<br />AIツールから使い始めるべき3つの理由</h3>
+          <blockquote>副業がうまくいかない会社員の多くは「もっと時間があれば」と考えがちですが、実際に足りないのは時間ではなく、作業を効率化する仕組みです。</blockquote>
+          <span class="meta">約1,800字・会社員向け</span>
+        </div>
+      </div>
+      <div class="sample-card featured reveal">
+        <div class="sample-visual v-ai">
+          <svg viewBox="0 0 48 48" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M24 8 L27 20 L39 23 L27 26 L24 38 L21 26 L9 23 L21 20 Z"></path>
+          </svg>
+        </div>
+        <div class="sample-body">
+          <span class="badge">専門ジャンル</span>
+          <span class="genre">会社員×AI活用・副業ノウハウ</span>
+          <h3>副業ライターの作業時間を半分にした、<br />Claude活用の3つの工程</h3>
+          <blockquote>AIは60〜70%の完成度でたたき台を作ってくれる便利な道具。それを100%に仕上げるのが人間の役割だと考えています。</blockquote>
+          <span class="meta">約1,800字・副業ライター向け</span>
+        </div>
+      </div>
       <div class="sample-card reveal">
         <div class="sample-visual v-beauty">
           <svg viewBox="0 0 48 48" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
