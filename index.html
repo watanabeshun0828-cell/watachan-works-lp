@@ -59,9 +59,30 @@
   }
   .eyebrow::before { content: ""; width: 18px; height: 1px; background: var(--vermillion); display: inline-block; }
 
-  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal {
+    opacity: 0; transform: translateY(26px) scale(0.985);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: var(--reveal-delay, 0s);
+  }
   .reveal.visible { opacity: 1; transform: none; }
-  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition-delay: 0s !important; } }
+  /* Stagger helper: apply to a group's direct children via nth-child */
+  .stagger > *:nth-child(1) { --reveal-delay: 0s; }
+  .stagger > *:nth-child(2) { --reveal-delay: 0.08s; }
+  .stagger > *:nth-child(3) { --reveal-delay: 0.16s; }
+  .stagger > *:nth-child(4) { --reveal-delay: 0.24s; }
+  .stagger > *:nth-child(5) { --reveal-delay: 0.32s; }
+  .stagger > *:nth-child(6) { --reveal-delay: 0.4s; }
+
+  .btn:active { transform: translateY(0) scale(0.98); }
+  a, .btn, .plan-card, .sample-card, .service-card { transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease; }
+  .service-card:hover, .sample-card:hover, .plan-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px -18px rgba(27, 35, 64, 0.35);
+  }
+  @media (prefers-color-scheme: dark) {
+    .service-card:hover, .sample-card:hover, .plan-card:hover { box-shadow: 0 14px 30px -18px rgba(0, 0, 0, 0.5); }
+  }
 
   /* Nav */
   nav {
@@ -164,6 +185,33 @@
     border-left: 2px solid var(--vermillion); font-size: 14px; color: var(--ink-soft);
     font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
   }
+
+  /* Before / After */
+  .ba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .ba-card { background: var(--paper-card); border: 1px solid var(--line); border-radius: 3px; padding: 26px 26px 24px; }
+  .ba-card .ba-label { font-size: 12px; color: var(--vermillion); letter-spacing: 0.08em; }
+  .ba-card h3 { font-size: 17px; margin: 8px 0 18px; line-height: 1.6; }
+  .ba-row { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 10px; margin-bottom: 16px; }
+  .ba-num { text-align: center; }
+  .ba-num .k { display: block; font-size: 11px; color: var(--ink-soft); letter-spacing: 0.06em; margin-bottom: 4px; }
+  .ba-num .v { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 26px; font-variant-numeric: tabular-nums; }
+  .ba-num.before .v { color: var(--ink-soft); }
+  .ba-num.after .v { color: var(--vermillion); }
+  .ba-arrow { color: var(--vermillion); font-size: 18px; }
+  .ba-badge {
+    display: inline-block; margin: 0 0 16px; font-size: 11.5px; color: var(--vermillion);
+    border: 1px solid var(--vermillion); padding: 3px 10px; border-radius: 980px; letter-spacing: 0.03em;
+  }
+  .ba-diff {
+    padding: 14px 16px; background: var(--paper); border-left: 2px solid var(--line);
+    font-size: 13px; color: var(--ink-soft); line-height: 1.85; margin-bottom: 10px;
+  }
+  .ba-diff .diff-label { display: block; font-size: 11px; letter-spacing: 0.08em; margin-bottom: 6px; }
+  .ba-diff.before { opacity: 0.75; }
+  .ba-diff.after { border-left-color: var(--vermillion); color: var(--ink); }
+  .ba-diff.after .diff-label { color: var(--vermillion); }
+  .ba-diff mark { background: rgba(182, 65, 42, 0.14); color: inherit; padding: 0 2px; border-radius: 2px; }
+  @media (prefers-color-scheme: dark) { .ba-diff mark { background: rgba(219, 106, 68, 0.22); } }
 
   /* Services */
   .services { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
@@ -312,6 +360,7 @@
     .final { padding: 38px 26px; }
     .plan-cards { grid-template-columns: 1fr; }
     .monthly-plans { grid-template-columns: 1fr; }
+    .ba-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -322,6 +371,7 @@
     <a class="nav-brand" href="#top">わたちゃんWorks</a>
     <div class="nav-links">
       <a href="#cases">制作事例</a>
+      <a href="#before-after">Before/After</a>
       <a href="#services">サービス</a>
       <a href="#samples">サンプル</a>
       <a href="#pricing">料金</a>
@@ -353,6 +403,7 @@
       <p>マイホームを建てて2年。家族との時間はかけがえのないものなのに、週末にちょっと遠出をするにも「お金を貯める計画」を立てなければならず、自分に投資する余裕もない——そんな生活に、ストレスと、家族への申し訳なさを感じていました。</p>
       <p>このままではいけないと、副業を学ぶことに決めたのが始まりです。そこで最初に気づいたのは、業種を問わずあらゆる仕事の土台には「文章」があるということでした。以来、AIツールを活用しながらライティングの力を磨き、LP・記事・SNS投稿・動画台本と、幅広い分野で「言葉で伝える」技術を学び続けています。</p>
       <p>まだ実績を積み上げている最中です。だからこそ、一件一件のご依頼を丁寧に、誠実に。会社員として本業を続けながら、限られた時間の中でも「頼んでよかった」と思っていただける仕事をお届けします。</p>
+      <p>休日は鉄道旅行でふらっと知らない街を歩いたり、ゲームで頭を空っぽにしたり。そうやって自分の"余白"を大事にしているからこそ、読む人の日常に寄り添う言葉を書けると思っています。</p>
       <p class="signoff">わたちゃんWorks　渡邊 駿</p>
     </div>
   </div>
@@ -423,13 +474,49 @@
   </div>
 </section>
 
+<section id="before-after">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Before / After</span>
+      <h2>「速い」と「確か」は、<br />両立できる。</h2>
+      <p class="desc">実際の制作から、変化がわかりやすい2つの事例をご紹介します。</p>
+    </div>
+    <div class="ba-grid stagger">
+      <div class="ba-card reveal">
+        <span class="ba-label">制作時間</span>
+        <h3>SEO記事1本あたりの制作時間</h3>
+        <div class="ba-row">
+          <div class="ba-num before"><span class="k">Before</span><span class="v">148分</span></div>
+          <div class="ba-arrow">→</div>
+          <div class="ba-num after"><span class="k">After</span><span class="v">62分</span></div>
+        </div>
+        <span class="ba-badge">58%短縮</span>
+        <p style="font-size:13.5px;color:var(--ink-soft);margin:0;">AIでリサーチ・構成案の下書きを時短しつつ、仕上げの「編集」は必ず自分の目で行う仕組みで実現しています。</p>
+      </div>
+      <div class="ba-card reveal">
+        <span class="ba-label">原稿の質</span>
+        <h3>クライアント様記事：初稿→改稿</h3>
+        <div class="ba-diff before">
+          <span class="diff-label">Before（初稿）</span>
+          たとえば会議の音声から議事録の下書きを自動生成したり、箇条書きのメモから資料の構成案を作成したりと、活用の幅は広がっています。
+        </div>
+        <div class="ba-diff after">
+          <span class="diff-label">After（改稿）</span>
+          たとえば、<mark>これまで音声を聞き返しながら1時間ほどかけていた議事録作成</mark>も、AIに下書きを作らせて仕上げるだけなら<mark>30分ほどに縮まった</mark>という声もあります。
+        </div>
+        <p style="font-size:13.5px;color:var(--ink-soft);margin:8px 0 0;">「具体性に欠ける」というご指摘を受け、抽象的な説明を数字と情景の伝わる描写に改稿。校閲合格・納品につながりました。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="services">
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">提供サービス</span>
       <h2>「伝わらない」を、<br />構成から立て直します。</h2>
     </div>
-    <div class="services">
+    <div class="services stagger">
       <div class="service-card reveal">
         <span class="num">壱</span>
         <h3>LP制作・文章</h3>
@@ -465,7 +552,7 @@
       <h2>まだ受注実績のないジャンルも、<br />こんな文章が書けます。</h2>
       <p class="desc sample-note">※以下はスキル研鑽のための自主制作サンプルです。実在の企業様との受注実績ではなく、文体・構成力をお見せするための文章としてご覧ください。</p>
     </div>
-    <div class="samples">
+    <div class="samples stagger">
       <div class="sample-card featured reveal">
         <div class="sample-visual v-ai">
           <svg viewBox="0 0 48 48" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
@@ -595,8 +682,8 @@
       <p class="desc">SEO記事は3段階のプランからお選びいただけます。まずはどれか迷ったら、スタンダードプランがおすすめです。</p>
     </div>
 
-    <div class="plan-cards reveal">
-      <div class="plan-card">
+    <div class="plan-cards stagger">
+      <div class="plan-card reveal">
         <span class="tag">ライト（梅）</span>
         <h3>まず1本、試したい方に</h3>
         <div class="price">5,000円〜</div>
@@ -608,7 +695,7 @@
           <li>納期5営業日</li>
         </ul>
       </div>
-      <div class="plan-card featured">
+      <div class="plan-card featured reveal">
         <span class="plan-badge">★おすすめ</span>
         <span class="tag">スタンダード（竹）</span>
         <h3>構成からまるっとお任せ</h3>
@@ -622,7 +709,7 @@
           <li>キーワード調査込み</li>
         </ul>
       </div>
-      <div class="plan-card">
+      <div class="plan-card reveal">
         <span class="tag">プレミアム（松）</span>
         <h3>入稿・SNS展開まで一括で</h3>
         <div class="price">15,000円〜</div>
@@ -638,22 +725,22 @@
     </div>
 
     <p class="subhead reveal">月額継続プラン（スタンダード基準）</p>
-    <div class="monthly-plans reveal">
-      <div class="monthly-card">
+    <div class="monthly-plans stagger">
+      <div class="monthly-card reveal">
         <span class="tag">ライト月額</span>
         <h4>月3本</h4>
         <div class="was">通常24,000円</div>
         <div class="now">20,000円<span style="font-size:12px;">/月</span></div>
         <div class="perk">17%オフ・優先対応</div>
       </div>
-      <div class="monthly-card">
+      <div class="monthly-card reveal">
         <span class="tag">スタンダード月額 ★人気</span>
         <h4>月5本</h4>
         <div class="was">通常40,000円</div>
         <div class="now">32,000円<span style="font-size:12px;">/月</span></div>
         <div class="perk">20%オフ・優先対応・月1回MTG</div>
       </div>
-      <div class="monthly-card">
+      <div class="monthly-card reveal">
         <span class="tag">プレミアム月額</span>
         <h4>月10本</h4>
         <div class="was">通常80,000円</div>
