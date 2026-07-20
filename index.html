@@ -215,7 +215,10 @@
 
   /* Services */
   .services { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
-  .service-card { background: var(--paper-card); border: 1px solid var(--line); border-radius: 2px; padding: 26px 24px 22px; }
+  .service-card { background: var(--paper-card); border: 1px solid var(--line); border-radius: 2px; padding: 0 0 22px; overflow: hidden; }
+  .service-card .service-photo { width: 100%; aspect-ratio: 16/10; overflow: hidden; }
+  .service-card .service-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .service-card .service-body { padding: 20px 24px 0; }
   .service-card .num { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 13px; color: var(--ink-soft); letter-spacing: 0.08em; }
   .service-card h3 { font-size: 19px; margin: 10px 0 10px; }
   .service-card p { font-size: 14px; color: var(--ink-soft); margin: 0 0 16px; }
@@ -249,6 +252,8 @@
       repeating-linear-gradient(90deg, var(--line-soft) 0 1px, transparent 1px 28px);
     opacity: 0.6;
   }
+  .sample-visual.has-photo::after { display: none; }
+  .sample-visual.has-photo img { width: 100%; height: 100%; object-fit: cover; display: block; position: relative; z-index: 1; }
   .v-beauty { background: linear-gradient(150deg, #E9D2C9, #F3E7DC); }
   .v-career { background: linear-gradient(150deg, #D8DEE6, #ECEFF2); }
   .v-asset  { background: linear-gradient(150deg, #DCE2D2, #EFF2E9); }
@@ -518,40 +523,58 @@
     </div>
     <div class="services stagger">
       <div class="service-card reveal">
-        <span class="num">壱</span>
-        <h3>LP制作・文章</h3>
-        <p>サービスや商品の魅力が伝わる流れを設計し、問い合わせ・申し込みにつながる文章を仕上げます。構成案の提示から丁寧に進めます。</p>
-        <div class="price"><span>基本料金の目安</span><strong>15,000円〜</strong></div>
+        <div class="service-photo"><img src="img/service-lp.png" alt="LPのワイヤーフレームが表示されたノートPCとメモ"></div>
+        <div class="service-body">
+          <span class="num">壱</span>
+          <h3>LP制作・文章</h3>
+          <p>サービスや商品の魅力が伝わる流れを設計し、問い合わせ・申し込みにつながる文章を仕上げます。構成案の提示から丁寧に進めます。</p>
+          <div class="price"><span>基本料金の目安</span><strong>15,000円〜</strong></div>
+        </div>
       </div>
       <div class="service-card reveal">
-        <span class="num">弐</span>
-        <h3>SEO記事・ブログ</h3>
-        <p>ターゲットキーワードと読者像を確認したうえで、構成の設計から丁寧に取り組み、読みやすく内容のある記事をお届けします。</p>
-        <div class="price"><span>基本料金の目安</span><strong>5,000円〜</strong></div>
+        <div class="service-photo"><img src="img/service-seo.png" alt="記事下書きとキーワードメモが並んだデスク"></div>
+        <div class="service-body">
+          <span class="num">弐</span>
+          <h3>SEO記事・ブログ</h3>
+          <p>ターゲットキーワードと読者像を確認したうえで、構成の設計から丁寧に取り組み、読みやすく内容のある記事をお届けします。</p>
+          <div class="price"><span>基本料金の目安</span><strong>5,000円〜</strong></div>
+        </div>
       </div>
       <div class="service-card reveal">
-        <span class="num">参</span>
-        <h3>SNS導線設計</h3>
-        <p>Instagram・Xのプロフィール文と、問い合わせや購入につながるSNS導線を一緒に整えます。発信コンセプトの整理も承ります。</p>
-        <div class="price"><span>基本料金の目安</span><strong>8,000円〜</strong></div>
+        <div class="service-photo"><img src="img/service-sns.png" alt="スマートフォンに表示されたSNSプロフィール画面"></div>
+        <div class="service-body">
+          <span class="num">参</span>
+          <h3>SNS導線設計</h3>
+          <p>Instagram・Xのプロフィール文と、問い合わせや購入につながるSNS導線を一緒に整えます。発信コンセプトの整理も承ります。</p>
+          <div class="price"><span>基本料金の目安</span><strong>8,000円〜</strong></div>
+        </div>
       </div>
       <div class="service-card reveal">
-        <span class="num">四</span>
-        <h3>YouTube台本・シナリオ</h3>
-        <p>視聴者に届きやすい構成と言葉の流れを考え、冒頭のフックから最後のCTAまで一貫した台本を作成します。</p>
-        <div class="price"><span>基本料金の目安</span><strong>ご相談</strong></div>
+        <div class="service-photo"><img src="img/service-youtube.png" alt="YouTube台本とストーリーボードのメモ"></div>
+        <div class="service-body">
+          <span class="num">四</span>
+          <h3>YouTube台本・シナリオ</h3>
+          <p>視聴者に届きやすい構成と言葉の流れを考え、冒頭のフックから最後のCTAまで一貫した台本を作成します。</p>
+          <div class="price"><span>基本料金の目安</span><strong>ご相談</strong></div>
+        </div>
       </div>
       <div class="service-card reveal">
-        <span class="num">伍</span>
-        <h3>HP制作（簡易Webサイト・ツール）</h3>
-        <p>Node.js・HTML/CSSを用いた簡易Webサイト・Webツールの制作に対応しています。現在は自主制作（独自のAI活用ダッシュボード開発）を通じて対応範囲を広げている段階です。</p>
-        <div class="price"><span>基本料金の目安</span><strong>ご相談</strong></div>
+        <div class="service-photo"><img src="img/service-hp.png" alt="コードエディタとプレビュー画面が並んだノートPC"></div>
+        <div class="service-body">
+          <span class="num">伍</span>
+          <h3>HP制作（簡易Webサイト・ツール）</h3>
+          <p>Node.js・HTML/CSSを用いた簡易Webサイト・Webツールの制作に対応しています。現在は自主制作（独自のAI活用ダッシュボード開発）を通じて対応範囲を広げている段階です。</p>
+          <div class="price"><span>基本料金の目安</span><strong>ご相談</strong></div>
+        </div>
       </div>
       <div class="service-card reveal">
-        <span class="num">六</span>
-        <h3>AI画像生成</h3>
-        <p>ChatGPT等を活用した、note・Instagram向けビジュアル制作に対応しています。記事のアイキャッチ画像などで実践を重ねています。</p>
-        <div class="price"><span>基本料金の目安</span><strong>ご相談</strong></div>
+        <div class="service-photo"><img src="img/service-ai.png" alt="タブレットに並んだ生成画像のサムネイル"></div>
+        <div class="service-body">
+          <span class="num">六</span>
+          <h3>AI画像生成</h3>
+          <p>ChatGPT等を活用した、note・Instagram向けビジュアル制作に対応しています。記事のアイキャッチ画像などで実践を重ねています。</p>
+          <div class="price"><span>基本料金の目安</span><strong>ご相談</strong></div>
+        </div>
       </div>
     </div>
   </div>
@@ -567,10 +590,8 @@
     </div>
     <div class="samples stagger">
       <div class="sample-card featured reveal">
-        <div class="sample-visual v-ai">
-          <svg viewBox="0 0 48 48" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M24 8 L27 20 L39 23 L27 26 L24 38 L21 26 L9 23 L21 20 Z"></path>
-          </svg>
+        <div class="sample-visual has-photo v-ai">
+          <img src="img/sample-ai.png" alt="ノートPCとノートで作業する様子">
         </div>
         <div class="sample-body">
           <span class="badge">専門ジャンル</span>
@@ -581,10 +602,8 @@
         </div>
       </div>
       <div class="sample-card featured reveal">
-        <div class="sample-visual v-ai">
-          <svg viewBox="0 0 48 48" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M24 8 L27 20 L39 23 L27 26 L24 38 L21 26 L9 23 L21 20 Z"></path>
-          </svg>
+        <div class="sample-visual has-photo v-ai">
+          <img src="img/sample-ai.png" alt="ノートPCとノートで作業する様子">
         </div>
         <div class="sample-body">
           <span class="badge">専門ジャンル</span>
@@ -595,12 +614,8 @@
         </div>
       </div>
       <div class="sample-card reveal">
-        <div class="sample-visual v-beauty">
-          <svg viewBox="0 0 48 48" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="18" y="6" width="12" height="8" rx="2"></rect>
-            <path d="M20 14 L16 22 V40 a2 2 0 0 0 2 2 h12 a2 2 0 0 0 2-2 V22 L28 14"></path>
-            <line x1="16" y1="28" x2="32" y2="28"></line>
-          </svg>
+        <div class="sample-visual has-photo v-beauty">
+          <img src="img/sample-beauty.png" alt="スキンケア用品のスタイリング写真">
         </div>
         <div class="sample-body">
           <span class="genre">美容・コスメ体験談</span>
@@ -610,13 +625,8 @@
         </div>
       </div>
       <div class="sample-card reveal">
-        <div class="sample-visual v-career">
-          <svg viewBox="0 0 48 48" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="8" y="18" width="32" height="20" rx="2"></rect>
-            <path d="M17 18 v-4 a2 2 0 0 1 2-2 h10 a2 2 0 0 1 2 2 v4"></path>
-            <line x1="8" y1="27" x2="40" y2="27"></line>
-            <line x1="22" y1="27" x2="26" y2="27"></line>
-          </svg>
+        <div class="sample-visual has-photo v-career">
+          <img src="img/sample-career.png" alt="履歴書とノートPCで転職活動をする様子">
         </div>
         <div class="sample-body">
           <span class="genre">副業・転職・キャリア（SEO記事）</span>
@@ -626,19 +636,8 @@
         </div>
       </div>
       <div class="sample-card reveal">
-        <div class="sample-visual v-asset">
-          <svg viewBox="0 0 48 48" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-            <ellipse cx="24" cy="34" rx="10" ry="3.5"></ellipse>
-            <path d="M14 34 V27"></path>
-            <path d="M34 34 V27"></path>
-            <ellipse cx="24" cy="27" rx="10" ry="3.5"></ellipse>
-            <path d="M14 27 V20"></path>
-            <path d="M34 27 V20"></path>
-            <ellipse cx="24" cy="20" rx="10" ry="3.5"></ellipse>
-            <path d="M14 20 V13"></path>
-            <path d="M34 20 V13"></path>
-            <ellipse cx="24" cy="13" rx="10" ry="3.5"></ellipse>
-          </svg>
+        <div class="sample-visual has-photo v-asset">
+          <img src="img/sample-asset.png" alt="家計簿とグラフ資料、電卓が置かれたデスク">
         </div>
         <div class="sample-body">
           <span class="genre">資産形成・経営者向けコラム</span>
@@ -648,10 +647,8 @@
         </div>
       </div>
       <div class="sample-card reveal">
-        <div class="sample-visual v-family">
-          <svg viewBox="0 0 48 48" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M24 38 C14 31 8 25 8 18.5 C8 13.5 12 10 16.5 10 C19.8 10 22.4 11.8 24 14.4 C25.6 11.8 28.2 10 31.5 10 C36 10 40 13.5 40 18.5 C40 25 34 31 24 38 Z"></path>
-          </svg>
+        <div class="sample-visual has-photo v-family">
+          <img src="img/sample-family.png" alt="リビングにたたみかけの洗濯物と絵本が置かれた様子">
         </div>
         <div class="sample-body">
           <span class="genre">子育て・暮らしエッセイ</span>
