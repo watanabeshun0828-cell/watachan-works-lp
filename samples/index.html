@@ -42,7 +42,8 @@
     transition: transform 0.25s ease, box-shadow 0.25s ease;
   }
   .card:hover { transform: translateY(-4px); box-shadow: 0 14px 30px -18px rgba(27,35,64,0.35); }
-  .card-visual { aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; font-size: 13px; letter-spacing: 0.06em; color: var(--ink-soft); }
+  .card-visual { aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; font-size: 13px; letter-spacing: 0.06em; color: var(--ink-soft); overflow: hidden; }
+  .card-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .v-bakery { background: linear-gradient(150deg, #E9D2C9, #F3E7DC); }
   .v-natural { background: linear-gradient(150deg, #DCE2D2, #EFF2E9); }
   .v-cyber { background: linear-gradient(150deg, #101623, #090C14); color: #4DD8FF; }
@@ -72,7 +73,7 @@
 
     <div class="cards">
       <a class="card" href="bakery.html">
-        <div class="card-visual v-bakery">🍞</div>
+        <div class="card-visual v-bakery"><img src="img/bakery-hero.png" alt="petite douceurの店内写真"></div>
         <div class="card-body">
           <span class="card-tag">家族経営・温かみ</span>
           <h3>焼き菓子店「petite douceur」</h3>
@@ -81,7 +82,7 @@
         </div>
       </a>
       <a class="card" href="natural.html">
-        <div class="card-visual v-natural">🌿</div>
+        <div class="card-visual v-natural"><img src="img/natural-hero.png" alt="て、しごとの商品写真"></div>
         <div class="card-body">
           <span class="card-tag">誠実・信頼</span>
           <h3>無添加ブランド「て、しごと」</h3>
@@ -90,16 +91,16 @@
         </div>
       </a>
       <a class="card" href="cyber.html">
-        <div class="card-visual v-cyber">⌗</div>
+        <div class="card-visual v-cyber"><img src="img/cyber-hero.png" alt="Synapseのダッシュボード画面"></div>
         <div class="card-body">
           <span class="card-tag">近未来・スクロール演出</span>
-          <h3>AI活用サービスのLP「ORBIT」</h3>
+          <h3>AI活用サービスのLP「Synapse」</h3>
           <p>電脳空間をイメージし、スクロール連動の浮き上がり演出を使ったデザイン。</p>
           <span class="go">サンプルを見る →</span>
         </div>
       </a>
       <a class="card" href="consult.html">
-        <div class="card-visual v-consult">⚖️</div>
+        <div class="card-visual v-consult"><img src="img/consult-hero.png" alt="みちしるべ経営パートナーズの打ち合わせ写真"></div>
         <div class="card-body">
           <span class="card-tag">士業・堅実</span>
           <h3>経営コンサル「みちしるべ経営パートナーズ」</h3>
@@ -108,7 +109,7 @@
         </div>
       </a>
       <a class="card" href="salon.html">
-        <div class="card-visual v-salon">💇</div>
+        <div class="card-visual v-salon"><img src="img/salon-hero.png" alt="HANAのサロン店内写真"></div>
         <div class="card-body">
           <span class="card-tag">写真多め・ギミックあり</span>
           <h3>サロン「HANA hair &amp; esthetic」</h3>
@@ -117,7 +118,7 @@
         </div>
       </a>
       <a class="card" href="coach.html">
-        <div class="card-visual v-coach">📓</div>
+        <div class="card-visual v-coach"><img src="img/coach-hero.png" alt="RE:START coachingの書斎写真"></div>
         <div class="card-body">
           <span class="card-tag">ミニマル・写真1枚だけ</span>
           <h3>パーソナルコーチ「RE:START coaching」</h3>

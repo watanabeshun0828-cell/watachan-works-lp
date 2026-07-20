@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ORBIT｜AIチーム管理SaaS（制作サンプル・わたちゃんWorks）</title>
+<title>Synapse｜AIチーム管理SaaS（制作サンプル・わたちゃんWorks）</title>
 <style>
   :root {
     --ink: #E8F4FF;
@@ -104,6 +104,8 @@
   }
   .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, var(--paper) 100%); pointer-events: none; }
   .hero-inner { position: relative; z-index: 1; }
+  .hero-photo { margin-top: 40px; width: 100%; border-radius: 4px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 30px 60px -30px rgba(77,216,255,0.25); }
+  .hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .hero h1 { font-size: clamp(32px, 5.2vw, 52px); line-height: 1.55; margin: 20px 0 18px; }
   .hero h1 em { font-style: normal; color: var(--vermillion); text-shadow: 0 0 18px rgba(77,216,255,0.45); }
   .hero p.lede { max-width: 50ch; color: var(--ink-soft); font-size: 16.5px; }
@@ -307,7 +309,7 @@
 
 <nav>
   <div class="nav-inner">
-    <a class="nav-brand" href="#top">ORBIT</a>
+    <a class="nav-brand" href="#top">Synapse</a>
     <div class="nav-links">
       <a href="#problem">課題</a>
       <a href="#features">機能</a>
@@ -322,13 +324,14 @@
 <header class="hero" id="top">
   <div class="hero-grid" aria-hidden="true"></div>
   <div class="wrap hero-inner">
-    <span class="eyebrow reveal">AI TEAM MANAGEMENT — ORBIT</span>
+    <span class="eyebrow reveal">AI TEAM MANAGEMENT — Synapse</span>
     <h1 class="reveal">チームの進捗を、<br /><em>見える化</em>する。</h1>
     <p class="lede reveal">タスクの進み具合も、詰まっている理由も、AIが自動で拾って要約します。日報も進捗確認MTGも、もう要りません。</p>
     <div class="cta-row reveal">
       <a class="btn btn-primary" href="#contact">無料トライアルを始める</a>
       <a class="btn btn-ghost" href="#features">機能を見る</a>
     </div>
+    <div class="hero-photo reveal"><img src="img/cyber-hero.png" alt="Synapseのダッシュボード画面が表示されたノートPC"></div>
   </div>
 </header>
 
@@ -400,7 +403,7 @@
       <div class="step-card reveal">
         <span class="step-n">01</span>
         <h3>ツールを連携</h3>
-        <p>普段使っているタスク管理ツール・チャットをORBITに接続します（所要5分）。</p>
+        <p>普段使っているタスク管理ツール・チャットをSynapseに接続します（所要5分）。</p>
       </div>
       <div class="step-card reveal">
         <span class="step-n">02</span>
@@ -448,7 +451,7 @@
       </div>
       <div>
         <h3>判断は、人の手に。</h3>
-        <p>ORBITは意思決定を代行しません。あくまで「気づくきっかけ」を提供し、最終判断はチームに委ねます。</p>
+        <p>Synapseは意思決定を代行しません。あくまで「気づくきっかけ」を提供し、最終判断はチームに委ねます。</p>
       </div>
       <div class="divider"></div>
       <div style="grid-column: 1 / -1;">
@@ -517,8 +520,8 @@
 
 <footer>
   <div class="wrap footer-inner">
-    <span>ORBIT — チームの進捗を、見える化する。</span>
-    <span>© 2026 ORBIT（架空のサービスです）</span>
+    <span>Synapse — チームの進捗を、見える化する。</span>
+    <span>© 2026 Synapse（架空のサービスです）</span>
   </div>
 </footer>
 
