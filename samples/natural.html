@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>無添加ブランド「て、しごと」｜制作サンプル・わたちゃんWorks</title>
+<style>
+  :root {
+    --ink: #2E3628;
+    --ink-soft: #6C7A63;
+    --paper: #F5F3EC;
+    --paper-deep: #EBE7D9;
+    --paper-card: #FBFAF4;
+    --accent: #7A8F5C;
+    --accent-soft: #A3B588;
+    --clay: #B08863;
+    --line: rgba(46, 54, 40, 0.13);
+    --line-soft: rgba(46, 54, 40, 0.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #E7EBDF; --ink-soft: #AAB89C; --paper: #171A14; --paper-deep: #1E221A;
+      --paper-card: #1C1F17; --accent: #9BB27C; --accent-soft: #7A8F5C; --clay: #C39B72;
+      --line: rgba(231, 235, 223, 0.13); --line-soft: rgba(231, 235, 223, 0.06);
+    }
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+    line-height: 1.9; -webkit-font-smoothing: antialiased; letter-spacing: 0.015em;
+  }
+  h1, h2, h3 { font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif; font-weight: 600; }
+  a { color: inherit; }
+  .wrap { max-width: 800px; margin: 0 auto; padding: 0 26px; }
+  .sample-badge {
+    position: fixed; top: 14px; right: 14px; z-index: 200;
+    background: var(--ink); color: var(--paper); font-size: 11.5px; letter-spacing: 0.06em;
+    padding: 7px 14px; border-radius: 980px; text-decoration: none; opacity: 0.88;
+  }
+  .eyebrow { display: inline-flex; align-items: center; gap: 0.6em; font-size: 12px; letter-spacing: 0.24em; color: var(--accent); font-weight: 600; }
+  .eyebrow::before { content: ""; width: 16px; height: 1px; background: var(--accent); display: inline-block; }
+
+  .hero { padding: 110px 0 60px; }
+  .hero h1 { font-size: clamp(28px, 4.6vw, 42px); line-height: 1.75; margin: 22px 0 18px; }
+  .hero p.lede { max-width: 46ch; color: var(--ink-soft); font-size: 15.5px; margin-bottom: 30px; }
+  .hero-photo { width: 100%; aspect-ratio: 21/9; border-radius: 4px; background: linear-gradient(150deg, #DCE2D2, #EFF2E9); display: flex; align-items: center; justify-content: center; color: var(--ink-soft); font-size: 13px; overflow: hidden; }
+  .hero-photo img, .maker-photo img, .product-photo-wide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  @media (prefers-color-scheme: dark) { .hero-photo { background: linear-gradient(150deg, #2A2E22, #1F211A); } }
+
+  section { padding: 66px 0; }
+  section + section { border-top: 1px solid var(--line); }
+  .section-head { max-width: 54ch; margin-bottom: 36px; }
+  .section-head h2 { font-size: clamp(21px, 2.8vw, 27px); margin: 10px 0 0; line-height: 1.6; }
+
+  .promise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .promise-card { background: var(--paper-card); border: 1px solid var(--line); border-radius: 4px; padding: 26px 22px; }
+  .promise-card .n { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; color: var(--accent); font-size: 13px; }
+  .promise-card h3 { font-size: 16.5px; margin: 8px 0 8px; }
+  .promise-card p { font-size: 13.5px; color: var(--ink-soft); margin: 0; }
+
+  .maker { background: var(--paper-deep); }
+  .maker-inner { display: grid; grid-template-columns: 220px 1fr; gap: 36px; }
+  .maker-photo { aspect-ratio: 1/1; border-radius: 4px; background: linear-gradient(150deg, #EAD9C4, #F5EDE0); }
+  @media (prefers-color-scheme: dark) { .maker-photo { background: linear-gradient(150deg, #362B1E, #26201A); } }
+  .maker p { font-size: 14.5px; color: var(--ink-soft); margin: 0 0 14px; max-width: 54ch; }
+  .maker .signoff { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 13.5px; margin-top: 12px; }
+
+  .product-photo-wide { width: 100%; aspect-ratio: 16/10; border-radius: 4px; overflow: hidden; margin-bottom: 26px; background: linear-gradient(150deg, #E9D2C9, #F3E7DC); }
+  @media (prefers-color-scheme: dark) { .product-photo-wide { background: linear-gradient(150deg, #3A2C26, #26201B); } }
+  .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .product-card { background: var(--paper-card); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+  .product-body { padding: 16px 18px; }
+  .product-body h3 { font-size: 15.5px; margin: 0 0 6px; }
+  .product-body p { font-size: 12.5px; color: var(--ink-soft); margin: 0; }
+  .product-body .price { display: block; margin-top: 8px; color: var(--accent); font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 14px; }
+
+  .ingredients-list { display: flex; flex-wrap: wrap; gap: 10px; }
+  .ingredients-list span {
+    font-size: 13px; border: 1px solid var(--line); border-radius: 980px; padding: 6px 14px; color: var(--ink-soft);
+  }
+
+  .final { text-align: left; background: var(--ink); color: var(--paper); border-radius: 6px; padding: 50px 42px; }
+  .final h2 { color: inherit; font-size: clamp(20px, 2.8vw, 26px); margin: 0 0 12px; }
+  .final p { opacity: 0.8; font-size: 14px; max-width: 48ch; margin: 0 0 24px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 26px; border-radius: 2px; font-size: 14px; font-weight: 600; text-decoration: none; background: var(--accent); color: #10140C; }
+
+  footer { padding: 30px 0 50px; font-size: 12px; color: var(--ink-soft); }
+
+  @media (max-width: 700px) {
+    .promise-grid { grid-template-columns: 1fr; }
+    .maker-inner { grid-template-columns: 1fr; }
+    .product-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<a class="sample-badge" href="index.html">← サンプル集へ戻る</a>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">SAMPLE LP</span>
+    <h1>肌にのせるものだから、<br />隠しごとをしない。</h1>
+    <p class="lede">素材と製法を、すべて公開しています。無添加石鹸ブランド「て、しごと」。作り手の顔が見える買い物を、大切にしています。</p>
+    <div class="hero-photo"><img src="img/natural-hero.png" alt="石鹸と素材を並べたテーブルフォト"></div>
+  </div>
+</header>
+
+<section id="promise">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">3つの約束</span>
+      <h2>誠実さは、隠さないことから始まると思っています。</h2>
+    </div>
+    <div class="promise-grid">
+      <div class="promise-card">
+        <span class="n">01</span>
+        <h3>成分を、全部書く</h3>
+        <p>配合量まで含めて、すべての成分をパッケージと公式サイトに公開しています。</p>
+      </div>
+      <div class="promise-card">
+        <span class="n">02</span>
+        <h3>作り方を、隠さない</h3>
+        <p>工房の様子や製造工程を、SNSでそのまま発信しています。都合の悪い部分も見せます。</p>
+      </div>
+      <div class="promise-card">
+        <span class="n">03</span>
+        <h3>合わなければ、正直に言う</h3>
+        <p>すべての肌に合うとは謳いません。心配な方には、事前のパッチテストをおすすめしています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="maker">
+  <div class="wrap maker-inner">
+    <div class="maker-photo"><img src="img/natural-maker.png" alt="工房で石鹸を型に流し込む作り手の手元"></div>
+    <div>
+      <span class="eyebrow">作り手より</span>
+      <h2 style="font-size:22px;margin:10px 0 18px;">小さな工房から、<br />正直に届けたいと思っています。</h2>
+      <p>大量生産では難しい、素材へのこだわりを大事にしたくて、この工房を始めました。派手な宣伝文句より、実際に使った人の「よかった」という一言を信じて作っています。</p>
+      <p>すべての方に合うとは言い切れません。だからこそ、成分も製法も隠さず、迷ったときに判断できる情報をきちんとお渡ししたいと考えています。</p>
+      <p class="signoff">「て、しごと」代表より</p>
+    </div>
+  </div>
+</section>
+
+<section id="products">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">商品ラインナップ</span>
+      <h2>定番の3種類です。</h2>
+    </div>
+    <div class="product-photo-wide"><img src="img/natural-products.png" alt="石鹸とギフトセット"></div>
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-body">
+          <h3>オリーブ石鹸</h3>
+          <p>敏感肌の方にも選ばれている、無香料タイプ。</p>
+          <span class="price">1個 1,200円</span>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-body">
+          <h3>ハーブ石鹸</h3>
+          <p>自家栽培のハーブを練り込んだ、爽やかな香り。</p>
+          <span class="price">1個 1,400円</span>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-body">
+          <h3>ギフトセット</h3>
+          <p>3種類を少しずつ試せる、はじめての方向けセット。</p>
+          <span class="price">1箱 3,200円</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ingredients">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">使用している主な素材</span>
+      <h2>すべて、公開しています。</h2>
+    </div>
+    <div class="ingredients-list">
+      <span>オリーブオイル</span>
+      <span>ココナッツオイル</span>
+      <span>カレンデュラ</span>
+      <span>ラベンダー精油</span>
+      <span>天然グリセリン</span>
+      <span>ミネラル塩</span>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="final">
+      <span class="eyebrow" style="color:var(--accent-soft);">お問い合わせ</span>
+      <h2>まずは、ミニサイズから。</h2>
+      <p>「肌に合うかどうか、試してから決めたい」という方のために、お試しサイズもご用意しています。お気軽にお問い合わせください。</p>
+      <a class="btn" href="#">お問い合わせ（サンプルのためリンク先なし）</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    ※このページはわたちゃんWorksの制作サンプルです。架空のブランドを想定した自主制作物であり、実在の商品ではありません。
+  </div>
+</footer>
+
+</body>
+</html>

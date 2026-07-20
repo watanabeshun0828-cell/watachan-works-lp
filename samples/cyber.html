@@ -3,33 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>わたちゃんWorks｜あなたのサービスの魅力を、言葉と形に変える</title>
+<title>わたちゃんWorks｜あなたのサービスの魅力を、言葉と形に変える（サイバー版・比較用）</title>
 <style>
   :root {
-    --ink: #1B2340;
-    --ink-soft: #5A6180;
-    --paper: #F1ECDD;
-    --paper-deep: #E4DCC5;
-    --paper-card: #F8F4E9;
-    --vermillion: #B6412A;
-    --vermillion-soft: #C96A54;
-    --sage: #5C6E54;
-    --line: rgba(27, 35, 64, 0.16);
-    --line-soft: rgba(27, 35, 64, 0.09);
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --ink: #EDE6D2;
-      --ink-soft: #B7AF97;
-      --paper: #1A1712;
-      --paper-deep: #262019;
-      --paper-card: #221D16;
-      --vermillion: #DB6A44;
-      --vermillion-soft: #C4805F;
-      --sage: #8FA37F;
-      --line: rgba(237, 230, 210, 0.16);
-      --line-soft: rgba(237, 230, 210, 0.08);
-    }
+    --ink: #E8F4FF;
+    --ink-soft: #8FA3C4;
+    --paper: #090C14;
+    --paper-deep: #0D111C;
+    --paper-card: #101623;
+    --vermillion: #4DD8FF;
+    --vermillion-soft: #7FE3FF;
+    --sage: #A8F55C;
+    --line: rgba(77, 216, 255, 0.22);
+    --line-soft: rgba(77, 216, 255, 0.10);
   }
 
   * { box-sizing: border-box; margin: 0; }
@@ -45,19 +31,21 @@
     letter-spacing: 0.01em;
   }
   h1, h2, h3, .serif {
-    font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
-    font-weight: 600;
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
+    font-weight: 700;
     text-wrap: balance;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.02em;
   }
   a { color: inherit; }
   .wrap { max-width: 860px; margin: 0 auto; padding: 0 26px; }
 
   .eyebrow {
     display: inline-flex; align-items: center; gap: 0.6em;
-    font-size: 12.5px; letter-spacing: 0.22em; color: var(--vermillion); font-weight: 600;
+    font-size: 12.5px; letter-spacing: 0.24em; color: var(--vermillion); font-weight: 600;
+    font-family: "SF Mono", "Menlo", monospace;
+    text-shadow: 0 0 12px rgba(77, 216, 255, 0.5);
   }
-  .eyebrow::before { content: ""; width: 18px; height: 1px; background: var(--vermillion); display: inline-block; }
+  .eyebrow::before { content: ""; width: 18px; height: 1px; background: var(--vermillion); display: inline-block; box-shadow: 0 0 6px var(--vermillion); }
 
   .reveal {
     opacity: 0; transform: translateY(26px) scale(0.985);
@@ -66,7 +54,6 @@
   }
   .reveal.visible { opacity: 1; transform: none; }
   @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition-delay: 0s !important; } }
-  /* Stagger helper: apply to a group's direct children via nth-child */
   .stagger > *:nth-child(1) { --reveal-delay: 0s; }
   .stagger > *:nth-child(2) { --reveal-delay: 0.08s; }
   .stagger > *:nth-child(3) { --reveal-delay: 0.16s; }
@@ -78,54 +65,58 @@
   a, .btn, .plan-card, .sample-card, .service-card { transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease; }
   .service-card:hover, .sample-card:hover, .plan-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 14px 30px -18px rgba(27, 35, 64, 0.35);
-  }
-  @media (prefers-color-scheme: dark) {
-    .service-card:hover, .sample-card:hover, .plan-card:hover { box-shadow: 0 14px 30px -18px rgba(0, 0, 0, 0.5); }
+    border-color: var(--vermillion);
+    box-shadow: 0 0 24px -4px rgba(77, 216, 255, 0.35), 0 14px 30px -18px rgba(0,0,0,0.6);
   }
 
   /* Nav */
   nav {
     position: sticky; top: 0; z-index: 100;
-    background: rgba(241, 236, 221, 0.86);
+    background: rgba(9, 12, 20, 0.82);
     -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--line);
-  }
-  @media (prefers-color-scheme: dark) {
-    nav { background: rgba(26, 23, 18, 0.86); }
   }
   .nav-inner {
     max-width: 860px; margin: 0 auto; padding: 0 26px; height: 56px;
     display: flex; align-items: center; justify-content: space-between; font-size: 13.5px;
   }
-  .nav-brand { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-weight: 600; text-decoration: none; letter-spacing: 0.04em; }
+  .nav-brand { font-family: "SF Mono", "Menlo", monospace; font-weight: 700; text-decoration: none; letter-spacing: 0.05em; color: var(--vermillion); text-shadow: 0 0 10px rgba(77,216,255,0.5); }
   .nav-links { display: flex; gap: 26px; align-items: center; }
   .nav-links a { color: var(--ink-soft); text-decoration: none; transition: color 0.2s; }
-  .nav-links a:hover { color: var(--ink); }
+  .nav-links a:hover { color: var(--vermillion); }
   .nav-cta { border: 1px solid var(--vermillion); color: var(--vermillion) !important; padding: 6px 14px; border-radius: 2px; font-size: 12.5px; }
-  .nav-cta:hover { background: var(--vermillion); color: var(--paper) !important; }
+  .nav-cta:hover { background: var(--vermillion); color: var(--paper) !important; box-shadow: 0 0 16px rgba(77,216,255,0.5); }
 
-  /* Hero */
+  /* Hero — cyber grid floor */
   .hero {
-    position: relative; padding: 92px 0 76px;
+    position: relative; padding: 92px 0 76px; overflow: hidden;
+    background:
+      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(77,216,255,0.16), transparent 60%),
+      var(--paper);
+  }
+  .hero-grid {
+    position: absolute; inset: 0; z-index: 0; pointer-events: none;
     background-image:
       repeating-linear-gradient(var(--line-soft) 0 1px, transparent 1px 42px),
       repeating-linear-gradient(90deg, var(--line-soft) 0 1px, transparent 1px 42px);
+    -webkit-mask-image: linear-gradient(180deg, black 0%, transparent 85%);
+    mask-image: linear-gradient(180deg, black 0%, transparent 85%);
   }
   .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, var(--paper) 100%); pointer-events: none; }
-  .hero-inner { position: relative; }
+  .hero-inner { position: relative; z-index: 1; }
   .hero h1 { font-size: clamp(32px, 5.2vw, 52px); line-height: 1.55; margin: 20px 0 18px; }
-  .hero h1 em { font-style: normal; color: var(--vermillion); }
+  .hero h1 em { font-style: normal; color: var(--vermillion); text-shadow: 0 0 18px rgba(77,216,255,0.45); }
   .hero p.lede { max-width: 50ch; color: var(--ink-soft); font-size: 16.5px; }
   .cta-row { display: flex; gap: 14px; margin-top: 30px; flex-wrap: wrap; }
-  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px; border-radius: 2px; font-size: 14.5px; font-weight: 600; letter-spacing: 0.04em; text-decoration: none; border: 1px solid transparent; cursor: pointer; transition: transform 0.15s ease, opacity 0.15s ease; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px; border-radius: 2px; font-size: 14.5px; font-weight: 600; letter-spacing: 0.04em; text-decoration: none; border: 1px solid transparent; cursor: pointer; transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.15s ease; }
   .btn:hover { transform: translateY(-1px); }
   .btn:focus-visible { outline: 2px solid var(--vermillion); outline-offset: 3px; }
-  .btn-primary { background: var(--vermillion); color: #FBF6EC; }
-  .btn-primary:hover { opacity: 0.92; }
+  .btn-primary { background: var(--vermillion); color: #06131C; font-weight: 700; }
+  .btn-primary:hover { box-shadow: 0 0 22px rgba(77,216,255,0.55); }
   .btn-ghost { border-color: var(--line); color: var(--ink); background: transparent; }
+  .btn-ghost:hover { border-color: var(--vermillion); }
 
-  section { padding: 80px 0; }
+  section { padding: 80px 0; position: relative; }
   section + section { border-top: 1px solid var(--line); }
   .section-head { max-width: 58ch; margin-bottom: 44px; }
   .section-head h2 { font-size: clamp(23px, 3vw, 30px); margin: 12px 0 0; }
@@ -134,219 +125,148 @@
   /* Founder story */
   .story { background: var(--paper-deep); }
   .story-inner { display: grid; grid-template-columns: 200px 1fr; gap: 40px; }
-  .story-label { font-size: 12.5px; color: var(--ink-soft); letter-spacing: 0.06em; }
+  .story-label { font-size: 12.5px; color: var(--ink-soft); letter-spacing: 0.06em; font-family: "SF Mono", monospace; }
   .story-label .seal-mini {
-    margin-top: 14px; width: 54px; height: 54px; border-radius: 50%;
+    margin-top: 14px; width: 54px; height: 54px;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     border: 1.5px solid var(--vermillion); color: var(--vermillion);
     display: flex; align-items: center; justify-content: center;
-    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 11px;
-    letter-spacing: 0.1em; line-height: 1.4; text-align: center; transform: rotate(-6deg);
+    font-family: "SF Mono", monospace; font-size: 10px;
+    letter-spacing: 0.06em; line-height: 1.3; text-align: center;
+    box-shadow: 0 0 14px rgba(77,216,255,0.3) inset;
   }
-  .story h2 {
-    font-size: clamp(22px, 3.2vw, 30px); line-height: 1.65; margin: 0 0 26px;
-  }
-  .story h2 em { font-style: normal; color: var(--vermillion); }
+  .story h2 { font-size: clamp(22px, 3.2vw, 30px); line-height: 1.65; margin: 0 0 26px; }
+  .story h2 em { font-style: normal; color: var(--vermillion); text-shadow: 0 0 14px rgba(77,216,255,0.4); }
   .story p { font-size: 15.5px; color: var(--ink-soft); max-width: 56ch; margin: 0 0 18px; }
   .story p:last-of-type { margin-bottom: 0; }
-  .story .signoff {
-    margin-top: 26px; font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
-    font-size: 14px; color: var(--ink);
-  }
+  .story .signoff { margin-top: 26px; font-family: "SF Mono", monospace; font-size: 13px; color: var(--vermillion); }
 
-  /* Case studies — the centerpiece */
-  .case {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 36px;
-    padding: 44px 0;
-  }
+  /* Case studies */
+  .case { display: grid; grid-template-columns: 200px 1fr; gap: 36px; padding: 44px 0; }
   .case + .case { border-top: 1px dashed var(--line); }
-  .case-tag {
-    font-size: 12.5px; color: var(--ink-soft); letter-spacing: 0.06em;
-  }
-  .case-tag .client {
-    display: block; margin-top: 10px; font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
-    font-size: 17px; color: var(--ink); letter-spacing: 0.03em; line-height: 1.5;
-  }
+  .case-tag { font-size: 12.5px; color: var(--ink-soft); letter-spacing: 0.06em; font-family: "SF Mono", monospace; }
+  .case-tag .client { display: block; margin-top: 10px; font-family: "Hiragino Sans", sans-serif; font-weight: 700; font-size: 17px; color: var(--ink); letter-spacing: 0.02em; line-height: 1.5; }
   .case-seal {
     margin-top: 16px; display: inline-flex; align-items: center; gap: 6px;
-    font-size: 12px; color: var(--vermillion); border: 1px solid var(--vermillion);
-    padding: 4px 10px; border-radius: 980px;
+    font-size: 12px; color: var(--sage); border: 1px solid var(--sage);
+    padding: 4px 10px; border-radius: 980px; box-shadow: 0 0 10px rgba(168,245,92,0.25);
   }
   .case-body dl { display: grid; grid-template-columns: 84px 1fr; gap: 10px 18px; margin: 0; }
-  .case-body dt {
-    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 13px;
-    color: var(--vermillion); letter-spacing: 0.08em; padding-top: 2px;
-  }
+  .case-body dt { font-family: "SF Mono", monospace; font-size: 12px; color: var(--vermillion); letter-spacing: 0.06em; padding-top: 2px; }
   .case-body dd { margin: 0; font-size: 15px; color: var(--ink); }
-  .case-body dd.result { font-weight: 600; }
-  .case-quote {
-    margin: 18px 0 0; padding: 14px 18px; background: var(--paper-card);
-    border-left: 2px solid var(--vermillion); font-size: 14px; color: var(--ink-soft);
-    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
-  }
+  .case-body dd.result { font-weight: 700; color: var(--sage); }
+  .case-quote { margin: 18px 0 0; padding: 14px 18px; background: var(--paper-card); border-left: 2px solid var(--vermillion); font-size: 14px; color: var(--ink-soft); }
 
   /* Before / After */
   .ba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
   .ba-card { background: var(--paper-card); border: 1px solid var(--line); border-radius: 3px; padding: 26px 26px 24px; }
-  .ba-card .ba-label { font-size: 12px; color: var(--vermillion); letter-spacing: 0.08em; }
+  .ba-card .ba-label { font-size: 12px; color: var(--vermillion); letter-spacing: 0.08em; font-family: "SF Mono", monospace; }
   .ba-card h3 { font-size: 17px; margin: 8px 0 18px; line-height: 1.6; }
   .ba-row { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 10px; margin-bottom: 16px; }
   .ba-num { text-align: center; }
-  .ba-num .k { display: block; font-size: 11px; color: var(--ink-soft); letter-spacing: 0.06em; margin-bottom: 4px; }
-  .ba-num .v { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 26px; font-variant-numeric: tabular-nums; }
+  .ba-num .k { display: block; font-size: 11px; color: var(--ink-soft); letter-spacing: 0.06em; margin-bottom: 4px; font-family: "SF Mono", monospace; }
+  .ba-num .v { font-family: "SF Mono", monospace; font-size: 26px; font-variant-numeric: tabular-nums; }
   .ba-num.before .v { color: var(--ink-soft); }
-  .ba-num.after .v { color: var(--vermillion); }
+  .ba-num.after .v { color: var(--vermillion); text-shadow: 0 0 12px rgba(77,216,255,0.4); }
   .ba-arrow { color: var(--vermillion); font-size: 18px; }
-  .ba-badge {
-    display: inline-block; margin: 0 0 16px; font-size: 11.5px; color: var(--vermillion);
-    border: 1px solid var(--vermillion); padding: 3px 10px; border-radius: 980px; letter-spacing: 0.03em;
-  }
-  .ba-diff {
-    padding: 14px 16px; background: var(--paper); border-left: 2px solid var(--line);
-    font-size: 13px; color: var(--ink-soft); line-height: 1.85; margin-bottom: 10px;
-  }
-  .ba-diff .diff-label { display: block; font-size: 11px; letter-spacing: 0.08em; margin-bottom: 6px; }
+  .ba-badge { display: inline-block; margin: 0 0 16px; font-size: 11.5px; color: var(--sage); border: 1px solid var(--sage); padding: 3px 10px; border-radius: 980px; letter-spacing: 0.03em; }
+  .ba-diff { padding: 14px 16px; background: var(--paper); border-left: 2px solid var(--line); font-size: 13px; color: var(--ink-soft); line-height: 1.85; margin-bottom: 10px; }
+  .ba-diff .diff-label { display: block; font-size: 11px; letter-spacing: 0.08em; margin-bottom: 6px; font-family: "SF Mono", monospace; }
   .ba-diff.before { opacity: 0.75; }
   .ba-diff.after { border-left-color: var(--vermillion); color: var(--ink); }
   .ba-diff.after .diff-label { color: var(--vermillion); }
-  .ba-diff mark { background: rgba(182, 65, 42, 0.14); color: inherit; padding: 0 2px; border-radius: 2px; }
-  @media (prefers-color-scheme: dark) { .ba-diff mark { background: rgba(219, 106, 68, 0.22); } }
+  .ba-diff mark { background: rgba(77, 216, 255, 0.16); color: inherit; padding: 0 2px; border-radius: 2px; }
 
   /* Services */
   .services { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
-  .service-card { background: var(--paper-card); border: 1px solid var(--line); border-radius: 2px; padding: 26px 24px 22px; }
-  .service-card .num { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 13px; color: var(--ink-soft); letter-spacing: 0.08em; }
+  .service-card { background: var(--paper-card); border: 1px solid var(--line); border-radius: 2px; padding: 26px 24px 22px; position: relative; }
+  .service-card::before { content: ""; position: absolute; top: 0; left: 0; width: 24px; height: 2px; background: var(--vermillion); box-shadow: 0 0 8px var(--vermillion); }
+  .service-card .num { font-family: "SF Mono", monospace; font-size: 12px; color: var(--vermillion); letter-spacing: 0.08em; }
   .service-card h3 { font-size: 19px; margin: 10px 0 10px; }
   .service-card p { font-size: 14px; color: var(--ink-soft); margin: 0 0 16px; }
   .service-card .price { display: flex; justify-content: space-between; align-items: baseline; border-top: 1px dashed var(--line); padding-top: 12px; font-size: 13px; color: var(--ink-soft); }
-  .service-card .price strong { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 16px; color: var(--vermillion); font-variant-numeric: tabular-nums; }
+  .service-card .price strong { font-family: "SF Mono", monospace; font-size: 16px; color: var(--vermillion); font-variant-numeric: tabular-nums; }
 
   /* Trust */
-  .trust { background: var(--paper-deep); border-radius: 2px; padding: 36px 38px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
-  .trust h3 { font-size: 18px; margin: 0 0 10px; }
+  .trust { background: var(--paper-deep); border: 1px solid var(--line); border-radius: 2px; padding: 36px 38px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .trust h3 { font-size: 18px; margin: 0 0 10px; color: var(--vermillion); }
   .trust p { font-size: 14px; color: var(--ink-soft); margin: 0; }
   .trust .divider { grid-column: 1 / -1; height: 1px; background: var(--line); }
 
   /* Sample writing */
-  .sample-note {
-    font-size: 13px; color: var(--ink-soft); margin: -18px 0 32px;
-  }
+  .sample-note { font-size: 13px; color: var(--ink-soft); margin: -18px 0 32px; }
   .samples { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
-  .sample-card {
-    background: var(--paper-card); border: 1px solid var(--line); border-radius: 3px;
-    overflow: hidden; display: flex; flex-direction: column;
-  }
-  .sample-visual {
-    aspect-ratio: 16 / 9;
-    display: flex; align-items: center; justify-content: center;
-    position: relative;
-  }
-  .sample-visual svg { width: 46px; height: 46px; position: relative; z-index: 1; stroke: var(--ink); }
+  .sample-card { background: var(--paper-card); border: 1px solid var(--line); border-radius: 3px; overflow: hidden; display: flex; flex-direction: column; }
+  .sample-visual { aspect-ratio: 16 / 9; display: flex; align-items: center; justify-content: center; position: relative; background: linear-gradient(150deg, #101623, #0a0e17); }
+  .sample-visual svg { width: 46px; height: 46px; position: relative; z-index: 1; stroke: var(--vermillion); filter: drop-shadow(0 0 8px rgba(77,216,255,0.5)); }
   .sample-visual::after {
     content: ""; position: absolute; inset: 0;
     background-image: repeating-linear-gradient(var(--line-soft) 0 1px, transparent 1px 28px),
       repeating-linear-gradient(90deg, var(--line-soft) 0 1px, transparent 1px 28px);
     opacity: 0.6;
   }
-  .v-beauty { background: linear-gradient(150deg, #E9D2C9, #F3E7DC); }
-  .v-career { background: linear-gradient(150deg, #D8DEE6, #ECEFF2); }
-  .v-asset  { background: linear-gradient(150deg, #DCE2D2, #EFF2E9); }
-  .v-family { background: linear-gradient(150deg, #EAD9C4, #F5EDE0); }
-  .v-ai     { background: linear-gradient(150deg, #DCD2E6, #EEE9F2); }
-  @media (prefers-color-scheme: dark) {
-    .v-beauty { background: linear-gradient(150deg, #3A2C26, #26201B); }
-    .v-career { background: linear-gradient(150deg, #262C33, #1E211D); }
-    .v-asset  { background: linear-gradient(150deg, #2A2E22, #1F211A); }
-    .v-family { background: linear-gradient(150deg, #362B1E, #26201A); }
-    .v-ai     { background: linear-gradient(150deg, #2E2838, #211E27); }
-  }
-
-  .sample-card.featured { border-color: var(--vermillion); }
-  .sample-card .badge {
-    display: inline-flex; align-items: center; gap: 5px; align-self: flex-start;
-    font-size: 11px; color: var(--vermillion); border: 1px solid var(--vermillion);
-    padding: 3px 9px; border-radius: 980px; letter-spacing: 0.03em; margin-bottom: 2px;
-  }
-
+  .sample-card.featured { border-color: var(--vermillion); box-shadow: 0 0 20px -6px rgba(77,216,255,0.3); }
+  .sample-card .badge { display: inline-flex; align-items: center; gap: 5px; align-self: flex-start; font-size: 11px; color: var(--sage); border: 1px solid var(--sage); padding: 3px 9px; border-radius: 980px; letter-spacing: 0.03em; margin-bottom: 2px; }
   .sample-body { padding: 22px 24px 22px; display: flex; flex-direction: column; gap: 10px; }
-  .sample-card .genre {
-    font-size: 12px; color: var(--vermillion); letter-spacing: 0.06em;
-  }
+  .sample-card .genre { font-size: 12px; color: var(--vermillion); letter-spacing: 0.06em; font-family: "SF Mono", monospace; }
   .sample-card h3 { font-size: 16.5px; line-height: 1.5; margin: 0; }
-  .sample-card blockquote {
-    margin: 4px 0 0; padding: 12px 14px; background: var(--paper);
-    border-left: 2px solid var(--line); font-size: 13.5px; color: var(--ink-soft);
-    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; line-height: 1.9;
-  }
-  .sample-card .meta { font-size: 12px; color: var(--ink-soft); margin-top: auto; }
+  .sample-card blockquote { margin: 4px 0 0; padding: 12px 14px; background: var(--paper); border-left: 2px solid var(--line); font-size: 13.5px; color: var(--ink-soft); line-height: 1.9; }
+  .sample-card .meta { font-size: 12px; color: var(--ink-soft); margin-top: auto; font-family: "SF Mono", monospace; }
 
   .table-scroll { overflow-x: auto; }
   table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 480px; }
   th, td { text-align: left; padding: 13px 16px; border-bottom: 1px solid var(--line); }
-  th { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; color: var(--ink-soft); font-weight: 600; font-size: 12.5px; letter-spacing: 0.05em; }
-  td.amount { font-variant-numeric: tabular-nums; color: var(--vermillion); font-weight: 600; }
+  th { font-family: "SF Mono", monospace; color: var(--ink-soft); font-weight: 600; font-size: 12px; letter-spacing: 0.05em; }
+  td.amount { font-variant-numeric: tabular-nums; color: var(--vermillion); font-weight: 700; }
 
-  /* Plan cards (松竹梅) */
+  /* Plan cards */
   .plan-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 40px; }
   .plan-card { position: relative; background: var(--paper-card); border: 1px solid var(--line); border-radius: 2px; padding: 28px 22px 22px; }
-  .plan-card.featured { border-color: var(--vermillion); }
-  .plan-badge {
-    position: absolute; top: -12px; right: 20px; background: var(--vermillion); color: #FBF6EC;
-    font-size: 11px; padding: 4px 11px; border-radius: 980px; letter-spacing: 0.04em; font-weight: 600;
-  }
-  .plan-card .tag { font-size: 12px; color: var(--ink-soft); letter-spacing: 0.06em; }
+  .plan-card.featured { border-color: var(--vermillion); box-shadow: 0 0 20px -6px rgba(77,216,255,0.3); }
+  .plan-badge { position: absolute; top: -12px; right: 20px; background: var(--vermillion); color: #06131C; font-size: 11px; padding: 4px 11px; border-radius: 980px; letter-spacing: 0.04em; font-weight: 700; }
+  .plan-card .tag { font-size: 12px; color: var(--ink-soft); letter-spacing: 0.06em; font-family: "SF Mono", monospace; }
   .plan-card h3 { font-size: 19px; margin: 6px 0 2px; }
-  .plan-card .price { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 23px; color: var(--vermillion); margin: 4px 0 12px; font-variant-numeric: tabular-nums; }
+  .plan-card .price { font-family: "SF Mono", monospace; font-size: 23px; color: var(--vermillion); margin: 4px 0 12px; font-variant-numeric: tabular-nums; }
   .plan-card .for { font-size: 12.5px; color: var(--ink-soft); margin: 0 0 14px; padding-bottom: 14px; border-bottom: 1px dashed var(--line); }
   .plan-card ul { margin: 0; padding-left: 18px; font-size: 13.5px; color: var(--ink-soft); line-height: 1.9; }
 
   .monthly-plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 8px 0 36px; }
-  .monthly-card { background: var(--paper-deep); border-radius: 2px; padding: 20px 20px 18px; }
-  .monthly-card .tag { font-size: 12px; color: var(--vermillion); letter-spacing: 0.04em; }
-  .monthly-card h4 { font-size: 15.5px; margin: 6px 0 8px; font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; }
+  .monthly-card { background: var(--paper-deep); border: 1px solid var(--line); border-radius: 2px; padding: 20px 20px 18px; }
+  .monthly-card .tag { font-size: 12px; color: var(--vermillion); letter-spacing: 0.04em; font-family: "SF Mono", monospace; }
+  .monthly-card h4 { font-size: 15.5px; margin: 6px 0 8px; }
   .monthly-card .was { font-size: 12px; color: var(--ink-soft); text-decoration: line-through; opacity: 0.7; }
-  .monthly-card .now { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 19px; color: var(--vermillion); margin: 2px 0 8px; }
+  .monthly-card .now { font-family: "SF Mono", monospace; font-size: 19px; color: var(--vermillion); margin: 2px 0 8px; }
   .monthly-card .perk { font-size: 12px; color: var(--ink-soft); }
 
   .option-list { display: flex; flex-wrap: wrap; gap: 10px 22px; font-size: 13.5px; color: var(--ink-soft); margin-top: 4px; }
   .option-list span strong { color: var(--vermillion); font-variant-numeric: tabular-nums; }
 
-  .subhead { font-size: 13px; letter-spacing: 0.06em; color: var(--ink-soft); margin: 0 0 14px; font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; }
+  .subhead { font-size: 13px; letter-spacing: 0.06em; color: var(--vermillion); margin: 0 0 14px; font-family: "SF Mono", monospace; }
 
-  .final { text-align: left; background: var(--ink); color: var(--paper); border-radius: 2px; padding: 52px 44px; }
-  @media (prefers-color-scheme: dark) { .final { background: #0F0D09; color: var(--ink); } }
+  .final { text-align: left; background: linear-gradient(160deg, #0D1626, #06090F); border: 1px solid var(--line); color: var(--ink); border-radius: 2px; padding: 52px 44px; }
   .final h2 { font-size: clamp(21px, 2.8vw, 28px); margin: 0 0 12px; color: inherit; }
   .final p { max-width: 48ch; opacity: 0.82; margin: 0 0 26px; font-size: 14.5px; }
 
   .contact-form { display: flex; flex-direction: column; gap: 16px; max-width: 480px; }
   .contact-form .field { display: flex; flex-direction: column; gap: 6px; }
-  .contact-form label { font-size: 12.5px; letter-spacing: 0.04em; opacity: 0.75; }
+  .contact-form label { font-size: 12.5px; letter-spacing: 0.04em; opacity: 0.75; font-family: "SF Mono", monospace; }
   .contact-form input, .contact-form textarea {
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    border-radius: 2px;
-    padding: 11px 13px;
-    font-size: 14.5px;
-    color: inherit;
-    font-family: inherit;
-    outline: none;
+    background: rgba(77, 216, 255, 0.05);
+    border: 1px solid var(--line);
+    border-radius: 2px; padding: 11px 13px; font-size: 14.5px; color: inherit; font-family: inherit; outline: none;
     transition: border-color 0.15s ease;
   }
-  @media (prefers-color-scheme: dark) {
-    .contact-form input, .contact-form textarea { background: rgba(0, 0, 0, 0.25); border-color: rgba(237, 230, 210, 0.2); }
-  }
   .contact-form input::placeholder, .contact-form textarea::placeholder { color: currentColor; opacity: 0.4; }
-  .contact-form input:focus, .contact-form textarea:focus { border-color: var(--vermillion-soft); }
+  .contact-form input:focus, .contact-form textarea:focus { border-color: var(--vermillion); box-shadow: 0 0 0 3px rgba(77,216,255,0.15); }
   .contact-form textarea { resize: vertical; min-height: 100px; }
   .contact-form button { align-self: flex-start; }
   .contact-form .honey { position: absolute; left: -9999px; }
   .form-status { font-size: 13.5px; margin-top: 4px; display: none; }
   .form-status.show { display: block; }
-  .form-status.ok { color: #8FA37F; }
-  .form-status.err { color: var(--vermillion-soft); }
+  .form-status.ok { color: var(--sage); }
+  .form-status.err { color: #FF6B6B; }
 
-  footer { padding: 36px 0 56px; font-size: 12.5px; color: var(--ink-soft); }
+  footer { padding: 36px 0 56px; font-size: 12.5px; color: var(--ink-soft); font-family: "SF Mono", monospace; }
   .footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
 
   @media (max-width: 700px) {
@@ -368,7 +288,7 @@
 
 <nav>
   <div class="nav-inner">
-    <a class="nav-brand" href="#top">わたちゃんWorks</a>
+    <a class="nav-brand" href="#top">WATACHAN.WORKS</a>
     <div class="nav-links">
       <a href="#cases">制作事例</a>
       <a href="#before-after">Before/After</a>
@@ -381,8 +301,9 @@
 </nav>
 
 <header class="hero" id="top">
+  <div class="hero-grid" aria-hidden="true"></div>
   <div class="wrap hero-inner">
-    <span class="eyebrow reveal">わたちゃんWorks</span>
+    <span class="eyebrow reveal">WATACHAN WORKS</span>
     <h1 class="reveal">あなたのサービスの魅力を、<br /><em>言葉と形</em>に変える。</h1>
     <p class="lede reveal">個人事業主・小規模店舗・クリエイターのための、LP・記事・SNS導線制作。AIで速く、人の目で確かに仕上げます。</p>
     <div class="cta-row reveal">
@@ -395,7 +316,7 @@
 <section class="story">
   <div class="wrap story-inner">
     <div class="story-label reveal">
-      代表者より
+      REPRESENTATIVE
       <div class="seal-mini" aria-hidden="true">はじ<br />まり</div>
     </div>
     <div class="reveal">
@@ -518,37 +439,37 @@
     </div>
     <div class="services stagger">
       <div class="service-card reveal">
-        <span class="num">壱</span>
+        <span class="num">01</span>
         <h3>LP制作・文章</h3>
         <p>サービスや商品の魅力が伝わる流れを設計し、問い合わせ・申し込みにつながる文章を仕上げます。構成案の提示から丁寧に進めます。</p>
         <div class="price"><span>基本料金の目安</span><strong>15,000円〜</strong></div>
       </div>
       <div class="service-card reveal">
-        <span class="num">弐</span>
+        <span class="num">02</span>
         <h3>SEO記事・ブログ</h3>
         <p>ターゲットキーワードと読者像を確認したうえで、構成の設計から丁寧に取り組み、読みやすく内容のある記事をお届けします。</p>
         <div class="price"><span>基本料金の目安</span><strong>5,000円〜</strong></div>
       </div>
       <div class="service-card reveal">
-        <span class="num">参</span>
+        <span class="num">03</span>
         <h3>SNS導線設計</h3>
         <p>Instagram・Xのプロフィール文と、問い合わせや購入につながるSNS導線を一緒に整えます。発信コンセプトの整理も承ります。</p>
         <div class="price"><span>基本料金の目安</span><strong>8,000円〜</strong></div>
       </div>
       <div class="service-card reveal">
-        <span class="num">四</span>
+        <span class="num">04</span>
         <h3>YouTube台本・シナリオ</h3>
         <p>視聴者に届きやすい構成と言葉の流れを考え、冒頭のフックから最後のCTAまで一貫した台本を作成します。</p>
         <div class="price"><span>基本料金の目安</span><strong>ご相談</strong></div>
       </div>
       <div class="service-card reveal">
-        <span class="num">伍</span>
+        <span class="num">05</span>
         <h3>HP制作（簡易Webサイト・ツール）</h3>
         <p>Node.js・HTML/CSSを用いた簡易Webサイト・Webツールの制作に対応しています。現在は自主制作（独自のAI活用ダッシュボード開発）を通じて対応範囲を広げている段階です。</p>
         <div class="price"><span>基本料金の目安</span><strong>ご相談</strong></div>
       </div>
       <div class="service-card reveal">
-        <span class="num">六</span>
+        <span class="num">06</span>
         <h3>AI画像生成</h3>
         <p>ChatGPT等を活用した、note・Instagram向けビジュアル制作に対応しています。記事のアイキャッチ画像などで実践を重ねています。</p>
         <div class="price"><span>基本料金の目安</span><strong>ご相談</strong></div>
@@ -566,7 +487,7 @@
     </div>
     <div class="samples stagger">
       <div class="sample-card featured reveal">
-        <div class="sample-visual v-ai">
+        <div class="sample-visual">
           <svg viewBox="0 0 48 48" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
             <path d="M24 8 L27 20 L39 23 L27 26 L24 38 L21 26 L9 23 L21 20 Z"></path>
           </svg>
@@ -580,7 +501,7 @@
         </div>
       </div>
       <div class="sample-card featured reveal">
-        <div class="sample-visual v-ai">
+        <div class="sample-visual">
           <svg viewBox="0 0 48 48" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
             <path d="M24 8 L27 20 L39 23 L27 26 L24 38 L21 26 L9 23 L21 20 Z"></path>
           </svg>
@@ -594,7 +515,7 @@
         </div>
       </div>
       <div class="sample-card reveal">
-        <div class="sample-visual v-beauty">
+        <div class="sample-visual">
           <svg viewBox="0 0 48 48" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
             <rect x="18" y="6" width="12" height="8" rx="2"></rect>
             <path d="M20 14 L16 22 V40 a2 2 0 0 0 2 2 h12 a2 2 0 0 0 2-2 V22 L28 14"></path>
@@ -609,7 +530,7 @@
         </div>
       </div>
       <div class="sample-card reveal">
-        <div class="sample-visual v-career">
+        <div class="sample-visual">
           <svg viewBox="0 0 48 48" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
             <rect x="8" y="18" width="32" height="20" rx="2"></rect>
             <path d="M17 18 v-4 a2 2 0 0 1 2-2 h10 a2 2 0 0 1 2 2 v4"></path>
@@ -625,7 +546,7 @@
         </div>
       </div>
       <div class="sample-card reveal">
-        <div class="sample-visual v-asset">
+        <div class="sample-visual">
           <svg viewBox="0 0 48 48" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
             <ellipse cx="24" cy="34" rx="10" ry="3.5"></ellipse>
             <path d="M14 34 V27"></path>
@@ -647,7 +568,7 @@
         </div>
       </div>
       <div class="sample-card reveal">
-        <div class="sample-visual v-family">
+        <div class="sample-visual">
           <svg viewBox="0 0 48 48" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
             <path d="M24 38 C14 31 8 25 8 18.5 C8 13.5 12 10 16.5 10 C19.8 10 22.4 11.8 24 14.4 C25.6 11.8 28.2 10 31.5 10 C36 10 40 13.5 40 18.5 C40 25 34 31 24 38 Z"></path>
           </svg>
@@ -796,7 +717,7 @@
 
       <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="1663e859-395f-426f-b2ee-bc2f1cb81d98">
-        <input type="hidden" name="subject" value="【わたちゃんWorks】LPからのお問い合わせ">
+        <input type="hidden" name="subject" value="【わたちゃんWorks】LPからのお問い合わせ（サイバー版）">
         <input type="checkbox" name="botcheck" class="honey" tabindex="-1" autocomplete="off">
 
         <div class="field">

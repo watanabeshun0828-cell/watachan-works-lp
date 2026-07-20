@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>petite douceur（プティ・ドゥスール）｜制作サンプル・わたちゃんWorks</title>
+<style>
+  :root {
+    --ink: #4A342A;
+    --ink-soft: #8A7264;
+    --paper: #FBF3EA;
+    --paper-deep: #F3E4D6;
+    --paper-card: #FFFAF4;
+    --accent: #C97B4A;
+    --accent-soft: #E0A87A;
+    --sage: #8A9A6B;
+    --line: rgba(74, 52, 42, 0.14);
+    --line-soft: rgba(74, 52, 42, 0.07);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #F1E4D8;
+      --ink-soft: #C9B4A3;
+      --paper: #241A14;
+      --paper-deep: #2E2119;
+      --paper-card: #2A1E17;
+      --accent: #E29A66;
+      --accent-soft: #C97B4A;
+      --sage: #A3B588;
+      --line: rgba(241, 228, 216, 0.14);
+      --line-soft: rgba(241, 228, 216, 0.06);
+    }
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+    line-height: 1.9; -webkit-font-smoothing: antialiased; letter-spacing: 0.01em;
+  }
+  h1, h2, h3, .serif { font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif; font-weight: 600; }
+  a { color: inherit; }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 0 26px; }
+  .sample-badge {
+    position: fixed; top: 14px; right: 14px; z-index: 200;
+    background: var(--ink); color: var(--paper); font-size: 11.5px; letter-spacing: 0.06em;
+    padding: 7px 14px; border-radius: 980px; text-decoration: none; opacity: 0.88;
+  }
+  .eyebrow { display: inline-flex; align-items: center; gap: 0.6em; font-size: 12.5px; letter-spacing: 0.2em; color: var(--accent); font-weight: 600; }
+  .eyebrow::before { content: ""; width: 18px; height: 1px; background: var(--accent); display: inline-block; }
+
+  .hero { position: relative; padding: 100px 0 70px; text-align: center; background: linear-gradient(180deg, var(--paper-deep), var(--paper)); }
+  .hero .wrap { display: flex; flex-direction: column; align-items: center; }
+  .hero h1 { font-size: clamp(30px, 5.4vw, 46px); line-height: 1.7; margin: 20px 0 16px; }
+  .hero p.lede { max-width: 44ch; color: var(--ink-soft); font-size: 15.5px; margin-bottom: 30px; }
+  .hero-photo {
+    width: 100%; max-width: 640px; aspect-ratio: 16/9; border-radius: 6px;
+    background: linear-gradient(150deg, #E9D2C9, #F3E7DC);
+    display: flex; align-items: center; justify-content: center; overflow: hidden;
+    color: var(--ink-soft); font-size: 13px; letter-spacing: 0.04em;
+  }
+  .hero-photo img, .story-photo img, .menu-photo-wide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  @media (prefers-color-scheme: dark) { .hero-photo { background: linear-gradient(150deg, #3A2C26, #26201B); } }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: 980px; font-size: 14.5px; font-weight: 600; letter-spacing: 0.04em; text-decoration: none; background: var(--accent); color: #FFF9F2; margin-top: 26px; }
+
+  section { padding: 70px 0; }
+  section + section { border-top: 1px solid var(--line); }
+  .section-head { text-align: center; max-width: 56ch; margin: 0 auto 40px; }
+  .section-head h2 { font-size: clamp(22px, 3vw, 28px); margin: 10px 0 0; }
+
+  .story { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+  .story-photo { aspect-ratio: 4/3; border-radius: 6px; background: linear-gradient(150deg, #DCE2D2, #F3E7DC); }
+  @media (prefers-color-scheme: dark) { .story-photo { background: linear-gradient(150deg, #332821, #26201B); } }
+  .story p { font-size: 15px; color: var(--ink-soft); margin: 0 0 14px; }
+  .story .signoff { margin-top: 18px; font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 14px; }
+
+  .menu-photo-wide { width: 100%; aspect-ratio: 16/10; border-radius: 6px; overflow: hidden; margin-bottom: 30px; background: linear-gradient(150deg, #EAD9C4, #F5EDE0); }
+  @media (prefers-color-scheme: dark) { .menu-photo-wide { background: linear-gradient(150deg, #362B1E, #26201A); } }
+  .menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .menu-card { background: var(--paper-card); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+  .menu-body { padding: 18px 18px 20px; }
+  .menu-body h3 { font-size: 16px; margin: 0 0 6px; }
+  .menu-body p { font-size: 13px; color: var(--ink-soft); margin: 0; }
+  .menu-body .price { display: block; margin-top: 8px; font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; color: var(--accent); font-size: 15px; }
+
+  .voice { background: var(--paper-deep); }
+  .voice-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .voice-card { background: var(--paper-card); border-radius: 6px; padding: 24px 22px; border-left: 3px solid var(--accent); }
+  .voice-card p { font-size: 14px; color: var(--ink-soft); margin: 0 0 10px; }
+  .voice-card .who { font-size: 12.5px; color: var(--ink); }
+
+  .info-grid { display: grid; grid-template-columns: 120px 1fr; gap: 12px 20px; max-width: 480px; margin: 0 auto; font-size: 14.5px; }
+  .info-grid dt { color: var(--accent); font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; }
+  .info-grid dd { margin: 0; color: var(--ink-soft); }
+
+  .final { text-align: center; background: var(--ink); color: var(--paper); border-radius: 8px; padding: 56px 40px; }
+  .final h2 { color: inherit; font-size: clamp(22px, 3vw, 28px); margin: 0 0 14px; }
+  .final p { opacity: 0.82; font-size: 14.5px; margin: 0 auto; max-width: 44ch; }
+  .final .btn { background: var(--accent); color: #241A14; }
+
+  footer { padding: 30px 0 50px; text-align: center; font-size: 12px; color: var(--ink-soft); }
+
+  @media (max-width: 700px) {
+    .story { grid-template-columns: 1fr; }
+    .menu-grid { grid-template-columns: 1fr 1fr; }
+    .voice-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<a class="sample-badge" href="index.html">← サンプル集へ戻る</a>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">SAMPLE LP — petite douceur</span>
+    <h1>今日も、小さな窯から。<br />ゆっくり、丁寧に。</h1>
+    <p class="lede">家族3人で営む、町の小さな焼き菓子店。毎朝5時から仕込む、変わらない味をお届けします。</p>
+    <div class="hero-photo"><img src="img/bakery-hero.png" alt="お店の外観とショーケースに並ぶ焼き菓子"></div>
+    <a class="btn" href="#story">お店の話を読む</a>
+  </div>
+</header>
+
+<section id="story">
+  <div class="wrap story">
+    <div class="story-photo"><img src="img/bakery-kitchen.png" alt="厨房で仕込みをする様子"></div>
+    <div>
+      <span class="eyebrow">お店について</span>
+      <h2>「毎日食べても飽きない」を、<br />いちばん大事にしています。</h2>
+      <p>祖母の代から受け継いだレシピを、少しずつ今の味に整えながら焼いています。特別な日のためのお菓子ではなく、「今日も食べたいな」と思ってもらえる、日常のおやつでありたい。</p>
+      <p>使う材料はできるだけシンプルに。近所の牛乳屋さんの牛乳、地元の農家さんの卵。派手さはありませんが、毎日通いたくなるお店を、家族3人でこつこつ続けています。</p>
+      <p class="signoff">petite douceur（プティ・ドゥスール）より</p>
+    </div>
+  </div>
+</section>
+
+<section id="menu">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">人気のお菓子</span>
+      <h2>定番の3つです。</h2>
+    </div>
+    <div class="menu-photo-wide"><img src="img/bakery-products.png" alt="焼き菓子とパンの盛り合わせ"></div>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <div class="menu-body">
+          <h3>バターサンド</h3>
+          <p>発酵バターとほろ苦キャラメルの、シンプルな組み合わせ。</p>
+          <span class="price">1個 320円</span>
+        </div>
+      </div>
+      <div class="menu-card">
+        <div class="menu-body">
+          <h3>季節の焼き菓子セット</h3>
+          <p>その時期の果物や素材を使った、5種類の詰め合わせ。</p>
+          <span class="price">1箱 1,480円</span>
+        </div>
+      </div>
+      <div class="menu-card">
+        <div class="menu-body">
+          <h3>毎日の食パン</h3>
+          <p>朝食にちょうどいい、軽やかな口どけの角食パン。</p>
+          <span class="price">1斤 480円</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="voice">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">お客様の声</span>
+      <h2>近所の方に、支えられています。</h2>
+    </div>
+    <div class="voice-grid">
+      <div class="voice-card">
+        <p>「子どもが生まれてから、毎週末に買いに行くのが楽しみになりました。素朴な味が、逆に落ち着きます。」</p>
+        <span class="who">近隣にお住まいの方</span>
+      </div>
+      <div class="voice-card">
+        <p>「甘すぎないところが好きで、朝ごはんによく買います。店員さんの雰囲気も、いつも温かいです。」</p>
+        <span class="who">常連のお客様</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="info">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">アクセス</span>
+      <h2>お店の情報</h2>
+    </div>
+    <dl class="info-grid">
+      <dt>営業時間</dt><dd>8:00〜18:00（火曜定休）</dd>
+      <dt>場所</dt><dd>◯◯県◯◯市◯◯町 1-2-3</dd>
+      <dt>電話</dt><dd>000-0000-0000</dd>
+      <dt>SNS</dt><dd>Instagram：@petite_douceur（架空）</dd>
+    </dl>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="final">
+      <h2>今日焼きあがった分だけ、<br />店頭に並びます。</h2>
+      <p>ご予約も承っています。お気軽にお問い合わせください。</p>
+      <a class="btn" href="#">お問い合わせ（サンプルのためリンク先なし）</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  ※このページはわたちゃんWorksの制作サンプルです。架空の店舗を想定した自主制作物であり、実在のお店ではありません。
+</footer>
+
+</body>
+</html>

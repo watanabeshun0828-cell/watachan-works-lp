@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>制作サンプル集｜わたちゃんWorks</title>
+<style>
+  :root {
+    --ink: #1B2340;
+    --ink-soft: #5A6180;
+    --paper: #F1ECDD;
+    --paper-card: #F8F4E9;
+    --vermillion: #B6412A;
+    --line: rgba(27, 35, 64, 0.16);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #EDE6D2;
+      --ink-soft: #B7AF97;
+      --paper: #1A1712;
+      --paper-card: #221D16;
+      --vermillion: #DB6A44;
+      --line: rgba(237, 230, 210, 0.16);
+    }
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
+    line-height: 1.85; -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 80px 26px 100px; }
+  .eyebrow { font-size: 12.5px; letter-spacing: 0.2em; color: var(--vermillion); font-weight: 600; }
+  h1 { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: clamp(26px, 4vw, 36px); margin: 14px 0 16px; line-height: 1.6; }
+  .lede { color: var(--ink-soft); font-size: 15.5px; max-width: 56ch; margin-bottom: 56px; }
+  .back { display: inline-block; margin-bottom: 28px; font-size: 13px; color: var(--ink-soft); text-decoration: none; }
+  .back:hover { color: var(--vermillion); }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .card {
+    background: var(--paper-card); border: 1px solid var(--line); border-radius: 4px;
+    overflow: hidden; text-decoration: none; color: inherit; display: flex; flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 14px 30px -18px rgba(27,35,64,0.35); }
+  .card-visual { aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; font-size: 13px; letter-spacing: 0.06em; color: var(--ink-soft); }
+  .v-bakery { background: linear-gradient(150deg, #E9D2C9, #F3E7DC); }
+  .v-natural { background: linear-gradient(150deg, #DCE2D2, #EFF2E9); }
+  .v-cyber { background: linear-gradient(150deg, #101623, #090C14); color: #4DD8FF; }
+  @media (prefers-color-scheme: dark) {
+    .v-bakery { background: linear-gradient(150deg, #3A2C26, #26201B); }
+    .v-natural { background: linear-gradient(150deg, #2A2E22, #1F211A); }
+  }
+  .card-body { padding: 20px 22px 24px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+  .card-tag { font-size: 11.5px; color: var(--vermillion); letter-spacing: 0.06em; }
+  .card h3 { font-size: 17px; margin: 0; line-height: 1.5; }
+  .card p { font-size: 13.5px; color: var(--ink-soft); margin: 0; }
+  .card .go { margin-top: auto; font-size: 12.5px; color: var(--vermillion); padding-top: 10px; }
+  @media (max-width: 720px) { .cards { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../index.html">← わたちゃんWorks トップへ戻る</a>
+    <span class="eyebrow">制作サンプル集</span>
+    <h1>雰囲気の違うLPも、<br />こんな風に作れます。</h1>
+    <p class="lede">業種・ブランドの世界観に合わせて、デザインのトーンから設計します。以下はすべて架空のクライアント様を想定した、スキル研鑽のための自主制作サンプルです。実在の企業様との受注実績ではありません。</p>
+
+    <div class="cards">
+      <a class="card" href="bakery.html">
+        <div class="card-visual v-bakery">🍞</div>
+        <div class="card-body">
+          <span class="card-tag">家族経営・温かみ</span>
+          <h3>焼き菓子店「petite douceur」</h3>
+          <p>家族経営の小さなお店の、あたたかい空気感を伝えるLP。</p>
+          <span class="go">サンプルを見る →</span>
+        </div>
+      </a>
+      <a class="card" href="natural.html">
+        <div class="card-visual v-natural">🌿</div>
+        <div class="card-body">
+          <span class="card-tag">誠実・信頼</span>
+          <h3>無添加ブランド「て、しごと」</h3>
+          <p>作り手の誠実さと、素材へのこだわりが伝わるLP。</p>
+          <span class="go">サンプルを見る →</span>
+        </div>
+      </a>
+      <a class="card" href="cyber.html">
+        <div class="card-visual v-cyber">⌗</div>
+        <div class="card-body">
+          <span class="card-tag">近未来・テック</span>
+          <h3>AI活用サービスのLP</h3>
+          <p>電脳空間をイメージした、近未来感のあるデザイン。</p>
+          <span class="go">サンプルを見る →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
