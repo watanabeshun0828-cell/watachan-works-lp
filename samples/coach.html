@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RE:START coaching｜制作サンプル・わたちゃんWorks</title>
+<style>
+  :root {
+    --ink: #33302A; --ink-soft: #857D70; --paper: #F7F4EE; --paper-deep: #EEE8DD;
+    --paper-card: #FFFDF9; --accent: #A8763E; --accent-soft: #C99A5E;
+    --line: rgba(51, 48, 42, 0.13); --line-soft: rgba(51, 48, 42, 0.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #F0EBE0; --ink-soft: #C2B7A3; --paper: #1A1712; --paper-deep: #221D16;
+      --paper-card: #1E1A14; --accent: #D3A566; --accent-soft: #A8763E;
+      --line: rgba(240, 235, 224, 0.13); --line-soft: rgba(240, 235, 224, 0.06);
+    }
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+    line-height: 1.95; -webkit-font-smoothing: antialiased; letter-spacing: 0.015em;
+  }
+  h1, h2, h3 { font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif; font-weight: 600; }
+  a { color: inherit; }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 0 26px; }
+  .sample-badge {
+    position: fixed; top: 14px; right: 14px; z-index: 200;
+    background: var(--ink); color: var(--paper); font-size: 11.5px; letter-spacing: 0.06em;
+    padding: 7px 14px; border-radius: 980px; text-decoration: none; opacity: 0.88;
+  }
+  .eyebrow { display: inline-flex; align-items: center; gap: 0.6em; font-size: 12px; letter-spacing: 0.24em; color: var(--accent); font-weight: 600; }
+  .eyebrow::before { content: ""; width: 16px; height: 1px; background: var(--accent); display: inline-block; }
+
+  .wrap.narrow { max-width: 580px; }
+  .hero { padding: 140px 0 80px; }
+  .hero h1 { font-size: clamp(26px, 4.2vw, 38px); line-height: 1.9; margin: 26px 0 22px; }
+  .hero p.lede { max-width: 42ch; color: var(--ink-soft); font-size: 15px; margin-bottom: 0; }
+  .hero-photo { width: 100%; aspect-ratio: 16/9; border-radius: 4px; overflow: hidden; background: linear-gradient(150deg, #EAD9C4, #F5EDE0); margin-top: 40px; }
+  .hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 30px; border-radius: 2px; font-size: 13.5px; font-weight: 600; text-decoration: none; background: var(--accent); color: #FBF6EC; }
+
+  section { padding: 90px 0; }
+  .divider { border: none; border-top: 1px solid var(--line); margin: 0; }
+  .section-head { margin-bottom: 40px; }
+  .section-head h2 { font-size: clamp(20px, 2.6vw, 25px); margin: 10px 0 0; line-height: 1.7; }
+
+  .belief-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 30px; }
+  .belief-list li { padding-left: 22px; border-left: 1.5px solid var(--accent); }
+  .belief-list h3 { font-size: 15.5px; margin: 0 0 6px; }
+  .belief-list p { font-size: 13.5px; color: var(--ink-soft); margin: 0; }
+
+  .story p { font-size: 14.5px; color: var(--ink-soft); margin: 0 0 16px; }
+  .story .signoff { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 13px; margin-top: 14px; }
+
+  .program-list { list-style: none; padding: 0; margin: 0; }
+  .program-list li { display: flex; justify-content: space-between; align-items: baseline; padding: 18px 0; border-bottom: 1px dashed var(--line); gap: 16px; }
+  .program-list li:first-child { padding-top: 0; }
+  .program-list h3 { font-size: 15px; margin: 0 0 4px; }
+  .program-list p { font-size: 12.5px; color: var(--ink-soft); margin: 0; }
+  .program-list .price { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; color: var(--accent); font-size: 15px; white-space: nowrap; }
+
+  .voice-list { display: flex; flex-direction: column; gap: 26px; }
+  .voice-list p { font-size: 14px; color: var(--ink-soft); margin: 0 0 8px; font-style: italic; }
+  .voice-list .who { font-size: 12px; color: var(--accent); font-style: normal; }
+
+  .final { padding: 0; }
+  .final h2 { font-size: clamp(21px, 2.8vw, 27px); margin: 12px 0 14px; }
+  .final p { color: var(--ink-soft); font-size: 14px; max-width: 40ch; margin: 0 0 26px; }
+
+  footer { padding: 40px 0 60px; font-size: 12px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+
+<a class="sample-badge" href="index.html">← サンプル集へ戻る</a>
+
+<header class="hero">
+  <div class="wrap narrow">
+    <span class="eyebrow">SAMPLE LP — MINIMAL</span>
+    <h1>迷いながらでいい。<br />一緒に、次の一歩を決めましょう。</h1>
+    <p class="lede">キャリア・働き方に迷う会社員のための、伴走型パーソナルコーチング「RE:START coaching」。</p>
+  </div>
+  <div class="wrap">
+    <div class="hero-photo"><img src="img/coach-hero.png" alt="朝の書斎でノートとコーヒーのある静かな時間"></div>
+  </div>
+</header>
+
+<hr class="divider">
+
+<section id="belief">
+  <div class="wrap narrow">
+    <div class="section-head">
+      <span class="eyebrow">大切にしていること</span>
+      <h2>答えは、外にはありません。</h2>
+    </div>
+    <ul class="belief-list">
+      <li>
+        <h3>教えない、引き出す</h3>
+        <p>正解を提示するのではなく、対話を通じてご自身の答えを一緒に見つけます。</p>
+      </li>
+      <li>
+        <h3>否定しない</h3>
+        <p>今の迷いや弱さも、まず受け止めることから始めます。</p>
+      </li>
+      <li>
+        <h3>小さな一歩を大事に</h3>
+        <p>大きな決断より、今週できる小さな一歩の積み重ねを重視します。</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section class="story">
+  <div class="wrap narrow">
+    <span class="eyebrow">コーチより</span>
+    <h2 style="font-size:21px;margin:10px 0 20px;line-height:1.7;">迷うことは、悪いことではありません。</h2>
+    <p>「このままでいいのか」という迷いは、変化のはじまりだと思っています。焦って答えを出す必要はなく、まずは自分の中にある違和感を、言葉にしていくところから始めましょう。</p>
+    <p>会社員として働きながらキャリアに迷った経験があるからこそ、寄り添える伴走の形があると考えています。</p>
+    <p class="signoff">RE:START coaching より</p>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="program">
+  <div class="wrap narrow">
+    <div class="section-head">
+      <span class="eyebrow">プログラム</span>
+      <h2>3つのコースをご用意しています。</h2>
+    </div>
+    <ul class="program-list">
+      <li>
+        <div><h3>単発セッション</h3><p>まずは話してみたい方向けの60分。</p></div>
+        <span class="price">¥8,000</span>
+      </li>
+      <li>
+        <div><h3>3ヶ月伴走プログラム</h3><p>月2回のセッションで、じっくり方向性を整理します。</p></div>
+        <span class="price">¥98,000</span>
+      </li>
+      <li>
+        <div><h3>6ヶ月じっくりプログラム</h3><p>キャリアの転機に、腰を据えて取り組みたい方向け。</p></div>
+        <span class="price">¥178,000</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="voice">
+  <div class="wrap narrow">
+    <div class="section-head">
+      <span class="eyebrow">お客様の声</span>
+      <h2>受けてくださった方々より。</h2>
+    </div>
+    <div class="voice-list">
+      <div>
+        <p>「答えを与えられるのではなく、自分で気づけたことに一番の価値がありました。焦らず進めたのも良かったです。」</p>
+        <span class="who">30代・会社員の方</span>
+      </div>
+      <div>
+        <p>「否定されない安心感の中で、初めて本音を話せた気がします。小さな一歩から、実際に行動が変わりました。」</p>
+        <span class="who">40代・会社員の方</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section id="contact">
+  <div class="wrap narrow">
+    <div class="final">
+      <span class="eyebrow">お問い合わせ</span>
+      <h2>まずは、30分の無料相談から。</h2>
+      <p>「コーチングが自分に合うか分からない」という方も、お気軽にご相談ください。</p>
+      <a class="btn" href="#">無料相談を申し込む（サンプルのためリンク先なし）</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap narrow">
+    ※このページはわたちゃんWorksの制作サンプルです。架空のサービスを想定した自主制作物であり、実在の事業者ではありません。
+  </div>
+</footer>
+
+</body>
+</html>

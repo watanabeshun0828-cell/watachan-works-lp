@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>経営コンサルティング「みちしるべ経営パートナーズ」｜制作サンプル・わたちゃんWorks</title>
+<style>
+  :root {
+    --ink: #1C2733; --ink-soft: #5C6B7A; --paper: #F4F5F3; --paper-deep: #E8EAE5;
+    --paper-card: #FFFFFF; --accent: #B08D3E; --accent-soft: #C9A860; --navy: #1A2F4A;
+    --line: rgba(28, 39, 51, 0.13); --line-soft: rgba(28, 39, 51, 0.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #E8EAE5; --ink-soft: #A9B4BE; --paper: #12161C; --paper-deep: #181D24;
+      --paper-card: #1A1F27; --accent: #D4B45E; --accent-soft: #B08D3E; --navy: #2A4364;
+      --line: rgba(232, 234, 229, 0.13); --line-soft: rgba(232, 234, 229, 0.06);
+    }
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+    line-height: 1.9; -webkit-font-smoothing: antialiased; letter-spacing: 0.01em;
+  }
+  h1, h2, h3 { font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif; font-weight: 600; }
+  a { color: inherit; }
+  .wrap { max-width: 840px; margin: 0 auto; padding: 0 26px; }
+  .sample-badge {
+    position: fixed; top: 14px; right: 14px; z-index: 200;
+    background: var(--navy); color: #F4F5F3; font-size: 11.5px; letter-spacing: 0.06em;
+    padding: 7px 14px; border-radius: 2px; text-decoration: none; opacity: 0.92;
+  }
+  .eyebrow { display: inline-flex; align-items: center; gap: 0.6em; font-size: 12px; letter-spacing: 0.22em; color: var(--accent); font-weight: 600; }
+  .eyebrow::before { content: ""; width: 18px; height: 1px; background: var(--accent); display: inline-block; }
+
+  .hero { padding: 110px 0 64px; background: var(--navy); color: #F4F5F3; }
+  .hero .eyebrow { color: var(--accent-soft); }
+  .hero .eyebrow::before { background: var(--accent-soft); }
+  .hero h1 { font-size: clamp(28px, 4.4vw, 42px); line-height: 1.7; margin: 22px 0 18px; color: #F4F5F3; }
+  .hero p.lede { max-width: 48ch; color: #C7CEDA; font-size: 15.5px; margin-bottom: 30px; }
+  .hero-photo { width: 100%; aspect-ratio: 21/9; border-radius: 2px; overflow: hidden; background: linear-gradient(150deg, #24344A, #16212F); }
+  .hero-photo img, .story-photo img, .offer-photo-wide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: 2px; font-size: 14.5px; font-weight: 600; letter-spacing: 0.04em; text-decoration: none; background: var(--accent); color: #1A2317; }
+
+  section { padding: 68px 0; }
+  section + section { border-top: 1px solid var(--line); }
+  .section-head { max-width: 56ch; margin-bottom: 38px; }
+  .section-head h2 { font-size: clamp(21px, 2.8vw, 27px); margin: 10px 0 0; line-height: 1.6; }
+
+  .strength-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .strength-card { background: var(--paper-card); border: 1px solid var(--line); border-radius: 2px; padding: 26px 22px; }
+  .strength-card .n { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; color: var(--accent); font-size: 13px; }
+  .strength-card h3 { font-size: 16.5px; margin: 8px 0 8px; }
+  .strength-card p { font-size: 13.5px; color: var(--ink-soft); margin: 0; }
+
+  .story { background: var(--paper-deep); }
+  .story-inner { display: grid; grid-template-columns: 240px 1fr; gap: 40px; align-items: center; }
+  .story-photo { aspect-ratio: 4/3; border-radius: 2px; overflow: hidden; background: linear-gradient(150deg, #DDE1DC, #EEF0EC); }
+  .story p { font-size: 14.5px; color: var(--ink-soft); margin: 0 0 14px; max-width: 54ch; }
+  .story .signoff { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 13.5px; margin-top: 10px; }
+
+  .offer-photo-wide { width: 100%; aspect-ratio: 16/9; border-radius: 2px; overflow: hidden; margin-bottom: 28px; background: linear-gradient(150deg, #DDE1DC, #EEF0EC); }
+  .offer-toggle { display: inline-flex; border: 1px solid var(--line); border-radius: 980px; padding: 3px; margin-bottom: 26px; }
+  .offer-toggle button {
+    border: none; background: transparent; font-size: 13px; padding: 8px 20px; border-radius: 980px;
+    cursor: pointer; color: var(--ink-soft); font-family: inherit; transition: background 0.2s ease, color 0.2s ease;
+  }
+  .offer-toggle button.active { background: var(--navy); color: #F4F5F3; }
+  .offer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .offer-card { background: var(--paper-card); border: 1px solid var(--line); border-radius: 2px; padding: 22px 20px; }
+  .offer-card h3 { font-size: 15.5px; margin: 0 0 8px; }
+  .offer-card p { font-size: 13px; color: var(--ink-soft); margin: 0; }
+
+  .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: center; }
+  .stat-card { padding: 24px 16px; }
+  .stat-card .v { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 34px; color: var(--accent); }
+  .stat-card .k { font-size: 13px; color: var(--ink-soft); margin-top: 6px; }
+
+  .final { background: var(--navy); color: #F4F5F3; border-radius: 2px; padding: 52px 44px; }
+  .final h2 { color: inherit; font-size: clamp(21px, 2.8vw, 27px); margin: 0 0 14px; }
+  .final p { color: #C7CEDA; font-size: 14.5px; max-width: 46ch; margin: 0 0 24px; }
+
+  footer { padding: 30px 0 50px; font-size: 12px; color: var(--ink-soft); }
+
+  @media (max-width: 700px) {
+    .strength-grid, .offer-grid, .stat-grid { grid-template-columns: 1fr; }
+    .story-inner { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<a class="sample-badge" href="index.html">← サンプル集へ戻る</a>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">SAMPLE LP</span>
+    <h1>数字で語る、<br />伴走型の経営コンサルティング。</h1>
+    <p class="lede">中小企業・個人事業主の「なんとなくの経営判断」を、データと対話で立て直します。みちしるべ経営パートナーズ。</p>
+    <div class="hero-photo"><img src="img/consult-hero.png" alt="ミーティングルームでの打ち合わせ風景"></div>
+  </div>
+</header>
+
+<section id="strength">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">選ばれる理由</span>
+      <h2>感覚ではなく、数字で意思決定を。</h2>
+    </div>
+    <div class="strength-grid">
+      <div class="strength-card">
+        <span class="n">01</span>
+        <h3>データに基づく提案</h3>
+        <p>経験や勘に頼らず、財務データと市場データを根拠にした提案をします。</p>
+      </div>
+      <div class="strength-card">
+        <span class="n">02</span>
+        <h3>伴走型のサポート</h3>
+        <p>提案して終わりではなく、実行フェーズまで月次で並走します。</p>
+      </div>
+      <div class="strength-card">
+        <span class="n">03</span>
+        <h3>専門分野の連携体制</h3>
+        <p>税務・法務が絡む論点は、提携する専門家と連携して対応します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="story">
+  <div class="wrap story-inner">
+    <div class="story-photo"><img src="img/consult-desk.png" alt="デスクで資料を確認する手元"></div>
+    <div>
+      <span class="eyebrow">代表より</span>
+      <h2 style="font-size:22px;margin:10px 0 18px;">「なんとなく」を、<br />言葉と数字にする仕事です。</h2>
+      <p>中小企業の経営相談の多くは、「なんとなく厳しい」「なんとなく上手くいっていない」という感覚から始まります。その感覚を、数字と構造に落とし込み、次の一手を一緒に決めていくのが私たちの仕事です。</p>
+      <p>派手な戦略よりも、地に足のついた改善の積み重ねを大事にしています。</p>
+      <p class="signoff">みちしるべ経営パートナーズ代表より</p>
+    </div>
+  </div>
+</section>
+
+<section id="offer">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">サービス内容</span>
+      <h2>3つの支援メニュー。</h2>
+    </div>
+    <div class="offer-photo-wide"><img src="img/consult-team.png" alt="資料を囲んで議論するチーム"></div>
+
+    <div class="offer-toggle" role="tablist">
+      <button type="button" class="active" data-target="individual" onclick="switchOffer('individual', this)">個人事業主向け</button>
+      <button type="button" data-target="corporate" onclick="switchOffer('corporate', this)">法人向け</button>
+    </div>
+
+    <div class="offer-grid">
+      <div class="offer-card">
+        <h3 data-individual="経営診断" data-corporate="組織診断・課題の可視化">経営診断</h3>
+        <p data-individual="財務状況・業務フローを棚卸しし、課題の優先順位を明確にします。" data-corporate="部門ごとの業務フロー・意思決定プロセスを棚卸しし、組織課題の優先順位を明確にします。">財務状況・業務フローを棚卸しし、課題の優先順位を明確にします。</p>
+      </div>
+      <div class="offer-card">
+        <h3 data-individual="月次伴走コンサルティング" data-corporate="月次伴走コンサルティング（経営会議同席）">月次伴走コンサルティング</h3>
+        <p data-individual="毎月の定例MTGで進捗を確認しながら、実行支援まで並走します。" data-corporate="毎月の経営会議に同席し、意思決定の材料整理から実行支援まで並走します。">毎月の定例MTGで進捗を確認しながら、実行支援まで並走します。</p>
+      </div>
+      <div class="offer-card">
+        <h3 data-individual="資金計画・資料作成支援" data-corporate="資金調達・IR資料作成支援">資金計画・資料作成支援</h3>
+        <p data-individual="金融機関向け資料や事業計画書の作成もサポートします。" data-corporate="金融機関・投資家向けの資料や、中期事業計画書の作成もサポートします。">金融機関向け資料や事業計画書の作成もサポートします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="stats">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">実績（架空の数値です）</span>
+      <h2>これまでの支援実績。</h2>
+    </div>
+    <div class="stat-grid">
+      <div class="stat-card"><div class="v">120社+</div><div class="k">支援実績（累計）</div></div>
+      <div class="stat-card"><div class="v">8年</div><div class="k">事業継続年数</div></div>
+      <div class="stat-card"><div class="v">92%</div><div class="k">継続契約率</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="final">
+      <span class="eyebrow" style="color:var(--accent-soft);">お問い合わせ</span>
+      <h2>まずは、現状のお話からお聞かせください。</h2>
+      <p>初回のご相談は無料です（60分程度）。オンライン・対面どちらも対応しています。</p>
+      <a class="btn" href="#">無料相談を申し込む（サンプルのためリンク先なし）</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    ※このページはわたちゃんWorksの制作サンプルです。架空の事務所を想定した自主制作物であり、実在の法人ではありません。
+  </div>
+</footer>
+
+<script>
+  function switchOffer(target, btn) {
+    document.querySelectorAll('.offer-toggle button').forEach(function (b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    document.querySelectorAll('[data-individual]').forEach(function (el) {
+      var text = target === 'individual' ? el.getAttribute('data-individual') : el.getAttribute('data-corporate');
+      el.textContent = text;
+    });
+  }
+</script>
+
+</body>
+</html>

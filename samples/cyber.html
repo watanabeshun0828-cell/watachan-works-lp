@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>わたちゃんWorks｜あなたのサービスの魅力を、言葉と形に変える（サイバー版・比較用）</title>
+<title>ORBIT｜AIチーム管理SaaS（制作サンプル・わたちゃんWorks）</title>
 <style>
   :root {
     --ink: #E8F4FF;
@@ -281,21 +281,40 @@
     .plan-cards { grid-template-columns: 1fr; }
     .monthly-plans { grid-template-columns: 1fr; }
     .ba-grid { grid-template-columns: 1fr; }
+    .step-grid { grid-template-columns: 1fr; }
+    .testi-grid { grid-template-columns: 1fr; }
   }
+
+  .sample-badge {
+    position: fixed; top: 14px; right: 14px; z-index: 200;
+    background: var(--paper-card); border: 1px solid var(--vermillion); color: var(--vermillion);
+    font-size: 11.5px; letter-spacing: 0.06em; padding: 7px 14px; border-radius: 980px; text-decoration: none;
+  }
+  .step-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .step-card { background: var(--paper-card); border: 1px solid var(--line); border-radius: 2px; padding: 26px 22px; position: relative; }
+  .step-card .step-n { font-family: "SF Mono", monospace; font-size: 22px; color: var(--vermillion); text-shadow: 0 0 10px rgba(77,216,255,0.4); }
+  .step-card h3 { font-size: 16px; margin: 10px 0 8px; }
+  .step-card p { font-size: 13.5px; color: var(--ink-soft); margin: 0; }
+  .testi-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .testi-card { background: var(--paper-card); border: 1px solid var(--line); border-left: 2px solid var(--vermillion); border-radius: 2px; padding: 22px 24px; }
+  .testi-card p { font-size: 14px; color: var(--ink-soft); margin: 0 0 10px; }
+  .testi-card .who { font-size: 12px; color: var(--vermillion); font-family: "SF Mono", monospace; }
 </style>
 </head>
 <body>
 
+<a class="sample-badge" href="index.html">← サンプル集へ戻る</a>
+
 <nav>
   <div class="nav-inner">
-    <a class="nav-brand" href="#top">WATACHAN.WORKS</a>
+    <a class="nav-brand" href="#top">ORBIT</a>
     <div class="nav-links">
-      <a href="#cases">制作事例</a>
-      <a href="#before-after">Before/After</a>
-      <a href="#services">サービス</a>
-      <a href="#samples">サンプル</a>
+      <a href="#problem">課題</a>
+      <a href="#features">機能</a>
+      <a href="#steps">導入の流れ</a>
+      <a href="#voice">お客様の声</a>
       <a href="#pricing">料金</a>
-      <a class="nav-cta" href="#contact">相談する</a>
+      <a class="nav-cta" href="#contact">無料トライアル</a>
     </div>
   </div>
 </nav>
@@ -303,282 +322,114 @@
 <header class="hero" id="top">
   <div class="hero-grid" aria-hidden="true"></div>
   <div class="wrap hero-inner">
-    <span class="eyebrow reveal">WATACHAN WORKS</span>
-    <h1 class="reveal">あなたのサービスの魅力を、<br /><em>言葉と形</em>に変える。</h1>
-    <p class="lede reveal">個人事業主・小規模店舗・クリエイターのための、LP・記事・SNS導線制作。AIで速く、人の目で確かに仕上げます。</p>
+    <span class="eyebrow reveal">AI TEAM MANAGEMENT — ORBIT</span>
+    <h1 class="reveal">チームの進捗を、<br /><em>見える化</em>する。</h1>
+    <p class="lede reveal">タスクの進み具合も、詰まっている理由も、AIが自動で拾って要約します。日報も進捗確認MTGも、もう要りません。</p>
     <div class="cta-row reveal">
-      <a class="btn btn-primary" href="#contact">まず相談してみる</a>
-      <a class="btn btn-ghost" href="#cases">制作事例を見る</a>
+      <a class="btn btn-primary" href="#contact">無料トライアルを始める</a>
+      <a class="btn btn-ghost" href="#features">機能を見る</a>
     </div>
   </div>
 </header>
 
-<section class="story">
-  <div class="wrap story-inner">
-    <div class="story-label reveal">
-      REPRESENTATIVE
-      <div class="seal-mini" aria-hidden="true">はじ<br />まり</div>
-    </div>
-    <div class="reveal">
-      <h2>きっかけは、<br />家族と過ごす<em>「当たり前」</em>を<br />守りたかったことでした。</h2>
-      <p>マイホームを建てて2年。家族との時間はかけがえのないものなのに、週末にちょっと遠出をするにも「お金を貯める計画」を立てなければならず、自分に投資する余裕もない——そんな生活に、ストレスと、家族への申し訳なさを感じていました。</p>
-      <p>このままではいけないと、副業を学ぶことに決めたのが始まりです。そこで最初に気づいたのは、業種を問わずあらゆる仕事の土台には「文章」があるということでした。以来、AIツールを活用しながらライティングの力を磨き、LP・記事・SNS投稿・動画台本と、幅広い分野で「言葉で伝える」技術を学び続けています。</p>
-      <p>まだ実績を積み上げている最中です。だからこそ、一件一件のご依頼を丁寧に、誠実に。会社員として本業を続けながら、限られた時間の中でも「頼んでよかった」と思っていただける仕事をお届けします。</p>
-      <p>休日は鉄道旅行でふらっと知らない街を歩いたり、ゲームで頭を空っぽにしたり。そうやって自分の"余白"を大事にしているからこそ、読む人の日常に寄り添う言葉を書けると思っています。</p>
-      <p class="signoff">わたちゃんWorks　渡邊 駿</p>
-    </div>
-  </div>
-</section>
-
-<section id="cases">
+<section id="problem">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">制作事例</span>
-      <h2>まだ小さな実績ですが、<br />一件一件、正直にご紹介します。</h2>
-      <p class="desc">駆け出しのライターだからこそ、誇張のない「実際の課題と結果」をお見せします。</p>
-    </div>
-
-    <div class="case reveal">
-      <div class="case-tag">
-        VIDEO SCRIPT
-        <span class="client">クライアント様<br />（YouTubeチャンネル運営）</span>
-        <span class="case-seal">テスト・一発承認</span>
-      </div>
-      <div class="case-body">
-        <dl>
-          <dt>課題</dt>
-          <dd>専門分野（資格試験対策）のYouTube台本。既存の色分けハイライト・参考文献の引用形式など、細かい独自フォーマットへの対応が求められた。</dd>
-          <dt>施策</dt>
-          <dd>過去の承認済みサンプルを分析し、フォーマット・トーン・引用ルールを忠実に再現。実在の競合予備校の情報をWeb検索で裏取りしたうえで構成。</dd>
-          <dt>結果</dt>
-          <dd class="result">テスト提出後、修正なしで承認。現在、本採用のご連絡待ち。</dd>
-        </dl>
-        <p class="case-quote">「特に修正等ございません」</p>
-      </div>
-    </div>
-
-    <div class="case reveal">
-      <div class="case-tag">
-        WEB ARTICLE
-        <span class="client">クライアント様<br />（Webメディア運営）</span>
-        <span class="case-seal">契約継続中</span>
-      </div>
-      <div class="case-body">
-        <dl>
-          <dt>課題</dt>
-          <dd>「残業削減・業務効率化AIツール紹介」記事。初稿は具体性に欠ける指摘を受けた。</dd>
-          <dt>施策</dt>
-          <dd>複数の読者視点でのレビューを実施し、指摘された「具体性不足・表現の重複」を改稿で解消。</dd>
-          <dt>結果</dt>
-          <dd class="result">校閲合格・納品、継続案件として契約中。</dd>
-        </dl>
-      </div>
-    </div>
-
-    <div class="case reveal">
-      <div class="case-tag">
-        SCRIPT
-        <span class="client">クライアント様<br />（映像制作・ショートドラマ）</span>
-        <span class="case-seal">契約成立・入金済み</span>
-      </div>
-      <div class="case-body">
-        <dl>
-          <dt>課題</dt>
-          <dd>未経験からの脚本トライアル案件。短尺ドラマ特有のテンポ・構成が求められた。</dd>
-          <dt>施策</dt>
-          <dd>「詐欺師は、嘘しかつけない」というプロット・脚本一式を制作し提出。</dd>
-          <dt>結果</dt>
-          <dd class="result">契約完了・支払い済み。わたちゃんWorks初の確定報酬。</dd>
-        </dl>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="before-after">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">Before / After</span>
-      <h2>「速い」と「確か」は、<br />両立できる。</h2>
-      <p class="desc">実際の制作から、変化がわかりやすい2つの事例をご紹介します。</p>
-    </div>
-    <div class="ba-grid stagger">
-      <div class="ba-card reveal">
-        <span class="ba-label">制作時間</span>
-        <h3>SEO記事1本あたりの制作時間</h3>
-        <div class="ba-row">
-          <div class="ba-num before"><span class="k">Before</span><span class="v">148分</span></div>
-          <div class="ba-arrow">→</div>
-          <div class="ba-num after"><span class="k">After</span><span class="v">62分</span></div>
-        </div>
-        <span class="ba-badge">58%短縮</span>
-        <p style="font-size:13.5px;color:var(--ink-soft);margin:0;">AIでリサーチ・構成案の下書きを時短しつつ、仕上げの「編集」は必ず自分の目で行う仕組みで実現しています。</p>
-      </div>
-      <div class="ba-card reveal">
-        <span class="ba-label">原稿の質</span>
-        <h3>クライアント様記事：初稿→改稿</h3>
-        <div class="ba-diff before">
-          <span class="diff-label">Before（初稿）</span>
-          たとえば会議の音声から議事録の下書きを自動生成したり、箇条書きのメモから資料の構成案を作成したりと、活用の幅は広がっています。
-        </div>
-        <div class="ba-diff after">
-          <span class="diff-label">After（改稿）</span>
-          たとえば、<mark>これまで音声を聞き返しながら1時間ほどかけていた議事録作成</mark>も、AIに下書きを作らせて仕上げるだけなら<mark>30分ほどに縮まった</mark>という声もあります。
-        </div>
-        <p style="font-size:13.5px;color:var(--ink-soft);margin:8px 0 0;">「具体性に欠ける」というご指摘を受け、抽象的な説明を数字と情景の伝わる描写に改稿。校閲合格・納品につながりました。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="services">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">提供サービス</span>
-      <h2>「伝わらない」を、<br />構成から立て直します。</h2>
+      <span class="eyebrow">こんな悩み、ありませんか</span>
+      <h2>進捗確認だけで、<br />1日が終わっていませんか。</h2>
+      <p class="desc">チームが大きくなるほど、「誰が・何を・どこまで」が見えにくくなります。</p>
     </div>
     <div class="services stagger">
       <div class="service-card reveal">
         <span class="num">01</span>
-        <h3>LP制作・文章</h3>
-        <p>サービスや商品の魅力が伝わる流れを設計し、問い合わせ・申し込みにつながる文章を仕上げます。構成案の提示から丁寧に進めます。</p>
-        <div class="price"><span>基本料金の目安</span><strong>15,000円〜</strong></div>
+        <h3>日報を読む時間がない</h3>
+        <p>毎朝チャットに流れる日報を、全員分読むだけで30分以上かかっている。</p>
       </div>
       <div class="service-card reveal">
         <span class="num">02</span>
-        <h3>SEO記事・ブログ</h3>
-        <p>ターゲットキーワードと読者像を確認したうえで、構成の設計から丁寧に取り組み、読みやすく内容のある記事をお届けします。</p>
-        <div class="price"><span>基本料金の目安</span><strong>5,000円〜</strong></div>
+        <h3>遅れに気づくのが遅い</h3>
+        <p>タスクが止まっていることに気づくのは、いつも締切の前日。</p>
       </div>
       <div class="service-card reveal">
         <span class="num">03</span>
-        <h3>SNS導線設計</h3>
-        <p>Instagram・Xのプロフィール文と、問い合わせや購入につながるSNS導線を一緒に整えます。発信コンセプトの整理も承ります。</p>
-        <div class="price"><span>基本料金の目安</span><strong>8,000円〜</strong></div>
-      </div>
-      <div class="service-card reveal">
-        <span class="num">04</span>
-        <h3>YouTube台本・シナリオ</h3>
-        <p>視聴者に届きやすい構成と言葉の流れを考え、冒頭のフックから最後のCTAまで一貫した台本を作成します。</p>
-        <div class="price"><span>基本料金の目安</span><strong>ご相談</strong></div>
-      </div>
-      <div class="service-card reveal">
-        <span class="num">05</span>
-        <h3>HP制作（簡易Webサイト・ツール）</h3>
-        <p>Node.js・HTML/CSSを用いた簡易Webサイト・Webツールの制作に対応しています。現在は自主制作（独自のAI活用ダッシュボード開発）を通じて対応範囲を広げている段階です。</p>
-        <div class="price"><span>基本料金の目安</span><strong>ご相談</strong></div>
-      </div>
-      <div class="service-card reveal">
-        <span class="num">06</span>
-        <h3>AI画像生成</h3>
-        <p>ChatGPT等を活用した、note・Instagram向けビジュアル制作に対応しています。記事のアイキャッチ画像などで実践を重ねています。</p>
-        <div class="price"><span>基本料金の目安</span><strong>ご相談</strong></div>
+        <h3>進捗会議が長い</h3>
+        <p>状況共有だけで1時間。本題の議論に使える時間が残らない。</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="samples">
+<section id="features">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">文章サンプル</span>
-      <h2>まだ受注実績のないジャンルも、<br />こんな文章が書けます。</h2>
-      <p class="desc sample-note">※以下はスキル研鑽のための自主制作サンプルです。実在の企業様との受注実績ではなく、文体・構成力をお見せするための文章としてご覧ください。</p>
+      <span class="eyebrow">できること</span>
+      <h2>AIが、チームの"今"を要約します。</h2>
     </div>
-    <div class="samples stagger">
-      <div class="sample-card featured reveal">
-        <div class="sample-visual">
-          <svg viewBox="0 0 48 48" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M24 8 L27 20 L39 23 L27 26 L24 38 L21 26 L9 23 L21 20 Z"></path>
-          </svg>
-        </div>
-        <div class="sample-body">
-          <span class="badge">専門ジャンル</span>
-          <span class="genre">会社員×AI活用・副業ノウハウ</span>
-          <h3>会社員のまま副業を始めるなら、<br />AIツールから使い始めるべき3つの理由</h3>
-          <blockquote>副業がうまくいかない会社員の多くは「もっと時間があれば」と考えがちですが、実際に足りないのは時間ではなく、作業を効率化する仕組みです。</blockquote>
-          <span class="meta">約1,800字・会社員向け</span>
-        </div>
+    <div class="services stagger">
+      <div class="service-card reveal">
+        <span class="num">01</span>
+        <h3>自動進捗要約</h3>
+        <p>タスク管理ツール・チャットの更新をAIが読み取り、毎朝1枚のサマリーにまとめます。</p>
       </div>
-      <div class="sample-card featured reveal">
-        <div class="sample-visual">
-          <svg viewBox="0 0 48 48" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M24 8 L27 20 L39 23 L27 26 L24 38 L21 26 L9 23 L21 20 Z"></path>
-          </svg>
-        </div>
-        <div class="sample-body">
-          <span class="badge">専門ジャンル</span>
-          <span class="genre">会社員×AI活用・副業ノウハウ</span>
-          <h3>副業ライターの作業時間を半分にした、<br />Claude活用の3つの工程</h3>
-          <blockquote>AIは60〜70%の完成度でたたき台を作ってくれる便利な道具。それを100%に仕上げるのが人間の役割だと考えています。</blockquote>
-          <span class="meta">約1,800字・副業ライター向け</span>
-        </div>
+      <div class="service-card reveal">
+        <span class="num">02</span>
+        <h3>停滞アラート</h3>
+        <p>更新が止まっているタスクをAIが検知し、詰まっていそうな理由の仮説を添えて通知します。</p>
       </div>
-      <div class="sample-card reveal">
-        <div class="sample-visual">
-          <svg viewBox="0 0 48 48" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="18" y="6" width="12" height="8" rx="2"></rect>
-            <path d="M20 14 L16 22 V40 a2 2 0 0 0 2 2 h12 a2 2 0 0 0 2-2 V22 L28 14"></path>
-            <line x1="16" y1="28" x2="32" y2="28"></line>
-          </svg>
-        </div>
-        <div class="sample-body">
-          <span class="genre">美容・コスメ体験談</span>
-          <h3>スキンケア迷子だった私が、<br />やっと「これでいい」と思えるまで</h3>
-          <blockquote>「新作が出るたびに気になって、また買っちゃった」友達にそう話したら、「それ、去年も同じこと言ってなかった？」と笑われた。</blockquote>
-          <span class="meta">約1,600字・20代OL向け</span>
-        </div>
+      <div class="service-card reveal">
+        <span class="num">03</span>
+        <h3>進捗ダッシュボード</h3>
+        <p>チーム全体・個人別の進捗を、リアルタイムのグラフで一覧できます。</p>
       </div>
-      <div class="sample-card reveal">
-        <div class="sample-visual">
-          <svg viewBox="0 0 48 48" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="8" y="18" width="32" height="20" rx="2"></rect>
-            <path d="M17 18 v-4 a2 2 0 0 1 2-2 h10 a2 2 0 0 1 2 2 v4"></path>
-            <line x1="8" y1="27" x2="40" y2="27"></line>
-            <line x1="22" y1="27" x2="26" y2="27"></line>
-          </svg>
-        </div>
-        <div class="sample-body">
-          <span class="genre">副業・転職・キャリア（SEO記事）</span>
-          <h3>本業と両立できる副業の選び方｜30代会社員が失敗しない5つの基準</h3>
-          <blockquote>副業選びで失敗しないためのポイントは「時間・費用・規則」で絞り込むこと。いきなり「稼げる副業」を探す前に、自分の生活リズムと照らし合わせる。</blockquote>
-          <span class="meta">約2,000字・30代男性向け</span>
-        </div>
+      <div class="service-card reveal">
+        <span class="num">04</span>
+        <h3>週次レポート自動生成</h3>
+        <p>週の動きをAIが自動でレポート化。上長への報告資料もワンクリックで出力できます。</p>
       </div>
-      <div class="sample-card reveal">
-        <div class="sample-visual">
-          <svg viewBox="0 0 48 48" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-            <ellipse cx="24" cy="34" rx="10" ry="3.5"></ellipse>
-            <path d="M14 34 V27"></path>
-            <path d="M34 34 V27"></path>
-            <ellipse cx="24" cy="27" rx="10" ry="3.5"></ellipse>
-            <path d="M14 27 V20"></path>
-            <path d="M34 27 V20"></path>
-            <ellipse cx="24" cy="20" rx="10" ry="3.5"></ellipse>
-            <path d="M14 20 V13"></path>
-            <path d="M34 20 V13"></path>
-            <ellipse cx="24" cy="13" rx="10" ry="3.5"></ellipse>
-          </svg>
-        </div>
-        <div class="sample-body">
-          <span class="genre">資産形成・経営者向けコラム</span>
-          <h3>50代を迎える前に、経営者が<br />「資産の設計図」を見直すべき理由</h3>
-          <blockquote>決算書は毎月チェックしていても、自分自身の資産については「なんとなく」で済ませていないだろうか。</blockquote>
-          <span class="meta">約1,600字・40代重役向け</span>
-        </div>
+    </div>
+  </div>
+</section>
+
+<section id="steps">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">導入の流れ</span>
+      <h2>3ステップで始められます。</h2>
+    </div>
+    <div class="step-grid stagger">
+      <div class="step-card reveal">
+        <span class="step-n">01</span>
+        <h3>ツールを連携</h3>
+        <p>普段使っているタスク管理ツール・チャットをORBITに接続します（所要5分）。</p>
       </div>
-      <div class="sample-card reveal">
-        <div class="sample-visual">
-          <svg viewBox="0 0 48 48" fill="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M24 38 C14 31 8 25 8 18.5 C8 13.5 12 10 16.5 10 C19.8 10 22.4 11.8 24 14.4 C25.6 11.8 28.2 10 31.5 10 C36 10 40 13.5 40 18.5 C40 25 34 31 24 38 Z"></path>
-          </svg>
-        </div>
-        <div class="sample-body">
-          <span class="genre">子育て・暮らしエッセイ</span>
-          <h3>「あの頃、私は必死だった」――子育てを振り返って気づく、暮らしの中の小さな真実</h3>
-          <blockquote>洗濯物をたたみながら、ふと手が止まることがある。子どもの服がもう小さくて着られなくなったこと。</blockquote>
-          <span class="meta">約1,200字・50代主婦向け</span>
-        </div>
+      <div class="step-card reveal">
+        <span class="step-n">02</span>
+        <h3>チームを招待</h3>
+        <p>メンバーをメールアドレスで招待するだけ。新しい操作を覚える必要はありません。</p>
+      </div>
+      <div class="step-card reveal">
+        <span class="step-n">03</span>
+        <h3>翌朝から要約が届く</h3>
+        <p>次の日の朝には、最初の進捗サマリーが届きます。そこから改善が始まります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="voice">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">お客様の声</span>
+      <h2>導入いただいたチームより。</h2>
+    </div>
+    <div class="testi-grid stagger">
+      <div class="testi-card reveal">
+        <p>「毎朝の進捗確認が要らなくなり、チームの時間が週に3時間ほど浮きました。空いた時間を本題の議論に使えています。」</p>
+        <span class="who">受託開発チーム・マネージャー</span>
+      </div>
+      <div class="testi-card reveal">
+        <p>「タスクが止まっている理由をAIが先に教えてくれるので、声をかけるタイミングが早くなりました。」</p>
+        <span class="who">スタートアップ・プロジェクトリード</span>
       </div>
     </div>
   </div>
@@ -588,20 +439,20 @@
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">AI活用について</span>
-      <h2>AI任せにしない、という約束。</h2>
+      <h2>要約するのはAI。判断するのは、人。</h2>
     </div>
     <div class="trust reveal">
       <div>
         <h3>速さは、AIで。</h3>
-        <p>制作にはAIツール（Claude・ChatGPT）を活用し、リサーチや下書きのスピードを高めています。忙しい方の「早く相談したい」に応えられる体制です。</p>
+        <p>更新の読み取り・要約・レポート化はAIが自動で行い、確認の手間を最小限にします。</p>
       </div>
       <div>
-        <h3>確かさは、人の目で。</h3>
-        <p>AIの出力をそのまま納品することはありません。ヒアリング内容と照らし合わせながら、構成・事実確認・表現の自然さを一つひとつ自分の目で確認・編集しています。</p>
+        <h3>判断は、人の手に。</h3>
+        <p>ORBITは意思決定を代行しません。あくまで「気づくきっかけ」を提供し、最終判断はチームに委ねます。</p>
       </div>
       <div class="divider"></div>
       <div style="grid-column: 1 / -1;">
-        <p>現在、実績を積みながらサービスを育てている段階です。「こんなことお願いできるかな？」という段階でも構いません。まずは一度、お気軽にご相談ください。</p>
+        <p>現在14日間の無料トライアルを実施中です。クレジットカードの登録は不要です。</p>
       </div>
     </div>
   </div>
@@ -610,100 +461,45 @@
 <section id="pricing">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">料金の目安</span>
-      <h2>内容に応じて選べる、3つのプラン。</h2>
-      <p class="desc">SEO記事は3段階のプランからお選びいただけます。まずはどれか迷ったら、スタンダードプランがおすすめです。</p>
+      <span class="eyebrow">料金プラン</span>
+      <h2>チームの規模に合わせて選べます。</h2>
     </div>
-
     <div class="plan-cards stagger">
       <div class="plan-card reveal">
-        <span class="tag">ライト（梅）</span>
-        <h3>まず1本、試したい方に</h3>
-        <div class="price">5,000円〜</div>
-        <p class="for">構成案はご支給いただける方向け</p>
+        <span class="tag">スターター</span>
+        <h3>小さなチームに</h3>
+        <div class="price">¥2,980<span style="font-size:13px;">/月〜</span></div>
+        <p class="for">〜5名のチーム向け</p>
         <ul>
-          <li>〜2,500文字</li>
-          <li>構成案：クライアント支給</li>
-          <li>修正1回</li>
-          <li>納期5営業日</li>
+          <li>自動進捗要約</li>
+          <li>停滞アラート</li>
+          <li>ツール連携2件まで</li>
         </ul>
       </div>
       <div class="plan-card featured reveal">
-        <span class="plan-badge">★おすすめ</span>
-        <span class="tag">スタンダード（竹）</span>
-        <h3>構成からまるっとお任せ</h3>
-        <div class="price">8,000円〜</div>
-        <p class="for">キーワード調査も含めて任せたい方向け</p>
+        <span class="plan-badge">★人気</span>
+        <span class="tag">チーム</span>
+        <h3>成長中のチームに</h3>
+        <div class="price">¥9,800<span style="font-size:13px;">/月〜</span></div>
+        <p class="for">〜20名のチーム向け</p>
         <ul>
-          <li>〜3,500文字</li>
-          <li>構成案作成込み</li>
-          <li>修正2回</li>
-          <li>納期7営業日</li>
-          <li>キーワード調査込み</li>
+          <li>スタータープランの全機能</li>
+          <li>進捗ダッシュボード</li>
+          <li>週次レポート自動生成</li>
+          <li>ツール連携無制限</li>
         </ul>
       </div>
       <div class="plan-card reveal">
-        <span class="tag">プレミアム（松）</span>
-        <h3>入稿・SNS展開まで一括で</h3>
-        <div class="price">15,000円〜</div>
-        <p class="for">記事をサイトへの掲載まで任せたい方向け</p>
+        <span class="tag">エンタープライズ</span>
+        <h3>組織規模の導入に</h3>
+        <div class="price">ご相談</div>
+        <p class="for">21名以上・複数部署での導入</p>
         <ul>
-          <li>〜5,000文字</li>
-          <li>構成案＋WordPress入稿込み</li>
-          <li>修正3回</li>
-          <li>納期10営業日</li>
-          <li>メタディスクリプション・タイトル案3パターン・SNSシェア用テキスト・内部リンク提案</li>
+          <li>チームプランの全機能</li>
+          <li>専任サポート</li>
+          <li>権限・セキュリティ設定のカスタマイズ</li>
         </ul>
       </div>
-    </div>
-
-    <p class="subhead reveal">月額継続プラン（スタンダード基準）</p>
-    <div class="monthly-plans stagger">
-      <div class="monthly-card reveal">
-        <span class="tag">ライト月額</span>
-        <h4>月3本</h4>
-        <div class="was">通常24,000円</div>
-        <div class="now">20,000円<span style="font-size:12px;">/月</span></div>
-        <div class="perk">17%オフ・優先対応</div>
-      </div>
-      <div class="monthly-card reveal">
-        <span class="tag">スタンダード月額 ★人気</span>
-        <h4>月5本</h4>
-        <div class="was">通常40,000円</div>
-        <div class="now">32,000円<span style="font-size:12px;">/月</span></div>
-        <div class="perk">20%オフ・優先対応・月1回MTG</div>
-      </div>
-      <div class="monthly-card reveal">
-        <span class="tag">プレミアム月額</span>
-        <h4>月10本</h4>
-        <div class="was">通常80,000円</div>
-        <div class="now">60,000円<span style="font-size:12px;">/月</span></div>
-        <div class="perk">25%オフ</div>
-      </div>
-    </div>
-
-    <p class="subhead reveal">その他のサービス</p>
-    <div class="table-scroll reveal">
-      <table>
-        <thead>
-          <tr><th>サービス</th><th>目安</th><th>納期目安</th><th>料金</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>LP制作</td><td>構成〜文章一式</td><td>5〜7営業日</td><td class="amount">15,000円〜30,000円</td></tr>
-          <tr><td>SNS導線設計</td><td>Instagram・X 2媒体</td><td>3〜5営業日</td><td class="amount">8,000円〜15,000円</td></tr>
-          <tr><td>YouTube台本・シナリオ</td><td>1本</td><td>ご相談</td><td class="amount">ご相談</td></tr>
-          <tr><td>HP制作（簡易Webサイト・ツール）</td><td>1ページ〜</td><td>ご相談</td><td class="amount">ご相談</td></tr>
-          <tr><td>AI画像生成</td><td>1枚〜</td><td>ご相談</td><td class="amount">ご相談</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <p class="subhead reveal" style="margin-top:32px;">オプション</p>
-    <div class="option-list reveal">
-      <span>特急対応 <strong>+50%</strong></span>
-      <span>追加文字数（500字） <strong>+1,000円</strong></span>
-      <span>追加修正（1回） <strong>+1,500円</strong></span>
-      <span>画像選定（5枚） <strong>+1,000円</strong></span>
     </div>
   </div>
 </section>
@@ -711,40 +507,21 @@
 <section id="contact">
   <div class="wrap">
     <div class="final reveal">
-      <span class="eyebrow" style="color: var(--vermillion-soft);">お問い合わせ</span>
-      <h2>「こんなこと頼めるかな」から、<br />お気軽にどうぞ。</h2>
-      <p>個人事業主・小規模事業者・店舗・クリエイターの方向けに、Web制作と文章制作のお手伝いをしています。まずは一度、ご相談ください。一緒に考えるところから始めます。</p>
-
-      <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="1663e859-395f-426f-b2ee-bc2f1cb81d98">
-        <input type="hidden" name="subject" value="【わたちゃんWorks】LPからのお問い合わせ（サイバー版）">
-        <input type="checkbox" name="botcheck" class="honey" tabindex="-1" autocomplete="off">
-
-        <div class="field">
-          <label for="cf-name">お名前</label>
-          <input type="text" id="cf-name" name="name" placeholder="山田 太郎" required>
-        </div>
-        <div class="field">
-          <label for="cf-email">メールアドレス（返信先）</label>
-          <input type="email" id="cf-email" name="email" placeholder="you@example.com" required>
-        </div>
-        <div class="field">
-          <label for="cf-message">ご相談内容</label>
-          <textarea id="cf-message" name="message" placeholder="こんなことを頼めますか？　など、お気軽にどうぞ" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">メッセージを送る</button>
-        <p class="form-status" id="form-status"></p>
-      </form>
+      <span class="eyebrow" style="color: var(--vermillion-soft);">START FREE TRIAL</span>
+      <h2>まずは14日間、<br />無料でお試しください。</h2>
+      <p>クレジットカードの登録は不要です。5分でセットアップが完了します。</p>
+      <a class="btn btn-primary" href="#">無料トライアルを始める（サンプルのためリンク先なし）</a>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap footer-inner">
-    <span>わたちゃんWorks — あなたのサービスの魅力を、言葉と形に変える。</span>
-    <span>© 2026 わたちゃんWorks</span>
+    <span>ORBIT — チームの進捗を、見える化する。</span>
+    <span>© 2026 ORBIT（架空のサービスです）</span>
   </div>
 </footer>
+
 
 <script>
   (function () {
