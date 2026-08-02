@@ -3,32 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>わたちゃんWorks｜あなたのサービスの魅力を、言葉と形に変える</title>
+<title>渡邊駿｜Webライター（SEO記事・LP・動画台本）ポートフォリオ</title>
+<meta name="description" content="Webライター渡邊駿のポートフォリオです。SEO記事・LP・動画台本の執筆サンプルと制作事例、料金の目安を掲載しています。リサーチから構成、執筆、校正まで一貫して対応します。">
 <style>
   :root {
-    --ink: #1B2340;
-    --ink-soft: #5A6180;
-    --paper: #F1ECDD;
-    --paper-deep: #E4DCC5;
-    --paper-card: #F8F4E9;
-    --vermillion: #B6412A;
-    --vermillion-soft: #C96A54;
-    --sage: #5C6E54;
-    --line: rgba(27, 35, 64, 0.16);
-    --line-soft: rgba(27, 35, 64, 0.09);
+    --ink: #1F3A5F;
+    --ink-soft: #5D7392;
+    --paper: #FFFFFF;
+    --paper-deep: #EEF4F9;
+    --paper-card: #F7FAFD;
+    --vermillion: #2F7FB8;
+    --vermillion-soft: #6BA8CE;
+    --sage: #3E8E7E;
+    --line: rgba(31, 58, 95, 0.15);
+    --line-soft: rgba(31, 58, 95, 0.08);
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --ink: #EDE6D2;
-      --ink-soft: #B7AF97;
-      --paper: #1A1712;
-      --paper-deep: #262019;
-      --paper-card: #221D16;
-      --vermillion: #DB6A44;
-      --vermillion-soft: #C4805F;
-      --sage: #8FA37F;
-      --line: rgba(237, 230, 210, 0.16);
-      --line-soft: rgba(237, 230, 210, 0.08);
+      --ink: #E4EDF5;
+      --ink-soft: #9DB3C8;
+      --paper: #10171F;
+      --paper-deep: #182330;
+      --paper-card: #161F2A;
+      --vermillion: #67B2DE;
+      --vermillion-soft: #8CC4E4;
+      --sage: #6FBBA9;
+      --line: rgba(228, 237, 245, 0.16);
+      --line-soft: rgba(228, 237, 245, 0.08);
     }
   }
 
@@ -39,17 +40,27 @@
   body {
     background: var(--paper);
     color: var(--ink);
-    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+    font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic Medium", "Meiryo", sans-serif;
     -webkit-font-smoothing: antialiased;
-    line-height: 1.85;
-    letter-spacing: 0.01em;
+    line-height: 1.9;
+    letter-spacing: 0.02em;
   }
-  h1, h2, h3, .serif {
-    font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
-    font-weight: 600;
+  h1, h2, h3, h4, .serif {
+    font-family: inherit;
+    font-weight: 700;
     text-wrap: balance;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.005em;
+    line-height: 1.45;
   }
+
+  /* 日本語の折り返しを文節単位にする */
+  h1, h2, h3, h4, .lede, .desc, .rt, .rm, .for, .case-quote, blockquote, .genre {
+    word-break: auto-phrase;   /* 対応ブラウザ：文節で自動改行 */
+    line-break: strict;
+    overflow-wrap: normal;
+  }
+  /* 未対応ブラウザ用：この単位では絶対に切らない */
+  .nb { display: inline-block; }
   a { color: inherit; }
   .wrap { max-width: 860px; margin: 0 auto; padding: 0 26px; }
 
@@ -66,6 +77,7 @@
   }
   .reveal.visible { opacity: 1; transform: none; }
   @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition-delay: 0s !important; } }
+  /* Stagger helper: apply to a group's direct children via nth-child */
   .stagger > *:nth-child(1) { --reveal-delay: 0s; }
   .stagger > *:nth-child(2) { --reveal-delay: 0.08s; }
   .stagger > *:nth-child(3) { --reveal-delay: 0.16s; }
@@ -77,78 +89,229 @@
   a, .btn, .plan-card, .sample-card, .service-card { transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease; }
   .service-card:hover, .sample-card:hover, .plan-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 14px 30px -18px rgba(27, 35, 64, 0.35);
+    box-shadow: 0 14px 30px -18px rgba(31, 58, 95, 0.30);
   }
   @media (prefers-color-scheme: dark) {
     .service-card:hover, .sample-card:hover, .plan-card:hover { box-shadow: 0 14px 30px -18px rgba(0, 0, 0, 0.5); }
   }
 
+  /* Nav */
   nav {
     position: sticky; top: 0; z-index: 100;
-    background: rgba(241, 236, 221, 0.86);
+    background: rgba(255, 255, 255, 0.88);
     -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--line);
   }
   @media (prefers-color-scheme: dark) {
-    nav { background: rgba(26, 23, 18, 0.86); }
+    nav { background: rgba(16, 23, 31, 0.88); }
   }
   .nav-inner {
     max-width: 860px; margin: 0 auto; padding: 0 26px; height: 56px;
     display: flex; align-items: center; justify-content: space-between; font-size: 13.5px;
   }
-  .nav-brand { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-weight: 600; text-decoration: none; letter-spacing: 0.04em; }
+  .nav-brand { font-family: inherit; font-weight: 600; text-decoration: none; letter-spacing: 0.04em; }
   .nav-links { display: flex; gap: 26px; align-items: center; }
   .nav-links a { color: var(--ink-soft); text-decoration: none; transition: color 0.2s; }
   .nav-links a:hover { color: var(--ink); }
   .nav-cta { border: 1px solid var(--vermillion); color: var(--vermillion) !important; padding: 6px 14px; border-radius: 2px; font-size: 12.5px; }
   .nav-cta:hover { background: var(--vermillion); color: var(--paper) !important; }
 
-  .hero {
-    position: relative; padding: 92px 0 76px;
-    background-image:
-      repeating-linear-gradient(var(--line-soft) 0 1px, transparent 1px 42px),
-      repeating-linear-gradient(90deg, var(--line-soft) 0 1px, transparent 1px 42px);
+  /* ── 水彩の装飾（ブランドの絵柄に合わせた手描き感） ── */
+  .wash { position: absolute; pointer-events: none; z-index: 0; filter: url(#watercolor); opacity: 0.55; }
+  @supports not (filter: url(#watercolor)) { .wash { filter: blur(2px); } }
+  .wash-a {
+    width: 46vw; max-width: 620px; aspect-ratio: 1.25;
+    top: -6%; left: -12%;
+    background: radial-gradient(closest-side, rgba(107,168,206,0.42), rgba(107,168,206,0.10) 62%, transparent 78%);
   }
-  .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, var(--paper) 100%); pointer-events: none; }
-  .hero-inner { position: relative; }
-  .hero h1 { font-size: clamp(32px, 5.2vw, 52px); line-height: 1.55; margin: 20px 0 18px; }
+  .wash-b {
+    width: 40vw; max-width: 540px; aspect-ratio: 1.1;
+    top: 2%; right: -14%;
+    background: radial-gradient(closest-side, rgba(47,127,184,0.30), rgba(47,127,184,0.08) 60%, transparent 76%);
+  }
+  .wash-c {
+    width: 34vw; max-width: 460px; aspect-ratio: 1.35;
+    bottom: -18%; left: 34%;
+    background: radial-gradient(closest-side, rgba(62,142,126,0.24), rgba(62,142,126,0.05) 62%, transparent 78%);
+  }
+  @media (prefers-color-scheme: dark) { .wash { opacity: 0.34; } }
+  @media (max-width: 700px) { .wash-c { display: none; } }
+
+  /* ── 幾何学模様 ── */
+  /* ドットグリッド：方眼線ではなく点にして、テンプレ感を避ける */
+  .geo-dots {
+    position: absolute; inset: -120px 0; z-index: 0; pointer-events: none;
+    will-change: transform;
+    background-image: radial-gradient(rgba(47,127,184,0.22) 1.3px, transparent 1.3px);
+    background-size: 26px 26px;
+    -webkit-mask-image: radial-gradient(ellipse 78% 62% at 50% 42%, #000 30%, transparent 78%);
+    mask-image: radial-gradient(ellipse 78% 62% at 50% 42%, #000 30%, transparent 78%);
+    opacity: 0.42;
+  }
+  /* 同心円（波紋）：水彩ブルーの世界観に合う幾何 */
+  .geo-rings {
+    position: absolute; z-index: 0; pointer-events: none;
+    width: 780px; height: 780px; border-radius: 50%;
+    top: -300px; right: -240px;
+    background: repeating-radial-gradient(circle at 50% 50%,
+      transparent 0 43px, rgba(47,127,184,0.11) 43px 44px);
+    -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 42%, transparent 72%);
+    mask-image: radial-gradient(circle at 50% 50%, #000 42%, transparent 72%);
+  }
+  .geo-rings.left {
+    top: auto; right: auto; bottom: -420px; left: -300px;
+    width: 680px; height: 680px;
+    background: repeating-radial-gradient(circle at 50% 50%,
+      transparent 0 38px, rgba(62,142,126,0.10) 38px 39px);
+  }
+  /* 斜めストライプ：淡いブルーのセクションに薄く敷く */
+  .geo-stripes {
+    position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    background-image: repeating-linear-gradient(-45deg,
+      rgba(47,127,184,0.04) 0 1px, transparent 1px 14px);
+    -webkit-mask-image: linear-gradient(180deg, #000, transparent 65%);
+    mask-image: linear-gradient(180deg, #000, transparent 65%);
+  }
+  #before-after, #samples, #pricing,
+  #cases, #services, #trust, #contact { position: relative; overflow: hidden; }
+  #before-after > .wrap, #samples > .wrap, #pricing > .wrap,
+  #cases > .wrap, #services > .wrap, #trust > .wrap, #contact > .wrap { position: relative; z-index: 1; }
+
+  /* 下のセクション用の波紋（位置と大きさを個別に散らす） */
+  .geo-rings.s1 { top: -180px; right: -280px; width: 620px; height: 620px; }
+  .geo-rings.s2 { top: auto; right: auto; bottom: -260px; left: -260px; width: 560px; height: 560px;
+    background: repeating-radial-gradient(circle at 50% 50%, transparent 0 34px, rgba(62,142,126,0.10) 34px 35px); }
+  .geo-rings.s3 { top: 40%; right: -340px; width: 700px; height: 700px; }
+  @media (max-width: 700px) { .geo-rings.s1, .geo-rings.s2, .geo-rings.s3 { width: 420px; height: 420px; } }
+  @media (prefers-color-scheme: dark) {
+    .geo-dots { opacity: 0.4; }
+    .geo-rings { opacity: 0.75; }
+  }
+  @media (max-width: 700px) {
+    .geo-rings { width: 460px; height: 460px; top: -180px; right: -180px; }
+    .geo-rings.left { display: none; }
+  }
+
+  /* 紙のざらつき（のっぺり感を消す） */
+  body::before {
+    content: ""; position: fixed; inset: 0; z-index: 9999; pointer-events: none;
+    opacity: 0.035; mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  @media (prefers-color-scheme: dark) { body::before { mix-blend-mode: screen; opacity: 0.05; } }
+
+  /* Hero */
+  .hero { position: relative; padding: 128px 0 112px; background: var(--paper); overflow: hidden; }
+  .hero-inner { position: relative; z-index: 1; text-align: center; }
+  .hero-avatar {
+    width: 92px; height: 92px; border-radius: 50%; object-fit: cover;
+    display: block; margin: 0 auto 26px;
+    border: 4px solid var(--paper);
+    box-shadow: 0 8px 26px rgba(31, 58, 95, 0.14);
+  }
+  .hero .eyebrow { justify-content: center; }
+  .hero .eyebrow::after { content: ""; width: 18px; height: 1px; background: var(--vermillion); display: inline-block; }
+  .hero h1 {
+    font-size: clamp(34px, 6.4vw, 60px); line-height: 1.4;
+    margin: 22px 0 26px; letter-spacing: -0.01em; font-weight: 800;
+  }
   .hero h1 em { font-style: normal; color: var(--vermillion); }
-  .hero p.lede { max-width: 50ch; color: var(--ink-soft); font-size: 16.5px; }
-  .cta-row { display: flex; gap: 14px; margin-top: 30px; flex-wrap: wrap; }
+  .hero p.lede {
+    max-width: 44ch; margin: 0 auto;
+    color: var(--ink-soft); font-size: 16px; line-height: 2;
+  }
+  .cta-row { display: flex; gap: 14px; margin-top: 38px; flex-wrap: wrap; justify-content: center; }
+
+  /* Hero: 代表記事カード */
+  .hero-read {
+    position: relative; margin: 34px auto 0;
+    text-align: left;
+    display: flex; align-items: stretch; gap: 0;
+    background: var(--paper-card);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--vermillion);
+    border-radius: 3px;
+    text-decoration: none;
+    overflow: hidden;
+    max-width: 620px;
+  }
+  .hero-read:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(31,58,95,0.10); }
+  .hero-read-body { padding: 18px 22px; flex: 1; min-width: 0; }
+  .hero-read .rl {
+    display: block; font-size: 11.5px; letter-spacing: 0.16em;
+    color: var(--vermillion); font-weight: 700; margin-bottom: 7px;
+  }
+  .hero-read .rt {
+    display: block; font-family: inherit;
+    font-size: 16.5px; font-weight: 600; line-height: 1.6; color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .hero-read .rm { display: block; font-size: 12.5px; color: var(--ink-soft); letter-spacing: 0.03em; }
+  .hero-read .rarrow {
+    display: flex; align-items: center; padding: 0 20px 0 8px;
+    color: var(--vermillion); font-size: 18px;
+  }
+  @media (max-width: 560px) {
+    .hero-read .rarrow { display: none; }
+    .hero-read-body { padding: 16px 18px; }
+  }
+
+  /* Hero: 実績バッジ */
+  .hero-facts {
+    display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px;
+    justify-content: center;
+  }
+  .hero-facts span {
+    font-size: 12px; letter-spacing: 0.03em; color: var(--ink-soft);
+    border: 1px solid var(--line); border-radius: 999px;
+    padding: 5px 13px; background: var(--paper-card);
+  }
+  .hero-facts b { color: var(--sage); font-weight: 700; }
   .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px; border-radius: 2px; font-size: 14.5px; font-weight: 600; letter-spacing: 0.04em; text-decoration: none; border: 1px solid transparent; cursor: pointer; transition: transform 0.15s ease, opacity 0.15s ease; }
   .btn:hover { transform: translateY(-1px); }
   .btn:focus-visible { outline: 2px solid var(--vermillion); outline-offset: 3px; }
-  .btn-primary { background: var(--vermillion); color: #FBF6EC; }
+  .btn-primary { background: var(--vermillion); color: #FFFFFF; }
   .btn-primary:hover { opacity: 0.92; }
   .btn-ghost { border-color: var(--line); color: var(--ink); background: transparent; }
 
-  section { padding: 80px 0; }
-  section + section { border-top: 1px solid var(--line); }
-  .section-head { max-width: 58ch; margin-bottom: 44px; }
-  .section-head h2 { font-size: clamp(23px, 3vw, 30px); margin: 12px 0 0; }
-  .section-head p.desc { color: var(--ink-soft); font-size: 15px; margin-top: 12px; }
+  section { padding: 116px 0; }
+  section + section { border-top: 1px solid var(--line-soft); }
+  .section-head { max-width: 52ch; margin-bottom: 60px; }
+  .section-head h2 {
+    font-size: clamp(26px, 4vw, 40px); margin: 16px 0 0;
+    letter-spacing: -0.005em; font-weight: 800;
+  }
+  .section-head p.desc { color: var(--ink-soft); font-size: 15px; margin-top: 18px; line-height: 2; }
 
-  .story { background: var(--paper-deep); }
+  /* Founder story */
+  .story { position: relative; background: var(--paper-deep); overflow: hidden; }
+  .story .wash-d {
+    width: 38vw; max-width: 480px; aspect-ratio: 1.2;
+    bottom: -22%; right: -10%;
+    background: radial-gradient(closest-side, rgba(47,127,184,0.30), rgba(47,127,184,0.07) 60%, transparent 76%);
+  }
+  .story-inner { position: relative; z-index: 1; }
   .story-inner { display: grid; grid-template-columns: 200px 1fr; gap: 40px; }
   .story-label { font-size: 12.5px; color: var(--ink-soft); letter-spacing: 0.06em; }
-  .story-label .seal-mini {
-    margin-top: 14px; width: 54px; height: 54px; border-radius: 50%;
-    border: 1.5px solid var(--vermillion); color: var(--vermillion);
-    display: flex; align-items: center; justify-content: center;
-    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 11px;
-    letter-spacing: 0.1em; line-height: 1.4; text-align: center; transform: rotate(-6deg);
+  .story-portrait {
+    width: 150px; height: 150px; border-radius: 50%;
+    object-fit: cover; display: block; margin: 0 0 16px;
+    border: 3px solid var(--paper-card);
+    box-shadow: 0 6px 20px rgba(31,58,95,0.10);
   }
+  .story-label .seal-mini { display: none; }
   .story h2 {
-    font-size: clamp(22px, 3.2vw, 30px); line-height: 1.65; margin: 0 0 26px;
+    font-size: clamp(24px, 3.6vw, 36px); line-height: 1.5; margin: 0 0 32px;
+    letter-spacing: -0.005em; font-weight: 800;
   }
   .story h2 em { font-style: normal; color: var(--vermillion); }
-  .story p { font-size: 15.5px; color: var(--ink-soft); max-width: 56ch; margin: 0 0 18px; }
+  .story p { font-size: 15.5px; color: var(--ink-soft); max-width: 52ch; margin: 0 0 22px; line-height: 2.05; }
   .story p:last-of-type { margin-bottom: 0; }
   .story .signoff {
-    margin-top: 26px; font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
-    font-size: 14px; color: var(--ink);
+    margin-top: 30px; font-size: 15px; font-weight: 700; color: var(--ink);
   }
 
+  /* Case studies — the centerpiece */
   .case {
     display: grid;
     grid-template-columns: 200px 1fr;
@@ -160,7 +323,7 @@
     font-size: 12.5px; color: var(--ink-soft); letter-spacing: 0.06em;
   }
   .case-tag .client {
-    display: block; margin-top: 10px; font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+    display: block; margin-top: 10px; font-family: inherit;
     font-size: 17px; color: var(--ink); letter-spacing: 0.03em; line-height: 1.5;
   }
   .case-seal {
@@ -170,7 +333,7 @@
   }
   .case-body dl { display: grid; grid-template-columns: 84px 1fr; gap: 10px 18px; margin: 0; }
   .case-body dt {
-    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 13px;
+    font-family: inherit; font-size: 13px;
     color: var(--vermillion); letter-spacing: 0.08em; padding-top: 2px;
   }
   .case-body dd { margin: 0; font-size: 15px; color: var(--ink); }
@@ -178,9 +341,10 @@
   .case-quote {
     margin: 18px 0 0; padding: 14px 18px; background: var(--paper-card);
     border-left: 2px solid var(--vermillion); font-size: 14px; color: var(--ink-soft);
-    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-family: inherit;
   }
 
+  /* Before / After */
   .ba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
   .ba-card { background: var(--paper-card); border: 1px solid var(--line); border-radius: 3px; padding: 26px 26px 24px; }
   .ba-card .ba-label { font-size: 12px; color: var(--vermillion); letter-spacing: 0.08em; }
@@ -188,7 +352,7 @@
   .ba-row { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 10px; margin-bottom: 16px; }
   .ba-num { text-align: center; }
   .ba-num .k { display: block; font-size: 11px; color: var(--ink-soft); letter-spacing: 0.06em; margin-bottom: 4px; }
-  .ba-num .v { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 26px; font-variant-numeric: tabular-nums; }
+  .ba-num .v { font-family: inherit; font-size: 26px; font-variant-numeric: tabular-nums; }
   .ba-num.before .v { color: var(--ink-soft); }
   .ba-num.after .v { color: var(--vermillion); }
   .ba-arrow { color: var(--vermillion); font-size: 18px; }
@@ -204,25 +368,46 @@
   .ba-diff.before { opacity: 0.75; }
   .ba-diff.after { border-left-color: var(--vermillion); color: var(--ink); }
   .ba-diff.after .diff-label { color: var(--vermillion); }
-  .ba-diff mark { background: rgba(182, 65, 42, 0.14); color: inherit; padding: 0 2px; border-radius: 2px; }
-  @media (prefers-color-scheme: dark) { .ba-diff mark { background: rgba(219, 106, 68, 0.22); } }
+  .ba-diff mark { background: rgba(47, 127, 184, 0.16); color: inherit; padding: 0 2px; border-radius: 2px; }
+  @media (prefers-color-scheme: dark) { .ba-diff mark { background: rgba(103, 178, 222, 0.24); } }
 
+  /* セクションの塗り分け（のっぺり防止） */
+  #before-after, #samples, #pricing { background: var(--paper-deep); }
+  #cases, #services, #trust { background: var(--paper); }
+
+  /* 見出しの水彩マーカー */
+  .section-head h2, .story h2 { position: relative; display: inline-block; padding-bottom: 14px; }
+  .section-head h2::after, .story h2::after {
+    content: ""; position: absolute; left: 0; bottom: 0;
+    width: 88px; height: 9px; border-radius: 8px;
+    background: linear-gradient(90deg, var(--vermillion), var(--vermillion-soft));
+    filter: url(#brush); opacity: 0.75;
+  }
+
+  /* Services */
   .services { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
-  .service-card { background: var(--paper-card); border: 1px solid var(--line); border-radius: 2px; padding: 0 0 22px; overflow: hidden; }
+  .service-card { position: relative; background: var(--paper-card); border: 1px solid var(--line); border-radius: 2px; padding: 0 0 22px; overflow: hidden; }
   .service-card .service-photo { width: 100%; aspect-ratio: 16/10; overflow: hidden; }
   .service-card .service-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .service-card .service-body { padding: 20px 24px 0; }
-  .service-card .num { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 13px; color: var(--ink-soft); letter-spacing: 0.08em; }
-  .service-card h3 { font-size: 19px; margin: 10px 0 10px; }
+  .service-card .service-body { position: relative; padding: 20px 24px 0; }
+  .service-card .num {
+    position: absolute; top: -6px; right: 18px;
+    font-size: 58px; font-weight: 800; line-height: 1;
+    color: var(--vermillion); opacity: 0.13; letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums; pointer-events: none;
+  }
+  .service-card h3 { font-size: 19px; margin: 10px 0 10px; padding-right: 54px; }
   .service-card p { font-size: 14px; color: var(--ink-soft); margin: 0 0 16px; }
   .service-card .price { display: flex; justify-content: space-between; align-items: baseline; border-top: 1px dashed var(--line); padding-top: 12px; font-size: 13px; color: var(--ink-soft); }
-  .service-card .price strong { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 16px; color: var(--vermillion); font-variant-numeric: tabular-nums; }
+  .service-card .price strong { font-family: inherit; font-size: 16px; color: var(--vermillion); font-variant-numeric: tabular-nums; }
 
+  /* Trust */
   .trust { background: var(--paper-deep); border-radius: 2px; padding: 36px 38px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
   .trust h3 { font-size: 18px; margin: 0 0 10px; }
   .trust p { font-size: 14px; color: var(--ink-soft); margin: 0; }
   .trust .divider { grid-column: 1 / -1; height: 1px; background: var(--line); }
 
+  /* Sample writing */
   .sample-note {
     font-size: 13px; color: var(--ink-soft); margin: -18px 0 32px;
   }
@@ -245,17 +430,17 @@
   }
   .sample-visual.has-photo::after { display: none; }
   .sample-visual.has-photo img { width: 100%; height: 100%; object-fit: cover; display: block; position: relative; z-index: 1; }
-  .v-beauty { background: linear-gradient(150deg, #E9D2C9, #F3E7DC); }
-  .v-career { background: linear-gradient(150deg, #D8DEE6, #ECEFF2); }
-  .v-asset  { background: linear-gradient(150deg, #DCE2D2, #EFF2E9); }
-  .v-family { background: linear-gradient(150deg, #EAD9C4, #F5EDE0); }
-  .v-ai     { background: linear-gradient(150deg, #DCD2E6, #EEE9F2); }
+  .v-beauty { background: linear-gradient(150deg, #DCE9F2, #EFF6FB); }
+  .v-career { background: linear-gradient(150deg, #D3E2EE, #EAF2F8); }
+  .v-asset  { background: linear-gradient(150deg, #D6E8E3, #EDF6F3); }
+  .v-family { background: linear-gradient(150deg, #E2EBF3, #F2F7FB); }
+  .v-ai     { background: linear-gradient(150deg, #CFE3F0, #E8F2F9); }
   @media (prefers-color-scheme: dark) {
-    .v-beauty { background: linear-gradient(150deg, #3A2C26, #26201B); }
-    .v-career { background: linear-gradient(150deg, #262C33, #1E211D); }
-    .v-asset  { background: linear-gradient(150deg, #2A2E22, #1F211A); }
-    .v-family { background: linear-gradient(150deg, #362B1E, #26201A); }
-    .v-ai     { background: linear-gradient(150deg, #2E2838, #211E27); }
+    .v-beauty { background: linear-gradient(150deg, #1C2C3A, #141D26); }
+    .v-career { background: linear-gradient(150deg, #1A2733, #131B23); }
+    .v-asset  { background: linear-gradient(150deg, #172E2A, #121F1D); }
+    .v-family { background: linear-gradient(150deg, #1E2A38, #151E27); }
+    .v-ai     { background: linear-gradient(150deg, #1B2A3A, #141D28); }
   }
 
   .sample-card.featured { border-color: var(--vermillion); }
@@ -273,44 +458,45 @@
   .sample-card blockquote {
     margin: 4px 0 0; padding: 12px 14px; background: var(--paper);
     border-left: 2px solid var(--line); font-size: 13.5px; color: var(--ink-soft);
-    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; line-height: 1.9;
+    font-family: inherit; line-height: 1.9;
   }
   .sample-card .meta { font-size: 12px; color: var(--ink-soft); margin-top: auto; }
 
   .table-scroll { overflow-x: auto; }
   table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 480px; }
   th, td { text-align: left; padding: 13px 16px; border-bottom: 1px solid var(--line); }
-  th { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; color: var(--ink-soft); font-weight: 600; font-size: 12.5px; letter-spacing: 0.05em; }
+  th { font-family: inherit; color: var(--ink-soft); font-weight: 600; font-size: 12.5px; letter-spacing: 0.05em; }
   td.amount { font-variant-numeric: tabular-nums; color: var(--vermillion); font-weight: 600; }
 
+  /* Plan cards (松竹梅) */
   .plan-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 40px; }
   .plan-card { position: relative; background: var(--paper-card); border: 1px solid var(--line); border-radius: 2px; padding: 28px 22px 22px; }
   .plan-card.featured { border-color: var(--vermillion); }
   .plan-badge {
-    position: absolute; top: -12px; right: 20px; background: var(--vermillion); color: #FBF6EC;
+    position: absolute; top: -12px; right: 20px; background: var(--vermillion); color: #FFFFFF;
     font-size: 11px; padding: 4px 11px; border-radius: 980px; letter-spacing: 0.04em; font-weight: 600;
   }
   .plan-card .tag { font-size: 12px; color: var(--ink-soft); letter-spacing: 0.06em; }
   .plan-card h3 { font-size: 19px; margin: 6px 0 2px; }
-  .plan-card .price { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 23px; color: var(--vermillion); margin: 4px 0 12px; font-variant-numeric: tabular-nums; }
+  .plan-card .price { font-family: inherit; font-size: 23px; color: var(--vermillion); margin: 4px 0 12px; font-variant-numeric: tabular-nums; }
   .plan-card .for { font-size: 12.5px; color: var(--ink-soft); margin: 0 0 14px; padding-bottom: 14px; border-bottom: 1px dashed var(--line); }
   .plan-card ul { margin: 0; padding-left: 18px; font-size: 13.5px; color: var(--ink-soft); line-height: 1.9; }
 
   .monthly-plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 8px 0 36px; }
   .monthly-card { background: var(--paper-deep); border-radius: 2px; padding: 20px 20px 18px; }
   .monthly-card .tag { font-size: 12px; color: var(--vermillion); letter-spacing: 0.04em; }
-  .monthly-card h4 { font-size: 15.5px; margin: 6px 0 8px; font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; }
+  .monthly-card h4 { font-size: 15.5px; margin: 6px 0 8px; font-family: inherit; }
   .monthly-card .was { font-size: 12px; color: var(--ink-soft); text-decoration: line-through; opacity: 0.7; }
-  .monthly-card .now { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 19px; color: var(--vermillion); margin: 2px 0 8px; }
+  .monthly-card .now { font-family: inherit; font-size: 19px; color: var(--vermillion); margin: 2px 0 8px; }
   .monthly-card .perk { font-size: 12px; color: var(--ink-soft); }
 
   .option-list { display: flex; flex-wrap: wrap; gap: 10px 22px; font-size: 13.5px; color: var(--ink-soft); margin-top: 4px; }
   .option-list span strong { color: var(--vermillion); font-variant-numeric: tabular-nums; }
 
-  .subhead { font-size: 13px; letter-spacing: 0.06em; color: var(--ink-soft); margin: 0 0 14px; font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; }
+  .subhead { font-size: 13px; letter-spacing: 0.06em; color: var(--ink-soft); margin: 0 0 14px; font-family: inherit; }
 
   .final { text-align: left; background: var(--ink); color: var(--paper); border-radius: 2px; padding: 52px 44px; }
-  @media (prefers-color-scheme: dark) { .final { background: #0F0D09; color: var(--ink); } }
+  @media (prefers-color-scheme: dark) { .final { background: #0C141C; color: var(--ink); } }
   .final h2 { font-size: clamp(21px, 2.8vw, 28px); margin: 0 0 12px; color: inherit; }
   .final p { max-width: 48ch; opacity: 0.82; margin: 0 0 26px; font-size: 14.5px; }
 
@@ -329,7 +515,7 @@
     transition: border-color 0.15s ease;
   }
   @media (prefers-color-scheme: dark) {
-    .contact-form input, .contact-form textarea { background: rgba(0, 0, 0, 0.25); border-color: rgba(237, 230, 210, 0.2); }
+    .contact-form input, .contact-form textarea { background: rgba(0, 0, 0, 0.25); border-color: rgba(228, 237, 245, 0.2); }
   }
   .contact-form input::placeholder, .contact-form textarea::placeholder { color: currentColor; opacity: 0.4; }
   .contact-form input:focus, .contact-form textarea:focus { border-color: var(--vermillion-soft); }
@@ -338,7 +524,7 @@
   .contact-form .honey { position: absolute; left: -9999px; }
   .form-status { font-size: 13.5px; margin-top: 4px; display: none; }
   .form-status.show { display: block; }
-  .form-status.ok { color: #8FA37F; }
+  .form-status.ok { color: #3E8E7E; }
   .form-status.err { color: var(--vermillion-soft); }
 
   footer { padding: 36px 0 56px; font-size: 12.5px; color: var(--ink-soft); }
@@ -361,14 +547,27 @@
 </head>
 <body>
 
+<!-- 水彩のにじみを作るフィルタ（輪郭を不規則に歪ませ、手描きの水彩に近づける） -->
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+  <filter id="watercolor" x="-20%" y="-20%" width="140%" height="140%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.012 0.018" numOctaves="4" seed="7" result="noise"/>
+    <feDisplacementMap in="SourceGraphic" in2="noise" scale="48" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+  <!-- 小さな装飾用（歪みを弱く） -->
+  <filter id="brush" x="-30%" y="-140%" width="160%" height="380%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.05 0.35" numOctaves="3" seed="3" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+
 <nav>
   <div class="nav-inner">
-    <a class="nav-brand" href="#top">わたちゃんWorks</a>
+    <a class="nav-brand" href="#top">渡邊 駿</a>
     <div class="nav-links">
-      <a href="#cases">制作事例</a>
-      <a href="#before-after">Before/After</a>
-      <a href="#services">サービス</a>
-      <a href="#samples">サンプル</a>
+      <a href="article/career-plan-30s.html">執筆サンプル</a>
+      <a href="#cases">実績</a>
+      <a href="#services">書けるもの</a>
+      <a href="#samples">文章サンプル</a>
       <a href="#pricing">料金</a>
       <a class="nav-cta" href="#contact">相談する</a>
     </div>
@@ -376,40 +575,65 @@
 </nav>
 
 <header class="hero" id="top">
+  <div class="geo-dots" aria-hidden="true"></div>
+  <div class="geo-rings" aria-hidden="true"></div>
+  <div class="geo-rings left" aria-hidden="true"></div>
+  <div class="wash wash-a" aria-hidden="true"></div>
+  <div class="wash wash-b" aria-hidden="true"></div>
+  <div class="wash wash-c" aria-hidden="true"></div>
   <div class="wrap hero-inner">
-    <span class="eyebrow reveal">わたちゃんWorks</span>
-    <h1 class="reveal">あなたのサービスの魅力を、<br /><em>言葉と形</em>に変える。</h1>
-    <p class="lede reveal">個人事業主・小規模店舗・クリエイターのための、LP・記事・SNS導線制作。AIで速く、人の目で確かに仕上げます。</p>
+    <img class="hero-avatar reveal" src="img/profile.jpg" alt="渡邊駿のプロフィールイラスト">
+    <span class="eyebrow reveal">渡邊 駿 ／ Webライター</span>
+    <h1 class="reveal"><span class="nb">まず、</span><span class="nb">書いたものを</span><br /><em><span class="nb">読んでみて</span><span class="nb">ください。</span></em></h1>
+    <p class="lede reveal">SEO記事・LP・動画台本を書いています。キーワードだけお渡しいただければ、リサーチから構成、執筆、校正まで一人で仕上げます。窓口が分かれないぶん、やりとりは最小限で済みます。</p>
+
+    <a class="hero-read reveal" href="article/career-plan-30s.html">
+      <div class="hero-read-body">
+        <span class="rl">代表的な執筆サンプル</span>
+        <span class="rt"><span class="nb">30代のキャリアプランの</span><span class="nb">考え方｜</span><span class="nb">今から描く</span><span class="nb">将来の指針</span></span>
+        <span class="rm"><span class="nb">SEO記事・約2,600字／</span><span class="nb">リサーチ・構成・本文・CTAまで一貫執筆</span></span>
+      </div>
+      <span class="rarrow" aria-hidden="true">→</span>
+    </a>
+
+    <div class="hero-facts reveal">
+      <span>脚本トライアル <b>契約成立・入金済み</b></span>
+      <span>Web記事 <b>校閲合格・高評価で納品</b></span>
+      <span>YouTube台本 <b>修正なしで承認</b></span>
+    </div>
+
     <div class="cta-row reveal">
-      <a class="btn btn-primary" href="#contact">まず相談してみる</a>
+      <a class="btn btn-primary" href="#contact">執筆のご相談はこちら</a>
       <a class="btn btn-ghost" href="#cases">制作事例を見る</a>
     </div>
   </div>
 </header>
 
 <section class="story">
+  <div class="wash wash-d" aria-hidden="true"></div>
   <div class="wrap story-inner">
     <div class="story-label reveal">
-      代表者より
-      <div class="seal-mini" aria-hidden="true">はじ<br />まり</div>
+      <img class="story-portrait" src="img/profile.jpg" alt="渡邊駿のプロフィールイラスト">
+      渡邊 駿（わたなべ しゅん）
     </div>
     <div class="reveal">
-      <h2>きっかけは、<br />家族と過ごす<em>「当たり前」</em>を<br />守りたかったことでした。</h2>
-      <p>マイホームを建てて2年。家族との時間はかけがえのないものなのに、週末にちょっと遠出をするにも「お金を貯める計画」を立てなければならず、自分に投資する余裕もない——そんな生活に、ストレスと、家族への申し訳なさを感じていました。</p>
-      <p>このままではいけないと、副業を学ぶことに決めたのが始まりです。そこで最初に気づいたのは、業種を問わずあらゆる仕事の土台には「文章」があるということでした。以来、AIツールを活用しながらライティングの力を磨き、LP・記事・SNS投稿・動画台本と、幅広い分野で「言葉で伝える」技術を学び続けています。</p>
-      <p>まだ実績を積み上げている最中です。だからこそ、一件一件のご依頼を丁寧に、誠実に。会社員として本業を続けながら、限られた時間の中でも「頼んでよかった」と思っていただける仕事をお届けします。</p>
-      <p>休日は鉄道旅行でふらっと知らない街を歩いたり、ゲームで頭を空っぽにしたり。そうやって自分の"余白"を大事にしているからこそ、読む人の日常に寄り添う言葉を書けると思っています。</p>
-      <p class="signoff">わたちゃんWorks　代表 渡邊</p>
+      <h2><span class="nb">きっかけは、</span><br /><span class="nb">家族と過ごす</span><em><span class="nb">「当たり前」を</span></em><br /><span class="nb">守りたかった</span><span class="nb">ことでした。</span></h2>
+      <p>マイホームを建てて2年。家族と過ごす時間は、何にも代えがたいものでした。ただ、週末に少し遠出をするだけでも貯金の計画が要る。自分に使えるお金もない。その状況に、家族への申し訳なさを感じていました。</p>
+      <p>このままではいけないと、副業を学び始めました。そこで最初に気づいたことがあります。業種を問わず、あらゆる仕事の土台には「文章」があるということです。以来、記事・LP・SNS・動画台本と、書く仕事を一つずつ手がけてきました。</p>
+      <p>本業があるぶん、一度に多くの案件はお受けできません。そのかわり、お引き受けした案件は締切より早く初稿をお出しします。修正のやりとりに時間を使えたほうが、仕上がりが良くなるからです。</p>
+      <p>休日は鉄道旅行で知らない街を歩いたり、ゲームで頭を空っぽにしたり。そうやって自分の"余白"を大事にしています。読む人の日常に寄り添う言葉は、そこから出てくると思っています。</p>
+      <p class="signoff">渡邊 駿</p>
     </div>
   </div>
 </section>
 
 <section id="cases">
+  <div class="geo-rings s1" aria-hidden="true"></div>
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">制作事例</span>
-      <h2>まだ小さな実績ですが、<br />一件一件、正直にご紹介します。</h2>
-      <p class="desc">駆け出しのライターだからこそ、誇張のない「実際の課題と結果」をお見せします。</p>
+      <h2><span class="nb">件数はまだ</span><span class="nb">多くありません。</span><br /><span class="nb">だから、</span><span class="nb">一件ずつ</span><span class="nb">中身をお見せします。</span></h2>
+      <p class="desc">何を求められ、どう対応し、どう評価されたか。脚色せずそのまま載せています。</p>
     </div>
 
     <div class="case reveal">
@@ -462,7 +686,7 @@
           <dt>施策</dt>
           <dd>「詐欺師は、嘘しかつけない」というプロット・脚本一式を制作し提出。</dd>
           <dt>結果</dt>
-          <dd class="result">契約完了・支払い済み。わたちゃんWorks初の確定報酬。</dd>
+          <dd class="result">契約完了・支払い済み。ライターとして初の確定報酬。</dd>
         </dl>
       </div>
     </div>
@@ -470,27 +694,28 @@
 </section>
 
 <section id="before-after">
+  <div class="geo-stripes" aria-hidden="true"></div>
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">Before / After</span>
-      <h2>「速い」と「確か」は、<br />両立できる。</h2>
+      <h2><span class="nb">「速い」と</span><span class="nb">「確か」は、</span><br /><span class="nb">両立できる。</span></h2>
       <p class="desc">実際の制作から、変化がわかりやすい2つの事例をご紹介します。</p>
     </div>
     <div class="ba-grid stagger">
       <div class="ba-card reveal">
         <span class="ba-label">制作時間</span>
-        <h3>SEO記事1本あたりの制作時間</h3>
+        <h3><span class="nb">SEO記事1本あたりの</span><span class="nb">制作時間</span></h3>
         <div class="ba-row">
           <div class="ba-num before"><span class="k">Before</span><span class="v">148分</span></div>
           <div class="ba-arrow">→</div>
           <div class="ba-num after"><span class="k">After</span><span class="v">62分</span></div>
         </div>
         <span class="ba-badge">58%短縮</span>
-        <p style="font-size:13.5px;color:var(--ink-soft);margin:0;">AIでリサーチ・構成案の下書きを時短しつつ、仕上げの「編集」は必ず自分の目で行う仕組みで実現しています。</p>
+        <p style="font-size:13.5px;color:var(--ink-soft);margin:0;">AIに下調べと下書きを任せ、浮いた時間を編集に回した結果です。同じ料金でも推敲にかけられる時間が増え、お急ぎの納期にも対応しやすくなりました。</p>
       </div>
       <div class="ba-card reveal">
         <span class="ba-label">原稿の質</span>
-        <h3>クライアント様記事：初稿→改稿</h3>
+        <h3><span class="nb">クライアント様記事：</span><span class="nb">初稿→改稿</span></h3>
         <div class="ba-diff before">
           <span class="diff-label">Before（初稿）</span>
           たとえば会議の音声から議事録の下書きを自動生成したり、箇条書きのメモから資料の構成案を作成したりと、活用の幅は広がっています。
@@ -506,64 +731,48 @@
 </section>
 
 <section id="services">
+  <div class="geo-rings s2" aria-hidden="true"></div>
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">提供サービス</span>
-      <h2>「伝わらない」を、<br />構成から立て直します。</h2>
+      <span class="eyebrow">書けるもの</span>
+      <h2><span class="nb">書くことなら、</span><br /><span class="nb">ひととおり</span><span class="nb">お任せください。</span></h2>
+      <p class="desc">SEO記事を軸に、読み手を動かす文章を4つの形で承っています。どれも「構成から」が基本です。</p>
     </div>
     <div class="services stagger">
       <div class="service-card reveal">
-        <div class="service-photo"><img src="img/service-lp.png" alt="LPのワイヤーフレームが表示されたノートPCとメモ"></div>
+        <div class="service-photo"><img src="img/service-seo.jpg" alt="記事下書きとキーワードメモが並んだデスク"></div>
         <div class="service-body">
-          <span class="num">壱</span>
-          <h3>LP制作・文章</h3>
-          <p>サービスや商品の魅力が伝わる流れを設計し、問い合わせ・申し込みにつながる文章を仕上げます。構成案の提示から丁寧に進めます。</p>
-          <div class="price"><span>基本料金の目安</span><strong>15,000円〜</strong></div>
-        </div>
-      </div>
-      <div class="service-card reveal">
-        <div class="service-photo"><img src="img/service-seo.png" alt="記事下書きとキーワードメモが並んだデスク"></div>
-        <div class="service-body">
-          <span class="num">弐</span>
-          <h3>SEO記事・ブログ</h3>
-          <p>ターゲットキーワードと読者像を確認したうえで、構成の設計から丁寧に取り組み、読みやすく内容のある記事をお届けします。</p>
+          <span class="num">01</span>
+          <h3><span class="nb">SEO記事・</span><span class="nb">ブログ記事</span></h3>
+          <p>キーワードだけお渡しいただければ、競合リサーチから見出し構成、本文、メタディスクリプションまで仕上げます。ご担当者に用意していただくのは、記事の方向性だけです。</p>
           <div class="price"><span>基本料金の目安</span><strong>5,000円〜</strong></div>
         </div>
       </div>
       <div class="service-card reveal">
-        <div class="service-photo"><img src="img/service-sns.png" alt="スマートフォンに表示されたSNSプロフィール画面"></div>
+        <div class="service-photo"><img src="img/service-lp.jpg" alt="LPのワイヤーフレームが表示されたノートPCとメモ"></div>
         <div class="service-body">
-          <span class="num">参</span>
-          <h3>SNS導線設計</h3>
-          <p>Instagram・Xのプロフィール文と、問い合わせや購入につながるSNS導線を一緒に整えます。発信コンセプトの整理も承ります。</p>
+          <span class="num">02</span>
+          <h3><span class="nb">LP・</span><span class="nb">セールスライティング</span></h3>
+          <p>何を、どの順番で伝えれば申し込みにつながるか。その流れを設計してから書きます。構成案の段階で一度お見せするので、書き上がってから方向性がずれる心配がありません。</p>
+          <div class="price"><span>基本料金の目安</span><strong>15,000円〜</strong></div>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-photo"><img src="img/service-youtube.jpg" alt="YouTube台本とストーリーボードのメモ"></div>
+        <div class="service-body">
+          <span class="num">03</span>
+          <h3><span class="nb">動画台本・</span><span class="nb">シナリオ</span></h3>
+          <p>冒頭の数秒で離脱されない入り方から、最後の行動喚起まで通して書きます。話し言葉のまま収録に入れる形でお渡しするので、台本を直す手間がかかりません。</p>
+          <div class="price"><span>基本料金の目安</span><strong>ご相談</strong></div>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-photo"><img src="img/service-sns.jpg" alt="スマートフォンに表示されたSNSプロフィール画面"></div>
+        <div class="service-body">
+          <span class="num">04</span>
+          <h3><span class="nb">SNS投稿文・</span><span class="nb">プロフィール文</span></h3>
+          <p>同じ内容でも、Xで読まれる書き方とInstagramで読まれる書き方は違います。媒体ごとに書き分けたうえで、記事やLPへ送る導線の文面まで整えてお渡しします。</p>
           <div class="price"><span>基本料金の目安</span><strong>8,000円〜</strong></div>
-        </div>
-      </div>
-      <div class="service-card reveal">
-        <div class="service-photo"><img src="img/service-youtube.png" alt="YouTube台本とストーリーボードのメモ"></div>
-        <div class="service-body">
-          <span class="num">四</span>
-          <h3>YouTube台本・シナリオ</h3>
-          <p>視聴者に届きやすい構成と言葉の流れを考え、冒頭のフックから最後のCTAまで一貫した台本を作成します。</p>
-          <div class="price"><span>基本料金の目安</span><strong>ご相談</strong></div>
-        </div>
-      </div>
-      <div class="service-card reveal">
-        <div class="service-photo"><img src="img/service-hp.png" alt="コードエディタとプレビュー画面が並んだノートPC"></div>
-        <div class="service-body">
-          <span class="num">伍</span>
-          <h3>HP制作（簡易Webサイト・ツール）</h3>
-          <p>Node.js・HTML/CSSを用いた簡易Webサイト・Webツールの制作に対応しています。現在は自主制作（独自のAI活用ダッシュボード開発）を通じて対応範囲を広げている段階です。</p>
-          <div class="price"><span>基本料金の目安</span><strong>ご相談</strong></div>
-        </div>
-      </div>
-      <div class="service-card reveal">
-        <div class="service-photo"><img src="img/service-ai.png" alt="タブレットに並んだ生成画像のサムネイル"></div>
-        <div class="service-body">
-          <span class="num">六</span>
-          <h3>AI画像生成</h3>
-          <p>ChatGPT等を活用した、note・Instagram向けビジュアル制作に対応しています。記事のアイキャッチ画像などで実践を重ねています。</p>
-          <div class="price"><span>基本料金の目安</span><strong>ご相談</strong></div>
         </div>
       </div>
     </div>
@@ -571,17 +780,18 @@
 </section>
 
 <section id="samples">
+  <div class="geo-stripes" aria-hidden="true"></div>
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">文章サンプル</span>
-      <h2>まだ受注実績のないジャンルも、<br />こんな文章が書けます。</h2>
+      <h2><span class="nb">まだ受注実績のない</span><span class="nb">ジャンルも、</span><br /><span class="nb">こんな文章が</span><span class="nb">書けます。</span></h2>
       <p class="desc sample-note">※以下はスキル研鑽のための自主制作サンプルです。実在の企業様との受注実績ではなく、文体・構成力をお見せするための文章としてご覧ください。</p>
-      <p class="desc sample-note" style="margin-top:-8px;">LPのデザイン違いサンプル(雰囲気の異なる3パターン)は<a href="samples/index.html" style="color:var(--vermillion);text-decoration:underline;">こちら</a>からご覧いただけます。</p>
+      <p class="desc sample-note" style="margin-top:-8px;">LP原稿のサンプル（業種別に、構成と文章を実際のページの形まで仕上げたもの）は<a href="samples/index.html" style="color:var(--vermillion);text-decoration:underline;">こちら</a>からご覧いただけます。</p>
     </div>
     <div class="samples stagger">
       <div class="sample-card featured reveal">
         <div class="sample-visual has-photo v-ai">
-          <img src="img/sample-ai.png" alt="ノートPCとノートで作業する様子">
+          <img src="img/sample-ai.jpg" alt="ノートPCとノートで作業する様子">
         </div>
         <div class="sample-body">
           <span class="badge">専門ジャンル</span>
@@ -593,7 +803,7 @@
       </div>
       <div class="sample-card featured reveal">
         <div class="sample-visual has-photo v-ai">
-          <img src="img/sample-ai.png" alt="ノートPCとノートで作業する様子">
+          <img src="img/sample-ai.jpg" alt="ノートPCとノートで作業する様子">
         </div>
         <div class="sample-body">
           <span class="badge">専門ジャンル</span>
@@ -605,7 +815,7 @@
       </div>
       <div class="sample-card reveal">
         <div class="sample-visual has-photo v-beauty">
-          <img src="img/sample-beauty.png" alt="スキンケア用品のスタイリング写真">
+          <img src="img/sample-beauty.jpg" alt="スキンケア用品のスタイリング写真">
         </div>
         <div class="sample-body">
           <span class="genre">美容・コスメ体験談</span>
@@ -616,7 +826,7 @@
       </div>
       <div class="sample-card reveal">
         <div class="sample-visual has-photo v-career">
-          <img src="img/sample-career.png" alt="履歴書とノートPCで転職活動をする様子">
+          <img src="img/sample-career.jpg" alt="履歴書とノートPCで転職活動をする様子">
         </div>
         <div class="sample-body">
           <span class="genre">副業・転職・キャリア（SEO記事）</span>
@@ -627,7 +837,7 @@
       </div>
       <div class="sample-card reveal">
         <div class="sample-visual has-photo v-asset">
-          <img src="img/sample-asset.png" alt="家計簿とグラフ資料、電卓が置かれたデスク">
+          <img src="img/sample-asset.jpg" alt="家計簿とグラフ資料、電卓が置かれたデスク">
         </div>
         <div class="sample-body">
           <span class="genre">資産形成・経営者向けコラム</span>
@@ -638,7 +848,7 @@
       </div>
       <div class="sample-card reveal">
         <div class="sample-visual has-photo v-family">
-          <img src="img/sample-family.png" alt="リビングにたたみかけの洗濯物と絵本が置かれた様子">
+          <img src="img/sample-family.jpg" alt="リビングにたたみかけの洗濯物と絵本が置かれた様子">
         </div>
         <div class="sample-body">
           <span class="genre">子育て・暮らしエッセイ</span>
@@ -652,42 +862,44 @@
 </section>
 
 <section id="trust">
+  <div class="geo-rings s3" aria-hidden="true"></div>
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">AI活用について</span>
-      <h2>AI任せにしない、という約束。</h2>
+      <h2><span class="nb">AI任せにしない、</span><span class="nb">という約束。</span></h2>
     </div>
     <div class="trust reveal">
       <div>
-        <h3>速さは、AIで。</h3>
+        <h3><span class="nb">速さは、</span><span class="nb">AIで。</span></h3>
         <p>制作にはAIツール（Claude・ChatGPT）を活用し、リサーチや下書きのスピードを高めています。忙しい方の「早く相談したい」に応えられる体制です。</p>
       </div>
       <div>
-        <h3>確かさは、人の目で。</h3>
+        <h3><span class="nb">確かさは、</span><span class="nb">人の目で。</span></h3>
         <p>AIの出力をそのまま納品することはありません。ヒアリング内容と照らし合わせながら、構成・事実確認・表現の自然さを一つひとつ自分の目で確認・編集しています。</p>
       </div>
       <div class="divider"></div>
       <div style="grid-column: 1 / -1;">
-        <p>現在、実績を積みながらサービスを育てている段階です。「こんなことお願いできるかな？」という段階でも構いません。まずは一度、お気軽にご相談ください。</p>
+        <p>「こんなことお願いできるかな」という段階でも構いません。要件が固まる前にご相談いただくほうが、目的に合った形をご提案できます。</p>
       </div>
     </div>
   </div>
 </section>
 
 <section id="pricing">
+  <div class="geo-stripes" aria-hidden="true"></div>
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">料金の目安</span>
-      <h2>内容に応じて選べる、3つのプラン。</h2>
+      <h2><span class="nb">内容に応じて</span><span class="nb">選べる、</span><span class="nb">3つのプラン。</span></h2>
       <p class="desc">SEO記事は3段階のプランからお選びいただけます。まずはどれか迷ったら、スタンダードプランがおすすめです。</p>
     </div>
 
     <div class="plan-cards stagger">
       <div class="plan-card reveal">
         <span class="tag">ライト（梅）</span>
-        <h3>まず1本、試したい方に</h3>
+        <h3><span class="nb">まず1本、</span><span class="nb">試したい方に</span></h3>
         <div class="price">5,000円〜</div>
-        <p class="for">構成案はご支給いただける方向け</p>
+        <p class="for"><span class="nb">構成案は</span><span class="nb">ご支給いただける</span><span class="nb">方向け</span></p>
         <ul>
           <li>〜2,500文字</li>
           <li>構成案：クライアント支給</li>
@@ -698,9 +910,9 @@
       <div class="plan-card featured reveal">
         <span class="plan-badge">★おすすめ</span>
         <span class="tag">スタンダード（竹）</span>
-        <h3>構成からまるっとお任せ</h3>
+        <h3><span class="nb">構成から</span><span class="nb">まるっとお任せ</span></h3>
         <div class="price">8,000円〜</div>
-        <p class="for">キーワード調査も含めて任せたい方向け</p>
+        <p class="for"><span class="nb">キーワード調査も</span><span class="nb">含めて任せたい</span><span class="nb">方向け</span></p>
         <ul>
           <li>〜3,500文字</li>
           <li>構成案作成込み</li>
@@ -711,9 +923,9 @@
       </div>
       <div class="plan-card reveal">
         <span class="tag">プレミアム（松）</span>
-        <h3>入稿・SNS展開まで一括で</h3>
+        <h3><span class="nb">入稿・SNS展開まで</span><span class="nb">一括で</span></h3>
         <div class="price">15,000円〜</div>
-        <p class="for">記事をサイトへの掲載まで任せたい方向け</p>
+        <p class="for"><span class="nb">記事をサイトへの</span><span class="nb">掲載まで任せたい</span><span class="nb">方向け</span></p>
         <ul>
           <li>〜5,000文字</li>
           <li>構成案＋WordPress入稿込み</li>
@@ -756,11 +968,9 @@
           <tr><th>サービス</th><th>目安</th><th>納期目安</th><th>料金</th></tr>
         </thead>
         <tbody>
-          <tr><td>LP制作</td><td>構成〜文章一式</td><td>5〜7営業日</td><td class="amount">15,000円〜30,000円</td></tr>
-          <tr><td>SNS導線設計</td><td>Instagram・X 2媒体</td><td>3〜5営業日</td><td class="amount">8,000円〜15,000円</td></tr>
-          <tr><td>YouTube台本・シナリオ</td><td>1本</td><td>ご相談</td><td class="amount">ご相談</td></tr>
-          <tr><td>HP制作（簡易Webサイト・ツール）</td><td>1ページ〜</td><td>ご相談</td><td class="amount">ご相談</td></tr>
-          <tr><td>AI画像生成</td><td>1枚〜</td><td>ご相談</td><td class="amount">ご相談</td></tr>
+          <tr><td>LP原稿・セールスライティング</td><td>構成〜文章一式</td><td>5〜7営業日</td><td class="amount">15,000円〜30,000円</td></tr>
+          <tr><td>SNS投稿文・プロフィール文</td><td>Instagram・X 2媒体</td><td>3〜5営業日</td><td class="amount">8,000円〜15,000円</td></tr>
+          <tr><td>動画台本・シナリオ</td><td>1本</td><td>ご相談</td><td class="amount">ご相談</td></tr>
         </tbody>
       </table>
     </div>
@@ -776,15 +986,16 @@
 </section>
 
 <section id="contact">
+  <div class="geo-rings s1" aria-hidden="true"></div>
   <div class="wrap">
     <div class="final reveal">
       <span class="eyebrow" style="color: var(--vermillion-soft);">お問い合わせ</span>
-      <h2>「こんなこと頼めるかな」から、<br />お気軽にどうぞ。</h2>
-      <p>個人事業主・小規模事業者・店舗・クリエイターの方向けに、Web制作と文章制作のお手伝いをしています。まずは一度、ご相談ください。一緒に考えるところから始めます。</p>
+      <h2><span class="nb">「こんなこと</span><span class="nb">頼めるかな」から、</span><br /><span class="nb">お気軽に</span><span class="nb">どうぞ。</span></h2>
+      <p>SEO記事・LP原稿・動画台本・SNS投稿文を書いています。「どんな記事にすればいいか決まっていない」という段階でも構いません。キーワードや読者像を一緒に整理するところから始めます。</p>
 
       <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="1663e859-395f-426f-b2ee-bc2f1cb81d98">
-        <input type="hidden" name="subject" value="【わたちゃんWorks】LPからのお問い合わせ">
+        <input type="hidden" name="subject" value="【渡邊駿】ポートフォリオからのお問い合わせ">
         <input type="checkbox" name="botcheck" class="honey" tabindex="-1" autocomplete="off">
 
         <div class="field">
@@ -808,8 +1019,8 @@
 
 <footer>
   <div class="wrap footer-inner">
-    <span>わたちゃんWorks — あなたのサービスの魅力を、言葉と形に変える。</span>
-    <span>© 2026 わたちゃんWorks</span>
+    <span>渡邊 駿 — Webライター（SEO記事・LP原稿・動画台本・SNS投稿文）</span>
+    <span>© 2026 渡邊 駿</span>
   </div>
 </footer>
 
@@ -870,6 +1081,69 @@
       });
     }, { threshold: 0.12 });
     els.forEach(function (el) { io.observe(el); });
+  })();
+
+  /* 背景の模様をスクロールに連動させる（層ごとに速度差＝パララックス） */
+  (function () {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    // [要素, 縦移動の振れ幅(px), 拡大縮小の振れ幅]
+    // ※同心円は回転させても対称なので見えない。拡大縮小（波紋が広がる動き）にする
+    var layers = [
+      [".geo-dots",                                          52, 0    ],
+      [".geo-rings:not(.left):not(.s1):not(.s2):not(.s3)",  -95, 0.13 ],
+      [".geo-rings.left",                                   120, -0.11],
+      [".geo-rings.s1",                                    -105, 0.11 ],
+      [".geo-rings.s2",                                     130, -0.10],
+      [".geo-rings.s3",                                    -115, 0.14 ],
+      [".wash-a",                                            65, 0.05 ],
+      [".wash-b",                                           -88, -0.04],
+      [".wash-c",                                           110, 0.06 ],
+      [".wash-d",                                           -75, 0.05 ]
+    ];
+
+    var targets = [];
+    layers.forEach(function (L) {
+      document.querySelectorAll(L[0]).forEach(function (el) {
+        targets.push({ el: el, amp: L[1], zoom: L[2], host: el.parentElement });
+      });
+    });
+    // セクションごとの斜めストライプは背景位置を流す
+    var stripes = Array.prototype.slice.call(document.querySelectorAll(".geo-stripes"));
+    if (!targets.length && !stripes.length) return;
+
+    var ticking = false;
+
+    function paint() {
+      ticking = false;
+      var vh = window.innerHeight;
+
+      targets.forEach(function (t) {
+        var r = t.host.getBoundingClientRect();
+        if (r.bottom < -300 || r.top > vh + 300) return;   // 画面外は計算しない
+        var progress = (vh - r.top) / (vh + r.height);      // 0〜1
+        var k = (progress - 0.5) * 2;                       // -1〜+1
+        var shift = k * t.amp;                              // 縦移動(px)
+        var sc = t.zoom ? 1 + k * t.zoom : 1;               // 拡大縮小
+        t.el.style.transform =
+          "translate3d(0," + shift.toFixed(1) + "px,0)" + (t.zoom ? " scale(" + sc.toFixed(3) + ")" : "");
+      });
+
+      stripes.forEach(function (el) {
+        var r = el.parentElement.getBoundingClientRect();
+        if (r.bottom < -300 || r.top > vh + 300) return;
+        var progress = (vh - r.top) / (vh + r.height);
+        el.style.backgroundPosition = (progress * 340).toFixed(1) + "px 0";
+      });
+    }
+
+    function onScroll() {
+      if (!ticking) { ticking = true; requestAnimationFrame(paint); }
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    paint();
   })();
 </script>
 
