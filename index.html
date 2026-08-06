@@ -109,12 +109,19 @@
     max-width: 860px; margin: 0 auto; padding: 0 26px; height: 56px;
     display: flex; align-items: center; justify-content: space-between; font-size: 13.5px;
   }
-  .nav-brand { font-family: inherit; font-weight: 600; text-decoration: none; letter-spacing: 0.04em; }
+  .nav-brand { font-family: inherit; font-weight: 600; text-decoration: none; letter-spacing: 0.04em; white-space: nowrap; }
   .nav-links { display: flex; gap: 26px; align-items: center; }
-  .nav-links a { color: var(--ink-soft); text-decoration: none; transition: color 0.2s; }
+  .nav-links a { color: var(--ink-soft); text-decoration: none; transition: color 0.2s; white-space: nowrap; }
   .nav-links a:hover { color: var(--ink); }
-  .nav-cta { border: 1px solid var(--vermillion); color: var(--vermillion) !important; padding: 6px 14px; border-radius: 2px; font-size: 12.5px; }
+  .nav-cta { border: 1px solid var(--vermillion); color: var(--vermillion) !important; padding: 6px 14px; border-radius: 2px; font-size: 12.5px; white-space: nowrap; flex-shrink: 0; }
   .nav-cta:hover { background: var(--vermillion); color: var(--paper) !important; }
+
+  /* スマホ幅：中間のリンクを隠し、ロゴ＋相談CTAだけを1行に収める */
+  @media (max-width: 640px) {
+    .nav-links a:not(.nav-cta) { display: none; }
+    .nav-inner { padding: 0 18px; }
+    .nav-links { gap: 10px; }
+  }
 
   /* ── 水彩の装飾（ブランドの絵柄に合わせた手描き感） ── */
   .wash { position: absolute; pointer-events: none; z-index: 0; filter: url(#watercolor); opacity: 0.55; }
