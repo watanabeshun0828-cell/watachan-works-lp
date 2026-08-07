@@ -229,10 +229,17 @@
   }
   .cta-row { display: flex; gap: 14px; margin-top: 38px; flex-wrap: wrap; justify-content: center; }
 
-  /* Hero: 代表記事カード */
+  /* Hero: ジャンル別・代表記事カード */
+  .hero-reads { margin: 34px auto 0; max-width: 820px; }
+  .hero-reads-label {
+    display: block; font-size: 11.5px; letter-spacing: 0.16em;
+    color: var(--ink-soft); margin-bottom: 12px; text-align: center;
+  }
+  .hero-reads-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; text-align: left; }
+  @media (max-width: 680px) { .hero-reads-grid { grid-template-columns: 1fr; } }
+
   .hero-read {
-    position: relative; margin: 34px auto 0;
-    text-align: left;
+    position: relative;
     display: flex; align-items: stretch; gap: 0;
     background: var(--paper-card);
     border: 1px solid var(--line);
@@ -240,7 +247,6 @@
     border-radius: 3px;
     text-decoration: none;
     overflow: hidden;
-    max-width: 620px;
   }
   .hero-read:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(31,58,95,0.10); }
   .hero-read-body { padding: 18px 22px; flex: 1; min-width: 0; }
@@ -594,14 +600,27 @@
     <h1 class="reveal"><span class="nb">まず、</span><span class="nb">書いたものを</span><br /><em><span class="nb">読んでみて</span><span class="nb">ください。</span></em></h1>
     <p class="lede reveal">SEO記事・LP・動画台本を書いています。キーワードだけお渡しいただければ、リサーチから構成、執筆、校正まで一人で仕上げます。窓口が分かれないぶん、やりとりは最小限で済みます。</p>
 
-    <a class="hero-read reveal" href="article/career-plan-30s.html">
-      <div class="hero-read-body">
-        <span class="rl">代表的な執筆サンプル</span>
-        <span class="rt"><span class="nb">30代のキャリアプランの</span><span class="nb">考え方｜</span><span class="nb">今から描く</span><span class="nb">将来の指針</span></span>
-        <span class="rm"><span class="nb">SEO記事・約2,600字／</span><span class="nb">リサーチ・構成・本文・CTAまで一貫執筆</span></span>
+    <div class="hero-reads reveal">
+      <span class="hero-reads-label">ジャンル別・代表サンプル</span>
+      <div class="hero-reads-grid">
+        <a class="hero-read" href="article/career-plan-30s.html">
+          <div class="hero-read-body">
+            <span class="rl">キャリア・働き方</span>
+            <span class="rt"><span class="nb">30代のキャリアプランの</span><span class="nb">考え方｜</span><span class="nb">今から描く</span><span class="nb">将来の指針</span></span>
+            <span class="rm"><span class="nb">SEO記事・約2,600字／</span><span class="nb">リサーチ・構成・本文・CTAまで一貫執筆</span></span>
+          </div>
+          <span class="rarrow" aria-hidden="true">→</span>
+        </a>
+        <a class="hero-read" href="article/nisa-start-guide.html">
+          <div class="hero-read-body">
+            <span class="rl">資産形成・お金</span>
+            <span class="rt"><span class="nb">新NISAの始め方｜</span><span class="nb">会社員が知っておきたい</span><span class="nb">手順・注意点</span></span>
+            <span class="rm"><span class="nb">SEO記事・約4,500字／</span><span class="nb">公的情報を原文引用で裏取り</span></span>
+          </div>
+          <span class="rarrow" aria-hidden="true">→</span>
+        </a>
       </div>
-      <span class="rarrow" aria-hidden="true">→</span>
-    </a>
+    </div>
 
     <div class="hero-facts reveal">
       <span>脚本トライアル <b>契約成立・入金済み</b></span>
