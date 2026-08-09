@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>料金案内 - 渡邊駿｜Webライター</title>
+<meta name="description" content="Webライター渡邊駿のSEO記事・LP原稿・動画台本・SNS投稿文の料金案内です。単発プランから月額継続プランまで、内容に応じて選べる料金体系を掲載しています。">
+<style>
+  :root {
+    --ink: #1F3A5F;
+    --ink-soft: #5D7392;
+    --paper: #FFFFFF;
+    --paper-deep: #EEF4F9;
+    --paper-card: #F7FAFD;
+    --vermillion: #2F7FB8;
+    --vermillion-soft: #6BA8CE;
+    --sage: #3E8E7E;
+    --line: rgba(31, 58, 95, 0.15);
+    --line-soft: rgba(31, 58, 95, 0.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #E4EDF5;
+      --ink-soft: #9DB3C8;
+      --paper: #10171F;
+      --paper-deep: #182330;
+      --paper-card: #161F2A;
+      --vermillion: #67B2DE;
+      --vermillion-soft: #8CC4E4;
+      --sage: #6FBBA9;
+      --line: rgba(228, 237, 245, 0.16);
+      --line-soft: rgba(228, 237, 245, 0.08);
+    }
+  }
+
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Hiragino Maru Gothic ProN", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic Medium", "Meiryo", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.9;
+    letter-spacing: 0.02em;
+  }
+  h1, h2, h3, h4 {
+    font-family: inherit;
+    font-weight: 700;
+    text-wrap: balance;
+    letter-spacing: 0.005em;
+    line-height: 1.45;
+  }
+  h1, h2, h3, h4, p, li, .desc, .for {
+    word-break: auto-phrase;
+    line-break: strict;
+    overflow-wrap: normal;
+  }
+  .nb { display: inline-block; }
+  a { color: var(--vermillion); }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 26px; }
+
+  .topbar {
+    border-bottom: 1px solid var(--line-soft);
+    background: var(--paper-card);
+    position: sticky; top: 0; z-index: 10;
+    backdrop-filter: saturate(140%) blur(6px);
+  }
+  .topbar .wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; padding-top: 14px; padding-bottom: 14px;
+  }
+  .brand { font-weight: 700; letter-spacing: 0.06em; text-decoration: none; color: var(--ink); }
+  .back { font-size: 13px; text-decoration: none; white-space: nowrap; }
+
+  header.head { padding: 54px 0 40px; text-align: center; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 0.6em;
+    font-size: 12px; letter-spacing: 0.2em; color: var(--vermillion); font-weight: 600;
+  }
+  .eyebrow::before, .eyebrow::after { content: ""; width: 18px; height: 1px; background: var(--vermillion); }
+  header.head h1 { font-size: clamp(26px, 5vw, 38px); margin: 18px 0 20px; font-weight: 800; letter-spacing: -0.01em; }
+  header.head .desc { font-size: 15px; color: var(--ink-soft); max-width: 52ch; margin: 0 auto; line-height: 2; }
+
+  main { padding-bottom: 40px; }
+
+  .subhead { font-size: 13px; letter-spacing: 0.06em; color: var(--ink-soft); margin: 0 0 14px; font-family: inherit; }
+
+  .first-offer {
+    background: var(--paper-deep); border: 1px solid var(--sage); border-radius: 4px;
+    padding: 24px 26px; margin-bottom: 36px;
+  }
+  .first-offer-badge {
+    display: inline-block; background: var(--sage); color: #FFFFFF;
+    font-size: 11px; padding: 4px 11px; border-radius: 980px; letter-spacing: 0.04em; font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .first-offer h3 { font-size: 17px; margin: 0 0 10px; }
+  .first-offer p { font-size: 13.5px; color: var(--ink-soft); line-height: 1.9; margin: 0; }
+  .first-offer p strong { color: var(--sage); font-size: 15px; }
+
+  .plan-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 44px; }
+  .plan-card { position: relative; background: var(--paper-card); border: 1px solid var(--line); border-radius: 4px; padding: 28px 22px 22px; }
+  .plan-card.featured { border-color: var(--vermillion); }
+  .plan-badge {
+    position: absolute; top: -12px; right: 20px; background: var(--vermillion); color: #FFFFFF;
+    font-size: 11px; padding: 4px 11px; border-radius: 980px; letter-spacing: 0.04em; font-weight: 600;
+  }
+  .plan-card .tag { font-size: 12px; color: var(--ink-soft); letter-spacing: 0.06em; }
+  .plan-card h3 { font-size: 19px; margin: 6px 0 2px; }
+  .plan-card .price { font-family: inherit; font-size: 23px; color: var(--vermillion); margin: 4px 0 12px; font-variant-numeric: tabular-nums; }
+  .plan-card .for { font-size: 12.5px; color: var(--ink-soft); margin: 0 0 14px; padding-bottom: 14px; border-bottom: 1px dashed var(--line); }
+  .plan-card ul { margin: 0; padding-left: 18px; font-size: 13.5px; color: var(--ink-soft); line-height: 1.9; }
+
+  .monthly-plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 8px 0 40px; }
+  .monthly-card { background: var(--paper-deep); border-radius: 4px; padding: 20px 20px 18px; }
+  .monthly-card .tag { font-size: 12px; color: var(--vermillion); letter-spacing: 0.04em; }
+  .monthly-card h4 { font-size: 15.5px; margin: 6px 0 8px; font-family: inherit; }
+  .monthly-card .was { font-size: 12px; color: var(--ink-soft); text-decoration: line-through; opacity: 0.7; }
+  .monthly-card .now { font-family: inherit; font-size: 19px; color: var(--vermillion); margin: 2px 0 8px; }
+  .monthly-card .perk { font-size: 12px; color: var(--ink-soft); }
+
+  .table-scroll { overflow-x: auto; margin-bottom: 36px; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 480px; }
+  th, td { text-align: left; padding: 13px 16px; border-bottom: 1px solid var(--line); }
+  th { font-family: inherit; color: var(--ink-soft); font-weight: 600; font-size: 12.5px; letter-spacing: 0.05em; }
+  td.amount { font-variant-numeric: tabular-nums; color: var(--vermillion); font-weight: 600; }
+
+  .option-list { display: flex; flex-wrap: wrap; gap: 10px 22px; font-size: 13.5px; color: var(--ink-soft); margin-top: 4px; margin-bottom: 48px; }
+  .option-list span strong { color: var(--vermillion); font-variant-numeric: tabular-nums; }
+
+  .cta-box {
+    text-align: center; padding: 44px 26px; background: var(--paper-deep); border-radius: 6px;
+  }
+  .cta-box p { font-size: 14.5px; color: var(--ink-soft); margin: 0 0 20px; }
+  .btn {
+    display: inline-block; text-decoration: none;
+    background: var(--vermillion); color: #fff;
+    padding: 13px 30px; border-radius: 6px;
+    font-size: 14.5px; letter-spacing: 0.05em;
+  }
+
+  footer { padding: 36px 0 56px; font-size: 12.5px; color: var(--ink-soft); text-align: center; }
+
+  @media (max-width: 760px) {
+    .plan-cards, .monthly-plans { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html">渡邊 駿</a>
+    <a class="back" href="index.html">← ポートフォリオへ戻る</a>
+  </div>
+</div>
+
+<header class="head">
+  <div class="wrap">
+    <span class="eyebrow">料金の目安</span>
+    <h1><span class="nb">内容に応じて</span><span class="nb">選べる、</span><span class="nb">3つのプラン。</span></h1>
+    <p class="desc">SEO記事は3段階のプランからお選びいただけます。まずはどれか迷ったら、スタンダードプランがおすすめです。</p>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <div class="first-offer">
+      <span class="first-offer-badge">先着3名様限定</span>
+      <h3><span class="nb">初めての方向けの、</span><span class="nb">実績作り価格。</span></h3>
+      <p>スタンダードプラン（通常8,000円〜）を、先着3名様限定で<strong>3,000円</strong>にてご案内いたします。実績として記事の内容やお仕事の分野をご紹介させていただくことを条件とさせていただきます（お名前・社名の掲載可否はご相談に応じます）。まずはお気軽にご相談ください。</p>
+    </div>
+
+    <div class="plan-cards">
+      <div class="plan-card">
+        <span class="tag">ライト（梅）</span>
+        <h3><span class="nb">まず1本、</span><span class="nb">試したい方に</span></h3>
+        <div class="price">5,000円〜</div>
+        <p class="for"><span class="nb">構成案は</span><span class="nb">ご支給いただける</span><span class="nb">方向け</span></p>
+        <ul>
+          <li>〜2,500文字</li>
+          <li>構成案：クライアント支給</li>
+          <li>修正1回</li>
+          <li>納期5営業日</li>
+        </ul>
+      </div>
+      <div class="plan-card featured">
+        <span class="plan-badge">★おすすめ</span>
+        <span class="tag">スタンダード（竹）</span>
+        <h3><span class="nb">構成から</span><span class="nb">まるっとお任せ</span></h3>
+        <div class="price">8,000円〜</div>
+        <p class="for"><span class="nb">キーワード調査も</span><span class="nb">含めて任せたい</span><span class="nb">方向け</span></p>
+        <ul>
+          <li>〜3,500文字</li>
+          <li>構成案作成込み</li>
+          <li>修正2回</li>
+          <li>納期7営業日</li>
+          <li>キーワード調査込み</li>
+        </ul>
+      </div>
+      <div class="plan-card">
+        <span class="tag">プレミアム（松）</span>
+        <h3><span class="nb">入稿・SNS展開まで</span><span class="nb">一括で</span></h3>
+        <div class="price">15,000円〜</div>
+        <p class="for"><span class="nb">記事をサイトへの</span><span class="nb">掲載まで任せたい</span><span class="nb">方向け</span></p>
+        <ul>
+          <li>〜5,000文字</li>
+          <li>構成案＋WordPress入稿込み</li>
+          <li>修正3回</li>
+          <li>納期10営業日</li>
+          <li>メタディスクリプション・タイトル案3パターン・SNSシェア用テキスト・内部リンク提案</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="subhead">月額継続プラン（スタンダード基準）</p>
+    <div class="monthly-plans">
+      <div class="monthly-card">
+        <span class="tag">ライト月額</span>
+        <h4>月3本</h4>
+        <div class="was">通常24,000円</div>
+        <div class="now">20,000円<span style="font-size:12px;">/月</span></div>
+        <div class="perk">17%オフ・優先対応</div>
+      </div>
+      <div class="monthly-card">
+        <span class="tag">スタンダード月額 ★人気</span>
+        <h4>月5本</h4>
+        <div class="was">通常40,000円</div>
+        <div class="now">32,000円<span style="font-size:12px;">/月</span></div>
+        <div class="perk">20%オフ・優先対応・月1回MTG</div>
+      </div>
+      <div class="monthly-card">
+        <span class="tag">プレミアム月額</span>
+        <h4>月10本</h4>
+        <div class="was">通常80,000円</div>
+        <div class="now">60,000円<span style="font-size:12px;">/月</span></div>
+        <div class="perk">25%オフ</div>
+      </div>
+    </div>
+
+    <p class="subhead">その他のサービス</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>サービス</th><th>目安</th><th>納期目安</th><th>料金</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>LP原稿・セールスライティング</td><td>構成〜文章一式</td><td>5〜7営業日</td><td class="amount">15,000円〜30,000円</td></tr>
+          <tr><td>SNS投稿文・プロフィール文</td><td>Instagram・X 2媒体</td><td>3〜5営業日</td><td class="amount">8,000円〜15,000円</td></tr>
+          <tr><td>動画台本・シナリオ</td><td>1本</td><td>ご相談</td><td class="amount">ご相談</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="subhead">オプション</p>
+    <div class="option-list">
+      <span>特急対応 <strong>+50%</strong></span>
+      <span>追加文字数（500字） <strong>+1,000円</strong></span>
+      <span>追加修正（1回） <strong>+1,500円</strong></span>
+      <span>画像選定（5枚） <strong>+1,000円</strong></span>
+    </div>
+
+    <div class="cta-box">
+      <p>ご不明な点や、プラン選びに迷った場合はお気軽にご相談ください。</p>
+      <a class="btn" href="index.html#contact">執筆のご相談はこちら</a>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 渡邊 駿</div>
+</footer>
+
+</body>
+</html>

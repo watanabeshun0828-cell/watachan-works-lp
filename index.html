@@ -40,7 +40,7 @@
   body {
     background: var(--paper);
     color: var(--ink);
-    font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic Medium", "Meiryo", sans-serif;
+    font-family: "Hiragino Maru Gothic ProN", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic Medium", "Meiryo", sans-serif;
     -webkit-font-smoothing: antialiased;
     line-height: 1.9;
     letter-spacing: 0.02em;
@@ -304,17 +304,8 @@
     background: radial-gradient(closest-side, rgba(47,127,184,0.30), rgba(47,127,184,0.07) 60%, transparent 76%);
   }
   .story-inner { position: relative; z-index: 1; }
-  .story-inner { display: grid; grid-template-columns: 200px 1fr; gap: 40px; }
-  .story-label { font-size: 12.5px; color: var(--ink-soft); letter-spacing: 0.06em; }
-  .story-portrait {
-    width: 150px; height: 150px; border-radius: 50%;
-    object-fit: cover; display: block; margin: 0 0 16px;
-    border: 3px solid var(--paper-card);
-    box-shadow: 0 6px 20px rgba(31,58,95,0.10);
-  }
-  .story-label .seal-mini { display: none; }
   .story h2 {
-    font-size: clamp(24px, 3.6vw, 36px); line-height: 1.5; margin: 0 0 32px;
+    font-size: clamp(24px, 3.6vw, 36px); line-height: 1.5; margin: 0 0 8px;
     letter-spacing: -0.005em; font-weight: 800;
   }
   .story h2 em { font-style: normal; color: var(--vermillion); }
@@ -322,6 +313,44 @@
   .story p:last-of-type { margin-bottom: 0; }
   .story .signoff {
     margin-top: 30px; font-size: 15px; font-weight: 700; color: var(--ink);
+  }
+
+  /* 自己紹介：写真とことばを交互にジグザグ配置 */
+  .story-row {
+    display: grid; grid-template-columns: 260px 1fr; gap: 48px; align-items: center;
+    padding: 40px 0;
+  }
+  .story-row + .story-row { border-top: 1px dashed var(--line); }
+  .story-row.rev { grid-template-columns: 1fr 260px; }
+  .story-row.rev .story-img-wrap { order: 2; }
+  .story-row.rev .story-text { order: 1; }
+  .story-img-wrap { position: relative; }
+  .story-img { aspect-ratio: 4 / 5; }
+  .story-img img {
+    width: 100%; height: 100%; object-fit: contain; display: block;
+    -webkit-mask-image: radial-gradient(ellipse 78% 78% at center, #000 55%, transparent 100%);
+    mask-image: radial-gradient(ellipse 78% 78% at center, #000 55%, transparent 100%);
+  }
+  .story-row1 .story-img-wrap { transform: translateY(-10px); }
+  .story-row2 .story-img-wrap { transform: translateY(16px); }
+  .story-row3 .story-img-wrap { transform: translateY(-8px); }
+  .story-name {
+    display: inline-block; margin-top: 10px; background: var(--paper-card);
+    border: 1px solid var(--line); border-radius: 980px; padding: 6px 16px;
+    font-size: 12px; font-weight: 700; color: var(--ink);
+  }
+  .story-name small {
+    font-weight: 400; color: var(--ink-soft); margin-left: 6px;
+    font-size: 10.5px; letter-spacing: 0.1em;
+  }
+  .story .pull {
+    font-size: clamp(16px, 1.9vw, 18px); line-height: 2; color: var(--vermillion);
+    font-weight: 700; margin: 0 0 20px; padding-left: 18px; border-left: 3px solid var(--vermillion);
+  }
+  .story-chips { display: flex; gap: 10px; margin-top: 22px; flex-wrap: wrap; }
+  .story-chips span {
+    font-size: 11.5px; color: var(--vermillion); background: var(--paper-card);
+    padding: 5px 13px; border-radius: 980px; letter-spacing: 0.02em;
   }
 
   /* Case studies — the centerpiece */
@@ -517,6 +546,7 @@
   .first-offer p strong { color: var(--sage); font-size: 15px; }
 
   .option-list { display: flex; flex-wrap: wrap; gap: 10px 22px; font-size: 13.5px; color: var(--ink-soft); margin-top: 4px; }
+  .pricing-link { text-align: center; padding: 8px 0 4px; }
   .option-list span strong { color: var(--vermillion); font-variant-numeric: tabular-nums; }
 
   .subhead { font-size: 13px; letter-spacing: 0.06em; color: var(--ink-soft); margin: 0 0 14px; font-family: inherit; }
@@ -559,6 +589,9 @@
   @media (max-width: 700px) {
     .story-inner { grid-template-columns: 1fr; }
     .story-label .seal-mini { display: none; }
+    .story-row, .story-row.rev { grid-template-columns: 1fr; gap: 20px; padding: 28px 0; }
+    .story-row.rev .story-img-wrap, .story-row.rev .story-text { order: initial; }
+    .story-img-wrap { transform: none !important; max-width: 240px; margin: 0 auto; }
     .case { grid-template-columns: 1fr; gap: 14px; }
     .case-body dl { grid-template-columns: 68px 1fr; }
     .services { grid-template-columns: 1fr; }
@@ -594,7 +627,7 @@
       <a href="#cases">実績</a>
       <a href="#services">書けるもの</a>
       <a href="#samples">LP原稿サンプル</a>
-      <a href="#pricing">料金</a>
+      <a href="pricing.html">料金</a>
       <a class="nav-cta" href="#contact">相談する</a>
     </div>
   </div>
@@ -711,18 +744,40 @@
 <section class="story">
   <div class="wash wash-d" aria-hidden="true"></div>
   <div class="wrap story-inner">
-    <div class="story-label reveal">
-      <img class="story-portrait" src="img/profile.jpg" alt="渡邊駿のプロフィールイラスト">
-      渡邊 駿（わたなべ しゅん）
+
+    <div class="story-row story-row1 reveal">
+      <div class="story-img-wrap">
+        <div class="story-img"><img src="img/profile.jpg" alt="渡邊駿のプロフィールイラスト"></div>
+        <span class="story-name">渡邊 駿<small>わたなべ しゅん</small></span>
+      </div>
+      <div class="story-text">
+        <h2><span class="nb">きっかけは、</span><br /><span class="nb">家族と過ごす</span><em><span class="nb">「当たり前」を</span></em><br /><span class="nb">守りたかった</span><span class="nb">ことでした。</span></h2>
+        <p>マイホームを建てて2年。家族と過ごす時間は、何にも代えがたいものでした。ただ、週末に少し遠出をするだけでも貯金の計画が要る。自分に使えるお金もない。その状況に、家族への申し訳なさを感じていました。</p>
+      </div>
     </div>
-    <div class="reveal">
-      <h2><span class="nb">きっかけは、</span><br /><span class="nb">家族と過ごす</span><em><span class="nb">「当たり前」を</span></em><br /><span class="nb">守りたかった</span><span class="nb">ことでした。</span></h2>
-      <p>マイホームを建てて2年。家族と過ごす時間は、何にも代えがたいものでした。ただ、週末に少し遠出をするだけでも貯金の計画が要る。自分に使えるお金もない。その状況に、家族への申し訳なさを感じていました。</p>
-      <p>このままではいけないと、副業を学び始めました。そこで最初に気づいたことがあります。業種を問わず、あらゆる仕事の土台には「文章」があるということです。以来、記事・LP・SNS・動画台本と、書く仕事を一つずつ手がけてきました。</p>
-      <p>本業があるぶん、一度に多くの案件はお受けできません。そのかわり、お引き受けした案件は締切より早く初稿をお出しします。修正のやりとりに時間を使えたほうが、仕上がりが良くなるからです。</p>
-      <p>休日は鉄道旅行で知らない街を歩いたり、ゲームで頭を空っぽにしたり。そうやって自分の"余白"を大事にしています。読む人の日常に寄り添う言葉は、そこから出てくると思っています。</p>
-      <p class="signoff">渡邊 駿</p>
+
+    <div class="story-row story-row2 rev reveal">
+      <div class="story-img-wrap">
+        <div class="story-img"><img src="img/story-desk.jpg" alt="デスクで執筆する様子を描いた水彩イラスト"></div>
+      </div>
+      <div class="story-text">
+        <p>このままではいけないと、副業を学び始めました。そこで最初に気づいたことがあります。業種を問わず、あらゆる仕事の土台には「文章」があるということです。以来、記事・LP・SNS・動画台本と、書く仕事を一つずつ手がけてきました。</p>
+        <p class="pull"><span class="nb">お引き受けした案件は、</span><span class="nb">締切より早く</span><span class="nb">初稿をお出しします。</span></p>
+        <p>本業があるぶん、一度に多くの案件はお受けできません。修正のやりとりに時間を使えたほうが、仕上がりが良くなるからです。</p>
+      </div>
     </div>
+
+    <div class="story-row story-row3 reveal">
+      <div class="story-img-wrap">
+        <div class="story-img"><img src="img/story-train.jpg" alt="鉄道旅行の風景を描いた水彩イラスト"></div>
+      </div>
+      <div class="story-text">
+        <p>休日は鉄道旅行で知らない街を歩いたり、ゲームで頭を空っぽにしたり。そうやって自分の"余白"を大事にしています。読む人の日常に寄り添う言葉は、そこから出てくると思っています。</p>
+        <p class="signoff">渡邊 駿</p>
+        <div class="story-chips"><span>SEO記事</span><span>LP原稿</span><span>動画台本</span></div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -929,93 +984,8 @@
       <p>スタンダードプラン（通常8,000円〜）を、先着3名様限定で<strong>3,000円</strong>にてご案内いたします。実績として記事の内容やお仕事の分野をご紹介させていただくことを条件とさせていただきます（お名前・社名の掲載可否はご相談に応じます）。まずはお気軽にご相談ください。</p>
     </div>
 
-    <div class="plan-cards stagger">
-      <div class="plan-card reveal">
-        <span class="tag">ライト（梅）</span>
-        <h3><span class="nb">まず1本、</span><span class="nb">試したい方に</span></h3>
-        <div class="price">5,000円〜</div>
-        <p class="for"><span class="nb">構成案は</span><span class="nb">ご支給いただける</span><span class="nb">方向け</span></p>
-        <ul>
-          <li>〜2,500文字</li>
-          <li>構成案：クライアント支給</li>
-          <li>修正1回</li>
-          <li>納期5営業日</li>
-        </ul>
-      </div>
-      <div class="plan-card featured reveal">
-        <span class="plan-badge">★おすすめ</span>
-        <span class="tag">スタンダード（竹）</span>
-        <h3><span class="nb">構成から</span><span class="nb">まるっとお任せ</span></h3>
-        <div class="price">8,000円〜</div>
-        <p class="for"><span class="nb">キーワード調査も</span><span class="nb">含めて任せたい</span><span class="nb">方向け</span></p>
-        <ul>
-          <li>〜3,500文字</li>
-          <li>構成案作成込み</li>
-          <li>修正2回</li>
-          <li>納期7営業日</li>
-          <li>キーワード調査込み</li>
-        </ul>
-      </div>
-      <div class="plan-card reveal">
-        <span class="tag">プレミアム（松）</span>
-        <h3><span class="nb">入稿・SNS展開まで</span><span class="nb">一括で</span></h3>
-        <div class="price">15,000円〜</div>
-        <p class="for"><span class="nb">記事をサイトへの</span><span class="nb">掲載まで任せたい</span><span class="nb">方向け</span></p>
-        <ul>
-          <li>〜5,000文字</li>
-          <li>構成案＋WordPress入稿込み</li>
-          <li>修正3回</li>
-          <li>納期10営業日</li>
-          <li>メタディスクリプション・タイトル案3パターン・SNSシェア用テキスト・内部リンク提案</li>
-        </ul>
-      </div>
-    </div>
-
-    <p class="subhead reveal">月額継続プラン（スタンダード基準）</p>
-    <div class="monthly-plans stagger">
-      <div class="monthly-card reveal">
-        <span class="tag">ライト月額</span>
-        <h4>月3本</h4>
-        <div class="was">通常24,000円</div>
-        <div class="now">20,000円<span style="font-size:12px;">/月</span></div>
-        <div class="perk">17%オフ・優先対応</div>
-      </div>
-      <div class="monthly-card reveal">
-        <span class="tag">スタンダード月額 ★人気</span>
-        <h4>月5本</h4>
-        <div class="was">通常40,000円</div>
-        <div class="now">32,000円<span style="font-size:12px;">/月</span></div>
-        <div class="perk">20%オフ・優先対応・月1回MTG</div>
-      </div>
-      <div class="monthly-card reveal">
-        <span class="tag">プレミアム月額</span>
-        <h4>月10本</h4>
-        <div class="was">通常80,000円</div>
-        <div class="now">60,000円<span style="font-size:12px;">/月</span></div>
-        <div class="perk">25%オフ</div>
-      </div>
-    </div>
-
-    <p class="subhead reveal">その他のサービス</p>
-    <div class="table-scroll reveal">
-      <table>
-        <thead>
-          <tr><th>サービス</th><th>目安</th><th>納期目安</th><th>料金</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>LP原稿・セールスライティング</td><td>構成〜文章一式</td><td>5〜7営業日</td><td class="amount">15,000円〜30,000円</td></tr>
-          <tr><td>SNS投稿文・プロフィール文</td><td>Instagram・X 2媒体</td><td>3〜5営業日</td><td class="amount">8,000円〜15,000円</td></tr>
-          <tr><td>動画台本・シナリオ</td><td>1本</td><td>ご相談</td><td class="amount">ご相談</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <p class="subhead reveal" style="margin-top:32px;">オプション</p>
-    <div class="option-list reveal">
-      <span>特急対応 <strong>+50%</strong></span>
-      <span>追加文字数（500字） <strong>+1,000円</strong></span>
-      <span>追加修正（1回） <strong>+1,500円</strong></span>
-      <span>画像選定（5枚） <strong>+1,000円</strong></span>
+    <div class="pricing-link reveal">
+      <a class="btn btn-primary" href="pricing.html">3プラン・月額継続プランなど、料金の詳細を見る ↗</a>
     </div>
   </div>
 </section>
