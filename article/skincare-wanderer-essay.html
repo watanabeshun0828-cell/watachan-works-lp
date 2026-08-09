@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>スキンケア迷子だった私が、やっと「これでいい」と思えるまで - 渡邊駿 執筆サンプル</title>
+<meta name="description" content="新作コスメを追いかけては買い替えていたスキンケア迷子の日々から、「これでいい」と思えるようになるまでの気づきを綴った体験談エッセイです。">
+<style>
+  :root {
+    --ink: #1F3A5F;
+    --ink-soft: #5D7392;
+    --paper: #FFFFFF;
+    --paper-deep: #EEF4F9;
+    --paper-card: #F7FAFD;
+    --vermillion: #2F7FB8;
+    --sage: #3E8E7E;
+    --line: rgba(31, 58, 95, 0.15);
+    --line-soft: rgba(31, 58, 95, 0.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #E4EDF5;
+      --ink-soft: #9DB3C8;
+      --paper: #10171F;
+      --paper-deep: #182330;
+      --paper-card: #161F2A;
+      --vermillion: #67B2DE;
+      --sage: #6FBBA9;
+      --line: rgba(228, 237, 245, 0.16);
+      --line-soft: rgba(228, 237, 245, 0.08);
+    }
+  }
+
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic Medium", "Meiryo", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.95;
+    letter-spacing: 0.01em;
+  }
+  h1, h2, h3 {
+    font-family: inherit;
+    font-weight: 700;
+    text-wrap: balance;
+    letter-spacing: 0.005em;
+    line-height: 1.45;
+  }
+  h1, h2, h3, p, li, .meta, .rt {
+    word-break: auto-phrase;
+    line-break: strict;
+    overflow-wrap: normal;
+  }
+  .nb { display: inline-block; }
+  a { color: var(--vermillion); }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+  .topbar {
+    border-bottom: 1px solid var(--line-soft);
+    background: var(--paper-card);
+    position: sticky; top: 0; z-index: 10;
+    backdrop-filter: saturate(140%) blur(6px);
+  }
+  .topbar .wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; padding-top: 14px; padding-bottom: 14px;
+  }
+  .brand { font-weight: 700; letter-spacing: 0.06em; text-decoration: none; color: var(--ink); }
+  .brand small { display: block; font-weight: 400; font-size: 11.5px; color: var(--ink-soft); letter-spacing: 0.14em; }
+  .back { font-size: 13px; text-decoration: none; white-space: nowrap; }
+
+  .notice {
+    background: var(--paper-deep);
+    border-bottom: 1px solid var(--line-soft);
+    padding: 18px 0;
+  }
+  .notice p { font-size: 13.5px; color: var(--ink-soft); line-height: 1.8; }
+  .notice strong { color: var(--ink); }
+
+  header.head { padding: 54px 0 30px; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 0.6em;
+    font-size: 12px; letter-spacing: 0.2em; color: var(--vermillion); font-weight: 600;
+  }
+  .eyebrow::before { content: ""; width: 18px; height: 1px; background: var(--vermillion); }
+  header.head h1 { font-size: clamp(26px, 5vw, 38px); margin: 18px 0 22px; font-weight: 800; letter-spacing: -0.01em; }
+  .meta { font-size: 13px; color: var(--ink-soft); letter-spacing: 0.04em; }
+  .meta span + span::before { content: "／"; margin: 0 0.5em; opacity: 0.5; }
+
+  article { padding-bottom: 20px; }
+  figure { margin: 0 0 26px; }
+  figure img {
+    width: 100%; height: auto; display: block;
+    border-radius: 8px; border: 1px solid var(--line-soft);
+  }
+  .hero-img { margin: 0 0 8px; }
+  .hero-img img { border-radius: 10px; }
+  article h2 {
+    font-size: clamp(19px, 3.4vw, 24px);
+    margin: 56px 0 20px;
+    font-weight: 800;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--line);
+  }
+  article p { margin: 0 0 20px; }
+
+  .outro {
+    margin: 64px 0 0;
+    border-top: 1px solid var(--line);
+    padding: 34px 0 70px;
+  }
+  .outro h2 { font-size: 19px; margin: 0 0 14px; border: 0; padding: 0; }
+  .outro p { font-size: 14.5px; color: var(--ink-soft); margin-bottom: 16px; }
+  .outro .btn {
+    display: inline-block; text-decoration: none;
+    background: var(--vermillion); color: #fff;
+    padding: 13px 26px; border-radius: 6px;
+    font-size: 14.5px; letter-spacing: 0.05em;
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a class="brand" href="../index.html">渡邊 駿<small>WRITER / EDITOR</small></a>
+    <a class="back" href="../index.html">← ポートフォリオへ戻る</a>
+  </div>
+</div>
+
+<div class="notice">
+  <div class="wrap">
+    <p><strong>執筆サンプルについて。</strong>体験談エッセイの書き方をお見せするための執筆サンプルです。実在の人物・出来事ではなく、想定読者に寄り添うための創作です。記事の構成・本文はすべて渡邊が執筆しています。</p>
+  </div>
+</div>
+
+<header class="head">
+  <div class="wrap">
+    <span class="eyebrow"><span class="nb">体験談エッセイ ／</span><span class="nb">美容・コスメ</span></span>
+    <h1><span class="nb">スキンケア迷子だった私が、</span><span class="nb">やっと「これでいい」と</span><span class="nb">思えるまで</span></h1>
+    <p class="meta"><span>約1,000字</span><span>一人称エッセイ</span><span>執筆：渡邊 駿</span></p>
+  </div>
+</header>
+
+<article>
+  <div class="wrap">
+
+    <figure class="hero-img">
+      <img src="img/skincare-hero.jpg" alt="洗面台に並ぶスキンケア用品のスタイリング写真">
+    </figure>
+
+    <p>「新作が出るたびに気になって、また買っちゃった」</p>
+    <p>友達にそう話したら、「それ、去年も同じこと言ってなかった？」と笑われました。言われてみれば、たしかにそうだったのです。</p>
+
+    <h2>気づけば、洗面台が試供品だらけになっていました</h2>
+    <p>SNSで話題の美容液、雑誌で紹介されていた韓国コスメ、友人がおすすめしてくれた導入化粧水。良さそうなものを見つけるたびに試して、気に入らなければまた次を探す。その繰り返しで、いつの間にか洗面台の棚は使いかけのボトルでいっぱいになっていました。</p>
+    <p>「もっと自分に合うものがあるはず」。そう思って探し続けているつもりでしたが、今思えば、ただ新しいものに飛びついていただけだったのかもしれません。効果を感じる前に次のものが気になって、結局どれも中途半端なまま使い終わらずに増えていく。そんな状態が、もう何年も続いていました。</p>
+
+    <h2>「なんとなく」で選ぶことに疲れていました</h2>
+    <p>正直なところ、コスメ選びに疲れていました。新商品の情報を追いかけるのは楽しいはずなのに、いつからか「これを買わないと乗り遅れる」というような、義務感に近い気持ちになっていたのです。</p>
+    <p>友達に指摘されたその日、久しぶりに洗面台をちゃんと片付けてみました。半分も使っていない化粧水が5本、開封すらしていない美容液が3本。それを見て、さすがに自分でもおかしいと思いました。「これだけあるのに、私は自分の肌に何が合うのか、結局分かっていない」。そう気づいた瞬間でした。</p>
+
+    <h2>「これでいい」と思えるようになるまで</h2>
+    <p>それから、新しいものを探すのをいったんやめてみることにしました。今持っているものの中から、使い切っていないものを順番に使ってみる。派手な効果はなくても、肌の調子が明らかに悪くなるものもありません。「これで十分だったんだ」と、拍子抜けするくらい普通に感じました。</p>
+    <p>新商品の情報が目に入っても、「今使っているものを使い切ってから」と、一度立ち止まる癖がつきました。それだけで、気持ちがずいぶん楽になりました。合わないものを探して彷徨っていたのではなく、単に立ち止まる勇気がなかっただけなのだと思います。</p>
+
+    <h2>今は、これでいい</h2>
+    <figure>
+      <img src="img/skincare-calm.jpg" alt="落ち着いた表情でスキンケアをする様子">
+    </figure>
+    <p>今も特別なスキンケアをしているわけではありません。ただ、新しいものに手を伸ばす前に、「今のままで困っていることは何か」を一度考えるようになりました。困っていなければ、それでいい。それだけのことに、ずいぶん遠回りをして辿り着いた気がします。</p>
+    <p>「それ、去年も同じこと言ってなかった？」と言われることは、もうなくなりました。</p>
+
+    <div class="outro">
+      <h2>この記事について</h2>
+      <p>美容・コスメジャンルにおける、一人称の体験談エッセイの執筆サンプルです。共感を軸にした構成・語り口で執筆しています。</p>
+      <p>同じ流れで、ご依頼のジャンル・トンマナに合わせた体験談記事を執筆します。</p>
+      <a class="btn" href="../index.html#contact">執筆のご相談はこちら</a>
+    </div>
+
+  </div>
+</article>
+
+</body>
+</html>

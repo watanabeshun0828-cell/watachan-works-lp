@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>「あの頃、私は必死だった」――子育てを振り返って気づく、暮らしの中の小さな真実 - 渡邊駿 執筆サンプル</title>
+<meta name="description" content="子どもの成長を振り返りながら、必死だった子育ての日々に気づく小さな真実を綴った、子育て・暮らしをテーマにした体験談エッセイです。">
+<style>
+  :root {
+    --ink: #1F3A5F;
+    --ink-soft: #5D7392;
+    --paper: #FFFFFF;
+    --paper-deep: #EEF4F9;
+    --paper-card: #F7FAFD;
+    --vermillion: #2F7FB8;
+    --sage: #3E8E7E;
+    --line: rgba(31, 58, 95, 0.15);
+    --line-soft: rgba(31, 58, 95, 0.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #E4EDF5;
+      --ink-soft: #9DB3C8;
+      --paper: #10171F;
+      --paper-deep: #182330;
+      --paper-card: #161F2A;
+      --vermillion: #67B2DE;
+      --sage: #6FBBA9;
+      --line: rgba(228, 237, 245, 0.16);
+      --line-soft: rgba(228, 237, 245, 0.08);
+    }
+  }
+
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic Medium", "Meiryo", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.95;
+    letter-spacing: 0.01em;
+  }
+  h1, h2, h3 {
+    font-family: inherit;
+    font-weight: 700;
+    text-wrap: balance;
+    letter-spacing: 0.005em;
+    line-height: 1.45;
+  }
+  h1, h2, h3, p, li, .meta, .rt {
+    word-break: auto-phrase;
+    line-break: strict;
+    overflow-wrap: normal;
+  }
+  .nb { display: inline-block; }
+  a { color: var(--vermillion); }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+  .topbar {
+    border-bottom: 1px solid var(--line-soft);
+    background: var(--paper-card);
+    position: sticky; top: 0; z-index: 10;
+    backdrop-filter: saturate(140%) blur(6px);
+  }
+  .topbar .wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; padding-top: 14px; padding-bottom: 14px;
+  }
+  .brand { font-weight: 700; letter-spacing: 0.06em; text-decoration: none; color: var(--ink); }
+  .brand small { display: block; font-weight: 400; font-size: 11.5px; color: var(--ink-soft); letter-spacing: 0.14em; }
+  .back { font-size: 13px; text-decoration: none; white-space: nowrap; }
+
+  .notice {
+    background: var(--paper-deep);
+    border-bottom: 1px solid var(--line-soft);
+    padding: 18px 0;
+  }
+  .notice p { font-size: 13.5px; color: var(--ink-soft); line-height: 1.8; }
+  .notice strong { color: var(--ink); }
+
+  header.head { padding: 54px 0 30px; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 0.6em;
+    font-size: 12px; letter-spacing: 0.2em; color: var(--vermillion); font-weight: 600;
+  }
+  .eyebrow::before { content: ""; width: 18px; height: 1px; background: var(--vermillion); }
+  header.head h1 { font-size: clamp(24px, 4.6vw, 34px); margin: 18px 0 22px; font-weight: 800; letter-spacing: -0.01em; }
+  .meta { font-size: 13px; color: var(--ink-soft); letter-spacing: 0.04em; }
+  .meta span + span::before { content: "／"; margin: 0 0.5em; opacity: 0.5; }
+
+  article { padding-bottom: 20px; }
+  figure { margin: 0 0 26px; }
+  figure img {
+    width: 100%; height: auto; display: block;
+    border-radius: 8px; border: 1px solid var(--line-soft);
+  }
+  .hero-img { margin: 0 0 8px; }
+  .hero-img img { border-radius: 10px; }
+  article h2 {
+    font-size: clamp(19px, 3.4vw, 24px);
+    margin: 56px 0 20px;
+    font-weight: 800;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--line);
+  }
+  article p { margin: 0 0 20px; }
+
+  .outro {
+    margin: 64px 0 0;
+    border-top: 1px solid var(--line);
+    padding: 34px 0 70px;
+  }
+  .outro h2 { font-size: 19px; margin: 0 0 14px; border: 0; padding: 0; }
+  .outro p { font-size: 14.5px; color: var(--ink-soft); margin-bottom: 16px; }
+  .outro .btn {
+    display: inline-block; text-decoration: none;
+    background: var(--vermillion); color: #fff;
+    padding: 13px 26px; border-radius: 6px;
+    font-size: 14.5px; letter-spacing: 0.05em;
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a class="brand" href="../index.html">渡邊 駿<small>WRITER / EDITOR</small></a>
+    <a class="back" href="../index.html">← ポートフォリオへ戻る</a>
+  </div>
+</div>
+
+<div class="notice">
+  <div class="wrap">
+    <p><strong>執筆サンプルについて。</strong>体験談エッセイの書き方をお見せするための執筆サンプルです。実在の人物・出来事ではなく、想定読者に寄り添うための創作です。記事の構成・本文はすべて渡邊が執筆しています。</p>
+  </div>
+</div>
+
+<header class="head">
+  <div class="wrap">
+    <span class="eyebrow"><span class="nb">体験談エッセイ ／</span><span class="nb">子育て・暮らし</span></span>
+    <h1><span class="nb">「あの頃、私は必死だった」</span>――<span class="nb">子育てを振り返って気づく、</span><span class="nb">暮らしの中の小さな真実</span></h1>
+    <p class="meta"><span>約950字</span><span>一人称エッセイ</span><span>執筆：渡邊 駿</span></p>
+  </div>
+</header>
+
+<article>
+  <div class="wrap">
+
+    <figure class="hero-img">
+      <img src="img/parenting-hero.jpg" alt="リビングにたたみかけの洗濯物と絵本が置かれた様子">
+    </figure>
+
+    <p>洗濯物をたたみながら、ふと手が止まることがあります。子どもの服が、もう小さくて着られなくなったこと。当たり前のはずなのに、それに気づくたびに、少し胸がざわつくのです。</p>
+
+    <h2>必死だった日々は、いつも記憶が曖昧です</h2>
+    <p>子どもが小さかった頃のことを思い出そうとしても、不思議と細かい記憶があまり残っていません。夜泣きに付き合った日々も、離乳食を作っては拒否されて落ち込んだ日々も。ひとつひとつの出来事としてではなく、ただ「必死だった」という感覚だけが残っています。</p>
+    <p>きっと、あの頃は目の前のことをこなすだけで精一杯だったのだと思います。振り返る余裕もなく、ただ毎日を乗り越えていた。だからこそ、後になって「もっとちゃんと見ておけばよかった」という気持ちが湧いてくるのかもしれません。</p>
+
+    <h2>小さくなった服が教えてくれること</h2>
+    <figure>
+      <img src="img/parenting-clothes.jpg" alt="子どもの小さな服を整理する様子">
+    </figure>
+    <p>子どもの服を整理していると、いつのまにか着られなくなったものが次々に出てきます。この服を着ていた頃、どんな顔をしていただろう。思い出そうとしても、はっきりとは浮かびません。</p>
+    <p>それでも、その服を手に取った瞬間だけは、たしかにあの頃の空気を思い出すのです。忙しくて写真もあまり撮れていなかった時期の記憶が、こうして服を通してふと蘇ることがあります。暮らしの中には、こんなふうに気づかないうちに積み重なっていくものがあるのだと思います。</p>
+
+    <h2>必死だったことは、無駄ではありませんでした</h2>
+    <p>当時は余裕がなくて、うまくできていないことばかりだと感じていました。けれど、今こうして子どもの成長を振り返ると、必死だったあの日々があったからこそ、今の暮らしがあるのだと分かります。</p>
+    <p>完璧にできていなくても、必死に向き合っていた時間そのものに意味があったのだと、今なら思えます。当時の自分に伝えられるなら、「それでよかったんだよ」と言ってあげたいです。</p>
+
+    <h2>今日という日も、きっといつか同じように</h2>
+    <figure>
+      <img src="img/parenting-present.jpg" alt="子どもと穏やかに過ごす親子の様子">
+    </figure>
+    <p>今、目の前で過ぎていく毎日も、きっと後から振り返れば「必死だった」の一言に収まってしまうのだと思います。だからこそ、せめて今日は、少しだけ立ち止まって子どもの顔を見ておきたいのです。</p>
+    <p>洗濯物をたたむ手を止めて、小さくなった服をもう一度そっと畳み直しました。</p>
+
+    <div class="outro">
+      <h2>この記事について</h2>
+      <p>子育て・暮らしジャンルにおける、一人称の体験談エッセイの執筆サンプルです。共感を軸にした構成・語り口で執筆しています。</p>
+      <p>同じ流れで、ご依頼のジャンル・トンマナに合わせた体験談記事を執筆します。</p>
+      <a class="btn" href="../index.html#contact">執筆のご相談はこちら</a>
+    </div>
+
+  </div>
+</article>
+
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>50代を迎える前に、経営者が「資産の設計図」を見直すべき理由 - 渡邊駿 執筆サンプル</title>
+<meta name="description" content="経営者が50代を迎える前に、個人資産の「設計図」を見直しておくべき理由と、具体的な見直しのステップを解説します。事業承継・相続に備えるための考え方を紹介します。">
+<style>
+  :root {
+    --ink: #1F3A5F;
+    --ink-soft: #5D7392;
+    --paper: #FFFFFF;
+    --paper-deep: #EEF4F9;
+    --paper-card: #F7FAFD;
+    --vermillion: #2F7FB8;
+    --sage: #3E8E7E;
+    --line: rgba(31, 58, 95, 0.15);
+    --line-soft: rgba(31, 58, 95, 0.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #E4EDF5;
+      --ink-soft: #9DB3C8;
+      --paper: #10171F;
+      --paper-deep: #182330;
+      --paper-card: #161F2A;
+      --vermillion: #67B2DE;
+      --sage: #6FBBA9;
+      --line: rgba(228, 237, 245, 0.16);
+      --line-soft: rgba(228, 237, 245, 0.08);
+    }
+  }
+
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic Medium", "Meiryo", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.95;
+    letter-spacing: 0.01em;
+  }
+  h1, h2, h3 {
+    font-family: inherit;
+    font-weight: 700;
+    text-wrap: balance;
+    letter-spacing: 0.005em;
+    line-height: 1.45;
+  }
+  h1, h2, h3, p, li, .meta, .rt {
+    word-break: auto-phrase;
+    line-break: strict;
+    overflow-wrap: normal;
+  }
+  .nb { display: inline-block; }
+  a { color: var(--vermillion); }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+  .topbar {
+    border-bottom: 1px solid var(--line-soft);
+    background: var(--paper-card);
+    position: sticky; top: 0; z-index: 10;
+    backdrop-filter: saturate(140%) blur(6px);
+  }
+  .topbar .wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; padding-top: 14px; padding-bottom: 14px;
+  }
+  .brand { font-weight: 700; letter-spacing: 0.06em; text-decoration: none; color: var(--ink); }
+  .brand small { display: block; font-weight: 400; font-size: 11.5px; color: var(--ink-soft); letter-spacing: 0.14em; }
+  .back { font-size: 13px; text-decoration: none; white-space: nowrap; }
+
+  .notice {
+    background: var(--paper-deep);
+    border-bottom: 1px solid var(--line-soft);
+    padding: 18px 0;
+  }
+  .notice p { font-size: 13.5px; color: var(--ink-soft); line-height: 1.8; }
+  .notice strong { color: var(--ink); }
+
+  header.head { padding: 54px 0 30px; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 0.6em;
+    font-size: 12px; letter-spacing: 0.2em; color: var(--vermillion); font-weight: 600;
+  }
+  .eyebrow::before { content: ""; width: 18px; height: 1px; background: var(--vermillion); }
+  header.head h1 { font-size: clamp(26px, 5.2vw, 40px); margin: 18px 0 22px; font-weight: 800; letter-spacing: -0.01em; }
+  .meta { font-size: 13px; color: var(--ink-soft); letter-spacing: 0.04em; }
+  .meta span + span::before { content: "／"; margin: 0 0.5em; opacity: 0.5; }
+
+  article { padding-bottom: 20px; }
+  figure { margin: 0 0 26px; }
+  figure img {
+    width: 100%; height: auto; display: block;
+    border-radius: 8px; border: 1px solid var(--line-soft);
+  }
+  .hero-img { margin: 0 0 8px; }
+  .hero-img img { border-radius: 10px; }
+  article h2 {
+    font-size: clamp(21px, 3.8vw, 28px);
+    margin: 68px 0 22px;
+    font-weight: 800;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--line);
+  }
+  article h3 {
+    font-size: clamp(17px, 3vw, 19px);
+    margin: 38px 0 14px;
+    padding-left: 14px;
+    border-left: 3px solid var(--vermillion);
+  }
+  article p { margin: 0 0 20px; }
+  article ul { margin: 0 0 22px; padding-left: 1.3em; }
+  article li { margin-bottom: 8px; }
+
+  .outro {
+    margin: 64px 0 0;
+    border-top: 1px solid var(--line);
+    padding: 34px 0 70px;
+  }
+  .outro h2 { font-size: 19px; margin: 0 0 14px; border: 0; padding: 0; }
+  .outro p { font-size: 14.5px; color: var(--ink-soft); margin-bottom: 16px; }
+  .outro .btn {
+    display: inline-block; text-decoration: none;
+    background: var(--vermillion); color: #fff;
+    padding: 13px 26px; border-radius: 6px;
+    font-size: 14.5px; letter-spacing: 0.05em;
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a class="brand" href="../index.html">渡邊 駿<small>WRITER / EDITOR</small></a>
+    <a class="back" href="../index.html">← ポートフォリオへ戻る</a>
+  </div>
+</div>
+
+<div class="notice">
+  <div class="wrap">
+    <p><strong>執筆サンプルについて。</strong>経営者向けコラムの書き方をお見せするための執筆サンプルです。個別の税務・法務判断を示すものではなく、実際の対策は税理士・弁護士等の専門家にご相談ください。記事の構成・本文はすべて渡邊が執筆しています。</p>
+  </div>
+</div>
+
+<header class="head">
+  <div class="wrap">
+    <span class="eyebrow"><span class="nb">コラム ／</span><span class="nb">資産形成・経営者向け</span></span>
+    <h1><span class="nb">50代を迎える前に、</span><span class="nb">経営者が</span><span class="nb">「資産の設計図」を</span><span class="nb">見直すべき理由</span></h1>
+    <p class="meta"><span>約1,400字</span><span>経営者向けコラム</span><span>執筆：渡邊 駿</span></p>
+  </div>
+</header>
+
+<article>
+  <div class="wrap">
+
+    <figure class="hero-img">
+      <img src="img/executive-hero.jpg" alt="家計簿とグラフ資料、電卓が置かれたデスクで資産を確認する経営者">
+    </figure>
+
+    <p>決算書は毎月チェックしていても、自分自身の資産については「なんとなく」で済ませていないでしょうか。会社の数字には敏感な経営者ほど、個人の資産管理は後回しになりがちです。この記事では、経営者が50代を迎える前に、個人資産の「設計図」を見直しておくべき理由と、具体的な見直しのステップを解説します。</p>
+
+    <h2>経営者の個人資産が「なんとなく」になりやすい理由</h2>
+    <figure>
+      <img src="img/executive-decision.jpg" alt="決算書を確認する経営者の様子">
+    </figure>
+    <p>なぜ経営者は、会社の数字には詳しくても、個人資産の把握が甘くなりやすいのでしょうか。</p>
+
+    <h3>決算書のチェックに意識が向きやすいから</h3>
+    <p>日々の業務では、会社の売上・利益・キャッシュフローを確認することが習慣になっています。一方で、自分自身の資産がどのように構成されているかを定期的に確認する機会は、意識しない限り生まれにくいものです。</p>
+
+    <h3>会社の資産と個人の資産の境界が曖昧になりやすいから</h3>
+    <p>中小企業の経営者は、個人資産の多くが自社株や事業用不動産で構成されているケースが少なくありません。会社の資産と個人の資産が実質的に一体化しているため、「自分個人の資産がいくらあるのか」を正確に把握しづらい構造になっています。</p>
+
+    <h2>50代を迎える前に資産を見直すべき理由</h2>
+    <figure>
+      <img src="img/executive-timing.jpg" alt="カレンダーを見ながら今後の計画を考える様子">
+    </figure>
+    <p>なぜ「50代になる前」というタイミングが重要なのでしょうか。</p>
+
+    <h3>事業承継・相続の準備には時間がかかるから</h3>
+    <p>事業承継や相続に関する対策は、検討から実行まで数年単位の時間がかかることが少なくありません。相続が発生してから慌てて自社株の評価や後継者への承継方法を検討するのでは、選べる選択肢が限られてしまいます。早めに着手するほど、取れる対策の幅は広がります。</p>
+
+    <h3>リスクを抑えた資産配分に切り替える時期だから</h3>
+    <p>50代は、子育てにかかる費用が落ち着き始める一方で、リタイア後の生活を見据え始める時期でもあります。積極的にリスクを取る資産運用から、守りを意識した資産配分へと少しずつ切り替えていくタイミングとして、50代前後は一つの節目になります。</p>
+
+    <h2>資産の設計図を見直す3つのステップ</h2>
+    <figure>
+      <img src="img/executive-planning.jpg" alt="書類を確認しながら計画を整理する様子">
+    </figure>
+    <p>具体的に何から着手すればよいのか、3つのステップに分けて考えてみましょう。</p>
+
+    <h3>ステップ1：個人資産と会社資産を棚卸しして分けて把握する</h3>
+    <p>まずは、自社株・事業用不動産・個人名義の預貯金や有価証券など、資産の種類ごとに「会社のものか、個人のものか」を整理してみましょう。境界が曖昧なままでは、次の対策も検討しづらくなります。</p>
+
+    <h3>ステップ2：非課税制度の活用を検討する</h3>
+    <p>個人名義の資産形成については、NISAやiDeCoといった非課税制度の活用も選択肢の一つです。すでに事業に資産を集中させている経営者ほど、個人資産の分散先として検討する価値があります。ただし、資産を分散させすぎると管理の手間が増えるという側面もあるため、無理のない範囲で取り入れることが大切です。</p>
+
+    <h3>ステップ3：事業承継・相続について専門家に相談する</h3>
+    <p>自社株の評価や相続税の試算、事業承継のスキーム選定は、税理士や弁護士など専門家の知見が欠かせない領域です。早い段階で専門家に相談し、自社に合った対策を一緒に整理していくことをおすすめします。</p>
+
+    <h2>まとめ</h2>
+    <figure>
+      <img src="img/executive-outcome.jpg" alt="落ち着いた表情で今後を見据える経営者の様子">
+    </figure>
+    <ul>
+      <li>経営者は会社の数字に意識が向きやすく、個人資産の把握が「なんとなく」になりがち</li>
+      <li>事業承継や相続の準備には時間がかかるため、50代を迎える前の見直しが望ましい</li>
+      <li>個人資産と会社資産の棚卸し、非課税制度の活用、専門家への相談の3ステップで整理を進める</li>
+    </ul>
+    <p>自分自身の「資産の設計図」を持っておくことは、事業の継続と、その先の人生設計の両方を支える土台になります。</p>
+
+    <div class="outro">
+      <h2>この記事について</h2>
+      <p>経営者向けコラムの執筆サンプルです。専門的な判断が必要な内容には必ず「専門家への相談」を明記し、断定的な表現を避けて執筆しています。</p>
+      <p>同じ流れで、ご依頼のジャンル・読者層に合わせたコラムを執筆します。</p>
+      <a class="btn" href="../index.html#contact">執筆のご相談はこちら</a>
+    </div>
+
+  </div>
+</article>
+
+</body>
+</html>
