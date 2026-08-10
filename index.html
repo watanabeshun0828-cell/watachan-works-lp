@@ -240,33 +240,42 @@
 
   .hero-read {
     position: relative;
-    display: flex; align-items: stretch; gap: 0;
-    background: var(--paper-card);
-    border: 1px solid var(--line);
-    border-left: 3px solid var(--vermillion);
-    border-radius: 3px;
+    display: block;
+    aspect-ratio: 4 / 3;
+    border-radius: 8px;
     text-decoration: none;
     overflow: hidden;
+    box-shadow: 0 14px 30px -20px rgba(31,58,95,0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
-  .hero-read:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(31,58,95,0.10); }
-  .hero-read-body { padding: 18px 22px; flex: 1; min-width: 0; }
+  .hero-read img {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; display: block;
+  }
+  .hero-read::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(16,23,31,0) 42%, rgba(16,23,31,0.8) 100%);
+  }
+  .hero-read:hover { transform: translateY(-3px); box-shadow: 0 18px 36px -18px rgba(31,58,95,0.32); }
+  .hero-read-body {
+    position: absolute; left: 0; right: 0; bottom: 0; z-index: 1;
+    padding: 16px 20px 18px;
+  }
   .hero-read .rl {
-    display: block; font-size: 11.5px; letter-spacing: 0.16em;
-    color: var(--vermillion); font-weight: 700; margin-bottom: 7px;
+    display: inline-block; font-size: 10.5px; letter-spacing: 0.14em; font-weight: 700;
+    color: #fff; background: rgba(255,255,255,0.2); backdrop-filter: blur(4px);
+    padding: 3px 10px; border-radius: 980px; margin-bottom: 9px;
   }
   .hero-read .rt {
     display: block; font-family: inherit;
-    font-size: 16.5px; font-weight: 600; line-height: 1.6; color: var(--ink);
+    font-size: 16px; font-weight: 700; line-height: 1.55; color: #fff;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.35);
     margin-bottom: 6px;
   }
-  .hero-read .rm { display: block; font-size: 12.5px; color: var(--ink-soft); letter-spacing: 0.03em; }
-  .hero-read .rarrow {
-    display: flex; align-items: center; padding: 0 20px 0 8px;
-    color: var(--vermillion); font-size: 18px;
-  }
+  .hero-read .rm { display: block; font-size: 11.5px; color: rgba(255,255,255,0.8); letter-spacing: 0.03em; }
+  .hero-read .rarrow { display: none; }
   @media (max-width: 560px) {
-    .hero-read .rarrow { display: none; }
-    .hero-read-body { padding: 16px 18px; }
+    .hero-read-body { padding: 14px 16px 16px; }
   }
 
   /* Hero: 実績バッジ */
@@ -656,6 +665,7 @@
       <span class="hero-reads-label">ジャンル別・代表サンプル</span>
       <div class="hero-reads-grid">
         <a class="hero-read" href="article/career-plan-30s.html">
+          <img src="img/genre-career.jpg" alt="キャリアプランをデスクで考える情景のイラスト">
           <div class="hero-read-body">
             <span class="rl">キャリア・働き方</span>
             <span class="rt"><span class="nb">30代のキャリアプランの</span><span class="nb">考え方｜</span><span class="nb">今から描く</span><span class="nb">将来の指針</span></span>
@@ -664,6 +674,7 @@
           <span class="rarrow" aria-hidden="true">→</span>
         </a>
         <a class="hero-read" href="article/nisa-start-guide.html">
+          <img src="img/genre-money.jpg" alt="貯金箱とグラフのイラスト">
           <div class="hero-read-body">
             <span class="rl">資産形成・お金</span>
             <span class="rt"><span class="nb">新NISAの始め方｜</span><span class="nb">会社員が知っておきたい</span><span class="nb">手順・注意点</span></span>
@@ -672,6 +683,7 @@
           <span class="rarrow" aria-hidden="true">→</span>
         </a>
         <a class="hero-read" href="article/long-distance-relationship-tips.html">
+          <img src="img/genre-love.jpg" alt="夕暮れの窓辺に置かれた2つのカップのイラスト">
           <div class="hero-read-body">
             <span class="rl">恋愛・結婚</span>
             <span class="rt"><span class="nb">遠距離恋愛を継続する</span><span class="nb">コツ｜長続きする</span><span class="nb">カップルの工夫</span></span>
@@ -680,6 +692,7 @@
           <span class="rarrow" aria-hidden="true">→</span>
         </a>
         <a class="hero-read" href="article/first-rental-contract-tips.html">
+          <img src="img/genre-realestate.jpg" alt="鍵と引っ越し箱が置かれた玄関のイラスト">
           <div class="hero-read-body">
             <span class="rl">不動産・暮らし</span>
             <span class="rt"><span class="nb">初めての賃貸契約で</span><span class="nb">注意すべき</span><span class="nb">ポイントを解説</span></span>
@@ -688,6 +701,7 @@
           <span class="rarrow" aria-hidden="true">→</span>
         </a>
         <a class="hero-read" href="article/side-job-selection-guide.html">
+          <img src="img/genre-sidejob.jpg" alt="夜のデスクでノートパソコンに向かう情景のイラスト">
           <div class="hero-read-body">
             <span class="rl">副業・転職・キャリア</span>
             <span class="rt"><span class="nb">副業の選び方｜</span><span class="nb">本業と両立できる</span><span class="nb">30代会社員の基準</span></span>
@@ -696,6 +710,7 @@
           <span class="rarrow" aria-hidden="true">→</span>
         </a>
         <a class="hero-read" href="article/skincare-wanderer-essay.html">
+          <img src="img/genre-beauty.jpg" alt="洗面台にスキンケア用品が並ぶイラスト">
           <div class="hero-read-body">
             <span class="rl">美容・コスメ</span>
             <span class="rt"><span class="nb">スキンケア迷子だった</span><span class="nb">私が、やっと</span><span class="nb">「これでいい」と思えるまで</span></span>
@@ -704,6 +719,7 @@
           <span class="rarrow" aria-hidden="true">→</span>
         </a>
         <a class="hero-read" href="article/executive-asset-review.html">
+          <img src="img/genre-executive.jpg" alt="都心のビル群を望むオフィスデスクのイラスト">
           <div class="hero-read-body">
             <span class="rl">資産形成・経営者向け</span>
             <span class="rt"><span class="nb">50代を迎える前に、</span><span class="nb">経営者が「資産の設計図」を</span><span class="nb">見直すべき理由</span></span>
@@ -712,6 +728,7 @@
           <span class="rarrow" aria-hidden="true">→</span>
         </a>
         <a class="hero-read" href="article/parenting-reflection-essay.html">
+          <img src="img/genre-parenting.jpg" alt="小さな子ども服とぬいぐるみが置かれたリビングのイラスト">
           <div class="hero-read-body">
             <span class="rl">子育て・暮らし</span>
             <span class="rt"><span class="nb">「あの頃、私は必死だった」</span><span class="nb">子育てを振り返って</span><span class="nb">気づく小さな真実</span></span>
