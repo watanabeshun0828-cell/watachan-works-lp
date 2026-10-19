@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>手柄泥棒の所長 - 渡邊駿 台本サンプル</title>
+<meta name="description" content="YouTube漫画動画向けのスカッと系シナリオの自主制作サンプルです。セリフとト書きで、場面が画にしやすい形で書いています。">
+<style>
+  :root { --ink:#1F3A5F; --ink-soft:#5D7392; --paper:#FFFFFF; --paper-deep:#EEF4F9; --paper-card:#F7FAFD;
+    --vermillion:#2F7FB8; --sage:#3E8E7E; --line:rgba(31,58,95,0.15); --line-soft:rgba(31,58,95,0.08); }
+  @media (prefers-color-scheme: dark) { :root { --ink:#E4EDF5; --ink-soft:#9DB3C8; --paper:#10171F; --paper-deep:#182330;
+    --paper-card:#161F2A; --vermillion:#67B2DE; --sage:#6FBBA9; --line:rgba(228,237,245,0.16); --line-soft:rgba(228,237,245,0.08); } }
+  * { box-sizing:border-box; margin:0; }
+  body { background:var(--paper); color:var(--ink);
+    font-family:"Hiragino Maru Gothic ProN","Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium","Meiryo",sans-serif;
+    -webkit-font-smoothing:antialiased; line-height:1.95; letter-spacing:0.01em; }
+  h1,h2,h3 { font-weight:700; text-wrap:balance; line-height:1.45; }
+  h1,h2,h3,p,li { word-break:auto-phrase; line-break:strict; overflow-wrap:normal; }
+  .nb { display:inline-block; }
+  a { color:var(--vermillion); }
+  .wrap { max-width:720px; margin:0 auto; padding:0 20px; }
+  .topbar { border-bottom:1px solid var(--line-soft); background:var(--paper-card); position:sticky; top:0; z-index:10; }
+  .topbar .wrap { display:flex; align-items:center; justify-content:space-between; gap:16px; padding-top:14px; padding-bottom:14px; }
+  .brand { font-weight:700; letter-spacing:0.06em; text-decoration:none; color:var(--ink); }
+  .brand small { display:block; font-weight:400; font-size:11.5px; color:var(--ink-soft); letter-spacing:0.14em; }
+  .back { font-size:13px; text-decoration:none; white-space:nowrap; }
+  .notice { background:var(--paper-deep); border-bottom:1px solid var(--line-soft); padding:18px 0; }
+  .notice p { font-size:13.5px; color:var(--ink-soft); line-height:1.8; }
+  .notice strong { color:var(--ink); }
+  header.head { padding:50px 0 26px; }
+  .eyebrow { display:inline-flex; align-items:center; gap:0.6em; font-size:12px; letter-spacing:0.2em; color:var(--vermillion); font-weight:600; }
+  .eyebrow::before { content:""; width:18px; height:1px; background:var(--vermillion); }
+  header.head h1 { font-size:clamp(26px,5vw,36px); margin:16px 0 18px; font-weight:800; }
+  .meta { font-size:13px; color:var(--ink-soft); }
+  .meta span + span::before { content:"／"; margin:0 0.5em; opacity:0.5; }
+  .box { background:var(--paper-card); border:1px solid var(--line); border-radius:8px; padding:18px 20px; margin:0 0 22px; }
+  .box h2 { font-size:12.5px; letter-spacing:0.12em; color:var(--ink-soft); margin:0 0 8px; }
+  .box p { font-size:15px; font-weight:700; line-height:1.75; }
+  .box ul { list-style:none; padding:0; font-size:14px; }
+  .box li + li { margin-top:4px; }
+  .legend { font-size:12.5px; color:var(--ink-soft); margin:0 0 30px; }
+  .script h2 { font-size:clamp(17px,3vw,20px); margin:48px 0 18px; padding-bottom:10px; border-bottom:2px solid var(--line); }
+  .script h2.intro { color:var(--vermillion); }
+  .script p { margin:0 0 12px; font-size:15.5px; }
+  .script.reading p.nar { margin-bottom:18px; }
+  .td { color:var(--ink-soft); font-size:14px !important; background:var(--paper-deep); border-radius:4px; padding:6px 12px; }
+  .ln { display:grid; grid-template-columns:4.2em 1fr; gap:10px; }
+  .ln .who { font-weight:700; color:var(--vermillion); font-size:14px; padding-top:2px; }
+  .ln.voice .txt { color:var(--ink-soft); }
+  .end { text-align:center; color:var(--ink-soft); margin:36px 0 0 !important; }
+  .outro { margin:56px 0 0; border-top:1px solid var(--line); padding:30px 0 70px; }
+  .outro h2 { font-size:19px; margin:0 0 12px; }
+  .outro p { font-size:14.5px; color:var(--ink-soft); margin-bottom:14px; }
+  .outro .btn { display:inline-block; text-decoration:none; background:var(--vermillion); color:#fff; padding:13px 26px; border-radius:6px; font-size:14.5px; }
+
+  /* ===== 家のテーマ（木の質感・温かい色）===== */
+
+  :root {
+    --ink: #3B2A1A;
+    --ink-soft: #7A6552;
+    --paper: #FFFBF2;
+    --paper-deep: #F7EBD4;
+    --paper-card: #FFF5E3;
+    --vermillion: #A0601F;
+    --vermillion-soft: #E2B472;
+    --sage: #2F7566;
+    --line: rgba(110, 70, 30, 0.22);
+    --line-soft: rgba(110, 70, 30, 0.10);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #F3E6D0;
+      --ink-soft: #C9B496;
+      --paper: #1E1710;
+      --paper-deep: #281F16;
+      --paper-card: #231B13;
+      --vermillion: #E0A15B;
+      --vermillion-soft: #E9B77D;
+      --sage: #7CC0AE;
+      --line: rgba(243, 230, 208, 0.18);
+      --line-soft: rgba(243, 230, 208, 0.08);
+    }
+  }
+
+  .topbar { border-bottom: 3px solid #C89B5E; background: var(--paper-card); }
+  .outro .btn { background: #8A5A2B; border-bottom: 3px solid #6F4521; }
+  @media (prefers-color-scheme: dark) { .topbar { border-bottom-color: #8A5A2B; } .outro .btn { background: #E0A15B; color: #2A1B0C; border-bottom-color: #B97F3A; } }
+  /* ===== /家のテーマ ===== */
+</style>
+</head>
+<body>
+<div class="topbar"><div class="wrap">
+  <a class="brand" href="../scenario.html">渡邊 駿<small>WRITER</small></a>
+  <a class="back" href="../scenario.html#scripts">← 台本のページへ戻る</a>
+</div></div>
+<div class="notice"><div class="wrap">
+  <p><strong>台本サンプルについて。</strong>スキルをお見せするための自主制作サンプルです。実在の案件・人物とは関係ありません。</p>
+</div></div>
+<header class="head"><div class="wrap">
+  <span class="eyebrow">台本サンプル ／ 漫画動画シナリオ</span>
+  <h1>手柄泥棒の所長</h1>
+  <p class="meta"><span>約2,900字</span><span>セリフ＋ト書き・全6場</span><span>執筆：渡邊 駿</span></p>
+</div></header>
+<main><div class="wrap">
+<div class="box"><h2>タイトル案</h2><p>倉庫の誤出荷をゼロにしたチェック表を、新任所長に「俺が作った」と横取りされた俺<br>→本社の視察当日、所長「ミスはパートのせいです」→俺「じゃあ、このメールは誰が送ったんですか？」</p></div>
+<div class="box"><h2>主要登場人物</h2><ul><li>三浦　陽太（みうら　ようた　28）　物流倉庫の出荷班リーダー。主人公</li><li>黒川　修司（くろかわ　しゅうじ　44）　本社から来た新任の所長</li><li>松田　恵子（まつだ　けいこ　52）　出荷班のパート。勤続12年</li><li>西田　隆（にしだ　たかし　58）　本社の物流担当役員</li></ul></div>
+<p class="legend">表記：グレーの帯＝ト書き（場面・動作）／名前つきの行＝セリフ／（ ）＝心の声／それ以外＝主人公の語り</p>
+<div class="script manga">
+<h2 class="intro">冒頭</h2>
+<p class="td">倉庫の事務所。黒川が、ラミネートされたチェック表を高く掲げている</p>
+<p class="ln say"><span class="who">黒川</span><span class="txt">「誤出荷ゼロ、三か月連続達成！　全部、俺が作ったこのチェック表のおかげだ」</span></p>
+<p class="ln voice"><span class="who">俺</span><span class="txt">（は？　それ、俺が作ったやつなんだけど）</span></p>
+<p class="nar">本社から来た新しい所長は、人の手柄を平気で自分のものにする男だった。</p>
+<p class="nar">そして本社の役員が視察に来る日、所長はとんでもないことを言い出した。</p>
+<p class="ln say"><span class="who">黒川</span><span class="txt">「誤出荷の原因は、パートの松田さんです。今月で契約を終わりにします」</span></p>
+<h2>第1場　倉庫の事務所（四月・朝礼）</h2>
+<p class="td">四月の朝。千葉県の物流倉庫。事務所に出荷班の十人が集まっている</p>
+<p class="nar">俺は三浦陽太、二十八歳。</p>
+<p class="nar">この倉庫で、ネット通販の商品を出荷する班のリーダーをしている。</p>
+<p class="nar">去年の秋、うちの班は誤出荷が多いと本社から注意を受けた。</p>
+<p class="nar">そこで俺は、棚番号と商品コードを指差しで確かめるチェック表を作った。</p>
+<p class="nar">作った日付と作成者の名前は、共有フォルダのファイルにちゃんと残っている。</p>
+<p class="ln voice"><span class="who">俺</span><span class="txt">（こういうのは、記録に残しておかないとな）</span></p>
+<p class="nar">細かいことは、日報に写真つきで全部書く。俺の癖みたいなものだ。</p>
+<p class="nar">そのチェック表のおかげで、誤出荷は三か月連続でゼロになった。</p>
+<p class="nar">そして今日、本社から新しい所長が来た。</p>
+<p class="ln say"><span class="who">黒川</span><span class="txt">「今日から所長の黒川だ。本社では物流改善を担当してきた。よろしく」</span></p>
+<p class="td">黒川が、壁に貼ってあるチェック表を見つける</p>
+<p class="ln say"><span class="who">黒川</span><span class="txt">「お、これが噂のチェック表か。前の所長から話は聞いてる」</span></p>
+<p class="ln say"><span class="who">俺</span><span class="txt">「はい。去年の秋に、出荷班で…」</span></p>
+<p class="ln say"><span class="who">黒川</span><span class="txt">「本社への報告は俺がまとめておく。所長の仕事だからな」</span></p>
+<p class="ln voice"><span class="who">俺</span><span class="txt">（まあ、報告くらいは任せるか）</span></p>
+<p class="nar">このときの俺は、まだ何も分かっていなかった。</p>
+<h2>第2場　倉庫の休憩室（五月・昼休み）</h2>
+<p class="td">一か月後の昼休み。休憩室で、パートの松田さんがスマホの画面を見せてくる</p>
+<p class="ln say"><span class="who">松田</span><span class="txt">「三浦くん、これ見た？　本社の社内報」</span></p>
+<p class="td">画面に、チェック表を持って笑う黒川の写真。見出しは「新任所長、着任前から改善を主導」</p>
+<p class="ln say"><span class="who">俺</span><span class="txt">「着任前から主導？　所長が来たの、四月ですよね」</span></p>
+<p class="ln say"><span class="who">松田</span><span class="txt">「チェック表、三浦くんが夜まで残って作ってたのにね」</span></p>
+<p class="ln say"><span class="who">俺</span><span class="txt">「ちょっと、所長に言ってきます」</span></p>
+<p class="td">事務所。俺が社内報の画面を黒川に見せる</p>
+<p class="ln say"><span class="who">俺</span><span class="txt">「所長。チェック表を作ったのは出荷班です。社内報の記事、訂正してもらえませんか」</span></p>
+<p class="ln say"><span class="who">黒川</span><span class="txt">「細かいなあ。班のものは所長のものだろ。お前の評価にもちゃんとつけといてやるよ」</span></p>
+<p class="ln say"><span class="who">俺</span><span class="txt">「つけるかどうかの話じゃないです。事実が違うって言ってるんです」</span></p>
+<p class="ln say"><span class="who">黒川</span><span class="txt">「三浦。リーダーなら、もっと大きく構えろ」</span></p>
+<p class="td">黒川が笑いながら席を立つ</p>
+<p class="ln voice"><span class="who">俺</span><span class="txt">（こいつ、最初から手柄を取るつもりだったな）</span></p>
+<h2>第3場　倉庫の出荷エリア（六月・夜十時）</h2>
+<p class="td">六月の夜十時。残業を終えた俺が、出荷エリアの前を通りかかる</p>
+<p class="nar">帰ろうとしたとき、出荷エリアの棚の前に、松田さんが一人で立っていた。</p>
+<p class="ln say"><span class="who">俺</span><span class="txt">「松田さん？　今日はもう上がりの時間じゃ…」</span></p>
+<p class="ln say"><span class="who">松田</span><span class="txt">「所長から、急に電話があってね。明日の朝までに、この列の商品を全部、奥の棚に移せって」</span></p>
+<p class="ln say"><span class="who">俺</span><span class="txt">「棚替えは、班に周知してからやる決まりですよ。チェック表の棚番号も変わるし」</span></p>
+<p class="ln say"><span class="who">松田</span><span class="txt">「私もそう言ったのよ。でも、本社に早く結果を見せたいからって」</span></p>
+<p class="td">松田が、自分のスマホの画面を見せる。黒川からのメール</p>
+<p class="ln voice"><span class="who">俺</span><span class="txt">（夜九時五十分、松田さんにだけ送ってる。班のメールにもCCにも入ってない）</span></p>
+<p class="ln say"><span class="who">俺</span><span class="txt">「とりあえず、俺も手伝います」</span></p>
+<p class="td">二人で商品を移す。最後に、俺が棚とメール画面をスマホで撮影する</p>
+<p class="ln voice"><span class="who">俺</span><span class="txt">（いつもの癖だ。日報に貼っておこう）</span></p>
+<h2>第4場　倉庫の事務所（翌週・視察の朝）</h2>
+<p class="td">翌週の朝。事務所に本社の西田役員が来ている。黒川が資料を配る</p>
+<p class="nar">棚替えの次の日、誤出荷が三件出た。</p>
+<p class="nar">棚の場所が変わったのに、チェック表の棚番号が古いままだったからだ。</p>
+<p class="nar">そして今日は、本社の西田役員が視察に来る日だった。</p>
+<p class="ln say"><span class="who">黒川</span><span class="txt">「西田役員。誤出荷ゼロは、私が考案したチェック表で達成しました。ただ先週、三件のミスが出まして」</span></p>
+<p class="ln say"><span class="who">西田</span><span class="txt">「原因は分かっているのか」</span></p>
+<p class="ln say"><span class="who">黒川</span><span class="txt">「はい。パートの松田さんが、勝手に棚を移したことが原因です。今月で契約を終了します」</span></p>
+<p class="td">松田の顔がこわばる</p>
+<p class="ln say"><span class="who">松田</span><span class="txt">「そんな…」</span></p>
+<p class="ln say"><span class="who">俺</span><span class="txt">「待ってください。松田さんは、勝手に棚を移したんじゃありません」</span></p>
+<p class="ln say"><span class="who">黒川</span><span class="txt">「三浦、口を挟むな。役員の前だぞ」</span></p>
+<p class="ln say"><span class="who">俺</span><span class="txt">「役員の前だから言ってるんです」</span></p>
+<p class="ln say"><span class="who">西田</span><span class="txt">「三浦くん、だったか。続けなさい」</span></p>
+<h2>第5場　同じ事務所（続き）</h2>
+<p class="ln say"><span class="who">俺</span><span class="txt">「まず、チェック表のことからです。これは所長の考案じゃありません」</span></p>
+<p class="td">俺がノートパソコンを開き、共有フォルダのファイル情報を西田に見せる</p>
+<p class="ln say"><span class="who">俺</span><span class="txt">「作成日は去年の十月。作成者は三浦。所長が着任する半年前です」</span></p>
+<p class="ln say"><span class="who">西田</span><span class="txt">「確かに、そうなっているな」</span></p>
+<p class="ln say"><span class="who">黒川</span><span class="txt">「それは、ファイルを作ったのが三浦というだけで、中身は前の所長と俺が…」</span></p>
+<p class="ln say"><span class="who">俺</span><span class="txt">「去年の十月の日報に、試作の段階から全部写真を貼ってあります。所長の名前は、どこにも出てきません」</span></p>
+<p class="td">黒川が言葉に詰まる</p>
+<p class="ln say"><span class="who">黒川</span><span class="txt">「ぐっ…そ、そんなことより、問題はミスだ！　パートが勝手に棚を動かしたんだ。勝手にだぞ！」</span></p>
+<p class="td">黒川の大声に、松田が一歩前に出る</p>
+<p class="ln say"><span class="who">松田</span><span class="txt">「勝手じゃありません」</span></p>
+<p class="ln say"><span class="who">黒川</span><span class="txt">「松田さん、あなたは黙って…」</span></p>
+<p class="ln say"><span class="who">松田</span><span class="txt">「黙っていました。契約の更新前だから、何も言えなかった。でも、自分の名前で嘘の報告をされるのは、もう我慢できません」</span></p>
+<p class="ln say"><span class="who">松田</span><span class="txt">「あの夜、所長から電話をもらって、メールで指示を受けました。夜の九時五十分です」</span></p>
+<p class="ln say"><span class="who">黒川</span><span class="txt">「証拠もないくせに、何を言ってるんだ！」</span></p>
+<p class="ln say"><span class="who">俺</span><span class="txt">「ありますよ」</span></p>
+<p class="td">俺が、日報の印刷を西田の前に置く。黒川のメールの画面と、棚替えの写真が貼ってある</p>
+<p class="ln say"><span class="who">俺</span><span class="txt">「送信者は黒川所長。宛先は松田さんだけ。班のメールにもCCにも入っていません。棚替えの前に、班に周知しなかったのは所長です」</span></p>
+<p class="ln say"><span class="who">俺</span><span class="txt">「チェック表の棚番号が古いままだったのは、俺たちが棚替えを知らされていなかったからです」</span></p>
+<p class="td">西田が、印刷を手に取って黙読する。長い沈黙</p>
+<p class="ln say"><span class="who">西田</span><span class="txt">「黒川くん。これは、君が送ったメールだね」</span></p>
+<p class="ln say"><span class="who">黒川</span><span class="txt">「そ、それは、現場の判断を後押しするつもりで…」</span></p>
+<p class="ln say"><span class="who">西田</span><span class="txt">「夜の十時前に、パートの方一人に棚替えをさせることを、後押しとは言わない」</span></p>
+<p class="ln say"><span class="who">西田</span><span class="txt">「社内報の件も含めて、本社で改めて話を聞く。今日の午後、私と一緒に戻りなさい」</span></p>
+<p class="td">黒川がその場に崩れるように座り込む</p>
+<p class="ln voice"><span class="who">俺</span><span class="txt">（人の手柄を取って、人のせいにして。そのツケが、全部まとめて回ってきたな）</span></p>
+<h2>第6場　倉庫の休憩室（七月）</h2>
+<p class="td">一か月後。休憩室で、俺と松田さんがお茶を飲んでいる</p>
+<p class="nar">その後、黒川所長は本社の総務部に異動になった。</p>
+<p class="nar">社内報には訂正の記事が出て、チェック表は「出荷班の取り組み」として紹介し直された。</p>
+<p class="nar">棚替えの指示を周知しなかった件と、パートに責任を押しつけた件で、黒川には懲戒処分も下ったそうだ。</p>
+<p class="nar">松田さんの契約は、予定どおり更新された。</p>
+<p class="ln say"><span class="who">松田</span><span class="txt">「三浦くん、あの日報、ほんとに全部書いてたのね」</span></p>
+<p class="ln say"><span class="who">俺</span><span class="txt">「癖なんですよ。でも、松田さんが言ってくれなかったら、メールは所長の言い訳で終わってました」</span></p>
+<p class="nar">そして俺は、西田役員の推薦で、倉庫全体の改善チームを任されることになった。</p>
+<p class="td">壁に、新しいチェック表が貼られる。作成者の欄に「出荷班」と書いてある</p>
+<p class="ln voice"><span class="who">俺</span><span class="txt">（次は、誰の手柄かなんて書かなくていい職場にしよう）</span></p>
+<p class="end">（了）</p>
+</div>
+<div class="outro">
+  <h2>この台本について</h2>
+  <p>YouTube漫画動画向けのスカッと系シナリオです。反撃の決め手は序盤に伏線として出しておき、終盤まで明かさない構成にしています。</p>
+  <p>ご依頼の際は、チャンネルのマニュアルや過去の台本の形式に合わせて書きます。</p>
+  <a class="btn" href="../scenario.html#contact">台本のご相談はこちら</a>
+</div>
+</div></main>
+</body>
+</html>

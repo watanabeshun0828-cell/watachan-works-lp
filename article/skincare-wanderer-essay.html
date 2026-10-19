@@ -124,20 +124,54 @@
     padding: 13px 26px; border-radius: 6px;
     font-size: 14.5px; letter-spacing: 0.05em;
   }
+
+  /* ===== 家のテーマ（木の質感・温かい色）===== */
+
+  :root {
+    --ink: #3B2A1A;
+    --ink-soft: #7A6552;
+    --paper: #FFFBF2;
+    --paper-deep: #F7EBD4;
+    --paper-card: #FFF5E3;
+    --vermillion: #A0601F;
+    --vermillion-soft: #E2B472;
+    --sage: #2F7566;
+    --line: rgba(110, 70, 30, 0.22);
+    --line-soft: rgba(110, 70, 30, 0.10);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #F3E6D0;
+      --ink-soft: #C9B496;
+      --paper: #1E1710;
+      --paper-deep: #281F16;
+      --paper-card: #231B13;
+      --vermillion: #E0A15B;
+      --vermillion-soft: #E9B77D;
+      --sage: #7CC0AE;
+      --line: rgba(243, 230, 208, 0.18);
+      --line-soft: rgba(243, 230, 208, 0.08);
+    }
+  }
+
+  .topbar { border-bottom: 3px solid #C89B5E; background: var(--paper-card); }
+  .outro .btn { background: #8A5A2B; border-bottom: 3px solid #6F4521; }
+  @media (prefers-color-scheme: dark) { .topbar { border-bottom-color: #8A5A2B; } .outro .btn { background: #E0A15B; color: #2A1B0C; border-bottom-color: #B97F3A; } }
+  /* ===== /家のテーマ ===== */
 </style>
 </head>
 <body>
 
 <div class="topbar">
   <div class="wrap">
-    <a class="brand" href="../index.html">渡邊 駿<small>WRITER / EDITOR</small></a>
-    <a class="back" href="../index.html">← ポートフォリオへ戻る</a>
+    <a class="brand" href="../writer.html">渡邊 駿<small>WRITER / EDITOR</small></a>
+    <a class="back" href="../writer.html">← 記事のページへ戻る</a>
   </div>
 </div>
 
 <div class="notice">
   <div class="wrap">
-    <p><strong>執筆サンプルについて。</strong>体験談エッセイの書き方をお見せするための執筆サンプルです。実在の人物・出来事ではなく、想定読者に寄り添うための創作です。記事の構成・本文はすべて渡邊が執筆しています。</p>
+    <p><strong>執筆サンプルについて。</strong>体験談エッセイの書き方をお見せするための執筆サンプルです。実在の人物・出来事ではなく、想定読者に寄り添うための創作です。記事の構成・本文は、下書きの段階でAIを補助に使い、渡邊が書き直して仕上げています。事実確認と表現の最終確認も渡邊が行っています。</p>
   </div>
 </div>
 
@@ -184,7 +218,7 @@
       <h2>この記事について</h2>
       <p>美容・コスメジャンルにおける、一人称の体験談エッセイの執筆サンプルです。共感を軸にした構成・語り口で執筆しています。</p>
       <p>同じ流れで、ご依頼のジャンル・トンマナに合わせた体験談記事を執筆します。</p>
-      <a class="btn" href="../index.html#contact">執筆のご相談はこちら</a>
+      <a class="btn" href="../writer.html#contact">執筆のご相談はこちら</a>
     </div>
 
   </div>
