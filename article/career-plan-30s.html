@@ -3,187 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>30代のキャリアプランの考え方｜今から描く将来の指針 - 渡邊駿 執筆サンプル</title>
-<meta name="description" content="30代のキャリアプランの考え方を解説します。経験の棚卸しや理想の将来像の描き方、現在地とのギャップの整理まで、無理なく将来を考えるための具体的なステップをわかりやすく紹介します。">
-<style>
-  :root {
-    --ink: #1F3A5F;
-    --ink-soft: #5D7392;
-    --paper: #FFFFFF;
-    --paper-deep: #EEF4F9;
-    --paper-card: #F7FAFD;
-    --vermillion: #2F7FB8;
-    --sage: #3E8E7E;
-    --line: rgba(31, 58, 95, 0.15);
-    --line-soft: rgba(31, 58, 95, 0.08);
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --ink: #E4EDF5;
-      --ink-soft: #9DB3C8;
-      --paper: #10171F;
-      --paper-deep: #182330;
-      --paper-card: #161F2A;
-      --vermillion: #67B2DE;
-      --sage: #6FBBA9;
-      --line: rgba(228, 237, 245, 0.16);
-      --line-soft: rgba(228, 237, 245, 0.08);
-    }
-  }
-
-  * { box-sizing: border-box; margin: 0; }
-  body {
-    background: var(--paper);
-    color: var(--ink);
-    font-family: "Hiragino Maru Gothic ProN", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic Medium", "Meiryo", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    line-height: 1.95;
-    letter-spacing: 0.01em;
-  }
-  h1, h2, h3 {
-    font-family: inherit;
-    font-weight: 700;
-    text-wrap: balance;
-    letter-spacing: 0.005em;
-    line-height: 1.45;
-  }
-  h1, h2, h3, p, li, .meta, .rt {
-    word-break: auto-phrase;
-    line-break: strict;
-    overflow-wrap: normal;
-  }
-  .nb { display: inline-block; }
-  a { color: var(--vermillion); }
-  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
-
-  .topbar {
-    border-bottom: 1px solid var(--line-soft);
-    background: var(--paper-card);
-    position: sticky; top: 0; z-index: 10;
-    backdrop-filter: saturate(140%) blur(6px);
-  }
-  .topbar .wrap {
-    display: flex; align-items: center; justify-content: space-between;
-    gap: 16px; padding-top: 14px; padding-bottom: 14px;
-  }
-  .brand { font-weight: 700; letter-spacing: 0.06em; text-decoration: none; color: var(--ink); }
-  .brand small { display: block; font-weight: 400; font-size: 11.5px; color: var(--ink-soft); letter-spacing: 0.14em; }
-  .back { font-size: 13px; text-decoration: none; white-space: nowrap; }
-
-  .notice {
-    background: var(--paper-deep);
-    border-bottom: 1px solid var(--line-soft);
-    padding: 18px 0;
-  }
-  .notice p { font-size: 13.5px; color: var(--ink-soft); line-height: 1.8; }
-  .notice strong { color: var(--ink); }
-
-  header.head { padding: 54px 0 30px; }
-  .eyebrow {
-    display: inline-flex; align-items: center; gap: 0.6em;
-    font-size: 12px; letter-spacing: 0.2em; color: var(--vermillion); font-weight: 600;
-  }
-  .eyebrow::before { content: ""; width: 18px; height: 1px; background: var(--vermillion); }
-  header.head h1 { font-size: clamp(28px, 5.4vw, 42px); margin: 18px 0 22px; font-weight: 800; letter-spacing: -0.01em; }
-  .meta { font-size: 13px; color: var(--ink-soft); letter-spacing: 0.04em; }
-  .meta span + span::before { content: "／"; margin: 0 0.5em; opacity: 0.5; }
-
-  article { padding-bottom: 20px; }
-  figure { margin: 0 0 26px; }
-  figure img {
-    width: 100%; height: auto; display: block;
-    border-radius: 8px; border: 1px solid var(--line-soft);
-  }
-  .hero-img { margin: 0 0 8px; }
-  .hero-img img { border-radius: 10px; }
-  article h2 {
-    font-size: clamp(21px, 3.8vw, 28px);
-    margin: 68px 0 22px;
-    font-weight: 800;
-    padding-bottom: 12px;
-    border-bottom: 2px solid var(--line);
-  }
-  article h3 {
-    font-size: clamp(17px, 3vw, 19px);
-    margin: 38px 0 14px;
-    padding-left: 14px;
-    border-left: 3px solid var(--vermillion);
-  }
-  article p { margin: 0 0 20px; }
-  article ul { margin: 0 0 22px; padding-left: 1.3em; }
-  article li { margin-bottom: 8px; }
-
-  .cta-box {
-    background: var(--paper-card);
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    padding: 24px 26px;
-    margin: 8px 0 0;
-  }
-  .cta-box .tag {
-    display: inline-block; font-size: 11.5px; letter-spacing: 0.12em;
-    color: var(--sage); border: 1px solid var(--sage);
-    border-radius: 999px; padding: 3px 11px; margin-bottom: 14px;
-  }
-  .cta-box p:last-child { margin-bottom: 0; }
-
-  .outro {
-    margin: 64px 0 0;
-    border-top: 1px solid var(--line);
-    padding: 34px 0 70px;
-  }
-  .outro h2 { font-size: 19px; margin: 0 0 14px; border: 0; padding: 0; }
-  .outro p { font-size: 14.5px; color: var(--ink-soft); margin-bottom: 16px; }
-  .outro .btn {
-    display: inline-block; text-decoration: none;
-    background: var(--vermillion); color: #fff;
-    padding: 13px 26px; border-radius: 6px;
-    font-size: 14.5px; letter-spacing: 0.05em;
-  }
-
-  /* ===== 家のテーマ（木の質感・温かい色）===== */
-
-  :root {
-    --ink: #3B2A1A;
-    --ink-soft: #7A6552;
-    --paper: #FFFBF2;
-    --paper-deep: #F7EBD4;
-    --paper-card: #FFF5E3;
-    --vermillion: #A0601F;
-    --vermillion-soft: #E2B472;
-    --sage: #2F7566;
-    --line: rgba(110, 70, 30, 0.22);
-    --line-soft: rgba(110, 70, 30, 0.10);
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --ink: #F3E6D0;
-      --ink-soft: #C9B496;
-      --paper: #1E1710;
-      --paper-deep: #281F16;
-      --paper-card: #231B13;
-      --vermillion: #E0A15B;
-      --vermillion-soft: #E9B77D;
-      --sage: #7CC0AE;
-      --line: rgba(243, 230, 208, 0.18);
-      --line-soft: rgba(243, 230, 208, 0.08);
-    }
-  }
-
-  .topbar { border-bottom: 3px solid #C89B5E; background: var(--paper-card); }
-  .outro .btn { background: #8A5A2B; border-bottom: 3px solid #6F4521; }
-  @media (prefers-color-scheme: dark) { .topbar { border-bottom-color: #8A5A2B; } .outro .btn { background: #E0A15B; color: #2A1B0C; border-bottom-color: #B97F3A; } }
-  /* ===== /家のテーマ ===== */
-</style>
+<title>30代のキャリアプランの考え方｜3ステップで描く将来像 - 渡邊駿 執筆サンプル</title>
+<meta name="description" content="30代のキャリアプランの考え方を解説します。経験の棚卸し、理想の将来像の描き方、現在地とのギャップの整理という3ステップで、今後の方向性を考える手順を紹介します。">
+<link rel="stylesheet" href="../site.css">
+<link rel="stylesheet" href="../article.css">
 </head>
 <body>
 
-<div class="topbar">
-  <div class="wrap">
-    <a class="brand" href="../writer.html">渡邊 駿<small>WRITER / EDITOR</small></a>
-    <a class="back" href="../writer.html">← 記事のページへ戻る</a>
-  </div>
-</div>
+<header class="gnav">
+  <a class="logo" href="../index.html">SHUN WATANABE<small>writing &amp; creating</small></a>
+  <button class="burger" aria-label="メニュー" onclick="document.getElementById('menu').classList.toggle('open')"><span></span><span></span></button>
+  <ul class="menu" id="menu"><li><a href="../index.html">Home</a></li><li><a href="../writer.html" class="cur">Writer</a></li><li><a href="../scenario.html">Script</a></li><li><a href="../lp.html">LP</a></li><li><a href="../hp.html">HP</a></li><li><a href="../web-design.html">Design</a></li><li><a href="../video.html">Video</a></li><li><a href="../ai.html">AI</a></li><li><a href="../index.html#profile">Profile</a></li><li><a href="../index.html#contact">Contact</a></li></ul>
+</header>
 
 <div class="notice">
   <div class="wrap">
@@ -194,8 +25,8 @@
 <header class="head">
   <div class="wrap">
     <span class="eyebrow"><span class="nb">SEO記事 ／</span><span class="nb">想定キーワード「30代 キャリアプラン 考え方」</span></span>
-    <h1><span class="nb">30代のキャリアプランの</span><span class="nb">考え方｜</span><span class="nb">今から描く</span><span class="nb">将来の指針</span></h1>
-    <p class="meta"><span>約2,600字</span><span>PREP法・見出し構成込み</span><span>執筆：渡邊 駿</span></p>
+    <h1><span class="nb">30代のキャリアプランの</span><span class="nb">考え方｜</span><span class="nb">3ステップで描く</span><span class="nb">将来像</span></h1>
+    <p class="meta"><span>約3,300字</span><span>PREP法・見出し構成込み</span><span>執筆：渡邊 駿</span></p>
   </div>
 </header>
 
@@ -205,83 +36,89 @@
     <figure class="hero-img">
       <img src="img/career-plan-30s.jpg" alt="30代でキャリアプランを考える様子">
     </figure>
+    <p>30代になると役割や生活環境が変わり、今後のキャリアに迷う方も多いのではないでしょうか。本記事では、30代のキャリアプランの考え方を3つのステップで解説します。具体例や見直しのポイントも紹介しますので、今後の方向性を考える参考にしてください。</p>
 
     <h2>30代でキャリアプランを考えるべき理由</h2>
     <figure>
       <img src="img/office-worker-thinking-career.jpg" alt="キャリアについて考えるビジネスパーソン">
     </figure>
-    <p>30代は、20代の頃とは違う視点でキャリアプランを考えるべき時期です。求められる役割が変わり、ライフイベントとの両立も必要になるためです。実務を覚える段階を終え、後輩の指導やチーム全体の成果に責任を持つ立場へと移行していきます。同時に、結婚や子育て、親の介護といった暮らしの変化とも向き合う時期です。20代の感覚のまま突き進むのではなく、この時期ならではの視点で将来を整理し直すことが求められます。</p>
+    <p>30代は、20代の頃とは違う視点でキャリアプランを見つめ直したい時期です。その背景には、求められる役割の変化と、ライフイベントとの両立があります。仕事にも生活にも変化が重なるこの時期に、一度立ち止まって考えておくと、その後の選択に迷いにくくなります。次の2つの理由から、順に見ていきましょう。</p>
 
     <h3>20代とは求められる役割が変わるから</h3>
-    <p>30代になると、20代の頃とは職場で求められる役割が変わります。実務を覚える段階から、後輩の指導やチームの成果に責任を持つ段階へと移行していくためです。これまでは与えられた業務をこなすだけでよかった人もいます。そうした人も、部下の育成やプロジェクト全体の進行管理を任されるようになるケースは少なくありません。役割が変化する30代は、これまでの延長線上ではなく、あらためてキャリアの方向性を考える必要があります。</p>
+    <p>30代になると、20代の頃とは職場で求められる役割が変わります。実務を覚える段階から、後輩の育成やチームの成果に責任を持つ段階へ移るためです。たとえば、20代では与えられた業務をこなすだけでよくても、30代では部下の育成やプロジェクト全体の進行管理を任されるケースが少なくありません。このように役割が変わるからこそ、これまでの延長線上ではなく、あらためてキャリアの方向性を考える必要があります。</p>
 
     <h3>ライフイベントとの両立を考える時期だから</h3>
-    <p>30代は、結婚や出産、親の介護など、ライフイベントとキャリアの両立を考える時期でもあります。こうした出来事は働き方や収入への希望に直接影響するため、仕事だけを切り離して考えることが難しくなるからです。実際に、子育てと両立できる働き方を求めて転職を検討したり、親のそばで働けるよう勤務地を見直したりする人もいます。30代のキャリアプランは、仕事だけでなく生活全体を見据えて考えることが必要です。</p>
+    <p>30代は、結婚や出産、親の介護など、ライフイベントとキャリアの両立を考える時期でもあります。これらのイベントは働き方や収入に直接影響し、仕事だけを切り離して考えることが難しくなるからです。実際に、子育てをしながら働ける環境を求めて転職を検討したり、親のそばで働けるよう勤務地を見直したりする人もいます。だからこそ、30代のキャリアプランでは、仕事だけでなく生活全体を見据えて考えることが欠かせません。</p>
 
-    <h2>30代のキャリアプランを考える3つのステップ</h2>
+    <h2>30代のキャリアプランの考え方｜3つのステップ</h2>
     <figure>
       <img src="img/career-planning-notebook.jpg" alt="ノートにキャリアの棚卸しを書き出す様子">
     </figure>
-    <p>30代のキャリアプランを考える際は、次の3つのステップで整理していくとスムーズです。いきなり将来像だけを思い描こうとすると、何から手をつければよいか分からず止まってしまいがちです。まずは今の自分を振り返るところから始め、理想の姿を描きます。そのうえで現在地とのズレを確認するという順番で進めると、無理なく自分に合ったキャリアプランへつなげていけます。</p>
+    <p>30代のキャリアプランは、次の3つのステップで整理すると、進めやすくなります。いきなり将来像だけを思い描こうとすると、何から手をつければよいか分からなくなりがちです。そこで、今の自分を振り返り、理想を描き、その差を確認する順で進めます。</p>
 
     <h3>これまでの経験・スキルを棚卸しする</h3>
-    <p>まず取り組みたいのは、これまでの経験やスキルを棚卸しすることです。自分が何をしてきたのかを客観的に把握しないと、次にどんな方向へ進むべきかを判断できないからです。担当してきた業務内容や成果を紙に書き出してみましょう。そこから「人にどう役立ったか」という視点で整理し直すと、自分の強みが見えやすくなります。棚卸しは地味な作業ですが、キャリアプランを考える土台になります。</p>
+    <p>まず取り組みたいのは、これまでの経験やスキルを棚卸しすることです。自分が何をしてきたのかを客観的に把握しないと、次にどんな方向へ進むべきかを判断できません。担当してきた業務内容や成果を紙に書き出してみましょう。書き出した内容を「人にどう役立ったか」という視点で整理し直すと、自分の強みが見えやすくなります。棚卸しは地味な作業ですが、キャリアプランを考える土台になります。</p>
 
     <h3>理想の将来像を具体的に描く</h3>
-    <p>次に、5年後・10年後にどうなっていたいか、理想の将来像を具体的に描きます。漠然とした「今より良くなりたい」という思いだけでは、日々の行動に落とし込めないためです。「役職に就きたい」ではなく「◯年後にはチームを持ち、後輩の育成に関わっていたい」というように言語化してみましょう。状況が思い浮かぶ形にするのがポイントです。具体的に描くほど、そこに向かうための行動も見えやすくなります。</p>
+    <p>次に、5年後・10年後にどうなっていたいかという理想の将来像を、具体的に描きます。漠然とした「今より良くなりたい」という思いだけでは、日々の行動に落とし込めません。「役職に就きたい」ではなく「5年後にはチームを持ち、後輩の育成に関わっていたい」というように言語化してみましょう。その場面が具体的にイメージできる表現にするのがポイントです。具体的に描くほど、そこに向かうための行動も明確になります。</p>
 
     <h3>現在地とのギャップを整理する</h3>
-    <p>最後に、理想の将来像と今の自分との間にあるギャップを整理します。ギャップが明確になって初めて、何を学び、何を経験すればよいかが具体的になるからです。マネジメント経験が不足しているなら、今の職場で小さなチームを任せてもらえないか相談してみましょう。このように、埋め方まで考えることが重要です。ギャップの整理は、キャリアプランを行動に変えるための最後のステップです。</p>
+    <p>最後に、理想の将来像と今の自分との間にあるギャップを整理します。違いが明確になって初めて、何を学び、何を経験すればよいかが具体的になるからです。たとえば、マネジメント経験が不足しているなら、今の職場で小さなチームを任せてもらえないか相談してみましょう。このように、ギャップの埋め方まで考えることが重要です。ギャップを整理できれば、キャリアプランを具体的な行動に変えられます。</p>
 
     <h2>30代のキャリアプランの具体例（パターン別）</h2>
     <figure>
       <img src="img/career-plan-pattern-example.jpg" alt="複数のキャリアの選択肢をイメージした図">
     </figure>
-    <p>理想の将来像を描くときは、実際にどんなパターンがあるのかを知っておくと考えやすくなります。ここでは代表的な3つの方向性を紹介します。誰かの正解をそのまま当てはめる必要はありません。ただ、他の人がどんな軸でキャリアを考えているかを知ることで、自分に合った方向性を見つけるヒントになります。自分の価値観に近いものがどれか、考えながら読んでみてください。</p>
+    <p>理想の将来像を描くときは、実際にどんなパターンがあるのかを知っておくと考えやすくなります。ここでは代表的な3つのパターンを紹介します。どれが正解ということはありません。自分の価値観に近いものがどれかを考えながら、読んでみてください。</p>
 
     <h3>管理職としてマネジメントを極めるパターン</h3>
-    <p>チームや部下を持ち、組織の成果を最大化する方向を目指すパターンです。これまでの実務経験を活かしながら、人を育てることや、目標達成に向けて周囲を動かす力を伸ばしていく道になります。プレイヤーとして成果を出す力に加えて、人をまとめる力や意思決定の力が求められるようになります。そのぶん、視野の広さも試されるでしょう。将来的に組織全体を動かす立場を目指したい人に向いています。</p>
+    <p>チームや部下を持ち、組織の成果を最大化することを目指すパターンです。これまでの実務経験を活かしながら、人を育てる力や、目標達成に向けて周囲を動かす力を伸ばしていく道になります。プレイヤーとして成果を出す力に加えて、人をまとめる力や意思決定の力も求められます。組織全体を動かす立場を目指したい人に向いています。</p>
 
-    <h3>専門性を活かしてスペシャリストを目指すパターン</h3>
-    <p>特定の分野における専門知識やスキルを深め、その道のプロフェッショナルとして評価される方向を目指すパターンです。マネジメントよりも、実務そのものの質を高めたい人に向いています。管理職を目指す道と違い、人をまとめる役割より自分自身のスキルを磨き続けることに重きを置きたい人に合っています。専門性が高まるほど、社内外からの相談や指名が増えていくのも特徴です。</p>
+    <h3>専門性を深めてスペシャリストを目指すパターン</h3>
+    <p>特定の分野で専門知識やスキルを深め、その道のプロとして評価されることを目指します。マネジメントよりも、実務そのものの質を高めたい人に向いています。人をまとめる役割よりも、自分のスキルを磨き続けることに重きを置きたい人に合っています。専門性が高まるほど、社内外から相談を受ける機会が増えていくのも特徴です。</p>
 
     <h3>ワークライフバランス重視で働き方を変えるパターン</h3>
-    <p>昇進や専門性の追求よりも、家庭や自分の時間との両立を優先する方向を目指すパターンです。勤務時間や働き方の柔軟性を軸に、無理のないキャリアを築いていきます。子育てや介護などライフステージの変化に合わせて、働き方そのものを見直したい人に向いている道です。無理に成果を追い求めず、長く働き続けられることを重視するのも一つの選択肢です。</p>
+    <p>昇進や専門性の追求よりも、仕事と家庭・自分の時間との両立を優先するパターンです。勤務時間や働き方の柔軟性を軸に、自分に合ったキャリアを築いていきます。子育てや介護といったライフイベントに合わせて、働き方そのものを見直したい人に向いています。</p>
 
     <h2>キャリアプランを立てることのメリット</h2>
     <figure>
       <img src="img/career-plan-merit.jpg" alt="計画を立てて前向きに取り組む様子">
     </figure>
-    <p>キャリアプランを立てておくと、日々の仕事の選び方に迷いが少なくなります。目の前の業務や転職の機会に対して「これは自分の将来像に近づく選択か」という基準で判断できるようになるためです。また、いざ転職や異動を考えるタイミングでも、自分の希望や強みをすぐに言葉にできるという利点もあります。</p>
-    <p>一方で、計画に縛られすぎると、目の前に来た良い機会を「プランにないから」と見送ってしまうデメリットもあります。キャリアプランはあくまで判断の軸であって、絶対に従うべきルールではないと捉えておくことが大切です。</p>
+    <p>キャリアプランは、立てて終わりではなく、日々の選択や節目の判断で使ってこそ意味があります。メリットは大きく2つあります。日々の仕事で迷ったときの判断軸になることと、転職や異動の場面で自分の強みを伝えやすくなることです。</p>
+
+    <h3>日々の判断に迷いにくくなる</h3>
+    <p>キャリアプランを立てておくと、日々の仕事の選び方に迷いが少なくなります。その理由は、目の前の業務や転職の機会に対して「これは自分の将来像に近づく選択か」という基準で判断できる点にあります。新しいプロジェクトへの参加を打診されたときも、将来像に照らして引き受けるかどうかを決めやすくなります。</p>
+
+    <h3>転職・異動時に強みを伝えやすくなる</h3>
+    <p>また、いざ転職や異動を考えるときにも、自分の希望や強みをすぐに言葉にできる点がメリットです。面接で志望理由を聞かれた場面でも、棚卸しした経験をもとに自分の言葉で説明しやすくなります。</p>
 
     <h2>キャリアプランを考える際に意識したいポイント</h2>
     <figure>
       <img src="img/career-review-calendar.jpg" alt="定期的にキャリアプランを見直すイメージ">
     </figure>
-    <p>キャリアプランを考えるうえで、いくつか意識しておきたいポイントもあります。せっかく時間をかけて考えたキャリアプランも、向き合い方を誤ることも珍しくありません。途中で行き詰まったり、変化についていけなくなったりすることも起こり得ます。ここでは、長く付き合っていくキャリアプランを見直すときに、意識しておきたい2つの視点を紹介します。</p>
+    <p>キャリアプランは、立てたあとの向き合い方で、役に立つかどうかが変わります。意識したいのは、次の2つです。1つは、決めた計画に縛られすぎないこと。もう1つは、状況に合わせて定期的に見直すことです。</p>
 
-    <h3>一つの正解にこだわりすぎない</h3>
-    <p>キャリアプランは、一つの正解にこだわりすぎないことが大切です。働き方や社会の状況は変化し続けるため、最初に決めた計画が最後まで正しいとは限らないからです。当初は管理職を目指していたものの、専門性を極める道の方が自分に合っていると気づく人もいます。そうして途中で方向転換するケースも珍しくありません。正解を探すより、その時々で納得できる選択を積み重ねていく姿勢の方が、長い目で見て現実的です。</p>
+    <h3>1つの正解にこだわりすぎない</h3>
+    <p>キャリアプランを考える際は、1つの正解にこだわりすぎないことが大切です。働き方や社会の状況は変化し続け、最初に決めた計画が最後まで正しいとは限らないからです。当初は管理職を目指していたものの、専門性を極める道の方が自分に合っていると気づく人もいます。このように途中で方向転換するケースも珍しくありません。正解を探すより、その時々で納得できる選択を積み重ねていく姿勢の方が、長い目で見て現実的です。</p>
 
     <h3>定期的に見直す機会を持つ</h3>
-    <p>一度作ったキャリアプランは、定期的に見直す機会を持つようにしましょう。状況やライフステージが変われば、当初描いていた将来像も自然と変わっていくからです。半年に一度、自分の経験や気持ちの変化を振り返ってみましょう。必要であればプランを微調整する習慣を持つと、無理なくキャリアを更新していけます。見直しを前提にしておくことで、プラン通りに進まなくても焦らずに向き合えます。</p>
+    <p>一度立てたキャリアプランは、定期的に見直しましょう。状況やライフイベントが変われば、当初描いていた将来像も変わっていくものです。半年に一度、自分の経験や気持ちの変化を振り返ってみましょう。必要であればプランを微調整する習慣を持つと、軌道修正がしやすくなります。見直しを前提にしておけば、プラン通りに進まなくても焦らずに対応できます。</p>
 
     <h2>まとめ</h2>
     <figure>
       <img src="img/career-consultation-online.jpg" alt="オンラインでキャリア相談をする様子">
     </figure>
-    <p>30代のキャリアプランを考えるうえで大切なのは、次の3点です。</p>
+    <p>30代のキャリアプランを考えるうえで大切なのは、次の3つです。</p>
     <ul>
       <li>これまでの経験・スキルを棚卸しすること</li>
       <li>理想の将来像を具体的に描くこと</li>
       <li>現在地とのギャップを整理すること</li>
     </ul>
-    <p>一つの正解にこだわらず、定期的に見直しながら育てていく感覚を持ちましょう。30代からでも無理なく将来のキャリアプランを描いていくことができます。</p>
+    <p>1つの正解にこだわらず、定期的に見直しながらキャリアプランを育てていきましょう。30代の今こそ、自分なりのキャリアプランを描いてみましょう。</p>
 
     <div class="cta-box">
       <span class="tag">架空サービスへのCTA（サンプル）</span>
-      <p>キャリアプランを一人で整理するのが難しいと感じる方には、「キャリアコンパス」がおすすめです。経験の棚卸しから将来像の言語化まで、専門のアドバイザーと一緒にステップごとに整理できるオンライン相談サービスです。初回相談は無料で利用できます。今のキャリアに漠然とした不安を感じている方は、まずは無料相談から試してみてはいかがでしょうか。</p>
+      <p>キャリアプランを一人で整理するのが難しいと感じる方には、「キャリアコンパス」がおすすめです。経験の棚卸しから将来像の言語化まで、専門のキャリアアドバイザーと一緒にステップごとに進められるオンライン相談です。初回は無料で利用できます。今のキャリアに漠然とした不安を感じている方は、まずは気軽に相談してみてはいかがでしょうか。</p>
     </div>
 
     <div class="outro">
@@ -294,5 +131,9 @@
   </div>
 </article>
 
+<footer>
+  <div><a href="../index.html">HOME</a><a href="../writer.html">WRITER</a><a href="../scenario.html">SCRIPT</a><a href="../lp.html">LP</a><a href="../hp.html">HP</a><a href="../web-design.html">DESIGN</a><a href="../video.html">VIDEO</a><a href="../ai.html">AI</a><a href="https://note.com/famous_abelia230" target="_blank" rel="noopener">NOTE</a></div>
+  <div>© 2026 Shun Watanabe</div>
+</footer>
 </body>
 </html>

@@ -5,171 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>副業の選び方｜本業と両立できる30代会社員の失敗しない5つの基準 - 渡邊駿 執筆サンプル</title>
 <meta name="description" content="30代会社員が本業と両立できる副業を選ぶための5つの基準を解説します。マルチ商法等の怪しい勧誘への注意点や、確定申告・住民税・会社バレの仕組みといった税金の基礎知識まで、失敗しない副業選びのポイントを漏れなく幅広く詳しく紹介します。">
-<style>
-  :root {
-    --ink: #1F3A5F;
-    --ink-soft: #5D7392;
-    --paper: #FFFFFF;
-    --paper-deep: #EEF4F9;
-    --paper-card: #F7FAFD;
-    --vermillion: #2F7FB8;
-    --sage: #3E8E7E;
-    --line: rgba(31, 58, 95, 0.15);
-    --line-soft: rgba(31, 58, 95, 0.08);
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --ink: #E4EDF5;
-      --ink-soft: #9DB3C8;
-      --paper: #10171F;
-      --paper-deep: #182330;
-      --paper-card: #161F2A;
-      --vermillion: #67B2DE;
-      --sage: #6FBBA9;
-      --line: rgba(228, 237, 245, 0.16);
-      --line-soft: rgba(228, 237, 245, 0.08);
-    }
-  }
-
-  * { box-sizing: border-box; margin: 0; }
-  body {
-    background: var(--paper);
-    color: var(--ink);
-    font-family: "Hiragino Maru Gothic ProN", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic Medium", "Meiryo", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    line-height: 1.95;
-    letter-spacing: 0.01em;
-  }
-  h1, h2, h3 {
-    font-family: inherit;
-    font-weight: 700;
-    text-wrap: balance;
-    letter-spacing: 0.005em;
-    line-height: 1.45;
-  }
-  h1, h2, h3, p, li, .meta, .rt {
-    word-break: auto-phrase;
-    line-break: strict;
-    overflow-wrap: normal;
-  }
-  .nb { display: inline-block; }
-  a { color: var(--vermillion); }
-  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
-
-  .topbar {
-    border-bottom: 1px solid var(--line-soft);
-    background: var(--paper-card);
-    position: sticky; top: 0; z-index: 10;
-    backdrop-filter: saturate(140%) blur(6px);
-  }
-  .topbar .wrap {
-    display: flex; align-items: center; justify-content: space-between;
-    gap: 16px; padding-top: 14px; padding-bottom: 14px;
-  }
-  .brand { font-weight: 700; letter-spacing: 0.06em; text-decoration: none; color: var(--ink); }
-  .brand small { display: block; font-weight: 400; font-size: 11.5px; color: var(--ink-soft); letter-spacing: 0.14em; }
-  .back { font-size: 13px; text-decoration: none; white-space: nowrap; }
-
-  .notice {
-    background: var(--paper-deep);
-    border-bottom: 1px solid var(--line-soft);
-    padding: 18px 0;
-  }
-  .notice p { font-size: 13.5px; color: var(--ink-soft); line-height: 1.8; }
-  .notice strong { color: var(--ink); }
-
-  header.head { padding: 54px 0 30px; }
-  .eyebrow {
-    display: inline-flex; align-items: center; gap: 0.6em;
-    font-size: 12px; letter-spacing: 0.2em; color: var(--vermillion); font-weight: 600;
-  }
-  .eyebrow::before { content: ""; width: 18px; height: 1px; background: var(--vermillion); }
-  header.head h1 { font-size: clamp(26px, 5.2vw, 40px); margin: 18px 0 22px; font-weight: 800; letter-spacing: -0.01em; }
-  .meta { font-size: 13px; color: var(--ink-soft); letter-spacing: 0.04em; }
-  .meta span + span::before { content: "／"; margin: 0 0.5em; opacity: 0.5; }
-
-  article { padding-bottom: 20px; }
-  figure { margin: 0 0 26px; }
-  figure img {
-    width: 100%; height: auto; display: block;
-    border-radius: 8px; border: 1px solid var(--line-soft);
-  }
-  .hero-img { margin: 0 0 8px; }
-  .hero-img img { border-radius: 10px; }
-  article h2 {
-    font-size: clamp(21px, 3.8vw, 28px);
-    margin: 68px 0 22px;
-    font-weight: 800;
-    padding-bottom: 12px;
-    border-bottom: 2px solid var(--line);
-  }
-  article h3 {
-    font-size: clamp(17px, 3vw, 19px);
-    margin: 38px 0 14px;
-    padding-left: 14px;
-    border-left: 3px solid var(--vermillion);
-  }
-  article p { margin: 0 0 20px; }
-  article ul { margin: 0 0 22px; padding-left: 1.3em; }
-  article li { margin-bottom: 8px; }
-
-  .outro {
-    margin: 64px 0 0;
-    border-top: 1px solid var(--line);
-    padding: 34px 0 70px;
-  }
-  .outro h2 { font-size: 19px; margin: 0 0 14px; border: 0; padding: 0; }
-  .outro p { font-size: 14.5px; color: var(--ink-soft); margin-bottom: 16px; }
-  .outro .btn {
-    display: inline-block; text-decoration: none;
-    background: var(--vermillion); color: #fff;
-    padding: 13px 26px; border-radius: 6px;
-    font-size: 14.5px; letter-spacing: 0.05em;
-  }
-
-  /* ===== 家のテーマ（木の質感・温かい色）===== */
-
-  :root {
-    --ink: #3B2A1A;
-    --ink-soft: #7A6552;
-    --paper: #FFFBF2;
-    --paper-deep: #F7EBD4;
-    --paper-card: #FFF5E3;
-    --vermillion: #A0601F;
-    --vermillion-soft: #E2B472;
-    --sage: #2F7566;
-    --line: rgba(110, 70, 30, 0.22);
-    --line-soft: rgba(110, 70, 30, 0.10);
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --ink: #F3E6D0;
-      --ink-soft: #C9B496;
-      --paper: #1E1710;
-      --paper-deep: #281F16;
-      --paper-card: #231B13;
-      --vermillion: #E0A15B;
-      --vermillion-soft: #E9B77D;
-      --sage: #7CC0AE;
-      --line: rgba(243, 230, 208, 0.18);
-      --line-soft: rgba(243, 230, 208, 0.08);
-    }
-  }
-
-  .topbar { border-bottom: 3px solid #C89B5E; background: var(--paper-card); }
-  .outro .btn { background: #8A5A2B; border-bottom: 3px solid #6F4521; }
-  @media (prefers-color-scheme: dark) { .topbar { border-bottom-color: #8A5A2B; } .outro .btn { background: #E0A15B; color: #2A1B0C; border-bottom-color: #B97F3A; } }
-  /* ===== /家のテーマ ===== */
-</style>
+<link rel="stylesheet" href="../site.css">
+<link rel="stylesheet" href="../article.css">
 </head>
 <body>
 
-<div class="topbar">
-  <div class="wrap">
-    <a class="brand" href="../writer.html">渡邊 駿<small>WRITER / EDITOR</small></a>
-    <a class="back" href="../writer.html">← 記事のページへ戻る</a>
-  </div>
-</div>
+<header class="gnav">
+  <a class="logo" href="../index.html">SHUN WATANABE<small>writing &amp; creating</small></a>
+  <button class="burger" aria-label="メニュー" onclick="document.getElementById('menu').classList.toggle('open')"><span></span><span></span></button>
+  <ul class="menu" id="menu"><li><a href="../index.html">Home</a></li><li><a href="../writer.html" class="cur">Writer</a></li><li><a href="../scenario.html">Script</a></li><li><a href="../lp.html">LP</a></li><li><a href="../hp.html">HP</a></li><li><a href="../web-design.html">Design</a></li><li><a href="../video.html">Video</a></li><li><a href="../ai.html">AI</a></li><li><a href="../index.html#profile">Profile</a></li><li><a href="../index.html#contact">Contact</a></li></ul>
+</header>
 
 <div class="notice">
   <div class="wrap">
@@ -283,5 +128,9 @@
   </div>
 </article>
 
+<footer>
+  <div><a href="../index.html">HOME</a><a href="../writer.html">WRITER</a><a href="../scenario.html">SCRIPT</a><a href="../lp.html">LP</a><a href="../hp.html">HP</a><a href="../web-design.html">DESIGN</a><a href="../video.html">VIDEO</a><a href="../ai.html">AI</a><a href="https://note.com/famous_abelia230" target="_blank" rel="noopener">NOTE</a></div>
+  <div>© 2026 Shun Watanabe</div>
+</footer>
 </body>
 </html>
