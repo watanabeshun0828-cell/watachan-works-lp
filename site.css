@@ -273,3 +273,18 @@ mark { background: rgba(120,150,125,0.28); color: inherit; padding: 0 2px; }
 .sns { margin-top: 26px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; font-size: 13px; color: var(--ink-soft); }
 .sns a { font-family: var(--sans); font-size: 12px; letter-spacing: 0.2em; text-decoration: none; color: var(--ink); border: 1px solid var(--btn); padding: 6px 18px; }
 .sns a:hover { background: var(--btn); color: #fff; }
+
+/* ── 相談するボタン ── */
+.menu a.cta { background: var(--btn); color: #fff; opacity: 1; padding: 10px 22px; letter-spacing: 0.14em; text-transform: none; font-size: 12.5px; border: 0; transition: background 0.2s; }
+.menu a.cta:hover { background: #3F4141; border: 0; padding: 10px 22px; }
+.hero-text .hero-btn { margin-top: 30px; max-width: 220px; }
+@media (max-width: 1180px) {
+  .menu li a.cta { margin: 14px 24px; text-align: center; border-bottom: 0; padding: 14px 10px; }
+}
+
+/* ── 制作サンプル（バナー） ── */
+.works { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 26px; align-items: start; }
+.works figure { margin: 0; }
+.works img { width: 100%; height: auto; display: block; border: 1px solid var(--line); }
+.works figcaption { margin-top: 10px; font-family: var(--sans); font-size: 12.5px; letter-spacing: 0.06em; color: var(--ink-soft); line-height: 1.8; }
+.works figcaption b { color: var(--ink); font-weight: 600; }
