@@ -108,9 +108,11 @@ img { display: block; max-width: 100%; }
 .contact form { display: flex; flex-direction: column; gap: 18px; margin-top: 30px; }
 .field { display: flex; flex-direction: column; gap: 6px; }
 .field label { font-family: var(--sans); font-size: 12px; letter-spacing: 0.16em; color: var(--ink-soft); }
-.field input, .field textarea { font: inherit; font-size: 14.5px; background: #fff; border: 1px solid var(--line); padding: 12px 14px; color: var(--ink); border-radius: 0; }
+.field input, .field textarea, .field select { font: inherit; font-size: 14.5px; background: #fff; border: 1px solid var(--line); padding: 12px 14px; color: var(--ink); border-radius: 0; }
 .field textarea { min-height: 130px; resize: vertical; }
-.field input:focus, .field textarea:focus { outline: 1px solid var(--btn); }
+.field input:focus, .field textarea:focus, .field select:focus { outline: 1px solid var(--btn); }
+.field select { appearance: none; -webkit-appearance: none; background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23555' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat right 14px center; padding-right: 38px; }
+.field .opt { letter-spacing: 0.04em; margin-left: 4px; }
 .honey { position: absolute; left: -9999px; }
 .form-status { display: none; font-size: 13.5px; }
 .form-status.show { display: block; }

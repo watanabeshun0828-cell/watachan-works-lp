@@ -233,9 +233,12 @@
     <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
       <input type="hidden" name="access_key" value="1663e859-395f-426f-b2ee-bc2f1cb81d98">
       <input type="hidden" name="subject" value="【渡邊駿】ポートフォリオからのお問い合わせ">
-      <input type="checkbox" name="botcheck" class="honey" tabindex="-1" autocomplete="off">
+      <input type="checkbox" name="botcheck" class="honey" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
       <div class="field"><label for="cf-name">NAME　お名前</label><input type="text" id="cf-name" name="name" placeholder="山田 太郎" required></div>
       <div class="field"><label for="cf-email">EMAIL　返信先メールアドレス</label><input type="email" id="cf-email" name="email" placeholder="you@example.com" required></div>
+      <div class="field"><label for="cf-type">TYPE　ご依頼の種類</label><select id="cf-type" name="ご依頼の種類"><option value="記事" selected>記事</option><option value="台本・シナリオ">台本・シナリオ</option><option value="LP制作">LP制作</option><option value="HP制作">HP制作</option><option value="その他・まだ決まっていない">その他・まだ決まっていない</option></select></div>
+      <div class="field"><label for="cf-timing">TIMING　ご希望の時期</label><select id="cf-timing" name="ご希望の時期"><option value="できるだけ早く">できるだけ早く</option><option value="1か月以内">1か月以内</option><option value="2〜3か月以内">2〜3か月以内</option><option value="時期は決まっていない">時期は決まっていない</option></select></div>
+      <div class="field"><label for="cf-sample">SAMPLE　参考にしたいサンプル<span class="opt">（任意）</span></label><input type="text" id="cf-sample" name="参考にしたいサンプル" placeholder="例）キャリアプランの記事 など"></div>
       <div class="field"><label for="cf-message">MESSAGE　ご相談内容</label><textarea id="cf-message" name="message" placeholder="テーマやキーワード、文字数・納期の目安など、わかる範囲でどうぞ" required></textarea></div>
       <button type="submit" class="btn">SEND</button>
       <p class="form-status" id="form-status"></p>
@@ -283,6 +286,19 @@
     ents.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("visible"); io.unobserve(en.target); } });
   }, { threshold: 0.08 });
   els.forEach(function (e) { io.observe(e); });
+})();
+</script>
+<script>
+// ご依頼の種類：URLの ?type= で最初から選んだ状態にし、メールの件名にも入れる
+(function () {
+  var sel = document.getElementById("cf-type"), subj = document.querySelector('#contact-form input[name="subject"]');
+  if (!sel || !subj) return;
+  var map = { article: "記事", script: "台本・シナリオ", lp: "LP制作", hp: "HP制作", other: "その他・まだ決まっていない" };
+  var t = new URLSearchParams(location.search).get("type");
+  if (map[t]) sel.value = map[t];
+  var base = subj.value;
+  function sync() { subj.value = base + "（" + sel.value + "）"; }
+  sel.addEventListener("change", sync); sync();
 })();
 </script>
 </body>
