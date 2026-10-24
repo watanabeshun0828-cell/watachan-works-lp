@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>制作の進め方：パン屋さんのホームページができるまで｜渡邊駿</title>
+<meta name="description" content="架空の焼き菓子店のホームページを、どんな順番で、何を考えて作ったか。同業のサイトの調査から、作り直し、公開前の計測までをまとめた制作事例（自主制作）です。">
+<link rel="stylesheet" href="site.css">
+<style>
+  .case-figs { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin: 26px 0 10px; }
+  .case-figs.one { grid-template-columns: 1fr; }
+  .case-figs figure { margin: 0; }
+  .case-figs img { width: 100%; height: auto; display: block; border: 1px solid var(--line); }
+  .case-figs figcaption { margin-top: 8px; font-size: 12.5px; color: var(--ink-soft); line-height: 1.8; }
+  .case-figs figcaption b { color: var(--ink); font-weight: 600; }
+  .case-table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 14px; }
+  .case-table th, .case-table td { text-align: left; padding: 11px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  .case-table th { font-weight: 500; color: var(--ink-soft); font-size: 12.5px; letter-spacing: 0.08em; }
+  .case-table td:last-child { white-space: nowrap; }
+  .tag-add { white-space: nowrap; display: inline-block; font-size: 11.5px; border: 1px solid var(--btn); padding: 0 8px; }
+  .voice-list { list-style: none; padding: 0; margin: 14px 0 0; }
+  .voice-list li { border-left: 2px solid var(--ink); padding: 6px 0 6px 18px; margin-bottom: 14px; font-size: 14.5px; }
+  .score { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 18px; }
+  .score div { border: 1px solid var(--line); background: var(--bg); padding: 18px 16px; text-align: center; }
+  .score b { display: block; font-family: Georgia, serif; font-weight: 400; font-size: 34px; line-height: 1.3; }
+  .score small { font-size: 12px; color: var(--ink-soft); }
+  .facts-list { display: grid; grid-template-columns: 7em 1fr; gap: 8px 16px; font-size: 14px; margin: 0; }
+  .facts-list dt { color: var(--ink-soft); }
+  .facts-list dd { margin: 0; }
+  .case-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+  @media (max-width: 700px) {
+    .case-figs { grid-template-columns: 1fr; }
+    .score { grid-template-columns: 1fr; }
+    .case-table th, .case-table td { padding: 10px 6px; }
+  }
+</style>
+<!-- share:start -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%227%22 fill=%22%235f5f5c%22/%3E%3Ctext x=%2216%22 y=%2222%22 font-size=%2217%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Georgia,serif%22%3ES%3C/text%3E%3C/svg%3E">
+<link rel="canonical" href="https://watanabeshun0828-cell.github.io/watachan-works-lp/case-bakery.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="渡邊駿｜ポートフォリオ">
+<meta property="og:title" content="制作の進め方：パン屋さんのホームページができるまで｜渡邊駿">
+<meta property="og:description" content="架空の焼き菓子店のホームページを、どんな順番で、何を考えて作ったか。同業のサイトの調査から、作り直し、公開前の計測までをまとめた制作事例（自主制作）です。">
+<meta property="og:url" content="https://watanabeshun0828-cell.github.io/watachan-works-lp/case-bakery.html">
+<meta property="og:image" content="https://watanabeshun0828-cell.github.io/watachan-works-lp/img/og/case-bakery.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<!-- share:end -->
+</head>
+<body>
+<header class="gnav">
+  <a class="logo" href="index.html">SHUN WATANABE<small>writing &amp; creating</small></a>
+  <button class="burger" aria-label="メニュー" onclick="document.getElementById('menu').classList.toggle('open')"><span></span><span></span></button>
+  <ul class="menu" id="menu"><li><a href="index.html">Home</a></li><li><a href="writer.html">Writer</a></li><li><a href="scenario.html">Script</a></li><li><a href="lp.html">LP</a></li><li><a href="hp.html" class="cur">HP</a></li><li><a href="web-design.html">Design</a></li><li><a href="video.html">Video</a></li><li><a href="ai.html">AI</a></li><li><a href="index.html#profile">Profile</a></li><li><a class="cta" href="index.html#contact">相談する</a></li></ul>
+</header>
+<section class="sub-hero"><div class="photo has-img"><img src="img/case/after-hero.jpg" alt="完成した焼き菓子店のホームページのトップ画面" fetchpriority="high"></div></section>
+<section class="sub-title">
+  <a class="crumb" href="hp.html">← HP制作</a>
+  <div>
+    <div class="en-label">CASE ／ HP制作の進め方</div>
+    <h1 class="reveal">パン屋さんのホームページが、<br>できるまで。</h1>
+    <p class="lede reveal">架空の焼き菓子店「petite douceur」のホームページを、どんな順番で、何を考えて作ったのか。調べるところから、作り直し、公開前の計測までをまとめました。実際のご依頼でも、同じ流れで進めます。</p>
+  </div>
+</section>
+
+<section class="block">
+  <h2><span>OUTLINE</span></h2>
+  <div class="body reveal">
+    <div class="note" style="max-width:none;">
+      <dl class="facts-list">
+        <dt>想定したお店</dt><dd>家族3人で営む、町の小さな焼き菓子とパンの店</dd>
+        <dt>目的</dt><dd>お店に来てもらうこと。ご予約・お取り置きを受けやすくすること</dd>
+        <dt>雰囲気</dt><dd>ポップ・親しみやすい</dd>
+        <dt>ページ</dt><dd>5ページ（トップ／お店について／商品／アクセス／ご予約）</dd>
+      </dl>
+    </div>
+    <p style="margin-top:16px;font-size:12.5px;color:var(--ink-soft);">※自主制作のサンプルで、お客様からご依頼いただいた案件ではありません。お店の名前・商品・価格もすべて架空です。</p>
+  </div>
+</section>
+
+<section class="block tint">
+  <h2><span>STEP 01</span></h2>
+  <div class="body reveal">
+    <p class="headline">同業のお店のサイトを、先に調べる。</p>
+    <p>実際のパン屋さんのサイトや紹介記事を調べ、どんな項目が載っているかを一覧にしました。自分の頭の中だけで項目を決めると、お客様が知りたいことが抜けやすいからです。</p>
+    <div class="table-scroll">
+      <table class="case-table">
+        <tr><th>載せる項目</th><th style="white-space:nowrap;">最初の版</th></tr>
+        <tr><td>営業時間・定休日・「売り切れ次第終了」</td><td>あり</td></tr>
+        <tr><td>商品と価格・アレルギーの案内</td><td>あり</td></tr>
+        <tr><td>焼き上がりの時間</td><td><span class="tag-add">足した</span></td></tr>
+        <tr><td>取り置きの受付時間と、締め切り</td><td><span class="tag-add">足した</span></td></tr>
+        <tr><td>その日の焼き上がりを知らせる先（SNS）</td><td><span class="tag-add">足した</span></td></tr>
+        <tr><td>駐車場・イートインの有無</td><td><span class="tag-add">足した</span></td></tr>
+        <tr><td>贈り物の包装・発送の可否</td><td><span class="tag-add">足した</span></td></tr>
+      </table>
+    </div>
+    <p style="margin-top:18px;">「売り切れ次第終了」のお店では、来る前に「何時に何が焼き上がるか」「取り置きは何時まで頼めるか」を知りたい人が多いはずです。そこで、商品のページに焼き上がりの時間を、ご予約のページに取り置きの締め切りを入れました。</p>
+    <p style="font-size:12.5px;color:var(--ink-soft);">参考にした記事：<a href="https://www.at-s.com/gourmet/article/523087" target="_blank" rel="noopener">静岡新聞アットエス（パン屋の紹介記事）</a>ほか</p>
+  </div>
+</section>
+
+<section class="block">
+  <h2><span>STEP 02</span></h2>
+  <div class="body reveal">
+    <p class="headline">ページの数と、それぞれに載せることを決める。</p>
+    <p>調べた項目を、5つのページに振り分けました。デザインに入る前に、ここで中身を固めます。</p>
+    <div class="table-scroll">
+      <table class="case-table">
+        <tr><th>ページ</th><th>載せること</th></tr>
+        <tr><td>トップ</td><td>お店の雰囲気、お知らせ、大事にしていること、人気の商品、どうぶつパン</td></tr>
+        <tr><td>お店について</td><td>お店の成り立ち、一日の流れ、家族3人の紹介</td></tr>
+        <tr><td>商品</td><td>焼き菓子とパンの一覧・価格、アレルギーの案内、焼き上がりの時間</td></tr>
+        <tr><td>アクセス</td><td>営業時間、住所、駐車場、イートインの有無、駅からの道順</td></tr>
+        <tr><td>ご予約</td><td>取り置き・予約のフォーム、受付時間と締め切り、よくある質問</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="block tint">
+  <h2><span>STEP 03</span></h2>
+  <div class="body reveal">
+    <p class="headline">最初の版を作る。</p>
+    <p>ポップで親しみやすい雰囲気にするため、丸みのある文字、太い線、少しずらした影を使いました。写真の上には、白い角丸の囲みを置いています。</p>
+    <div class="case-figs one">
+      <figure><img src="img/case/before-hero.jpg" alt="最初の版のトップ画面。写真の上に白い角丸の囲みがある" loading="lazy"><figcaption><b>最初の版</b>　写真の上に、白い角丸の囲み。</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <h2><span>STEP 04</span></h2>
+  <div class="body reveal">
+    <p class="headline">見てもらい、意見をもとに作り直す。</p>
+    <p>依頼者の立場で見てもらい、次の意見をもらいました（自主制作のため、依頼者役として見てもらったものです）。</p>
+    <ul class="voice-list">
+      <li>ポップの中にも、パン屋さんらしい素材感がほしい。囲みをパンの形やかまど風にするなど。</li>
+      <li>写真が落ち着いた雰囲気なので、もう少し温かみがあると、ポップな作りと合う。</li>
+      <li>動物の形のパンのような、見た目のかわいいパンがあると、雰囲気に合う。</li>
+    </ul>
+    <p>この3つを受けて、次のように作り直しました。</p>
+    <div class="case-figs">
+      <figure><img src="img/case/before-hero.jpg" alt="作り直す前のトップ画面" loading="lazy"><figcaption><b>前</b>　白い角丸の囲み。写真は落ち着いた色味。</figcaption></figure>
+      <figure><img src="img/case/after-hero.jpg" alt="作り直した後のトップ画面。囲みが山型の食パンの形になっている" loading="lazy"><figcaption><b>後</b>　囲みを山型の食パンの形に。写真を明るく、温かい色味にそろえました。</figcaption></figure>
+    </div>
+    <div class="case-figs">
+      <figure><img src="img/case/after-animal.jpg" alt="くま・ねこ・ひよこ・かめの形のパンのイラストが並ぶ欄" loading="lazy"><figcaption><b>どうぶつパンを追加</b>　写真がないため、イラストで描きました。「イラストはイメージです」と書き添えています。</figcaption></figure>
+      <figure><img src="img/case/after-oven.jpg" alt="れんがのかまどの形をした、ご予約の案内の囲み" loading="lazy"><figcaption><b>かまどの形の案内</b>　ご予約の案内を、れんがのかまどに。窯の口が温かく光るようにしました。</figcaption></figure>
+    </div>
+    <div class="case-figs">
+      <figure><img src="img/case/after-board.jpg" alt="木の枠の黒板の形をした、お知らせの欄" loading="lazy"><figcaption><b>お知らせを黒板に</b>　お店の前に置く、黒板のメニューのイメージです。</figcaption></figure>
+    </div>
+    <p style="margin-top:6px;">ページ全体で見ると、次のように変わりました。</p>
+    <div class="case-figs">
+      <figure><img src="img/case/before-full.jpg" alt="作り直す前のトップページ全体" loading="lazy"><figcaption><b>前</b>　トップページ全体</figcaption></figure>
+      <figure><img src="img/case/after-full.jpg" alt="作り直した後のトップページ全体" loading="lazy"><figcaption><b>後</b>　トップページ全体</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="block tint">
+  <h2><span>STEP 05</span></h2>
+  <div class="body reveal">
+    <p class="headline">公開する前に、測って直す。</p>
+    <p>スマホでの見え方とリンク切れを確かめたうえで、Googleの計測ツール「Lighthouse」で、スマホでの表示の速さを測りました。</p>
+    <p>1回目の計測では82点でした。写真を元の大きさのまま表示していたことが、主な原因です。写真を表示の大きさに合わせて縮小し、スマホ用の小さい写真を用意して、画面の大きさで使い分けるようにしました。</p>
+    <div class="score">
+      <div><small>直す前（1回目）</small><b>82</b><small>表示の速さ</small></div>
+      <div><small>直した後（3回の真ん中の値）</small><b>97</b><small>表示の速さ</small></div>
+      <div><small>直した後</small><b>100</b><small>見やすさ・使いやすさ</small></div>
+    </div>
+    <p style="margin-top:18px;">あわせて、検索とSNS向けの設定も入れました。店舗の名前・住所・営業時間を、検索エンジンが読み取れる形（構造化データ）でも書き込み、シェアされたときの見出しと画像も設定しています。</p>
+    <p style="font-size:12.5px;color:var(--ink-soft);">※点数は、計測する環境や日によって変わります。サンプルは架空のお店のため、検索結果には出さない設定にしています。</p>
+  </div>
+</section>
+
+<section class="block">
+  <h2><span>NEXT</span></h2>
+  <div class="body reveal">
+    <p class="headline">実際のご依頼でも、同じ流れで進めます。</p>
+    <p>調べる → 構成を決める → 作る → 見ていただいて直す → 測って確かめる。お店の方にお話をうかがいながら、この順番で一緒に作っていきます。</p>
+    <div class="case-actions">
+      <a class="btn line" href="hp-samples/petite-douceur/index.html">&gt; 完成したサイトを見る</a>
+      <a class="btn line" href="hp.html#flow">&gt; 依頼の流れ</a>
+      <a class="btn line" href="pricing.html#hp">&gt; HP制作の料金</a>
+      <a class="btn" href="index.html?type=hp#contact">&gt; 相談する</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div><a href="index.html">HOME</a><a href="writer.html">WRITER</a><a href="scenario.html">SCRIPT</a><a href="lp.html">LP</a><a href="hp.html">HP</a><a href="web-design.html">DESIGN</a><a href="video.html">VIDEO</a><a href="ai.html">AI</a><a href="https://note.com/famous_abelia230" target="_blank" rel="noopener">NOTE</a></div>
+  <div>© 2026 Shun Watanabe</div>
+</footer>
+<script>
+(function () {
+  var els = document.querySelectorAll(".reveal");
+  if (!("IntersectionObserver" in window)) { els.forEach(function (e) { e.classList.add("visible"); }); return; }
+  var io = new IntersectionObserver(function (ents) {
+    ents.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("visible"); io.unobserve(en.target); } });
+  }, { threshold: 0.08 });
+  els.forEach(function (e) { io.observe(e); });
+})();
+</script>
+</body>
+</html>
