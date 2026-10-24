@@ -1,5 +1,5 @@
 
-:root { --ink: #2F3A26; --ink-soft: #55624A; --paper: #F8F6EE; --paper-deep: #EBE7D9; --paper-card: #FCFBF6; --accent: #7A8F5C; --accent-text: #54683A; --on-accent: #1C2612; --line: rgba(47,58,38,0.15); --line-soft: rgba(47,58,38,0.07); --accent-light: #CFE0B4; --overlay-rgb: 26,32,18; --hero-pos: 40% 50%; }
+:root { --ink: #2F3A26; --ink-soft: #55624A; --paper: #F8F6EE; --paper-deep: #EBE7D9; --paper-card: #FCFBF6; --accent: #7A8F5C; --accent-text: #54683A; --on-accent: #0F160A; --line: rgba(47,58,38,0.15); --line-soft: rgba(47,58,38,0.07); --accent-light: #CFE0B4; --overlay-rgb: 26,32,18; --hero-pos: 40% 50%; }
 * { box-sizing: border-box; margin: 0; }
 html { scroll-behavior: smooth; }
 body { background: var(--paper); color: var(--ink); font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif; line-height: 1.95; -webkit-font-smoothing: antialiased; letter-spacing: 0.02em; }
@@ -168,5 +168,5 @@ form.contact textarea { min-height: 130px; resize: vertical; }
 footer { padding: 46px 0 56px; border-top: 1px solid var(--line); font-size: 13px; color: var(--ink-soft); text-align: center; }
 footer .brand { display: inline-block; color: var(--ink); margin-bottom: 8px; }
 footer p { margin-top: 6px; }
-footer .sample-note { margin-top: 18px; font-size: 12px; opacity: 0.85; }
+footer .sample-note { margin-top: 18px; font-size: 12px; }
 section.alt { background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22140%22%20height%3D%22140%22%3E%3Cg%20transform%3D%22translate%2835%2028%29%20rotate%28-18%2032%2032%29%20scale%280.9%29%22%20fill%3D%22none%22%20stroke%3D%22%2356693B%22%20stroke-opacity%3D%220.12%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M14.0%2054.0L50.0%2012.0%22/%3E%3Cpath%20d%3D%22M21.9%2044.8Q28.5%2048.8%2034.9%2044.4Q28.3%2040.4%2021.9%2044.8Z%22/%3E%3Cpath%20d%3D%22M28.4%2037.2Q31.7%2030.2%2026.7%2024.3Q23.4%2031.3%2028.4%2037.2Z%22/%3E%3Cpath%20d%3D%22M34.9%2029.6Q41.5%2033.7%2047.9%2029.3Q41.3%2025.3%2034.9%2029.6Z%22/%3E%3Cpath%20d%3D%22M41.4%2022.1Q44.7%2015.1%2039.7%209.2Q36.4%2016.2%2041.4%2022.1Z%22/%3E%3Cpath%20d%3D%22M47.1%2015.4Q53.7%2019.4%2060.1%2015.0Q53.5%2011.0%2047.1%2015.4Z%22/%3E%3Cpath%20d%3D%22M30.5%2035Q37%2037%2040.5%2041%22/%3E%3Cellipse%20cx%3D%2243%22%20cy%3D%2245%22%20rx%3D%223.6%22%20ry%3D%224.8%22%20transform%3D%22rotate%28-35%2043%2045%29%22/%3E%3C/g%3E%3C/svg%3E"); background-size: 140px 140px; background-repeat: repeat; }

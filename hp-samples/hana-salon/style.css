@@ -168,7 +168,7 @@ form.contact textarea { min-height: 130px; resize: vertical; }
 footer { padding: 46px 0 56px; border-top: 1px solid var(--line); font-size: 13px; color: var(--ink-soft); text-align: center; }
 footer .brand { display: inline-block; color: var(--ink); margin-bottom: 8px; }
 footer p { margin-top: 6px; }
-footer .sample-note { margin-top: 18px; font-size: 12px; opacity: 0.85; }
+footer .sample-note { margin-top: 18px; font-size: 12px; }
 
 /* ===== テーマ：ミニマル・モダン（白黒・細いゴシック・大きな英字・装飾なし） ===== */
 body { font-family: "Hiragino Sans", "Helvetica Neue", "Noto Sans JP", sans-serif; font-weight: 300; letter-spacing: 0.06em; }
