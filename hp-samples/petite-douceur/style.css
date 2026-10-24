@@ -238,4 +238,63 @@ form.contact input, form.contact textarea, form.contact select { background: #ff
 .final .btn { background: #fff; color: var(--ink); }
 footer { border-top: 2px solid var(--ink); }
 
-section.alt { background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22140%22%20height%3D%22140%22%3E%3Cg%20transform%3D%22translate%2836%2030%29%20rotate%28-18%2032%2032%29%20scale%280.9%29%22%20fill%3D%22none%22%20stroke%3D%22%23F28C45%22%20stroke-opacity%3D%220.22%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M32%2061V13%22/%3E%3Cpath%20d%3D%22M32%2015C29.5%2011%2030%206%2032%203C34%206%2034.5%2011%2032%2015%22/%3E%3Cpath%20d%3D%22M32%2054C38%2052%2042%2048%2044%2043%22/%3E%3Cpath%20d%3D%22M32%2025%20C25%2024%2022%2018%2023%2013%20C29%2014%2032%2019%2032%2025%22/%3E%3Cpath%20d%3D%22M32%2025%20C39%2024%2042%2018%2041%2013%20C35%2014%2032%2019%2032%2025%22/%3E%3Cpath%20d%3D%22M32%2033%20C25%2032%2022%2026%2023%2021%20C29%2022%2032%2027%2032%2033%22/%3E%3Cpath%20d%3D%22M32%2033%20C39%2032%2042%2026%2041%2021%20C35%2022%2032%2027%2032%2033%22/%3E%3Cpath%20d%3D%22M32%2041%20C25%2040%2022%2034%2023%2029%20C29%2030%2032%2035%2032%2041%22/%3E%3Cpath%20d%3D%22M32%2041%20C39%2040%2042%2034%2041%2029%20C35%2030%2032%2035%2032%2041%22/%3E%3Cpath%20d%3D%22M32%2049%20C25%2048%2022%2042%2023%2037%20C29%2038%2032%2043%2032%2049%22/%3E%3Cpath%20d%3D%22M32%2049%20C39%2048%2042%2042%2041%2037%20C35%2038%2032%2043%2032%2049%22/%3E%3C/g%3E%3C/svg%3E"); background-size: 140px 140px; background-repeat: repeat; }
+section.alt { background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22140%22%20height%3D%22140%22%3E%3Cg%20transform%3D%22translate%2836%2030%29%20rotate%28-18%2032%2032%29%20scale%280.9%29%22%20fill%3D%22none%22%20stroke%3D%22%23F28C45%22%20stroke-opacity%3D%220.22%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M32%2061V13%22/%3E%3Cpath%20d%3D%22M32%2015C29.5%2011%2030%206%2032%203C34%206%2034.5%2011%2032%2015%22/%3E%3Cpath%20d%3D%22M32%2054C38%2052%2042%2048%2044%2043%22/%3E%3Cpath%20d%3D%22M32%2025%20C25%2024%2022%2018%2023%2013%20C29%2014%2032%2019%2032%2025%22/%3E%3Cpath%20d%3D%22M32%2025%20C39%2024%2042%2018%2041%2013%20C35%2014%2032%2019%2032%2025%22/%3E%3Cpath%20d%3D%22M32%2033%20C25%2032%2022%2026%2023%2021%20C29%2022%2032%2027%2032%2033%22/%3E%3Cpath%20d%3D%22M32%2033%20C39%2032%2042%2026%2041%2021%20C35%2022%2032%2027%2032%2033%22/%3E%3Cpath%20d%3D%22M32%2041%20C25%2040%2022%2034%2023%2029%20C29%2030%2032%2035%2032%2041%22/%3E%3Cpath%20d%3D%22M32%2041%20C39%2040%2042%2034%2041%2029%20C35%2030%2032%2035%2032%2041%22/%3E%3Cpath%20d%3D%22M32%2049%20C25%2048%2022%2042%2023%2037%20C29%2038%2032%2043%2032%2049%22/%3E%3Cpath%20d%3D%22M32%2049%20C39%2048%2042%2042%2041%2037%20C35%2038%2032%2043%2032%2049%22/%3E%3C/g%3E%3C/svg%3E"); background-size: 140px 140px; background-repeat: repeat; position: relative; }
+/* 区切り：パンの耳のような、ぽこぽこした縁 */
+section.alt::before, section.alt::after { content: ""; position: absolute; left: 0; right: 0; height: 14px; background-size: 28px 14px; background-repeat: repeat-x; }
+section.alt::before { top: 0; background-image: radial-gradient(circle at 50% 0, var(--paper) 13px, transparent 13.5px); }
+section.alt:has(+ .photo-band)::after { display: none; }
+section.alt::after { bottom: 0; background-image: radial-gradient(circle at 50% 100%, var(--paper) 13px, transparent 13.5px); }
+
+/* 写真の上の囲み：山型食パンの形（茶色い耳＋白いなか身） */
+.hero-full::after { background: linear-gradient(90deg, rgba(255, 210, 140, 0.35), rgba(255, 210, 140, 0) 62%); }
+.photo-band::after { background: linear-gradient(90deg, rgba(255, 210, 140, 0.3), rgba(255, 210, 140, 0) 62%); }
+.hero-full .hero-copy, .photo-band .band-copy {
+  background: #FFF8EA; border: 3px solid var(--ink);
+  border-radius: 46% 46% 30px 30px / 110px 110px 30px 30px;
+  box-shadow: inset 0 0 0 11px #E6A25C, inset 0 0 0 13px rgba(67, 41, 27, 0.35), 10px 10px 0 var(--accent);
+  padding: 74px 44px 40px;
+}
+.photo-band .band-copy { box-shadow: inset 0 0 0 11px #E6A25C, inset 0 0 0 13px rgba(67, 41, 27, 0.35), 10px 10px 0 var(--accent-2); }
+.hero-logo { justify-content: center; }
+.hero-full .hero-copy { text-align: center; }
+.hero-full .lede { margin-left: auto; margin-right: auto; }
+.hero-full .btn-row { justify-content: center; }
+.sticker { top: 18px; right: -40px; }
+
+/* カード：丸パンのような、ふくらんだ上辺 */
+.card { border-radius: 90px 90px 22px 22px / 46px 46px 22px 22px; border-width: 3px; }
+.card.animal { border-radius: 50% 50% 22px 22px / 60px 60px 22px 22px; }
+.card .illust { background: radial-gradient(circle at 50% 60%, #FFF3D9 0, #FFE2B0 70%); border-bottom: 2px solid var(--ink); padding: 22px 18px 12px; display: flex; justify-content: center; }
+.card .illust svg { width: 86%; max-width: 190px; height: auto; transition: transform 0.25s; }
+.card.animal:hover .illust svg { transform: rotate(-6deg) scale(1.04); }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+
+/* お知らせ：お店の前の黒板 */
+.board { max-width: 760px; margin: 0 auto; background: #33433A; border: 12px solid #B57B48; border-radius: 12px; box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.25), 6px 6px 0 var(--ink); padding: 14px 30px 18px; position: relative; }
+.board::after { content: ""; position: absolute; left: 22%; right: 22%; bottom: -12px; height: 8px; background: #8E5A30; border-radius: 0 0 6px 6px; }
+.board .news li { border-bottom: 2px dashed rgba(255, 255, 255, 0.22); color: #F5F0E4; }
+.board .news li:last-child { border-bottom: none; }
+.board .news time { color: #FFD45C; }
+
+/* 最後の案内：れんがのかまど */
+.final.oven { background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2264%22%20height%3D%2232%22%3E%3Crect%20width%3D%2264%22%20height%3D%2232%22%20fill%3D%22%23C9693F%22/%3E%3Crect%20x%3D%222%22%20y%3D%222%22%20width%3D%2228%22%20height%3D%2212%22%20fill%3D%22%23D2774A%22/%3E%3Crect%20x%3D%2234%22%20y%3D%2218%22%20width%3D%2228%22%20height%3D%2212%22%20fill%3D%22%23BF6038%22/%3E%3Cpath%20d%3D%22M0%201H64M0%2017H64M32%201V17M0%2017V32M64%2017V32M16%2017%22%20stroke%3D%22%238E3F22%22%20stroke-width%3D%222.4%22/%3E%3C/svg%3E"); background-size: 64px 32px; border: 3px solid var(--ink); border-radius: 50% 50% 24px 24px / 150px 150px 24px 24px; padding: 46px 34px 0; box-shadow: 8px 8px 0 var(--ink); color: var(--ink); position: relative; }
+.final.oven::before { content: ""; position: absolute; top: -34px; right: 18%; width: 46px; height: 64px; background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2264%22%20height%3D%2232%22%3E%3Crect%20width%3D%2264%22%20height%3D%2232%22%20fill%3D%22%23C9693F%22/%3E%3Crect%20x%3D%222%22%20y%3D%222%22%20width%3D%2228%22%20height%3D%2212%22%20fill%3D%22%23D2774A%22/%3E%3Crect%20x%3D%2234%22%20y%3D%2218%22%20width%3D%2228%22%20height%3D%2212%22%20fill%3D%22%23BF6038%22/%3E%3Cpath%20d%3D%22M0%201H64M0%2017H64M32%201V17M0%2017V32M64%2017V32M16%2017%22%20stroke%3D%22%238E3F22%22%20stroke-width%3D%222.4%22/%3E%3C/svg%3E"); background-size: 64px 32px; border: 3px solid var(--ink); border-bottom: none; border-radius: 6px 6px 0 0; z-index: -1; }
+.oven-mouth { background: radial-gradient(ellipse at 50% 115%, #FFB547 0%, #FFD98A 34%, #FFF4DE 70%); border: 3px solid var(--ink); border-bottom: none; border-radius: 50% 50% 0 0 / 130px 130px 0 0; max-width: 640px; margin: 0 auto; padding: 60px 30px 44px; }
+.oven-mouth p { opacity: 1; color: var(--ink-soft); }
+.final.oven .btn { background: var(--accent); color: var(--on-accent); }
+.final.oven .deco { color: var(--ink); }
+
+@media (max-width: 900px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 760px) {
+  .hero-full .hero-copy, .photo-band .band-copy { border-radius: 46% 46% 24px 24px / 80px 80px 24px 24px; padding: 60px 24px 28px; box-shadow: inset 0 0 0 9px #E6A25C, inset 0 0 0 11px rgba(67, 41, 27, 0.35), 6px 6px 0 var(--accent); }
+  .sticker { top: -30px; right: -4px; }
+  .grid-4 { gap: 14px; }
+  .card .illust { padding: 16px 10px 8px; }
+  .grid-4 .card-body { padding: 14px 14px 16px; }
+  .grid-4 .card h3 { font-size: 15px; }
+  .grid-4 .card p { font-size: 12.5px; }
+  .board { padding: 8px 18px 12px; border-width: 9px; }
+  .final.oven { border-radius: 50% 50% 20px 20px / 90px 90px 20px 20px; padding: 34px 14px 0; }
+  .final.oven::before { right: 14%; }
+  .oven-mouth { border-radius: 50% 50% 0 0 / 80px 80px 0 0; padding: 48px 16px 34px; }
+}
