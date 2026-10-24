@@ -265,8 +265,8 @@ section.alt::after { bottom: 0; background-image: radial-gradient(circle at 50% 
 .card { border-radius: 90px 90px 22px 22px / 46px 46px 22px 22px; border-width: 3px; }
 .card.animal { border-radius: 50% 50% 22px 22px / 60px 60px 22px 22px; }
 .card .illust { background: radial-gradient(circle at 50% 60%, #FFF3D9 0, #FFE2B0 70%); border-bottom: 2px solid var(--ink); padding: 22px 18px 12px; display: flex; justify-content: center; }
-.card .illust svg { width: 86%; max-width: 190px; height: auto; transition: transform 0.25s; }
-.card.animal:hover .illust svg { transform: rotate(-6deg) scale(1.04); }
+.card .illust img { width: 86%; max-width: 190px; aspect-ratio: 1 / 1; height: auto; border-radius: 50%; object-fit: cover; border: 2px solid var(--ink); background: #fff; transition: transform 0.25s; }
+.card.animal:hover .illust img { transform: rotate(-6deg) scale(1.04); }
 .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 
 /* お知らせ：お店の前の黒板 */
