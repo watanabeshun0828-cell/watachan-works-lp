@@ -3,216 +3,384 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>経営コンサルティング「みちしるべ経営パートナーズ」｜制作サンプル・渡邊駿</title>
+<title>資金繰りの無料相談｜みちしるべ経営パートナーズ（制作サンプル・渡邊駿）</title>
+<meta name="description" content="売上はあるのにお金が残らない、と感じている経営者の方へ。60分の無料相談のLP（架空の事務所の制作サンプル）。">
 <style>
-  :root {
-    --ink: #1C2733; --ink-soft: #5C6B7A; --paper: #F4F5F3; --paper-deep: #E8EAE5;
-    --paper-card: #FFFFFF; --accent: #B08D3E; --accent-soft: #C9A860; --navy: #1A2F4A;
-    --line: rgba(28, 39, 51, 0.13); --line-soft: rgba(28, 39, 51, 0.06);
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --ink: #E8EAE5; --ink-soft: #A9B4BE; --paper: #12161C; --paper-deep: #181D24;
-      --paper-card: #1A1F27; --accent: #D4B45E; --accent-soft: #B08D3E; --navy: #2A4364;
-      --line: rgba(232, 234, 229, 0.13); --line-soft: rgba(232, 234, 229, 0.06);
-    }
-  }
-  * { box-sizing: border-box; margin: 0; }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--paper); color: var(--ink);
-    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
-    line-height: 1.9; -webkit-font-smoothing: antialiased; letter-spacing: 0.01em;
-  }
-  h1, h2, h3 { font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif; font-weight: 600; }
-  a { color: inherit; }
-  .wrap { max-width: 840px; margin: 0 auto; padding: 0 26px; }
-  .sample-badge {
-    position: fixed; top: 14px; right: 14px; z-index: 200;
-    background: var(--navy); color: #F4F5F3; font-size: 11.5px; letter-spacing: 0.06em;
-    padding: 7px 14px; border-radius: 2px; text-decoration: none; opacity: 0.92;
-  }
-  .eyebrow { display: inline-flex; align-items: center; gap: 0.6em; font-size: 12px; letter-spacing: 0.22em; color: var(--accent); font-weight: 600; }
-  .eyebrow::before { content: ""; width: 18px; height: 1px; background: var(--accent); display: inline-block; }
+:root { --bg: #121418; --bg2: #1A1D22; --card: #1E2127; --ink: #E9E4D8; --soft: #B3AC9E; --gold: #C2A15A; --gold2: #DCC287; --line: rgba(233,228,216,.14); --gline: rgba(194,161,90,.4); color-scheme: dark; }
+* { box-sizing: border-box; margin: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--ink); font-family: "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif; font-weight: 300; line-height: 2; letter-spacing: 0.06em; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, .serif { font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif; font-weight: 400; letter-spacing: 0.12em; }
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; }
+.nb { display: inline-block; }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 32px; }
 
-  .hero { padding: 110px 0 64px; background: var(--navy); color: #F4F5F3; }
-  .hero .eyebrow { color: var(--accent-soft); }
-  .hero .eyebrow::before { background: var(--accent-soft); }
-  .hero h1 { font-size: clamp(28px, 4.4vw, 42px); line-height: 1.7; margin: 22px 0 18px; color: #F4F5F3; }
-  .hero p.lede { max-width: 48ch; color: #C7CEDA; font-size: 15.5px; margin-bottom: 30px; }
-  .hero-photo { width: 100%; aspect-ratio: 21/9; border-radius: 2px; overflow: hidden; background: linear-gradient(150deg, #24344A, #16212F); }
-  .hero-photo img, .story-photo img, .offer-photo-wide img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: 2px; font-size: 14.5px; font-weight: 600; letter-spacing: 0.04em; text-decoration: none; background: var(--accent); color: #1A2317; }
+.sample-bar { background: #000; color: var(--gold2); font-size: 11.5px; text-align: center; padding: 7px 16px; }
+.sample-bar a { color: #fff; margin-left: 10px; }
 
-  section { padding: 68px 0; }
-  section + section { border-top: 1px solid var(--line); }
-  .section-head { max-width: 56ch; margin-bottom: 38px; }
-  .section-head h2 { font-size: clamp(21px, 2.8vw, 27px); margin: 10px 0 0; line-height: 1.6; }
+.top { position: sticky; top: 0; z-index: 50; background: rgba(14,16,20,.9); border-bottom: 1px solid rgba(194,161,90,.25); backdrop-filter: blur(6px); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 66px; gap: 14px; }
+.logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.logo .mk { width: 38px; height: 38px; border: 1px solid var(--gline); border-radius: 50%; padding: 7px; color: var(--gold); flex: none; }
+.logo b { font-family: "Hiragino Mincho ProN", serif; font-weight: 400; font-size: 16.5px; letter-spacing: 0.12em; display: block; line-height: 1.4; white-space: nowrap; }
+.logo small { display: block; font-size: 10px; color: var(--soft); letter-spacing: 0.2em; line-height: 1.4; }
 
-  .strength-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  .strength-card { background: var(--paper-card); border: 1px solid var(--line); border-radius: 2px; padding: 26px 22px; }
-  .strength-card .n { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; color: var(--accent); font-size: 13px; }
-  .strength-card h3 { font-size: 16.5px; margin: 8px 0 8px; }
-  .strength-card p { font-size: 13.5px; color: var(--ink-soft); margin: 0; }
+.btn { display: inline-flex; align-items: center; justify-content: center; padding: 16px 38px; background: linear-gradient(135deg, #D6B970, #B08F48); color: #121418; font-weight: 600; text-decoration: none; letter-spacing: 0.16em; font-size: 14px; border: 1px solid var(--gold); transition: filter .2s; cursor: pointer; font-family: inherit; }
+.btn:hover { filter: brightness(1.08); }
+.btn.line { background: transparent; color: var(--gold2); font-weight: 400; }
+.btn.line:hover { background: rgba(194,161,90,.1); }
+.btn.small { padding: 9px 20px; font-size: 12.5px; }
 
-  .story { background: var(--paper-deep); }
-  .story-inner { display: grid; grid-template-columns: 240px 1fr; gap: 40px; align-items: center; }
-  .story-photo { aspect-ratio: 4/3; border-radius: 2px; overflow: hidden; background: linear-gradient(150deg, #DDE1DC, #EEF0EC); }
-  .story p { font-size: 14.5px; color: var(--ink-soft); margin: 0 0 14px; max-width: 54ch; }
-  .story .signoff { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 13.5px; margin-top: 10px; }
+.label { display: inline-flex; align-items: center; gap: 14px; font-family: "Hiragino Mincho ProN", serif; font-size: 13px; letter-spacing: 0.3em; color: var(--gold); }
+.label::before, .label::after { content: ""; width: 26px; height: 1px; background: var(--gold); }
+.head { text-align: center; margin-bottom: 54px; }
+.head h2 { font-size: clamp(23px, 3vw, 31px); line-height: 1.8; margin-top: 16px; }
+.head p { color: var(--soft); font-size: 14.5px; margin-top: 12px; }
+section { padding: 120px 0; }
+section.alt { background: var(--bg2); }
+.rule { width: 1px; height: 64px; background: linear-gradient(var(--gold), transparent); margin: 0 auto 26px; }
 
-  .offer-photo-wide { width: 100%; aspect-ratio: 16/9; border-radius: 2px; overflow: hidden; margin-bottom: 28px; background: linear-gradient(150deg, #DDE1DC, #EEF0EC); }
-  .offer-toggle { display: inline-flex; border: 1px solid var(--line); border-radius: 980px; padding: 3px; margin-bottom: 26px; }
-  .offer-toggle button {
-    border: none; background: transparent; font-size: 13px; padding: 8px 20px; border-radius: 980px;
-    cursor: pointer; color: var(--ink-soft); font-family: inherit; transition: background 0.2s ease, color 0.2s ease;
-  }
-  .offer-toggle button.active { background: var(--navy); color: #F4F5F3; }
-  .offer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  .offer-card { background: var(--paper-card); border: 1px solid var(--line); border-radius: 2px; padding: 22px 20px; }
-  .offer-card h3 { font-size: 15.5px; margin: 0 0 8px; }
-  .offer-card p { font-size: 13px; color: var(--ink-soft); margin: 0; }
+/* ファーストビュー */
+.hero { position: relative; min-height: min(calc(100vh - 96px), 780px); display: grid; place-items: center; overflow: hidden; padding: 70px 0; }
+.hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(.35) brightness(.55); }
+.hero::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(8,10,14,.55), rgba(8,10,14,.9) 75%); }
+.frame { position: relative; z-index: 1; text-align: center; border: 1px solid var(--gline); padding: 64px 56px 56px; max-width: 760px; margin: 0 24px; background: rgba(12,14,18,.35); }
+.frame::before { content: ""; position: absolute; inset: 8px; border: 1px solid rgba(194,161,90,.18); pointer-events: none; }
+.hero h1 { font-size: clamp(27px, 3.8vw, 42px); line-height: 1.75; margin: 26px 0 20px; }
+.hero h1 em { font-style: normal; color: var(--gold2); }
+.hero .lede { color: var(--soft); font-size: 14.5px; max-width: 34em; margin: 0 auto; }
+.badges { display: flex; justify-content: center; gap: 0; margin: 30px 0 34px; border-top: 1px solid var(--gline); border-bottom: 1px solid var(--gline); }
+.badges div { padding: 14px 26px; font-size: 13px; letter-spacing: 0.14em; }
+.badges div + div { border-left: 1px solid var(--gline); }
+.badges b { display: block; font-family: "Hiragino Mincho ProN", serif; font-weight: 400; font-size: 22px; color: var(--gold2); letter-spacing: 0.08em; line-height: 1.5; }
+.acts { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
 
-  .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: center; }
-  .stat-card { padding: 24px 16px; }
-  .stat-card .v { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 34px; color: var(--accent); }
-  .stat-card .k { font-size: 13px; color: var(--ink-soft); margin-top: 6px; }
+/* 悩み */
+.worries { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.worry { background: var(--bg); padding: 34px 34px 32px; display: grid; grid-template-columns: 56px 1fr; align-items: start; }
+.worry .n { font-family: "Hiragino Mincho ProN", serif; color: var(--gold); font-size: 26px; line-height: 1.3; }
+.worry p { font-size: 16px; line-height: 1.9; }
+.lead-out { text-align: center; margin-top: 56px; font-family: "Hiragino Mincho ProN", serif; font-size: clamp(18px, 2.4vw, 22px); line-height: 2; }
+.lead-out em { font-style: normal; color: var(--gold2); border-bottom: 1px solid var(--gold); }
 
-  .final { background: var(--navy); color: #F4F5F3; border-radius: 2px; padding: 52px 44px; }
-  .final h2 { color: inherit; font-size: clamp(21px, 2.8vw, 27px); margin: 0 0 14px; }
-  .final p { color: #C7CEDA; font-size: 14.5px; max-width: 46ch; margin: 0 0 24px; }
+/* 図：利益と手元のお金 */
+.chart-box { border: 1px solid var(--line); background: var(--card); padding: 44px 40px 34px; }
+.chart-box svg { width: 100%; height: auto; }
+.chart-box .sp { display: none; }
+.chart-note { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 36px; }
+.chart-note h3 { font-size: 16.5px; color: var(--gold2); margin-bottom: 8px; }
+.chart-note p { font-size: 13.5px; color: var(--soft); }
+.cap { text-align: center; font-size: 12px; color: var(--soft); margin-top: 18px; }
 
-  footer { padding: 30px 0 50px; font-size: 12px; color: var(--ink-soft); }
+/* 60分の流れ */
+.timeline { max-width: 760px; margin: 0 auto; position: relative; }
+.timeline::before { content: ""; position: absolute; left: 92px; top: 10px; bottom: 10px; width: 1px; background: var(--gline); }
+.tl { display: grid; grid-template-columns: 92px 1fr; gap: 34px; padding: 18px 0 28px; position: relative; }
+.tl::after { content: ""; position: absolute; left: 87px; top: 30px; width: 11px; height: 11px; border: 1px solid var(--gold); background: var(--bg2); transform: rotate(45deg); }
+.tl .t { font-family: "Hiragino Mincho ProN", serif; color: var(--gold2); font-size: 15px; text-align: right; padding-right: 22px; padding-top: 6px; letter-spacing: 0.1em; }
+.tl h3 { font-size: 19px; margin-bottom: 6px; padding-left: 10px; }
+.tl p { font-size: 14px; color: var(--soft); padding-left: 10px; }
+.bring { max-width: 760px; margin: 40px auto 0; border: 1px solid var(--gline); padding: 26px 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+.bring h3 { font-size: 15px; color: var(--gold2); margin-bottom: 6px; }
+.bring p { font-size: 13.5px; color: var(--soft); }
 
-  @media (max-width: 700px) {
-    .strength-grid, .offer-grid, .stat-grid { grid-template-columns: 1fr; }
-    .story-inner { grid-template-columns: 1fr; }
-  }
+/* 約束 */
+.promises { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+.promise { border: 1px solid var(--gline); padding: 42px 28px 34px; text-align: center; position: relative; }
+.promise::before { content: ""; position: absolute; top: -6px; left: 50%; width: 11px; height: 11px; background: var(--bg); border: 1px solid var(--gold); transform: translateX(-50%) rotate(45deg); }
+.promise .n { font-family: "Hiragino Mincho ProN", serif; color: var(--gold); letter-spacing: 0.3em; font-size: 13px; }
+.promise h3 { font-size: 18.5px; line-height: 1.7; margin: 12px 0 12px; }
+.promise p { font-size: 13.5px; color: var(--soft); text-align: left; }
+
+/* 代表 */
+.profile { display: grid; grid-template-columns: 5fr 6fr; gap: 56px; align-items: center; }
+.profile .ph { position: relative; }
+.profile .ph img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; filter: grayscale(.25) brightness(.85); }
+.profile .ph::after { content: ""; position: absolute; inset: 16px -16px -16px 16px; border: 1px solid var(--gline); z-index: -1; }
+.profile h2 { font-size: 27px; margin: 16px 0 6px; }
+.profile .role { color: var(--soft); font-size: 13px; letter-spacing: 0.16em; }
+.profile p { color: var(--soft); font-size: 14.5px; margin-top: 18px; }
+.career { margin-top: 24px; border-top: 1px solid var(--line); }
+.career div { display: grid; grid-template-columns: 110px 1fr; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 13.5px; }
+.career dt { color: var(--gold2); font-family: "Hiragino Mincho ProN", serif; }
+.career dd { color: var(--soft); }
+.note-s { font-size: 12px; color: var(--soft); margin-top: 16px; }
+
+/* 事例 */
+.cases { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; }
+.case { background: var(--card); border: 1px solid var(--line); border-top: 2px solid var(--gold); padding: 34px 32px; }
+.case .tag { font-family: "Hiragino Mincho ProN", serif; color: var(--gold); letter-spacing: 0.24em; font-size: 12.5px; }
+.case h3 { font-size: 18.5px; margin: 8px 0 18px; }
+.case dl { display: grid; grid-template-columns: 78px 1fr; gap: 10px 14px; font-size: 13.5px; }
+.case dt { color: var(--gold2); }
+.case dd { color: var(--soft); }
+
+/* 料金 */
+.prices { max-width: 760px; margin: 0 auto; border-top: 1px solid var(--gold); }
+.prices div { display: grid; grid-template-columns: 1fr auto; gap: 20px; padding: 24px 6px; border-bottom: 1px solid var(--line); align-items: center; }
+.prices h3 { font-size: 17px; }
+.prices h3 small { display: block; font-family: "Hiragino Sans", sans-serif; font-size: 12.5px; color: var(--soft); letter-spacing: 0.06em; margin-top: 2px; }
+.prices .y { font-family: "Hiragino Mincho ProN", serif; font-size: 22px; color: var(--ink); white-space: nowrap; }
+.prices .free .y { color: var(--gold2); font-size: 30px; }
+.prices-note { max-width: 760px; margin: 18px auto 0; font-size: 13px; color: var(--soft); }
+
+/* よくある質問 */
+.faq { max-width: 800px; margin: 0 auto; border-top: 1px solid var(--line); }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary { list-style: none; cursor: pointer; padding: 22px 44px 22px 44px; position: relative; font-size: 15.5px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::before { content: "Q."; position: absolute; left: 4px; color: var(--gold); font-family: "Hiragino Mincho ProN", serif; }
+.faq summary::after { content: "+"; position: absolute; right: 10px; color: var(--gold); font-size: 20px; line-height: 1.6; }
+.faq details[open] summary::after { content: "−"; }
+.faq details p { padding: 0 44px 24px; color: var(--soft); font-size: 14px; }
+
+/* 申し込みフォーム */
+.apply { background: linear-gradient(180deg, var(--bg2), #0E1014); }
+.form-box { max-width: 760px; margin: 0 auto; border: 1px solid var(--gline); padding: 50px 48px; background: rgba(30,33,39,.6); }
+.form-box form { display: grid; gap: 20px; }
+.form-box label { display: block; font-size: 13.5px; margin-bottom: 6px; letter-spacing: 0.1em; }
+.form-box label b { font-weight: 400; font-size: 11px; color: #121418; background: var(--gold); padding: 1px 8px; margin-left: 8px; }
+.form-box input, .form-box select, .form-box textarea { width: 100%; background: #0F1115; color: var(--ink); border: 1px solid var(--line); padding: 13px 14px; font: inherit; font-size: 14.5px; }
+.form-box input:focus, .form-box select:focus, .form-box textarea:focus { outline: none; border-color: var(--gold); }
+.form-box textarea { min-height: 120px; }
+.form-box .two { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.form-box .privacy { font-size: 12.5px; color: var(--soft); border: 1px solid var(--line); padding: 14px 16px; }
+.form-box .btn { width: 100%; padding: 18px; font-size: 15px; }
+.tel { text-align: center; margin-top: 28px; color: var(--soft); font-size: 13.5px; }
+.tel b { display: block; font-family: "Hiragino Mincho ProN", serif; font-weight: 400; color: var(--ink); font-size: 26px; letter-spacing: 0.1em; }
+
+footer { border-top: 1px solid rgba(194,161,90,.25); text-align: center; padding: 50px 20px 120px; font-size: 12px; color: var(--soft); }
+footer b { display: block; font-family: "Hiragino Mincho ProN", serif; font-weight: 400; font-size: 17px; letter-spacing: 0.14em; color: var(--ink); margin-bottom: 10px; }
+footer a { color: var(--gold2); }
+
+.fixed-cta { display: none; position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 60; transform: translateY(150%); transition: transform .3s; }
+.fixed-cta.show { transform: none; }
+.fixed-cta .btn { width: 100%; box-shadow: 0 10px 30px rgba(0,0,0,.5); }
+
+@media (max-width: 860px) {
+  .worries, .cases, .promises, .chart-note { grid-template-columns: 1fr; }
+  .profile { grid-template-columns: 1fr; gap: 40px; }
+  .profile .ph { max-width: 420px; }
+  section { padding: 84px 0; }
+  .fixed-cta { display: block; }
+  .top .btn { display: none; }
+}
+@media (max-width: 560px) {
+  .wrap { padding: 0 20px; }
+  .frame { padding: 44px 20px 36px; margin: 0 16px; }
+  .hero h1 { font-size: 23px; letter-spacing: 0.06em; }
+  .badges div { flex: 1; padding: 10px 4px; font-size: 10.5px; letter-spacing: 0.04em; white-space: nowrap; }
+  .badges b { font-size: 16px; }
+  .badges div:last-child b { font-size: 13px; line-height: 1.85; }
+  .chart-box .pc { display: none; }
+  .chart-box .sp { display: block; max-width: 360px; margin: 0 auto; }
+  .worry { padding: 26px 20px; grid-template-columns: 40px 1fr; }
+  .worry p { font-size: 15px; }
+  .chart-box { padding: 26px 14px 20px; }
+  .timeline::before { left: 62px; }
+  .tl { grid-template-columns: 62px 1fr; gap: 18px; }
+  .tl::after { left: 57px; }
+  .tl .t { font-size: 13px; padding-right: 14px; }
+  .bring { grid-template-columns: 1fr; padding: 22px 20px; }
+  .case { padding: 28px 22px; }
+  .case dl { grid-template-columns: 1fr; gap: 2px; }
+  .case dd { margin-bottom: 10px; }
+  .form-box { padding: 32px 20px; }
+  .form-box .two { grid-template-columns: 1fr; }
+  .faq summary { padding: 20px 36px; font-size: 14.5px; }
+  .faq details p { padding: 0 20px 22px 36px; }
+  .logo b { font-size: 14px; letter-spacing: 0.06em; }
+  .logo small { display: none; }
+}
 </style>
 </head>
 <body>
 
-<a class="sample-badge" href="index.html">← サンプル集へ戻る</a>
+<div class="sample-bar">SAMPLE LP — 架空の事務所を想定した、渡邊駿の自主制作サンプルです。<a href="index.html">← サンプル集へ</a></div>
 
-<header class="hero">
-  <div class="wrap">
-    <span class="eyebrow">SAMPLE LP</span>
-    <h1>数字で語る、<br />伴走型の経営コンサルティング。</h1>
-    <p class="lede">中小企業・個人事業主の「なんとなくの経営判断」を、データと対話で立て直します。みちしるべ経営パートナーズ。</p>
-    <div class="hero-photo"><img src="img/consult-hero.png" alt="ミーティングルームでの打ち合わせ風景"></div>
-  </div>
-</header>
+<header class="top"><div class="wrap">
+  <a class="logo" href="#"><span class="mk"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M32 58V10"/><path d="M32 14h18l6 6-6 6H32"/><path d="M32 32H14l-6 6 6 6h18"/><path d="M24 58h16"/></svg></span><span><b>みちしるべ経営パートナーズ</b><small>中小企業の経営支援</small></span></a>
+  <a class="btn small" href="#apply">無料相談を申し込む</a>
+</div></header>
 
-<section id="strength">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">選ばれる理由</span>
-      <h2>感覚ではなく、数字で意思決定を。</h2>
+<div class="hero">
+  <img src="img/lp-consult-hero.jpg" alt="会議テーブルで、資料を広げて話し合う二人">
+  <div class="frame">
+    <span class="label">資金繰りの無料相談</span>
+    <h1><span class="nb">売上はあるのに、</span><br><span class="nb"><em>なぜお金が残らない</em>のか。</span></h1>
+    <p class="lede">毎月の数字を一緒に見ながら、お金の流れを整理します。中小企業・個人事業主の方のための、60分の相談です。</p>
+    <div class="badges">
+      <div><b>60分</b>じっくり</div>
+      <div><b>無料</b>初回のみ</div>
+      <div><b>対面・オンライン</b>選べます</div>
     </div>
-    <div class="strength-grid">
-      <div class="strength-card">
-        <span class="n">01</span>
-        <h3>データに基づく提案</h3>
-        <p>経験や勘に頼らず、財務データと市場データを根拠にした提案をします。</p>
+    <div class="acts">
+      <a class="btn" href="#apply">無料相談を申し込む</a>
+      <a class="btn line" href="#flow">相談の流れを見る</a>
+    </div>
+  </div>
+</div>
+
+<section><div class="wrap">
+  <div class="head"><span class="label">こんな状況では、ありませんか</span><h2><span class="nb">数字のことを、</span><span class="nb">ひとりで抱えていませんか。</span></h2></div>
+  <div class="worries">
+    <div class="worry"><span class="n">壱</span><p>黒字のはずなのに、月末の支払いが毎回ぎりぎりになる。</p></div>
+    <div class="worry"><span class="n">弐</span><p>決算書は税理士さんに任せていて、見方がよく分からない。</p></div>
+    <div class="worry"><span class="n">参</span><p>借入れを考えているが、何から準備すればいいか分からない。</p></div>
+    <div class="worry"><span class="n">肆</span><p>お金の相談を、気軽にできる相手がいない。</p></div>
+  </div>
+  <p class="lead-out"><span class="nb">ひとつでも当てはまるなら、</span><br><span class="nb"><em>お金の流れ</em>を、</span><span class="nb">一度いっしょに見てみませんか。</span></p>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <div class="head"><span class="label">なぜ、お金が残らないのか</span><h2><span class="nb">利益と、手元のお金は、</span><span class="nb">同じではありません。</span></h2><p>よくある原因のひとつが、売上が入金されるまでの「時間のずれ」です。</p></div>
+  <div class="chart-box"><div class="pc"><svg viewBox="0 0 880 330" role="img" aria-label="売上が入金されるまでの時間差で、利益が出ていても手元のお金が減る仕組みを表した図">
+  <defs><marker id="ah" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#C2A15A"/></marker></defs>
+  <g font-family="Hiragino Mincho ProN, serif" fill="#E9E4D8" font-size="17" letter-spacing="2">
+    <text x="20" y="40" fill="#DCC287">帳簿の上</text>
+    <text x="20" y="208" fill="#DCC287">手元のお金</text>
+  </g>
+  <line x1="150" y1="34" x2="860" y2="34" stroke="rgba(233,228,216,.14)"/>
+  <line x1="150" y1="202" x2="860" y2="202" stroke="rgba(233,228,216,.14)"/>
+  <g font-family="Hiragino Sans, sans-serif" font-size="14" fill="#B3AC9E" text-anchor="middle">
+    <rect x="170" y="60" width="150" height="58" fill="none" stroke="#C2A15A"/><text x="245" y="95" fill="#E9E4D8">今月の売上</text>
+    <rect x="400" y="60" width="150" height="58" fill="none" stroke="#C2A15A"/><text x="475" y="95" fill="#E9E4D8">仕入・人件費</text>
+    <rect x="630" y="60" width="200" height="58" fill="#C2A15A" fill-opacity=".14" stroke="#C2A15A"/><text x="730" y="95" fill="#DCC287">利益が出ている</text>
+    <path d="M320 89H392" stroke="#C2A15A" marker-end="url(#ah)"/><path d="M550 89H622" stroke="#C2A15A" marker-end="url(#ah)"/>
+
+    <rect x="170" y="228" width="150" height="58" fill="none" stroke="rgba(233,228,216,.4)" stroke-dasharray="4 4"/><text x="245" y="255" fill="#E9E4D8">入金は</text><text x="245" y="275">翌々月</text>
+    <rect x="400" y="228" width="150" height="58" fill="none" stroke="rgba(233,228,216,.4)"/><text x="475" y="255" fill="#E9E4D8">支払いは</text><text x="475" y="275">今月</text>
+    <rect x="630" y="228" width="200" height="58" fill="none" stroke="#B36A5E"/><text x="730" y="263" fill="#E3A597">お金が足りない</text>
+    <path d="M320 257H392" stroke="rgba(233,228,216,.5)" marker-end="url(#ah)"/><path d="M550 257H622" stroke="rgba(233,228,216,.5)" marker-end="url(#ah)"/>
+    <path d="M245 124V196" stroke="rgba(194,161,90,.5)" stroke-dasharray="3 5"/><path d="M475 124V196" stroke="rgba(194,161,90,.5)" stroke-dasharray="3 5"/>
+    <text x="300" y="166" fill="#B3AC9E" font-size="13">時間のずれ</text>
+  </g>
+</svg></div><div class="sp"><svg viewBox="0 0 360 400" role="img" aria-label="売上が入金されるまでの時間差で、利益が出ていても手元のお金が減る仕組みを表した図">
+  <defs><marker id="ah2" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#C2A15A"/></marker></defs>
+  <g font-family="Hiragino Mincho ProN, serif" font-size="15" fill="#DCC287" text-anchor="middle" letter-spacing="2"><text x="95" y="24">帳簿の上</text><text x="265" y="24">手元のお金</text></g>
+  <g font-family="Hiragino Sans, sans-serif" font-size="13.5" fill="#B3AC9E" text-anchor="middle">
+    <rect x="20" y="44" width="150" height="58" fill="none" stroke="#C2A15A"/><text x="95" y="78" fill="#E9E4D8">今月の売上</text>
+    <rect x="20" y="164" width="150" height="58" fill="none" stroke="#C2A15A"/><text x="95" y="198" fill="#E9E4D8">仕入・人件費</text>
+    <rect x="20" y="284" width="150" height="58" fill="#C2A15A" fill-opacity=".14" stroke="#C2A15A"/><text x="95" y="318" fill="#DCC287">利益が出ている</text>
+    <path d="M95 102V156" stroke="#C2A15A" marker-end="url(#ah2)"/><path d="M95 222V276" stroke="#C2A15A" marker-end="url(#ah2)"/>
+    <rect x="190" y="44" width="150" height="58" fill="none" stroke="rgba(233,228,216,.4)" stroke-dasharray="4 4"/><text x="265" y="69" fill="#E9E4D8">入金は</text><text x="265" y="89">翌々月</text>
+    <rect x="190" y="164" width="150" height="58" fill="none" stroke="rgba(233,228,216,.4)"/><text x="265" y="189" fill="#E9E4D8">支払いは</text><text x="265" y="209">今月</text>
+    <rect x="190" y="284" width="150" height="58" fill="none" stroke="#B36A5E"/><text x="265" y="318" fill="#E3A597">お金が足りない</text>
+    <path d="M265 102V156" stroke="rgba(233,228,216,.5)" marker-end="url(#ah2)"/><path d="M265 222V276" stroke="rgba(233,228,216,.5)" marker-end="url(#ah2)"/>
+    <path d="M170 73H190" stroke="rgba(194,161,90,.6)" stroke-dasharray="3 4"/>
+    <text x="180" y="380" font-size="13">売上の入金と支払いの「時間のずれ」</text>
+  </g>
+</svg></div></div>
+  <p class="cap">※しくみを説明するためのイメージ図です。</p>
+  <div class="chart-note">
+    <div><h3>入金と支払いの時期</h3><p>売上の入金が遅く、支払いが先に来ると、利益が出ていても手元のお金は減ります。</p></div>
+    <div><h3>返済と税金</h3><p>借入れの返済や税金は、利益の計算には出てこないため、見落としやすい支出です。</p></div>
+    <div><h3>在庫と設備</h3><p>仕入れた在庫や設備に使ったお金も、すぐには利益の計算に表れません。</p></div>
+  </div>
+</div></section>
+
+<section id="flow"><div class="wrap">
+  <div class="head"><span class="label">無料相談の60分</span><h2>当日の流れ</h2></div>
+  <div class="timeline">
+    <div class="tl"><span class="t">15分</span><div><h3>今の状況をうかがう</h3><p>事業の内容と、お金のことで気になっていることをお聞きします。</p></div></div>
+    <div class="tl"><span class="t">30分</span><div><h3>数字を一緒に見る</h3><p>お持ちいただいた決算書や通帳をもとに、お金がどこで出ていき、いつ入ってくるのかを整理します。</p></div></div>
+    <div class="tl"><span class="t">15分</span><div><h3>次の一手を考える</h3><p>すぐにできることと、時間をかけて取り組むことを分けてお伝えします。</p></div></div>
+  </div>
+  <div class="bring">
+    <div><h3>お持ちいただくもの</h3><p>直近2期分の決算書。あれば、試算表や通帳のコピーも。なくても相談はできます。</p></div>
+    <div><h3>相談のあとに</h3><p>当日お話しした内容を、1枚のメモにまとめてお送りします。</p></div>
+  </div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <div class="head"><span class="label">3つのお約束</span><h2><span class="nb">安心して、</span><span class="nb">ご相談いただくために。</span></h2></div>
+  <div class="promises">
+    <div class="promise"><span class="n">ONE</span><h3><span class="nb">契約をすすめる</span><span class="nb">連絡はしません</span></h3><p>無料相談のあと、こちらから営業の連絡をすることはありません。続けて依頼するかどうかは、ご自身で決めてください。</p></div>
+    <div class="promise"><span class="n">TWO</span><h3><span class="nb">お聞きした内容は、</span><span class="nb">外に出しません</span></h3><p>ご相談の内容や数字は、守秘義務のもとで扱います。</p></div>
+    <div class="promise"><span class="n">THREE</span><h3><span class="nb">専門用語を</span><span class="nb">使わずに話します</span></h3><p>数字が苦手な方にも分かる言葉で、ご説明します。分からないことは、何度でも聞いてください。</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap profile">
+  <div class="ph"><img src="img/lp-consult-desk.jpg" alt="グラフの資料と電卓を前に、ペンを持つ人の手元" loading="lazy"></div>
+  <div>
+    <span class="label">担当する代表</span>
+    <h2>村上 恒一</h2>
+    <span class="role">みちしるべ経営パートナーズ　代表</span>
+    <p>地方銀行で12年、中小企業向けの融資と経営支援を担当してきました。銀行の担当者が決算書のどこを見ているのかを知っているからこそ、お伝えできることがあります。「数字は苦手で」という方とお話しするのが、いちばん好きな仕事です。</p>
+    <dl class="career">
+      <div><dt>経歴</dt><dd>地方銀行で融資・経営支援を担当（12年）、2018年に独立</dd></div>
+      <div><dt>得意分野</dt><dd>資金繰りの改善、事業計画書づくり、金融機関との対話</dd></div>
+    </dl>
+    <p class="note-s">※代表者の氏名・経歴は、制作サンプル用の架空のものです。</p>
+  </div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <div class="head"><span class="label">ご相談の例</span><h2>こんなご相談を、お受けしています。</h2><p>ご了承をいただいた例を、社名を伏せて紹介しています（以下は架空の例です）。</p></div>
+  <div class="cases">
+    <div class="case"><span class="tag">CASE 01</span><h3>飲食店（従業員12名）</h3><dl><dt>ご相談</dt><dd>お客様は増えているのに、手元のお金が減っていく。</dd><dt>取り組み</dt><dd>仕入れと支払いの時期を見直し、毎月の資金繰り表を一緒に作りました。</dd></dl></div>
+    <div class="case"><span class="tag">CASE 02</span><h3>製造業（従業員30名）</h3><dl><dt>ご相談</dt><dd>設備を入れ替えるための借入れを考えている。</dd><dt>取り組み</dt><dd>事業計画書を数字の根拠から整え、金融機関との面談に同席しました。</dd></dl></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="head"><span class="label">料金</span><h2>はじめの60分は、無料です。</h2></div>
+  <div class="prices">
+    <div class="free"><h3>資金繰りの無料相談<small>初回のみ・60分・対面またはオンライン</small></h3><span class="y">0円</span></div>
+    <div><h3>経営診断<small>決算書3期分と聞き取りをもとに、報告書をお渡しします（約1か月）</small></h3><span class="y">15万円〜</span></div>
+    <div><h3>月次伴走コンサルティング<small>毎月の定例と、メール・チャットでのご相談</small></h3><span class="y">月5万円〜</span></div>
+  </div>
+  <p class="prices-note">無料相談のあとに、続けてご依頼いただく必要はありません。ご依頼の場合は、内容をうかがってから正式にお見積もりします。<br>※料金は、制作サンプル用の架空のものです。</p>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <div class="head"><span class="label">よくあるご質問</span><h2>FAQ</h2></div>
+  <div class="faq">
+    <details><summary>顧問の税理士がいても、相談できますか？</summary><p>はい。税金の申告は税理士さん、お金の流れの整理と資金計画は私たち、という形で分担しているお客様もいます。</p></details>
+    <details><summary>決算書が手元にありません。</summary><p>なくても大丈夫です。分かる範囲でお話をうかがい、次回までに用意していただくものをお伝えします。</p></details>
+    <details><summary>オンラインでも相談できますか？</summary><p>はい。ビデオ通話でのご相談もお受けしています。画面で資料を見ながら進めます。</p></details>
+    <details><summary>個人事業主でも大丈夫ですか？</summary><p>はい。個人事業主の方、創業して間もない方のご相談もお受けしています。</p></details>
+    <details><summary>無料相談のあと、営業の連絡は来ますか？</summary><p>こちらから営業の連絡はしません。続けてご依頼いただくかどうかは、ご自身で決めてください。</p></details>
+  </div>
+</div></section>
+
+<section class="apply" id="apply"><div class="wrap">
+  <div class="rule"></div>
+  <div class="head"><span class="label">無料相談のお申し込み</span><h2><span class="nb">まずは60分、</span><span class="nb">お話を聞かせてください。</span></h2><p>2営業日以内に、日程のご相談のご連絡をします。</p></div>
+  <div class="form-box">
+    <form onsubmit="alert('制作サンプルのため、送信はできません。'); return false;">
+      <div class="two">
+        <div><label for="f-name">お名前<b>必須</b></label><input id="f-name" type="text" placeholder="山田 太郎"></div>
+        <div><label for="f-co">会社名・屋号</label><input id="f-co" type="text" placeholder="株式会社◯◯"></div>
       </div>
-      <div class="strength-card">
-        <span class="n">02</span>
-        <h3>伴走型のサポート</h3>
-        <p>提案して終わりではなく、実行フェーズまで月次で並走します。</p>
+      <div class="two">
+        <div><label for="f-mail">メールアドレス<b>必須</b></label><input id="f-mail" type="email" placeholder="example@example.com"></div>
+        <div><label for="f-way">ご希望の方法</label><select id="f-way"><option>対面（事務所）</option><option>オンライン</option><option>どちらでもよい</option></select></div>
       </div>
-      <div class="strength-card">
-        <span class="n">03</span>
-        <h3>専門分野の連携体制</h3>
-        <p>税務・法務が絡む論点は、提携する専門家と連携して対応します。</p>
-      </div>
-    </div>
+      <div><label for="f-msg">ご相談したいこと</label><textarea id="f-msg" placeholder="例）売上は伸びているのに、毎月の支払いが苦しくなっています。"></textarea></div>
+      <p class="privacy">お預かりした個人情報は、ご相談への回答とご連絡のためだけに使い、ご本人の同意なく第三者に渡すことはありません（法令に基づく場合を除きます）。</p>
+      <button class="btn" type="submit">無料相談を申し込む（サンプル）</button>
+    </form>
   </div>
-</section>
+  <p class="tel">お電話でも受け付けています（平日 9:00〜18:00）<b>000-0000-0000</b></p>
+</div></section>
 
-<section class="story">
-  <div class="wrap story-inner">
-    <div class="story-photo"><img src="img/consult-desk.png" alt="デスクで資料を確認する手元"></div>
-    <div>
-      <span class="eyebrow">代表より</span>
-      <h2 style="font-size:22px;margin:10px 0 18px;">「なんとなく」を、<br />言葉と数字にする仕事です。</h2>
-      <p>中小企業の経営相談の多くは、「なんとなく厳しい」「なんとなく上手くいっていない」という感覚から始まります。その感覚を、数字と構造に落とし込み、次の一手を一緒に決めていくのが私たちの仕事です。</p>
-      <p>派手な戦略よりも、地に足のついた改善の積み重ねを大事にしています。</p>
-      <p class="signoff">みちしるべ経営パートナーズ代表より</p>
-    </div>
-  </div>
-</section>
+<footer><b>みちしるべ経営パートナーズ</b>〒000-0000　◯◯県◯◯市◯◯町 3-4-5　｜　<a href="../hp-samples/michishirube/index.html">事務所のホームページ</a><br>※このページは渡邊駿の制作サンプルです。架空の事務所を想定した自主制作物で、実在の事務所ではありません。代表者・事例・料金もすべて架空です。</footer>
 
-<section id="offer">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">サービス内容</span>
-      <h2>3つの支援メニュー。</h2>
-    </div>
-    <div class="offer-photo-wide"><img src="img/consult-team.png" alt="資料を囲んで議論するチーム"></div>
-
-    <div class="offer-toggle" role="tablist">
-      <button type="button" class="active" data-target="individual" onclick="switchOffer('individual', this)">個人事業主向け</button>
-      <button type="button" data-target="corporate" onclick="switchOffer('corporate', this)">法人向け</button>
-    </div>
-
-    <div class="offer-grid">
-      <div class="offer-card">
-        <h3 data-individual="経営診断" data-corporate="組織診断・課題の可視化">経営診断</h3>
-        <p data-individual="財務状況・業務フローを棚卸しし、課題の優先順位を明確にします。" data-corporate="部門ごとの業務フロー・意思決定プロセスを棚卸しし、組織課題の優先順位を明確にします。">財務状況・業務フローを棚卸しし、課題の優先順位を明確にします。</p>
-      </div>
-      <div class="offer-card">
-        <h3 data-individual="月次伴走コンサルティング" data-corporate="月次伴走コンサルティング（経営会議同席）">月次伴走コンサルティング</h3>
-        <p data-individual="毎月の定例MTGで進捗を確認しながら、実行支援まで並走します。" data-corporate="毎月の経営会議に同席し、意思決定の材料整理から実行支援まで並走します。">毎月の定例MTGで進捗を確認しながら、実行支援まで並走します。</p>
-      </div>
-      <div class="offer-card">
-        <h3 data-individual="資金計画・資料作成支援" data-corporate="資金調達・IR資料作成支援">資金計画・資料作成支援</h3>
-        <p data-individual="金融機関向け資料や事業計画書の作成もサポートします。" data-corporate="金融機関・投資家向けの資料や、中期事業計画書の作成もサポートします。">金融機関向け資料や事業計画書の作成もサポートします。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="stats">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">実績（架空の数値です）</span>
-      <h2>これまでの支援実績。</h2>
-    </div>
-    <div class="stat-grid">
-      <div class="stat-card"><div class="v">120社+</div><div class="k">支援実績（累計）</div></div>
-      <div class="stat-card"><div class="v">8年</div><div class="k">事業継続年数</div></div>
-      <div class="stat-card"><div class="v">92%</div><div class="k">継続契約率</div></div>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="wrap">
-    <div class="final">
-      <span class="eyebrow" style="color:var(--accent-soft);">お問い合わせ</span>
-      <h2>まずは、現状のお話からお聞かせください。</h2>
-      <p>初回のご相談は無料です（60分程度）。オンライン・対面どちらも対応しています。</p>
-      <a class="btn" href="#">無料相談を申し込む（サンプルのためリンク先なし）</a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    ※このページは渡邊駿の制作サンプルです。架空の事務所を想定した自主制作物であり、実在の法人ではありません。
-  </div>
-</footer>
+<div class="fixed-cta"><a class="btn" href="#apply">無料相談を申し込む</a></div>
 
 <script>
-  function switchOffer(target, btn) {
-    document.querySelectorAll('.offer-toggle button').forEach(function (b) { b.classList.remove('active'); });
-    btn.classList.add('active');
-    document.querySelectorAll('[data-individual]').forEach(function (el) {
-      var text = target === 'individual' ? el.getAttribute('data-individual') : el.getAttribute('data-corporate');
-      el.textContent = text;
-    });
+(function () {
+  // 下部の申し込みボタンは、最初の画面を過ぎてから出す（申し込み欄が見えている間は隠す）
+  var bar = document.querySelector(".fixed-cta"), hero = document.querySelector(".hero"), ap = document.querySelector("#apply");
+  function onScroll() {
+    var a = ap.getBoundingClientRect();
+    bar.classList.toggle("show", hero.getBoundingClientRect().bottom < 0 && (a.top > innerHeight || a.bottom < 0));
   }
+  addEventListener("scroll", onScroll, { passive: true }); onScroll();
+})();
 </script>
-
 </body>
 </html>

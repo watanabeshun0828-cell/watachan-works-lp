@@ -3,301 +3,333 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HANA hair & esthetic｜制作サンプル・渡邊駿</title>
+<title>はじめてコース｜HANA hair &amp; esthetic（制作サンプル・渡邊駿）</title>
+<meta name="description" content="エステがはじめての方のための、カウンセリング付きコースのLP（架空のサロンの制作サンプル）。">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --ink: #3B2A2E; --ink-soft: #8A6C72; --paper: #FDF4F3; --paper-deep: #F7E6E3;
-    --paper-card: #FFFBFA; --accent: #C4707A; --accent-soft: #E3A0A8; --gold: #C9A227;
-    --line: rgba(59, 42, 46, 0.12); --line-soft: rgba(59, 42, 46, 0.06);
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --ink: #F5E6E5; --ink-soft: #D2A9AF; --paper: #1E1416; --paper-deep: #241A1C;
-      --paper-card: #221718; --accent: #E08A94; --accent-soft: #C4707A; --gold: #D9B84A;
-      --line: rgba(245, 230, 229, 0.13); --line-soft: rgba(245, 230, 229, 0.06);
-    }
-  }
-  * { box-sizing: border-box; margin: 0; }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--paper); color: var(--ink);
-    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
-    line-height: 1.9; -webkit-font-smoothing: antialiased; letter-spacing: 0.015em;
-  }
-  h1, h2, h3 { font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif; font-weight: 600; }
-  a { color: inherit; }
-  .wrap { max-width: 820px; margin: 0 auto; padding: 0 26px; }
-  .sample-badge {
-    position: fixed; top: 14px; right: 14px; z-index: 200;
-    background: var(--ink); color: var(--paper); font-size: 11.5px; letter-spacing: 0.06em;
-    padding: 7px 14px; border-radius: 980px; text-decoration: none; opacity: 0.88;
-  }
-  .eyebrow { display: inline-flex; align-items: center; gap: 0.6em; font-size: 12px; letter-spacing: 0.24em; color: var(--accent); font-weight: 600; }
-  .eyebrow::before { content: ""; width: 16px; height: 1px; background: var(--accent); display: inline-block; }
+:root { --ink: #141414; --ink-soft: #5A5A5A; --mute: #9A9A9A; --paper: #FFFFFF; --paper-deep: #F4F4F2; --line: rgba(20,20,20,.14); --rose: #A04F5A; color-scheme: light; }
+* { box-sizing: border-box; margin: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--paper); color: var(--ink); font-family: "Hiragino Sans", "Helvetica Neue", "Noto Sans JP", sans-serif; font-weight: 300; line-height: 2; letter-spacing: 0.06em; -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+.nb { display: inline-block; }
+.en { font-family: "Italiana", "Didot", serif; font-weight: 400; letter-spacing: 0.12em; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 40px; }
 
-  .hero { padding: 100px 0 60px; text-align: center; }
-  .hero .wrap { display: flex; flex-direction: column; align-items: center; }
-  .hero h1 { font-size: clamp(28px, 4.8vw, 44px); line-height: 1.7; margin: 20px 0 16px; }
-  .hero p.lede { max-width: 44ch; color: var(--ink-soft); font-size: 15.5px; margin-bottom: 28px; }
-  .hero-photo { width: 100%; max-width: 660px; aspect-ratio: 16/9; border-radius: 6px; overflow: hidden; background: linear-gradient(150deg, #F1D8D6, #FAEBE9); }
-  .hero-photo img, .story-photo img, .menu-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: 980px; font-size: 14.5px; font-weight: 600; text-decoration: none; background: var(--accent); color: #FFF6F5; margin-top: 24px; }
+.sample-bar { background: #000; color: #ddd; font-size: 11.5px; text-align: center; padding: 7px 16px; letter-spacing: 0.06em; }
+.sample-bar a { color: #fff; margin-left: 10px; }
 
-  section { padding: 66px 0; }
-  section + section { border-top: 1px solid var(--line); }
-  .section-head { text-align: center; max-width: 54ch; margin: 0 auto 36px; }
-  .section-head h2 { font-size: clamp(21px, 2.8vw, 27px); margin: 10px 0 0; }
+.top { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.94); border-bottom: 1px solid var(--line); backdrop-filter: blur(6px); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.logo { text-decoration: none; display: flex; align-items: baseline; gap: 12px; }
+.logo .en { font-size: 28px; letter-spacing: 0.2em; }
+.logo small { font-size: 10.5px; letter-spacing: 0.24em; color: var(--ink-soft); }
 
-  .point-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  .point-card { background: var(--paper-card); border: 1px solid var(--line); border-radius: 6px; padding: 26px 22px; text-align: center; }
-  .point-card .n { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; color: var(--gold); font-size: 13px; }
-  .point-card h3 { font-size: 16px; margin: 8px 0 8px; }
-  .point-card p { font-size: 13px; color: var(--ink-soft); margin: 0; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 14px; padding: 16px 38px; background: var(--ink); color: #fff; text-decoration: none; font-size: 13.5px; letter-spacing: 0.24em; font-weight: 400; border: 1px solid var(--ink); transition: background .25s, color .25s; }
+.btn:hover { background: #fff; color: var(--ink); }
+.btn.line { background: transparent; color: var(--ink); }
+.btn.line:hover { background: var(--ink); color: #fff; }
+.btn.small { padding: 9px 22px; font-size: 12px; }
+.btn .arrow { width: 26px; height: 1px; background: currentColor; position: relative; }
+.btn .arrow::after { content: ""; position: absolute; right: 0; top: -3px; width: 7px; height: 1px; background: currentColor; transform: rotate(35deg); transform-origin: right; }
+.textlink { font-size: 13px; letter-spacing: 0.16em; color: var(--ink-soft); text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 2px; }
 
-  .menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  .menu-card { background: var(--paper-card); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
-  .menu-photo { aspect-ratio: 1/1; background: linear-gradient(150deg, #F1D8D6, #FAEBE9); }
-  .menu-body { padding: 16px 18px 18px; }
-  .menu-body h3 { font-size: 15.5px; margin: 0 0 6px; }
-  .menu-body p { font-size: 12.5px; color: var(--ink-soft); margin: 0; }
-  .menu-body .price { display: block; margin-top: 8px; font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; color: var(--accent); font-size: 15px; }
+/* ファーストビュー */
+.hero { display: grid; grid-template-columns: 5fr 6fr; min-height: min(calc(100vh - 95px), 820px); }
+.hero-copy { padding: 70px 56px 60px max(40px, calc((100vw - 1120px) / 2 + 40px)); display: flex; flex-direction: column; justify-content: center; }
+.label { font-size: 12px; letter-spacing: 0.3em; color: var(--ink-soft); display: flex; align-items: center; gap: 14px; }
+.label::before { content: ""; width: 34px; height: 1px; background: var(--ink); }
+.hero h1 { font-weight: 300; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.75; letter-spacing: 0.1em; margin: 26px 0 22px; }
+.hero .lede { color: var(--ink-soft); font-size: 14.5px; max-width: 30em; }
+.offer { margin: 34px 0 34px; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 1fr auto; align-items: end; padding: 18px 0 16px; max-width: 420px; }
+.offer .name { font-size: 15px; letter-spacing: 0.14em; }
+.offer .name small { display: block; font-size: 11.5px; color: var(--ink-soft); letter-spacing: 0.16em; }
+.offer .yen { font-size: 34px; letter-spacing: 0.04em; line-height: 1; }
+.offer .yen small { font-size: 12px; margin-left: 6px; color: var(--ink-soft); }
+.hero .acts { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+.hero-photo { position: relative; overflow: hidden; }
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
+.hero-photo .cap { position: absolute; right: 22px; bottom: 18px; color: #fff; font-size: 11px; letter-spacing: 0.3em; writing-mode: vertical-rl; text-shadow: 0 1px 8px rgba(0,0,0,.25); }
 
-  .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-  .gallery-item { aspect-ratio: 1/1; border-radius: 4px; overflow: hidden; background: linear-gradient(150deg, #F1D8D6, #FAEBE9); cursor: pointer; }
-  .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
-  .gallery-item:hover img { transform: scale(1.08); }
-  .gallery-item.tall { grid-row: span 2; }
+/* セクション：左に番号と見出し、右に中身 */
+section { padding: 120px 0; border-top: 1px solid var(--line); }
+section.grey { background: var(--paper-deep); border-top: none; }
+.row { display: grid; grid-template-columns: 4fr 8fr; gap: 56px; }
+.sec-head .no { font-size: 64px; line-height: 1; color: #CFCFCF; }
+.sec-head .label { margin: 18px 0 14px; }
+.sec-head h2 { font-weight: 300; font-size: clamp(22px, 2.4vw, 28px); line-height: 1.8; letter-spacing: 0.1em; }
 
-  .ba-slider {
-    position: relative; width: 100%; max-width: 560px; margin: 0 auto;
-    aspect-ratio: 4/3; border-radius: 8px; overflow: hidden; user-select: none;
-    box-shadow: 0 20px 40px -24px rgba(59,42,46,0.4);
-  }
-  .ba-slider img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; }
-  .ba-slider .ba-after { clip-path: inset(0 0 0 var(--pos, 50%)); }
-  .ba-slider .ba-handle {
-    position: absolute; top: 0; bottom: 0; left: var(--pos, 50%); width: 3px; background: #FFF;
-    transform: translateX(-50%); cursor: ew-resize; box-shadow: 0 0 8px rgba(0,0,0,0.3);
-  }
-  .ba-slider .ba-handle::after {
-    content: "⇔"; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-    width: 40px; height: 40px; background: #FFF; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    font-size: 16px; color: var(--accent); box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  }
-  .ba-label { position: absolute; top: 12px; font-size: 11px; letter-spacing: 0.06em; background: rgba(255,255,255,0.85); color: var(--ink); padding: 4px 10px; border-radius: 980px; }
-  .ba-label.before-l { left: 12px; }
-  .ba-label.after-l { right: 12px; }
-  .ba-caption { text-align: center; font-size: 13px; color: var(--ink-soft); margin-top: 16px; }
+.worries { list-style: none; padding: 0; border-top: 1px solid var(--ink); }
+.worries li { display: grid; grid-template-columns: 54px 1fr; padding: 24px 0; border-bottom: 1px solid var(--line); font-size: 16.5px; letter-spacing: 0.08em; }
+.worries li span { color: var(--mute); font-size: 13px; padding-top: 4px; }
+.after-note { margin-top: 30px; color: var(--ink-soft); font-size: 14.5px; }
 
-  .voice { background: var(--paper-deep); }
-  .voice-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-  .voice-card { background: var(--paper-card); border-radius: 6px; padding: 22px 22px; border-left: 3px solid var(--accent); }
-  .voice-card p { font-size: 13.5px; color: var(--ink-soft); margin: 0 0 10px; }
-  .voice-card .who { font-size: 12px; }
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--ink); }
+.step { padding: 26px 26px 6px 0; }
+.step + .step { padding-left: 26px; border-left: 1px solid var(--line); }
+.step .min { font-size: 44px; line-height: 1.1; }
+.step .min small { font-size: 15px; margin-left: 4px; }
+.step h3 { font-weight: 400; font-size: 16px; letter-spacing: 0.12em; margin: 14px 0 8px; }
+.step p { font-size: 13.5px; color: var(--ink-soft); }
+.total { margin-top: 26px; font-size: 13px; color: var(--ink-soft); letter-spacing: 0.12em; }
 
-  .info-grid { display: grid; grid-template-columns: 110px 1fr; gap: 12px 20px; max-width: 460px; margin: 0 auto; font-size: 14px; }
-  .info-grid dt { color: var(--accent); font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; }
-  .info-grid dd { margin: 0; color: var(--ink-soft); }
+.wide { position: relative; height: 62vh; min-height: 380px; max-height: 620px; overflow: hidden; border-top: none; padding: 0; }
+.wide img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 60%; }
+.wide p { position: absolute; left: max(40px, calc((100vw - 1120px) / 2 + 40px)); bottom: 46px; background: #fff; padding: 22px 30px; font-size: 18px; letter-spacing: 0.14em; line-height: 1.9; }
 
-  .final { text-align: center; background: var(--ink); color: var(--paper); border-radius: 10px; padding: 54px 40px; }
-  .final h2 { color: inherit; font-size: clamp(21px, 2.8vw, 27px); margin: 0 0 14px; }
-  .final p { opacity: 0.82; font-size: 14px; max-width: 42ch; margin: 0 auto; }
-  .final .btn { background: var(--accent-soft); color: #3B2A2E; }
+.promises { border-top: 1px solid var(--ink); }
+.promise { display: grid; grid-template-columns: 70px 1fr; padding: 30px 0; border-bottom: 1px solid var(--line); }
+.promise .i { font-size: 22px; color: var(--rose); }
+.promise h3 { font-weight: 400; font-size: 19px; letter-spacing: 0.1em; margin-bottom: 6px; }
+.promise p { font-size: 14px; color: var(--ink-soft); }
 
-  footer { padding: 30px 0 50px; text-align: center; font-size: 12px; color: var(--ink-soft); }
+.price { width: 100%; border-collapse: collapse; border-top: 1px solid var(--ink); }
+.price td { padding: 24px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+.price .n { font-size: 16px; letter-spacing: 0.1em; }
+.price .n small { display: block; font-size: 12.5px; color: var(--ink-soft); }
+.price .y { text-align: right; font-size: 26px; white-space: nowrap; }
+.price tr.main .y { font-size: 34px; }
+.price tr.main .n b { font-weight: 400; display: inline-block; border: 1px solid var(--ink); font-size: 11px; letter-spacing: 0.2em; padding: 0 10px; margin-left: 10px; vertical-align: 2px; }
+.small-note { font-size: 12.5px; color: var(--ink-soft); margin-top: 18px; }
 
-  @media (max-width: 700px) {
-    .point-grid { grid-template-columns: 1fr; }
-    .menu-grid { grid-template-columns: 1fr 1fr; }
-    .voice-grid { grid-template-columns: 1fr; }
-    .gallery-grid { grid-template-columns: 1fr 1fr; }
-  }
+.person { display: grid; grid-template-columns: 150px 1fr; gap: 40px; align-items: center; }
+.monogram { width: 150px; height: 150px; border-radius: 50%; border: 1px solid var(--ink); display: grid; place-items: center; font-size: 62px; }
+.person .role { font-size: 12px; letter-spacing: 0.2em; color: var(--ink-soft); }
+.person h3 { font-weight: 300; font-size: 24px; letter-spacing: 0.2em; margin: 4px 0 12px; }
+.person p { font-size: 14.5px; color: var(--ink-soft); }
+
+.quotes { display: grid; gap: 40px; }
+.quote { border-left: 1px solid var(--ink); padding: 4px 0 4px 30px; }
+.quote p { font-size: 17px; line-height: 2.1; letter-spacing: 0.08em; }
+.quote span { display: block; margin-top: 10px; font-size: 12.5px; color: var(--ink-soft); letter-spacing: 0.14em; }
+
+.faq { border-top: 1px solid var(--ink); }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary { list-style: none; cursor: pointer; padding: 22px 40px 22px 0; position: relative; font-size: 15.5px; letter-spacing: 0.08em; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::before, .faq summary::after { content: ""; position: absolute; right: 6px; top: 50%; width: 16px; height: 1px; background: var(--ink); transition: transform .25s; }
+.faq summary::after { transform: rotate(90deg); }
+.faq details[open] summary::after { transform: rotate(0); }
+.faq details p { padding: 0 40px 24px 0; color: var(--ink-soft); font-size: 14px; }
+
+.final { background: #000; color: #fff; text-align: center; padding: 130px 0; border-top: none; }
+.final .no { color: #555; font-size: 15px; letter-spacing: 0.4em; }
+.final h2 { font-weight: 300; font-size: clamp(24px, 3vw, 34px); letter-spacing: 0.12em; line-height: 1.8; margin: 18px 0 14px; }
+.final p { color: #BDBDBD; font-size: 14px; }
+.final .acts { display: flex; justify-content: center; gap: 18px; margin-top: 40px; flex-wrap: wrap; }
+.final .btn { background: #fff; color: #000; border-color: #fff; min-width: 250px; }
+.final .btn:hover { background: #000; color: #fff; }
+.final .btn.line { background: transparent; color: #fff; }
+.final .btn.line:hover { background: #fff; color: #000; }
+
+.info { display: grid; grid-template-columns: 130px 1fr; border-top: 1px solid var(--ink); font-size: 14px; }
+.info dt, .info dd { padding: 16px 0; border-bottom: 1px solid var(--line); }
+.info dt { letter-spacing: 0.16em; }
+.info dd { color: var(--ink-soft); }
+.info-acts { margin-top: 30px; }
+
+footer { text-align: center; padding: 60px 20px 120px; font-size: 11.5px; color: var(--ink-soft); border-top: 1px solid var(--line); }
+footer .en { display: block; font-size: 30px; color: var(--ink); letter-spacing: 0.24em; margin-bottom: 10px; }
+
+.fixed-cta { display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; background: #000; color: #fff; text-decoration: none; padding: 16px 20px calc(16px + env(safe-area-inset-bottom)); justify-content: space-between; align-items: center; font-size: 13px; letter-spacing: 0.16em; transform: translateY(110%); transition: transform .3s; }
+.fixed-cta.show { transform: none; }
+.fixed-cta b { font-weight: 400; font-size: 16px; letter-spacing: 0.06em; }
+
+.fade { opacity: 0; transform: translateY(16px); transition: opacity .9s, transform .9s; }
+.fade.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .fade { opacity: 1; transform: none; transition: none; } }
+
+@media (max-width: 900px) {
+  .wrap { padding: 0 22px; }
+  .hero { grid-template-columns: 1fr; min-height: 0; }
+  .hero-photo { order: -1; height: 52vh; min-height: 300px; }
+  .hero-copy { padding: 40px 22px 56px; }
+  .row { grid-template-columns: 1fr; gap: 30px; }
+  section { padding: 80px 0; }
+  .sec-head .no { font-size: 48px; }
+  .steps { grid-template-columns: 1fr; }
+  .step, .step + .step { padding: 22px 0; border-left: none; border-bottom: 1px solid var(--line); }
+  .wide p { left: 22px; right: 22px; bottom: 22px; font-size: 15.5px; padding: 16px 20px; }
+  .person { grid-template-columns: 1fr; gap: 22px; }
+  .monogram { width: 110px; height: 110px; font-size: 46px; }
+  .final { padding: 90px 0; }
+  .fixed-cta { display: flex; }
+  .top .btn { display: none; }
+}
+@media (max-width: 520px) {
+  .hero h1 { font-size: 27px; }
+  .offer .yen { font-size: 28px; }
+  .worries li { font-size: 15px; grid-template-columns: 40px 1fr; }
+  .promise { grid-template-columns: 46px 1fr; }
+  .promise h3 { font-size: 17px; }
+  .price .y, .price tr.main .y { font-size: 22px; }
+  .quote p { font-size: 15.5px; }
+  .info { grid-template-columns: 96px 1fr; }
+  .final .btn { min-width: 0; width: 100%; }
+  .btn { padding: 16px 20px; letter-spacing: 0.14em; }
+}
 </style>
 </head>
 <body>
 
-<a class="sample-badge" href="index.html">← サンプル集へ戻る</a>
+<div class="sample-bar">SAMPLE LP — 架空のサロンを想定した、渡邊駿の自主制作サンプルです。<a href="index.html">← サンプル集へ</a></div>
 
-<header class="hero">
-  <div class="wrap">
-    <span class="eyebrow">SAMPLE LP</span>
-    <h1>わたしを、<br />ちゃんと整える時間。</h1>
-    <p class="lede">髪もお肌も、丁寧なカウンセリングから。完全予約制の小さなサロン「HANA」。</p>
-    <div class="hero-photo"><img src="img/salon-hero.png" alt="サロンの明るい店内"></div>
-    <a class="btn" href="#menu">メニューを見る</a>
-  </div>
-</header>
+<header class="top"><div class="wrap">
+  <a class="logo" href="#"><span class="en">HANA</span><small>hair &amp; esthetic</small></a>
+  <a class="btn small" href="#reserve">RESERVE</a>
+</div></header>
 
-<section id="point">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">HANAが選ばれる理由</span>
-      <h2>3つのこだわり。</h2>
+<div class="hero">
+  <div class="hero-copy">
+    <div class="label en">FIRST VISIT COURSE</div>
+    <h1><span class="nb">肌のことを、</span><br><span class="nb">話すところから。</span></h1>
+    <p class="lede">エステがはじめての方のための、カウンセリング付きのコースです。まずはお話をうかがい、その日の肌の状態に合わせて、40分のフェイシャルを行います。</p>
+    <div class="offer">
+      <div class="name">はじめてコース<small>初回のみ ／ 約70分</small></div>
+      <div class="yen en">&yen;6,600<small>税込</small></div>
     </div>
-    <div class="point-grid">
-      <div class="point-card">
-        <span class="n">01</span>
-        <h3>完全予約制・一人ひとりに集中</h3>
-        <p>同時施術はいたしません。お一人あたりの時間をゆったり確保しています。</p>
-      </div>
-      <div class="point-card">
-        <span class="n">02</span>
-        <h3>丁寧なカウンセリング</h3>
-        <p>髪質・肌質だけでなく、その日の気分もヒアリングしてから施術します。</p>
-      </div>
-      <div class="point-card">
-        <span class="n">03</span>
-        <h3>低刺激・厳選した薬剤</h3>
-        <p>頭皮・お肌への負担を考えた薬剤・化粧品のみを使用しています。</p>
-      </div>
+    <div class="acts">
+      <a class="btn" href="#reserve">予約する<span class="arrow"></span></a>
+      <a class="textlink" href="#course">コースの内容を見る</a>
     </div>
   </div>
+  <div class="hero-photo">
+    <img src="img/lp-salon-hero.jpg" alt="白い大理石のトレイに並ぶ、たたんだタオルとオイルの瓶">
+    <span class="cap en">HANA — FACIAL</span>
+  </div>
+</div>
+
+<section><div class="wrap row">
+  <div class="sec-head"><div class="no en">01</div><div class="label en">FOR YOU</div><h2><span class="nb">こんな方に、</span><span class="nb">おすすめです。</span></h2></div>
+  <div class="fade">
+    <ul class="worries">
+      <li><span class="en">i.</span>エステは初めてで、何をされるのか少し不安。</li>
+      <li><span class="en">ii.</span>肌のことを、急かされずに相談できる場所がほしい。</li>
+      <li><span class="en">iii.</span>回数券や化粧品をすすめられるのが、苦手。</li>
+    </ul>
+    <p class="after-note">はじめてコースは、そんな方のために作りました。最初の20分は、施術をせずにお話だけをうかがいます。</p>
+  </div>
+</div></section>
+
+<section class="grey" id="course"><div class="wrap row">
+  <div class="sec-head"><div class="no en">02</div><div class="label en">COURSE</div><h2><span class="nb">はじめてコースの</span><span class="nb">流れ</span></h2></div>
+  <div class="fade">
+    <div class="steps">
+      <div class="step"><div class="min en">20<small>min</small></div><h3>カウンセリング</h3><p>普段のお手入れや、気になっていることをうかがいます。話したくないことは、話さなくて大丈夫です。</p></div>
+      <div class="step"><div class="min en">40<small>min</small></div><h3>フェイシャル</h3><p>クレンジングからマッサージ、パックまで。内容は、カウンセリングのあとにご説明してから始めます。</p></div>
+      <div class="step"><div class="min en">10<small>min</small></div><h3>お手入れのお話</h3><p>ご自宅でのお手入れで、気をつけるとよいことをお伝えします。</p></div>
+    </div>
+    <p class="total">合計　約70分　／　個室で行います</p>
+  </div>
+</div></section>
+
+<section class="wide">
+  <img src="img/lp-salon-room.jpg" alt="施術用のベッドのそばに、タオルとオイル、施術用の機器が並ぶ個室" loading="lazy">
+  <p><span class="nb">個室で、</span><span class="nb">ひとりの時間を。</span></p>
 </section>
 
-<section id="menu">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">人気のメニュー</span>
-      <h2>定番の3つです。</h2>
-    </div>
-    <div class="menu-grid">
-      <div class="menu-card">
-        <div class="menu-photo"><img src="img/salon-cut.png" alt="カット＆カラーの仕上がり"></div>
-        <div class="menu-body">
-          <h3>カット＆カラー</h3>
-          <p>丁寧なカウンセリングから仕上げまで、約2時間半。</p>
-          <span class="price">¥14,000〜</span>
-        </div>
-      </div>
-      <div class="menu-card">
-        <div class="menu-photo"><img src="img/salon-facial.png" alt="フェイシャルエステの様子"></div>
-        <div class="menu-body">
-          <h3>フェイシャルエステ</h3>
-          <p>肌質に合わせたオーダーメイドの60分コース。</p>
-          <span class="price">¥9,800〜</span>
-        </div>
-      </div>
-      <div class="menu-card">
-        <div class="menu-photo"><img src="img/salon-treatment.png" alt="ヘッドスパの様子"></div>
-        <div class="menu-body">
-          <h3>ヘッドスパ</h3>
-          <p>頭皮の凝りをほぐす、香り付きの上質な40分。</p>
-          <span class="price">¥6,000〜</span>
-        </div>
-      </div>
+<section><div class="wrap row">
+  <div class="sec-head"><div class="no en">03</div><div class="label en">PROMISE</div><h2><span class="nb">HANAの、</span><span class="nb">3つの約束</span></h2></div>
+  <div class="promises fade">
+    <div class="promise"><span class="i en">i.</span><div><h3>その場で、次の予約や商品をすすめません</h3><p>コースのあとに、回数券や化粧品のご案内はしません。次も来たいと思ったときに、ご連絡ください。</p></div></div>
+    <div class="promise"><span class="i en">ii.</span><div><h3>施術は、納得していただいてから</h3><p>何をどの順番で行うのかをご説明し、気になる点がないか確かめてから始めます。</p></div></div>
+    <div class="promise"><span class="i en">iii.</span><div><h3>同じ時間に、ほかのお客様を入れません</h3><p>完全予約制で、施術中はお一人だけ。周りを気にせず過ごせます。</p></div></div>
+  </div>
+</div></section>
+
+<section class="grey"><div class="wrap row">
+  <div class="sec-head"><div class="no en">04</div><div class="label en">PRICE</div><h2>料金</h2></div>
+  <div class="fade">
+    <table class="price">
+      <tr class="main"><td class="n">はじめてコース<b>初回のみ</b><small>カウンセリング20分＋フェイシャル40分＋お手入れのお話</small></td><td class="y en">&yen;6,600</td></tr>
+      <tr><td class="n">フェイシャルエステ<small>2回目からのご案内。肌質に合わせた60分</small></td><td class="y en">&yen;9,800〜</td></tr>
+    </table>
+    <p class="small-note">表示はすべて税込です。お支払いは、現金・各種キャッシュレス決済。<br>※料金・内容は、制作サンプル用の架空のものです。</p>
+  </div>
+</div></section>
+
+<section><div class="wrap row">
+  <div class="sec-head"><div class="no en">05</div><div class="label en">ESTHETICIAN</div><h2><span class="nb">担当する</span><span class="nb">エステティシャン</span></h2></div>
+  <div class="person fade">
+    <div class="monogram en" aria-hidden="true">M</div>
+    <div>
+      <span class="role">エステティシャン ／ エステ歴9年</span>
+      <h3>高野 みさき</h3>
+      <p>はじめての方ほど、「何を聞かれるんだろう」と緊張されるものです。肌のことは、うまく説明できなくても大丈夫。普段の様子をうかがいながら、その日の内容を一緒に決めていきます。</p>
+      <p class="small-note">※スタッフの名前・経歴は、制作サンプル用の架空のものです。</p>
     </div>
   </div>
-</section>
+</div></section>
 
-<section id="gallery">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">施術例ギャラリー</span>
-      <h2>お客様の仕上がり例。</h2>
+<section class="grey"><div class="wrap row">
+  <div class="sec-head"><div class="no en">06</div><div class="label en">VOICE</div><h2>お客様の声</h2></div>
+  <div class="fade">
+    <div class="quotes">
+      <div class="quote"><p>エステは初めてで身構えていましたが、最初にゆっくり話を聞いてもらえて、安心して受けられました。帰りに何もすすめられなかったのも、うれしかったです。</p><span>30代・会社員</span></div>
+      <div class="quote"><p>肌のことを人に相談するのは初めてでした。家でのお手入れで気をつけることが分かって、毎日の洗顔が少し楽しみになりました。</p><span>40代・パート</span></div>
     </div>
-    <div class="gallery-grid">
-      <div class="gallery-item tall"><img src="img/salon-gallery1.png" alt="施術例1"></div>
-      <div class="gallery-item"><img src="img/salon-gallery2.png" alt="施術例2"></div>
-      <div class="gallery-item"><img src="img/salon-gallery3.png" alt="施術例3"></div>
-      <div class="gallery-item"><img src="img/salon-gallery4.png" alt="施術例4"></div>
-      <div class="gallery-item"><img src="img/salon-gallery5.png" alt="施術例5"></div>
-      <div class="gallery-item tall"><img src="img/salon-gallery6.png" alt="施術例6"></div>
-    </div>
+    <p class="small-note">※お客様の声は、制作サンプル用の架空のものです。</p>
   </div>
-</section>
+</div></section>
 
-<section id="beforeafter" style="background:var(--paper-deep);">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Before / After</span>
-      <h2>スライドして見比べてみてください。</h2>
-    </div>
-    <div class="ba-slider" id="ba-slider">
-      <img class="ba-before" src="img/salon-before.png" alt="施術前">
-      <img class="ba-after" src="img/salon-after.png" alt="施術後" id="ba-after-img">
-      <span class="ba-label before-l">Before</span>
-      <span class="ba-label after-l">After</span>
-      <div class="ba-handle" id="ba-handle"></div>
-    </div>
-    <p class="ba-caption">ハンドルをドラッグすると、施術前後の変化を見比べられます（画面をクリックしても動きます）</p>
+<section><div class="wrap row">
+  <div class="sec-head"><div class="no en">07</div><div class="label en">Q &amp; A</div><h2>よくある質問</h2></div>
+  <div class="faq fade">
+    <details><summary>肌が敏感なのですが、受けられますか？</summary><p>カウンセリングで肌の状態をうかがい、施術の内容をご相談します。不安な点は、ご予約のときにお伝えください。</p></details>
+    <details><summary>メイクをしたまま行ってもいいですか？</summary><p>はい。メイク落としから行いますので、そのままお越しください。</p></details>
+    <details><summary>施術のあと、メイクはできますか？</summary><p>パウダールームをご用意しています。お化粧直しの時間も、ゆっくりお使いください。</p></details>
+    <details><summary>キャンセルはできますか？</summary><p>前日の19時までに、お電話か公式LINEでご連絡ください。</p></details>
+    <details><summary>2回目は、はじめてコースを受けられますか？</summary><p>はじめてコースは、初回の方だけのご案内です。2回目からは、フェイシャルエステ（60分）をご案内しています。</p></details>
   </div>
-</section>
+</div></section>
 
-<section class="voice">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">お客様の声</span>
-      <h2>通ってくださる方々より。</h2>
-    </div>
-    <div class="voice-grid">
-      <div class="voice-card">
-        <p>「カウンセリングが本当に丁寧で、毎回安心してお任せできます。仕上がりもいつも好みぴったりです。」</p>
-        <span class="who">30代・会社員の方</span>
-      </div>
-      <div class="voice-card">
-        <p>「一人の時間にゆっくり浸れるのが贅沢です。予約が取りにくいこともありますが、それだけの価値があります。」</p>
-        <span class="who">40代・自営業の方</span>
-      </div>
-    </div>
+<section class="final" id="reserve"><div class="wrap">
+  <div class="no en">RESERVE</div>
+  <h2><span class="nb">ご予約は、</span><span class="nb">お電話か公式LINEで。</span></h2>
+  <p>ご希望の日時と「はじめてコース」とお知らせください。<br>受付　10:00〜19:00（月曜定休）</p>
+  <div class="acts">
+    <a class="btn" href="#" onclick="alert('制作サンプルのため、予約はできません。'); return false;">LINEで予約する<span class="arrow"></span></a>
+    <a class="btn line" href="#" onclick="alert('制作サンプルのため、予約はできません。'); return false;">電話で予約する<span class="arrow"></span></a>
   </div>
-</section>
+</div></section>
 
-<section id="info">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">アクセス</span>
-      <h2>ご予約について</h2>
-    </div>
-    <dl class="info-grid">
-      <dt>営業時間</dt><dd>10:00〜19:00（月曜定休）</dd>
-      <dt>場所</dt><dd>◯◯県◯◯市◯◯町 2-3-4</dd>
-      <dt>予約方法</dt><dd>お電話・公式LINEより（架空）</dd>
+<section><div class="wrap row">
+  <div class="sec-head"><div class="no en">08</div><div class="label en">SALON</div><h2>サロンの情報</h2></div>
+  <div>
+    <dl class="info">
+      <dt>営業時間</dt><dd>10:00〜19:00（最終受付 17:00）</dd>
+      <dt>定休日</dt><dd>毎週月曜日</dd>
+      <dt>住所</dt><dd>〒000-0000　◯◯県◯◯市◯◯町 2-3-4　2階（駅から歩いて5分）</dd>
+      <dt>個室</dt><dd>エステ用の個室 1室</dd>
+      <dt>駐車場</dt><dd>なし（近くにコインパーキングあり）</dd>
     </dl>
+    <div class="info-acts"><a class="btn line" href="../hp-samples/hana-salon/index.html">サロンのホームページを見る<span class="arrow"></span></a></div>
   </div>
-</section>
+</div></section>
 
-<section id="contact">
-  <div class="wrap">
-    <div class="final">
-      <h2>まずは、体験してみませんか。</h2>
-      <p>初めての方限定のカウンセリング付きコースもご用意しています。</p>
-      <a class="btn" href="#">ご予約はこちら（サンプルのためリンク先なし）</a>
-    </div>
-  </div>
-</section>
+<footer><span class="en">HANA</span>※このページは渡邊駿の制作サンプルです。架空のサロンを想定した自主制作物で、実在のお店ではありません。<br>料金・スタッフ・お客様の声も、すべて架空です。</footer>
 
-<footer>
-  ※このページは渡邊駿の制作サンプルです。架空のサロンを想定した自主制作物であり、実在の店舗ではありません。
-</footer>
+<a class="fixed-cta" href="#reserve"><span>はじめてコース　<b class="en">&yen;6,600</b></span><span>RESERVE →</span></a>
 
 <script>
-  (function () {
-    var slider = document.getElementById('ba-slider');
-    var handle = document.getElementById('ba-handle');
-    if (!slider || !handle) return;
-    var dragging = false;
-
-    function setPos(clientX) {
-      var rect = slider.getBoundingClientRect();
-      var pct = ((clientX - rect.left) / rect.width) * 100;
-      pct = Math.max(0, Math.min(100, pct));
-      slider.style.setProperty('--pos', pct + '%');
-    }
-
-    handle.addEventListener('mousedown', function () { dragging = true; });
-    window.addEventListener('mouseup', function () { dragging = false; });
-    window.addEventListener('mousemove', function (e) {
-      if (dragging) setPos(e.clientX);
-    });
-    slider.addEventListener('click', function (e) { setPos(e.clientX); });
-
-    handle.addEventListener('touchstart', function () { dragging = true; }, { passive: true });
-    window.addEventListener('touchend', function () { dragging = false; });
-    window.addEventListener('touchmove', function (e) {
-      if (dragging && e.touches[0]) setPos(e.touches[0].clientX);
-    }, { passive: true });
-  })();
+(function () {
+  // 下部の予約ボタンは、最初の画面を過ぎてから出す（予約欄が見えている間は隠す）
+  var bar = document.querySelector(".fixed-cta"), hero = document.querySelector(".hero"), fin = document.querySelector(".final");
+  function onScroll() {
+    var f = fin.getBoundingClientRect();
+    bar.classList.toggle("show", hero.getBoundingClientRect().bottom < 0 && (f.top > innerHeight || f.bottom < 0));
+  }
+  addEventListener("scroll", onScroll, { passive: true }); onScroll();
+  // ゆっくり表示
+  var els = document.querySelectorAll(".fade");
+  if (!("IntersectionObserver" in window)) { els.forEach(function (e) { e.classList.add("in"); }); return; }
+  var io = new IntersectionObserver(function (ents) {
+    ents.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
+  }, { threshold: 0.1 });
+  els.forEach(function (e) { io.observe(e); });
+})();
 </script>
-
 </body>
 </html>

@@ -3,217 +3,344 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>petite douceur（プティ・ドゥスール）｜制作サンプル・渡邊駿</title>
+<title>どうぶつパン 予約BOX｜petite douceur（制作サンプル・渡邊駿）</title>
+<meta name="description" content="誕生日会やおやつの時間に。どうぶつパンを6個入りの箱でご用意する、予約BOXのLP（架空の店舗の制作サンプル）。">
 <style>
-  :root {
-    --ink: #4A342A;
-    --ink-soft: #8A7264;
-    --paper: #FBF3EA;
-    --paper-deep: #F3E4D6;
-    --paper-card: #FFFAF4;
-    --accent: #C97B4A;
-    --accent-soft: #E0A87A;
-    --sage: #8A9A6B;
-    --line: rgba(74, 52, 42, 0.14);
-    --line-soft: rgba(74, 52, 42, 0.07);
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --ink: #F1E4D8;
-      --ink-soft: #C9B4A3;
-      --paper: #241A14;
-      --paper-deep: #2E2119;
-      --paper-card: #2A1E17;
-      --accent: #E29A66;
-      --accent-soft: #C97B4A;
-      --sage: #A3B588;
-      --line: rgba(241, 228, 216, 0.14);
-      --line-soft: rgba(241, 228, 216, 0.06);
-    }
-  }
-  * { box-sizing: border-box; margin: 0; }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--paper); color: var(--ink);
-    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
-    line-height: 1.9; -webkit-font-smoothing: antialiased; letter-spacing: 0.01em;
-  }
-  h1, h2, h3, .serif { font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif; font-weight: 600; }
-  a { color: inherit; }
-  .wrap { max-width: 820px; margin: 0 auto; padding: 0 26px; }
-  .sample-badge {
-    position: fixed; top: 14px; right: 14px; z-index: 200;
-    background: var(--ink); color: var(--paper); font-size: 11.5px; letter-spacing: 0.06em;
-    padding: 7px 14px; border-radius: 980px; text-decoration: none; opacity: 0.88;
-  }
-  .eyebrow { display: inline-flex; align-items: center; gap: 0.6em; font-size: 12.5px; letter-spacing: 0.2em; color: var(--accent); font-weight: 600; }
-  .eyebrow::before { content: ""; width: 18px; height: 1px; background: var(--accent); display: inline-block; }
+:root {
+  --ink: #43291B; --ink-soft: #6B4C3A; --paper: #FFF9EF; --paper-deep: #FFF0D2; --card: #FFFFFF;
+  --accent: #F28C45; --accent-text: #B4521A; --yellow: #FFD45C; --mint: #A7DCCB; --crust: #E6A25C;
+  color-scheme: light;
+}
+* { box-sizing: border-box; margin: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--paper); color: var(--ink); font-family: "Hiragino Maru Gothic ProN", "Hiragino Sans", "Yu Gothic", sans-serif; line-height: 1.9; letter-spacing: 0.04em; -webkit-font-smoothing: antialiased; }
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; }
+.wrap { max-width: 1000px; margin: 0 auto; padding: 0 22px; }
+.nb { display: inline-block; }
 
-  .hero { position: relative; padding: 100px 0 70px; text-align: center; background: linear-gradient(180deg, var(--paper-deep), var(--paper)); }
-  .hero .wrap { display: flex; flex-direction: column; align-items: center; }
-  .hero h1 { font-size: clamp(30px, 5.4vw, 46px); line-height: 1.7; margin: 20px 0 16px; }
-  .hero p.lede { max-width: 44ch; color: var(--ink-soft); font-size: 15.5px; margin-bottom: 30px; }
-  .hero-photo {
-    width: 100%; max-width: 640px; aspect-ratio: 16/9; border-radius: 6px;
-    background: linear-gradient(150deg, #E9D2C9, #F3E7DC);
-    display: flex; align-items: center; justify-content: center; overflow: hidden;
-    color: var(--ink-soft); font-size: 13px; letter-spacing: 0.04em;
-  }
-  .hero-photo img, .story-photo img, .menu-photo-wide img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  @media (prefers-color-scheme: dark) { .hero-photo { background: linear-gradient(150deg, #3A2C26, #26201B); } }
-  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: 980px; font-size: 14.5px; font-weight: 600; letter-spacing: 0.04em; text-decoration: none; background: var(--accent); color: #FFF9F2; margin-top: 26px; }
+/* サンプルの表示 */
+.sample-bar { background: var(--ink); color: #FFF4E2; font-size: 12px; text-align: center; padding: 7px 16px; letter-spacing: 0.04em; }
+.sample-bar a { color: #FFD45C; margin-left: 10px; }
 
-  section { padding: 70px 0; }
-  section + section { border-top: 1px solid var(--line); }
-  .section-head { text-align: center; max-width: 56ch; margin: 0 auto 40px; }
-  .section-head h2 { font-size: clamp(22px, 3vw, 28px); margin: 10px 0 0; }
+/* 上部の帯 */
+.top { background: #fff; border-bottom: 3px solid var(--ink); position: sticky; top: 0; z-index: 50; }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; gap: 12px; }
+.logo { display: flex; align-items: center; gap: 10px; font-weight: 700; text-decoration: none; font-size: 18px; white-space: nowrap; }
+.logo .mk { width: 34px; height: 34px; border-radius: 50%; background: var(--yellow); border: 2px solid var(--ink); display: grid; place-items: center; }
+.logo .mk svg { width: 22px; height: 22px; }
+.logo small { display: block; font-size: 10.5px; color: var(--ink-soft); letter-spacing: 0.1em; line-height: 1.2; font-weight: 400; }
 
-  .story { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-  .story-photo { aspect-ratio: 4/3; border-radius: 6px; background: linear-gradient(150deg, #DCE2D2, #F3E7DC); }
-  @media (prefers-color-scheme: dark) { .story-photo { background: linear-gradient(150deg, #332821, #26201B); } }
-  .story p { font-size: 15px; color: var(--ink-soft); margin: 0 0 14px; }
-  .story .signoff { margin-top: 18px; font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 14px; }
+/* ボタン */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 26px; border-radius: 999px; border: 3px solid var(--ink); background: var(--accent); color: #3A1F10; font-weight: 700; text-decoration: none; box-shadow: 4px 4px 0 var(--ink); transition: transform .15s, box-shadow .15s; font-size: 15px; cursor: pointer; font-family: inherit; }
+.btn:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--ink); }
+.btn.white { background: #fff; }
+.btn.small { padding: 7px 18px; font-size: 13.5px; box-shadow: 3px 3px 0 var(--ink); }
+.btn-row { display: flex; flex-wrap: wrap; gap: 14px; }
 
-  .menu-photo-wide { width: 100%; aspect-ratio: 16/10; border-radius: 6px; overflow: hidden; margin-bottom: 30px; background: linear-gradient(150deg, #EAD9C4, #F5EDE0); }
-  @media (prefers-color-scheme: dark) { .menu-photo-wide { background: linear-gradient(150deg, #362B1E, #26201A); } }
-  .menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  .menu-card { background: var(--paper-card); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
-  .menu-body { padding: 18px 18px 20px; }
-  .menu-body h3 { font-size: 16px; margin: 0 0 6px; }
-  .menu-body p { font-size: 13px; color: var(--ink-soft); margin: 0; }
-  .menu-body .price { display: block; margin-top: 8px; font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; color: var(--accent); font-size: 15px; }
+/* 見出し */
+.head { text-align: center; margin-bottom: 40px; }
+.tag { display: inline-block; background: var(--yellow); border: 2px solid var(--ink); padding: 2px 16px; border-radius: 999px; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; }
+.head h2 { font-size: clamp(23px, 3.4vw, 32px); line-height: 1.6; margin-top: 14px; }
+.head h2 .mark { background: linear-gradient(transparent 62%, var(--yellow) 62%); padding: 0 4px; }
+.head p { color: var(--ink-soft); margin-top: 10px; font-size: 15px; }
+section { padding: 84px 0; position: relative; }
+section.alt { background-color: var(--paper-deep); background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22140%22%20height%3D%22140%22%3E%3Cg%20transform%3D%22translate%2836%2030%29%20rotate%28-18%2032%2032%29%20scale%280.9%29%22%20fill%3D%22none%22%20stroke%3D%22%23F28C45%22%20stroke-opacity%3D%220.22%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M32%2061V13%22/%3E%3Cpath%20d%3D%22M32%2015C29.5%2011%2030%206%2032%203C34%206%2034.5%2011%2032%2015%22/%3E%3Cpath%20d%3D%22M32%2054C38%2052%2042%2048%2044%2043%22/%3E%3Cpath%20d%3D%22M32%2025%20C25%2024%2022%2018%2023%2013%20C29%2014%2032%2019%2032%2025%22/%3E%3Cpath%20d%3D%22M32%2025%20C39%2024%2042%2018%2041%2013%20C35%2014%2032%2019%2032%2025%22/%3E%3Cpath%20d%3D%22M32%2033%20C25%2032%2022%2026%2023%2021%20C29%2022%2032%2027%2032%2033%22/%3E%3Cpath%20d%3D%22M32%2033%20C39%2032%2042%2026%2041%2021%20C35%2022%2032%2027%2032%2033%22/%3E%3Cpath%20d%3D%22M32%2041%20C25%2040%2022%2034%2023%2029%20C29%2030%2032%2035%2032%2041%22/%3E%3Cpath%20d%3D%22M32%2041%20C39%2040%2042%2034%2041%2029%20C35%2030%2032%2035%2032%2041%22/%3E%3Cpath%20d%3D%22M32%2049%20C25%2048%2022%2042%2023%2037%20C29%2038%2032%2043%2032%2049%22/%3E%3Cpath%20d%3D%22M32%2049%20C39%2048%2042%2042%2041%2037%20C35%2038%2032%2043%2032%2049%22/%3E%3C/g%3E%3C/svg%3E"); background-size: 140px 140px; }
+section.alt::before, section.alt::after { content: ""; position: absolute; left: 0; right: 0; height: 14px; background-size: 28px 14px; background-repeat: repeat-x; }
+section.alt::before { top: 0; background-image: radial-gradient(circle at 50% 0, var(--paper) 13px, transparent 13.5px); }
+section.alt::after { bottom: 0; background-image: radial-gradient(circle at 50% 100%, var(--paper) 13px, transparent 13.5px); }
 
-  .voice { background: var(--paper-deep); }
-  .voice-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-  .voice-card { background: var(--paper-card); border-radius: 6px; padding: 24px 22px; border-left: 3px solid var(--accent); }
-  .voice-card p { font-size: 14px; color: var(--ink-soft); margin: 0 0 10px; }
-  .voice-card .who { font-size: 12.5px; color: var(--ink); }
+/* ファーストビュー */
+.hero { padding: 56px 0 90px; background: radial-gradient(circle, rgba(242,140,69,.16) 2.5px, transparent 3px) 0 0 / 26px 26px, linear-gradient(180deg, #FFE7B8, var(--paper)); overflow: hidden; }
+.hero .wrap { display: grid; grid-template-columns: 1.12fr 1fr; gap: 34px; align-items: center; }
+.loaf { position: relative; background: #FFF8EA; border: 3px solid var(--ink); border-radius: 46% 46% 30px 30px / 110px 110px 30px 30px; box-shadow: inset 0 0 0 11px var(--crust), inset 0 0 0 13px rgba(67,41,27,.35), 10px 10px 0 var(--accent); padding: 72px 42px 40px; text-align: center; }
+.hero h1 { font-size: clamp(24px, 3vw, 34px); line-height: 1.55; margin: 16px 0 14px; }
+.hero h1 .em { color: var(--accent-text); }
+.hero .lede { color: var(--ink-soft); font-size: 15px; max-width: 30em; margin: 0 auto; }
+.price-chip { white-space: nowrap; display: inline-flex; align-items: baseline; gap: 8px; margin: 20px 0 22px; background: var(--yellow); border: 2px solid var(--ink); border-radius: 14px; padding: 6px 18px; font-weight: 700; }
+.price-chip b { font-size: 26px; letter-spacing: 0.02em; }
+.hero .btn-row { justify-content: center; }
+.sticker { position: absolute; top: 14px; right: -34px; width: 104px; height: 104px; border-radius: 50%; background: var(--mint); border: 3px solid var(--ink); display: grid; place-items: center; text-align: center; font-size: 13px; font-weight: 700; line-height: 1.45; transform: rotate(10deg); }
+.parade { position: relative; aspect-ratio: 1 / 0.92; }
+.parade .plate { position: absolute; left: 4%; right: 4%; bottom: 4%; height: 34%; background: #C98A4B; border: 3px solid var(--ink); border-radius: 50%; box-shadow: inset 0 -12px 0 rgba(0,0,0,.12), 0 10px 0 rgba(67,41,27,.15); }
+.parade svg { position: absolute; width: 46%; animation: hop 3.2s ease-in-out infinite; }
+.parade .a1 { left: 0; top: 26%; }
+.parade .a2 { left: 54%; top: 22%; animation-delay: .4s; }
+.parade .a3 { left: 28%; top: 0; width: 42%; animation-delay: .8s; }
+.parade .a4 { left: 27%; top: 52%; width: 48%; animation-delay: 1.2s; }
+@keyframes hop { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-8px) rotate(-3deg); } }
+@media (prefers-reduced-motion: reduce) { .parade svg { animation: none; } }
 
-  .info-grid { display: grid; grid-template-columns: 120px 1fr; gap: 12px 20px; max-width: 480px; margin: 0 auto; font-size: 14.5px; }
-  .info-grid dt { color: var(--accent); font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; }
-  .info-grid dd { margin: 0; color: var(--ink-soft); }
+/* 悩み */
+.bubbles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.bubble { position: relative; background: #fff; border: 3px solid var(--ink); border-radius: 26px; padding: 24px 22px; font-weight: 700; font-size: 15.5px; line-height: 1.75; box-shadow: 5px 5px 0 var(--ink); }
+.bubble::after { content: ""; position: absolute; left: 34px; bottom: -17px; width: 24px; height: 24px; background: #fff; border-right: 3px solid var(--ink); border-bottom: 3px solid var(--ink); transform: skewY(30deg) rotate(10deg); }
+.bubble:nth-child(2) { transform: translateY(16px); }
+.answer { text-align: center; margin-top: 64px; }
+.answer .arrow { width: 0; height: 0; margin: 0 auto 18px; border-left: 22px solid transparent; border-right: 22px solid transparent; border-top: 22px solid var(--accent); }
+.answer p { font-size: clamp(20px, 3vw, 26px); font-weight: 700; }
+.answer p .mark { background: linear-gradient(transparent 62%, var(--yellow) 62%); }
 
-  .final { text-align: center; background: var(--ink); color: var(--paper); border-radius: 8px; padding: 56px 40px; }
-  .final h2 { color: inherit; font-size: clamp(22px, 3vw, 28px); margin: 0 0 14px; }
-  .final p { opacity: 0.82; font-size: 14.5px; margin: 0 auto; max-width: 44ch; }
-  .final .btn { background: var(--accent); color: #241A14; }
+/* 箱の中身 */
+.box-wrap { display: grid; grid-template-columns: 1.15fr 1fr; gap: 40px; align-items: center; }
+.box-art { width: 100%; height: auto; }
+.box-copy h3 { font-size: 22px; line-height: 1.6; margin-bottom: 12px; }
+.box-copy p { color: var(--ink-soft); font-size: 15px; margin-bottom: 12px; }
+.pans { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 56px; }
+.pan { background: #fff; border: 3px solid var(--ink); border-radius: 50% 50% 22px 22px / 60px 60px 22px 22px; overflow: hidden; box-shadow: 5px 5px 0 var(--ink); text-align: center; padding-bottom: 18px; }
+.pan-art { background: radial-gradient(circle at 50% 60%, #FFF3D9 0, #FFE2B0 70%); border-bottom: 2px solid var(--ink); padding: 20px 16px 10px; margin-bottom: 14px; }
+.pan-art svg { width: 82%; margin: 0 auto; transition: transform .25s; }
+.pan:hover .pan-art svg { transform: rotate(-6deg) scale(1.04); }
+.pan h3 { font-size: 16px; padding: 0 12px; word-break: keep-all; }
+.pan p { font-size: 13px; color: var(--ink-soft); padding: 4px 14px 0; line-height: 1.75; }
+.note { font-size: 12.5px; color: var(--ink-soft); text-align: center; margin-top: 22px; }
 
-  footer { padding: 30px 0 50px; text-align: center; font-size: 12px; color: var(--ink-soft); }
+/* 途中のボタン帯 */
+.cta-strip { background: var(--accent); border-top: 3px solid var(--ink); border-bottom: 3px solid var(--ink); padding: 26px 0; }
+.cta-strip .wrap { display: flex; align-items: center; justify-content: center; gap: 22px; flex-wrap: wrap; text-align: center; }
+.cta-strip p { font-weight: 700; font-size: 17px; color: #3A1F10; }
 
-  @media (max-width: 700px) {
-    .story { grid-template-columns: 1fr; }
-    .menu-grid { grid-template-columns: 1fr 1fr; }
-    .voice-grid { grid-template-columns: 1fr; }
-  }
+/* こだわり */
+.points { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.point { background: #fff; border: 3px solid var(--ink); border-radius: 90px 90px 22px 22px / 46px 46px 22px 22px; padding: 34px 24px 26px; box-shadow: 6px 6px 0 var(--ink); text-align: center; }
+.point .no { display: inline-grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; background: var(--accent); border: 2px solid var(--ink); font-weight: 700; margin-bottom: 10px; }
+.point h3 { font-size: 18px; margin-bottom: 8px; }
+.point p { font-size: 14px; color: var(--ink-soft); text-align: left; }
+
+/* 予約の流れ */
+.flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 34px; counter-reset: s; }
+.step { position: relative; background: #fff; border: 3px solid var(--ink); border-radius: 22px; padding: 46px 22px 24px; box-shadow: 5px 5px 0 var(--ink); }
+.step::before { counter-increment: s; content: "STEP " counter(s); position: absolute; top: -18px; left: 50%; transform: translateX(-50%); background: var(--yellow); border: 3px solid var(--ink); border-radius: 999px; padding: 2px 16px; font-weight: 700; font-size: 14px; white-space: nowrap; }
+.step:not(:last-child)::after { content: ""; position: absolute; right: -30px; top: 50%; border-top: 14px solid transparent; border-bottom: 14px solid transparent; border-left: 16px solid var(--accent); transform: translateY(-50%); }
+.step h3 { font-size: 18px; text-align: center; margin-bottom: 8px; }
+.step p { font-size: 14px; color: var(--ink-soft); }
+
+/* 料金 */
+.prices { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; max-width: 720px; margin: 0 auto; }
+.price-card { background: #fff; border: 3px solid var(--ink); border-radius: 24px; padding: 28px 24px; text-align: center; box-shadow: 6px 6px 0 var(--accent); }
+.price-card .size { font-weight: 700; font-size: 17px; }
+.price-card .yen { font-size: 40px; font-weight: 700; line-height: 1.4; margin: 6px 0 2px; }
+.price-card .yen small { font-size: 15px; margin-left: 4px; }
+.price-card p { font-size: 13.5px; color: var(--ink-soft); }
+.price-card.pop { box-shadow: 6px 6px 0 var(--yellow); }
+
+/* お客様の声 */
+.voices { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; }
+.voice { display: grid; grid-template-columns: 74px 1fr; gap: 16px; align-items: start; }
+.voice .face { width: 74px; height: 74px; border-radius: 50%; background: #FFE2B0; border: 3px solid var(--ink); padding: 6px; }
+.voice .say { background: #fff; border: 3px solid var(--ink); border-radius: 22px; padding: 18px 20px; font-size: 14.5px; box-shadow: 4px 4px 0 var(--ink); }
+.voice .who { display: block; margin-top: 8px; font-size: 12.5px; color: var(--ink-soft); }
+
+/* よくある質問：黒板 */
+.board { max-width: 800px; margin: 0 auto; background: #33433A; border: 12px solid #B57B48; border-radius: 12px; box-shadow: inset 0 0 0 2px rgba(0,0,0,.25), 6px 6px 0 var(--ink); padding: 10px 30px; color: #F5F0E4; }
+.board details { border-bottom: 2px dashed rgba(255,255,255,.22); padding: 16px 0; }
+.board details:last-child { border-bottom: none; }
+.board summary { cursor: pointer; font-weight: 700; list-style: none; display: flex; gap: 12px; }
+.board summary::-webkit-details-marker { display: none; }
+.board summary::before { content: "Q"; color: var(--yellow); }
+.board summary::after { content: "＋"; margin-left: auto; color: var(--yellow); }
+.board details[open] summary::after { content: "−"; }
+.board details p { margin-top: 8px; padding-left: 26px; font-size: 14.5px; color: #E4DED0; }
+
+/* 最後の案内：かまど */
+.oven { position: relative; background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2264%22%20height%3D%2232%22%3E%3Crect%20width%3D%2264%22%20height%3D%2232%22%20fill%3D%22%23C9693F%22/%3E%3Crect%20x%3D%222%22%20y%3D%222%22%20width%3D%2228%22%20height%3D%2212%22%20fill%3D%22%23D2774A%22/%3E%3Crect%20x%3D%2234%22%20y%3D%2218%22%20width%3D%2228%22%20height%3D%2212%22%20fill%3D%22%23BF6038%22/%3E%3Cpath%20d%3D%22M0%201H64M0%2017H64M32%201V17M0%2017V32M64%2017V32M16%2017%22%20stroke%3D%22%238E3F22%22%20stroke-width%3D%222.4%22/%3E%3C/svg%3E"); background-size: 64px 32px; border: 3px solid var(--ink); border-radius: 50% 50% 24px 24px / 150px 150px 24px 24px; padding: 46px 34px 0; box-shadow: 8px 8px 0 var(--ink); text-align: center; }
+.oven::before { content: ""; position: absolute; top: -34px; right: 18%; width: 46px; height: 64px; background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2264%22%20height%3D%2232%22%3E%3Crect%20width%3D%2264%22%20height%3D%2232%22%20fill%3D%22%23C9693F%22/%3E%3Crect%20x%3D%222%22%20y%3D%222%22%20width%3D%2228%22%20height%3D%2212%22%20fill%3D%22%23D2774A%22/%3E%3Crect%20x%3D%2234%22%20y%3D%2218%22%20width%3D%2228%22%20height%3D%2212%22%20fill%3D%22%23BF6038%22/%3E%3Cpath%20d%3D%22M0%201H64M0%2017H64M32%201V17M0%2017V32M64%2017V32M16%2017%22%20stroke%3D%22%238E3F22%22%20stroke-width%3D%222.4%22/%3E%3C/svg%3E"); background-size: 64px 32px; border: 3px solid var(--ink); border-bottom: none; border-radius: 6px 6px 0 0; z-index: -1; }
+.oven-mouth { background: radial-gradient(ellipse at 50% 115%, #FFB547 0%, #FFD98A 34%, #FFF4DE 70%); border: 3px solid var(--ink); border-bottom: none; border-radius: 50% 50% 0 0 / 130px 130px 0 0; max-width: 680px; margin: 0 auto; padding: 64px 30px 46px; }
+.oven-mouth h2 { font-size: clamp(22px, 3.2vw, 30px); line-height: 1.6; }
+.oven-mouth p { color: var(--ink-soft); margin: 10px 0 24px; }
+.oven-mouth .btn-row { justify-content: center; }
+
+/* お店の情報 */
+.shop { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: center; }
+.shop .photo { border: 3px solid var(--ink); border-radius: 26px; overflow: hidden; box-shadow: 8px 8px 0 var(--yellow); }
+.shop .photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.shop dl { display: grid; grid-template-columns: 96px 1fr; font-size: 14.5px; border-top: 3px solid var(--ink); }
+.shop dt, .shop dd { padding: 11px 4px; border-bottom: 2px dashed rgba(67,41,27,.22); }
+.shop dt { font-weight: 700; }
+.shop dd { color: var(--ink-soft); }
+.shop .btn { margin-top: 22px; }
+
+footer { background: var(--ink); color: #F1E2CF; text-align: center; padding: 34px 20px 110px; font-size: 12.5px; }
+footer b { display: block; font-size: 17px; margin-bottom: 6px; color: #fff; }
+
+/* スマホ下部の予約ボタン */
+.fixed-cta { position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 60; display: none; transform: translateY(140%); transition: transform .3s; }
+.fixed-cta.show { transform: none; }
+.fixed-cta .btn { width: 100%; }
+
+@media (max-width: 860px) {
+  .hero .wrap, .box-wrap, .shop { grid-template-columns: 1fr; }
+  .parade { max-width: 420px; width: 100%; margin: 0 auto; }
+  .pans { grid-template-columns: repeat(2, 1fr); }
+  .bubbles, .points, .flow, .voices, .prices { grid-template-columns: 1fr; }
+  .bubble:nth-child(2) { transform: none; }
+  .flow { gap: 40px; }
+  .step:not(:last-child)::after { right: auto; left: 50%; top: auto; bottom: -32px; transform: translateX(-50%); border-left: 14px solid transparent; border-right: 14px solid transparent; border-top: 16px solid var(--accent); border-bottom: 0; }
+}
+@media (max-width: 600px) {
+  section { padding: 64px 0; }
+  .top .btn { display: none; }
+  .loaf { border-radius: 46% 46% 24px 24px / 80px 80px 24px 24px; padding: 60px 20px 28px; box-shadow: inset 0 0 0 9px var(--crust), inset 0 0 0 11px rgba(67,41,27,.35), 6px 6px 0 var(--accent); }
+  .price-chip { padding: 6px 14px; font-size: 13px; }
+  .price-chip b { font-size: 22px; }
+  .sticker { width: 84px; height: 84px; font-size: 11px; top: -30px; right: -4px; }
+  .hero { padding-top: 46px; }
+  .pans { gap: 12px; }
+  .pan h3 { font-size: 13px; letter-spacing: 0; padding: 0 6px; }
+  .oven-mouth h2 { font-size: 20px; }
+  .cta-strip p { font-size: 15.5px; }
+  .pan p { font-size: 12px; padding: 4px 10px 0; }
+  .board { padding: 6px 18px; border-width: 9px; }
+  .oven { border-radius: 50% 50% 20px 20px / 90px 90px 20px 20px; padding: 34px 14px 0; }
+  .oven-mouth { border-radius: 50% 50% 0 0 / 80px 80px 0 0; padding: 50px 16px 34px; }
+  .voice { grid-template-columns: 56px 1fr; }
+  .voice .face { width: 56px; height: 56px; }
+  .fixed-cta { display: block; }
+}
 </style>
 </head>
 <body>
 
-<a class="sample-badge" href="index.html">← サンプル集へ戻る</a>
+<div class="sample-bar">SAMPLE LP — 架空の店舗を想定した、渡邊駿の自主制作サンプルです。<a href="index.html">← サンプル集へ</a></div>
 
-<header class="hero">
-  <div class="wrap">
-    <span class="eyebrow">SAMPLE LP — petite douceur</span>
-    <h1>今日も、小さな窯から。<br />ゆっくり、丁寧に。</h1>
-    <p class="lede">家族3人で営む、町の小さな焼き菓子店。毎朝5時から仕込む、変わらない味をお届けします。</p>
-    <div class="hero-photo"><img src="img/bakery-hero.png" alt="お店の外観とショーケースに並ぶ焼き菓子"></div>
-    <a class="btn" href="#story">お店の話を読む</a>
-  </div>
-</header>
+<header class="top"><div class="wrap">
+  <a class="logo" href="#"><span class="mk"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M32 61V13"/><path d="M32 15C29.5 11 30 6 32 3C34 6 34.5 11 32 15"/><path d="M32 54C38 52 42 48 44 43"/><path d="M32 25 C25 24 22 18 23 13 C29 14 32 19 32 25"/><path d="M32 25 C39 24 42 18 41 13 C35 14 32 19 32 25"/><path d="M32 33 C25 32 22 26 23 21 C29 22 32 27 32 33"/><path d="M32 33 C39 32 42 26 41 21 C35 22 32 27 32 33"/><path d="M32 41 C25 40 22 34 23 29 C29 30 32 35 32 41"/><path d="M32 41 C39 40 42 34 41 29 C35 30 32 35 32 41"/><path d="M32 49 C25 48 22 42 23 37 C29 38 32 43 32 49"/><path d="M32 49 C39 48 42 42 41 37 C35 38 32 43 32 49"/></svg></span><span>petite douceur<small>焼き菓子とパンの店</small></span></a>
+  <a class="btn small" href="#reserve">予約する</a>
+</div></header>
 
-<section id="story">
-  <div class="wrap story">
-    <div class="story-photo"><img src="img/bakery-kitchen.png" alt="厨房で仕込みをする様子"></div>
-    <div>
-      <span class="eyebrow">お店について</span>
-      <h2>「毎日食べても飽きない」を、<br />いちばん大事にしています。</h2>
-      <p>祖母の代から受け継いだレシピを、少しずつ今の味に整えながら焼いています。特別な日のためのお菓子ではなく、「今日も食べたいな」と思ってもらえる、日常のおやつでありたい。</p>
-      <p>使う材料はできるだけシンプルに。近所の牛乳屋さんの牛乳、地元の農家さんの卵。派手さはありませんが、毎日通いたくなるお店を、家族3人でこつこつ続けています。</p>
-      <p class="signoff">petite douceur（プティ・ドゥスール）より</p>
+<section class="hero"><div class="wrap">
+  <div class="loaf">
+    <span class="sticker" aria-hidden="true">受け取りの<br>3日前まで<br>予約OK</span>
+    <span class="tag">どうぶつパン 予約BOX</span>
+    <h1><span class="nb">お誕生日のテーブルに、</span><br><span class="nb"><span class="em">どうぶつたち</span>を。</span></h1>
+    <p class="lede">くま、ねこ、ひよこ、かめ。手のひらサイズのどうぶつパンを、6個入りの箱でご用意します。お誕生日会や、みんなで集まるおやつの時間に。</p>
+    <div class="price-chip">6個入り <b>1,380円</b>（税込）</div>
+    <div class="btn-row">
+      <a class="btn" href="#reserve">予約のしかたを見る</a>
+      <a class="btn white" href="#box">箱の中身を見る</a>
     </div>
   </div>
-</section>
+  <div class="parade" aria-hidden="true">
+    <div class="plate"></div>
+    <svg class="a3" viewBox="0 0 160 140" role="img" aria-label="ひよこの形のメロンパンのイラスト" stroke="#43291B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><defs><clipPath id="clip-chick-13"><circle cx="80" cy="82" r="52"/></clipPath></defs><path d="M76 32q0-14 8-18M82 31q6-11 15-10" fill="none"/><path d="M30 92q-12-4-10-20M130 92q12-4 10-20" fill="#F7D364"/><circle cx="80" cy="82" r="52" fill="#F7D364"/><g clip-path="url(#clip-chick-13)" stroke="#D49A2E" stroke-width="2" fill="none" opacity=".75"><path d="M-120 20L10 150M10 20L-120 150"/><path d="M-101 20L29 150M29 20L-101 150"/><path d="M-82 20L48 150M48 20L-82 150"/><path d="M-63 20L67 150M67 20L-63 150"/><path d="M-44 20L86 150M86 20L-44 150"/><path d="M-25 20L105 150M105 20L-25 150"/><path d="M-6 20L124 150M124 20L-6 150"/><path d="M13 20L143 150M143 20L13 150"/><path d="M32 20L162 150M162 20L32 150"/><path d="M51 20L181 150M181 20L51 150"/><path d="M70 20L200 150M200 20L70 150"/><path d="M89 20L219 150M219 20L89 150"/><path d="M108 20L238 150M238 20L108 150"/><path d="M127 20L257 150M257 20L127 150"/><path d="M146 20L276 150M276 20L146 150"/><path d="M165 20L295 150M295 20L165 150"/></g><circle cx="80" cy="82" r="52" fill="none"/><circle cx="63" cy="78" r="5.5" fill="#43291B" stroke="none"/><circle cx="97" cy="78" r="5.5" fill="#43291B" stroke="none"/><path d="M70 90L80 85L90 90L80 99Z" fill="#F28C45" stroke-width="2.5"/><circle cx="52" cy="94" r="7" fill="#F29C8A" opacity=".55" stroke="none"/><circle cx="108" cy="94" r="7" fill="#F29C8A" opacity=".55" stroke="none"/></svg><svg class="a1" viewBox="0 0 160 140" role="img" aria-label="くまの形のパンのイラスト" stroke="#43291B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="40" cy="42" r="19" fill="#C98A4B"/><circle cx="120" cy="42" r="19" fill="#C98A4B"/><circle cx="40" cy="42" r="8" fill="#7A4520" stroke="none"/><circle cx="120" cy="42" r="8" fill="#7A4520" stroke="none"/><circle cx="80" cy="80" r="52" fill="#C98A4B"/><ellipse cx="58" cy="52" rx="15" ry="7" fill="#fff" opacity=".28" stroke="none" transform="rotate(-28 58 52)"/><circle cx="61" cy="76" r="5.5" fill="#43291B" stroke="none"/><circle cx="99" cy="76" r="5.5" fill="#43291B" stroke="none"/><ellipse cx="80" cy="98" rx="20" ry="15" fill="#F3D3A0"/><ellipse cx="80" cy="91" rx="6.5" ry="4.5" fill="#43291B" stroke="none"/><path d="M80 95v6M72 103q8 6 16 0" fill="none" stroke-width="2.5"/><circle cx="50" cy="92" r="7" fill="#F29C8A" opacity=".55" stroke="none"/><circle cx="110" cy="92" r="7" fill="#F29C8A" opacity=".55" stroke="none"/></svg><svg class="a2" viewBox="0 0 160 140" role="img" aria-label="ねこの形のパンのイラスト" stroke="#43291B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M32 70L36 22L72 46Z" fill="#EDB96F"/><path d="M128 70L124 22L88 46Z" fill="#EDB96F"/><path d="M42 54L44 36L60 47Z" fill="#F29C8A" stroke="none"/><path d="M118 54L116 36L100 47Z" fill="#F29C8A" stroke="none"/><ellipse cx="80" cy="86" rx="56" ry="44" fill="#EDB96F"/><ellipse cx="56" cy="60" rx="14" ry="6" fill="#fff" opacity=".3" stroke="none" transform="rotate(-20 56 60)"/><path d="M52 82q8-9 16 0M92 82q8-9 16 0" fill="none"/><path d="M75 91h10l-5 6z" fill="#E07A6A" stroke-width="2"/><path d="M80 97q-5 7-11 2M80 97q5 7 11 2" fill="none" stroke-width="2.5"/><path d="M26 90h18M28 101l16-4M134 90h-18M132 101l-16-4" stroke-width="2"/><circle cx="52" cy="96" r="7" fill="#F29C8A" opacity=".55" stroke="none"/><circle cx="108" cy="96" r="7" fill="#F29C8A" opacity=".55" stroke="none"/></svg><svg class="a4" viewBox="0 0 160 140" role="img" aria-label="かめの形のメロンパンのイラスト" stroke="#43291B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><defs><clipPath id="clip-turtle-14"><ellipse cx="72" cy="80" rx="54" ry="40"/></clipPath></defs><ellipse cx="40" cy="114" rx="13" ry="9" fill="#E3A85A"/><ellipse cx="104" cy="114" rx="13" ry="9" fill="#E3A85A"/><path d="M20 84l-12 4 12 5" fill="#E3A85A"/><circle cx="134" cy="72" r="19" fill="#E3A85A"/><ellipse cx="72" cy="80" rx="54" ry="40" fill="#F2C46B"/><g clip-path="url(#clip-turtle-14)" stroke="#D49A2E" stroke-width="2" fill="none" opacity=".75"><path d="M-120 20L10 150M10 20L-120 150"/><path d="M-101 20L29 150M29 20L-101 150"/><path d="M-82 20L48 150M48 20L-82 150"/><path d="M-63 20L67 150M67 20L-63 150"/><path d="M-44 20L86 150M86 20L-44 150"/><path d="M-25 20L105 150M105 20L-25 150"/><path d="M-6 20L124 150M124 20L-6 150"/><path d="M13 20L143 150M143 20L13 150"/><path d="M32 20L162 150M162 20L32 150"/><path d="M51 20L181 150M181 20L51 150"/><path d="M70 20L200 150M200 20L70 150"/><path d="M89 20L219 150M219 20L89 150"/><path d="M108 20L238 150M238 20L108 150"/><path d="M127 20L257 150M257 20L127 150"/><path d="M146 20L276 150M276 20L146 150"/><path d="M165 20L295 150M295 20L165 150"/></g><ellipse cx="72" cy="80" rx="54" ry="40" fill="none"/><circle cx="140" cy="67" r="4" fill="#43291B" stroke="none"/><path d="M135 79q5 4 10-1" fill="none" stroke-width="2.5"/><circle cx="146" cy="76" r="4.5" fill="#F29C8A" opacity=".55" stroke="none"/></svg>
+  </div>
+</div></section>
 
-<section id="menu">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">人気のお菓子</span>
-      <h2>定番の3つです。</h2>
+<section><div class="wrap">
+  <div class="head"><span class="tag">こんなこと、ありませんか？</span><h2><span class="nb">集まりのおやつ、</span><span class="nb">毎回ちょっと迷う。</span></h2></div>
+  <div class="bubbles">
+    <p class="bubble">誕生日会のおやつが、毎年同じになってしまう。</p>
+    <p class="bubble">ホールケーキだと、小さい子は食べきれない。</p>
+    <p class="bubble">切り分けずに、ひとり1個ずつ配れるものがいい。</p>
+  </div>
+  <div class="answer"><div class="arrow"></div><p><span class="nb">そんなときに、</span><span class="nb mark">どうぶつパンの箱</span><span class="nb">を。</span></p></div>
+</div></section>
+
+<section class="alt" id="box"><div class="wrap">
+  <div class="head"><span class="tag">箱の中身</span><h2><span class="nb">ふたを開けたら、</span><span class="nb">まず「どれにする？」から。</span></h2></div>
+  <div class="box-wrap">
+    <svg class="box-art" viewBox="0 0 560 360" role="img" aria-label="どうぶつパンが6個入った箱を、上から見たイラスト"><rect x="14" y="26" width="532" height="320" rx="26" fill="#E6B474" stroke="#43291B" stroke-width="4"/><rect x="30" y="42" width="500" height="288" rx="18" fill="#F3D3A0" stroke="#B9844A" stroke-width="2"/><rect x="40" y="52" width="160" height="140" rx="16" fill="#FFF6E2" stroke="#C99A5E" stroke-width="2"/><svg x="45" y="56" width="150" height="131" viewBox="0 0 160 140" role="img" aria-label="くまの形のパンのイラスト" stroke="#43291B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="40" cy="42" r="19" fill="#C98A4B"/><circle cx="120" cy="42" r="19" fill="#C98A4B"/><circle cx="40" cy="42" r="8" fill="#7A4520" stroke="none"/><circle cx="120" cy="42" r="8" fill="#7A4520" stroke="none"/><circle cx="80" cy="80" r="52" fill="#C98A4B"/><ellipse cx="58" cy="52" rx="15" ry="7" fill="#fff" opacity=".28" stroke="none" transform="rotate(-28 58 52)"/><circle cx="61" cy="76" r="5.5" fill="#43291B" stroke="none"/><circle cx="99" cy="76" r="5.5" fill="#43291B" stroke="none"/><ellipse cx="80" cy="98" rx="20" ry="15" fill="#F3D3A0"/><ellipse cx="80" cy="91" rx="6.5" ry="4.5" fill="#43291B" stroke="none"/><path d="M80 95v6M72 103q8 6 16 0" fill="none" stroke-width="2.5"/><circle cx="50" cy="92" r="7" fill="#F29C8A" opacity=".55" stroke="none"/><circle cx="110" cy="92" r="7" fill="#F29C8A" opacity=".55" stroke="none"/></svg><rect x="200" y="52" width="160" height="140" rx="16" fill="#FFF6E2" stroke="#C99A5E" stroke-width="2"/><svg x="205" y="56" width="150" height="131" viewBox="0 0 160 140" role="img" aria-label="ひよこの形のメロンパンのイラスト" stroke="#43291B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><defs><clipPath id="clip-chick-2"><circle cx="80" cy="82" r="52"/></clipPath></defs><path d="M76 32q0-14 8-18M82 31q6-11 15-10" fill="none"/><path d="M30 92q-12-4-10-20M130 92q12-4 10-20" fill="#F7D364"/><circle cx="80" cy="82" r="52" fill="#F7D364"/><g clip-path="url(#clip-chick-2)" stroke="#D49A2E" stroke-width="2" fill="none" opacity=".75"><path d="M-120 20L10 150M10 20L-120 150"/><path d="M-101 20L29 150M29 20L-101 150"/><path d="M-82 20L48 150M48 20L-82 150"/><path d="M-63 20L67 150M67 20L-63 150"/><path d="M-44 20L86 150M86 20L-44 150"/><path d="M-25 20L105 150M105 20L-25 150"/><path d="M-6 20L124 150M124 20L-6 150"/><path d="M13 20L143 150M143 20L13 150"/><path d="M32 20L162 150M162 20L32 150"/><path d="M51 20L181 150M181 20L51 150"/><path d="M70 20L200 150M200 20L70 150"/><path d="M89 20L219 150M219 20L89 150"/><path d="M108 20L238 150M238 20L108 150"/><path d="M127 20L257 150M257 20L127 150"/><path d="M146 20L276 150M276 20L146 150"/><path d="M165 20L295 150M295 20L165 150"/></g><circle cx="80" cy="82" r="52" fill="none"/><circle cx="63" cy="78" r="5.5" fill="#43291B" stroke="none"/><circle cx="97" cy="78" r="5.5" fill="#43291B" stroke="none"/><path d="M70 90L80 85L90 90L80 99Z" fill="#F28C45" stroke-width="2.5"/><circle cx="52" cy="94" r="7" fill="#F29C8A" opacity=".55" stroke="none"/><circle cx="108" cy="94" r="7" fill="#F29C8A" opacity=".55" stroke="none"/></svg><rect x="360" y="52" width="160" height="140" rx="16" fill="#FFF6E2" stroke="#C99A5E" stroke-width="2"/><svg x="365" y="56" width="150" height="131" viewBox="0 0 160 140" role="img" aria-label="ねこの形のパンのイラスト" stroke="#43291B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M32 70L36 22L72 46Z" fill="#EDB96F"/><path d="M128 70L124 22L88 46Z" fill="#EDB96F"/><path d="M42 54L44 36L60 47Z" fill="#F29C8A" stroke="none"/><path d="M118 54L116 36L100 47Z" fill="#F29C8A" stroke="none"/><ellipse cx="80" cy="86" rx="56" ry="44" fill="#EDB96F"/><ellipse cx="56" cy="60" rx="14" ry="6" fill="#fff" opacity=".3" stroke="none" transform="rotate(-20 56 60)"/><path d="M52 82q8-9 16 0M92 82q8-9 16 0" fill="none"/><path d="M75 91h10l-5 6z" fill="#E07A6A" stroke-width="2"/><path d="M80 97q-5 7-11 2M80 97q5 7 11 2" fill="none" stroke-width="2.5"/><path d="M26 90h18M28 101l16-4M134 90h-18M132 101l-16-4" stroke-width="2"/><circle cx="52" cy="96" r="7" fill="#F29C8A" opacity=".55" stroke="none"/><circle cx="108" cy="96" r="7" fill="#F29C8A" opacity=".55" stroke="none"/></svg><rect x="40" y="192" width="160" height="140" rx="16" fill="#FFF6E2" stroke="#C99A5E" stroke-width="2"/><svg x="45" y="196" width="150" height="131" viewBox="0 0 160 140" role="img" aria-label="かめの形のメロンパンのイラスト" stroke="#43291B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><defs><clipPath id="clip-turtle-4"><ellipse cx="72" cy="80" rx="54" ry="40"/></clipPath></defs><ellipse cx="40" cy="114" rx="13" ry="9" fill="#E3A85A"/><ellipse cx="104" cy="114" rx="13" ry="9" fill="#E3A85A"/><path d="M20 84l-12 4 12 5" fill="#E3A85A"/><circle cx="134" cy="72" r="19" fill="#E3A85A"/><ellipse cx="72" cy="80" rx="54" ry="40" fill="#F2C46B"/><g clip-path="url(#clip-turtle-4)" stroke="#D49A2E" stroke-width="2" fill="none" opacity=".75"><path d="M-120 20L10 150M10 20L-120 150"/><path d="M-101 20L29 150M29 20L-101 150"/><path d="M-82 20L48 150M48 20L-82 150"/><path d="M-63 20L67 150M67 20L-63 150"/><path d="M-44 20L86 150M86 20L-44 150"/><path d="M-25 20L105 150M105 20L-25 150"/><path d="M-6 20L124 150M124 20L-6 150"/><path d="M13 20L143 150M143 20L13 150"/><path d="M32 20L162 150M162 20L32 150"/><path d="M51 20L181 150M181 20L51 150"/><path d="M70 20L200 150M200 20L70 150"/><path d="M89 20L219 150M219 20L89 150"/><path d="M108 20L238 150M238 20L108 150"/><path d="M127 20L257 150M257 20L127 150"/><path d="M146 20L276 150M276 20L146 150"/><path d="M165 20L295 150M295 20L165 150"/></g><ellipse cx="72" cy="80" rx="54" ry="40" fill="none"/><circle cx="140" cy="67" r="4" fill="#43291B" stroke="none"/><path d="M135 79q5 4 10-1" fill="none" stroke-width="2.5"/><circle cx="146" cy="76" r="4.5" fill="#F29C8A" opacity=".55" stroke="none"/></svg><rect x="200" y="192" width="160" height="140" rx="16" fill="#FFF6E2" stroke="#C99A5E" stroke-width="2"/><svg x="205" y="196" width="150" height="131" viewBox="0 0 160 140" role="img" aria-label="くまの形のパンのイラスト" stroke="#43291B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="40" cy="42" r="19" fill="#C98A4B"/><circle cx="120" cy="42" r="19" fill="#C98A4B"/><circle cx="40" cy="42" r="8" fill="#7A4520" stroke="none"/><circle cx="120" cy="42" r="8" fill="#7A4520" stroke="none"/><circle cx="80" cy="80" r="52" fill="#C98A4B"/><ellipse cx="58" cy="52" rx="15" ry="7" fill="#fff" opacity=".28" stroke="none" transform="rotate(-28 58 52)"/><circle cx="61" cy="76" r="5.5" fill="#43291B" stroke="none"/><circle cx="99" cy="76" r="5.5" fill="#43291B" stroke="none"/><ellipse cx="80" cy="98" rx="20" ry="15" fill="#F3D3A0"/><ellipse cx="80" cy="91" rx="6.5" ry="4.5" fill="#43291B" stroke="none"/><path d="M80 95v6M72 103q8 6 16 0" fill="none" stroke-width="2.5"/><circle cx="50" cy="92" r="7" fill="#F29C8A" opacity=".55" stroke="none"/><circle cx="110" cy="92" r="7" fill="#F29C8A" opacity=".55" stroke="none"/></svg><rect x="360" y="192" width="160" height="140" rx="16" fill="#FFF6E2" stroke="#C99A5E" stroke-width="2"/><svg x="365" y="196" width="150" height="131" viewBox="0 0 160 140" role="img" aria-label="ひよこの形のメロンパンのイラスト" stroke="#43291B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><defs><clipPath id="clip-chick-6"><circle cx="80" cy="82" r="52"/></clipPath></defs><path d="M76 32q0-14 8-18M82 31q6-11 15-10" fill="none"/><path d="M30 92q-12-4-10-20M130 92q12-4 10-20" fill="#F7D364"/><circle cx="80" cy="82" r="52" fill="#F7D364"/><g clip-path="url(#clip-chick-6)" stroke="#D49A2E" stroke-width="2" fill="none" opacity=".75"><path d="M-120 20L10 150M10 20L-120 150"/><path d="M-101 20L29 150M29 20L-101 150"/><path d="M-82 20L48 150M48 20L-82 150"/><path d="M-63 20L67 150M67 20L-63 150"/><path d="M-44 20L86 150M86 20L-44 150"/><path d="M-25 20L105 150M105 20L-25 150"/><path d="M-6 20L124 150M124 20L-6 150"/><path d="M13 20L143 150M143 20L13 150"/><path d="M32 20L162 150M162 20L32 150"/><path d="M51 20L181 150M181 20L51 150"/><path d="M70 20L200 150M200 20L70 150"/><path d="M89 20L219 150M219 20L89 150"/><path d="M108 20L238 150M238 20L108 150"/><path d="M127 20L257 150M257 20L127 150"/><path d="M146 20L276 150M276 20L146 150"/><path d="M165 20L295 150M295 20L165 150"/></g><circle cx="80" cy="82" r="52" fill="none"/><circle cx="63" cy="78" r="5.5" fill="#43291B" stroke="none"/><circle cx="97" cy="78" r="5.5" fill="#43291B" stroke="none"/><path d="M70 90L80 85L90 90L80 99Z" fill="#F28C45" stroke-width="2.5"/><circle cx="52" cy="94" r="7" fill="#F29C8A" opacity=".55" stroke="none"/><circle cx="108" cy="94" r="7" fill="#F29C8A" opacity=".55" stroke="none"/></svg><g transform="translate(400 6) rotate(8)"><rect width="140" height="44" rx="22" fill="#F28C45" stroke="#43291B" stroke-width="3"/><text x="70" y="29" text-anchor="middle" font-size="18" font-weight="700" fill="#3A1F10" font-family="Hiragino Maru Gothic ProN, sans-serif">6個入り</text></g></svg>
+    <div class="box-copy">
+      <h3><span class="nb">4種類から、</span><span class="nb">好きな組み合わせで6個。</span></h3>
+      <p>くまを多めに、ひよこを全員分に。集まる子どもたちに合わせて、組み合わせを選べます。</p>
+      <p>ひとり1個ずつ手に取れる大きさなので、切り分けもお皿も要りません。決めきれないときは、お店でバランスよく詰めます。</p>
     </div>
-    <div class="menu-photo-wide"><img src="img/bakery-products.png" alt="焼き菓子とパンの盛り合わせ"></div>
-    <div class="menu-grid">
-      <div class="menu-card">
-        <div class="menu-body">
-          <h3>バターサンド</h3>
-          <p>発酵バターとほろ苦キャラメルの、シンプルな組み合わせ。</p>
-          <span class="price">1個 320円</span>
-        </div>
-      </div>
-      <div class="menu-card">
-        <div class="menu-body">
-          <h3>季節の焼き菓子セット</h3>
-          <p>その時期の果物や素材を使った、5種類の詰め合わせ。</p>
-          <span class="price">1箱 1,480円</span>
-        </div>
-      </div>
-      <div class="menu-card">
-        <div class="menu-body">
-          <h3>毎日の食パン</h3>
-          <p>朝食にちょうどいい、軽やかな口どけの角食パン。</p>
-          <span class="price">1斤 480円</span>
-        </div>
+  </div>
+  <div class="pans"><div class="pan"><div class="pan-art"><svg viewBox="0 0 160 140" role="img" aria-label="くまの形のパンのイラスト" stroke="#43291B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="40" cy="42" r="19" fill="#C98A4B"/><circle cx="120" cy="42" r="19" fill="#C98A4B"/><circle cx="40" cy="42" r="8" fill="#7A4520" stroke="none"/><circle cx="120" cy="42" r="8" fill="#7A4520" stroke="none"/><circle cx="80" cy="80" r="52" fill="#C98A4B"/><ellipse cx="58" cy="52" rx="15" ry="7" fill="#fff" opacity=".28" stroke="none" transform="rotate(-28 58 52)"/><circle cx="61" cy="76" r="5.5" fill="#43291B" stroke="none"/><circle cx="99" cy="76" r="5.5" fill="#43291B" stroke="none"/><ellipse cx="80" cy="98" rx="20" ry="15" fill="#F3D3A0"/><ellipse cx="80" cy="91" rx="6.5" ry="4.5" fill="#43291B" stroke="none"/><path d="M80 95v6M72 103q8 6 16 0" fill="none" stroke-width="2.5"/><circle cx="50" cy="92" r="7" fill="#F29C8A" opacity=".55" stroke="none"/><circle cx="110" cy="92" r="7" fill="#F29C8A" opacity=".55" stroke="none"/></svg></div><h3>くまの<wbr>チョコパン</h3><p>ほんのりビターなチョコクリーム。耳はチョコ生地で焼き分けています。</p></div><div class="pan"><div class="pan-art"><svg viewBox="0 0 160 140" role="img" aria-label="ねこの形のパンのイラスト" stroke="#43291B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M32 70L36 22L72 46Z" fill="#EDB96F"/><path d="M128 70L124 22L88 46Z" fill="#EDB96F"/><path d="M42 54L44 36L60 47Z" fill="#F29C8A" stroke="none"/><path d="M118 54L116 36L100 47Z" fill="#F29C8A" stroke="none"/><ellipse cx="80" cy="86" rx="56" ry="44" fill="#EDB96F"/><ellipse cx="56" cy="60" rx="14" ry="6" fill="#fff" opacity=".3" stroke="none" transform="rotate(-20 56 60)"/><path d="M52 82q8-9 16 0M92 82q8-9 16 0" fill="none"/><path d="M75 91h10l-5 6z" fill="#E07A6A" stroke-width="2"/><path d="M80 97q-5 7-11 2M80 97q5 7 11 2" fill="none" stroke-width="2.5"/><path d="M26 90h18M28 101l16-4M134 90h-18M132 101l-16-4" stroke-width="2"/><circle cx="52" cy="96" r="7" fill="#F29C8A" opacity=".55" stroke="none"/><circle cx="108" cy="96" r="7" fill="#F29C8A" opacity=".55" stroke="none"/></svg></div><h3>ねこの<wbr>カスタードパン</h3><p>たまごたっぷりの、自家製カスタード入り。</p></div><div class="pan"><div class="pan-art"><svg viewBox="0 0 160 140" role="img" aria-label="ひよこの形のメロンパンのイラスト" stroke="#43291B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><defs><clipPath id="clip-chick-9"><circle cx="80" cy="82" r="52"/></clipPath></defs><path d="M76 32q0-14 8-18M82 31q6-11 15-10" fill="none"/><path d="M30 92q-12-4-10-20M130 92q12-4 10-20" fill="#F7D364"/><circle cx="80" cy="82" r="52" fill="#F7D364"/><g clip-path="url(#clip-chick-9)" stroke="#D49A2E" stroke-width="2" fill="none" opacity=".75"><path d="M-120 20L10 150M10 20L-120 150"/><path d="M-101 20L29 150M29 20L-101 150"/><path d="M-82 20L48 150M48 20L-82 150"/><path d="M-63 20L67 150M67 20L-63 150"/><path d="M-44 20L86 150M86 20L-44 150"/><path d="M-25 20L105 150M105 20L-25 150"/><path d="M-6 20L124 150M124 20L-6 150"/><path d="M13 20L143 150M143 20L13 150"/><path d="M32 20L162 150M162 20L32 150"/><path d="M51 20L181 150M181 20L51 150"/><path d="M70 20L200 150M200 20L70 150"/><path d="M89 20L219 150M219 20L89 150"/><path d="M108 20L238 150M238 20L108 150"/><path d="M127 20L257 150M257 20L127 150"/><path d="M146 20L276 150M276 20L146 150"/><path d="M165 20L295 150M295 20L165 150"/></g><circle cx="80" cy="82" r="52" fill="none"/><circle cx="63" cy="78" r="5.5" fill="#43291B" stroke="none"/><circle cx="97" cy="78" r="5.5" fill="#43291B" stroke="none"/><path d="M70 90L80 85L90 90L80 99Z" fill="#F28C45" stroke-width="2.5"/><circle cx="52" cy="94" r="7" fill="#F29C8A" opacity=".55" stroke="none"/><circle cx="108" cy="94" r="7" fill="#F29C8A" opacity=".55" stroke="none"/></svg></div><h3>ひよこの<wbr>メロンパン</h3><p>さくさくのクッキー生地に、小さなくちばし。</p></div><div class="pan"><div class="pan-art"><svg viewBox="0 0 160 140" role="img" aria-label="かめの形のメロンパンのイラスト" stroke="#43291B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><defs><clipPath id="clip-turtle-10"><ellipse cx="72" cy="80" rx="54" ry="40"/></clipPath></defs><ellipse cx="40" cy="114" rx="13" ry="9" fill="#E3A85A"/><ellipse cx="104" cy="114" rx="13" ry="9" fill="#E3A85A"/><path d="M20 84l-12 4 12 5" fill="#E3A85A"/><circle cx="134" cy="72" r="19" fill="#E3A85A"/><ellipse cx="72" cy="80" rx="54" ry="40" fill="#F2C46B"/><g clip-path="url(#clip-turtle-10)" stroke="#D49A2E" stroke-width="2" fill="none" opacity=".75"><path d="M-120 20L10 150M10 20L-120 150"/><path d="M-101 20L29 150M29 20L-101 150"/><path d="M-82 20L48 150M48 20L-82 150"/><path d="M-63 20L67 150M67 20L-63 150"/><path d="M-44 20L86 150M86 20L-44 150"/><path d="M-25 20L105 150M105 20L-25 150"/><path d="M-6 20L124 150M124 20L-6 150"/><path d="M13 20L143 150M143 20L13 150"/><path d="M32 20L162 150M162 20L32 150"/><path d="M51 20L181 150M181 20L51 150"/><path d="M70 20L200 150M200 20L70 150"/><path d="M89 20L219 150M219 20L89 150"/><path d="M108 20L238 150M238 20L108 150"/><path d="M127 20L257 150M257 20L127 150"/><path d="M146 20L276 150M276 20L146 150"/><path d="M165 20L295 150M295 20L165 150"/></g><ellipse cx="72" cy="80" rx="54" ry="40" fill="none"/><circle cx="140" cy="67" r="4" fill="#43291B" stroke="none"/><path d="M135 79q5 4 10-1" fill="none" stroke-width="2.5"/><circle cx="146" cy="76" r="4.5" fill="#F29C8A" opacity=".55" stroke="none"/></svg></div><h3>かめの<wbr>メロンパン</h3><p>甲羅がメロンパン。頭と足は、ふんわりのパン生地です。</p></div></div>
+  <p class="note">※イラストはイメージです。ひとつずつ手で描くため、表情が少しずつ違います。</p>
+</div></section>
+
+<div class="cta-strip"><div class="wrap"><p><span class="nb">ご予約は、</span><span class="nb">受け取り日の3日前の17時まで。</span></p><a class="btn white" href="#reserve">予約のしかたを見る</a></div></div>
+
+<section><div class="wrap">
+  <div class="head"><span class="tag">3つのこだわり</span><h2><span class="nb">小さな手で、</span><span class="nb">食べきれるように。</span></h2></div>
+  <div class="points">
+    <div class="point"><span class="no">01</span><h3>手のひらサイズ</h3><p>直径およそ8cm。小さな子でも食べきりやすい大きさに焼いています。</p></div>
+    <div class="point"><span class="no">02</span><h3>表情は手描き</h3><p>目や口は、焼き上がったあとに、ひとつずつ手で描いています。同じくまでも、少しずつ顔が違います。</p></div>
+    <div class="point"><span class="no">03</span><h3>メッセージカード付き</h3><p>「おたんじょうび おめでとう」など、ひと言を書いたカードを無料でお付けします。</p></div>
+  </div>
+</div></section>
+
+<section class="alt" id="reserve"><div class="wrap">
+  <div class="head"><span class="tag">ご予約の流れ</span><h2><span class="nb">予約から受け取りまで、</span><span class="nb">3ステップ。</span></h2></div>
+  <div class="flow">
+    <div class="step"><h3>ご予約</h3><p>お電話かフォームで、受け取り日・個数・組み合わせをお知らせください。受け取り日の3日前の17時まで受け付けます。</p></div>
+    <div class="step"><h3>ご来店</h3><p>受け取り日の10時以降に、お店へお越しください。持ち運びやすい箱でお渡しします。</p></div>
+    <div class="step"><h3>お会計</h3><p>お支払いは、受け取りのときに店頭で。現金と、各種キャッシュレス決済が使えます。</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="head"><span class="tag">料金</span><h2>どの組み合わせでも、同じ料金です。</h2></div>
+  <div class="prices">
+    <div class="price-card"><div class="size">6個入り</div><div class="yen">1,380<small>円（税込）</small></div><p>少人数のお誕生日会や、家族のおやつに。</p></div>
+    <div class="price-card pop"><div class="size">12個入り</div><div class="yen">2,760<small>円（税込）</small></div><p>保育園や、親せきの集まりなど、人数が多い日に。</p></div>
+  </div>
+  <p class="note">メッセージカードは無料です。13個以上は、お電話でご相談ください。</p>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <div class="head"><span class="tag">お客様の声</span><h2>ご利用いただいた方より</h2></div>
+  <div class="voices">
+    <div class="voice"><div class="face"><svg viewBox="0 0 160 140" role="img" aria-label="ねこの形のパンのイラスト" stroke="#43291B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M32 70L36 22L72 46Z" fill="#EDB96F"/><path d="M128 70L124 22L88 46Z" fill="#EDB96F"/><path d="M42 54L44 36L60 47Z" fill="#F29C8A" stroke="none"/><path d="M118 54L116 36L100 47Z" fill="#F29C8A" stroke="none"/><ellipse cx="80" cy="86" rx="56" ry="44" fill="#EDB96F"/><ellipse cx="56" cy="60" rx="14" ry="6" fill="#fff" opacity=".3" stroke="none" transform="rotate(-20 56 60)"/><path d="M52 82q8-9 16 0M92 82q8-9 16 0" fill="none"/><path d="M75 91h10l-5 6z" fill="#E07A6A" stroke-width="2"/><path d="M80 97q-5 7-11 2M80 97q5 7 11 2" fill="none" stroke-width="2.5"/><path d="M26 90h18M28 101l16-4M134 90h-18M132 101l-16-4" stroke-width="2"/><circle cx="52" cy="96" r="7" fill="#F29C8A" opacity=".55" stroke="none"/><circle cx="108" cy="96" r="7" fill="#F29C8A" opacity=".55" stroke="none"/></svg></div><p class="say">娘の4歳の誕生日に頼みました。箱を開けたとたん、子どもたちが「ひよこがいい！」と集まってきて、にぎやかな時間になりました。<span class="who">30代・2児の母</span></p></div>
+    <div class="voice"><div class="face"><svg viewBox="0 0 160 140" role="img" aria-label="くまの形のパンのイラスト" stroke="#43291B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="40" cy="42" r="19" fill="#C98A4B"/><circle cx="120" cy="42" r="19" fill="#C98A4B"/><circle cx="40" cy="42" r="8" fill="#7A4520" stroke="none"/><circle cx="120" cy="42" r="8" fill="#7A4520" stroke="none"/><circle cx="80" cy="80" r="52" fill="#C98A4B"/><ellipse cx="58" cy="52" rx="15" ry="7" fill="#fff" opacity=".28" stroke="none" transform="rotate(-28 58 52)"/><circle cx="61" cy="76" r="5.5" fill="#43291B" stroke="none"/><circle cx="99" cy="76" r="5.5" fill="#43291B" stroke="none"/><ellipse cx="80" cy="98" rx="20" ry="15" fill="#F3D3A0"/><ellipse cx="80" cy="91" rx="6.5" ry="4.5" fill="#43291B" stroke="none"/><path d="M80 95v6M72 103q8 6 16 0" fill="none" stroke-width="2.5"/><circle cx="50" cy="92" r="7" fill="#F29C8A" opacity=".55" stroke="none"/><circle cx="110" cy="92" r="7" fill="#F29C8A" opacity=".55" stroke="none"/></svg></div><p class="say">保育園の友だちが集まる日に。ひとり1個ずつ配れるので、切り分ける手間がかからず助かりました。<span class="who">30代・会社員</span></p></div>
+  </div>
+  <p class="note">※お客様の声は、制作サンプル用の架空のものです。</p>
+</div></section>
+
+<section><div class="wrap">
+  <div class="head"><span class="tag">よくある質問</span><h2>FAQ</h2></div>
+  <div class="board">
+    <details><summary>当日でも買えますか？</summary><p>どうぶつパンは店頭にも並びますが、数に限りがあります。箱でのご用意は、ご予約のみ承っています。</p></details>
+    <details><summary>アレルギーの確認はできますか？</summary><p>小麦・卵・乳を使っています。くわしい材料は、お気軽にお問い合わせください。</p></details>
+    <details><summary>いつまでに食べればよいですか？</summary><p>受け取った日のうちに、お召し上がりください。クリームが入っているため、持ち歩きの時間が長いときは保冷剤をお付けします。</p></details>
+    <details><summary>組み合わせは、あとから変えられますか？</summary><p>受け取り日の3日前の17時までなら、お電話で変更できます。</p></details>
+    <details><summary>発送はできますか？</summary><p>申し訳ありません。店頭での受け取りのみです。</p></details>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="oven">
+    <div class="oven-mouth">
+      <span class="tag">ご予約</span>
+      <h2><span class="nb">ご予約は、</span><span class="nb">受け取り日の3日前まで。</span></h2>
+      <p>お電話（8:00〜17:00）か、フォームからどうぞ。</p>
+      <div class="btn-row">
+        <a class="btn" href="#" onclick="alert('制作サンプルのため、予約はできません。'); return false;">フォームで予約する</a>
+        <a class="btn white" href="#" onclick="alert('制作サンプルのため、予約はできません。'); return false;">電話で予約する</a>
       </div>
     </div>
   </div>
-</section>
+</div></section>
 
-<section class="voice">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">お客様の声</span>
-      <h2>近所の方に、支えられています。</h2>
-    </div>
-    <div class="voice-grid">
-      <div class="voice-card">
-        <p>「子どもが生まれてから、毎週末に買いに行くのが楽しみになりました。素朴な味が、逆に落ち着きます。」</p>
-        <span class="who">近隣にお住まいの方</span>
-      </div>
-      <div class="voice-card">
-        <p>「甘すぎないところが好きで、朝ごはんによく買います。店員さんの雰囲気も、いつも温かいです。」</p>
-        <span class="who">常連のお客様</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="info">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">アクセス</span>
-      <h2>お店の情報</h2>
-    </div>
-    <dl class="info-grid">
-      <dt>営業時間</dt><dd>8:00〜18:00（火曜定休）</dd>
-      <dt>場所</dt><dd>◯◯県◯◯市◯◯町 1-2-3</dd>
-      <dt>電話</dt><dd>000-0000-0000</dd>
-      <dt>SNS</dt><dd>Instagram：@petite_douceur（架空）</dd>
+<section class="alt"><div class="wrap shop">
+  <div class="photo"><img src="img/bakery-hero-warm.jpg" alt="お店の外観と、ショーケースに並ぶ焼き菓子" loading="lazy"></div>
+  <div>
+    <div class="head" style="text-align:left;margin-bottom:20px;"><span class="tag">お店の情報</span><h2>petite douceur</h2></div>
+    <dl>
+      <dt>営業時間</dt><dd>8:00〜18:00（売り切れ次第、終了）</dd>
+      <dt>定休日</dt><dd>毎週火曜日</dd>
+      <dt>住所</dt><dd>〒000-0000　◯◯県◯◯市◯◯町 1-2-3</dd>
+      <dt>駐車場</dt><dd>お店の前に2台</dd>
     </dl>
+    <a class="btn white" href="../hp-samples/petite-douceur/index.html">お店のホームページを見る</a>
   </div>
-</section>
+</div></section>
 
-<section id="contact">
-  <div class="wrap">
-    <div class="final">
-      <h2>今日焼きあがった分だけ、<br />店頭に並びます。</h2>
-      <p>ご予約も承っています。お気軽にお問い合わせください。</p>
-      <a class="btn" href="#">お問い合わせ（サンプルのためリンク先なし）</a>
-    </div>
-  </div>
-</section>
+<footer><b>petite douceur</b>※このページは渡邊駿の制作サンプルです。架空の店舗を想定した自主制作物で、実在のお店ではありません。お客様の声・価格もすべて架空です。</footer>
 
-<footer>
-  ※このページは渡邊駿の制作サンプルです。架空の店舗を想定した自主制作物であり、実在のお店ではありません。
-</footer>
+<div class="fixed-cta"><a class="btn" href="#reserve">予約のしかたを見る</a></div>
+<script>
+// スマホ下部の予約ボタンは、最初の画面を過ぎてから出す（最後の予約欄が見えている間は隠す）
+(function () {
+  var bar = document.querySelector(".fixed-cta"), hero = document.querySelector(".hero"), oven = document.querySelector(".oven");
+  function onScroll() {
+    var o = oven.getBoundingClientRect();
+    bar.classList.toggle("show", hero.getBoundingClientRect().bottom < 0 && (o.top > innerHeight || o.bottom < 0));
+  }
+  addEventListener("scroll", onScroll, { passive: true }); onScroll();
+})();
+</script>
 
 </body>
 </html>

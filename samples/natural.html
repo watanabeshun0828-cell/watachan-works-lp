@@ -3,216 +3,353 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>無添加ブランド「て、しごと」｜制作サンプル・渡邊駿</title>
+<title>お試しミニセット｜て、しごと（制作サンプル・渡邊駿）</title>
+<meta name="description" content="オリーブとハーブ、2種類のミニ石鹸のお試しセットのLP（架空の工房の制作サンプル）。">
 <style>
-  :root {
-    --ink: #2E3628;
-    --ink-soft: #6C7A63;
-    --paper: #F5F3EC;
-    --paper-deep: #EBE7D9;
-    --paper-card: #FBFAF4;
-    --accent: #7A8F5C;
-    --accent-soft: #A3B588;
-    --clay: #B08863;
-    --line: rgba(46, 54, 40, 0.13);
-    --line-soft: rgba(46, 54, 40, 0.06);
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --ink: #E7EBDF; --ink-soft: #AAB89C; --paper: #171A14; --paper-deep: #1E221A;
-      --paper-card: #1C1F17; --accent: #9BB27C; --accent-soft: #7A8F5C; --clay: #C39B72;
-      --line: rgba(231, 235, 223, 0.13); --line-soft: rgba(231, 235, 223, 0.06);
-    }
-  }
-  * { box-sizing: border-box; margin: 0; }
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--paper); color: var(--ink);
-    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
-    line-height: 1.9; -webkit-font-smoothing: antialiased; letter-spacing: 0.015em;
-  }
-  h1, h2, h3 { font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif; font-weight: 600; }
-  a { color: inherit; }
-  .wrap { max-width: 800px; margin: 0 auto; padding: 0 26px; }
-  .sample-badge {
-    position: fixed; top: 14px; right: 14px; z-index: 200;
-    background: var(--ink); color: var(--paper); font-size: 11.5px; letter-spacing: 0.06em;
-    padding: 7px 14px; border-radius: 980px; text-decoration: none; opacity: 0.88;
-  }
-  .eyebrow { display: inline-flex; align-items: center; gap: 0.6em; font-size: 12px; letter-spacing: 0.24em; color: var(--accent); font-weight: 600; }
-  .eyebrow::before { content: ""; width: 16px; height: 1px; background: var(--accent); display: inline-block; }
+:root { --ink: #2F3A26; --soft: #5E6A52; --paper: #F8F6EE; --paper2: #EFEBDD; --card: #FCFBF6; --olive: #7A8F5C; --olive-d: #54683A; --leaf: #CFE0B4; --kraft: #D8C6A0; --kraft-d: #B9A57C; --line: rgba(47,58,38,.16); color-scheme: light; }
+* { box-sizing: border-box; margin: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--paper) url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22160%22%20height%3D%22160%22%3E%3Cfilter%20id%3D%22n%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%22.9%22%20numOctaves%3D%222%22%20stitchTiles%3D%22stitch%22/%3E%3CfeColorMatrix%20values%3D%220%200%200%200%20.35%20%200%200%200%200%20.3%20%200%200%200%200%20.2%20%200%200%200%20.07%200%22/%3E%3C/filter%3E%3Crect%20width%3D%22160%22%20height%3D%22160%22%20filter%3D%22url%28%23n%29%22/%3E%3C/svg%3E"); color: var(--ink); font-family: "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif; font-weight: 300; line-height: 2.05; letter-spacing: 0.05em; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, .serif { font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif; font-weight: 400; letter-spacing: 0.1em; }
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; }
+.nb { display: inline-block; }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 28px; }
+.u { background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22120%22%20height%3D%2210%22%20viewBox%3D%220%200%20120%2010%22%3E%3Cpath%20d%3D%22M2%206%20C%2020%201%2C%2030%209%2C%2050%205%20S%2080%202%2C%20100%206%20S%20115%207%2C%20118%204%22%20fill%3D%22none%22%20stroke%3D%22%239CB07A%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22/%3E%3C/svg%3E") left bottom / 100% 10px no-repeat; padding-bottom: 6px; }
 
-  .hero { padding: 110px 0 60px; }
-  .hero h1 { font-size: clamp(28px, 4.6vw, 42px); line-height: 1.75; margin: 22px 0 18px; }
-  .hero p.lede { max-width: 46ch; color: var(--ink-soft); font-size: 15.5px; margin-bottom: 30px; }
-  .hero-photo { width: 100%; aspect-ratio: 21/9; border-radius: 4px; background: linear-gradient(150deg, #DCE2D2, #EFF2E9); display: flex; align-items: center; justify-content: center; color: var(--ink-soft); font-size: 13px; overflow: hidden; }
-  .hero-photo img, .maker-photo img, .product-photo-wide img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  @media (prefers-color-scheme: dark) { .hero-photo { background: linear-gradient(150deg, #2A2E22, #1F211A); } }
+.sample-bar { background: var(--ink); color: #E9EEDC; font-size: 11.5px; text-align: center; padding: 7px 16px; }
+.sample-bar a { color: var(--leaf); margin-left: 10px; }
+.top { position: sticky; top: 0; z-index: 50; background: rgba(248,246,238,.93); border-bottom: 1px solid var(--line); backdrop-filter: blur(6px); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo .mk { width: 36px; height: 36px; color: var(--olive-d); }
+.logo b { font-family: "Hiragino Mincho ProN", serif; font-weight: 400; font-size: 20px; letter-spacing: 0.18em; display: block; line-height: 1.3; }
+.logo small { display: block; font-size: 10.5px; color: var(--soft); letter-spacing: 0.14em; line-height: 1.3; }
 
-  section { padding: 66px 0; }
-  section + section { border-top: 1px solid var(--line); }
-  .section-head { max-width: 54ch; margin-bottom: 36px; }
-  .section-head h2 { font-size: clamp(21px, 2.8vw, 27px); margin: 10px 0 0; line-height: 1.6; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 15px 34px; border-radius: 999px; background: var(--olive-d); color: #FBFAF3; text-decoration: none; font-size: 14.5px; letter-spacing: 0.12em; font-weight: 400; border: 1px solid var(--olive-d); transition: background .2s; cursor: pointer; font-family: inherit; }
+.btn:hover { background: var(--ink); }
+.btn.line { background: transparent; color: var(--olive-d); }
+.btn.line:hover { background: rgba(122,143,92,.12); }
+.btn.small { padding: 8px 20px; font-size: 12.5px; }
 
-  .promise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  .promise-card { background: var(--paper-card); border: 1px solid var(--line); border-radius: 4px; padding: 26px 22px; }
-  .promise-card .n { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; color: var(--accent); font-size: 13px; }
-  .promise-card h3 { font-size: 16.5px; margin: 8px 0 8px; }
-  .promise-card p { font-size: 13.5px; color: var(--ink-soft); margin: 0; }
+.label { display: inline-block; font-size: 12.5px; letter-spacing: 0.2em; color: var(--olive-d); border: 1px solid var(--olive); border-radius: 999px; padding: 2px 16px; }
+.head { text-align: center; margin-bottom: 52px; }
+.head .leaf { display: block; width: 38px; height: 38px; color: var(--olive); margin: 0 auto 10px; }
+.head h2 { font-size: clamp(22px, 3vw, 30px); line-height: 1.8; margin-top: 14px; }
+.head p { color: var(--soft); font-size: 14.5px; margin-top: 10px; }
+section { padding: 110px 0; position: relative; }
+section.alt { background: var(--paper2) url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22160%22%20height%3D%22160%22%3E%3Cfilter%20id%3D%22n%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%22.9%22%20numOctaves%3D%222%22%20stitchTiles%3D%22stitch%22/%3E%3CfeColorMatrix%20values%3D%220%200%200%200%20.35%20%200%200%200%200%20.3%20%200%200%200%200%20.2%20%200%200%200%20.07%200%22/%3E%3C/filter%3E%3Crect%20width%3D%22160%22%20height%3D%22160%22%20filter%3D%22url%28%23n%29%22/%3E%3C/svg%3E"); }
+/* 波打つ境目 */
+section.alt::before, section.alt::after { content: ""; position: absolute; left: 0; right: 0; height: 26px; background: var(--paper) url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22160%22%20height%3D%22160%22%3E%3Cfilter%20id%3D%22n%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%22.9%22%20numOctaves%3D%222%22%20stitchTiles%3D%22stitch%22/%3E%3CfeColorMatrix%20values%3D%220%200%200%200%20.35%20%200%200%200%200%20.3%20%200%200%200%200%20.2%20%200%200%200%20.07%200%22/%3E%3C/filter%3E%3Crect%20width%3D%22160%22%20height%3D%22160%22%20filter%3D%22url%28%23n%29%22/%3E%3C/svg%3E"); }
+section.alt::before { top: -1px; clip-path: path("M0 0H4000V8C3600 30 3300 2 2900 14S2200 30 1800 12 1100 0 700 16 200 26 0 10Z"); }
+section.alt::after { bottom: -1px; clip-path: path("M0 26H4000V18C3600 0 3300 26 2900 12S2200 0 1800 16 1100 26 700 10 200 2 0 16Z"); }
 
-  .maker { background: var(--paper-deep); }
-  .maker-inner { display: grid; grid-template-columns: 220px 1fr; gap: 36px; }
-  .maker-photo { aspect-ratio: 1/1; border-radius: 4px; background: linear-gradient(150deg, #EAD9C4, #F5EDE0); }
-  @media (prefers-color-scheme: dark) { .maker-photo { background: linear-gradient(150deg, #362B1E, #26201A); } }
-  .maker p { font-size: 14.5px; color: var(--ink-soft); margin: 0 0 14px; max-width: 54ch; }
-  .maker .signoff { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 13.5px; margin-top: 12px; }
+/* ファーストビュー */
+.hero { padding: 70px 0 90px; overflow: hidden; }
+.hero .wrap { display: grid; grid-template-columns: 1fr 1.05fr; gap: 50px; align-items: center; }
+.hero h1 { font-size: clamp(30px, 4.2vw, 46px); line-height: 1.7; margin: 22px 0 18px; }
+.hero .lede { color: var(--soft); font-size: 15px; max-width: 28em; }
+.tagline { display: flex; align-items: center; gap: 18px; margin: 28px 0 30px; }
+.price-tag { position: relative; background: var(--kraft); color: var(--ink); padding: 12px 26px 12px 34px; clip-path: polygon(14px 0, 100% 0, 100% 100%, 14px 100%, 0 50%); font-family: "Hiragino Mincho ProN", serif; }
+.price-tag::before { content: ""; position: absolute; left: 14px; top: 50%; width: 8px; height: 8px; border-radius: 50%; background: var(--paper); transform: translateY(-50%); }
+.price-tag b { font-weight: 400; font-size: 28px; letter-spacing: 0.04em; }
+.price-tag small { font-size: 12px; margin-left: 4px; }
+.tagline p { font-size: 12.5px; color: var(--soft); line-height: 1.7; }
+.hero .acts { display: flex; gap: 14px; flex-wrap: wrap; }
+.blob { position: relative; }
+.blob img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 58% 42% 46% 54% / 48% 56% 44% 52%; }
+.blob .sprig { position: absolute; width: 120px; height: 120px; color: var(--olive); left: -46px; bottom: 6%; transform: rotate(-30deg); }
+.blob .stamp { position: absolute; right: 2%; top: 4%; width: 112px; height: 112px; border-radius: 50%; background: var(--card); border: 1px dashed var(--olive); display: grid; place-items: center; text-align: center; font-family: "Hiragino Mincho ProN", serif; font-size: 13px; line-height: 1.6; color: var(--olive-d); transform: rotate(8deg); }
+.blob .stamp b { display: block; font-weight: 400; font-size: 22px; }
 
-  .product-photo-wide { width: 100%; aspect-ratio: 16/10; border-radius: 4px; overflow: hidden; margin-bottom: 26px; background: linear-gradient(150deg, #E9D2C9, #F3E7DC); }
-  @media (prefers-color-scheme: dark) { .product-photo-wide { background: linear-gradient(150deg, #3A2C26, #26201B); } }
-  .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  .product-card { background: var(--paper-card); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
-  .product-body { padding: 16px 18px; }
-  .product-body h3 { font-size: 15.5px; margin: 0 0 6px; }
-  .product-body p { font-size: 12.5px; color: var(--ink-soft); margin: 0; }
-  .product-body .price { display: block; margin-top: 8px; color: var(--accent); font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 14px; }
+/* 悩み */
+.thoughts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.thought { background: var(--card); padding: 34px 28px 30px; border-radius: 4px 26px 4px 26px; box-shadow: 0 1px 0 var(--line), 0 18px 30px -24px rgba(47,58,38,.4); position: relative; }
+.thought::before { content: "“"; position: absolute; top: -18px; left: 20px; font-family: "Hiragino Mincho ProN", serif; font-size: 64px; color: var(--leaf); line-height: 1; }
+.thought p { font-family: "Hiragino Mincho ProN", serif; font-size: 16.5px; line-height: 1.95; }
+.reply { text-align: center; margin-top: 60px; font-family: "Hiragino Mincho ProN", serif; font-size: clamp(18px, 2.4vw, 23px); line-height: 2; }
 
-  .ingredients-list { display: flex; flex-wrap: wrap; gap: 10px; }
-  .ingredients-list span {
-    font-size: 13px; border: 1px solid var(--line); border-radius: 980px; padding: 6px 14px; color: var(--ink-soft);
-  }
+/* セットの中身 */
+.set { display: grid; grid-template-columns: 1.1fr 1fr; gap: 50px; align-items: center; }
+.set .ph img { width: 100%; border-radius: 6px; aspect-ratio: 5 / 4; object-fit: cover; }
+.soaps { display: grid; gap: 22px; }
+.soap { position: relative; background: var(--card); border: 1px solid var(--line); border-left: 10px solid var(--kraft); padding: 22px 24px 20px 26px; }
+.soap .w { position: absolute; right: 20px; top: 20px; font-size: 12px; color: var(--soft); }
+.soap h3 { font-size: 19px; margin-bottom: 4px; }
+.soap .scent { display: inline-block; font-size: 11.5px; letter-spacing: 0.14em; background: var(--leaf); padding: 0 12px; border-radius: 999px; margin-bottom: 8px; }
+.soap p { font-size: 13.5px; color: var(--soft); }
+.with { margin-top: 6px; font-size: 13px; color: var(--soft); }
 
-  .final { text-align: left; background: var(--ink); color: var(--paper); border-radius: 6px; padding: 50px 42px; }
-  .final h2 { color: inherit; font-size: clamp(20px, 2.8vw, 26px); margin: 0 0 12px; }
-  .final p { opacity: 0.8; font-size: 14px; max-width: 48ch; margin: 0 0 24px; }
-  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 26px; border-radius: 2px; font-size: 14px; font-weight: 600; text-decoration: none; background: var(--accent); color: #10140C; }
+/* ラベル（全成分） */
+.labels { display: grid; grid-template-columns: repeat(2, 1fr); gap: 34px; }
+.tag { background: #F3EBD8 url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22160%22%20height%3D%22160%22%3E%3Cfilter%20id%3D%22n%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%22.9%22%20numOctaves%3D%222%22%20stitchTiles%3D%22stitch%22/%3E%3CfeColorMatrix%20values%3D%220%200%200%200%20.35%20%200%200%200%200%20.3%20%200%200%200%200%20.2%20%200%200%200%20.07%200%22/%3E%3C/filter%3E%3Crect%20width%3D%22160%22%20height%3D%22160%22%20filter%3D%22url%28%23n%29%22/%3E%3C/svg%3E"); border: 1px solid var(--kraft-d); padding: 40px 34px 30px; position: relative; box-shadow: 0 20px 30px -26px rgba(60,45,20,.6); }
+.tag::before { content: ""; position: absolute; top: 14px; left: 50%; width: 12px; height: 12px; border-radius: 50%; border: 1px solid var(--kraft-d); background: var(--paper); transform: translateX(-50%); }
+.tag h3 { text-align: center; font-size: 19px; letter-spacing: 0.2em; padding-bottom: 12px; border-bottom: 1px solid var(--kraft-d); margin-bottom: 8px; }
+.tag dl div { display: grid; grid-template-columns: 9.5em 1fr; gap: 12px; padding: 11px 0; border-bottom: 1px dashed rgba(122,100,60,.35); font-size: 13.5px; }
+.tag dt { font-family: "Hiragino Mincho ProN", serif; }
+.tag dd { color: var(--soft); }
+.tag .order { font-size: 11.5px; color: var(--soft); margin-top: 12px; text-align: right; }
 
-  footer { padding: 30px 0 50px; font-size: 12px; color: var(--ink-soft); }
+/* 作り方 */
+.make { display: grid; grid-template-columns: 1fr 1.15fr; gap: 54px; align-items: center; }
+.make .ph img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 46% 54% 50% 50% / 38% 40% 60% 62%; }
+.steps { list-style: none; padding: 0; counter-reset: st; }
+.steps li { position: relative; padding: 0 0 26px 62px; }
+.steps li::before { counter-increment: st; content: counter(st); position: absolute; left: 0; top: 0; width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--olive); display: grid; place-items: center; font-family: "Hiragino Mincho ProN", serif; color: var(--olive-d); background: var(--card); }
+.steps li:not(:last-child)::after { content: ""; position: absolute; left: 21px; top: 46px; bottom: 4px; border-left: 1px dashed var(--olive); }
+.steps h3 { font-size: 17.5px; margin-bottom: 2px; padding-top: 4px; }
+.steps p { font-size: 13.5px; color: var(--soft); }
+.steps .days { display: inline-block; font-size: 11.5px; background: var(--leaf); padding: 0 10px; border-radius: 999px; margin-left: 8px; vertical-align: 2px; font-family: "Hiragino Sans", sans-serif; }
 
-  @media (max-width: 700px) {
-    .promise-grid { grid-template-columns: 1fr; }
-    .maker-inner { grid-template-columns: 1fr; }
-    .product-grid { grid-template-columns: 1fr 1fr; }
-  }
+/* はじめての使い方 */
+.howto { max-width: 820px; margin: 0 auto; background: var(--card); border-radius: 30px; padding: 44px 48px; border: 1px solid var(--line); }
+.howto ol { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+.howto li { text-align: center; }
+.howto .ic { width: 70px; height: 70px; border-radius: 50%; background: var(--paper2); margin: 0 auto 12px; display: grid; place-items: center; color: var(--olive-d); }
+.howto .ic svg { width: 38px; height: 38px; }
+.howto h3 { font-size: 16px; }
+.howto p { font-size: 13px; color: var(--soft); text-align: left; margin-top: 4px; }
+.howto .notice { margin-top: 28px; font-size: 13px; color: var(--soft); border-top: 1px dashed var(--line); padding-top: 18px; }
+
+/* 料金 */
+.price-box { max-width: 720px; margin: 0 auto; text-align: center; background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 50px 40px 40px; position: relative; }
+.price-box .ribbon { position: absolute; top: -16px; left: 50%; transform: translateX(-50%); background: var(--olive-d); color: #fff; font-size: 12.5px; letter-spacing: 0.2em; padding: 5px 22px; border-radius: 999px; white-space: nowrap; }
+.price-box h3 { font-size: 22px; }
+.price-box .what { color: var(--soft); font-size: 13.5px; margin: 6px 0 16px; }
+.price-box .yen { font-family: "Hiragino Mincho ProN", serif; font-size: 50px; line-height: 1.3; }
+.price-box .yen small { font-size: 15px; margin-left: 4px; }
+.price-box .ship { font-size: 13.5px; color: var(--soft); margin-bottom: 26px; }
+.price-box table { width: 100%; border-collapse: collapse; margin-top: 30px; font-size: 13.5px; text-align: left; }
+.price-box td { padding: 10px 4px; border-top: 1px dashed var(--line); }
+.price-box td:last-child { text-align: right; white-space: nowrap; }
+.price-box caption { caption-side: top; text-align: left; font-size: 12.5px; color: var(--soft); letter-spacing: 0.14em; padding-bottom: 4px; }
+
+/* 声 */
+.voices { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+.voice { background: var(--card); padding: 30px 30px 24px; border-radius: 26px 4px 26px 4px; }
+.voice p { font-size: 14.5px; }
+.voice span { display: block; margin-top: 12px; font-size: 12.5px; color: var(--soft); }
+.note { text-align: center; font-size: 12.5px; color: var(--soft); margin-top: 22px; }
+
+/* よくある質問 */
+.faq { max-width: 800px; margin: 0 auto; }
+.faq details { background: var(--card); border-radius: 18px; margin-bottom: 12px; border: 1px solid var(--line); }
+.faq summary { list-style: none; cursor: pointer; padding: 18px 50px 18px 24px; position: relative; font-size: 15px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: ""; position: absolute; right: 22px; top: 50%; width: 9px; height: 9px; border-right: 1.5px solid var(--olive-d); border-bottom: 1.5px solid var(--olive-d); transform: translateY(-70%) rotate(45deg); transition: transform .2s; }
+.faq details[open] summary::after { transform: translateY(-30%) rotate(225deg); }
+.faq details p { padding: 0 24px 20px; color: var(--soft); font-size: 14px; }
+
+/* 最後の案内 */
+.final { text-align: center; background: var(--ink); color: #F1F3E8; border-radius: 40px; padding: 76px 30px; position: relative; overflow: hidden; }
+.final::before { content: ""; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2264%22%20height%3D%2264%22%20viewBox%3D%220%200%2064%2064%22%20fill%3D%22none%22%20stroke%3D%22%237A8F5C%22%20stroke-width%3D%221.4%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20opacity%3D%22.55%22%3E%3Cpath%20d%3D%22M14.0%2054.0L50.0%2012.0%22/%3E%3Cpath%20d%3D%22M21.9%2044.8Q28.5%2048.8%2034.9%2044.4Q28.3%2040.4%2021.9%2044.8Z%22/%3E%3Cpath%20d%3D%22M28.4%2037.2Q31.7%2030.2%2026.7%2024.3Q23.4%2031.3%2028.4%2037.2Z%22/%3E%3Cpath%20d%3D%22M34.9%2029.6Q41.5%2033.7%2047.9%2029.3Q41.3%2025.3%2034.9%2029.6Z%22/%3E%3Cpath%20d%3D%22M41.4%2022.1Q44.7%2015.1%2039.7%209.2Q36.4%2016.2%2041.4%2022.1Z%22/%3E%3Cpath%20d%3D%22M47.1%2015.4Q53.7%2019.4%2060.1%2015.0Q53.5%2011.0%2047.1%2015.4Z%22/%3E%3Cpath%20d%3D%22M30.5%2035Q37%2037%2040.5%2041%22/%3E%3Cellipse%20cx%3D%2243%22%20cy%3D%2245%22%20rx%3D%223.6%22%20ry%3D%224.8%22%20transform%3D%22rotate%28-35%2043%2045%29%22/%3E%3C/svg%3E") 0 0 / 120px 120px; opacity: .18; }
+.final > * { position: relative; }
+.final h2 { font-size: clamp(22px, 3vw, 30px); line-height: 1.8; }
+.final p { color: #C9D2B8; font-size: 14px; margin-top: 10px; }
+.final .btn { background: var(--leaf); color: var(--ink); border-color: var(--leaf); margin-top: 30px; padding: 17px 44px; }
+.final .btn:hover { background: #fff; }
+.final .links { margin-top: 22px; font-size: 13px; }
+.final .links a { color: var(--leaf); margin: 0 10px; }
+
+footer { text-align: center; padding: 60px 20px 120px; font-size: 12px; color: var(--soft); }
+footer b { display: block; font-family: "Hiragino Mincho ProN", serif; font-weight: 400; font-size: 19px; letter-spacing: 0.2em; color: var(--ink); margin-bottom: 8px; }
+
+.fixed-cta { display: none; position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 60; transform: translateY(150%); transition: transform .3s; }
+.fixed-cta.show { transform: none; }
+.fixed-cta .btn { width: 100%; box-shadow: 0 10px 24px rgba(47,58,38,.35); }
+
+@media (max-width: 860px) {
+  .hero .wrap, .set, .make { grid-template-columns: 1fr; gap: 40px; }
+  .blob { max-width: 440px; width: 100%; margin: 0 auto; order: -1; }
+  .thoughts, .labels, .voices { grid-template-columns: 1fr; }
+  .howto ol { grid-template-columns: 1fr; }
+  .make .ph { max-width: 380px; margin: 0 auto; }
+  section { padding: 84px 0; }
+  .fixed-cta { display: block; }
+  .top .btn { display: none; }
+}
+@media (max-width: 560px) {
+  .wrap { padding: 0 20px; }
+  .hero { padding: 40px 0 70px; }
+  .hero h1 { font-size: 28px; }
+  .blob .sprig { width: 80px; height: 80px; left: -14px; }
+  .blob .stamp { width: 92px; height: 92px; font-size: 11.5px; }
+  .blob .stamp b { font-size: 18px; }
+  .tagline { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .hero .acts .btn { width: 100%; }
+  .tag { padding: 38px 18px 24px; }
+  .tag dl div { grid-template-columns: 1fr; gap: 0; }
+  .howto { padding: 34px 22px; border-radius: 22px; }
+  .price-box { padding: 44px 20px 30px; }
+  .price-box .yen { font-size: 42px; }
+  .price-box h3 { font-size: 19px; }
+  .price-box .what, .price-box .ship { font-size: 12.5px; }
+  .final p { font-size: 13px; }
+  .final { border-radius: 26px; padding: 60px 20px; }
+  .final .btn { width: 100%; padding: 16px 10px; }
+}
 </style>
 </head>
 <body>
 
-<a class="sample-badge" href="index.html">← サンプル集へ戻る</a>
+<div class="sample-bar">SAMPLE LP — 架空の工房を想定した、渡邊駿の自主制作サンプルです。<a href="index.html">← サンプル集へ</a></div>
 
-<header class="hero">
-  <div class="wrap">
-    <span class="eyebrow">SAMPLE LP</span>
-    <h1>肌にのせるものだから、<br />隠しごとをしない。</h1>
-    <p class="lede">素材と製法を、すべて公開しています。無添加石鹸ブランド「て、しごと」。作り手の顔が見える買い物を、大切にしています。</p>
-    <div class="hero-photo"><img src="img/natural-hero.png" alt="石鹸と素材を並べたテーブルフォト"></div>
-  </div>
-</header>
+<header class="top"><div class="wrap">
+  <a class="logo" href="#"><span class="mk"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.0 54.0L50.0 12.0"/><path d="M21.9 44.8Q28.5 48.8 34.9 44.4Q28.3 40.4 21.9 44.8Z"/><path d="M28.4 37.2Q31.7 30.2 26.7 24.3Q23.4 31.3 28.4 37.2Z"/><path d="M34.9 29.6Q41.5 33.7 47.9 29.3Q41.3 25.3 34.9 29.6Z"/><path d="M41.4 22.1Q44.7 15.1 39.7 9.2Q36.4 16.2 41.4 22.1Z"/><path d="M47.1 15.4Q53.7 19.4 60.1 15.0Q53.5 11.0 47.1 15.4Z"/><path d="M30.5 35Q37 37 40.5 41"/><ellipse cx="43" cy="45" rx="3.6" ry="4.8" transform="rotate(-35 43 45)"/></svg></span><span><b>て、しごと</b><small>無添加石鹸の小さな工房</small></span></a>
+  <a class="btn small" href="#order">お試しセットを注文</a>
+</div></header>
 
-<section id="promise">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">3つの約束</span>
-      <h2>誠実さは、隠さないことから始まると思っています。</h2>
+<section class="hero"><div class="wrap">
+  <div>
+    <span class="label">はじめての方へ</span>
+    <h1><span class="nb">まずは、</span><br><span class="nb"><span class="u">小さなひとつ</span>から。</span></h1>
+    <p class="lede">オリーブとハーブ、2種類のミニ石鹸のセットです。肌に合うか、香りが好みか。小さなサイズで、ゆっくり確かめてから選んでください。</p>
+    <div class="tagline">
+      <div class="price-tag"><b>950</b><small>円（税込）</small></div>
+      <p>ミニ石鹸 2種（各30g）<br>送料は全国一律520円</p>
     </div>
-    <div class="promise-grid">
-      <div class="promise-card">
-        <span class="n">01</span>
-        <h3>成分を、全部書く</h3>
-        <p>配合量まで含めて、すべての成分をパッケージと公式サイトに公開しています。</p>
-      </div>
-      <div class="promise-card">
-        <span class="n">02</span>
-        <h3>作り方を、隠さない</h3>
-        <p>工房の様子や製造工程を、SNSでそのまま発信しています。都合の悪い部分も見せます。</p>
-      </div>
-      <div class="promise-card">
-        <span class="n">03</span>
-        <h3>合わなければ、正直に言う</h3>
-        <p>すべての肌に合うとは謳いません。心配な方には、事前のパッチテストをおすすめしています。</p>
-      </div>
+    <div class="acts">
+      <a class="btn" href="#order">お試しセットを注文する</a>
+      <a class="btn line" href="#label">全成分を見る</a>
     </div>
   </div>
-</section>
+  <div class="blob">
+    <img src="img/lp-natural-hero.jpg" alt="木の台の上に並ぶ、手作りの石鹸とオリーブオイルの瓶、ラベンダー">
+    <span class="sprig" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.0 54.0L50.0 12.0"/><path d="M21.9 44.8Q28.5 48.8 34.9 44.4Q28.3 40.4 21.9 44.8Z"/><path d="M28.4 37.2Q31.7 30.2 26.7 24.3Q23.4 31.3 28.4 37.2Z"/><path d="M34.9 29.6Q41.5 33.7 47.9 29.3Q41.3 25.3 34.9 29.6Z"/><path d="M41.4 22.1Q44.7 15.1 39.7 9.2Q36.4 16.2 41.4 22.1Z"/><path d="M47.1 15.4Q53.7 19.4 60.1 15.0Q53.5 11.0 47.1 15.4Z"/><path d="M30.5 35Q37 37 40.5 41"/><ellipse cx="43" cy="45" rx="3.6" ry="4.8" transform="rotate(-35 43 45)"/></svg></span>
+    <span class="stamp"><span><b>2種</b>ミニサイズ<br>各30g</span></span>
+  </div>
+</div></section>
 
-<section class="maker">
-  <div class="wrap maker-inner">
-    <div class="maker-photo"><img src="img/natural-maker.png" alt="工房で石鹸を型に流し込む作り手の手元"></div>
-    <div>
-      <span class="eyebrow">作り手より</span>
-      <h2 style="font-size:22px;margin:10px 0 18px;">小さな工房から、<br />正直に届けたいと思っています。</h2>
-      <p>大量生産では難しい、素材へのこだわりを大事にしたくて、この工房を始めました。派手な宣伝文句より、実際に使った人の「よかった」という一言を信じて作っています。</p>
-      <p>すべての方に合うとは言い切れません。だからこそ、成分も製法も隠さず、迷ったときに判断できる情報をきちんとお渡ししたいと考えています。</p>
-      <p class="signoff">「て、しごと」代表より</p>
+<section class="alt"><div class="wrap">
+  <div class="head"><span class="leaf"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.0 54.0L50.0 12.0"/><path d="M21.9 44.8Q28.5 48.8 34.9 44.4Q28.3 40.4 21.9 44.8Z"/><path d="M28.4 37.2Q31.7 30.2 26.7 24.3Q23.4 31.3 28.4 37.2Z"/><path d="M34.9 29.6Q41.5 33.7 47.9 29.3Q41.3 25.3 34.9 29.6Z"/><path d="M41.4 22.1Q44.7 15.1 39.7 9.2Q36.4 16.2 41.4 22.1Z"/><path d="M47.1 15.4Q53.7 19.4 60.1 15.0Q53.5 11.0 47.1 15.4Z"/><path d="M30.5 35Q37 37 40.5 41"/><ellipse cx="43" cy="45" rx="3.6" ry="4.8" transform="rotate(-35 43 45)"/></svg></span><span class="label">新しい石鹸を選ぶとき</span><h2><span class="nb">こんなふうに、</span><span class="nb">迷ったことはありませんか。</span></h2></div>
+  <div class="thoughts">
+    <div class="thought"><p>大きなサイズを買って、肌に合わなかったら、もったいない。</p></div>
+    <div class="thought"><p>成分表を見ても、何が入っているのか、よく分からない。</p></div>
+    <div class="thought"><p>香りが強すぎないか、使ってみないと分からない。</p></div>
+  </div>
+  <p class="reply"><span class="nb">だから、</span><span class="nb">はじめの一回は</span><span class="nb"><span class="u">小さなサイズ</span>で。</span></p>
+</div></section>
+
+<section><div class="wrap">
+  <div class="head"><span class="leaf"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.0 54.0L50.0 12.0"/><path d="M21.9 44.8Q28.5 48.8 34.9 44.4Q28.3 40.4 21.9 44.8Z"/><path d="M28.4 37.2Q31.7 30.2 26.7 24.3Q23.4 31.3 28.4 37.2Z"/><path d="M34.9 29.6Q41.5 33.7 47.9 29.3Q41.3 25.3 34.9 29.6Z"/><path d="M41.4 22.1Q44.7 15.1 39.7 9.2Q36.4 16.2 41.4 22.1Z"/><path d="M47.1 15.4Q53.7 19.4 60.1 15.0Q53.5 11.0 47.1 15.4Z"/><path d="M30.5 35Q37 37 40.5 41"/><ellipse cx="43" cy="45" rx="3.6" ry="4.8" transform="rotate(-35 43 45)"/></svg></span><span class="label">セットの中身</span><h2>2種類を、少しずつ。</h2></div>
+  <div class="set">
+    <div class="ph"><img src="img/lp-natural-set.jpg" alt="白い布の上に置かれた、白い石鹸と緑がかった石鹸、紙で包んだ石鹸の箱" loading="lazy"></div>
+    <div class="soaps">
+      <div class="soap"><span class="w">30g</span><h3>ミニ オリーブ</h3><span class="scent">無香料</span><p>オリーブオイルを中心にした、香料を加えていないタイプ。まずは香りのないものから、という方に。</p></div>
+      <div class="soap"><span class="w">30g</span><h3>ミニ ハーブ</h3><span class="scent">ラベンダーの香り</span><p>自家栽培のカレンデュラと、ラベンダーの精油を加えています。香りは、ほのかに感じる程度です。</p></div>
+      <p class="with">ほかに、全成分を書いたしおりと、使い方のメモを同封します。</p>
     </div>
   </div>
-</section>
+</div></section>
 
-<section id="products">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">商品ラインナップ</span>
-      <h2>定番の3種類です。</h2>
-    </div>
-    <div class="product-photo-wide"><img src="img/natural-products.png" alt="石鹸とギフトセット"></div>
-    <div class="product-grid">
-      <div class="product-card">
-        <div class="product-body">
-          <h3>オリーブ石鹸</h3>
-          <p>敏感肌の方にも選ばれている、無香料タイプ。</p>
-          <span class="price">1個 1,200円</span>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-body">
-          <h3>ハーブ石鹸</h3>
-          <p>自家栽培のハーブを練り込んだ、爽やかな香り。</p>
-          <span class="price">1個 1,400円</span>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-body">
-          <h3>ギフトセット</h3>
-          <p>3種類を少しずつ試せる、はじめての方向けセット。</p>
-          <span class="price">1箱 3,200円</span>
-        </div>
-      </div>
-    </div>
+<section class="alt" id="label"><div class="wrap">
+  <div class="head"><span class="leaf"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.0 54.0L50.0 12.0"/><path d="M21.9 44.8Q28.5 48.8 34.9 44.4Q28.3 40.4 21.9 44.8Z"/><path d="M28.4 37.2Q31.7 30.2 26.7 24.3Q23.4 31.3 28.4 37.2Z"/><path d="M34.9 29.6Q41.5 33.7 47.9 29.3Q41.3 25.3 34.9 29.6Z"/><path d="M41.4 22.1Q44.7 15.1 39.7 9.2Q36.4 16.2 41.4 22.1Z"/><path d="M47.1 15.4Q53.7 19.4 60.1 15.0Q53.5 11.0 47.1 15.4Z"/><path d="M30.5 35Q37 37 40.5 41"/><ellipse cx="43" cy="45" rx="3.6" ry="4.8" transform="rotate(-35 43 45)"/></svg></span><span class="label">全成分</span><h2><span class="nb">ラベルを、</span><span class="nb">そのままお見せします。</span></h2><p>入っているものを、すべて書いています。むずかしい名前には、ひと言を添えました。</p></div>
+  <div class="labels">
+    <div class="tag"><h3>オリーブ</h3><dl>
+      <div><dt>石ケン素地</dt><dd>油と、水酸化ナトリウムを合わせてできる、石けんのもと。</dd></div>
+      <div><dt>オリーブ果実油</dt><dd>オリーブの実からとった油。</dd></div>
+      <div><dt>ヤシ油</dt><dd>ココヤシの実からとった油。</dd></div>
+      <div><dt>グリセリン</dt><dd>石けんを作るときに、油から自然にできる成分。</dd></div>
+    </dl><p class="order">配合量の多い順に記載</p></div>
+    <div class="tag"><h3>ハーブ</h3><dl>
+      <div><dt>石ケン素地</dt><dd>油と、水酸化ナトリウムを合わせてできる、石けんのもと。</dd></div>
+      <div><dt>オリーブ果実油</dt><dd>オリーブの実からとった油。</dd></div>
+      <div><dt>ヤシ油</dt><dd>ココヤシの実からとった油。</dd></div>
+      <div><dt>トウキンセンカ花エキス</dt><dd>カレンデュラ（キンセンカ）の花から取り出したもの。工房の庭で育てています。</dd></div>
+      <div><dt>ラベンダー油</dt><dd>ラベンダーの花からとった精油。香りづけに使っています。</dd></div>
+      <div><dt>グリセリン</dt><dd>石けんを作るときに、油から自然にできる成分。</dd></div>
+    </dl><p class="order">配合量の多い順に記載</p></div>
   </div>
-</section>
+  <p class="note">※成分の表示は、制作サンプル用の架空のものです。</p>
+</div></section>
 
-<section id="ingredients">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">使用している主な素材</span>
-      <h2>すべて、公開しています。</h2>
-    </div>
-    <div class="ingredients-list">
-      <span>オリーブオイル</span>
-      <span>ココナッツオイル</span>
-      <span>カレンデュラ</span>
-      <span>ラベンダー精油</span>
-      <span>天然グリセリン</span>
-      <span>ミネラル塩</span>
-    </div>
+<section><div class="wrap make">
+  <div class="ph"><img src="img/lp-natural-maker.jpg" alt="木の型に、ボウルから石鹸の生地を流し込む手元" loading="lazy"></div>
+  <div>
+    <div class="head" style="text-align:left;margin-bottom:30px;"><span class="label">作り方</span><h2><span class="nb">ひとつずつ、</span><span class="nb">時間をかけて。</span></h2></div>
+    <ol class="steps">
+      <li><h3>油を量る</h3><p>オリーブオイルとヤシ油を、その日の分だけ量ります。</p></li>
+      <li><h3>混ぜる</h3><p>温度を見ながら、とろみが出るまで手で混ぜ続けます。</p></li>
+      <li><h3>型に流す</h3><p>木の型に流し込み、一日おいて固めます。</p></li>
+      <li><h3>ねかせる<span class="days">約1か月</span></h3><p>切り分けたあと、風通しのよい棚で、ゆっくり乾かします。</p></li>
+    </ol>
   </div>
-</section>
+</div></section>
 
-<section id="contact">
-  <div class="wrap">
-    <div class="final">
-      <span class="eyebrow" style="color:var(--accent-soft);">お問い合わせ</span>
-      <h2>まずは、ミニサイズから。</h2>
-      <p>「肌に合うかどうか、試してから決めたい」という方のために、お試しサイズもご用意しています。お気軽にお問い合わせください。</p>
-      <a class="btn" href="#">お問い合わせ（サンプルのためリンク先なし）</a>
-    </div>
+<section class="alt"><div class="wrap">
+  <div class="head"><span class="leaf"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.0 54.0L50.0 12.0"/><path d="M21.9 44.8Q28.5 48.8 34.9 44.4Q28.3 40.4 21.9 44.8Z"/><path d="M28.4 37.2Q31.7 30.2 26.7 24.3Q23.4 31.3 28.4 37.2Z"/><path d="M34.9 29.6Q41.5 33.7 47.9 29.3Q41.3 25.3 34.9 29.6Z"/><path d="M41.4 22.1Q44.7 15.1 39.7 9.2Q36.4 16.2 41.4 22.1Z"/><path d="M47.1 15.4Q53.7 19.4 60.1 15.0Q53.5 11.0 47.1 15.4Z"/><path d="M30.5 35Q37 37 40.5 41"/><ellipse cx="43" cy="45" rx="3.6" ry="4.8" transform="rotate(-35 43 45)"/></svg></span><span class="label">はじめて使うときに</span><h2>まずは、少しだけ試してください。</h2></div>
+  <div class="howto">
+    <ol>
+      <li><div class="ic"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="36" r="12"/><circle cx="42" cy="24" r="9"/><circle cx="46" cy="46" r="6"/><path d="M19 32a6 6 0 0 1 5-4"/></svg></div><h3>よく泡立てる</h3><p>手のひらか泡立てネットで、たっぷりの泡を作ります。</p></li>
+      <li><div class="ic"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 34V18a4 4 0 0 1 8 0v12M28 28V12a4 4 0 0 1 8 0v18M36 28V16a4 4 0 0 1 8 0v18M44 30v-6a4 4 0 0 1 8 0v14c0 10-7 18-17 18h-3c-7 0-11-4-15-10l-7-11a4 4 0 0 1 6-5l5 6"/></svg></div><h3>腕の内側で試す</h3><p>はじめは、腕の内側など目立たないところに泡をのせて洗い流し、しばらく様子を見てください。</p></li>
+      <li><div class="ic"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 42h52c-2 7-8 10-14 10H20c-6 0-12-3-14-10z"/><rect x="18" y="26" width="28" height="12" rx="3"/><path d="M14 42v-2M22 42v-2M30 42v-2M38 42v-2M46 42v-2"/></svg></div><h3>水を切って置く</h3><p>使ったあとは、水はけのよいお皿に。濡れたままだと、溶けやすくなります。</p></li>
+    </ol>
+    <p class="notice">すべての方の肌に合うとは限りません。赤みやかゆみなど、合わないと感じたときは、使うのをやめてください。</p>
   </div>
-</section>
+</div></section>
 
-<footer>
-  <div class="wrap">
-    ※このページは渡邊駿の制作サンプルです。架空のブランドを想定した自主制作物であり、実在の商品ではありません。
+<section id="order"><div class="wrap">
+  <div class="head"><span class="leaf"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.0 54.0L50.0 12.0"/><path d="M21.9 44.8Q28.5 48.8 34.9 44.4Q28.3 40.4 21.9 44.8Z"/><path d="M28.4 37.2Q31.7 30.2 26.7 24.3Q23.4 31.3 28.4 37.2Z"/><path d="M34.9 29.6Q41.5 33.7 47.9 29.3Q41.3 25.3 34.9 29.6Z"/><path d="M41.4 22.1Q44.7 15.1 39.7 9.2Q36.4 16.2 41.4 22.1Z"/><path d="M47.1 15.4Q53.7 19.4 60.1 15.0Q53.5 11.0 47.1 15.4Z"/><path d="M30.5 35Q37 37 40.5 41"/><ellipse cx="43" cy="45" rx="3.6" ry="4.8" transform="rotate(-35 43 45)"/></svg></span><span class="label">料金</span><h2>お試しミニセット</h2></div>
+  <div class="price-box">
+    <span class="ribbon">はじめての方へ</span>
+    <h3><span class="nb">ミニ オリーブ</span> ＋ <span class="nb">ミニ ハーブ</span></h3>
+    <p class="what"><span class="nb">各30g ／</span> <span class="nb">全成分のしおり・使い方のメモつき</span></p>
+    <div class="yen">950<small>円（税込）</small></div>
+    <p class="ship"><span class="nb">送料：全国一律520円</span>　<span class="nb">お支払い：銀行振込・クレジットカード</span></p>
+    <a class="btn" href="#" onclick="alert('制作サンプルのため、注文はできません。'); return false;">お試しセットを注文する</a>
+    <table>
+      <caption>気に入ったら、通常サイズもあります</caption>
+      <tr><td>オリーブ石鹸（90g）</td><td>1,200円</td></tr>
+      <tr><td>ハーブ石鹸（90g）</td><td>1,400円</td></tr>
+      <tr><td>ギフトセット（3種）</td><td>3,200円</td></tr>
+    </table>
   </div>
-</footer>
+  <p class="note">定期購入ではありません。一回ずつのご注文です。<br>※商品・価格は、制作サンプル用の架空のものです。</p>
+</div></section>
 
+<section class="alt"><div class="wrap">
+  <div class="head"><span class="leaf"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.0 54.0L50.0 12.0"/><path d="M21.9 44.8Q28.5 48.8 34.9 44.4Q28.3 40.4 21.9 44.8Z"/><path d="M28.4 37.2Q31.7 30.2 26.7 24.3Q23.4 31.3 28.4 37.2Z"/><path d="M34.9 29.6Q41.5 33.7 47.9 29.3Q41.3 25.3 34.9 29.6Z"/><path d="M41.4 22.1Q44.7 15.1 39.7 9.2Q36.4 16.2 41.4 22.1Z"/><path d="M47.1 15.4Q53.7 19.4 60.1 15.0Q53.5 11.0 47.1 15.4Z"/><path d="M30.5 35Q37 37 40.5 41"/><ellipse cx="43" cy="45" rx="3.6" ry="4.8" transform="rotate(-35 43 45)"/></svg></span><span class="label">お客様の声</span><h2>使ってくださった方より</h2></div>
+  <div class="voices">
+    <div class="voice"><p>成分にひとつずつ説明が書いてあって、何が入っているのかが分かったのが、決め手になりました。最初は無香料のほうから使っています。</p><span>40代・会社員</span></div>
+    <div class="voice"><p>香りの強いものが苦手なので、ミニサイズで試せたのがありがたかったです。ハーブのほうも、思っていたよりやさしい香りでした。</p><span>30代・パート</span></div>
+  </div>
+  <p class="note">※お客様の声は、制作サンプル用の架空のものです。</p>
+</div></section>
+
+<section><div class="wrap">
+  <div class="head"><span class="leaf"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.0 54.0L50.0 12.0"/><path d="M21.9 44.8Q28.5 48.8 34.9 44.4Q28.3 40.4 21.9 44.8Z"/><path d="M28.4 37.2Q31.7 30.2 26.7 24.3Q23.4 31.3 28.4 37.2Z"/><path d="M34.9 29.6Q41.5 33.7 47.9 29.3Q41.3 25.3 34.9 29.6Z"/><path d="M41.4 22.1Q44.7 15.1 39.7 9.2Q36.4 16.2 41.4 22.1Z"/><path d="M47.1 15.4Q53.7 19.4 60.1 15.0Q53.5 11.0 47.1 15.4Z"/><path d="M30.5 35Q37 37 40.5 41"/><ellipse cx="43" cy="45" rx="3.6" ry="4.8" transform="rotate(-35 43 45)"/></svg></span><span class="label">よくある質問</span><h2>FAQ</h2></div>
+  <div class="faq">
+    <details><summary>肌が敏感なのですが、使えますか？</summary><p>すべての方の肌に合うとは限りません。はじめは腕の内側などで少しだけ試し、様子を見てからお使いください。気になる成分があれば、全成分の表示をご確認ください。</p></details>
+    <details><summary>顔にも使えますか？</summary><p>はい、顔と体のどちらにもお使いいただけます。目に入らないよう、ご注意ください。</p></details>
+    <details><summary>ミニサイズは、どのくらい使えますか？</summary><p>使い方によりますが、毎日の洗顔で、2〜3週間ほどが目安です。</p></details>
+    <details><summary>定期便になりますか？</summary><p>なりません。お試しセットは一回きりのご注文で、その後の自動のお届けはありません。</p></details>
+    <details><summary>返品はできますか？</summary><p>商品に不良があった場合のみ、到着から7日以内にご連絡ください。お客様のご都合による返品は、お受けしていません。</p></details>
+  </div>
+</div></section>
+
+<section style="padding-top:0;"><div class="wrap">
+  <div class="final">
+    <h2><span class="nb">まずは小さなひとつで、</span><span class="nb">確かめてみてください。</span></h2>
+    <p><span class="nb">お試しミニセット　950円（税込）</span><span class="nb">＋送料520円</span></p>
+    <a class="btn" href="#" onclick="alert('制作サンプルのため、注文はできません。'); return false;">お試しセットを注文する</a>
+    <div class="links"><a class="nb" href="../hp-samples/te-shigoto/guide.html">特定商取引法に基づく表記</a><a class="nb" href="../hp-samples/te-shigoto/index.html">工房のホームページ</a></div>
+  </div>
+</div></section>
+
+<footer><b>て、しごと</b>〒000-0000　◯◯県◯◯市◯◯町 4-5-6<br>※このページは渡邊駿の制作サンプルです。架空の工房を想定した自主制作物で、実在のお店ではありません。商品・価格・成分の表示・お客様の声も、すべて架空です。</footer>
+
+<div class="fixed-cta"><a class="btn" href="#order">お試しセット 950円 を見る</a></div>
+
+<script>
+(function () {
+  // 下部の注文ボタンは、最初の画面を過ぎてから出す（料金の欄と最後の案内が見えている間は隠す）
+  var bar = document.querySelector(".fixed-cta"), hero = document.querySelector(".hero"), od = document.querySelector("#order"), fin = document.querySelector(".final");
+  function off(el) { var r = el.getBoundingClientRect(); return r.top > innerHeight || r.bottom < 0; }
+  function onScroll() {
+    bar.classList.toggle("show", hero.getBoundingClientRect().bottom < 0 && off(od) && off(fin));
+  }
+  addEventListener("scroll", onScroll, { passive: true }); onScroll();
+})();
+</script>
 </body>
 </html>
