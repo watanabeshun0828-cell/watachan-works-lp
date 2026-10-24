@@ -288,3 +288,7 @@ mark { background: rgba(120,150,125,0.28); color: inherit; padding: 0 2px; }
 .works img { width: 100%; height: auto; display: block; border: 1px solid var(--line); }
 .works figcaption { margin-top: 10px; font-family: var(--sans); font-size: 12.5px; letter-spacing: 0.06em; color: var(--ink-soft); line-height: 1.8; }
 .works figcaption b { color: var(--ink); font-weight: 600; }
+.works a.work { text-decoration: none; color: inherit; display: block; }
+.works a.work img { aspect-ratio: 1280 / 900; object-fit: cover; object-position: top; transition: opacity 0.2s; }
+.works a.work:hover img { opacity: 0.85; }
+.works .style-tag { display: inline-block; font-family: var(--sans); font-size: 11.5px; letter-spacing: 0.1em; color: var(--ink); border: 1px solid var(--btn); padding: 1px 10px; margin-bottom: 6px; }
