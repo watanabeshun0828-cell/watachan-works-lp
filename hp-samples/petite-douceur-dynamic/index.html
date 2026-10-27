@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>petite douceur｜ブラウザで動くHP見本（制作サンプル）</title>
+<meta name="description" content="営業状況の自動表示、お知らせ、商品の絞り込み、ご予約の合計金額の自動計算など、ブラウザ側で動く機能を入れたホームページの見本です（架空の店舗の制作サンプル）。">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="../petite-douceur/style.css">
+<link rel="stylesheet" href="dynamic.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%227%22 fill=%22%23333%22/%3E%3C/svg%3E">
+</head>
+<body>
+<div class="sample-strip">SAMPLE HP（動く見本）― 架空の店舗を想定した、渡邊駿の自主制作サンプルです。<a href="../petite-douceur/index.html">静的な見本を見る</a><a href="../../hp.html">← HP制作のページへ</a></div>
+
+<div class="progress" id="progress" aria-hidden="true"></div>
+<nav class="site-nav"><div class="nav-inner">
+  <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M32 61V13"/><path d="M32 15C29.5 11 30 6 32 3C34 6 34.5 11 32 15"/><path d="M32 54C38 52 42 48 44 43"/><path d="M32 25 C25 24 22 18 23 13 C29 14 32 19 32 25"/><path d="M32 25 C39 24 42 18 41 13 C35 14 32 19 32 25"/><path d="M32 33 C25 32 22 26 23 21 C29 22 32 27 32 33"/><path d="M32 33 C39 32 42 26 41 21 C35 22 32 27 32 33"/><path d="M32 41 C25 40 22 34 23 29 C29 30 32 35 32 41"/><path d="M32 41 C39 40 42 34 41 29 C35 30 32 35 32 41"/><path d="M32 49 C25 48 22 42 23 37 C29 38 32 43 32 49"/><path d="M32 49 C39 48 42 42 41 37 C35 38 32 43 32 49"/></svg></span><span class="brand-text">petite douceur<small>焼き菓子とパンの店</small></span></a>
+  <button class="burger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-links"><span></span><span></span></button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#news">お知らせ</a></li>
+    <li><a href="#menu">商品</a></li>
+    <li><a href="#hours">営業時間</a></li>
+    <li><a href="#reserve" class="cta">ご予約</a></li>
+  </ul>
+</div></nav>
+
+<header class="hero-full" id="top">
+  <img class="bg" src="../petite-douceur/img/hero.jpg" srcset="../petite-douceur/img/hero-sp.jpg 900w, ../petite-douceur/img/hero.jpg 1600w" sizes="100vw" alt="お店の外観と、ショーケースに並ぶ焼き菓子" fetchpriority="high">
+  <div class="wrap"><div class="hero-copy">
+    <div class="status" id="status" role="status" aria-live="polite" data-state="loading">
+      <span class="dot" aria-hidden="true"></span><span class="status-main">営業状況を確認しています…</span><span class="status-sub"></span>
+    </div>
+    <div class="hero-logo">
+      <span class="mark" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M32 61V13"/><path d="M32 15C29.5 11 30 6 32 3C34 6 34.5 11 32 15"/><path d="M32 54C38 52 42 48 44 43"/><path d="M32 25 C25 24 22 18 23 13 C29 14 32 19 32 25"/><path d="M32 25 C39 24 42 18 41 13 C35 14 32 19 32 25"/><path d="M32 33 C25 32 22 26 23 21 C29 22 32 27 32 33"/><path d="M32 33 C39 32 42 26 41 21 C35 22 32 27 32 33"/><path d="M32 41 C25 40 22 34 23 29 C29 30 32 35 32 41"/><path d="M32 41 C39 40 42 34 41 29 C35 30 32 35 32 41"/><path d="M32 49 C25 48 22 42 23 37 C29 38 32 43 32 49"/><path d="M32 49 C39 48 42 42 41 37 C35 38 32 43 32 49"/></svg></span>
+      <h1 class="hero-name"><span class="name">petite douceur</span><span class="sub">焼き菓子とパンの店</span></h1>
+    </div>
+    <p class="hero-catch"><span class="nb">今日も、</span><span class="nb">小さな窯から。</span></p>
+    <p class="lede">家族3人で営む、町の小さな焼き菓子店です。次の焼き上がりと、ご予約が、このページで確かめられます。</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="#reserve">ご予約・お取り置き</a>
+      <a class="btn btn-ghost" href="#menu">商品を見る</a>
+    </div>
+  </div></div>
+</header>
+
+<section class="demo-intro"><div class="wrap">
+  <div class="demo-box">
+    <span class="eyebrow">この見本でできること</span>
+    <h2>ブラウザの中で動く、5つの仕組み</h2>
+    <ul class="demo-list">
+      <li><b>営業状況の自動表示</b><span>いまの時刻から、営業中・まもなく閉店・定休日を表示します。</span></li>
+      <li><b>お知らせの絞り込み</b><span>種類（新商品・お休みなど）で切り替えます。新しい投稿には「NEW」が付きます。</span></li>
+      <li><b>商品の絞り込み・検索・並べ替え</b><span>種類、名前、価格で、探しやすくします。</span></li>
+      <li><b>ご予約の合計金額の自動計算</b><span>個数を選ぶと、金額がその場で出ます。定休日は選べません。</span></li>
+      <li><b>入力チェックと確認画面</b><span>入れ忘れや形式の違いを、送る前に知らせます。</span></li>
+    </ul>
+    <p class="demo-note">※このページはサンプルです。ご予約の内容は、送信されません（ブラウザの中だけで動いています）。実際のお店では、送信先（メールや予約サービス）を、つなぎます。</p>
+  </div>
+</div></section>
+
+<section id="news"><div class="wrap">
+  <div class="section-head"><span class="eyebrow">NEWS</span><h2>お知らせ</h2></div>
+  <div class="chips" role="group" aria-label="お知らせの種類" id="news-chips"></div>
+  <ul class="news-list" id="news-list"></ul>
+</div></section>
+
+<section class="alt" id="menu"><div class="wrap">
+  <div class="section-head"><span class="eyebrow">MENU</span><h2>商品のご案内</h2><p>種類や名前で、探せます。価格は税込です。</p></div>
+  <div class="tools">
+    <div class="chips" role="group" aria-label="商品の種類" id="cat-chips"></div>
+    <div class="tool-row">
+      <label class="field"><span>名前で探す</span><input type="search" id="q" placeholder="例：メロン" autocomplete="off"></label>
+      <label class="field"><span>並べ替え</span>
+        <select id="sort">
+          <option value="default">おすすめ順</option>
+          <option value="asc">価格が安い順</option>
+          <option value="desc">価格が高い順</option>
+        </select>
+      </label>
+    </div>
+    <p class="count" id="count" role="status" aria-live="polite"></p>
+  </div>
+  <div class="grid-4 products" id="products"></div>
+  <p class="note" style="text-align:center;">※卵・乳・小麦を使用しています。アレルギーについては、お気軽にお問い合わせください。写真はイメージです（AIで生成）。</p>
+</div></section>
+
+<section id="bake"><div class="wrap">
+  <div class="section-head"><span class="eyebrow">焼き上がり</span><h2>今日の焼き上がり</h2><p id="bake-lead"></p></div>
+  <ol class="timeline" id="bake-list"></ol>
+</div></section>
+
+<section class="alt" id="reserve"><div class="wrap">
+  <div class="section-head"><span class="eyebrow">RESERVE</span><h2>ご予約・お取り置き</h2><p>受け取り日と、商品を選んでください。定休日は選べません。</p></div>
+  <form id="form" class="form" novalidate>
+    <div class="form-grid">
+      <label class="field"><span>お名前<em>必須</em></span><input type="text" id="f-name" name="name" autocomplete="name" required><small class="err" id="e-name"></small></label>
+      <label class="field"><span>メールアドレス<em>必須</em></span><input type="email" id="f-mail" name="mail" autocomplete="email" required><small class="err" id="e-mail"></small></label>
+      <label class="field"><span>電話番号<em>必須</em></span><input type="tel" id="f-tel" name="tel" autocomplete="tel" inputmode="tel" placeholder="例：090-1234-5678" required><small class="err" id="e-tel"></small></label>
+      <label class="field"><span>受け取り日<em>必須</em></span><input type="date" id="f-date" name="date" required><small class="hint" id="h-date">火曜日は定休日です。</small><small class="err" id="e-date"></small></label>
+      <label class="field"><span>受け取り時間<em>必須</em></span><select id="f-time" name="time" required><option value="">先に、受け取り日を選んでください</option></select><small class="err" id="e-time"></small></label>
+    </div>
+    <fieldset class="order">
+      <legend>ご注文の内容<em>必須</em></legend>
+      <ul class="order-list" id="order-list"></ul>
+      <p class="err" id="e-order"></p>
+      <p class="total" role="status" aria-live="polite">合計（税込）<strong id="total">0円</strong></p>
+    </fieldset>
+    <label class="field"><span>ご要望（任意）</span><textarea id="f-note" name="note" rows="3" placeholder="例：メッセージカードをつけてほしい"></textarea></label>
+    <div class="form-actions"><button type="submit" class="btn btn-primary">内容を確認する</button><button type="reset" class="btn btn-ghost" id="reset">入力をリセット</button></div>
+  </form>
+  <p class="done" id="done" hidden role="status"></p>
+</div></section>
+
+<section id="hours"><div class="wrap">
+  <div class="section-head"><span class="eyebrow">ACCESS</span><h2>営業時間・アクセス</h2></div>
+  <table class="menu hours-table" id="hours-table"><thead><tr><th>曜日</th><th>営業時間</th></tr></thead><tbody></tbody></table>
+  <p class="note" style="text-align:center;">〒000-0000　◯◯県◯◯市◯◯町 1-2-3（架空の住所です）</p>
+</div></section>
+
+<footer><div class="wrap">
+  <a class="brand" href="#top">petite douceur</a>
+  <p>〒000-0000　◯◯県◯◯市◯◯町 1-2-3　｜　8:00〜18:00（火曜定休）</p>
+  <p class="sample-note">※このサイトは渡邊駿の制作サンプルです。架空の店舗を想定した自主制作物であり、実在のお店・団体とは関係ありません。写真・文章・価格・連絡先はすべて架空です。</p>
+</div></footer>
+
+<dialog id="confirm" aria-labelledby="confirm-title">
+  <form method="dialog" class="dlg">
+    <h2 id="confirm-title">ご予約内容の確認</h2>
+    <dl class="summary" id="summary"></dl>
+    <p class="demo-note">※見本のため、ここで「送信」しても、実際には送られません。</p>
+    <div class="form-actions"><button value="ok" class="btn btn-primary" id="send">この内容で送信する（見本）</button><button value="cancel" class="btn btn-ghost">戻って直す</button></div>
+  </form>
+</dialog>
+
+<dialog id="lightbox" aria-label="商品の写真">
+  <form method="dialog" class="dlg lb"><img id="lb-img" alt=""><p id="lb-cap"></p><button class="btn btn-ghost" value="close">閉じる</button></form>
+</dialog>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
