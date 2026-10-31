@@ -123,6 +123,7 @@ img { display: block; max-width: 100%; }
 
 footer { padding: 50px 28px 60px; text-align: center; font-family: var(--sans); font-size: 12px; letter-spacing: 0.16em; color: var(--ink-soft); line-height: 2.2; }
 footer a { text-decoration: none; margin: 0 8px; }
+footer div { display: flex; flex-wrap: wrap; justify-content: center; }
 footer a:hover { color: var(--ink); }
 
 /* ── サブページ ── */
