@@ -17,6 +17,7 @@
   .case-table th, .case-table td { text-align: left; padding: 11px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
   .case-table th { font-weight: 500; color: var(--ink-soft); font-size: 12.5px; letter-spacing: 0.08em; }
   .case-table td:last-child { white-space: nowrap; }
+  .case-table.wrap td:last-child { white-space: normal; }
   .tag-add { white-space: nowrap; display: inline-block; font-size: 11.5px; border: 1px solid var(--btn); padding: 0 8px; }
   .voice-list { list-style: none; padding: 0; margin: 14px 0 0; }
   .voice-list li { border-left: 2px solid var(--ink); padding: 6px 0 6px 18px; margin-bottom: 14px; font-size: 14.5px; }
@@ -55,13 +56,13 @@
   <button class="burger" aria-label="メニュー" onclick="document.getElementById('menu').classList.toggle('open')"><span></span><span></span></button>
   <ul class="menu" id="menu"><li><a href="index.html">Home</a></li><li><a href="writer.html">Writer</a></li><li><a href="scenario.html">Script</a></li><li><a href="lp.html">LP</a></li><li><a href="hp.html" class="cur">HP</a></li><li><a href="web-design.html">Design</a></li><li><a href="video.html">Video</a></li><li><a href="ai.html">AI</a></li><li><a href="index.html#profile">Profile</a></li><li><a class="cta" href="index.html#contact">相談する</a></li></ul>
 </header>
-<section class="sub-hero"><div class="photo has-img"><img src="case/after-hero.jpg" alt="完成した焼き菓子店のホームページのトップ画面" fetchpriority="high"></div></section>
+<section class="sub-hero"><div class="photo has-img"><img src="case/v3-hero.jpg" alt="完成した焼き菓子店のホームページのトップ画面" fetchpriority="high"></div></section>
 <section class="sub-title">
   <a class="crumb" href="hp.html">← HP制作</a>
   <div>
     <div class="en-label">CASE ／ HP制作の進め方</div>
     <h1 class="reveal">パン屋さんのホームページが、<br>できるまで。</h1>
-    <p class="lede reveal">架空の焼き菓子店「petite douceur」のホームページを、どんな順番で、何を考えて作ったのか。調べるところから、作り直し、公開前の計測までをまとめました。実際のご依頼でも、同じ流れで進めます。</p>
+    <p class="lede reveal">架空の焼き菓子店「petite douceur」のホームページを、どんな順番で、何を考えて作ったのか。調べるところから、作り直し、公開前の計測、公開後の見直しまでをまとめました。実際のご依頼でも、同じ流れで進めます。</p>
   </div>
 </section>
 
@@ -108,7 +109,7 @@
     <p class="headline">ページの数と、それぞれに載せることを決める。</p>
     <p>調べた項目を、5つのページに振り分けました。デザインに入る前に、ここで中身を固めます。</p>
     <div class="table-scroll">
-      <table class="case-table">
+      <table class="case-table wrap">
         <tr><th>ページ</th><th>載せること</th></tr>
         <tr><td>トップ</td><td>お店の雰囲気、お知らせ、大事にしていること、人気の商品、どうぶつパン</td></tr>
         <tr><td>お店について</td><td>お店の成り立ち、一日の流れ、家族3人の紹介</td></tr>
@@ -173,15 +174,53 @@
       <div><small>直した後</small><b>100</b><small>見やすさ・使いやすさ</small></div>
     </div>
     <p style="margin-top:18px;">あわせて、検索とSNS向けの設定も入れました。店舗の名前・住所・営業時間を、検索エンジンが読み取れる形（構造化データ）でも書き込み、シェアされたときの見出しと画像も設定しています。</p>
-    <p style="font-size:12.5px;color:var(--ink-soft);">※点数は、計測する環境や日によって変わります。サンプルは架空のお店のため、検索結果には出さない設定にしています。</p>
+    <p style="font-size:12.5px;color:var(--ink-soft);">※点数は、STEP 04の版で計測したものです。計測する環境や日によって変わります。サンプルは架空のお店のため、検索結果には出さない設定にしています。</p>
   </div>
 </section>
 
 <section class="block">
+  <h2><span>STEP 06</span></h2>
+  <div class="body reveal">
+    <p class="headline">公開後に見直し、配色と構成を作り直す。</p>
+    <p>公開したあとに見返すと、ページ全体がクリーム色とオレンジの一色に寄っていました。どの欄も「丸いアイコン → 小さなラベル → 下線つきの見出し → カードを横に並べる」という同じ並びで、生成AIで作ったサイトによくある形です。色が商品写真と重なり、パンの焼き色も目立ちませんでした。</p>
+    <p>そこで、パン屋さんのサイトの配色例と、「AIっぽい」と言われやすいデザインの特徴を調べ直しました。色の候補を3つ作り、構成と形は同じまま、色だけを差し替えて見比べています。</p>
+    <div class="case-figs one">
+      <figure><img src="case/v3-palettes.jpg" alt="同じトップ画面を、白×焦げ茶×赤、生成り×深緑×小麦色、紺×生成り×琥珀の3つの配色で並べた画像" loading="lazy"><figcaption><b>配色の3案</b>　左から、白×焦げ茶×クラスト赤／生成り×深緑×小麦色／紺×生成り×琥珀。真ん中の案を選びました。</figcaption></figure>
+    </div>
+    <p>選んだ案をもとに、次のように作り直しました。</p>
+    <div class="table-scroll">
+      <table class="case-table wrap">
+        <tr><th>変えたこと</th><th>理由</th></tr>
+        <tr><td>配色を、生成り×深緑×小麦色に</td><td>オレンジや茶色が多いパン屋さんのサイトの中で、覚えてもらいやすくするため。緑の地には、パンの焼き色が映えます</td></tr>
+        <tr><td>太い線とずらした影は、どうぶつパンとかまどだけに</td><td>遊びのある表現を1か所に集め、ほかの欄は読みやすさを優先するため</td></tr>
+        <tr><td>最初の画面に、営業時間と予約のボタン</td><td>来る前にいちばん知りたいことを、最初に見せるため</td></tr>
+        <tr><td>焼き上がりの時間を、トップに時刻で</td><td>「売り切れ次第終了」のお店では、何時に行けば買えるかが大事なため。STEP 01で商品のページに入れた内容を、トップにも出しました</td></tr>
+        <tr><td>人気の商品は、1つを大きく</td><td>3つを同じ大きさで並べるより、まず食べてほしい1つが伝わるため</td></tr>
+        <tr><td>写真の暖色の加工をやめる</td><td>STEP 04で温かい色味にそろえましたが、全体が同じ色に寄る原因になっていたため</td></tr>
+      </table>
+    </div>
+    <div class="case-figs">
+      <figure><img src="case/after-hero.jpg" alt="STEP 04の版のトップ画面" loading="lazy"><figcaption><b>前（STEP 04の版）</b>　山型の食パンの囲み。写真は温かい色味。</figcaption></figure>
+      <figure><img src="case/v3-hero.jpg" alt="作り直した後のトップ画面。写真の左に店名・営業時間・予約のボタンがある" loading="lazy"><figcaption><b>後</b>　写真の左に、店名と営業時間、予約のボタン。</figcaption></figure>
+    </div>
+    <div class="case-figs">
+      <figure><img src="case/v3-bake.jpg" alt="8時・10時・14時の焼き上がりの時間を、大きな数字で並べた欄" loading="lazy"><figcaption><b>焼き上がりの時間</b>　時刻を大きく、横に並べました。</figcaption></figure>
+      <figure><img src="case/v3-visit.jpg" alt="営業時間・住所・電話の表と、ご予約・お取り置きの案内を並べた欄" loading="lazy"><figcaption><b>営業時間と予約の案内</b>　店の情報と、予約の締め切りを並べました。</figcaption></figure>
+    </div>
+    <p style="margin-top:6px;">ページ全体で見ると、次のように変わりました。</p>
+    <div class="case-figs">
+      <figure><img src="case/after-full.jpg" alt="STEP 04の版のトップページ全体" loading="lazy"><figcaption><b>前（STEP 04の版）</b>　トップページ全体</figcaption></figure>
+      <figure><img src="case/v3-full.jpg" alt="作り直した後のトップページ全体" loading="lazy"><figcaption><b>後</b>　トップページ全体</figcaption></figure>
+    </div>
+    <p style="font-size:12.5px;color:var(--ink-soft);">文字と背景の色の組み合わせは、読みやすさの目安（コントラスト比4.5以上）を満たすことを計算で確かめています。</p>
+  </div>
+</section>
+
+<section class="block tint">
   <h2><span>NEXT</span></h2>
   <div class="body reveal">
     <p class="headline">実際のご依頼でも、同じ流れで進めます。</p>
-    <p>調べる → 構成を決める → 作る → 見ていただいて直す → 測って確かめる。お店の方にお話をうかがいながら、この順番で一緒に作っていきます。</p>
+    <p>調べる → 構成を決める → 作る → 見ていただいて直す → 測って確かめる → 公開後も見直す。お店の方にお話をうかがいながら、この順番で一緒に作っていきます。</p>
     <div class="case-actions">
       <a class="btn line" href="hp-samples/petite-douceur/index.html">&gt; 完成したサイトを見る</a>
       <a class="btn line" href="hp.html#flow">&gt; 依頼の流れ</a>
