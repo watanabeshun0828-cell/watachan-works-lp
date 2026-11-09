@@ -56,13 +56,13 @@
   <button class="burger" aria-label="メニュー" onclick="document.getElementById('menu').classList.toggle('open')"><span></span><span></span></button>
   <ul class="menu" id="menu"><li><a href="index.html">Home</a></li><li><a href="writer.html">Writer</a></li><li><a href="scenario.html">Script</a></li><li><a href="lp.html">LP</a></li><li><a href="hp.html" class="cur">HP</a></li><li><a href="web-design.html">Design</a></li><li><a href="video.html">Video</a></li><li><a href="ai.html">AI</a></li><li><a href="index.html#profile">Profile</a></li><li><a class="cta" href="index.html#contact">相談する</a></li></ul>
 </header>
-<section class="sub-hero"><div class="photo has-img"><img src="case/v3-hero.jpg" alt="完成した焼き菓子店のホームページのトップ画面" fetchpriority="high"></div></section>
+<section class="sub-hero"><div class="photo has-img"><img src="case/v4-hero.jpg" alt="完成した焼き菓子店のホームページのトップ画面。焼き上がりの時刻表と店の写真が並ぶ" fetchpriority="high"></div></section>
 <section class="sub-title">
   <a class="crumb" href="hp.html">← HP制作</a>
   <div>
     <div class="en-label">CASE ／ HP制作の進め方</div>
     <h1 class="reveal">パン屋さんのホームページが、<br>できるまで。</h1>
-    <p class="lede reveal">架空の焼き菓子店「petite douceur」のホームページを、どんな順番で、何を考えて作ったのか。調べるところから、作り直し、公開前の計測、公開後の見直しまでをまとめました。実際のご依頼でも、同じ流れで進めます。</p>
+    <p class="lede reveal">架空の焼き菓子店「petite douceur」のホームページを、どんな順番で、何を考えて作ったのか。調べるところから、作り直し、公開前の計測、公開後の2度の見直しまでをまとめました。実際のご依頼でも、同じ流れで進めます。</p>
   </div>
 </section>
 
@@ -73,7 +73,7 @@
       <dl class="facts-list">
         <dt>想定したお店</dt><dd>家族3人で営む、町の小さな焼き菓子とパンの店</dd>
         <dt>目的</dt><dd>お店に来てもらうこと。ご予約・お取り置きを受けやすくすること</dd>
-        <dt>雰囲気</dt><dd>ポップ・親しみやすい</dd>
+        <dt>雰囲気</dt><dd>最初は「ポップ・親しみやすい」で作り、公開後の見直し（STEP 06・07）で「クラシック・端正」に変えました</dd>
         <dt>ページ</dt><dd>5ページ（トップ／お店について／商品／アクセス／ご予約）</dd>
       </dl>
     </div>
@@ -217,6 +217,40 @@
 </section>
 
 <section class="block tint">
+  <h2><span>STEP 07</span></h2>
+  <div class="body reveal">
+    <p class="headline">角の丸い囲みと丸い文字をやめ、時刻表として組み直す。</p>
+    <p>STEP 06の版を見返すと、色は変わっても、形にはまだ生成AIで作ったサイトによくある特徴が残っていました。情報をすべて角の丸い四角で囲み、ボタンや値段は丸いラベル、見出しは丸ゴシック。ひとつずつなら悪くない表現ですが、全部がそろうと「どこかで見た形」になり、お店らしさが伝わりません。</p>
+    <p>そこで、生成AIがやりがちなデザインの失敗を48項目にまとめた点検表をもとに、直す箇所を洗い出しました。そのうえで手がかりにしたのは、このお店ならではの事情です。売り切れ次第終了のお店なので、何時に何が焼きあがるかが、買う人にとっていちばん大事な情報になります。そこで、トップページ全体を「お店の一日」の時刻表として組み直しました。</p>
+    <div class="table-scroll">
+      <table class="case-table wrap">
+        <tr><th>変えたこと</th><th>理由</th></tr>
+        <tr><td>トップページ全体を、朝5時の仕込みから夕方6時の閉店までの時刻表に</td><td>何時に行けば何が買えるかが、ひと目でわかるため。商品も、予約の締め切りも、閉店時間も、時刻の順に並べました</td></tr>
+        <tr><td>囲みをやめ、罫線で区切る</td><td>太い線は時刻の境目、細い線は項目の境目です。囲まなくても、情報のまとまりがわかるようにしました</td></tr>
+        <tr><td>ボタンは角を立て、値段は点線でつなぐ</td><td>丸いラベルを重ねるのをやめ、お店のメニュー表のような見え方にするため</td></tr>
+        <tr><td>見出しと数字は明朝、本文はゴシック</td><td>丸ゴシックの柔らかさに頼らず、時刻を大きく、読みやすく見せるため</td></tr>
+        <tr><td>いまの時刻から、次の焼き上がりを表示</td><td>見ている人の端末の時刻をもとに、「次の焼き上がりは10:00です」のように示します。火曜日は定休日と表示します</td></tr>
+        <tr><td>配色はSTEP 06のまま</td><td>生成り×深緑×小麦色です。小麦色はボタンだけ、深緑はお知らせの黒板だけに使いました</td></tr>
+      </table>
+    </div>
+    <div class="case-figs">
+      <figure><img src="case/v3-hero.jpg" alt="STEP 06の版のトップ画面" loading="lazy"><figcaption><b>前（STEP 06の版）</b>　写真の上に文字。ボタンは丸い形。</figcaption></figure>
+      <figure><img src="case/v4-hero.jpg" alt="作り直した後のトップ画面。左に焼き上がりの時刻表、右に店の写真" loading="lazy"><figcaption><b>後</b>　左に焼き上がりの時刻表。写真と文字を分けました。</figcaption></figure>
+    </div>
+    <div class="case-figs">
+      <figure><img src="case/v4-slot.jpg" alt="5:00の仕込みの欄。大きな時刻の横に、厨房の写真とお店の話が並ぶ" loading="lazy"><figcaption><b>時刻ごとの欄</b>　左に大きな時刻、右にその時間のこと。太い線で区切っています。</figcaption></figure>
+      <figure><img src="case/v4-reserve.jpg" alt="17:00の予約の締め切りの欄。番号つきの3つの決まりと、角の立ったボタンが2つ" loading="lazy"><figcaption><b>予約の案内</b>　17時の欄に、予約の決まりとボタンを置きました。</figcaption></figure>
+    </div>
+    <p style="margin-top:6px;">ページ全体で見ると、次のように変わりました。</p>
+    <div class="case-figs">
+      <figure><img src="case/v3-full.jpg" alt="STEP 06の版のトップページ全体" loading="lazy"><figcaption><b>前（STEP 06の版）</b>　トップページ全体</figcaption></figure>
+      <figure><img src="case/v4-full.jpg" alt="作り直した後のトップページ全体" loading="lazy"><figcaption><b>後</b>　トップページ全体</figcaption></figure>
+    </div>
+    <p style="font-size:12.5px;color:var(--ink-soft);">文字と背景の色の組み合わせは、STEP 06と同じく計算で確かめています。この版の表示の速さは、まだ計測していません。</p>
+  </div>
+</section>
+
+<section class="block">
   <h2><span>NEXT</span></h2>
   <div class="body reveal">
     <p class="headline">実際のご依頼でも、同じ流れで進めます。</p>
