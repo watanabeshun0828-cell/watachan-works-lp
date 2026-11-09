@@ -4,355 +4,376 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>資金繰りの無料相談｜みちしるべ経営パートナーズ（制作サンプル・渡邊駿）</title>
-<meta name="description" content="売上はあるのにお金が残らない、と感じている経営者の方へ。60分の無料相談のLP（架空の事務所の制作サンプル）。">
-<style>
-:root { --bg: #121418; --bg2: #1A1D22; --card: #1E2127; --ink: #E9E4D8; --soft: #B3AC9E; --gold: #C2A15A; --gold2: #DCC287; --line: rgba(233,228,216,.14); --gline: rgba(194,161,90,.4); color-scheme: dark; }
-* { box-sizing: border-box; margin: 0; }
-html { scroll-behavior: smooth; }
-body { background: var(--bg); color: var(--ink); font-family: "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif; font-weight: 300; line-height: 2; letter-spacing: 0.06em; -webkit-font-smoothing: antialiased; }
-h1, h2, h3, .serif { font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif; font-weight: 400; letter-spacing: 0.12em; }
-img, svg { display: block; max-width: 100%; }
-a { color: inherit; }
-.nb { display: inline-block; }
-.wrap { max-width: 1040px; margin: 0 auto; padding: 0 32px; }
-
-.sample-bar { background: #000; color: var(--gold2); font-size: 11.5px; text-align: center; padding: 7px 16px; }
-.sample-bar a { color: #fff; margin-left: 10px; }
-
-.top { position: sticky; top: 0; z-index: 50; background: rgba(14,16,20,.9); border-bottom: 1px solid rgba(194,161,90,.25); backdrop-filter: blur(6px); }
-.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 66px; gap: 14px; }
-.logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-.logo .mk { width: 38px; height: 38px; border: 1px solid var(--gline); border-radius: 50%; padding: 7px; color: var(--gold); flex: none; }
-.logo b { font-family: "Hiragino Mincho ProN", serif; font-weight: 400; font-size: 16.5px; letter-spacing: 0.12em; display: block; line-height: 1.4; white-space: nowrap; }
-.logo small { display: block; font-size: 10px; color: var(--soft); letter-spacing: 0.2em; line-height: 1.4; }
-
-.btn { display: inline-flex; align-items: center; justify-content: center; padding: 16px 38px; background: linear-gradient(135deg, #D6B970, #B08F48); color: #121418; font-weight: 600; text-decoration: none; letter-spacing: 0.16em; font-size: 14px; border: 1px solid var(--gold); transition: filter .2s; cursor: pointer; font-family: inherit; }
-.btn:hover { filter: brightness(1.08); }
-.btn.line { background: transparent; color: var(--gold2); font-weight: 400; }
-.btn.line:hover { background: rgba(194,161,90,.1); }
-.btn.small { padding: 9px 20px; font-size: 12.5px; }
-
-.label { display: inline-flex; align-items: center; gap: 14px; font-family: "Hiragino Mincho ProN", serif; font-size: 13px; letter-spacing: 0.3em; color: var(--gold); }
-.label::before, .label::after { content: ""; width: 26px; height: 1px; background: var(--gold); }
-.head { text-align: center; margin-bottom: 54px; }
-.head h2 { font-size: clamp(23px, 3vw, 31px); line-height: 1.8; margin-top: 16px; }
-.head p { color: var(--soft); font-size: 14.5px; margin-top: 12px; }
-section { padding: 120px 0; }
-section.alt { background: var(--bg2); }
-.rule { width: 1px; height: 64px; background: linear-gradient(var(--gold), transparent); margin: 0 auto 26px; }
-
-/* ファーストビュー */
-.hero { position: relative; min-height: min(calc(100vh - 96px), 780px); display: grid; place-items: center; overflow: hidden; padding: 70px 0; }
-.hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(.35) brightness(.55); }
-.hero::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(8,10,14,.55), rgba(8,10,14,.9) 75%); }
-.frame { position: relative; z-index: 1; text-align: center; border: 1px solid var(--gline); padding: 64px 56px 56px; max-width: 760px; margin: 0 24px; background: rgba(12,14,18,.35); }
-.frame::before { content: ""; position: absolute; inset: 8px; border: 1px solid rgba(194,161,90,.18); pointer-events: none; }
-.hero h1 { font-size: clamp(27px, 3.8vw, 42px); line-height: 1.75; margin: 26px 0 20px; }
-.hero h1 em { font-style: normal; color: var(--gold2); }
-.hero .lede { color: var(--soft); font-size: 14.5px; max-width: 34em; margin: 0 auto; }
-.badges { display: flex; justify-content: center; gap: 0; margin: 30px 0 34px; border-top: 1px solid var(--gline); border-bottom: 1px solid var(--gline); }
-.badges div { padding: 14px 26px; font-size: 13px; letter-spacing: 0.14em; }
-.badges div + div { border-left: 1px solid var(--gline); }
-.badges b { display: block; font-family: "Hiragino Mincho ProN", serif; font-weight: 400; font-size: 22px; color: var(--gold2); letter-spacing: 0.08em; line-height: 1.5; }
-.acts { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
-
-/* 悩み */
-.worries { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
-.worry { background: var(--bg); padding: 34px 34px 32px; display: grid; grid-template-columns: 56px 1fr; align-items: start; }
-.worry .n { font-family: "Hiragino Mincho ProN", serif; color: var(--gold); font-size: 26px; line-height: 1.3; }
-.worry p { font-size: 16px; line-height: 1.9; }
-.lead-out { text-align: center; margin-top: 56px; font-family: "Hiragino Mincho ProN", serif; font-size: clamp(18px, 2.4vw, 22px); line-height: 2; }
-.lead-out em { font-style: normal; color: var(--gold2); border-bottom: 1px solid var(--gold); }
-
-/* 図：利益と手元のお金 */
-.chart-box { border: 1px solid var(--line); background: var(--card); padding: 44px 40px 34px; }
-.chart-box svg { width: 100%; height: auto; }
-.chart-box .sp { display: none; }
-.chart-note { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 36px; }
-.chart-note h3 { font-size: 16.5px; color: var(--gold2); margin-bottom: 8px; }
-.chart-note p { font-size: 13.5px; color: var(--soft); }
-.cap { text-align: center; font-size: 12px; color: var(--soft); margin-top: 18px; }
-
-/* 60分の流れ */
-.timeline { max-width: 760px; margin: 0 auto; position: relative; }
-.timeline::before { content: ""; position: absolute; left: 92px; top: 10px; bottom: 10px; width: 1px; background: var(--gline); }
-.tl { display: grid; grid-template-columns: 92px 1fr; gap: 34px; padding: 18px 0 28px; position: relative; }
-.tl::after { content: ""; position: absolute; left: 87px; top: 30px; width: 11px; height: 11px; border: 1px solid var(--gold); background: var(--bg2); transform: rotate(45deg); }
-.tl .t { font-family: "Hiragino Mincho ProN", serif; color: var(--gold2); font-size: 15px; text-align: right; padding-right: 22px; padding-top: 6px; letter-spacing: 0.1em; }
-.tl h3 { font-size: 19px; margin-bottom: 6px; padding-left: 10px; }
-.tl p { font-size: 14px; color: var(--soft); padding-left: 10px; }
-.bring { max-width: 760px; margin: 40px auto 0; border: 1px solid var(--gline); padding: 26px 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
-.bring h3 { font-size: 15px; color: var(--gold2); margin-bottom: 6px; }
-.bring p { font-size: 13.5px; color: var(--soft); }
-
-/* 約束 */
-.promises { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
-.promise { border: 1px solid var(--gline); padding: 42px 28px 34px; text-align: center; position: relative; }
-.promise::before { content: ""; position: absolute; top: -6px; left: 50%; width: 11px; height: 11px; background: var(--bg); border: 1px solid var(--gold); transform: translateX(-50%) rotate(45deg); }
-.promise .n { font-family: "Hiragino Mincho ProN", serif; color: var(--gold); letter-spacing: 0.3em; font-size: 13px; }
-.promise h3 { font-size: 18.5px; line-height: 1.7; margin: 12px 0 12px; }
-.promise p { font-size: 13.5px; color: var(--soft); text-align: left; }
-
-/* 代表 */
-.profile { display: grid; grid-template-columns: 5fr 6fr; gap: 56px; align-items: center; }
-.profile .ph { position: relative; }
-.profile .ph img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; filter: grayscale(.25) brightness(.85); }
-.profile .ph::after { content: ""; position: absolute; inset: 16px -16px -16px 16px; border: 1px solid var(--gline); z-index: -1; }
-.profile h2 { font-size: 27px; margin: 16px 0 6px; }
-.profile .role { color: var(--soft); font-size: 13px; letter-spacing: 0.16em; }
-.profile p { color: var(--soft); font-size: 14.5px; margin-top: 18px; }
-.career { margin-top: 24px; border-top: 1px solid var(--line); }
-.career div { display: grid; grid-template-columns: 110px 1fr; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 13.5px; }
-.career dt { color: var(--gold2); font-family: "Hiragino Mincho ProN", serif; }
-.career dd { color: var(--soft); }
-.note-s { font-size: 12px; color: var(--soft); margin-top: 16px; }
-
-/* 事例 */
-.cases { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; }
-.case { background: var(--card); border: 1px solid var(--line); border-top: 2px solid var(--gold); padding: 34px 32px; }
-.case .tag { font-family: "Hiragino Mincho ProN", serif; color: var(--gold); letter-spacing: 0.24em; font-size: 12.5px; }
-.case h3 { font-size: 18.5px; margin: 8px 0 18px; }
-.case dl { display: grid; grid-template-columns: 78px 1fr; gap: 10px 14px; font-size: 13.5px; }
-.case dt { color: var(--gold2); }
-.case dd { color: var(--soft); }
-
-/* 料金 */
-.prices { max-width: 760px; margin: 0 auto; border-top: 1px solid var(--gold); }
-.prices div { display: grid; grid-template-columns: 1fr auto; gap: 20px; padding: 24px 6px; border-bottom: 1px solid var(--line); align-items: center; }
-.prices h3 { font-size: 17px; }
-.prices h3 small { display: block; font-family: "Hiragino Sans", sans-serif; font-size: 12.5px; color: var(--soft); letter-spacing: 0.06em; margin-top: 2px; }
-.prices .y { font-family: "Hiragino Mincho ProN", serif; font-size: 22px; color: var(--ink); white-space: nowrap; }
-.prices .free .y { color: var(--gold2); font-size: 30px; }
-.prices-note { max-width: 760px; margin: 18px auto 0; font-size: 13px; color: var(--soft); }
-
-/* よくある質問 */
-.faq { max-width: 800px; margin: 0 auto; border-top: 1px solid var(--line); }
-.faq details { border-bottom: 1px solid var(--line); }
-.faq summary { list-style: none; cursor: pointer; padding: 22px 44px 22px 44px; position: relative; font-size: 15.5px; }
-.faq summary::-webkit-details-marker { display: none; }
-.faq summary::before { content: "Q."; position: absolute; left: 4px; color: var(--gold); font-family: "Hiragino Mincho ProN", serif; }
-.faq summary::after { content: "+"; position: absolute; right: 10px; color: var(--gold); font-size: 20px; line-height: 1.6; }
-.faq details[open] summary::after { content: "−"; }
-.faq details p { padding: 0 44px 24px; color: var(--soft); font-size: 14px; }
-
-/* 申し込みフォーム */
-.apply { background: linear-gradient(180deg, var(--bg2), #0E1014); }
-.form-box { max-width: 760px; margin: 0 auto; border: 1px solid var(--gline); padding: 50px 48px; background: rgba(30,33,39,.6); }
-.form-box form { display: grid; gap: 20px; }
-.form-box label { display: block; font-size: 13.5px; margin-bottom: 6px; letter-spacing: 0.1em; }
-.form-box label b { font-weight: 400; font-size: 11px; color: #121418; background: var(--gold); padding: 1px 8px; margin-left: 8px; }
-.form-box input, .form-box select, .form-box textarea { width: 100%; background: #0F1115; color: var(--ink); border: 1px solid var(--line); padding: 13px 14px; font: inherit; font-size: 14.5px; }
-.form-box input:focus, .form-box select:focus, .form-box textarea:focus { outline: none; border-color: var(--gold); }
-.form-box textarea { min-height: 120px; }
-.form-box .two { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.form-box .privacy { font-size: 12.5px; color: var(--soft); border: 1px solid var(--line); padding: 14px 16px; }
-.form-box .btn { width: 100%; padding: 18px; font-size: 15px; }
-.tel { text-align: center; margin-top: 28px; color: var(--soft); font-size: 13.5px; }
-.tel b { display: block; font-family: "Hiragino Mincho ProN", serif; font-weight: 400; color: var(--ink); font-size: 26px; letter-spacing: 0.1em; }
-
-footer { border-top: 1px solid rgba(194,161,90,.25); text-align: center; padding: 50px 20px 120px; font-size: 12px; color: var(--soft); }
-footer b { display: block; font-family: "Hiragino Mincho ProN", serif; font-weight: 400; font-size: 17px; letter-spacing: 0.14em; color: var(--ink); margin-bottom: 10px; }
-footer a { color: var(--gold2); }
-
-.fixed-cta { display: none; position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 60; transform: translateY(150%); transition: transform .3s; }
-.fixed-cta.show { transform: none; }
-.fixed-cta .btn { width: 100%; box-shadow: 0 10px 30px rgba(0,0,0,.5); }
-
-@media (max-width: 860px) {
-  .worries, .cases, .promises, .chart-note { grid-template-columns: 1fr; }
-  .profile { grid-template-columns: 1fr; gap: 40px; }
-  .profile .ph { max-width: 420px; }
-  section { padding: 84px 0; }
-  .fixed-cta { display: block; }
-  .top .btn { display: none; }
-}
-@media (max-width: 560px) {
-  .wrap { padding: 0 20px; }
-  .frame { padding: 44px 20px 36px; margin: 0 16px; }
-  .hero h1 { font-size: 23px; letter-spacing: 0.06em; }
-  .badges div { flex: 1; padding: 10px 4px; font-size: 10.5px; letter-spacing: 0.04em; white-space: nowrap; }
-  .badges b { font-size: 16px; }
-  .badges div:last-child b { font-size: 13px; line-height: 1.85; }
-  .chart-box .pc { display: none; }
-  .chart-box .sp { display: block; max-width: 360px; margin: 0 auto; }
-  .worry { padding: 26px 20px; grid-template-columns: 40px 1fr; }
-  .worry p { font-size: 15px; }
-  .chart-box { padding: 26px 14px 20px; }
-  .timeline::before { left: 62px; }
-  .tl { grid-template-columns: 62px 1fr; gap: 18px; }
-  .tl::after { left: 57px; }
-  .tl .t { font-size: 13px; padding-right: 14px; }
-  .bring { grid-template-columns: 1fr; padding: 22px 20px; }
-  .case { padding: 28px 22px; }
-  .case dl { grid-template-columns: 1fr; gap: 2px; }
-  .case dd { margin-bottom: 10px; }
-  .form-box { padding: 32px 20px; }
-  .form-box .two { grid-template-columns: 1fr; }
-  .faq summary { padding: 20px 36px; font-size: 14.5px; }
-  .faq details p { padding: 0 20px 22px 36px; }
-  .logo b { font-size: 14px; letter-spacing: 0.06em; }
-  .logo small { display: none; }
-}
-</style>
+<meta name="description" content="売上はあるのにお金が残らない、と感じている経営者の方へ。お金の流れを1枚の図で整理する、60分の無料相談のLP（架空の事務所の制作サンプル）。">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%227%22 fill=%22%23333%22/%3E%3C/svg%3E">
-<!-- 架空のお店のサンプルのため、検索結果には出さない設定にしています（実際の納品では外します） -->
+<!-- 架空の事務所のサンプルのため、検索結果には出さない設定にしています（実際の納品では外します） -->
 <meta name="robots" content="noindex">
 <link rel="canonical" href="https://watanabeshun0828-cell.github.io/watachan-works-lp/samples/consult.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="渡邊駿の制作サンプル">
 <meta property="og:title" content="資金繰りの無料相談｜みちしるべ経営パートナーズ（制作サンプル・渡邊駿）">
-<meta property="og:description" content="売上はあるのにお金が残らない、と感じている経営者の方へ。60分の無料相談のLP（架空の事務所の制作サンプル）。">
+<meta property="og:description" content="売上はあるのにお金が残らない、と感じている経営者の方へ。お金の流れを1枚の図で整理する、60分の無料相談のLP（架空の事務所の制作サンプル）。">
 <meta property="og:url" content="https://watanabeshun0828-cell.github.io/watachan-works-lp/samples/consult.html">
 <meta property="og:image" content="https://watanabeshun0828-cell.github.io/watachan-works-lp/samples/img/og-consult.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
+<!-- 2026-11-09 作り直し（案1「1枚の資金繰り表」）。生成元：HP制作/lp_consult.py（HPと部品を共有） -->
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@700&amp;display=swap&amp;text=%25%2C.0123456789%3A%E2%80%BB%E3%80%81%E3%80%82%E3%80%9C%E3%81%82%E3%81%84%E3%81%86%E3%81%88%E3%81%8A%E3%81%8B%E3%81%8C%E3%81%8D%E3%81%8E%E3%81%8F%E3%81%93%E3%81%94%E3%81%97%E3%81%98%E3%81%99%E3%81%9A%E3%81%9B%E3%81%9C%E3%81%9D%E3%81%9F%E3%81%A0%E3%81%A1%E3%81%A4%E3%81%A6%E3%81%A7%E3%81%A8%E3%81%AA%E3%81%AB%E3%81%AE%E3%81%AF%E3%81%B0%E3%81%B9%E3%81%BB%E3%81%BE%E3%81%BF%E3%82%80%E3%82%81%E3%82%82%E3%82%88%E3%82%89%E3%82%8A%E3%82%8B%E3%82%8C%E3%82%8F%E3%82%92%E3%82%93%E3%82%A3%E3%82%A4%E3%82%AA%E3%82%AF%E3%82%B0%E3%82%B3%E3%82%B5%E3%82%B8%E3%82%B9%E3%82%BA%E3%83%86%E3%83%88%E3%83%8A%E3%83%91%E3%83%A1%E3%83%A9%E3%83%AB%E3%83%AD%E3%83%B3%E3%83%BB%E3%83%BC%E4%B8%80%E4%B8%87%E4%B8%8A%E4%B8%8E%E4%BB%8A%E4%BB%95%E4%BB%A3%E4%BC%B4%E4%BD%BF%E4%BE%8B%E5%80%9F%E5%82%99%E5%85%83%E5%85%A5%E5%86%85%E5%86%86%E5%87%BA%E5%88%86%E5%88%A9%E5%90%8C%E5%95%8F%E5%96%B6%E5%9B%B3%E5%9C%A8%E5%A3%B2%E5%A4%96%E5%A5%91%E5%AD%97%E5%AE%B9%E5%AF%BE%E5%B0%82%E5%B0%91%E5%BA%AB%E5%BD%93%E5%BE%97%E6%84%8F%E6%89%8B%E6%89%95%E6%8B%85%E6%8C%81%E6%94%AF%E6%95%B0%E6%96%99%E6%96%AD%E6%96%B9%E6%98%8E%E6%99%82%E6%9C%88%E6%9C%9F%E6%9D%9F%E6%A5%AD%E6%A8%AA%E6%AC%A1%E6%AE%8B%E6%B1%82%E6%B3%81%E6%B8%88%E7%84%A1%E7%8A%B6%E7%94%A8%E7%94%B3%E7%9B%8A%E7%9B%B8%E7%A8%8E%E7%B4%84%E7%B5%8C%E7%B5%A1%E7%B5%A6%E7%B7%92%E7%B7%9A%E7%B9%B0%E8%80%83%E8%81%9E%E8%A1%A8%E8%A6%8B%E8%A8%AD%E8%A8%BA%E8%A9%B1%E8%AA%9E%E8%AA%AC%E8%AB%87%E8%AB%8B%E8%B3%87%E8%B3%AA%E8%B5%B0%E8%B6%B3%E8%BE%BC%E8%BF%94%E9%80%A3%E9%80%B2%E9%87%8E%E9%87%91%E9%96%80%E9%9D%A2%E9%A1%8D%EF%BC%88%EF%BC%89" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@700&amp;display=swap&amp;text=%25%2C.0123456789%3A%E2%80%BB%E3%80%81%E3%80%82%E3%80%9C%E3%81%82%E3%81%84%E3%81%86%E3%81%88%E3%81%8A%E3%81%8B%E3%81%8C%E3%81%8D%E3%81%8E%E3%81%8F%E3%81%93%E3%81%94%E3%81%97%E3%81%98%E3%81%99%E3%81%9A%E3%81%9B%E3%81%9C%E3%81%9D%E3%81%9F%E3%81%A0%E3%81%A1%E3%81%A4%E3%81%A6%E3%81%A7%E3%81%A8%E3%81%AA%E3%81%AB%E3%81%AE%E3%81%AF%E3%81%B0%E3%81%B9%E3%81%BB%E3%81%BE%E3%81%BF%E3%82%80%E3%82%81%E3%82%82%E3%82%88%E3%82%89%E3%82%8A%E3%82%8B%E3%82%8C%E3%82%8F%E3%82%92%E3%82%93%E3%82%A3%E3%82%A4%E3%82%AA%E3%82%AF%E3%82%B0%E3%82%B3%E3%82%B5%E3%82%B8%E3%82%B9%E3%82%BA%E3%83%86%E3%83%88%E3%83%8A%E3%83%91%E3%83%A1%E3%83%A9%E3%83%AB%E3%83%AD%E3%83%B3%E3%83%BB%E3%83%BC%E4%B8%80%E4%B8%87%E4%B8%8A%E4%B8%8E%E4%BB%8A%E4%BB%95%E4%BB%A3%E4%BC%B4%E4%BD%BF%E4%BE%8B%E5%80%9F%E5%82%99%E5%85%83%E5%85%A5%E5%86%85%E5%86%86%E5%87%BA%E5%88%86%E5%88%A9%E5%90%8C%E5%95%8F%E5%96%B6%E5%9B%B3%E5%9C%A8%E5%A3%B2%E5%A4%96%E5%A5%91%E5%AD%97%E5%AE%B9%E5%AF%BE%E5%B0%82%E5%B0%91%E5%BA%AB%E5%BD%93%E5%BE%97%E6%84%8F%E6%89%8B%E6%89%95%E6%8B%85%E6%8C%81%E6%94%AF%E6%95%B0%E6%96%99%E6%96%AD%E6%96%B9%E6%98%8E%E6%99%82%E6%9C%88%E6%9C%9F%E6%9D%9F%E6%A5%AD%E6%A8%AA%E6%AC%A1%E6%AE%8B%E6%B1%82%E6%B3%81%E6%B8%88%E7%84%A1%E7%8A%B6%E7%94%A8%E7%94%B3%E7%9B%8A%E7%9B%B8%E7%A8%8E%E7%B4%84%E7%B5%8C%E7%B5%A1%E7%B5%A6%E7%B7%92%E7%B7%9A%E7%B9%B0%E8%80%83%E8%81%9E%E8%A1%A8%E8%A6%8B%E8%A8%AD%E8%A8%BA%E8%A9%B1%E8%AA%9E%E8%AA%AC%E8%AB%87%E8%AB%8B%E8%B3%87%E8%B3%AA%E8%B5%B0%E8%B6%B3%E8%BE%BC%E8%BF%94%E9%80%A3%E9%80%B2%E9%87%8E%E9%87%91%E9%96%80%E9%9D%A2%E9%A1%8D%EF%BC%88%EF%BC%89"></noscript>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { background: #F7F8F6; color: #1C2228; font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "YuGothic", "Meiryo", "Noto Sans JP", sans-serif; font-size: 16px; line-height: 1.85; letter-spacing: 0.02em; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, b, strong, th, dt, .fn, .num { font-family: "BIZ UDPGothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "YuGothic", "Meiryo", sans-serif; }
+h1, h2, h3, h4 { font-weight: 700; line-height: 1.45; letter-spacing: 0.02em; }
+h1, h2, h3, p, li, dd, dt, td, th { word-break: auto-phrase; line-break: strict; }
+.nb { display: inline-block; }
+a { color: inherit; }
+img { display: block; max-width: 100%; height: auto; }
+ul, ol { list-style: none; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 40px; }
+@media (max-width: 760px) { .wrap { padding: 0 20px; } }
+:focus-visible { outline: 2px solid #1C2228; outline-offset: 3px; }
+.sample-strip { background: #1C2228; color: #FFFFFF; font-size: 12px; text-align: center; padding: 7px 16px; }
+.sample-strip a { color: inherit; margin-left: 12px; }
+.site-nav { position: sticky; top: 0; z-index: 50; background: #F7F8F6; border-bottom: 1px solid #1C2228; }
+.nav-inner { max-width: 1120px; margin: 0 auto; padding: 0 40px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.brand { display: flex; align-items: baseline; gap: 12px; text-decoration: none; min-width: 0; }
+.brand-text { font-family: "BIZ UDPGothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "YuGothic", "Meiryo", sans-serif; font-size: 18px; font-weight: 700; white-space: nowrap; }
+.brand small { font-size: 11.5px; color: #4E5761; margin-left: 10px; font-weight: 400; font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "YuGothic", "Meiryo", "Noto Sans JP", sans-serif; }
+.nav-links { display: flex; gap: 24px; align-items: center; }
+.nav-links a { font-size: 14px; text-decoration: none; white-space: nowrap; padding: 6px 0; }
+.nav-links a.cur { border-bottom: 2px solid #1C2228; }
+.nav-links a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.nav-links a.cta { background: #1C2228; color: #FFFFFF; padding: 9px 16px; font-weight: 700; }
+.nav-links a.cta:hover { text-decoration: none; background: #22303A; }
+.burger { display: none; background: none; border: 1px solid #1C2228; height: 40px; padding: 0 12px; cursor: pointer; color: #1C2228; font: 700 12px/1 "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "YuGothic", "Meiryo", "Noto Sans JP", sans-serif; }
+.burger span { display: none; }
+.burger::before { content: "メニュー"; }
+@media (max-width: 900px) {
+  .nav-inner { padding: 0 20px; height: 58px; }
+  .brand small { display: none; }
+  .burger { display: block; }
+  .nav-links { display: none; position: absolute; top: 58px; left: 0; right: 0; flex-direction: column; gap: 0; align-items: stretch; background: #F7F8F6; border-bottom: 1px solid #1C2228; }
+  .nav-links.open { display: flex; }
+  .nav-links li a { display: block; padding: 15px 20px; border-bottom: 1px solid rgba(28,34,40,0.18); }
+  .nav-links a.cur { border-bottom: 1px solid rgba(28,34,40,0.18); font-weight: 700; }
+  .nav-links a.cta { margin: 14px 20px; text-align: center; }
+}
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 12px 26px; background: #1C2228; color: #FFFFFF; border: 1px solid #1C2228; font: 700 15px/1.4 "BIZ UDPGothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "YuGothic", "Meiryo", sans-serif; letter-spacing: 0.04em; text-decoration: none; cursor: pointer; }
+.btn:hover { background: #22303A; }
+.btn.line { background: transparent; color: inherit; border-color: currentColor; }
+.btn.line:hover { background: rgba(28, 34, 40, 0.06); }
+.more { font-weight: 700; text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px; }
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px; margin-top: 28px; }
+.sec-title { font-size: clamp(26px, 3.4vw, 40px); }
+.sec-lead { margin-top: 12px; color: #4E5761; max-width: 38em; }
+
+/* トップ：大きな問い＋1枚のメモ（見本） */
+.fv { padding: 72px 0 80px; border-bottom: 1px solid #1C2228; }
+.fv .wrap { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 0 56px; align-items: center; }
+.fv-kind { font-size: 13.5px; color: #4E5761; }
+.fv h1 { font-size: clamp(34px, 5vw, 60px); line-height: 1.3; margin: 12px 0 18px; }
+.fv h1 .q { color: #B4462B; }
+.fv-lede { max-width: 30em; }
+.fv-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 28px; border-top: 1px solid #1C2228; }
+.fv-facts li { padding: 12px 14px 0 0; font-size: 13.5px; color: #4E5761; }
+.fv-facts b { display: block; font-size: 17px; color: #1C2228; }
+.memo { background: #FFFFFF; border: 1px solid #1C2228; padding: 24px 26px 20px; box-shadow: 10px 10px 0 rgba(28, 34, 40, 0.08); }
+.memo-head { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #1C2228; padding-bottom: 8px; }
+.memo-head b { font-size: 17px; }
+.memo-head span { font-size: 12.5px; color: #4E5761; }
+.memo dl { margin-top: 6px; }
+.memo dl div { padding: 12px 0; border-bottom: 1px solid rgba(28,34,40,0.18); }
+.memo dt { font-size: 13px; color: #5F6873; }
+.memo dd { margin-top: 2px; font-size: 15.5px; }
+.memo .tag { display: inline-block; font-family: "BIZ UDPGothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "YuGothic", "Meiryo", sans-serif; font-weight: 700; font-size: 12px; padding: 1px 6px; margin-right: 6px; border: 1px solid currentColor; }
+.memo .tag.in { color: #2F5D8A; } .memo .tag.out { color: #B4462B; }
+.memo-note { margin-top: 10px; font-size: 12px; color: #4E5761; }
+@media (max-width: 900px) {
+  .fv { padding: 40px 0 48px; }
+  .fv .wrap { grid-template-columns: 1fr; gap: 36px; }
+  .fv h1 { font-size: 30px; }
+  .fv-facts { grid-template-columns: 1fr; }
+  .fv-facts li { padding: 10px 0; border-bottom: 1px solid rgba(28,34,40,0.18); }
+  .memo { box-shadow: 6px 6px 0 rgba(28, 34, 40, 0.08); }
+}
+
+/* 行で並べる（サービス・考え方・流れ） */
+.block { padding: 80px 0; border-top: 1px solid rgba(28,34,40,0.18); }
+.block-grid { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 0 48px; }
+.block-grid > h2 { font-size: clamp(22px, 2.4vw, 28px); }
+.rows { border-top: 2px solid #1C2228; }
+.row { display: grid; grid-template-columns: 3.2em minmax(0, 1fr) 9em; gap: 0 20px; padding: 22px 0; border-bottom: 1px solid rgba(28,34,40,0.18); align-items: baseline; }
+.row .num { font-size: 28px; font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums; }
+.row h3 { font-size: 20px; }
+.row p { margin-top: 6px; color: #4E5761; font-size: 15px; }
+.row .for { margin-top: 8px; font-size: 14px; }
+.row .for b { margin-right: 0.5em; }
+.row .price { text-align: right; font-family: "BIZ UDPGothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "YuGothic", "Meiryo", sans-serif; font-weight: 700; font-size: 18px; white-space: nowrap; }
+.row .price small { display: block; font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "YuGothic", "Meiryo", "Noto Sans JP", sans-serif; font-weight: 400; font-size: 12px; color: #4E5761; }
+.rows-note { margin-top: 12px; font-size: 13px; color: #4E5761; }
+.steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-top: 2px solid #1C2228; }
+.steps li { padding: 16px 16px 0 0; }
+.steps .num { font-size: 26px; font-weight: 700; }
+.steps b { display: block; margin-top: 6px; font-size: 16px; }
+.steps p { margin-top: 4px; font-size: 13.5px; color: #4E5761; }
+.voice { font-family: "BIZ UDPGothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "YuGothic", "Meiryo", sans-serif; font-weight: 700; font-size: clamp(22px, 2.6vw, 30px); line-height: 1.6; border-left: 4px solid #B4462B; padding-left: 20px; }
+.prof { margin-top: 24px; max-width: 40em; }
+.prof p + p { margin-top: 12px; }
+.prof .who { font-weight: 700; }
+.small { font-size: 13px; color: #4E5761; }
+.news li { display: grid; grid-template-columns: 7.5em minmax(0, 1fr); gap: 12px; padding: 13px 0; border-bottom: 1px solid rgba(28,34,40,0.18); font-size: 15px; }
+.news { border-top: 1px solid #1C2228; }
+.news time { font-family: "BIZ UDPGothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "YuGothic", "Meiryo", sans-serif; font-weight: 700; font-variant-numeric: tabular-nums; }
+@media (max-width: 900px) {
+  .block { padding: 52px 0; }
+  .block-grid { grid-template-columns: 1fr; gap: 18px; }
+  .row { grid-template-columns: 2.4em minmax(0, 1fr); }
+  .row .price { grid-column: 2; text-align: left; margin-top: 8px; }
+  .row .price small { display: inline; margin-left: 6px; }
+  .steps { grid-template-columns: 1fr; }
+  .steps li { padding: 14px 0; border-bottom: 1px solid rgba(28,34,40,0.18); display: grid; grid-template-columns: 2.4em minmax(0, 1fr); }
+  .steps li .num { grid-row: span 2; }
+  .steps b { margin-top: 0; }
+  .news li { grid-template-columns: 1fr; gap: 0; }
+}
+
+/* 締めの帯 */
+.band { background: #22303A; color: #EEF1EC; padding: 72px 0; }
+.band .wrap { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px 48px; align-items: center; }
+.band h2 { font-size: clamp(24px, 3vw, 34px); }
+.band p { margin-top: 10px; color: #B9C3CB; }
+.band .btn { background: #FFFFFF; color: #1C2228; border-color: #FFFFFF; }
+.band .btn:hover { background: #E6EAE4; }
+.band .btn.line { background: transparent; color: #EEF1EC; border-color: #EEF1EC; }
+@media (max-width: 760px) { .band { padding: 52px 0; } .band .wrap { grid-template-columns: 1fr; } }
+
+/* 下層ページ */
+.page-head { padding: 52px 0 40px; border-bottom: 2px solid #1C2228; }
+.crumb { font-size: 13px; color: #4E5761; }
+.page-head h1 { font-size: clamp(28px, 4vw, 44px); margin-top: 8px; }
+.page-head p { margin-top: 12px; color: #4E5761; max-width: 40em; }
+.info { display: grid; grid-template-columns: 8em minmax(0, 1fr); border-top: 1px solid #1C2228; max-width: 44em; }
+.info dt, .info dd { padding: 13px 0; border-bottom: 1px solid rgba(28,34,40,0.18); font-size: 15px; }
+.info dd { margin: 0; }
+.price-table { width: 100%; max-width: 48em; border-collapse: collapse; border-top: 2px solid #1C2228; }
+.price-table th, .price-table td { padding: 15px 0; border-bottom: 1px solid rgba(28,34,40,0.18); text-align: left; vertical-align: top; }
+.price-table th { width: 13em; padding-right: 16px; }
+.price-table td.desc { color: #4E5761; font-size: 14.5px; padding-right: 16px; }
+.price-table td.price { text-align: right; white-space: nowrap; font-family: "BIZ UDPGothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "YuGothic", "Meiryo", sans-serif; font-weight: 700; font-size: 17px; }
+.case { border-top: 1px solid #1C2228; }
+.case li { padding: 18px 0; border-bottom: 1px solid rgba(28,34,40,0.18); }
+.case .who { font-weight: 700; }
+.case dl { display: grid; grid-template-columns: 5em minmax(0, 1fr); gap: 4px 12px; margin-top: 8px; font-size: 15px; }
+.case dd { margin: 0; }
+.faq { border-top: 1px solid #1C2228; max-width: 44em; }
+.faq details { border-bottom: 1px solid rgba(28,34,40,0.18); }
+.faq summary { cursor: pointer; padding: 16px 36px 16px 0; font-weight: 700; list-style: none; position: relative; font-family: "BIZ UDPGothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "YuGothic", "Meiryo", sans-serif; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "＋"; position: absolute; right: 4px; top: 16px; }
+.faq details[open] summary::after { content: "－"; }
+.faq p { padding: 0 0 18px; color: #4E5761; font-size: 15px; }
+form.contact { max-width: 40em; display: grid; gap: 22px; }
+form.contact label { display: block; font-size: 14px; font-weight: 700; margin-bottom: 6px; font-family: "BIZ UDPGothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "YuGothic", "Meiryo", sans-serif; }
+form.contact input, form.contact textarea, form.contact select { width: 100%; font: inherit; font-size: 16px; padding: 12px 14px; min-height: 50px; background: #FFFFFF; border: 1px solid #4E5761; border-radius: 0; color: #1C2228; }
+form.contact textarea { min-height: 150px; resize: vertical; }
+.form-note { font-size: 13.5px; color: #4E5761; }
+@media (max-width: 600px) {
+  .price-table, .price-table tbody, .price-table tr, .price-table th, .price-table td { display: block; width: auto; }
+  .price-table tr { display: grid; grid-template-columns: minmax(0, 1fr) auto; padding: 14px 0; border-bottom: 1px solid rgba(28,34,40,0.18); }
+  .price-table th, .price-table td { border: 0; padding: 0; }
+  .price-table td.desc { grid-column: 1 / -1; grid-row: 2; margin-top: 4px; }
+  .info { grid-template-columns: 6em minmax(0, 1fr); }
+}
+footer { background: #1C2228; color: #E3E7E1; padding: 44px 0 52px; font-size: 13.5px; }
+footer .brand { display: inline-block; font-family: "BIZ UDPGothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "YuGothic", "Meiryo", sans-serif; font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+footer p { margin-top: 4px; }
+footer .sample-note { margin-top: 16px; font-size: 12px; opacity: 0.8; max-width: 52em; }
+
+/* お金の流れの図 */
+.flowsec { padding: 96px 0 72px; }
+.flow-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 0 56px; margin-top: 40px; align-items: start; }
+.flow { position: sticky; top: 96px; margin: 0; background: #FFFFFF; border: 1px solid #1C2228; padding: 22px 22px 14px; }
+.flow figcaption { margin-top: 8px; font-size: 12.5px; color: #4E5761; }
+.sp-only { display: none; }
+@media (max-width: 900px) { .sp-only { display: inline; font-weight: 700; color: #1C2228; margin-right: 0.4em; } }
+.flow-svg { display: block; width: 100%; height: auto; font-family: "BIZ UDPGothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "YuGothic", "Meiryo", sans-serif; }
+.flow-svg .m { font-size: 15px; font-weight: 700; fill: #1C2228; }
+.flow-svg .rl { font-size: 13px; font-weight: 700; fill: #5F6873; }
+.flow-svg .b { font-size: 12.5px; font-weight: 700; }
+.flow-svg .none { font-size: 12px; fill: #5F6873; }
+.flow-svg .grid { stroke: rgba(28, 34, 40, 0.12); stroke-width: 1; }
+.flow-svg .arrow { fill: none; stroke: #2F5D8A; stroke-width: 2; stroke-dasharray: 5 4; }
+.flow-svg .zero { stroke: #B4462B; stroke-width: 1.5; stroke-dasharray: 6 5; }
+.flow-svg .zl { font-size: 11.5px; fill: #B4462B; font-weight: 700; }
+.flow-svg .cashline { fill: none; stroke: #1C2228; stroke-width: 3; stroke-linejoin: round; }
+.flow-svg .dot { fill: #FFFFFF; stroke: #1C2228; stroke-width: 2.5; }
+.flow-svg .low { font-size: 12.5px; font-weight: 700; fill: #B4462B; }
+.flow-svg .s, .flow-svg .cash { transition: opacity 0.35s ease; }
+.flow[data-active="1"] .s2, .flow[data-active="1"] .s3,
+.flow[data-active="2"] .s1, .flow[data-active="2"] .s3,
+.flow[data-active="3"] .s1, .flow[data-active="3"] .s2 { opacity: 0.15; }
+.flow[data-active="1"] .cash, .flow[data-active="2"] .cash, .flow[data-active="3"] .cash { opacity: 0.35; }
+.fsteps { counter-reset: none; }
+.fstep { min-height: 46vh; padding: 22px 0 28px; border-top: 2px solid #1C2228; }
+.fstep:last-child { min-height: 0; }
+.fn { display: block; font-size: 40px; font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums; }
+.fstep h3 { margin-top: 10px; font-size: 21px; }
+.fstep p { margin-top: 10px; }
+.fstep.is-on .fn { color: #B4462B; }
+@media (max-width: 900px) {
+  .flowsec { padding: 64px 0 48px; }
+  .flow-grid { grid-template-columns: minmax(0, 1fr); gap: 24px; margin-top: 28px; }
+  .flow { position: static; padding: 14px 12px 10px; min-width: 0; }
+  .flow-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .flow-svg { width: 620px; max-width: none; }
+  .fstep { min-height: 0; padding: 18px 0 22px; }
+}
+@media (prefers-reduced-motion: reduce) { .flow-svg .s, .flow-svg .cash { transition: none; } }
+
+.top { position: sticky; top: 0; z-index: 30; background: #F7F8F6; border-bottom: 1px solid #1C2228; }
+.top .wrap { height: 60px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.top .brand-text { font-size: 17px; }
+.top .btn { min-height: 40px; padding: 8px 16px; font-size: 14px; }
+.top .btn { white-space: nowrap; flex: none; }
+@media (max-width: 420px) { .top .brand-text { font-size: 15px; } }
+.lp-fv { padding: 64px 0 72px; border-bottom: 1px solid #1C2228; }
+.lp-fv .wrap { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 0 56px; align-items: center; }
+.lp-fv h1 { font-size: clamp(32px, 4.6vw, 56px); line-height: 1.32; margin: 12px 0 18px; }
+.lp-fv h1 em { font-style: normal; color: #B4462B; }
+.check { background: #FFFFFF; border: 1px solid #1C2228; padding: 22px 26px 18px; }
+.check h2 { font-size: 17px; border-bottom: 2px solid #1C2228; padding-bottom: 8px; }
+.check li { position: relative; padding: 12px 0 12px 30px; border-bottom: 1px solid rgba(28,34,40,0.18); }
+.check li::before { content: ""; position: absolute; left: 2px; top: 17px; width: 16px; height: 16px; border: 2px solid #1C2228; }
+.check li::after { content: ""; position: absolute; left: 7px; top: 18px; width: 6px; height: 11px; border: solid #B4462B; border-width: 0 3px 3px 0; transform: rotate(45deg); }
+.check p { margin-top: 12px; font-weight: 700; font-family: "BIZ UDPGothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "YuGothic", "Meiryo", sans-serif; }
+.timebar { display: grid; grid-template-columns: 1fr 2fr 1fr; margin-top: 8px; border: 1px solid #1C2228; }
+.timebar div { padding: 16px 18px; border-right: 1px solid #1C2228; background: #FFFFFF; }
+.timebar div:last-child { border-right: 0; }
+.timebar div:nth-child(2) { background: #EEF2F6; }
+.timebar .num { display: block; font-size: 26px; font-weight: 700; }
+.timebar b { display: block; margin-top: 4px; font-size: 16px; }
+.timebar p { margin-top: 4px; font-size: 14px; color: #4E5761; }
+.bring { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0 32px; margin-top: 28px; }
+.bring dt { font-size: 15px; border-top: 2px solid #1C2228; padding-top: 12px; }
+.bring dd { margin: 6px 0 0; font-size: 15px; color: #4E5761; }
+.tel { margin-top: 18px; font-size: 14.5px; }
+.tel a { font-family: "BIZ UDPGothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "YuGothic", "Meiryo", sans-serif; font-weight: 700; font-size: 20px; }
+.dock { display: none; }
+@media (max-width: 900px) {
+  .lp-fv { padding: 36px 0 44px; }
+  .lp-fv .wrap { grid-template-columns: 1fr; gap: 32px; }
+  .lp-fv h1 { font-size: 29px; }
+  .timebar { grid-template-columns: 1fr; }
+  .timebar div { border-right: 0; border-bottom: 1px solid #1C2228; }
+  .timebar div:last-child { border-bottom: 0; }
+  .bring { grid-template-columns: 1fr; gap: 20px; }
+  .dock { display: block; position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); background: #F7F8F6; border-top: 1px solid #1C2228; transition: transform 0.25s ease; }
+  .dock .btn { width: 100%; }
+  .dock.hide { transform: translateY(110%); }
+  body { padding-bottom: 72px; }
+}
+@media (prefers-reduced-motion: reduce) { .dock { transition: none; } }
+</style>
 </head>
 <body>
 
-<div class="sample-bar">SAMPLE LP — 架空の事務所を想定した、渡邊駿の自主制作サンプルです。<a href="index.html">← サンプル集へ</a></div>
-
+<div class="sample-strip">SAMPLE LP ― 架空の事務所を想定した、渡邊駿の自主制作サンプルです。<a href="index.html">← サンプル集へ</a></div>
 <header class="top"><div class="wrap">
-  <a class="logo" href="#"><span class="mk"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M32 58V10"/><path d="M32 14h18l6 6-6 6H32"/><path d="M32 32H14l-6 6 6 6h18"/><path d="M24 58h16"/></svg></span><span><b>みちしるべ経営パートナーズ</b><small>中小企業の経営支援</small></span></a>
-  <a class="btn small" href="#apply">無料相談を申し込む</a>
+  <a class="brand" href="../hp-samples/michishirube/index.html"><span class="brand-text">みちしるべ経営パートナーズ</span></a>
+  <a class="btn" href="#apply">無料相談</a>
 </div></header>
-
-<div class="hero">
-  <img src="img/lp-consult-hero.jpg" alt="会議テーブルで、資料を広げて話し合う二人">
-  <div class="frame">
-    <span class="label">資金繰りの無料相談</span>
-    <h1><span class="nb">売上はあるのに、</span><br><span class="nb"><em>なぜお金が残らない</em>のか。</span></h1>
-    <p class="lede">毎月の数字を一緒に見ながら、お金の流れを整理します。中小企業・個人事業主の方のための、60分の相談です。</p>
-    <div class="badges">
-      <div><b>60分</b>じっくり</div>
-      <div><b>無料</b>初回のみ</div>
-      <div><b>対面・オンライン</b>選べます</div>
-    </div>
-    <div class="acts">
-      <a class="btn" href="#apply">無料相談を申し込む</a>
-      <a class="btn line" href="#flow">相談の流れを見る</a>
-    </div>
-  </div>
-</div>
-
-<section><div class="wrap">
-  <div class="head"><span class="label">こんな状況では、ありませんか</span><h2><span class="nb">数字のことを、</span><span class="nb">ひとりで抱えていませんか。</span></h2></div>
-  <div class="worries">
-    <div class="worry"><span class="n">壱</span><p>黒字のはずなのに、月末の支払いが毎回ぎりぎりになる。</p></div>
-    <div class="worry"><span class="n">弐</span><p>決算書は税理士さんに任せていて、見方がよく分からない。</p></div>
-    <div class="worry"><span class="n">参</span><p>借入れを考えているが、何から準備すればいいか分からない。</p></div>
-    <div class="worry"><span class="n">肆</span><p>お金の相談を、気軽にできる相手がいない。</p></div>
-  </div>
-  <p class="lead-out"><span class="nb">ひとつでも当てはまるなら、</span><br><span class="nb"><em>お金の流れ</em>を、</span><span class="nb">一度いっしょに見てみませんか。</span></p>
-</div></section>
-
-<section class="alt"><div class="wrap">
-  <div class="head"><span class="label">なぜ、お金が残らないのか</span><h2><span class="nb">利益と、手元のお金は、</span><span class="nb">同じではありません。</span></h2><p>よくある原因のひとつが、売上が入金されるまでの「時間のずれ」です。</p></div>
-  <div class="chart-box"><div class="pc"><svg viewBox="0 0 880 330" role="img" aria-label="売上が入金されるまでの時間差で、利益が出ていても手元のお金が減る仕組みを表した図">
-  <defs><marker id="ah" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#C2A15A"/></marker></defs>
-  <g font-family="Hiragino Mincho ProN, serif" fill="#E9E4D8" font-size="17" letter-spacing="2">
-    <text x="20" y="40" fill="#DCC287">帳簿の上</text>
-    <text x="20" y="208" fill="#DCC287">手元のお金</text>
-  </g>
-  <line x1="150" y1="34" x2="860" y2="34" stroke="rgba(233,228,216,.14)"/>
-  <line x1="150" y1="202" x2="860" y2="202" stroke="rgba(233,228,216,.14)"/>
-  <g font-family="Hiragino Sans, sans-serif" font-size="14" fill="#B3AC9E" text-anchor="middle">
-    <rect x="170" y="60" width="150" height="58" fill="none" stroke="#C2A15A"/><text x="245" y="95" fill="#E9E4D8">今月の売上</text>
-    <rect x="400" y="60" width="150" height="58" fill="none" stroke="#C2A15A"/><text x="475" y="95" fill="#E9E4D8">仕入・人件費</text>
-    <rect x="630" y="60" width="200" height="58" fill="#C2A15A" fill-opacity=".14" stroke="#C2A15A"/><text x="730" y="95" fill="#DCC287">利益が出ている</text>
-    <path d="M320 89H392" stroke="#C2A15A" marker-end="url(#ah)"/><path d="M550 89H622" stroke="#C2A15A" marker-end="url(#ah)"/>
-
-    <rect x="170" y="228" width="150" height="58" fill="none" stroke="rgba(233,228,216,.4)" stroke-dasharray="4 4"/><text x="245" y="255" fill="#E9E4D8">入金は</text><text x="245" y="275">翌々月</text>
-    <rect x="400" y="228" width="150" height="58" fill="none" stroke="rgba(233,228,216,.4)"/><text x="475" y="255" fill="#E9E4D8">支払いは</text><text x="475" y="275">今月</text>
-    <rect x="630" y="228" width="200" height="58" fill="none" stroke="#B36A5E"/><text x="730" y="263" fill="#E3A597">お金が足りない</text>
-    <path d="M320 257H392" stroke="rgba(233,228,216,.5)" marker-end="url(#ah)"/><path d="M550 257H622" stroke="rgba(233,228,216,.5)" marker-end="url(#ah)"/>
-    <path d="M245 124V196" stroke="rgba(194,161,90,.5)" stroke-dasharray="3 5"/><path d="M475 124V196" stroke="rgba(194,161,90,.5)" stroke-dasharray="3 5"/>
-    <text x="300" y="166" fill="#B3AC9E" font-size="13">時間のずれ</text>
-  </g>
-</svg></div><div class="sp"><svg viewBox="0 0 360 400" role="img" aria-label="売上が入金されるまでの時間差で、利益が出ていても手元のお金が減る仕組みを表した図">
-  <defs><marker id="ah2" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#C2A15A"/></marker></defs>
-  <g font-family="Hiragino Mincho ProN, serif" font-size="15" fill="#DCC287" text-anchor="middle" letter-spacing="2"><text x="95" y="24">帳簿の上</text><text x="265" y="24">手元のお金</text></g>
-  <g font-family="Hiragino Sans, sans-serif" font-size="13.5" fill="#B3AC9E" text-anchor="middle">
-    <rect x="20" y="44" width="150" height="58" fill="none" stroke="#C2A15A"/><text x="95" y="78" fill="#E9E4D8">今月の売上</text>
-    <rect x="20" y="164" width="150" height="58" fill="none" stroke="#C2A15A"/><text x="95" y="198" fill="#E9E4D8">仕入・人件費</text>
-    <rect x="20" y="284" width="150" height="58" fill="#C2A15A" fill-opacity=".14" stroke="#C2A15A"/><text x="95" y="318" fill="#DCC287">利益が出ている</text>
-    <path d="M95 102V156" stroke="#C2A15A" marker-end="url(#ah2)"/><path d="M95 222V276" stroke="#C2A15A" marker-end="url(#ah2)"/>
-    <rect x="190" y="44" width="150" height="58" fill="none" stroke="rgba(233,228,216,.4)" stroke-dasharray="4 4"/><text x="265" y="69" fill="#E9E4D8">入金は</text><text x="265" y="89">翌々月</text>
-    <rect x="190" y="164" width="150" height="58" fill="none" stroke="rgba(233,228,216,.4)"/><text x="265" y="189" fill="#E9E4D8">支払いは</text><text x="265" y="209">今月</text>
-    <rect x="190" y="284" width="150" height="58" fill="none" stroke="#B36A5E"/><text x="265" y="318" fill="#E3A597">お金が足りない</text>
-    <path d="M265 102V156" stroke="rgba(233,228,216,.5)" marker-end="url(#ah2)"/><path d="M265 222V276" stroke="rgba(233,228,216,.5)" marker-end="url(#ah2)"/>
-    <path d="M170 73H190" stroke="rgba(194,161,90,.6)" stroke-dasharray="3 4"/>
-    <text x="180" y="380" font-size="13">売上の入金と支払いの「時間のずれ」</text>
-  </g>
-</svg></div></div>
-  <p class="cap">※しくみを説明するためのイメージ図です。</p>
-  <div class="chart-note">
-    <div><h3>入金と支払いの時期</h3><p>売上の入金が遅く、支払いが先に来ると、利益が出ていても手元のお金は減ります。</p></div>
-    <div><h3>返済と税金</h3><p>借入れの返済や税金は、利益の計算には出てこないため、見落としやすい支出です。</p></div>
-    <div><h3>在庫と設備</h3><p>仕入れた在庫や設備に使ったお金も、すぐには利益の計算に表れません。</p></div>
-  </div>
-</div></section>
-
-<section id="flow"><div class="wrap">
-  <div class="head"><span class="label">無料相談の60分</span><h2>当日の流れ</h2></div>
-  <div class="timeline">
-    <div class="tl"><span class="t">15分</span><div><h3>今の状況をうかがう</h3><p>事業の内容と、お金のことで気になっていることをお聞きします。</p></div></div>
-    <div class="tl"><span class="t">30分</span><div><h3>数字を一緒に見る</h3><p>お持ちいただいた決算書や通帳をもとに、お金がどこで出ていき、いつ入ってくるのかを整理します。</p></div></div>
-    <div class="tl"><span class="t">15分</span><div><h3>次の一手を考える</h3><p>すぐにできることと、時間をかけて取り組むことを分けてお伝えします。</p></div></div>
-  </div>
-  <div class="bring">
-    <div><h3>お持ちいただくもの</h3><p>直近2期分の決算書。あれば、試算表や通帳のコピーも。なくても相談はできます。</p></div>
-    <div><h3>相談のあとに</h3><p>当日お話しした内容を、1枚のメモにまとめてお送りします。</p></div>
-  </div>
-</div></section>
-
-<section class="alt"><div class="wrap">
-  <div class="head"><span class="label">3つのお約束</span><h2><span class="nb">安心して、</span><span class="nb">ご相談いただくために。</span></h2></div>
-  <div class="promises">
-    <div class="promise"><span class="n">ONE</span><h3><span class="nb">契約をすすめる</span><span class="nb">連絡はしません</span></h3><p>無料相談のあと、こちらから営業の連絡をすることはありません。続けて依頼するかどうかは、ご自身で決めてください。</p></div>
-    <div class="promise"><span class="n">TWO</span><h3><span class="nb">お聞きした内容は、</span><span class="nb">外に出しません</span></h3><p>ご相談の内容や数字は、守秘義務のもとで扱います。</p></div>
-    <div class="promise"><span class="n">THREE</span><h3><span class="nb">専門用語を</span><span class="nb">使わずに話します</span></h3><p>数字が苦手な方にも分かる言葉で、ご説明します。分からないことは、何度でも聞いてください。</p></div>
-  </div>
-</div></section>
-
-<section><div class="wrap profile">
-  <div class="ph"><img src="img/lp-consult-desk.jpg" alt="グラフの資料と電卓を前に、ペンを持つ人の手元" loading="lazy"></div>
+<main>
+<section class="lp-fv" aria-labelledby="fv-h"><div class="wrap">
   <div>
-    <span class="label">担当する代表</span>
-    <h2>村上 恒一</h2>
-    <span class="role">みちしるべ経営パートナーズ　代表</span>
-    <p>地方銀行で12年、中小企業向けの融資と経営支援を担当してきました。銀行の担当者が決算書のどこを見ているのかを知っているからこそ、お伝えできることがあります。「数字は苦手で」という方とお話しするのが、いちばん好きな仕事です。</p>
-    <dl class="career">
-      <div><dt>経歴</dt><dd>地方銀行で融資・経営支援を担当（12年）、2018年に独立</dd></div>
-      <div><dt>得意分野</dt><dd>資金繰りの改善、事業計画書づくり、金融機関との対話</dd></div>
+    <p class="fv-kind">資金繰りの無料相談｜中小企業・個人事業主の方へ</p>
+    <h1 id="fv-h"><span class="nb">売上はあるのに、</span><span class="nb"><em>なぜ</em>お金が</span><span class="nb">残らないのか。</span></h1>
+    <p class="fv-lede">毎月の数字を一緒に見ながら、お金がどこで出ていき、いつ入ってくるのかを整理します。中小企業・個人事業主の方のための、60分の相談です。</p>
+    <div class="actions"><a class="btn" href="#apply">無料相談を申し込む</a><a class="more" href="#hour">60分の流れを見る</a></div>
+    <ul class="fv-facts">
+      <li><b>60分 無料</b>初回のみ</li>
+      <li><b>対面・オンライン</b>どちらでも選べます</li>
+      <li><b>営業の連絡なし</b>続けるかはご自身で</li>
+    </ul>
+  </div>
+  <div class="check" aria-labelledby="ck-h">
+    <h2 id="ck-h">こんな状況では、ありませんか</h2>
+    <ul>
+      <li>黒字のはずなのに、月末の支払いが毎回ぎりぎりになる</li>
+      <li>決算書は税理士さんに任せていて、見方がよく分からない</li>
+      <li>借入れを考えているが、何から準備すればいいか分からない</li>
+      <li>お金の相談を、気軽にできる相手がいない</li>
+    </ul>
+    <p>ひとつでも当てはまるなら、お金の流れを一度いっしょに見てみませんか。</p>
+  </div>
+</div></section>
+<section class="flowsec" aria-labelledby="lp-flow-h"><div class="wrap"><h2 class="sec-title" id="lp-flow-h">利益と、手元のお金は、同じではありません。</h2><p class="sec-lead">よくある原因は、売上が入金されるまでの「時間のずれ」です。4月から7月までの流れで見てみます。</p><div class="flow-grid"><figure class="flow" data-active="all"><div class="flow-scroll" tabindex="0" role="group" aria-label="お金の流れの図（スマホでは横にスクロールできます）"><svg class="flow-svg" viewBox="0 0 700 420" role="img" aria-labelledby="lp-flow-t lp-flow-d"><title id="lp-flow-t">利益と手元のお金がずれるしくみのイメージ図</title><desc id="lp-flow-d">4月から7月まで、毎月売上を請求しても、入金は2か月後。その間も仕入れや給与は毎月支払う。4月の在庫・設備、5月の借入れの返済、7月の税金も加わり、手元のお金は5月がいちばん少なくなる。</desc><line x1="235" y1="46" x2="235" y2="404" class="grid"/><line x1="365" y1="46" x2="365" y2="404" class="grid"/><line x1="495" y1="46" x2="495" y2="404" class="grid"/><text x="170" y="34" text-anchor="middle" class="m">4月</text><text x="300" y="34" text-anchor="middle" class="m">5月</text><text x="430" y="34" text-anchor="middle" class="m">6月</text><text x="560" y="34" text-anchor="middle" class="m">7月</text><text x="0" y="81" class="rl">売上</text><text x="0" y="147" class="rl">入金</text><text x="0" y="215" class="rl">支払い</text><text x="0" y="255" class="rl">そのほか</text><text x="0" y="330" class="rl">手元のお金</text><rect x="122" y="62" width="96" height="28" fill="#5F6873"/><text x="170" y="81" text-anchor="middle" fill="#FFFFFF" class="b">売上（請求）</text><rect x="252" y="62" width="96" height="28" fill="#5F6873"/><text x="300" y="81" text-anchor="middle" fill="#FFFFFF" class="b">売上（請求）</text><rect x="382" y="62" width="96" height="28" fill="#5F6873"/><text x="430" y="81" text-anchor="middle" fill="#FFFFFF" class="b">売上（請求）</text><rect x="512" y="62" width="96" height="28" fill="#5F6873"/><text x="560" y="81" text-anchor="middle" fill="#FFFFFF" class="b">売上（請求）</text><rect x="122" y="196" width="96" height="28" fill="#B4462B"/><text x="170" y="215" text-anchor="middle" fill="#FFFFFF" class="b">仕入れ・給与</text><rect x="252" y="196" width="96" height="28" fill="#B4462B"/><text x="300" y="215" text-anchor="middle" fill="#FFFFFF" class="b">仕入れ・給与</text><rect x="382" y="196" width="96" height="28" fill="#B4462B"/><text x="430" y="215" text-anchor="middle" fill="#FFFFFF" class="b">仕入れ・給与</text><rect x="512" y="196" width="96" height="28" fill="#B4462B"/><text x="560" y="215" text-anchor="middle" fill="#FFFFFF" class="b">仕入れ・給与</text><g class="s s1"><rect x="382" y="128" width="96" height="28" fill="#2F5D8A"/><text x="430" y="147" text-anchor="middle" fill="#FFFFFF" class="b">4月分の入金</text><rect x="512" y="128" width="96" height="28" fill="#2F5D8A"/><text x="560" y="147" text-anchor="middle" fill="#FFFFFF" class="b">5月分の入金</text><text x="170" y="147" text-anchor="middle" class="none">入金なし</text><text x="300" y="147" text-anchor="middle" class="none">入金なし</text><path d="M170 92 C 200 118, 380 104, 412 128" class="arrow"/><path d="M300 92 C 330 118, 510 104, 542 128" class="arrow"/></g><g class="s s2"><rect x="252" y="236" width="96" height="28" fill="#F6E1DB" stroke="#B4462B" stroke-width="1.5"/><text x="300" y="255" text-anchor="middle" fill="#B4462B" class="b">借入れの返済</text><rect x="512" y="236" width="96" height="28" fill="#F6E1DB" stroke="#B4462B" stroke-width="1.5"/><text x="560" y="255" text-anchor="middle" fill="#B4462B" class="b">税金</text></g><g class="s s3"><rect x="122" y="236" width="96" height="28" fill="#F6E1DB" stroke="#B4462B" stroke-width="1.5"/><text x="170" y="255" text-anchor="middle" fill="#B4462B" class="b">在庫・設備</text></g><g class="cash"><line x1="108" y1="368" x2="628" y2="368" class="zero"/><text x="632" y="372" class="zl">ぎりぎりの線</text><polyline points="108,300 170,334 300,382 430,340 560,352 628,336" class="cashline"/><circle cx="170" cy="334" r="5" class="dot"/><circle cx="300" cy="382" r="5" class="dot"/><circle cx="430" cy="340" r="5" class="dot"/><circle cx="560" cy="352" r="5" class="dot"/><text x="300" y="404" text-anchor="middle" class="low">いちばん少ない月</text></g></svg></div><figcaption><span class="sp-only">図は横にスクロールできます。</span>※しくみを説明するためのイメージ図です。金額は入れていません。</figcaption></figure><ol class="fsteps"><li class="fstep" data-step="1"><span class="fn">1</span><h3>入金と支払いの時期のずれ</h3><p>4月の売上が入金されるのは6月。その間も、仕入れや給与の支払いは毎月出ていきます。</p></li><li class="fstep" data-step="2"><span class="fn">2</span><h3>借入れの返済と税金</h3><p>返済や税金は、利益の計算には出てこないため、見落としやすい支出です。</p></li><li class="fstep" data-step="3"><span class="fn">3</span><h3>在庫と設備</h3><p>仕入れた在庫や設備に使ったお金も、すぐには利益の計算に表れません。</p></li><li class="fstep fend" data-step="all"><h3>だから、利益が出ていても足りなくなる月がある。</h3><p>図の5月のように、入金の前に支払いが重なる月は、手元のお金がいちばん少なくなります。どの月にいくら足りなくなるかを先に知っておけば、慌てずに手が打てます。</p></li></ol></div></div></section>
+<section class="block" id="hour" aria-labelledby="hr-h"><div class="wrap block-grid">
+  <h2 id="hr-h">無料相談の60分</h2>
+  <div>
+    <div class="timebar">
+      <div><span class="num">15分</span><b>今の状況をうかがう</b><p>事業の内容と、お金のことで気になっていることをお聞きします。</p></div>
+      <div><span class="num">30分</span><b>数字を一緒に見る</b><p>決算書や通帳をもとに、お金がどこで出ていき、いつ入ってくるのかを整理します。</p></div>
+      <div><span class="num">15分</span><b>次の一手を考える</b><p>すぐにできることと、時間をかけて取り組むことを分けてお伝えします。</p></div>
+    </div>
+    <dl class="bring">
+      <div><dt>お持ちいただくもの</dt><dd>直近2期分の決算書。あれば、試算表や通帳のコピーも。なくても相談はできます。</dd></div>
+      <div><dt>相談のあとに</dt><dd>当日お話しした内容を、1枚のメモにまとめてお送りします。</dd></div>
     </dl>
-    <p class="note-s">※代表者の氏名・経歴は、制作サンプル用の架空のものです。</p>
   </div>
 </div></section>
 
-<section class="alt"><div class="wrap">
-  <div class="head"><span class="label">ご相談の例</span><h2>こんなご相談を、お受けしています。</h2><p>ご了承をいただいた例を、社名を伏せて紹介しています（以下は架空の例です）。</p></div>
-  <div class="cases">
-    <div class="case"><span class="tag">CASE 01</span><h3>飲食店（従業員12名）</h3><dl><dt>ご相談</dt><dd>お客様は増えているのに、手元のお金が減っていく。</dd><dt>取り組み</dt><dd>仕入れと支払いの時期を見直し、毎月の資金繰り表を一緒に作りました。</dd></dl></div>
-    <div class="case"><span class="tag">CASE 02</span><h3>製造業（従業員30名）</h3><dl><dt>ご相談</dt><dd>設備を入れ替えるための借入れを考えている。</dd><dt>取り組み</dt><dd>事業計画書を数字の根拠から整え、金融機関との面談に同席しました。</dd></dl></div>
+<section class="block" aria-labelledby="pm-h"><div class="wrap block-grid">
+  <h2 id="pm-h">3つのお約束</h2>
+  <ol class="rows">
+    <li class="row" style="grid-template-columns:3.2em minmax(0,1fr);"><span class="num">1</span><div><h3>契約をすすめる連絡はしません</h3><p>無料相談のあと、こちらから営業の連絡をすることはありません。続けて依頼するかどうかは、ご自身で決めてください。</p></div></li>
+    <li class="row" style="grid-template-columns:3.2em minmax(0,1fr);"><span class="num">2</span><div><h3>お聞きした内容は、外に出しません</h3><p>ご相談の内容や数字は、守秘義務のもとで扱います。</p></div></li>
+    <li class="row" style="grid-template-columns:3.2em minmax(0,1fr);"><span class="num">3</span><div><h3>専門用語を使わずに話します</h3><p>数字が苦手な方にも分かる言葉で、ご説明します。分からないことは、何度でも聞いてください。</p></div></li>
+  </ol>
+</div></section>
+
+<section class="block" aria-labelledby="rp-h"><div class="wrap block-grid">
+  <h2 id="rp-h">担当する代表</h2>
+  <div>
+    <p class="voice">銀行の担当者が、決算書のどこを見ているか。<br>それを知っているから、伝えられることがあります。</p>
+    <div class="prof">
+      <p class="who">代表　村上 恒一（むらかみ こういち）</p>
+      <p>地方銀行で12年、中小企業向けの融資と経営支援を担当してきました。2018年に独立。「数字は苦手で」という方とお話しするのが、いちばん好きな仕事です。</p>
+      <p><b>得意分野</b>　資金繰りの改善、事業計画書づくり、金融機関との対話</p>
+      <p class="small">※代表者の氏名・経歴は、制作サンプル用の架空のものです。</p>
+    </div>
   </div>
 </div></section>
 
-<section><div class="wrap">
-  <div class="head"><span class="label">料金</span><h2>はじめの60分は、無料です。</h2></div>
-  <div class="prices">
-    <div class="free"><h3>資金繰りの無料相談<small>初回のみ・60分・対面またはオンライン</small></h3><span class="y">0円</span></div>
-    <div><h3>経営診断<small>決算書3期分と聞き取りをもとに、報告書をお渡しします（約1か月）</small></h3><span class="y">15万円〜</span></div>
-    <div><h3>月次伴走コンサルティング<small>毎月の定例と、メール・チャットでのご相談</small></h3><span class="y">月5万円〜</span></div>
+<section class="block" aria-labelledby="cs-h"><div class="wrap block-grid">
+  <h2 id="cs-h">よくあるご相談の例</h2>
+  <div>
+    <p class="small" style="margin-bottom:14px;">どんな相談ができるかを示すための、モデルケースです。実在のお客様の事例ではありません。</p>
+    <ul class="case">
+      <li><p class="who">飲食店（従業員10名ほど）の場合</p><dl><dt>ご相談</dt><dd>お客様は増えているのに、手元のお金が減っていく。</dd><dt>進め方</dt><dd>仕入れと支払いの時期を見直し、毎月の資金繰り表を一緒に作ります。</dd></dl></li>
+      <li><p class="who">製造業（従業員30名ほど）の場合</p><dl><dt>ご相談</dt><dd>設備を入れ替えるための借入れを考えている。</dd><dt>進め方</dt><dd>事業計画書を数字の根拠から整え、必要に応じて金融機関との面談に同席します。</dd></dl></li>
+    </ul>
   </div>
-  <p class="prices-note">無料相談のあとに、続けてご依頼いただく必要はありません。ご依頼の場合は、内容をうかがってから正式にお見積もりします。<br>※料金は、制作サンプル用の架空のものです。</p>
 </div></section>
 
-<section class="alt"><div class="wrap">
-  <div class="head"><span class="label">よくあるご質問</span><h2>FAQ</h2></div>
+<section class="block" aria-labelledby="pr-h"><div class="wrap block-grid">
+  <h2 id="pr-h">料金</h2>
+  <div>
+    <table class="price-table">
+      <tr><th scope="row">資金繰りの無料相談</th><td class="desc">初回のみ・60分・対面またはオンライン</td><td class="price">0円</td></tr>
+      <tr><th scope="row">経営診断</th><td class="desc">決算書3期分と聞き取りをもとに、報告書をお渡しします（約1か月）</td><td class="price">15万円〜</td></tr>
+      <tr><th scope="row">月次伴走コンサルティング</th><td class="desc">毎月の定例と、メール・チャットでのご相談</td><td class="price">月5万円〜</td></tr>
+    </table>
+    <p class="rows-note">無料相談のあとに、続けてご依頼いただく必要はありません。ご依頼の場合は、内容をうかがってから正式にお見積もりします（税込）。※料金は、制作サンプル用の架空のものです。</p>
+  </div>
+</div></section>
+
+<section class="block" aria-labelledby="fq-h"><div class="wrap block-grid">
+  <h2 id="fq-h">よくあるご質問</h2>
   <div class="faq">
-    <details><summary>顧問の税理士がいても、相談できますか？</summary><p>はい。税金の申告は税理士さん、お金の流れの整理と資金計画は私たち、という形で分担しているお客様もいます。</p></details>
+    <details><summary>顧問の税理士がいても、相談できますか？</summary><p>はい。税金の申告は税理士さん、お金の流れの整理と資金計画は私たち、という形で分担できます。</p></details>
     <details><summary>決算書が手元にありません。</summary><p>なくても大丈夫です。分かる範囲でお話をうかがい、次回までに用意していただくものをお伝えします。</p></details>
     <details><summary>オンラインでも相談できますか？</summary><p>はい。ビデオ通話でのご相談もお受けしています。画面で資料を見ながら進めます。</p></details>
     <details><summary>個人事業主でも大丈夫ですか？</summary><p>はい。個人事業主の方、創業して間もない方のご相談もお受けしています。</p></details>
@@ -360,40 +381,62 @@ footer a { color: var(--gold2); }
   </div>
 </div></section>
 
-<section class="apply" id="apply"><div class="wrap">
-  <div class="rule"></div>
-  <div class="head"><span class="label">無料相談のお申し込み</span><h2><span class="nb">まずは60分、</span><span class="nb">お話を聞かせてください。</span></h2><p>2営業日以内に、日程のご相談のご連絡をします。</p></div>
-  <div class="form-box">
-    <form onsubmit="alert('制作サンプルのため、送信はできません。'); return false;">
-      <div class="two">
-        <div><label for="f-name">お名前<b>必須</b></label><input id="f-name" type="text" placeholder="山田 太郎"></div>
-        <div><label for="f-co">会社名・屋号</label><input id="f-co" type="text" placeholder="株式会社◯◯"></div>
-      </div>
-      <div class="two">
-        <div><label for="f-mail">メールアドレス<b>必須</b></label><input id="f-mail" type="email" placeholder="example@example.com"></div>
-        <div><label for="f-way">ご希望の方法</label><select id="f-way"><option>対面（事務所）</option><option>オンライン</option><option>どちらでもよい</option></select></div>
-      </div>
-      <div><label for="f-msg">ご相談したいこと</label><textarea id="f-msg" placeholder="例）売上は伸びているのに、毎月の支払いが苦しくなっています。"></textarea></div>
-      <p class="privacy">お預かりした個人情報は、ご相談への回答とご連絡のためだけに使い、ご本人の同意なく第三者に渡すことはありません（法令に基づく場合を除きます）。</p>
-      <button class="btn" type="submit">無料相談を申し込む（サンプル）</button>
+<section class="block" id="apply" aria-labelledby="ap-h"><div class="wrap block-grid">
+  <h2 id="ap-h">無料相談のお申し込み</h2>
+  <div>
+    <p style="margin-bottom:20px;">まずは60分、お話を聞かせてください。2営業日以内に、日程のご相談のご連絡をします。</p>
+    <form class="contact" onsubmit="alert('制作サンプルのため、送信はできません。'); return false;">
+      <p class="form-note">※制作サンプルのため、送信はできません。</p>
+      <div><label for="f-name">お名前（必須）</label><input id="f-name" type="text" autocomplete="name" required></div>
+      <div><label for="f-company">会社名・屋号</label><input id="f-company" type="text" autocomplete="organization"></div>
+      <div><label for="f-mail">メールアドレス（必須）</label><input id="f-mail" type="email" autocomplete="email" required></div>
+      <div><label for="f-way">ご希望の方法</label><select id="f-way"><option>どちらでもよい</option><option>対面（事務所）</option><option>オンライン</option></select></div>
+      <div><label for="f-msg">ご相談したいこと</label><textarea id="f-msg" placeholder="例）黒字なのに、月末の支払いが毎回ぎりぎりになる。"></textarea></div>
+      <p class="form-note">お預かりした個人情報は、ご相談への回答とご連絡のためだけに使い、ご本人の同意なく第三者に渡すことはありません（法令に基づく場合を除きます）。</p>
+      <div><button class="btn" type="submit">無料相談を申し込む（サンプル）</button></div>
     </form>
+    <p class="tel">お電話でも受け付けています（平日 9:00〜18:00）<br><a href="tel:000-0000-0000">000-0000-0000</a></p>
   </div>
-  <p class="tel">お電話でも受け付けています（平日 9:00〜18:00）<b>000-0000-0000</b></p>
 </div></section>
-
-<footer><b>みちしるべ経営パートナーズ</b>〒000-0000　◯◯県◯◯市◯◯町 3-4-5　｜　<a href="../hp-samples/michishirube/index.html">事務所のホームページ</a><br>※このページは渡邊駿の制作サンプルです。架空の事務所を想定した自主制作物で、実在の事務所ではありません。代表者・事例・料金もすべて架空です。</footer>
-
-<div class="fixed-cta"><a class="btn" href="#apply">無料相談を申し込む</a></div>
+</main>
+<footer><div class="wrap">
+  <span class="brand">みちしるべ経営パートナーズ</span>
+  <p>〒000-0000　◯◯県◯◯市◯◯町 3-4-5　｜　<a href="../hp-samples/michishirube/index.html">事務所のホームページ</a></p>
+  <p class="sample-note">※このページは渡邊駿の制作サンプルです。架空の事務所を想定した自主制作物で、実在の事務所ではありません。代表者・料金もすべて架空です。</p>
+</div></footer>
+<div class="dock hide" id="dock"><a class="btn" href="#apply">無料相談を申し込む</a></div>
 
 <script>
 (function () {
-  // 下部の申し込みボタンは、最初の画面を過ぎてから出す（申し込み欄が見えている間は隠す）
-  var bar = document.querySelector(".fixed-cta"), hero = document.querySelector(".hero"), ap = document.querySelector("#apply");
-  function onScroll() {
-    var a = ap.getBoundingClientRect();
-    bar.classList.toggle("show", hero.getBoundingClientRect().bottom < 0 && (a.top > innerHeight || a.bottom < 0));
-  }
-  addEventListener("scroll", onScroll, { passive: true }); onScroll();
+  var figs = document.querySelectorAll('.flow');
+  if (!figs.length || !('IntersectionObserver' in window)) return;
+  var mq = window.matchMedia('(min-width: 901px)');
+  figs.forEach(function (fig) {
+    var steps = fig.parentNode.querySelectorAll('.fstep');
+    var io = new IntersectionObserver(function (ents) {
+      ents.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        steps.forEach(function (s) { s.classList.toggle('is-on', s === en.target); });
+        fig.setAttribute('data-active', mq.matches ? en.target.getAttribute('data-step') : 'all');
+      });
+    }, { rootMargin: '-45% 0px -45% 0px' });
+    steps.forEach(function (s) { io.observe(s); });
+    mq.addEventListener('change', function () { if (!mq.matches) fig.setAttribute('data-active', 'all'); });
+  });
+})();
+</script>
+
+<script>
+(function () {
+  var dock = document.getElementById('dock');
+  if (!('IntersectionObserver' in window)) { dock.classList.remove('hide'); return; }
+  var seen = {};
+  var io = new IntersectionObserver(function (ents) {
+    ents.forEach(function (en) { seen[en.target.id || 'fv'] = en.isIntersecting; });
+    dock.classList.toggle('hide', !!(seen.fv || seen.apply));
+  });
+  io.observe(document.querySelector('.lp-fv'));
+  io.observe(document.getElementById('apply'));
 })();
 </script>
 </body>

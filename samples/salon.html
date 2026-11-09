@@ -3,314 +3,308 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>はじめてコース｜HANA hair &amp; esthetic（制作サンプル・渡邊駿）</title>
-<meta name="description" content="エステがはじめての方のための、カウンセリング付きコースのLP（架空のサロンの制作サンプル）。">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Italiana&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Italiana&display=swap"></noscript>
-<style>
-:root { --ink: #141414; --ink-soft: #5A5A5A; --mute: #9A9A9A; --paper: #FFFFFF; --paper-deep: #F4F4F2; --line: rgba(20,20,20,.14); --rose: #A04F5A; color-scheme: light; }
-* { box-sizing: border-box; margin: 0; }
-html { scroll-behavior: smooth; }
-body { background: var(--paper); color: var(--ink); font-family: "Hiragino Sans", "Helvetica Neue", "Noto Sans JP", sans-serif; font-weight: 300; line-height: 2; letter-spacing: 0.06em; -webkit-font-smoothing: antialiased; }
-img { display: block; max-width: 100%; }
-a { color: inherit; }
-.nb { display: inline-block; }
-.en { font-family: "Italiana", "Didot", serif; font-weight: 400; letter-spacing: 0.12em; }
-.wrap { max-width: 1120px; margin: 0 auto; padding: 0 40px; }
-
-.sample-bar { background: #000; color: #ddd; font-size: 11.5px; text-align: center; padding: 7px 16px; letter-spacing: 0.06em; }
-.sample-bar a { color: #fff; margin-left: 10px; }
-
-.top { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.94); border-bottom: 1px solid var(--line); backdrop-filter: blur(6px); }
-.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-.logo { text-decoration: none; display: flex; align-items: baseline; gap: 12px; }
-.logo .en { font-size: 28px; letter-spacing: 0.2em; }
-.logo small { font-size: 10.5px; letter-spacing: 0.24em; color: var(--ink-soft); }
-
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: 14px; padding: 16px 38px; background: var(--ink); color: #fff; text-decoration: none; font-size: 13.5px; letter-spacing: 0.24em; font-weight: 400; border: 1px solid var(--ink); transition: background .25s, color .25s; }
-.btn:hover { background: #fff; color: var(--ink); }
-.btn.line { background: transparent; color: var(--ink); }
-.btn.line:hover { background: var(--ink); color: #fff; }
-.btn.small { padding: 9px 22px; font-size: 12px; }
-.btn .arrow { width: 26px; height: 1px; background: currentColor; position: relative; }
-.btn .arrow::after { content: ""; position: absolute; right: 0; top: -3px; width: 7px; height: 1px; background: currentColor; transform: rotate(35deg); transform-origin: right; }
-.textlink { font-size: 13px; letter-spacing: 0.16em; color: var(--ink-soft); text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 2px; }
-
-/* ファーストビュー */
-.hero { display: grid; grid-template-columns: 5fr 6fr; min-height: min(calc(100vh - 95px), 820px); }
-.hero-copy { padding: 70px 56px 60px max(40px, calc((100vw - 1120px) / 2 + 40px)); display: flex; flex-direction: column; justify-content: center; }
-.label { font-size: 12px; letter-spacing: 0.3em; color: var(--ink-soft); display: flex; align-items: center; gap: 14px; }
-.label::before { content: ""; width: 34px; height: 1px; background: var(--ink); }
-.hero h1 { font-weight: 300; font-size: clamp(30px, 3.4vw, 44px); line-height: 1.75; letter-spacing: 0.1em; margin: 26px 0 22px; }
-.hero .lede { color: var(--ink-soft); font-size: 14.5px; max-width: 30em; }
-.offer { margin: 34px 0 34px; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 1fr auto; align-items: end; padding: 18px 0 16px; max-width: 420px; }
-.offer .name { font-size: 15px; letter-spacing: 0.14em; }
-.offer .name small { display: block; font-size: 11.5px; color: var(--ink-soft); letter-spacing: 0.16em; }
-.offer .yen { font-size: 34px; letter-spacing: 0.04em; line-height: 1; }
-.offer .yen small { font-size: 12px; margin-left: 6px; color: var(--ink-soft); }
-.hero .acts { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
-.hero-photo { position: relative; overflow: hidden; }
-.hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
-.hero-photo .cap { position: absolute; right: 22px; bottom: 18px; color: #fff; font-size: 11px; letter-spacing: 0.3em; writing-mode: vertical-rl; text-shadow: 0 1px 8px rgba(0,0,0,.25); }
-
-/* セクション：左に番号と見出し、右に中身 */
-section { padding: 120px 0; border-top: 1px solid var(--line); }
-section.grey { background: var(--paper-deep); border-top: none; }
-.row { display: grid; grid-template-columns: 4fr 8fr; gap: 56px; }
-.sec-head .no { font-size: 64px; line-height: 1; color: #8A8A8A; }
-.sec-head .label { margin: 18px 0 14px; }
-.sec-head h2 { font-weight: 300; font-size: clamp(22px, 2.4vw, 28px); line-height: 1.8; letter-spacing: 0.1em; }
-
-.worries { list-style: none; padding: 0; border-top: 1px solid var(--ink); }
-.worries li { display: grid; grid-template-columns: 54px 1fr; padding: 24px 0; border-bottom: 1px solid var(--line); font-size: 16.5px; letter-spacing: 0.08em; }
-.worries li span { color: var(--mute); font-size: 13px; padding-top: 4px; }
-.after-note { margin-top: 30px; color: var(--ink-soft); font-size: 14.5px; }
-
-.steps { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--ink); }
-.step { padding: 26px 26px 6px 0; }
-.step + .step { padding-left: 26px; border-left: 1px solid var(--line); }
-.step .min { font-size: 44px; line-height: 1.1; }
-.step .min small { font-size: 15px; margin-left: 4px; }
-.step h3 { font-weight: 400; font-size: 16px; letter-spacing: 0.12em; margin: 14px 0 8px; }
-.step p { font-size: 13.5px; color: var(--ink-soft); }
-.total { margin-top: 26px; font-size: 13px; color: var(--ink-soft); letter-spacing: 0.12em; }
-
-.wide { position: relative; height: 62vh; min-height: 380px; max-height: 620px; overflow: hidden; border-top: none; padding: 0; }
-.wide img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 60%; }
-.wide p { position: absolute; left: max(40px, calc((100vw - 1120px) / 2 + 40px)); bottom: 46px; background: #fff; padding: 22px 30px; font-size: 18px; letter-spacing: 0.14em; line-height: 1.9; }
-
-.promises { border-top: 1px solid var(--ink); }
-.promise { display: grid; grid-template-columns: 70px 1fr; padding: 30px 0; border-bottom: 1px solid var(--line); }
-.promise .i { font-size: 22px; color: var(--rose); }
-.promise h3 { font-weight: 400; font-size: 19px; letter-spacing: 0.1em; margin-bottom: 6px; }
-.promise p { font-size: 14px; color: var(--ink-soft); }
-
-.price { width: 100%; border-collapse: collapse; border-top: 1px solid var(--ink); }
-.price td { padding: 24px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
-.price .n { font-size: 16px; letter-spacing: 0.1em; }
-.price .n small { display: block; font-size: 12.5px; color: var(--ink-soft); }
-.price .y { text-align: right; font-size: 26px; white-space: nowrap; }
-.price tr.main .y { font-size: 34px; }
-.price tr.main .n b { font-weight: 400; display: inline-block; border: 1px solid var(--ink); font-size: 11px; letter-spacing: 0.2em; padding: 0 10px; margin-left: 10px; vertical-align: 2px; }
-.small-note { font-size: 12.5px; color: var(--ink-soft); margin-top: 18px; }
-
-.person { display: grid; grid-template-columns: 150px 1fr; gap: 40px; align-items: center; }
-.monogram { width: 150px; height: 150px; border-radius: 50%; border: 1px solid var(--ink); display: grid; place-items: center; font-size: 62px; }
-.person .role { font-size: 12px; letter-spacing: 0.2em; color: var(--ink-soft); }
-.person h3 { font-weight: 300; font-size: 24px; letter-spacing: 0.2em; margin: 4px 0 12px; }
-.person p { font-size: 14.5px; color: var(--ink-soft); }
-
-.quotes { display: grid; gap: 40px; }
-.quote { border-left: 1px solid var(--ink); padding: 4px 0 4px 30px; }
-.quote p { font-size: 17px; line-height: 2.1; letter-spacing: 0.08em; }
-.quote span { display: block; margin-top: 10px; font-size: 12.5px; color: var(--ink-soft); letter-spacing: 0.14em; }
-
-.faq { border-top: 1px solid var(--ink); }
-.faq details { border-bottom: 1px solid var(--line); }
-.faq summary { list-style: none; cursor: pointer; padding: 22px 40px 22px 0; position: relative; font-size: 15.5px; letter-spacing: 0.08em; }
-.faq summary::-webkit-details-marker { display: none; }
-.faq summary::before, .faq summary::after { content: ""; position: absolute; right: 6px; top: 50%; width: 16px; height: 1px; background: var(--ink); transition: transform .25s; }
-.faq summary::after { transform: rotate(90deg); }
-.faq details[open] summary::after { transform: rotate(0); }
-.faq details p { padding: 0 40px 24px 0; color: var(--ink-soft); font-size: 14px; }
-
-.final { background: #000; color: #fff; text-align: center; padding: 130px 0; border-top: none; }
-.final .no { color: #9A9A9A; font-size: 15px; letter-spacing: 0.4em; }
-.final h2 { font-weight: 300; font-size: clamp(24px, 3vw, 34px); letter-spacing: 0.12em; line-height: 1.8; margin: 18px 0 14px; }
-.final p { color: #BDBDBD; font-size: 14px; }
-.final .acts { display: flex; justify-content: center; gap: 18px; margin-top: 40px; flex-wrap: wrap; }
-.final .btn { background: #fff; color: #000; border-color: #fff; min-width: 250px; }
-.final .btn:hover { background: #000; color: #fff; }
-.final .btn.line { background: transparent; color: #fff; }
-.final .btn.line:hover { background: #fff; color: #000; }
-
-.info { display: grid; grid-template-columns: 130px 1fr; border-top: 1px solid var(--ink); font-size: 14px; }
-.info dt, .info dd { padding: 16px 0; border-bottom: 1px solid var(--line); }
-.info dt { letter-spacing: 0.16em; }
-.info dd { color: var(--ink-soft); }
-.info-acts { margin-top: 30px; }
-
-footer { text-align: center; padding: 60px 20px 120px; font-size: 11.5px; color: var(--ink-soft); border-top: 1px solid var(--line); }
-footer .en { display: block; font-size: 30px; color: var(--ink); letter-spacing: 0.24em; margin-bottom: 10px; }
-
-.fixed-cta { display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; background: #000; color: #fff; text-decoration: none; padding: 16px 20px calc(16px + env(safe-area-inset-bottom)); justify-content: space-between; align-items: center; font-size: 13px; letter-spacing: 0.16em; transform: translateY(110%); transition: transform .3s; }
-.fixed-cta.show { transform: none; }
-.fixed-cta b { font-weight: 400; font-size: 16px; letter-spacing: 0.06em; }
-
-.fade { opacity: 0; transform: translateY(16px); transition: opacity .9s, transform .9s; }
-.fade.in { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) { .fade { opacity: 1; transform: none; transition: none; } }
-
-@media (max-width: 900px) {
-  .wrap { padding: 0 22px; }
-  .hero { grid-template-columns: 1fr; min-height: 0; }
-  .hero-photo { order: -1; height: 52vh; min-height: 300px; }
-  .hero-copy { padding: 40px 22px 56px; }
-  .row { grid-template-columns: 1fr; gap: 30px; }
-  section { padding: 80px 0; }
-  .sec-head .no { font-size: 48px; }
-  .steps { grid-template-columns: 1fr; }
-  .step, .step + .step { padding: 22px 0; border-left: none; border-bottom: 1px solid var(--line); }
-  .wide p { left: 22px; right: 22px; bottom: 22px; font-size: 15.5px; padding: 16px 20px; }
-  .person { grid-template-columns: 1fr; gap: 22px; }
-  .monogram { width: 110px; height: 110px; font-size: 46px; }
-  .final { padding: 90px 0; }
-  .fixed-cta { display: flex; }
-  .top .btn { display: none; }
-}
-@media (max-width: 520px) {
-  .hero h1 { font-size: 27px; }
-  .offer .yen { font-size: 28px; }
-  .worries li { font-size: 15px; grid-template-columns: 40px 1fr; }
-  .promise { grid-template-columns: 46px 1fr; }
-  .promise h3 { font-size: 17px; }
-  .price .y, .price tr.main .y { font-size: 22px; }
-  .quote p { font-size: 15.5px; }
-  .info { grid-template-columns: 96px 1fr; }
-  .final .btn { min-width: 0; width: 100%; }
-  .btn { padding: 16px 20px; letter-spacing: 0.14em; }
-}
-</style>
+<title>はじめてコース（エステ）｜HANA hair &amp; esthetic（制作サンプル・渡邊駿）</title>
+<meta name="description" content="最初の20分はお話だけ。エステがはじめての方のための、カウンセリング付きコースのLP（架空のサロンの制作サンプル）。">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%227%22 fill=%22%23333%22/%3E%3C/svg%3E">
-<!-- 架空のお店のサンプルのため、検索結果には出さない設定にしています（実際の納品では外します） -->
+<!-- 架空のサロンのサンプルのため、検索結果には出さない設定にしています（実際の納品では外します） -->
 <meta name="robots" content="noindex">
 <link rel="canonical" href="https://watanabeshun0828-cell.github.io/watachan-works-lp/samples/salon.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="渡邊駿の制作サンプル">
-<meta property="og:title" content="はじめてコース｜HANA hair &amp; esthetic（制作サンプル・渡邊駿）">
-<meta property="og:description" content="エステがはじめての方のための、カウンセリング付きコースのLP（架空のサロンの制作サンプル）。">
+<meta property="og:title" content="はじめてコース（エステ）｜HANA hair &amp; esthetic（制作サンプル・渡邊駿）">
+<meta property="og:description" content="最初の20分はお話だけ。エステがはじめての方のための、カウンセリング付きコースのLP（架空のサロンの制作サンプル）。">
 <meta property="og:url" content="https://watanabeshun0828-cell.github.io/watachan-works-lp/samples/salon.html">
 <meta property="og:image" content="https://watanabeshun0828-cell.github.io/watachan-works-lp/samples/img/og-salon.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
+<!-- 2026-11-09 作り直し。生成元：HP制作/lp_salon.py（HPとCSSを共有） -->
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@700&amp;display=swap&amp;text=%26%2C.0123456789%3A%3BAHNacehimprst%C2%A5%E3%80%81%E3%80%82%E3%80%9C%E3%81%82%E3%81%84%E3%81%8A%E3%81%8B%E3%81%8C%E3%81%8D%E3%81%8F%E3%81%93%E3%81%94%E3%81%95%E3%81%97%E3%81%98%E3%81%99%E3%81%9A%E3%81%9B%E3%81%9D%E3%81%9F%E3%81%A0%E3%81%A4%E3%81%A6%E3%81%A7%E3%81%A8%E3%81%AA%E3%81%AB%E3%81%AE%E3%81%AF%E3%81%BB%E3%81%BE%E3%81%BF%E3%82%81%E3%82%84%E3%82%88%E3%82%89%E3%82%8B%E3%82%8C%E3%82%8D%E3%82%92%E3%82%93%E3%82%A3%E3%82%A4%E3%82%A7%E3%82%A8%E3%82%B3%E3%82%B5%E3%82%B7%E3%82%B9%E3%83%86%E3%83%95%E3%83%A3%E3%83%AB%E3%83%AD%E3%83%B3%E3%83%BB%E3%83%BC%E4%B8%8D%E4%BA%88%E5%85%A5%E5%86%86%E5%88%86%E5%88%9D%E5%88%B8%E5%8C%96%E5%90%8C%E5%93%81%E5%95%86%E5%95%8F%E5%9B%9E%E5%A0%B1%E5%A0%B4%E5%AE%89%E5%AE%A2%E5%B0%91%E5%BD%93%E5%BE%97%E6%80%A5%E6%83%85%E6%84%8F%E6%89%8B%E6%8B%85%E6%95%B0%E6%96%99%E6%96%B9%E6%96%BD%E6%99%82%E6%9D%9F%E6%A7%98%E6%AC%A1%E7%9B%B8%E7%A8%8E%E7%B2%A7%E7%B4%84%E7%B4%8D%E8%82%8C%E8%8B%A6%E8%A1%93%E8%A9%B1%E8%AB%87%E8%B3%AA%E8%BE%BC%E9%87%8E%E9%87%91%E9%96%93%E9%AB%98%EF%BC%88%EF%BC%89" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@700&amp;display=swap&amp;text=%26%2C.0123456789%3A%3BAHNacehimprst%C2%A5%E3%80%81%E3%80%82%E3%80%9C%E3%81%82%E3%81%84%E3%81%8A%E3%81%8B%E3%81%8C%E3%81%8D%E3%81%8F%E3%81%93%E3%81%94%E3%81%95%E3%81%97%E3%81%98%E3%81%99%E3%81%9A%E3%81%9B%E3%81%9D%E3%81%9F%E3%81%A0%E3%81%A4%E3%81%A6%E3%81%A7%E3%81%A8%E3%81%AA%E3%81%AB%E3%81%AE%E3%81%AF%E3%81%BB%E3%81%BE%E3%81%BF%E3%82%81%E3%82%84%E3%82%88%E3%82%89%E3%82%8B%E3%82%8C%E3%82%8D%E3%82%92%E3%82%93%E3%82%A3%E3%82%A4%E3%82%A7%E3%82%A8%E3%82%B3%E3%82%B5%E3%82%B7%E3%82%B9%E3%83%86%E3%83%95%E3%83%A3%E3%83%AB%E3%83%AD%E3%83%B3%E3%83%BB%E3%83%BC%E4%B8%8D%E4%BA%88%E5%85%A5%E5%86%86%E5%88%86%E5%88%9D%E5%88%B8%E5%8C%96%E5%90%8C%E5%93%81%E5%95%86%E5%95%8F%E5%9B%9E%E5%A0%B1%E5%A0%B4%E5%AE%89%E5%AE%A2%E5%B0%91%E5%BD%93%E5%BE%97%E6%80%A5%E6%83%85%E6%84%8F%E6%89%8B%E6%8B%85%E6%95%B0%E6%96%99%E6%96%B9%E6%96%BD%E6%99%82%E6%9D%9F%E6%A7%98%E6%AC%A1%E7%9B%B8%E7%A8%8E%E7%B2%A7%E7%B4%84%E7%B4%8D%E8%82%8C%E8%8B%A6%E8%A1%93%E8%A9%B1%E8%AB%87%E8%B3%AA%E8%BE%BC%E9%87%8E%E9%87%91%E9%96%93%E9%AB%98%EF%BC%88%EF%BC%89"></noscript>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { background: #FAF9F7; color: #222020; font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "YuGothic", "Meiryo", "Noto Sans JP", sans-serif; font-size: 16px; line-height: 1.95; letter-spacing: 0.04em; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, .hf { font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", sans-serif; font-weight: 700; line-height: 1.5; letter-spacing: 0.06em; }
+h1, h2, h3, p, li, dd, dt, td, th, summary { word-break: auto-phrase; line-break: strict; }
+.nb { display: inline-block; }
+a { color: inherit; }
+img { display: block; max-width: 100%; height: auto; }
+ul, ol { list-style: none; }
+.wrap { max-width: 1160px; margin: 0 auto; padding: 0 40px; }
+@media (max-width: 760px) { .wrap { padding: 0 20px; } }
+:focus-visible { outline: 2px solid #222020; outline-offset: 3px; }
+.sample-strip { background: #222020; color: #FAF9F7; font-size: 12px; text-align: center; padding: 7px 16px; letter-spacing: 0.02em; }
+.sample-strip a { color: inherit; margin-left: 12px; }
+.site-nav { position: sticky; top: 0; z-index: 50; background: #FAF9F7; border-bottom: 1px solid rgba(34,32,32,0.16); }
+.nav-inner { max-width: 1160px; margin: 0 auto; padding: 0 40px; height: 66px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.brand { display: flex; align-items: baseline; gap: 10px; text-decoration: none; min-width: 0; }
+.brand-text { font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", sans-serif; font-size: 22px; font-weight: 700; letter-spacing: 0.3em; white-space: nowrap; }
+.brand small { font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "YuGothic", "Meiryo", "Noto Sans JP", sans-serif; font-size: 11.5px; color: #5C5752; margin-left: 6px; font-weight: 400; letter-spacing: 0.08em; }
+.nav-links { display: flex; gap: 24px; align-items: center; }
+.nav-links a { font-size: 14px; text-decoration: none; white-space: nowrap; padding: 6px 0; }
+.nav-links a.cur { border-bottom: 1px solid #222020; }
+.nav-links a:hover { color: #8A5A5F; }
+.nav-links a.cta { background: #8A5A5F; color: #FFFFFF; padding: 9px 18px; font-weight: 700; }
+.nav-links a.cta:hover { background: #6F4549; color: #FFFFFF; }
+.burger { display: none; background: none; border: 1px solid #222020; height: 40px; padding: 0 12px; cursor: pointer; color: #222020; font: 700 12px/1 "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "YuGothic", "Meiryo", "Noto Sans JP", sans-serif; }
+.burger span { display: none; }
+.burger::before { content: "メニュー"; }
+@media (max-width: 900px) {
+  .nav-inner { padding: 0 20px; height: 58px; }
+  .brand small { display: none; }
+  .burger { display: block; }
+  .nav-links { display: none; position: absolute; top: 58px; left: 0; right: 0; flex-direction: column; gap: 0; align-items: stretch; background: #FAF9F7; border-bottom: 1px solid rgba(34,32,32,0.16); }
+  .nav-links.open { display: flex; }
+  .nav-links li a { display: block; padding: 15px 20px; border-bottom: 1px solid rgba(34,32,32,0.16); }
+  .nav-links a.cur { border-bottom: 1px solid rgba(34,32,32,0.16); font-weight: 700; }
+  .nav-links a.cta { margin: 14px 20px; text-align: center; }
+}
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 12px 28px; background: #8A5A5F; color: #FFFFFF; border: 1px solid #8A5A5F; font: 700 15px/1.4 "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "YuGothic", "Meiryo", "Noto Sans JP", sans-serif; letter-spacing: 0.08em; text-decoration: none; cursor: pointer; }
+.btn:hover { background: #6F4549; }
+.btn.line { background: transparent; color: inherit; border-color: currentColor; }
+.more { font-weight: 700; text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 1px; }
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 26px; margin-top: 30px; }
+.small { font-size: 13px; color: #5C5752; }
+
+/* トップ：大きな写真と、写真の手前にかかる見出し（12章 PT06） */
+.fv { position: relative; padding: 0 0 80px; }
+.fv .wrap { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: 0; align-items: end; }
+.fv-text { position: relative; z-index: 1; padding: 64px 0 32px; }
+.fv-kind { font-size: 13.5px; color: #5C5752; }
+.fv h1 { font-size: clamp(34px, 4.6vw, 58px); line-height: 1.45; margin: 14px -80px 22px 0; }
+.fv h1 span.bg { background: #FAF9F7; padding: 0 0.12em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.fv-lede { max-width: 26em; }
+.fv-photo { margin: 0; }
+.fv-photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 60% 40%; }
+.fv-photo figcaption { margin-top: 10px; font-size: 13px; color: #5C5752; text-align: right; }
+@media (max-width: 900px) {
+  .fv { padding-bottom: 48px; }
+  .fv .wrap { grid-template-columns: 1fr; }
+  .fv-photo { order: -1; margin: 0 -20px; }
+  .fv-photo img { aspect-ratio: 4 / 4; }
+  .fv-photo figcaption { padding: 0 20px; }
+  .fv-text { padding: 24px 0 0; }
+  .fv h1 { margin-right: 0; font-size: 30px; }
+}
+
+/* 作品集：写真1枚＋一行の言葉＋手入れの情報（10章 D01-C・D06-A） */
+.sec-head { padding: 88px 0 8px; }
+.sec-head h2 { font-size: clamp(24px, 3vw, 34px); }
+.sec-head p { margin-top: 8px; color: #5C5752; max-width: 36em; }
+.work { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 0 64px; align-items: center; padding: 56px 0; border-bottom: 1px solid rgba(34,32,32,0.16); }
+.work:nth-of-type(even) .work-photo { order: 2; }
+.work-photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.work-photo.wide img { aspect-ratio: 3 / 2; }
+.work .say { font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", sans-serif; font-weight: 700; font-size: clamp(22px, 2.6vw, 30px); line-height: 1.6; letter-spacing: 0.06em; }
+.work h3 { margin-top: 16px; font-size: 15px; color: #8A5A5F; letter-spacing: 0.1em; }
+.spec { display: grid; grid-template-columns: 7.5em minmax(0, 1fr); margin-top: 16px; border-top: 1px solid #222020; }
+.spec dt, .spec dd { padding: 10px 0; border-bottom: 1px solid rgba(34,32,32,0.16); font-size: 14.5px; }
+.spec dt { color: #5C5752; }
+.spec dd { margin: 0; }
+@media (max-width: 900px) {
+  .sec-head { padding-top: 56px; }
+  .work { grid-template-columns: 1fr; gap: 20px; padding: 36px 0; }
+  .work:nth-of-type(even) .work-photo { order: 0; }
+}
+
+/* 行で並べる */
+.block { padding: 80px 0; border-top: 1px solid rgba(34,32,32,0.16); }
+.block-grid { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 0 56px; }
+.block-grid > h2 { font-size: clamp(22px, 2.4vw, 28px); }
+.rows { border-top: 1px solid #222020; }
+.row { display: grid; grid-template-columns: 3em minmax(0, 1fr); gap: 0 18px; padding: 20px 0; border-bottom: 1px solid rgba(34,32,32,0.16); }
+.row .num { font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", sans-serif; font-weight: 700; font-size: 22px; color: #8A5A5F; }
+.row h3 { font-size: 18px; }
+.row p { margin-top: 4px; color: #5C5752; font-size: 15px; }
+.staff li { display: grid; grid-template-columns: 12em minmax(0, 1fr); gap: 4px 28px; padding: 22px 0; border-bottom: 1px solid rgba(34,32,32,0.16); }
+.staff { border-top: 1px solid #222020; }
+.staff .who b { display: block; font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", sans-serif; font-size: 20px; letter-spacing: 0.1em; }
+.staff .who span { font-size: 13.5px; color: #5C5752; }
+.staff .good { font-size: 14.5px; }
+.staff .good b { color: #8A5A5F; margin-right: 0.6em; font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", sans-serif; }
+.staff p { margin-top: 6px; font-size: 15px; color: #5C5752; }
+.menu-list { border-top: 1px solid #222020; }
+.menu-list li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 20px; padding: 16px 0; border-bottom: 1px solid rgba(34,32,32,0.16); }
+.menu-list b { font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", sans-serif; font-size: 17px; }
+.menu-list .yen { font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", sans-serif; font-weight: 700; font-size: 18px; white-space: nowrap; }
+.menu-list p { grid-column: 1 / -1; font-size: 14.5px; color: #5C5752; }
+.news { border-top: 1px solid #222020; }
+.news li { display: grid; grid-template-columns: 7.5em minmax(0, 1fr); gap: 12px; padding: 13px 0; border-bottom: 1px solid rgba(34,32,32,0.16); font-size: 15px; }
+.room { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; align-items: center; }
+.room img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+@media (max-width: 900px) {
+  .block { padding: 52px 0; }
+  .block-grid { grid-template-columns: 1fr; gap: 18px; }
+  .staff li { grid-template-columns: 1fr; }
+  .news li { grid-template-columns: 1fr; gap: 0; }
+  .room { grid-template-columns: 1fr; gap: 20px; }
+}
+.band { background: #3A2E30; color: #F3EEEC; padding: 72px 0; }
+.band .wrap { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px 48px; align-items: center; }
+.band h2 { font-size: clamp(24px, 3vw, 32px); }
+.band p { margin-top: 8px; color: #CFC4C2; }
+.band .btn { background: #FAF9F7; color: #222020; border-color: #FAF9F7; }
+.band .btn:hover { background: #FFFFFF; }
+@media (max-width: 760px) { .band { padding: 52px 0; } .band .wrap { grid-template-columns: 1fr; } }
+.page-head { padding: 56px 0 40px; border-bottom: 1px solid #222020; }
+.crumb { font-size: 13px; color: #5C5752; }
+.page-head h1 { font-size: clamp(28px, 4vw, 42px); margin-top: 8px; }
+.page-head p { margin-top: 12px; color: #5C5752; max-width: 40em; }
+.info { display: grid; grid-template-columns: 8em minmax(0, 1fr); border-top: 1px solid #222020; max-width: 44em; }
+.info dt, .info dd { padding: 12px 0; border-bottom: 1px solid rgba(34,32,32,0.16); font-size: 15px; }
+.info dt { color: #5C5752; }
+.info dd { margin: 0; }
+.map-box { margin-top: 24px; max-width: 44em; aspect-ratio: 16 / 7; border: 1px dashed #5C5752; display: flex; align-items: center; justify-content: center; color: #5C5752; font-size: 13.5px; }
+.faq { border-top: 1px solid #222020; max-width: 44em; }
+.faq details { border-bottom: 1px solid rgba(34,32,32,0.16); }
+.faq summary { cursor: pointer; padding: 16px 36px 16px 0; font-weight: 700; list-style: none; position: relative; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "＋"; position: absolute; right: 4px; top: 16px; color: #8A5A5F; }
+.faq details[open] summary::after { content: "－"; }
+.faq p { padding: 0 0 18px; color: #5C5752; font-size: 15px; }
+form.contact { max-width: 40em; display: grid; gap: 22px; }
+form.contact label { display: block; font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+form.contact input, form.contact textarea, form.contact select { width: 100%; font: inherit; font-size: 16px; padding: 12px 14px; min-height: 50px; background: #FFFFFF; border: 1px solid #5C5752; border-radius: 0; color: #222020; }
+form.contact textarea { min-height: 140px; resize: vertical; }
+.form-note { font-size: 13.5px; color: #5C5752; }
+@media (max-width: 600px) { .info { grid-template-columns: 6.5em minmax(0, 1fr); } }
+footer { background: #222020; color: #EDE9E6; padding: 44px 0 52px; font-size: 13.5px; }
+footer .brand { display: inline-block; font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", sans-serif; font-size: 20px; font-weight: 700; letter-spacing: 0.3em; margin-bottom: 8px; }
+footer p { margin-top: 4px; }
+footer .sample-note { margin-top: 16px; font-size: 12px; opacity: 0.8; max-width: 52em; }
+
+.top { position: sticky; top: 0; z-index: 30; background: #FAF9F7; border-bottom: 1px solid rgba(34,32,32,0.16); }
+.top .wrap { height: 62px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.top .btn { min-height: 40px; padding: 8px 18px; font-size: 14px; white-space: nowrap; flex: none; }
+.lp-fv { padding: 64px 0 80px; }
+.lp-fv .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0 64px; align-items: center; }
+.lp-fv h1 { font-size: clamp(32px, 4.4vw, 54px); line-height: 1.45; margin: 14px 0 20px; }
+.lp-fv figure { margin: 0; }
+.lp-fv figure img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.lp-fv figcaption { margin-top: 8px; font-size: 12.5px; color: #5C5752; }
+.price { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; margin-top: 24px; padding-top: 14px; border-top: 1px solid #222020; }
+.price .yen { font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", sans-serif; font-weight: 700; font-size: 40px; line-height: 1; letter-spacing: 0.02em; }
+.price .yen small { font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "YuGothic", "Meiryo", "Noto Sans JP", sans-serif; font-weight: 400; font-size: 13px; margin-left: 4px; }
+.price p { font-size: 14px; color: #5C5752; }
+.hour { display: grid; grid-template-columns: 2fr 4fr 1.4fr; border-top: 1px solid #222020; border-bottom: 1px solid #222020; }
+.hour > div { padding: 22px 22px 24px 0; }
+.hour > div + div { padding-left: 22px; border-left: 1px solid rgba(34,32,32,0.16); }
+.hour .hf { display: block; font-size: 34px; line-height: 1.1; }
+.hour .hf small { font-size: 15px; margin-left: 2px; }
+.hour b { display: block; margin-top: 8px; font-size: 17px; }
+.hour p { margin-top: 6px; font-size: 14.5px; color: #5C5752; }
+.hour .first { background: #F3ECEA; padding-left: 22px; }
+.hour .first .hf { color: #8A5A5F; }
+.reserve-btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+.dock { display: none; }
+@media (max-width: 900px) {
+  .lp-fv { padding: 32px 0 52px; }
+  .lp-fv .wrap { grid-template-columns: 1fr; gap: 28px; }
+  .lp-fv figure { order: -1; margin: 0 -20px; }
+  .lp-fv figure img { aspect-ratio: 4 / 3; }
+  .lp-fv figcaption { padding: 0 20px; }
+  .lp-fv h1 { font-size: 30px; }
+  .hour { grid-template-columns: 1fr; }
+  .hour > div, .hour > div + div { padding: 18px; border-left: 0; border-top: 1px solid rgba(34,32,32,0.16); }
+  .hour > div:first-child { border-top: 0; }
+  .dock { display: block; position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); background: #FAF9F7; border-top: 1px solid rgba(34,32,32,0.16); transition: transform 0.25s ease; }
+  .dock .btn { width: 100%; }
+  .dock.hide { transform: translateY(110%); }
+  body { padding-bottom: 72px; }
+}
+@media (prefers-reduced-motion: reduce) { .dock { transition: none; } }
+</style>
 </head>
 <body>
 
-<div class="sample-bar">SAMPLE LP — 架空のサロンを想定した、渡邊駿の自主制作サンプルです。<a href="index.html">← サンプル集へ</a></div>
-
+<div class="sample-strip">SAMPLE LP ― 架空のサロンを想定した、渡邊駿の自主制作サンプルです。<a href="index.html">← サンプル集へ</a></div>
 <header class="top"><div class="wrap">
-  <a class="logo" href="#"><span class="en">HANA</span><small>hair &amp; esthetic</small></a>
-  <a class="btn small" href="#reserve">RESERVE</a>
+  <a class="brand" href="../hp-samples/hana-salon/index.html"><span class="brand-text">HANA<small>hair &amp; esthetic</small></span></a>
+  <a class="btn" href="#reserve">予約する</a>
 </div></header>
-
-<div class="hero">
-  <div class="hero-copy">
-    <div class="label en">FIRST VISIT COURSE</div>
-    <h1><span class="nb">肌のことを、</span><br><span class="nb">話すところから。</span></h1>
-    <p class="lede">エステがはじめての方のための、カウンセリング付きのコースです。まずはお話をうかがい、その日の肌の状態に合わせて、40分のフェイシャルを行います。</p>
-    <div class="offer">
-      <div class="name">はじめてコース<small>初回のみ ／ 約70分</small></div>
-      <div class="yen en">&yen;6,600<small>税込</small></div>
-    </div>
-    <div class="acts">
-      <a class="btn" href="#reserve">予約する<span class="arrow"></span></a>
-      <a class="textlink" href="#course">コースの内容を見る</a>
-    </div>
+<main>
+<section class="lp-fv" aria-labelledby="fv-h"><div class="wrap">
+  <div>
+    <p class="fv-kind">エステがはじめての方へ｜はじめてコース</p>
+    <h1 id="fv-h"><span class="nb">肌のことを、</span><span class="nb">話すところから。</span></h1>
+    <p class="fv-lede">最初の20分は、施術をせずにお話だけをうかがいます。そのあと、その日の肌の状態に合わせて、40分のフェイシャルを行います。個室で、お一人ずつ。</p>
+    <div class="price"><span class="yen">¥6,600<small>税込</small></span><p>初回のみ・約70分</p></div>
+    <div class="actions"><a class="btn" href="#reserve">予約する</a><a class="more" href="#hour">70分の流れを見る</a></div>
   </div>
-  <div class="hero-photo">
-    <img src="img/lp-salon-hero.jpg" alt="白い大理石のトレイに並ぶ、たたんだタオルとオイルの瓶">
-    <span class="cap en">HANA — FACIAL</span>
-  </div>
-</div>
+  <figure><img src="img/lp-salon-towel.jpg" width="1000" height="1250" alt="白い台の上にたたんだタオルと、化粧品の瓶" fetchpriority="high"><figcaption>※写真はイメージです（画像生成AIで作成）。</figcaption></figure>
+</div></section>
 
-<section><div class="wrap row">
-  <div class="sec-head"><div class="no en">01</div><div class="label en">FOR YOU</div><h2><span class="nb">こんな方に、</span><span class="nb">おすすめです。</span></h2></div>
-  <div class="fade">
-    <ul class="worries">
-      <li><span class="en">i.</span>エステは初めてで、何をされるのか少し不安。</li>
-      <li><span class="en">ii.</span>肌のことを、急かされずに相談できる場所がほしい。</li>
-      <li><span class="en">iii.</span>回数券や化粧品をすすめられるのが、苦手。</li>
+<section class="block" id="hour" aria-labelledby="hr-h"><div class="wrap">
+  <h2 id="hr-h" style="font-size:clamp(24px,3vw,34px);margin-bottom:24px;">はじめてコースの70分</h2>
+  <div class="hour">
+    <div class="first"><span class="hf">20<small>分</small></span><b>お話だけの時間</b><p>普段のお手入れや、気になっていることをうかがいます。話したくないことは、話さなくて大丈夫です。</p></div>
+    <div><span class="hf">40<small>分</small></span><b>フェイシャル</b><p>クレンジングからマッサージ、パックまで。内容は、お話のあとにご説明してから始めます。</p></div>
+    <div><span class="hf">10<small>分</small></span><b>お手入れのお話</b><p>ご自宅で気をつけるとよいことを。</p></div>
+  </div>
+  <p class="small" style="margin-top:12px;">合計 約70分。個室で行います。</p>
+</div></section>
+
+<section class="block" aria-labelledby="fy-h"><div class="wrap block-grid">
+  <h2 id="fy-h">こんな方に</h2>
+  <div>
+    <ol class="rows">
+      <li class="row"><span class="num">1</span><div><h3>エステは初めてで、少し不安</h3><p>何をされるのか分からないまま始まるのが、心配な方に。</p></div></li>
+      <li class="row"><span class="num">2</span><div><h3>肌のことを、急かされずに相談したい</h3><p>うまく説明できなくても大丈夫です。普段の様子からうかがいます。</p></div></li>
+      <li class="row"><span class="num">3</span><div><h3>回数券や化粧品をすすめられるのが苦手</h3><p>はじめてコースのあとに、ご案内はしません。</p></div></li>
+    </ol>
+  </div>
+</div></section>
+
+<section class="block" aria-labelledby="pm-h"><div class="wrap block-grid">
+  <h2 id="pm-h">3つの約束</h2>
+  <ol class="rows">
+    <li class="row"><span class="num">1</span><div><h3>その場で、次の予約や商品をすすめません</h3><p>次も来たいと思ったときに、ご連絡ください。</p></div></li>
+    <li class="row"><span class="num">2</span><div><h3>施術は、納得していただいてから</h3><p>何をどの順番で行うのかをご説明し、気になる点がないか確かめてから始めます。</p></div></li>
+    <li class="row"><span class="num">3</span><div><h3>同じ時間に、ほかのお客様を入れません</h3><p>完全予約制で、施術中はお一人だけ。周りを気にせず過ごせます。</p></div></li>
+  </ol>
+</div></section>
+
+<section class="block" aria-labelledby="es-h"><div class="wrap block-grid">
+  <h2 id="es-h">担当する<br>エステティシャン</h2>
+  <div>
+    <ul class="staff"><li><p class="who"><b>高野 みさき</b><span>エステティシャン／エステ歴9年</span></p><div><p class="good"><b>得意</b>フェイシャル、肌の状態に合わせたケア</p><p>はじめての方ほど、「何を聞かれるんだろう」と緊張されるものです。肌のことは、うまく説明できなくても大丈夫。普段の様子をうかがいながら、その日の内容を一緒に決めていきます。</p></div></li></ul>
+    <p class="small" style="margin-top:12px;">※スタッフの名前・経歴は、制作サンプル用の架空のものです。</p>
+  </div>
+</div></section>
+
+<section class="block" aria-labelledby="pr-h"><div class="wrap block-grid">
+  <h2 id="pr-h">料金</h2>
+  <div>
+    <ul class="menu-list">
+      <li><b>はじめてコース</b><span class="yen">¥6,600</span><p>初回のみ。お話20分＋フェイシャル40分＋お手入れのお話10分。</p></li>
+      <li><b>フェイシャルエステ</b><span class="yen">¥9,800〜</span><p>2回目からのご案内。肌質に合わせた60分。</p></li>
     </ul>
-    <p class="after-note">はじめてコースは、そんな方のために作りました。最初の20分は、施術をせずにお話だけをうかがいます。</p>
+    <p class="small" style="margin-top:12px;">表示はすべて税込です。お支払いは、現金・各種キャッシュレス決済。※料金・内容は、制作サンプル用の架空のものです。</p>
   </div>
 </div></section>
 
-<section class="grey" id="course"><div class="wrap row">
-  <div class="sec-head"><div class="no en">02</div><div class="label en">COURSE</div><h2><span class="nb">はじめてコースの</span><span class="nb">流れ</span></h2></div>
-  <div class="fade">
-    <div class="steps">
-      <div class="step"><div class="min en">20<small>min</small></div><h3>カウンセリング</h3><p>普段のお手入れや、気になっていることをうかがいます。話したくないことは、話さなくて大丈夫です。</p></div>
-      <div class="step"><div class="min en">40<small>min</small></div><h3>フェイシャル</h3><p>クレンジングからマッサージ、パックまで。内容は、カウンセリングのあとにご説明してから始めます。</p></div>
-      <div class="step"><div class="min en">10<small>min</small></div><h3>お手入れのお話</h3><p>ご自宅でのお手入れで、気をつけるとよいことをお伝えします。</p></div>
-    </div>
-    <p class="total">合計　約70分　／　個室で行います</p>
-  </div>
-</div></section>
-
-<section class="wide">
-  <img src="img/lp-salon-room.jpg" alt="施術用のベッドのそばに、タオルとオイル、施術用の機器が並ぶ個室" loading="lazy">
-  <p><span class="nb">個室で、</span><span class="nb">ひとりの時間を。</span></p>
-</section>
-
-<section><div class="wrap row">
-  <div class="sec-head"><div class="no en">03</div><div class="label en">PROMISE</div><h2><span class="nb">HANAの、</span><span class="nb">3つの約束</span></h2></div>
-  <div class="promises fade">
-    <div class="promise"><span class="i en">i.</span><div><h3>その場で、次の予約や商品をすすめません</h3><p>コースのあとに、回数券や化粧品のご案内はしません。次も来たいと思ったときに、ご連絡ください。</p></div></div>
-    <div class="promise"><span class="i en">ii.</span><div><h3>施術は、納得していただいてから</h3><p>何をどの順番で行うのかをご説明し、気になる点がないか確かめてから始めます。</p></div></div>
-    <div class="promise"><span class="i en">iii.</span><div><h3>同じ時間に、ほかのお客様を入れません</h3><p>完全予約制で、施術中はお一人だけ。周りを気にせず過ごせます。</p></div></div>
-  </div>
-</div></section>
-
-<section class="grey"><div class="wrap row">
-  <div class="sec-head"><div class="no en">04</div><div class="label en">PRICE</div><h2>料金</h2></div>
-  <div class="fade">
-    <table class="price">
-      <tr class="main"><td class="n">はじめてコース<b>初回のみ</b><small>カウンセリング20分＋フェイシャル40分＋お手入れのお話</small></td><td class="y en">&yen;6,600</td></tr>
-      <tr><td class="n">フェイシャルエステ<small>2回目からのご案内。肌質に合わせた60分</small></td><td class="y en">&yen;9,800〜</td></tr>
-    </table>
-    <p class="small-note">表示はすべて税込です。お支払いは、現金・各種キャッシュレス決済。<br>※料金・内容は、制作サンプル用の架空のものです。</p>
-  </div>
-</div></section>
-
-<section><div class="wrap row">
-  <div class="sec-head"><div class="no en">05</div><div class="label en">ESTHETICIAN</div><h2><span class="nb">担当する</span><span class="nb">エステティシャン</span></h2></div>
-  <div class="person fade">
-    <div class="monogram en" aria-hidden="true">M</div>
-    <div>
-      <span class="role">エステティシャン ／ エステ歴9年</span>
-      <h3>高野 みさき</h3>
-      <p>はじめての方ほど、「何を聞かれるんだろう」と緊張されるものです。肌のことは、うまく説明できなくても大丈夫。普段の様子をうかがいながら、その日の内容を一緒に決めていきます。</p>
-      <p class="small-note">※スタッフの名前・経歴は、制作サンプル用の架空のものです。</p>
-    </div>
-  </div>
-</div></section>
-
-<section class="grey"><div class="wrap row">
-  <div class="sec-head"><div class="no en">06</div><div class="label en">VOICE</div><h2>お客様の声</h2></div>
-  <div class="fade">
-    <div class="quotes">
-      <div class="quote"><p>エステは初めてで身構えていましたが、最初にゆっくり話を聞いてもらえて、安心して受けられました。帰りに何もすすめられなかったのも、うれしかったです。</p><span>30代・会社員</span></div>
-      <div class="quote"><p>肌のことを人に相談するのは初めてでした。家でのお手入れで気をつけることが分かって、毎日の洗顔が少し楽しみになりました。</p><span>40代・パート</span></div>
-    </div>
-    <p class="small-note">※お客様の声は、制作サンプル用の架空のものです。</p>
-  </div>
-</div></section>
-
-<section><div class="wrap row">
-  <div class="sec-head"><div class="no en">07</div><div class="label en">Q &amp; A</div><h2>よくある質問</h2></div>
-  <div class="faq fade">
-    <details><summary>肌が敏感なのですが、受けられますか？</summary><p>カウンセリングで肌の状態をうかがい、施術の内容をご相談します。不安な点は、ご予約のときにお伝えください。</p></details>
+<section class="block" aria-labelledby="fq-h"><div class="wrap block-grid">
+  <h2 id="fq-h">よくある質問</h2>
+  <div class="faq">
+    <details><summary>肌が敏感なのですが、受けられますか？</summary><p>お話の時間に肌の状態をうかがい、施術の内容をご相談します。不安な点は、ご予約のときにお伝えください。</p></details>
     <details><summary>メイクをしたまま行ってもいいですか？</summary><p>はい。メイク落としから行いますので、そのままお越しください。</p></details>
     <details><summary>施術のあと、メイクはできますか？</summary><p>パウダールームをご用意しています。お化粧直しの時間も、ゆっくりお使いください。</p></details>
     <details><summary>キャンセルはできますか？</summary><p>前日の19時までに、お電話か公式LINEでご連絡ください。</p></details>
-    <details><summary>2回目は、はじめてコースを受けられますか？</summary><p>はじめてコースは、初回の方だけのご案内です。2回目からは、フェイシャルエステ（60分）をご案内しています。</p></details>
+    <details><summary>2回目も、はじめてコースを受けられますか？</summary><p>はじめてコースは、初回の方だけのご案内です。2回目からは、フェイシャルエステ（60分）をご案内しています。</p></details>
   </div>
 </div></section>
 
-<section class="final" id="reserve"><div class="wrap">
-  <div class="no en">RESERVE</div>
-  <h2><span class="nb">ご予約は、</span><span class="nb">お電話か公式LINEで。</span></h2>
-  <p>ご希望の日時と「はじめてコース」とお知らせください。<br>受付　10:00〜19:00（月曜定休）</p>
-  <div class="acts">
-    <a class="btn" href="#" onclick="alert('制作サンプルのため、予約はできません。'); return false;">LINEで予約する<span class="arrow"></span></a>
-    <a class="btn line" href="#" onclick="alert('制作サンプルのため、予約はできません。'); return false;">電話で予約する<span class="arrow"></span></a>
+<section class="block" id="reserve" aria-labelledby="rs-h"><div class="wrap block-grid">
+  <h2 id="rs-h">ご予約</h2>
+  <div>
+    <p>お電話か公式LINEで、ご希望の日時と「はじめてコース」とお知らせください。受付は10:00〜19:00（月曜定休）です。</p>
+    <div class="reserve-btns"><a class="btn" href="#" onclick="alert('制作サンプルのため、予約はできません。'); return false;">LINEで予約する（サンプル）</a><a class="btn line" href="tel:000-0000-0000">電話で予約する 000-0000-0000</a></div>
   </div>
 </div></section>
 
-<section><div class="wrap row">
-  <div class="sec-head"><div class="no en">08</div><div class="label en">SALON</div><h2>サロンの情報</h2></div>
+<section class="block" aria-labelledby="sl-h"><div class="wrap block-grid">
+  <h2 id="sl-h">サロンの情報</h2>
   <div>
     <dl class="info">
       <dt>営業時間</dt><dd>10:00〜19:00（最終受付 17:00）</dd>
@@ -319,30 +313,27 @@ footer .en { display: block; font-size: 30px; color: var(--ink); letter-spacing:
       <dt>個室</dt><dd>エステ用の個室 1室</dd>
       <dt>駐車場</dt><dd>なし（近くにコインパーキングあり）</dd>
     </dl>
-    <div class="info-acts"><a class="btn line" href="../hp-samples/hana-salon/index.html">サロンのホームページを見る<span class="arrow"></span></a></div>
+    <a class="more" href="../hp-samples/hana-salon/index.html" style="display:inline-block;margin-top:16px;">サロンのホームページを見る</a>
   </div>
 </div></section>
-
-<footer><span class="en">HANA</span>※このページは渡邊駿の制作サンプルです。架空のサロンを想定した自主制作物で、実在のお店ではありません。<br>料金・スタッフ・お客様の声も、すべて架空です。</footer>
-
-<a class="fixed-cta" href="#reserve"><span>はじめてコース　<b class="en">&yen;6,600</b></span><span>RESERVE →</span></a>
-
+</main>
+<footer><div class="wrap">
+  <span class="brand">HANA</span>
+  <p>〒000-0000　◯◯県◯◯市◯◯町 2-3-4　｜　10:00〜19:00（月曜定休）　｜　完全予約制</p>
+  <p class="sample-note">※このページは渡邊駿の制作サンプルです。架空のサロンを想定した自主制作物で、実在のお店ではありません。料金・スタッフも、すべて架空です。</p>
+</div></footer>
+<div class="dock hide" id="dock"><a class="btn" href="#reserve">はじめてコース ¥6,600 を予約</a></div>
 <script>
 (function () {
-  // 下部の予約ボタンは、最初の画面を過ぎてから出す（予約欄が見えている間は隠す）
-  var bar = document.querySelector(".fixed-cta"), hero = document.querySelector(".hero"), fin = document.querySelector(".final");
-  function onScroll() {
-    var f = fin.getBoundingClientRect();
-    bar.classList.toggle("show", hero.getBoundingClientRect().bottom < 0 && (f.top > innerHeight || f.bottom < 0));
-  }
-  addEventListener("scroll", onScroll, { passive: true }); onScroll();
-  // ゆっくり表示
-  var els = document.querySelectorAll(".fade");
-  if (!("IntersectionObserver" in window)) { els.forEach(function (e) { e.classList.add("in"); }); return; }
+  var dock = document.getElementById('dock');
+  if (!('IntersectionObserver' in window)) { dock.classList.remove('hide'); return; }
+  var seen = {};
   var io = new IntersectionObserver(function (ents) {
-    ents.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
-  }, { threshold: 0.1 });
-  els.forEach(function (e) { io.observe(e); });
+    ents.forEach(function (en) { seen[en.target.id || 'fv'] = en.isIntersecting; });
+    dock.classList.toggle('hide', !!(seen.fv || seen.reserve));
+  });
+  io.observe(document.querySelector('.lp-fv'));
+  io.observe(document.getElementById('reserve'));
 })();
 </script>
 </body>

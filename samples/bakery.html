@@ -4,196 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>どうぶつパン 予約BOX｜petite douceur（制作サンプル・渡邊駿）</title>
-<meta name="description" content="誕生日会やおやつの時間に。どうぶつパンを6個入りの箱でご用意する、予約BOXのLP（架空の店舗の制作サンプル）。">
-<style>
-:root {
-  --ink: #43291B; --ink-soft: #6B4C3A; --paper: #FFF9EF; --paper-deep: #FFF0D2; --card: #FFFFFF;
-  --accent: #F28C45; --accent-text: #B4521A; --yellow: #FFD45C; --mint: #A7DCCB; --crust: #E6A25C;
-  color-scheme: light;
-}
-* { box-sizing: border-box; margin: 0; }
-html { scroll-behavior: smooth; }
-body { background: var(--paper); color: var(--ink); font-family: "Hiragino Maru Gothic ProN", "Hiragino Sans", "Yu Gothic", sans-serif; line-height: 1.9; letter-spacing: 0.04em; -webkit-font-smoothing: antialiased; }
-img, svg { display: block; max-width: 100%; }
-a { color: inherit; }
-.wrap { max-width: 1000px; margin: 0 auto; padding: 0 22px; }
-.nb { display: inline-block; }
-
-/* サンプルの表示 */
-.sample-bar { background: var(--ink); color: #FFF4E2; font-size: 12px; text-align: center; padding: 7px 16px; letter-spacing: 0.04em; }
-.sample-bar a { color: #FFD45C; margin-left: 10px; }
-
-/* 上部の帯 */
-.top { background: #fff; border-bottom: 3px solid var(--ink); position: sticky; top: 0; z-index: 50; }
-.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; gap: 12px; }
-.logo { display: flex; align-items: center; gap: 10px; font-weight: 700; text-decoration: none; font-size: 18px; white-space: nowrap; }
-.logo .mk { width: 34px; height: 34px; border-radius: 50%; background: var(--yellow); border: 2px solid var(--ink); display: grid; place-items: center; }
-.logo .mk svg { width: 22px; height: 22px; }
-.logo small { display: block; font-size: 10.5px; color: var(--ink-soft); letter-spacing: 0.1em; line-height: 1.2; font-weight: 400; }
-
-/* ボタン */
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 26px; border-radius: 999px; border: 3px solid var(--ink); background: var(--accent); color: #3A1F10; font-weight: 700; text-decoration: none; box-shadow: 4px 4px 0 var(--ink); transition: transform .15s, box-shadow .15s; font-size: 15px; cursor: pointer; font-family: inherit; }
-.btn:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--ink); }
-.btn.white { background: #fff; }
-.btn.small { padding: 7px 18px; font-size: 13.5px; box-shadow: 3px 3px 0 var(--ink); }
-.btn-row { display: flex; flex-wrap: wrap; gap: 14px; }
-
-/* 見出し */
-.head { text-align: center; margin-bottom: 40px; }
-.tag { display: inline-block; background: var(--yellow); border: 2px solid var(--ink); padding: 2px 16px; border-radius: 999px; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; }
-.head h2 { font-size: clamp(23px, 3.4vw, 32px); line-height: 1.6; margin-top: 14px; }
-.head h2 .mark { background: linear-gradient(transparent 62%, var(--yellow) 62%); padding: 0 4px; }
-.head p { color: var(--ink-soft); margin-top: 10px; font-size: 15px; }
-section { padding: 84px 0; position: relative; }
-section.alt { background-color: var(--paper-deep); background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22140%22%20height%3D%22140%22%3E%3Cg%20transform%3D%22translate%2836%2030%29%20rotate%28-18%2032%2032%29%20scale%280.9%29%22%20fill%3D%22none%22%20stroke%3D%22%23F28C45%22%20stroke-opacity%3D%220.22%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M32%2061V13%22/%3E%3Cpath%20d%3D%22M32%2015C29.5%2011%2030%206%2032%203C34%206%2034.5%2011%2032%2015%22/%3E%3Cpath%20d%3D%22M32%2054C38%2052%2042%2048%2044%2043%22/%3E%3Cpath%20d%3D%22M32%2025%20C25%2024%2022%2018%2023%2013%20C29%2014%2032%2019%2032%2025%22/%3E%3Cpath%20d%3D%22M32%2025%20C39%2024%2042%2018%2041%2013%20C35%2014%2032%2019%2032%2025%22/%3E%3Cpath%20d%3D%22M32%2033%20C25%2032%2022%2026%2023%2021%20C29%2022%2032%2027%2032%2033%22/%3E%3Cpath%20d%3D%22M32%2033%20C39%2032%2042%2026%2041%2021%20C35%2022%2032%2027%2032%2033%22/%3E%3Cpath%20d%3D%22M32%2041%20C25%2040%2022%2034%2023%2029%20C29%2030%2032%2035%2032%2041%22/%3E%3Cpath%20d%3D%22M32%2041%20C39%2040%2042%2034%2041%2029%20C35%2030%2032%2035%2032%2041%22/%3E%3Cpath%20d%3D%22M32%2049%20C25%2048%2022%2042%2023%2037%20C29%2038%2032%2043%2032%2049%22/%3E%3Cpath%20d%3D%22M32%2049%20C39%2048%2042%2042%2041%2037%20C35%2038%2032%2043%2032%2049%22/%3E%3C/g%3E%3C/svg%3E"); background-size: 140px 140px; }
-section.alt::before, section.alt::after { content: ""; position: absolute; left: 0; right: 0; height: 14px; background-size: 28px 14px; background-repeat: repeat-x; }
-section.alt::before { top: 0; background-image: radial-gradient(circle at 50% 0, var(--paper) 13px, transparent 13.5px); }
-section.alt::after { bottom: 0; background-image: radial-gradient(circle at 50% 100%, var(--paper) 13px, transparent 13.5px); }
-
-/* ファーストビュー */
-.hero { padding: 56px 0 90px; background: radial-gradient(circle, rgba(242,140,69,.16) 2.5px, transparent 3px) 0 0 / 26px 26px, linear-gradient(180deg, #FFE7B8, var(--paper)); overflow: hidden; }
-.hero .wrap { display: grid; grid-template-columns: 1.12fr 1fr; gap: 34px; align-items: center; }
-.loaf { position: relative; background: #FFF8EA; border: 3px solid var(--ink); border-radius: 46% 46% 30px 30px / 110px 110px 30px 30px; box-shadow: inset 0 0 0 11px var(--crust), inset 0 0 0 13px rgba(67,41,27,.35), 10px 10px 0 var(--accent); padding: 72px 42px 40px; text-align: center; }
-.hero h1 { font-size: clamp(24px, 3vw, 34px); line-height: 1.55; margin: 16px 0 14px; }
-.hero h1 .em { color: var(--accent-text); }
-.hero .lede { color: var(--ink-soft); font-size: 15px; max-width: 30em; margin: 0 auto; }
-.price-chip { white-space: nowrap; display: inline-flex; align-items: baseline; gap: 8px; margin: 20px 0 22px; background: var(--yellow); border: 2px solid var(--ink); border-radius: 14px; padding: 6px 18px; font-weight: 700; }
-.price-chip b { font-size: 26px; letter-spacing: 0.02em; }
-.hero .btn-row { justify-content: center; }
-.sticker { position: absolute; top: 14px; right: -34px; width: 104px; height: 104px; border-radius: 50%; background: var(--mint); border: 3px solid var(--ink); display: grid; place-items: center; text-align: center; font-size: 13px; font-weight: 700; line-height: 1.45; transform: rotate(10deg); }
-.hero-photo { margin: 0; transform: rotate(1.5deg); }
-.hero-photo img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border: 3px solid var(--ink); border-radius: 22px; box-shadow: 8px 8px 0 var(--accent); }
-.hero-photo figcaption, .box-photo figcaption { font-size: 11.5px; color: var(--ink-soft); text-align: right; margin-top: 10px; }
-.box-photo { margin: 0; }
-.box-photo img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border: 3px solid var(--ink); border-radius: 20px; box-shadow: 6px 6px 0 var(--ink); }
-
-/* 悩み */
-.bubbles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-.bubble { position: relative; background: #fff; border: 3px solid var(--ink); border-radius: 26px; padding: 24px 22px; font-weight: 700; font-size: 15.5px; line-height: 1.75; box-shadow: 5px 5px 0 var(--ink); }
-.bubble::after { content: ""; position: absolute; left: 34px; bottom: -17px; width: 24px; height: 24px; background: #fff; border-right: 3px solid var(--ink); border-bottom: 3px solid var(--ink); transform: skewY(30deg) rotate(10deg); }
-.bubble:nth-child(2) { transform: translateY(16px); }
-.answer { text-align: center; margin-top: 64px; }
-.answer .arrow { width: 0; height: 0; margin: 0 auto 18px; border-left: 22px solid transparent; border-right: 22px solid transparent; border-top: 22px solid var(--accent); }
-.answer p { font-size: clamp(20px, 3vw, 26px); font-weight: 700; }
-.answer p .mark { background: linear-gradient(transparent 62%, var(--yellow) 62%); }
-
-/* 箱の中身 */
-.box-wrap { display: grid; grid-template-columns: 1.15fr 1fr; gap: 40px; align-items: center; }
-.box-copy h3 { font-size: 22px; line-height: 1.6; margin-bottom: 12px; }
-.box-copy p { color: var(--ink-soft); font-size: 15px; margin-bottom: 12px; }
-.pans { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 56px; }
-.pan { background: #fff; border: 3px solid var(--ink); border-radius: 50% 50% 22px 22px / 60px 60px 22px 22px; overflow: hidden; box-shadow: 5px 5px 0 var(--ink); text-align: center; padding-bottom: 18px; }
-.pan-art { background: radial-gradient(circle at 50% 60%, #FFF3D9 0, #FFE2B0 70%); border-bottom: 2px solid var(--ink); padding: 20px 16px 10px; margin-bottom: 14px; }
-.pan-art img { width: 82%; aspect-ratio: 1 / 1; border-radius: 50%; object-fit: cover; border: 2px solid var(--ink); background: #fff; margin: 0 auto; transition: transform .25s; }
-.pan:hover .pan-art img { transform: rotate(-6deg) scale(1.04); }
-.pan h3 { font-size: 16px; padding: 0 12px; word-break: keep-all; }
-.pan p { font-size: 13px; color: var(--ink-soft); padding: 4px 14px 0; line-height: 1.75; }
-.note { font-size: 12.5px; color: var(--ink-soft); text-align: center; margin-top: 22px; }
-
-/* 途中のボタン帯 */
-.cta-strip { background: var(--accent); border-top: 3px solid var(--ink); border-bottom: 3px solid var(--ink); padding: 26px 0; }
-.cta-strip .wrap { display: flex; align-items: center; justify-content: center; gap: 22px; flex-wrap: wrap; text-align: center; }
-.cta-strip p { font-weight: 700; font-size: 17px; color: #3A1F10; }
-
-/* こだわり */
-.points { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.point { background: #fff; border: 3px solid var(--ink); border-radius: 90px 90px 22px 22px / 46px 46px 22px 22px; padding: 34px 24px 26px; box-shadow: 6px 6px 0 var(--ink); text-align: center; }
-.point .no { display: inline-grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; background: var(--accent); border: 2px solid var(--ink); font-weight: 700; margin-bottom: 10px; }
-.point h3 { font-size: 18px; margin-bottom: 8px; }
-.point p { font-size: 14px; color: var(--ink-soft); text-align: left; }
-
-/* 予約の流れ */
-.flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 34px; counter-reset: s; }
-.step { position: relative; background: #fff; border: 3px solid var(--ink); border-radius: 22px; padding: 46px 22px 24px; box-shadow: 5px 5px 0 var(--ink); }
-.step::before { counter-increment: s; content: "STEP " counter(s); position: absolute; top: -18px; left: 50%; transform: translateX(-50%); background: var(--yellow); border: 3px solid var(--ink); border-radius: 999px; padding: 2px 16px; font-weight: 700; font-size: 14px; white-space: nowrap; }
-.step:not(:last-child)::after { content: ""; position: absolute; right: -30px; top: 50%; border-top: 14px solid transparent; border-bottom: 14px solid transparent; border-left: 16px solid var(--accent); transform: translateY(-50%); }
-.step h3 { font-size: 18px; text-align: center; margin-bottom: 8px; }
-.step p { font-size: 14px; color: var(--ink-soft); }
-
-/* 料金 */
-.prices { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; max-width: 720px; margin: 0 auto; }
-.price-card { background: #fff; border: 3px solid var(--ink); border-radius: 24px; padding: 28px 24px; text-align: center; box-shadow: 6px 6px 0 var(--accent); }
-.price-card .size { font-weight: 700; font-size: 17px; }
-.price-card .yen { font-size: 40px; font-weight: 700; line-height: 1.4; margin: 6px 0 2px; }
-.price-card .yen small { font-size: 15px; margin-left: 4px; }
-.price-card p { font-size: 13.5px; color: var(--ink-soft); }
-.price-card.pop { box-shadow: 6px 6px 0 var(--yellow); }
-
-/* お客様の声 */
-.voices { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; }
-.voice { display: grid; grid-template-columns: 74px 1fr; gap: 16px; align-items: start; }
-.voice .face { width: 74px; height: 74px; border-radius: 50%; background: #fff; border: 3px solid var(--ink); overflow: hidden; }
-.voice .face img { width: 100%; height: 100%; object-fit: cover; }
-.voice .say { background: #fff; border: 3px solid var(--ink); border-radius: 22px; padding: 18px 20px; font-size: 14.5px; box-shadow: 4px 4px 0 var(--ink); }
-.voice .who { display: block; margin-top: 8px; font-size: 12.5px; color: var(--ink-soft); }
-
-/* よくある質問：黒板 */
-.board { max-width: 800px; margin: 0 auto; background: #33433A; border: 12px solid #B57B48; border-radius: 12px; box-shadow: inset 0 0 0 2px rgba(0,0,0,.25), 6px 6px 0 var(--ink); padding: 10px 30px; color: #F5F0E4; }
-.board details { border-bottom: 2px dashed rgba(255,255,255,.22); padding: 16px 0; }
-.board details:last-child { border-bottom: none; }
-.board summary { cursor: pointer; font-weight: 700; list-style: none; display: flex; gap: 12px; }
-.board summary::-webkit-details-marker { display: none; }
-.board summary::before { content: "Q"; color: var(--yellow); }
-.board summary::after { content: "＋"; margin-left: auto; color: var(--yellow); }
-.board details[open] summary::after { content: "−"; }
-.board details p { margin-top: 8px; padding-left: 26px; font-size: 14.5px; color: #E4DED0; }
-
-/* 最後の案内：かまど */
-.oven { position: relative; background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2264%22%20height%3D%2232%22%3E%3Crect%20width%3D%2264%22%20height%3D%2232%22%20fill%3D%22%23C9693F%22/%3E%3Crect%20x%3D%222%22%20y%3D%222%22%20width%3D%2228%22%20height%3D%2212%22%20fill%3D%22%23D2774A%22/%3E%3Crect%20x%3D%2234%22%20y%3D%2218%22%20width%3D%2228%22%20height%3D%2212%22%20fill%3D%22%23BF6038%22/%3E%3Cpath%20d%3D%22M0%201H64M0%2017H64M32%201V17M0%2017V32M64%2017V32M16%2017%22%20stroke%3D%22%238E3F22%22%20stroke-width%3D%222.4%22/%3E%3C/svg%3E"); background-size: 64px 32px; border: 3px solid var(--ink); border-radius: 50% 50% 24px 24px / 150px 150px 24px 24px; padding: 46px 34px 0; box-shadow: 8px 8px 0 var(--ink); text-align: center; }
-.oven::before { content: ""; position: absolute; top: -34px; right: 18%; width: 46px; height: 64px; background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2264%22%20height%3D%2232%22%3E%3Crect%20width%3D%2264%22%20height%3D%2232%22%20fill%3D%22%23C9693F%22/%3E%3Crect%20x%3D%222%22%20y%3D%222%22%20width%3D%2228%22%20height%3D%2212%22%20fill%3D%22%23D2774A%22/%3E%3Crect%20x%3D%2234%22%20y%3D%2218%22%20width%3D%2228%22%20height%3D%2212%22%20fill%3D%22%23BF6038%22/%3E%3Cpath%20d%3D%22M0%201H64M0%2017H64M32%201V17M0%2017V32M64%2017V32M16%2017%22%20stroke%3D%22%238E3F22%22%20stroke-width%3D%222.4%22/%3E%3C/svg%3E"); background-size: 64px 32px; border: 3px solid var(--ink); border-bottom: none; border-radius: 6px 6px 0 0; z-index: -1; }
-.oven-mouth { background: radial-gradient(ellipse at 50% 115%, #FFB547 0%, #FFD98A 34%, #FFF4DE 70%); border: 3px solid var(--ink); border-bottom: none; border-radius: 50% 50% 0 0 / 130px 130px 0 0; max-width: 680px; margin: 0 auto; padding: 64px 30px 46px; }
-.oven-mouth h2 { font-size: clamp(22px, 3.2vw, 30px); line-height: 1.6; }
-.oven-mouth p { color: var(--ink-soft); margin: 10px 0 24px; }
-.oven-mouth .btn-row { justify-content: center; }
-
-/* お店の情報 */
-.shop { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: center; }
-.shop .photo { border: 3px solid var(--ink); border-radius: 26px; overflow: hidden; box-shadow: 8px 8px 0 var(--yellow); }
-.shop .photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
-.shop dl { display: grid; grid-template-columns: 96px 1fr; font-size: 14.5px; border-top: 3px solid var(--ink); }
-.shop dt, .shop dd { padding: 11px 4px; border-bottom: 2px dashed rgba(67,41,27,.22); }
-.shop dt { font-weight: 700; }
-.shop dd { color: var(--ink-soft); }
-.shop .btn { margin-top: 22px; }
-
-footer { background: var(--ink); color: #F1E2CF; text-align: center; padding: 34px 20px 110px; font-size: 12.5px; }
-footer b { display: block; font-size: 17px; margin-bottom: 6px; color: #fff; }
-
-/* スマホ下部の予約ボタン */
-.fixed-cta { position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 60; display: none; transform: translateY(140%); transition: transform .3s; }
-.fixed-cta.show { transform: none; }
-.fixed-cta .btn { width: 100%; }
-
-@media (max-width: 860px) {
-  .hero .wrap, .box-wrap, .shop { grid-template-columns: 1fr; }
-  .hero-photo { max-width: 520px; width: 100%; margin: 0 auto; }
-  .pans { grid-template-columns: repeat(2, 1fr); }
-  .bubbles, .points, .flow, .voices, .prices { grid-template-columns: 1fr; }
-  .bubble:nth-child(2) { transform: none; }
-  .flow { gap: 40px; }
-  .step:not(:last-child)::after { right: auto; left: 50%; top: auto; bottom: -32px; transform: translateX(-50%); border-left: 14px solid transparent; border-right: 14px solid transparent; border-top: 16px solid var(--accent); border-bottom: 0; }
-}
-@media (max-width: 600px) {
-  section { padding: 64px 0; }
-  .top .btn { display: none; }
-  .loaf { border-radius: 46% 46% 24px 24px / 80px 80px 24px 24px; padding: 60px 20px 28px; box-shadow: inset 0 0 0 9px var(--crust), inset 0 0 0 11px rgba(67,41,27,.35), 6px 6px 0 var(--accent); }
-  .price-chip { padding: 6px 14px; font-size: 13px; }
-  .price-chip b { font-size: 22px; }
-  .sticker { width: 84px; height: 84px; font-size: 11px; top: -30px; right: -4px; }
-  .hero { padding-top: 46px; }
-  .pans { gap: 12px; }
-  .pan h3 { font-size: 13px; letter-spacing: 0; padding: 0 6px; }
-  .oven-mouth h2 { font-size: 20px; }
-  .cta-strip p { font-size: 15.5px; }
-  .pan p { font-size: 12px; padding: 4px 10px 0; }
-  .board { padding: 6px 18px; border-width: 9px; }
-  .oven { border-radius: 50% 50% 20px 20px / 90px 90px 20px 20px; padding: 34px 14px 0; }
-  .oven-mouth { border-radius: 50% 50% 0 0 / 80px 80px 0 0; padding: 50px 16px 34px; }
-  .voice { grid-template-columns: 56px 1fr; }
-  .voice .face { width: 56px; height: 56px; }
-  .fixed-cta { display: block; }
-}
-</style>
+<meta name="description" content="誕生日会やおやつの時間に。どうぶつパンを好きな組み合わせで6個・12個の箱にしてご用意する、予約BOXのLP（架空の店舗の制作サンプル）。">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%227%22 fill=%22%23333%22/%3E%3C/svg%3E">
 <!-- 架空のお店のサンプルのため、検索結果には出さない設定にしています（実際の納品では外します） -->
 <meta name="robots" content="noindex">
@@ -201,107 +12,335 @@ footer b { display: block; font-size: 17px; margin-bottom: 6px; color: #fff; }
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="渡邊駿の制作サンプル">
 <meta property="og:title" content="どうぶつパン 予約BOX｜petite douceur（制作サンプル・渡邊駿）">
-<meta property="og:description" content="誕生日会やおやつの時間に。どうぶつパンを6個入りの箱でご用意する、予約BOXのLP（架空の店舗の制作サンプル）。">
+<meta property="og:description" content="誕生日会やおやつの時間に。どうぶつパンを好きな組み合わせで6個・12個の箱にしてご用意する、予約BOXのLP（架空の店舗の制作サンプル）。">
 <meta property="og:url" content="https://watanabeshun0828-cell.github.io/watachan-works-lp/samples/bakery.html">
 <meta property="og:image" content="https://watanabeshun0828-cell.github.io/watachan-works-lp/samples/img/og-bakery.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
+<!--
+  2026-11-09 作り直し（案3「予約の注文票」）。同じお店のHP（hp-samples/petite-douceur）と配色・文字・写真をそろえた。
+  参照：プロンプトライブラリ/Web・バナー制作ナレッジ/ 00・06・09・10（D10-B 一段階ずつ進む／D08-C 紙のグラフィック）・12（PT03・MO10）
+  - 角丸の囲み・丸いボタン・丸ゴシックは使わない。架空のお客様の声は外した（09 C07）
+  - 組み合わせの選択・合計・金額・締め切りの表示はJSで補助。JSなしでも数の入力欄と、電話・フォームでの予約方法は読める
+  - 予約は送信しない（サンプル）。押したときは「送信されない」ことをはっきり表示する（09 D07）
+  前の版：LP旧版/lp_bakery_20261109_変更前/
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700&amp;display=swap&amp;text=%2C./0123456789BOXcdeioprtu%E3%80%81%E3%80%82%E3%81%82%E3%81%84%E3%81%86%E3%81%8A%E3%81%8B%E3%81%8D%E3%81%8F%E3%81%91%E3%81%93%E3%81%94%E3%81%95%E3%81%9B%E3%81%9F%E3%81%A1%E3%81%A4%E3%81%A7%E3%81%A9%E3%81%AA%E3%81%AB%E3%81%AD%E3%81%AE%E3%81%AF%E3%81%B2%E3%81%B6%E3%81%B9%E3%81%BE%E3%82%81%E3%82%82%E3%82%84%E3%82%88%E3%82%89%E3%82%8A%E3%82%8B%E3%82%8C%E3%82%92%E3%82%93%E3%82%A4%E3%82%AB%E3%82%B3%E3%82%B5%E3%82%B9%E3%82%BA%E3%82%BF%E3%83%81%E3%83%86%E3%83%89%E3%83%91%E3%83%96%E3%83%A1%E3%83%A7%E3%83%AB%E3%83%AD%E3%83%B3%E3%83%BC%E4%BA%88%E4%BB%98%E4%BC%9A%E5%80%8B%E5%85%A5%E5%86%85%E5%86%86%E5%8F%96%E5%8F%97%E5%95%8F%E5%A0%B1%E5%AD%90%E5%AE%B9%E5%B0%8F%E5%BA%97%E6%83%85%E6%89%8B%E6%8F%8F%E6%96%87%E6%97%A5%E6%9D%A5%E6%B3%A8%E7%94%9F%E7%A5%A8%E7%A8%8E%E7%B4%84%E8%A1%A8%E8%A8%88%E8%AA%95%E8%B3%AA%E8%BE%BC%E9%9B%86%E9%A3%9F%EF%BC%88%EF%BC%89" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700&amp;display=swap&amp;text=%2C./0123456789BOXcdeioprtu%E3%80%81%E3%80%82%E3%81%82%E3%81%84%E3%81%86%E3%81%8A%E3%81%8B%E3%81%8D%E3%81%8F%E3%81%91%E3%81%93%E3%81%94%E3%81%95%E3%81%9B%E3%81%9F%E3%81%A1%E3%81%A4%E3%81%A7%E3%81%A9%E3%81%AA%E3%81%AB%E3%81%AD%E3%81%AE%E3%81%AF%E3%81%B2%E3%81%B6%E3%81%B9%E3%81%BE%E3%82%81%E3%82%82%E3%82%84%E3%82%88%E3%82%89%E3%82%8A%E3%82%8B%E3%82%8C%E3%82%92%E3%82%93%E3%82%A4%E3%82%AB%E3%82%B3%E3%82%B5%E3%82%B9%E3%82%BA%E3%82%BF%E3%83%81%E3%83%86%E3%83%89%E3%83%91%E3%83%96%E3%83%A1%E3%83%A7%E3%83%AB%E3%83%AD%E3%83%B3%E3%83%BC%E4%BA%88%E4%BB%98%E4%BC%9A%E5%80%8B%E5%85%A5%E5%86%85%E5%86%86%E5%8F%96%E5%8F%97%E5%95%8F%E5%A0%B1%E5%AD%90%E5%AE%B9%E5%B0%8F%E5%BA%97%E6%83%85%E6%89%8B%E6%8F%8F%E6%96%87%E6%97%A5%E6%9D%A5%E6%B3%A8%E7%94%9F%E7%A5%A8%E7%A8%8E%E7%B4%84%E8%A1%A8%E8%A8%88%E8%AA%95%E8%B3%AA%E8%BE%BC%E9%9B%86%E9%A3%9F%EF%BC%88%EF%BC%89"></noscript>
+<style>
+:root {
+  --paper: #FBF7EF; --sheet: #FFFDF8; --ink: #22201C; --soft: #5A544B; --rule: rgba(34, 32, 28, 0.22);
+  --navy: #1E2A3A; --navy-ink: #F3EEE4; --navy-soft: #C7CEDA; --wheat: #D9A441; --wheat-dark: #C99232; --wheat-light: #E2B866;
+  --brown: #3A2A1E; --brown-ink: #F3E6D0; --brown-soft: #D2C2A8; --alert: #8E2F1E;
+  --serif: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+  --sans: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "YuGothic", "Meiryo", "Noto Sans JP", sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.85; letter-spacing: 0.02em; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, .serif { font-family: var(--serif); font-weight: 700; line-height: 1.4; letter-spacing: 0.04em; }
+h1, h2, h3, p, li, dd, dt, td, th, label { word-break: auto-phrase; line-break: strict; }
+.nb { display: inline-block; }
+a { color: inherit; }
+img { display: block; max-width: 100%; height: auto; }
+ul, ol { list-style: none; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 40px; }
+@media (max-width: 760px) { .wrap { padding: 0 20px; } }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 12px 26px; background: var(--wheat); color: var(--ink); border: 1px solid var(--ink); font: 700 15px/1.4 var(--sans); letter-spacing: 0.06em; text-decoration: none; cursor: pointer; }
+.btn:hover { background: var(--wheat-dark); }
+.btn.dark { background: var(--ink); color: var(--paper); }
+.btn.dark:hover { background: var(--navy); }
+.btn[disabled] { background: #E7E1D6; color: var(--soft); border-color: var(--rule); cursor: not-allowed; }
+.more { font-weight: 700; text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px; }
+
+/* サンプルの帯とヘッダー */
+.sample-strip { background: var(--ink); color: var(--paper); font-size: 12px; text-align: center; padding: 7px 16px; }
+.sample-strip a { margin-left: 12px; }
+.top { position: sticky; top: 0; z-index: 30; background: var(--paper); border-bottom: 1px solid var(--ink); }
+.top .wrap { height: 60px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.brand { text-decoration: none; display: flex; align-items: baseline; gap: 12px; white-space: nowrap; }
+.brand b { font-family: var(--serif); font-size: 21px; font-weight: 600; letter-spacing: 0.03em; }
+.brand small { font-size: 11.5px; color: var(--soft); letter-spacing: 0.1em; }
+.top .btn { min-height: 40px; padding: 8px 16px; font-size: 14px; }
+@media (max-width: 600px) { .brand small { display: none; } }
+
+/* ファーストビュー：写真の下端に言葉を重ねる */
+.fv { position: relative; min-height: min(84vh, 720px); display: flex; align-items: flex-end; background: #2A2018; color: #fff; overflow: hidden; }
+.fv picture, .fv img { position: absolute; inset: 0; width: 100%; height: 100%; }
+.fv img { object-fit: cover; object-position: 50% 40%; }
+.fv::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(26, 18, 12, 0.9) 0%, rgba(26, 18, 12, 0.74) 34%, rgba(26, 18, 12, 0.3) 58%, rgba(26, 18, 12, 0) 76%); }
+.fv .wrap { position: relative; z-index: 1; width: 100%; padding-top: 120px; padding-bottom: 48px; text-shadow: 0 1px 14px rgba(0, 0, 0, 0.35); }
+.fv .btn { text-shadow: none; }
+.fv-kind { font-size: 13.5px; letter-spacing: 0.1em; }
+.fv h1 { font-size: clamp(34px, 5.6vw, 66px); line-height: 1.25; margin: 10px 0 14px; }
+.fv-lede { max-width: 32em; }
+.fv-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 28px; margin-top: 24px; }
+.fv-price { font-family: var(--serif); font-size: 22px; }
+.fv-price b { font-size: 34px; margin: 0 0.15em; }
+.fv-price small { font-family: var(--sans); font-size: 13px; }
+.fv-note { margin-top: 12px; font-size: 13px; }
+/* スマホ：写真を切り詰めず全体を見せ、言葉は写真の下の濃い面に置く */
+@media (max-width: 760px) {
+  .fv { display: block; min-height: 0; }
+  .fv picture, .fv img { position: static; height: auto; }
+  .fv img { aspect-ratio: 2 / 1; }
+  .fv::after { display: none; }
+  .fv .wrap { padding-top: 22px; padding-bottom: 30px; text-shadow: none; }
+  .fv-row .btn { flex: 1 1 100%; }
+}
+
+/* こんな日に */
+.uses { background: var(--navy); color: var(--navy-ink); }
+.uses .wrap { display: grid; grid-template-columns: 200px repeat(3, minmax(0, 1fr)); }
+.uses ul { display: contents; }
+.uses h2 { font-size: 18px; padding: 22px 24px 22px 0; border-right: 1px solid rgba(243, 238, 228, 0.25); display: flex; align-items: center; }
+.uses li { padding: 22px 24px; border-right: 1px solid rgba(243, 238, 228, 0.25); font-size: 14.5px; }
+.uses li b { display: block; font-family: var(--serif); font-size: 18px; margin-bottom: 4px; }
+@media (max-width: 760px) {
+  .uses .wrap { grid-template-columns: 1fr; }
+  .uses h2 { border-right: 0; padding: 22px 0 6px; }
+  .uses li { border-right: 0; border-top: 1px solid rgba(243, 238, 228, 0.25); padding: 14px 0; }
+}
+
+/* 注文票 */
+.order { padding: 88px 0 96px; }
+.sec-title { font-size: clamp(26px, 3.4vw, 38px); }
+.sec-lead { margin-top: 10px; color: var(--soft); max-width: 38em; }
+.sheet { margin-top: 36px; background: var(--sheet); border: 1px solid var(--ink); }
+.sheet-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 6px 20px; padding: 18px 32px; border-bottom: 2px solid var(--ink); }
+.sheet-head b { font-family: var(--serif); font-size: 22px; }
+.sheet-head span { font-size: 13px; color: var(--soft); }
+.step { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 0 32px; padding: 28px 32px; border-bottom: 1px solid var(--rule); }
+.step-no { font-family: var(--serif); }
+.step-no .n { display: block; font-size: 44px; font-weight: 700; line-height: 1; }
+.step-no .t { display: block; margin-top: 8px; font-size: 19px; font-weight: 700; }
+.step-no .s { display: block; margin-top: 4px; font-family: var(--sans); font-size: 13px; color: var(--soft); }
+.field-note { font-size: 14px; color: var(--soft); margin-top: 8px; }
+input[type="date"] { font: inherit; font-size: 17px; min-height: 50px; padding: 10px 14px; border: 1px solid var(--soft); border-radius: 0; background: #fff; color: var(--ink); }
+.msg { margin-top: 10px; font-size: 14.5px; font-weight: 700; }
+.msg.ok { color: var(--ink); }
+.msg.ng { color: var(--alert); }
+.sizes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; max-width: 620px; }
+.size { position: relative; display: block; padding: 16px 18px; border: 1px solid var(--soft); background: #fff; cursor: pointer; }
+.size input { position: absolute; opacity: 0; pointer-events: none; }
+.size b { display: block; font-size: 17px; }
+.size .yen { font-family: var(--serif); font-size: 26px; font-weight: 700; }
+.size .yen small { font-family: var(--sans); font-size: 12.5px; font-weight: 400; }
+.size .use { display: block; font-size: 13px; color: var(--soft); }
+.size:has(input:checked) { border: 2px solid var(--ink); padding: 15px 17px; background: #FFF6E2; }
+.size:has(input:checked) b::before { content: "✓ "; }
+.size:has(input:focus-visible) { outline: 2px solid var(--ink); outline-offset: 3px; }
+.animals { border-top: 1px solid var(--rule); }
+.animal { display: grid; grid-template-columns: 96px minmax(0, 1fr) auto; gap: 18px; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--rule); }
+.animal img { width: 96px; height: 96px; object-fit: cover; }
+.animal b { display: block; font-size: 16.5px; }
+.animal p { font-size: 13.5px; color: var(--soft); }
+.count { display: flex; align-items: center; }
+.count button { width: 44px; height: 44px; border: 1px solid var(--ink); background: #fff; font: 700 20px/1 var(--sans); color: var(--ink); cursor: pointer; }
+.count button:hover { background: #FFF6E2; }
+.count button[disabled] { color: #B9B2A6; border-color: var(--rule); cursor: not-allowed; background: #fff; }
+.count input { width: 56px; height: 44px; text-align: center; font: 700 20px/1 var(--serif); border: 1px solid var(--ink); border-left: 0; border-right: 0; border-radius: 0; background: #fff; color: var(--ink); -moz-appearance: textfield; }
+.count input::-webkit-inner-spin-button, .count input::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+.tally { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; margin-top: 14px; }
+.tally .sum { font-family: var(--serif); font-size: 22px; font-weight: 700; }
+.omakase { display: flex; gap: 10px; align-items: flex-start; margin-top: 14px; font-size: 14.5px; cursor: pointer; }
+.omakase input { width: 20px; height: 20px; margin-top: 4px; accent-color: var(--ink); }
+.animals.off { opacity: 0.45; }
+.summary { padding: 26px 32px 30px; background: var(--navy); color: var(--navy-ink); }
+.summary h3 { font-size: 19px; }
+.summary dl { display: grid; grid-template-columns: 8em minmax(0, 1fr); margin-top: 12px; border-top: 1px solid rgba(243, 238, 228, 0.28); max-width: 640px; }
+.summary dt, .summary dd { padding: 10px 0; border-bottom: 1px solid rgba(243, 238, 228, 0.28); font-size: 15px; }
+.summary dt { color: var(--navy-soft); }
+.summary dd { margin: 0; }
+.summary .total { font-family: var(--serif); font-size: 24px; font-weight: 700; }
+.summary .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+.summary .btn.line { background: transparent; color: var(--navy-ink); border-color: var(--navy-ink); }
+.summary .btn.line:hover { background: rgba(243, 238, 228, 0.1); }
+.summary .btn[disabled] { background: #3A4656; color: #AEB6C2; border-color: #56637A; }
+.result { margin-top: 16px; padding: 14px 16px; border: 1px solid var(--wheat-light); color: var(--navy-ink); font-size: 14.5px; }
+.result b { color: var(--wheat-light); }
+.no-js { padding: 22px 32px; font-size: 15px; border-top: 1px solid var(--rule); }
+@media (max-width: 760px) {
+  .order { padding: 56px 0 64px; }
+  .sheet-head, .step, .summary, .no-js { padding-left: 18px; padding-right: 18px; }
+  .step { grid-template-columns: 1fr; gap: 14px; }
+  .step-no { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .step-no .n { font-size: 34px; }
+  .step-no .t { margin-top: 0; }
+  .step-no .s { flex-basis: 100%; margin-top: 0; }
+  .sizes { grid-template-columns: 1fr; }
+  .animal { grid-template-columns: 72px minmax(0, 1fr); gap: 4px 14px; }
+  .animal img { width: 72px; height: 72px; grid-row: span 2; }
+  .count { grid-column: 2; }
+  .summary dl { grid-template-columns: 6em minmax(0, 1fr); }
+}
+
+/* こだわり・流れ・FAQ・お店の情報 */
+.block { padding: 80px 0; border-top: 1px solid var(--rule); }
+.block .wrap { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 0 40px; }
+.block h2 { font-size: clamp(22px, 2.2vw, 26px); }
+.points li { display: grid; grid-template-columns: 9em minmax(0, 1fr); gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--rule); }
+.points { border-top: 1px solid var(--ink); }
+.points b { font-family: var(--serif); font-size: 19px; }
+.flow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--ink); }
+.flow li { padding: 18px 22px 0 0; }
+.flow .n { font-family: var(--serif); font-weight: 700; font-size: 38px; line-height: 1; }
+.flow b { display: block; margin-top: 8px; font-size: 17px; }
+.flow p { margin-top: 4px; font-size: 14.5px; color: var(--soft); }
+.faq { border-top: 1px solid var(--ink); }
+.faq details { border-bottom: 1px solid var(--rule); }
+.faq summary { cursor: pointer; padding: 16px 36px 16px 0; font-weight: 700; list-style: none; position: relative; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "＋"; position: absolute; right: 4px; top: 16px; }
+.faq details[open] summary::after { content: "－"; }
+.faq p { padding: 0 0 18px; color: var(--soft); font-size: 15px; }
+.shop { background: var(--brown); color: var(--brown-ink); border-top: 0; }
+.shop dl { display: grid; grid-template-columns: 7em minmax(0, 1fr); border-top: 1px solid rgba(243, 230, 208, 0.3); max-width: 40em; }
+.shop dt, .shop dd { padding: 12px 0; border-bottom: 1px solid rgba(243, 230, 208, 0.3); font-size: 15px; }
+.shop dt { color: var(--brown-soft); }
+.shop dd { margin: 0; }
+.shop .more { display: inline-block; margin-top: 18px; }
+@media (max-width: 760px) {
+  .block { padding: 52px 0; }
+  .block .wrap { grid-template-columns: 1fr; gap: 16px; }
+  .points li { grid-template-columns: 1fr; gap: 2px; }
+  .flow { grid-template-columns: 1fr; }
+  .flow li { padding: 16px 0; border-bottom: 1px solid var(--rule); }
+}
+footer { background: #171310; color: var(--brown-ink); padding: 40px 0 48px; font-size: 13px; }
+footer b { font-family: var(--serif); font-size: 20px; font-weight: 600; }
+footer p { margin-top: 10px; opacity: 0.85; max-width: 52em; }
+
+/* スマホの固定ボタン（最初の画面・注文票・お店の情報が見えている間は隠す） */
+.dock { display: none; }
+@media (max-width: 760px) {
+  .dock { display: block; position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); background: var(--paper); border-top: 1px solid var(--ink); transition: transform 0.25s ease; }
+  .dock .btn { width: 100%; }
+  .dock.hide { transform: translateY(110%); }
+  body { padding-bottom: 72px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .dock { transition: none; } }
+</style>
 </head>
 <body>
-
-<div class="sample-bar">SAMPLE LP — 架空の店舗を想定した、渡邊駿の自主制作サンプルです。<a href="index.html">← サンプル集へ</a></div>
-
+<div class="sample-strip">SAMPLE LP ― 架空の店舗を想定した、渡邊駿の自主制作サンプルです。<a href="index.html">← サンプル集へ</a></div>
 <header class="top"><div class="wrap">
-  <a class="logo" href="#"><span class="mk"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M32 61V13"/><path d="M32 15C29.5 11 30 6 32 3C34 6 34.5 11 32 15"/><path d="M32 54C38 52 42 48 44 43"/><path d="M32 25 C25 24 22 18 23 13 C29 14 32 19 32 25"/><path d="M32 25 C39 24 42 18 41 13 C35 14 32 19 32 25"/><path d="M32 33 C25 32 22 26 23 21 C29 22 32 27 32 33"/><path d="M32 33 C39 32 42 26 41 21 C35 22 32 27 32 33"/><path d="M32 41 C25 40 22 34 23 29 C29 30 32 35 32 41"/><path d="M32 41 C39 40 42 34 41 29 C35 30 32 35 32 41"/><path d="M32 49 C25 48 22 42 23 37 C29 38 32 43 32 49"/><path d="M32 49 C39 48 42 42 41 37 C35 38 32 43 32 49"/></svg></span><span>petite douceur<small>焼き菓子とパンの店</small></span></a>
-  <a class="btn small" href="#reserve">予約する</a>
+  <a class="brand" href="../hp-samples/petite-douceur/index.html"><b>petite douceur</b><small>焼き菓子とパンの店</small></a>
+  <a class="btn" href="#order">予約する</a>
 </div></header>
 
-<section class="hero"><div class="wrap">
-  <div class="loaf">
-    <span class="sticker" aria-hidden="true">受け取りの<br>3日前まで<br>予約OK</span>
-    <span class="tag">どうぶつパン 予約BOX</span>
-    <h1><span class="nb">お誕生日のテーブルに、</span><br><span class="nb"><span class="em">どうぶつたち</span>を。</span></h1>
-    <p class="lede">くま、ねこ、ひよこ、かめ。手のひらサイズのどうぶつパンを、6個入りの箱でご用意します。お誕生日会や、みんなで集まるおやつの時間に。</p>
-    <div class="price-chip">6個入り <b>1,380円</b>（税込）</div>
-    <div class="btn-row">
-      <a class="btn" href="#reserve">予約のしかたを見る</a>
-      <a class="btn white" href="#box">箱の中身を見る</a>
+<main>
+<section class="fv" aria-labelledby="fv-title">
+  <picture><img src="img/lp-animals.jpg" width="1600" height="800" alt="木の板に並んだ、くま・ねこ・ひよこ・かめの形のパン" fetchpriority="high"></picture>
+  <div class="wrap">
+    <p class="fv-kind">petite douceur｜どうぶつパン 予約BOX</p>
+    <h1 id="fv-title"><span class="nb">お誕生日のテーブルに、</span><span class="nb">どうぶつたちを。</span></h1>
+    <p class="fv-lede">くま、ねこ、ひよこ、かめ。手のひらサイズのどうぶつパンを、好きな組み合わせで箱に詰めてご用意します。</p>
+    <div class="fv-row">
+      <p class="fv-price">6個入り<b>1,380</b>円<small>（税込）</small></p>
+      <a class="btn" href="#order">組み合わせを選んで予約する</a>
     </div>
+    <p class="fv-note">ご予約は、受け取り日の3日前の17時まで。※写真はイメージです（AIで生成）</p>
   </div>
-  <figure class="hero-photo">
-    <img src="img/pan-four.jpg" srcset="img/pan-four-sm.jpg 700w, img/pan-four.jpg 1400w" sizes="(max-width: 860px) 92vw, 46vw" alt="木の板に並んだ、くま・ねこ・ひよこ・かめの形のパン">
-    <figcaption>※写真はイメージです（AIで生成）</figcaption>
-  </figure>
+</section>
+
+<section class="uses" aria-labelledby="uses-title"><div class="wrap">
+  <h2 id="uses-title">こんな日に</h2>
+  <ul>
+    <li><b>お誕生日会に</b>ひとり1個ずつ配れて、切り分けもお皿も要りません。</li>
+    <li><b>小さな子にも</b>ホールケーキより小さく、食べきりやすい大きさです。</li>
+    <li><b>集まりのおやつに</b>保育園や親せきの集まりには、12個入りもあります。</li>
+  </ul>
 </div></section>
 
-<section><div class="wrap">
-  <div class="head"><span class="tag">こんなこと、ありませんか？</span><h2><span class="nb">集まりのおやつ、</span><span class="nb">毎回ちょっと迷う。</span></h2></div>
-  <div class="bubbles">
-    <p class="bubble">誕生日会のおやつが、毎年同じになってしまう。</p>
-    <p class="bubble">ホールケーキだと、小さい子は食べきれない。</p>
-    <p class="bubble">切り分けずに、ひとり1個ずつ配れるものがいい。</p>
-  </div>
-  <div class="answer"><div class="arrow"></div><p><span class="nb">そんなときに、</span><span class="nb mark">どうぶつパンの箱</span><span class="nb">を。</span></p></div>
-</div></section>
+<section class="order" id="order" aria-labelledby="order-title"><div class="wrap">
+  <h2 class="sec-title" id="order-title">ご予約の注文票</h2>
+  <p class="sec-lead">受け取り日、箱の大きさ、どうぶつの組み合わせの順に選んでください。選んだ内容と金額が、いちばん下にまとまります。</p>
 
-<section class="alt" id="box"><div class="wrap">
-  <div class="head"><span class="tag">箱の中身</span><h2><span class="nb">ふたを開けたら、</span><span class="nb">まず「どれにする？」から。</span></h2></div>
-  <div class="box-wrap">
-    <figure class="box-photo"><img src="img/pan-box.jpg" alt="どうぶつパンが6個入った、クラフト紙の箱" loading="lazy"></figure>
-    <div class="box-copy">
-      <h3><span class="nb">4種類から、</span><span class="nb">好きな組み合わせで6個。</span></h3>
-      <p>くまを多めに、ひよこを全員分に。集まる子どもたちに合わせて、組み合わせを選べます。</p>
-      <p>ひとり1個ずつ手に取れる大きさなので、切り分けもお皿も要りません。決めきれないときは、お店でバランスよく詰めます。</p>
+  <form class="sheet" id="order-form" novalidate>
+    <div class="sheet-head"><b>どうぶつパン 予約BOX</b><span>受け取りは店頭のみ・お支払いは受け取りのときに</span></div>
+
+    <div class="step">
+      <div class="step-no"><span class="n">1</span><span class="t">受け取り日</span><span class="s">受け取りは10時以降です</span></div>
+      <div>
+        <label for="pick-date" class="field-label"><b>受け取りたい日</b></label><br>
+        <input type="date" id="pick-date" name="date" aria-describedby="date-note date-msg">
+        <p class="field-note" id="date-note">ご予約は、受け取り日の3日前の17時まで受け付けます。火曜日は定休日です。</p>
+        <p class="msg" id="date-msg" aria-live="polite"></p>
+      </div>
     </div>
-  </div>
-  <div class="pans"><div class="pan"><div class="pan-art"><img src="img/pan-bear.jpg" alt="くまのチョコパンの写真" loading="lazy"></div><h3>くまの<wbr>チョコパン</h3><p>ほんのりビターなチョコクリーム。耳はチョコ生地で焼き分けています。</p></div><div class="pan"><div class="pan-art"><img src="img/pan-cat.jpg" alt="ねこのカスタードパンの写真" loading="lazy"></div><h3>ねこの<wbr>カスタードパン</h3><p>たまごたっぷりの、自家製カスタード入り。</p></div><div class="pan"><div class="pan-art"><img src="img/pan-chick.jpg" alt="ひよこのメロンパンの写真" loading="lazy"></div><h3>ひよこの<wbr>メロンパン</h3><p>さくさくのクッキー生地に、小さなくちばし。</p></div><div class="pan"><div class="pan-art"><img src="img/pan-turtle.jpg" alt="かめのメロンパンの写真" loading="lazy"></div><h3>かめの<wbr>メロンパン</h3><p>甲羅がメロンパン。頭と足は、ふんわりのパン生地です。</p></div></div>
-  <p class="note">※写真はイメージです（AIで生成）。ひとつずつ手で描くため、表情が少しずつ違います。</p>
+
+    <div class="step">
+      <div class="step-no" id="size-title"><span class="n">2</span><span class="t">箱の大きさ</span><span class="s">どの組み合わせでも同じ料金です</span></div>
+      <div class="sizes" role="radiogroup" aria-labelledby="size-title">
+        <label class="size"><input type="radio" name="size" value="6" checked><b>6個入り</b><span class="yen">1,380円<small>（税込）</small></span><span class="use">少人数のお誕生日会や、家族のおやつに</span></label>
+        <label class="size"><input type="radio" name="size" value="12"><b>12個入り</b><span class="yen">2,760円<small>（税込）</small></span><span class="use">保育園や、親せきの集まりなど</span></label>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-no"><span class="n">3</span><span class="t">組み合わせ</span><span class="s">4種類から、好きな数ずつ</span></div>
+      <div>
+        <ul class="animals" id="animals">
+          <li class="animal"><img src="img/an-bear.jpg" width="400" height="400" alt="くまの形のチョコパン" loading="lazy"><div><b id="l-bear">くまのチョコパン</b><p>ほんのりビターなチョコクリーム。耳はチョコ生地で焼き分けています。</p></div>
+            <div class="count"><button type="button" data-step="-1" aria-label="くまのチョコパンを1個減らす">−</button><input type="number" name="bear" value="0" min="0" max="12" inputmode="numeric" aria-labelledby="l-bear"><button type="button" data-step="1" aria-label="くまのチョコパンを1個増やす">＋</button></div></li>
+          <li class="animal"><img src="img/an-cat.jpg" width="400" height="400" alt="ねこの形のカスタードパン" loading="lazy"><div><b id="l-cat">ねこのカスタードパン</b><p>たまごたっぷりの、自家製カスタード入り。</p></div>
+            <div class="count"><button type="button" data-step="-1" aria-label="ねこのカスタードパンを1個減らす">−</button><input type="number" name="cat" value="0" min="0" max="12" inputmode="numeric" aria-labelledby="l-cat"><button type="button" data-step="1" aria-label="ねこのカスタードパンを1個増やす">＋</button></div></li>
+          <li class="animal"><img src="img/an-chick.jpg" width="400" height="400" alt="ひよこの形のメロンパン" loading="lazy"><div><b id="l-chick">ひよこのメロンパン</b><p>さくさくのクッキー生地に、小さなくちばし。</p></div>
+            <div class="count"><button type="button" data-step="-1" aria-label="ひよこのメロンパンを1個減らす">−</button><input type="number" name="chick" value="0" min="0" max="12" inputmode="numeric" aria-labelledby="l-chick"><button type="button" data-step="1" aria-label="ひよこのメロンパンを1個増やす">＋</button></div></li>
+          <li class="animal"><img src="img/an-turtle.jpg" width="400" height="400" alt="かめの形のメロンパン" loading="lazy"><div><b id="l-turtle">かめのメロンパン</b><p>甲羅がメロンパン。頭と足は、ふんわりのパン生地です。</p></div>
+            <div class="count"><button type="button" data-step="-1" aria-label="かめのメロンパンを1個減らす">−</button><input type="number" name="turtle" value="0" min="0" max="12" inputmode="numeric" aria-labelledby="l-turtle"><button type="button" data-step="1" aria-label="かめのメロンパンを1個増やす">＋</button></div></li>
+        </ul>
+        <div class="tally"><span class="sum" id="sum">0 / 6個</span><span class="msg" id="sum-msg" aria-live="polite"></span></div>
+        <label class="omakase"><input type="checkbox" id="omakase" name="omakase"><span>決めきれないときは、お店でバランスよく詰めます（おまかせ）</span></label>
+        <p class="field-note">※写真はイメージです（AIで生成）。表情はひとつずつ手で描くため、少しずつ違います。</p>
+      </div>
+    </div>
+
+    <div class="summary" id="summary" hidden>
+      <h3>ご予約の内容</h3>
+      <dl>
+        <dt>受け取り日</dt><dd id="s-date">まだ選ばれていません</dd>
+        <dt>箱</dt><dd id="s-size">6個入り</dd>
+        <dt>組み合わせ</dt><dd id="s-mix">まだ選ばれていません</dd>
+        <dt>金額</dt><dd class="total" id="s-total">1,380円（税込）</dd>
+      </dl>
+      <div class="actions">
+        <button class="btn" type="submit" id="submit" disabled>この内容で予約フォームへ進む</button>
+        <a class="btn line" href="tel:000-0000-0000">電話で予約する 000-0000-0000</a>
+      </div>
+      <p class="result" id="result" role="status" hidden></p>
+    </div>
+    <noscript><p class="no-js">お電話（000-0000-0000・8:00〜17:00）か、<a href="../hp-samples/petite-douceur/contact.html">お店の予約フォーム</a>で、受け取り日・箱の大きさ・組み合わせをお知らせください。</p></noscript>
+  </form>
 </div></section>
 
-<div class="cta-strip"><div class="wrap"><p><span class="nb">ご予約は、</span><span class="nb">受け取り日の3日前の17時まで。</span></p><a class="btn white" href="#reserve">予約のしかたを見る</a></div></div>
-
-<section><div class="wrap">
-  <div class="head"><span class="tag">3つのこだわり</span><h2><span class="nb">小さな手で、</span><span class="nb">食べきれるように。</span></h2></div>
-  <div class="points">
-    <div class="point"><span class="no">01</span><h3>手のひらサイズ</h3><p>直径およそ8cm。小さな子でも食べきりやすい大きさに焼いています。</p></div>
-    <div class="point"><span class="no">02</span><h3>表情は手描き</h3><p>目や口は、焼き上がったあとに、ひとつずつ手で描いています。同じくまでも、少しずつ顔が違います。</p></div>
-    <div class="point"><span class="no">03</span><h3>メッセージカード付き</h3><p>「おたんじょうび おめでとう」など、ひと言を書いたカードを無料でお付けします。</p></div>
-  </div>
+<section class="block" aria-labelledby="points-title"><div class="wrap">
+  <h2 id="points-title"><span class="nb">小さな手で、</span><span class="nb">食べきれるように。</span></h2>
+  <ul class="points">
+    <li><b>手のひらサイズ</b><span>直径およそ8cm。小さな子でも食べきりやすい大きさに焼いています。</span></li>
+    <li><b>表情は手描き</b><span>目や口は、焼き上がったあとに、ひとつずつ手で描いています。同じくまでも、少しずつ顔が違います。</span></li>
+    <li><b>カード付き</b><span>「おたんじょうび おめでとう」など、ひと言を書いたカードを無料でお付けします。</span></li>
+  </ul>
 </div></section>
 
-<section class="alt" id="reserve"><div class="wrap">
-  <div class="head"><span class="tag">ご予約の流れ</span><h2><span class="nb">予約から受け取りまで、</span><span class="nb">3ステップ。</span></h2></div>
-  <div class="flow">
-    <div class="step"><h3>ご予約</h3><p>お電話かフォームで、受け取り日・個数・組み合わせをお知らせください。受け取り日の3日前の17時まで受け付けます。</p></div>
-    <div class="step"><h3>ご来店</h3><p>受け取り日の10時以降に、お店へお越しください。持ち運びやすい箱でお渡しします。</p></div>
-    <div class="step"><h3>お会計</h3><p>お支払いは、受け取りのときに店頭で。現金と、各種キャッシュレス決済が使えます。</p></div>
-  </div>
+<section class="block" aria-labelledby="flow-title"><div class="wrap">
+  <h2 id="flow-title">受け取りまで</h2>
+  <ol class="flow">
+    <li><span class="n">1</span><b>ご予約</b><p>受け取り日の3日前の17時まで。お電話かフォームで。</p></li>
+    <li><span class="n">2</span><b>ご来店</b><p>受け取り日の10時以降に、お店へ。持ち運びやすい箱でお渡しします。</p></li>
+    <li><span class="n">3</span><b>お会計</b><p>受け取りのときに店頭で。現金と、各種キャッシュレス決済が使えます。</p></li>
+  </ol>
 </div></section>
 
-<section><div class="wrap">
-  <div class="head"><span class="tag">料金</span><h2>どの組み合わせでも、同じ料金です。</h2></div>
-  <div class="prices">
-    <div class="price-card"><div class="size">6個入り</div><div class="yen">1,380<small>円（税込）</small></div><p>少人数のお誕生日会や、家族のおやつに。</p></div>
-    <div class="price-card pop"><div class="size">12個入り</div><div class="yen">2,760<small>円（税込）</small></div><p>保育園や、親せきの集まりなど、人数が多い日に。</p></div>
-  </div>
-  <p class="note">メッセージカードは無料です。13個以上は、お電話でご相談ください。</p>
-</div></section>
-
-<section class="alt"><div class="wrap">
-  <div class="head"><span class="tag">お客様の声</span><h2>ご利用いただいた方より</h2></div>
-  <div class="voices">
-    <div class="voice"><div class="face"><img src="img/pan-cat.jpg" alt=""></div><p class="say">娘の4歳の誕生日に頼みました。箱を開けたとたん、子どもたちが「ひよこがいい！」と集まってきて、にぎやかな時間になりました。<span class="who">30代・2児の母</span></p></div>
-    <div class="voice"><div class="face"><img src="img/pan-bear.jpg" alt=""></div><p class="say">保育園の友だちが集まる日に。ひとり1個ずつ配れるので、切り分ける手間がかからず助かりました。<span class="who">30代・会社員</span></p></div>
-  </div>
-  <p class="note">※お客様の声は、制作サンプル用の架空のものです。</p>
-</div></section>
-
-<section><div class="wrap">
-  <div class="head"><span class="tag">よくある質問</span><h2>FAQ</h2></div>
-  <div class="board">
+<section class="block" aria-labelledby="faq-title"><div class="wrap">
+  <h2 id="faq-title">よくある質問</h2>
+  <div class="faq">
     <details><summary>当日でも買えますか？</summary><p>どうぶつパンは店頭にも並びますが、数に限りがあります。箱でのご用意は、ご予約のみ承っています。</p></details>
+    <details><summary>13個以上は頼めますか？</summary><p>お電話でご相談ください。</p></details>
     <details><summary>アレルギーの確認はできますか？</summary><p>小麦・卵・乳を使っています。くわしい材料は、お気軽にお問い合わせください。</p></details>
     <details><summary>いつまでに食べればよいですか？</summary><p>受け取った日のうちに、お召し上がりください。クリームが入っているため、持ち歩きの時間が長いときは保冷剤をお付けします。</p></details>
     <details><summary>組み合わせは、あとから変えられますか？</summary><p>受け取り日の3日前の17時までなら、お電話で変更できます。</p></details>
@@ -309,48 +348,117 @@ footer b { display: block; font-size: 17px; margin-bottom: 6px; color: #fff; }
   </div>
 </div></section>
 
-<section><div class="wrap">
-  <div class="oven">
-    <div class="oven-mouth">
-      <span class="tag">ご予約</span>
-      <h2><span class="nb">ご予約は、</span><span class="nb">受け取り日の3日前まで。</span></h2>
-      <p>お電話（8:00〜17:00）か、フォームからどうぞ。</p>
-      <div class="btn-row">
-        <a class="btn" href="#" onclick="alert('制作サンプルのため、予約はできません。'); return false;">フォームで予約する</a>
-        <a class="btn white" href="#" onclick="alert('制作サンプルのため、予約はできません。'); return false;">電話で予約する</a>
-      </div>
-    </div>
-  </div>
-</div></section>
-
-<section class="alt"><div class="wrap shop">
-  <div class="photo"><img src="img/bakery-hero-warm.jpg" alt="お店の外観と、ショーケースに並ぶ焼き菓子" loading="lazy"></div>
+<section class="block shop" aria-labelledby="shop-title"><div class="wrap">
+  <h2 id="shop-title">お店の情報</h2>
   <div>
-    <div class="head" style="text-align:left;margin-bottom:20px;"><span class="tag">お店の情報</span><h2>petite douceur</h2></div>
     <dl>
       <dt>営業時間</dt><dd>8:00〜18:00（売り切れ次第、終了）</dd>
       <dt>定休日</dt><dd>毎週火曜日</dd>
       <dt>住所</dt><dd>〒000-0000　◯◯県◯◯市◯◯町 1-2-3</dd>
+      <dt>電話</dt><dd><a href="tel:000-0000-0000">000-0000-0000</a>（8:00〜17:00）</dd>
       <dt>駐車場</dt><dd>お店の前に2台</dd>
     </dl>
-    <a class="btn white" href="../hp-samples/petite-douceur/index.html">お店のホームページを見る</a>
+    <a class="more" href="../hp-samples/petite-douceur/index.html">お店のホームページを見る</a>
   </div>
 </div></section>
+</main>
 
-<footer><b>petite douceur</b>※このページは渡邊駿の制作サンプルです。架空の店舗を想定した自主制作物で、実在のお店ではありません。お客様の声・価格もすべて架空です。</footer>
+<footer><div class="wrap">
+  <b>petite douceur</b>
+  <p>※このページは渡邊駿の制作サンプルです。架空の店舗を想定した自主制作物で、実在のお店ではありません。価格・連絡先もすべて架空です。写真は画像生成AIで作ったイメージです。</p>
+</div></footer>
 
-<div class="fixed-cta"><a class="btn" href="#reserve">予約のしかたを見る</a></div>
+<div class="dock hide" id="dock"><a class="btn" href="#order">組み合わせを選んで予約する</a></div>
+
 <script>
-// スマホ下部の予約ボタンは、最初の画面を過ぎてから出す（最後の予約欄が見えている間は隠す）
 (function () {
-  var bar = document.querySelector(".fixed-cta"), hero = document.querySelector(".hero"), oven = document.querySelector(".oven");
-  function onScroll() {
-    var o = oven.getBoundingClientRect();
-    bar.classList.toggle("show", hero.getBoundingClientRect().bottom < 0 && (o.top > innerHeight || o.bottom < 0));
+  var form = document.getElementById('order-form');
+  var summary = document.getElementById('summary');
+  summary.hidden = false;
+  var dateEl = document.getElementById('pick-date'), dateMsg = document.getElementById('date-msg');
+  var sumEl = document.getElementById('sum'), sumMsg = document.getElementById('sum-msg');
+  var oma = document.getElementById('omakase'), list = document.getElementById('animals');
+  var submit = document.getElementById('submit'), result = document.getElementById('result');
+  var names = { bear: 'くま', cat: 'ねこ', chick: 'ひよこ', turtle: 'かめ' };
+  var price = { 6: 1380, 12: 2760 };
+  var wd = ['日', '月', '火', '水', '木', '金', '土'];
+  function pad(n) { return ('0' + n).slice(-2); }
+  function ymd(d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
+  function label(d) { return (d.getMonth() + 1) + '月' + d.getDate() + '日（' + wd[d.getDay()] + '）'; }
+  // 選べる最初の日：今日の17時までなら3日後、17時を過ぎていれば4日後
+  var now = new Date(), first = new Date(now.getFullYear(), now.getMonth(), now.getDate() + (now.getHours() < 17 ? 3 : 4));
+  dateEl.min = ymd(first);
+  var dateOk = false;
+  function checkDate() {
+    dateOk = false; dateMsg.className = 'msg'; dateMsg.textContent = '';
+    if (!dateEl.value) return;
+    var p = dateEl.value.split('-'), d = new Date(+p[0], +p[1] - 1, +p[2]);
+    var dl = new Date(d.getFullYear(), d.getMonth(), d.getDate() - 3, 17, 0);
+    if (d.getDay() === 2) { dateMsg.className = 'msg ng'; dateMsg.textContent = label(d) + 'は定休日です。ほかの日を選んでください。'; return; }
+    if (dl < now) { dateMsg.className = 'msg ng'; dateMsg.textContent = label(d) + 'の予約は、' + label(dl) + '17時で締め切りました。' + label(first) + '以降を選んでください。'; return; }
+    dateOk = true; dateMsg.className = 'msg ok'; dateMsg.textContent = label(d) + 'の予約は、' + label(dl) + '17時まで受け付けます。';
   }
-  addEventListener("scroll", onScroll, { passive: true }); onScroll();
+  function size() { return +form.querySelector('input[name="size"]:checked').value; }
+  function counts() {
+    var c = {}, t = 0;
+    list.querySelectorAll('input').forEach(function (i) { var v = Math.max(0, Math.min(12, parseInt(i.value, 10) || 0)); c[i.name] = v; t += v; });
+    return { c: c, t: t };
+  }
+  function update() {
+    var n = size(), k = counts(), om = oma.checked;
+    list.classList.toggle('off', om);
+    list.querySelectorAll('.count').forEach(function (box) {
+      var inp = box.querySelector('input'), v = parseInt(inp.value, 10) || 0;
+      box.querySelector('[data-step="-1"]').disabled = om || v <= 0;
+      box.querySelector('[data-step="1"]').disabled = om || k.t >= n;
+      inp.disabled = om;
+    });
+    var mixOk = false;
+    if (om) { sumEl.textContent = 'おまかせ'; sumMsg.className = 'msg ok'; sumMsg.textContent = 'お店で' + n + '個をバランスよく詰めます。'; mixOk = true; }
+    else {
+      sumEl.textContent = k.t + ' / ' + n + '個';
+      if (k.t === n) { sumMsg.className = 'msg ok'; sumMsg.textContent = n + '個そろいました。'; mixOk = true; }
+      else if (k.t < n) { sumMsg.className = 'msg'; sumMsg.textContent = 'あと' + (n - k.t) + '個選べます。'; }
+      else { sumMsg.className = 'msg ng'; sumMsg.textContent = (k.t - n) + '個多いです。減らしてください。'; }
+    }
+    document.getElementById('s-size').textContent = n + '個入り';
+    document.getElementById('s-total').textContent = price[n].toLocaleString('ja-JP') + '円（税込）';
+    var mix = [];
+    Object.keys(names).forEach(function (key) { if (k.c[key]) mix.push(names[key] + ' ' + k.c[key] + '個'); });
+    document.getElementById('s-mix').textContent = om ? 'おまかせ（お店で詰めます）' : (mix.length ? mix.join('、') : 'まだ選ばれていません');
+    document.getElementById('s-date').textContent = dateOk ? label(new Date(dateEl.value + 'T00:00')) + ' 10時以降' : 'まだ選ばれていません';
+    submit.disabled = !(dateOk && mixOk);
+    result.hidden = true;
+  }
+  list.addEventListener('click', function (e) {
+    var b = e.target.closest('button[data-step]'); if (!b) return;
+    var inp = b.parentNode.querySelector('input');
+    inp.value = Math.max(0, (parseInt(inp.value, 10) || 0) + (+b.getAttribute('data-step')));
+    update();
+  });
+  form.addEventListener('input', function (e) { if (e.target === dateEl) checkDate(); update(); });
+  form.addEventListener('change', function (e) { if (e.target === dateEl) checkDate(); update(); });
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (submit.disabled) return;
+    result.innerHTML = '<b>制作サンプルのため、予約は送信されません。</b><br>実際のお店では、この内容のまま予約フォームへ進み、お名前と電話番号を入力して送ります。';
+    result.hidden = false;
+  });
+  update();
+
+  // スマホの固定ボタン：最初の画面・注文票・お店の情報が画面に入っている間は隠す
+  var dock = document.getElementById('dock');
+  if ('IntersectionObserver' in window) {
+    var seen = {};
+    var io = new IntersectionObserver(function (ents) {
+      ents.forEach(function (en) { seen[en.target.id || en.target.className.split(' ')[0]] = en.isIntersecting; });
+      dock.classList.toggle('hide', !!(seen.order || seen.block || seen.fv));
+    }, { threshold: 0 });
+    io.observe(document.getElementById('order'));
+    io.observe(document.querySelector('.shop'));
+    io.observe(document.querySelector('.fv'));
+  } else { dock.classList.remove('hide'); }
 })();
 </script>
-
 </body>
 </html>
