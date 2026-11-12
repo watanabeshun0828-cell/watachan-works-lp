@@ -34,7 +34,7 @@ ul, ol { list-style: none; }
 @media (max-width: 760px) { .wrap { padding: 0 20px; } }
 :focus-visible { outline: 2px solid #2457A6; outline-offset: 3px; }
 .sample-strip { background: #16181D; color: #F5F6F2; font-size: 12px; text-align: center; padding: 7px 16px; }
-.sample-strip a { margin-left: 12px; }
+.sample-strip a { display: inline-block; white-space: nowrap; margin-left: 12px; }
 .top { position: sticky; top: 0; z-index: 30; background: #F5F6F2; border-bottom: 1px solid #16181D; }
 .top .wrap { height: 60px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .brand { font-family: "IBM Plex Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", sans-serif; font-weight: 700; font-size: 20px; text-decoration: none; letter-spacing: 0.02em; }
@@ -182,7 +182,7 @@ footer p { margin-top: 8px; opacity: 0.85; }
 </head>
 <body>
 
-<div class="sample-strip">SAMPLE LP ― 架空のサービスを想定した、渡邊駿の自主制作サンプルです。<a href="index.html">← サンプル集へ</a></div>
+<div class="sample-strip">SAMPLE LP ― 架空のサービスを想定した、渡邊駿の自主制作サンプルです。<a href="index.html">← サンプル集へ</a><a href="../index.html?type=LP%E5%88%B6%E4%BD%9C&sample=Synapse%E3%81%AELP#contact">このサンプルを参考に相談する</a></div>
 <header class="top"><div class="wrap">
   <span class="brand">Synapse</span>
   <nav aria-label="ページ内の移動"><a href="#anno">届く要約</a><a href="#screen">画面</a><a href="#price">料金</a><a href="#faq">質問</a><a class="btn" href="#trial">無料で試す</a></nav>

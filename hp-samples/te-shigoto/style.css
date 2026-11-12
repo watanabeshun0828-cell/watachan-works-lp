@@ -13,7 +13,7 @@ ul, ol { list-style: none; }
 @media (max-width: 760px) { .wrap { padding: 0 20px; } }
 :focus-visible { outline: 2px solid #23231F; outline-offset: 3px; }
 .sample-strip { background: #23231F; color: #F4F1EA; font-size: 12px; text-align: center; padding: 7px 16px; }
-.sample-strip a { color: inherit; margin-left: 12px; }
+.sample-strip a { display: inline-block; white-space: nowrap; color: inherit; margin-left: 12px; }
 .site-nav { position: sticky; top: 0; z-index: 50; background: #F4F1EA; border-bottom: 1px solid #23231F; }
 .nav-inner { max-width: 1120px; margin: 0 auto; padding: 0 40px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .brand { display: flex; align-items: baseline; gap: 12px; text-decoration: none; min-width: 0; }

@@ -116,8 +116,20 @@ img { display: block; max-width: 100%; }
 .honey { position: absolute; left: -9999px; }
 .form-status { display: none; font-size: 13.5px; }
 .form-status.show { display: block; }
-.form-status.ok { color: #4B7A62; }
+.form-status { line-height: 1.8; }
+.form-status:focus { outline: none; }
+.form-status p + p { margin-top: 6px; }
+.form-status .fs-head { font-weight: 700; }
+.form-status.ok { color: var(--ink); border-top: 2px solid #3F6B54; padding-top: 14px; }
+.form-status.ok .fs-head { color: #3F6B54; }
 .form-status.err { color: #A0463B; }
+.form-status.err a { color: inherit; }
+.fs-sum { display: grid; grid-template-columns: auto 1fr; gap: 4px 16px; margin: 12px 0; padding: 10px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); font-size: 13px; }
+.fs-sum dt { color: var(--ink-soft); }
+.fs-sum dd { margin: 0; overflow-wrap: anywhere; }
+.field-error { margin: 0; font-size: 13px; color: #A0463B; }
+.field-error::before { content: "！ "; font-weight: 700; }
+.field [aria-invalid="true"] { border-color: #A0463B; outline: 1px solid #A0463B; }
 .alt-contact { margin-top: 26px; font-size: 13px; color: var(--ink-soft); }
 @media (max-width: 900px) { .contact { grid-template-columns: 1fr; padding: 70px 22px 80px; } .contact h2 { padding: 0 0 22px; } .contact .body { padding: 0; } }
 

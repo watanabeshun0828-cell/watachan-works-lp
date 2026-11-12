@@ -58,7 +58,7 @@ ul, ol { list-style: none; }
 
 /* サンプルの帯とヘッダー */
 .sample-strip { background: var(--ink); color: var(--paper); font-size: 12px; text-align: center; padding: 7px 16px; }
-.sample-strip a { margin-left: 12px; }
+.sample-strip a { display: inline-block; white-space: nowrap; margin-left: 12px; }
 .top { position: sticky; top: 0; z-index: 30; background: var(--paper); border-bottom: 1px solid var(--ink); }
 .top .wrap { height: 60px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .brand { text-decoration: none; display: flex; align-items: baseline; gap: 12px; white-space: nowrap; }
@@ -226,7 +226,7 @@ footer p { margin-top: 10px; opacity: 0.85; max-width: 52em; }
 </style>
 </head>
 <body>
-<div class="sample-strip">SAMPLE LP ― 架空の店舗を想定した、渡邊駿の自主制作サンプルです。<a href="index.html">← サンプル集へ</a></div>
+<div class="sample-strip">SAMPLE LP ― 架空の店舗を想定した、渡邊駿の自主制作サンプルです。<a href="index.html">← サンプル集へ</a><a href="../index.html?type=LP%E5%88%B6%E4%BD%9C&sample=petite%20douceur%E3%81%AELP#contact">このサンプルを参考に相談する</a></div>
 <header class="top"><div class="wrap">
   <a class="brand" href="../hp-samples/petite-douceur/index.html"><b>petite douceur</b><small>焼き菓子とパンの店</small></a>
   <a class="btn" href="#order">予約する</a>
