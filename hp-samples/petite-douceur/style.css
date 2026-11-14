@@ -54,154 +54,16 @@ ul, ol { list-style: none; }
 .btn.line { background: transparent; color: inherit; border-color: currentColor; }
 .btn.line:hover { background: rgba(255, 255, 255, 0.12); }
 
-/* ファーストビュー：店先の写真の下端に言葉を重ねる（12章 PT03） */
-.fv { position: relative; min-height: min(86vh, 760px); display: flex; align-items: flex-end; background: #1A1612; color: #fff; overflow: hidden; }
-.fv-photo { position: absolute; inset: 0; margin: 0; }
-.fv-photo picture { display: block; width: 100%; height: 100%; }
-.fv-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 62% 50%; }
-.fv::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(20, 16, 12, 0.92) 0%, rgba(20, 16, 12, 0.78) 34%, rgba(20, 16, 12, 0.5) 56%, rgba(20, 16, 12, 0) 82%); }
-.fv-copy { text-shadow: 0 1px 14px rgba(0, 0, 0, 0.35); }
-.fv-copy .btn { text-shadow: none; }
-.fv-copy { position: relative; z-index: 1; width: 100%; padding-top: 120px; padding-bottom: 52px; }
-.fv-kind { font-size: 13.5px; letter-spacing: 0.1em; }
-.fv h1 { font-size: clamp(38px, 6.2vw, 78px); font-weight: 700; line-height: 1.22; letter-spacing: 0.05em; margin: 10px 0 16px; }
-.fv-lede { font-size: 16px; max-width: 30em; }
-.fv-row { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 26px; margin-top: 26px; }
-.fv-hours { font-size: 14.5px; }
-.fv-hours b { margin-right: 0.5em; }
-@media (max-width: 760px) {
-  .fv { min-height: 82vh; }
-  .fv-copy { padding-bottom: 32px; }
-  .fv::after { background: linear-gradient(0deg, rgba(20, 16, 12, 0.92) 0%, rgba(20, 16, 12, 0.78) 42%, rgba(20, 16, 12, 0.15) 72%, rgba(20, 16, 12, 0) 85%); }
-  .fv-row .btn { flex: 1 1 100%; }
-}
-
-/* 毎日の焼き上がり（ページ内の目次を兼ねる） */
-.today { background: #1E2A3A; color: #F3EEE4; }
-.today .wrap { display: grid; grid-template-columns: auto repeat(3, minmax(0, 1fr)); }
-.today-label { display: flex; align-items: center; padding: 18px 26px 18px 0; font-size: 13px; font-weight: 700; letter-spacing: 0.12em; border-right: 1px solid rgba(243, 238, 228, 0.25); }
-.today a { display: block; padding: 16px 22px; text-decoration: none; border-right: 1px solid rgba(243, 238, 228, 0.25); }
-.today a:hover { background: rgba(243, 238, 228, 0.06); }
-.today .t { display: block; font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Noto Serif JP", serif; font-weight: 700; font-size: 32px; line-height: 1.15; font-variant-numeric: tabular-nums lining-nums; }
-.today .w { font-size: 13.5px; }
-.today a.is-next { background: rgba(226, 184, 102, 0.16); }
-.today a.is-next .t { color: #E2B866; }
-.today a.is-next .w::after { content: "　次の焼き上がり"; font-weight: 700; color: #E2B866; }
-.now-line { grid-column: 1 / -1; padding: 10px 0 14px; border-top: 1px solid rgba(243, 238, 228, 0.25); font-size: 13px; color: #C7CEDA; }
-.now-line b { color: #F3EEE4; }
-@media (max-width: 760px) {
-  .today .wrap { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .today-label { grid-column: 1 / -1; padding: 14px 0 8px; border-right: 0; }
-  .today a { padding: 10px 10px 14px 0; border-right: 0; }
-  .today .t { font-size: 26px; }
-  .today .w { font-size: 12.5px; }
-  .today a.is-next .w::after { content: ""; }
-}
-
-/* お店の一日：時刻ごとに背景の色が変わる（12章 MO03の考え方を、色の切替えで表現） */
-.scene { --bg: #FBF7EF; --from: #FBF7EF; --fg: #22201C; --soft: #5A544B; --rule: rgba(34, 32, 28, 0.22);
-  background: linear-gradient(180deg, var(--from) 0, var(--bg) 140px); color: var(--fg); padding: 150px 0 120px; }
-.scene.dawn { --bg: #1E2A3A; --from: #1E2A3A; --fg: #F3EEE4; --soft: #C7CEDA; --rule: rgba(243, 238, 228, 0.28); padding-top: 110px; }
-.scene.morning { --bg: #F6F1E7; --from: #1E2A3A; }
-.scene.noon { --bg: #FBF7EF; --from: #F6F1E7; }
-.scene.after { --bg: #F1E4CE; --from: #FBF7EF; }
-.scene.dusk { --bg: #E9C99C; --from: #F1E4CE; --fg: #2A1E14; --soft: #4E3B2A; --rule: rgba(42, 30, 20, 0.28); }
-.scene.night { --bg: #3A2A1E; --from: #E9C99C; --fg: #F3E6D0; --soft: #D2C2A8; --rule: rgba(243, 230, 208, 0.28); }
-.scene > .wrap { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 0 48px; }
-.clock { position: sticky; top: 96px; align-self: start; }
-.clock .hh { display: block; font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Noto Serif JP", serif; font-weight: 700; font-size: 88px; line-height: 0.95; letter-spacing: -0.02em; font-variant-numeric: tabular-nums lining-nums; }
-.clock .what { display: block; margin-top: 16px; font-size: 14px; font-weight: 700; letter-spacing: 0.12em; }
-.clock .note-s { display: block; margin-top: 6px; font-size: 13.5px; color: var(--soft); }
-.scene h2 { font-size: clamp(24px, 2.7vw, 33px); font-weight: 700; line-height: 1.4; letter-spacing: 0.04em; }
-.scene h3 { font-size: clamp(20px, 2.2vw, 25px); font-weight: 700; }
-.scene p { margin-top: 14px; max-width: 34em; }
-.scene .small { font-size: 13px; color: var(--soft); }
-.scene .more { display: inline-block; margin-top: 18px; }
+/* 下層ページの写真・注記・店の情報 */
+.ph { margin: 0; }
 .ph img { width: 100%; height: auto; }
-.ph figcaption { margin-top: 8px; font-size: 12.5px; color: var(--soft); }
-@media (max-width: 900px) {
-  .scene { padding: 110px 0 72px; }
-  .scene.dawn { padding-top: 64px; }
-  .scene > .wrap { grid-template-columns: 1fr; }
-  .clock { position: static; display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 14px; margin-bottom: 18px; }
-  .clock .hh { font-size: 60px; }
-  .clock .what { margin-top: 0; }
-  .clock .note-s { flex-basis: 100%; margin-top: 0; }
-}
-
-/* 5:00 写真の下端に見出しを重ねる */
-.ph-over { position: relative; margin: 0; }
-.ph-over img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
-.ph-over::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(14, 20, 30, 0.86) 0%, rgba(14, 20, 30, 0.5) 34%, rgba(14, 20, 30, 0) 60%); }
-.ph-over figcaption { position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; padding: 0 32px 28px; color: #F3EEE4; }
-.ph-over figcaption h2 { color: #F3EEE4; }
-.facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 28px; border-top: 1px solid var(--rule); }
-.facts li { padding: 14px 18px 0 0; }
-.facts b { display: block; font-size: 13px; letter-spacing: 0.1em; color: var(--soft); font-weight: 700; }
-.facts span { display: block; margin-top: 2px; font-size: 15.5px; }
-@media (max-width: 760px) {
-  .ph-over img { aspect-ratio: 4 / 3; }
-  .ph-over figcaption { padding: 0 18px 16px; }
-  .facts { grid-template-columns: 1fr; }
-  .facts li { padding: 12px 0; border-bottom: 1px solid var(--rule); }
-}
-
-/* 8:00・14:00 写真と文章 */
-.pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 36px; align-items: center; }
-.pair.rev .ph { order: 2; }
-.pair .ph img { aspect-ratio: 4 / 3; object-fit: cover; }
-@media (max-width: 760px) { .pair { grid-template-columns: 1fr; gap: 20px; } .pair.rev .ph { order: 0; } }
-
-/* 10:00 看板商品とどうぶつパン */
-.feature-big { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 36px; align-items: center; }
-.feature-big .ph img { aspect-ratio: 4 / 3; object-fit: cover; }
-.animals { margin-top: 72px; }
-.animals .ph img { aspect-ratio: 16 / 8; object-fit: cover; }
-.animal-list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 18px; border-top: 1px solid var(--rule); }
-.animal-list li { padding: 12px 16px 0 0; }
-.animal-list b { display: block; font-size: 15px; }
-.animal-list span { font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Noto Serif JP", serif; font-weight: 700; font-size: 18px; }
-@media (max-width: 760px) {
-  .feature-big { grid-template-columns: 1fr; gap: 20px; }
-  .animals { margin-top: 48px; }
-  .animals .ph img { aspect-ratio: 16 / 10; }
-  .animal-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .animal-list li { padding: 12px 10px 12px 0; border-bottom: 1px solid var(--rule); }
-}
-
-/* 値段（点線でつなぐ） */
-.prices { margin-top: 18px; max-width: 30em; }
-.prices div { display: flex; align-items: baseline; gap: 0.6em; padding: 9px 0; }
-.prices dt { flex: 1; display: flex; align-items: baseline; font-weight: 700; font-size: 15.5px; }
-.prices dt::after { content: ""; flex: 1; min-width: 1.5em; border-bottom: 1px dotted var(--soft); margin-left: 0.6em; transform: translateY(-0.3em); }
-.prices dd { white-space: nowrap; font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Noto Serif JP", serif; font-weight: 700; font-size: 18px; font-variant-numeric: tabular-nums; }
-.prices.big dt { font-size: 18px; }
-.prices.big dd { font-size: 24px; }
+.ph figcaption { margin-top: 8px; font-size: 12.5px; color: var(--ink-soft); }
 .note { margin-top: 14px; font-size: 13px; color: var(--ink-soft); }
-
-/* 17:00 予約 */
-.big-say { font-size: clamp(30px, 4.6vw, 54px) !important; line-height: 1.3 !important; }
-.reserve-rules { margin-top: 26px; counter-reset: r; border-top: 1px solid var(--rule); max-width: 38em; }
-.reserve-rules li { position: relative; padding: 13px 0 13px 2.2em; border-bottom: 1px solid var(--rule); }
-.reserve-rules li::before { counter-increment: r; content: counter(r); position: absolute; left: 0; top: 10px; font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Noto Serif JP", serif; font-weight: 700; font-size: 20px; }
-.scene .actions { margin-top: 28px; }
-
-/* 18:00 営業情報とお知らせ */
 .info { display: grid; grid-template-columns: 8em minmax(0, 1fr); border-top: 1px solid var(--rule, var(--ink)); max-width: 44em; margin-top: 18px; }
 .info dt, .info dd { padding: 13px 0; border-bottom: 1px solid var(--rule, var(--line)); font-size: 15px; }
 .info dt { font-weight: 700; }
 .info dd { margin: 0; }
 @media (max-width: 600px) { .info { grid-template-columns: 6em minmax(0, 1fr); } }
-.news { margin-top: 64px; }
-.news ul { margin-top: 14px; border-top: 1px solid var(--rule); max-width: 44em; }
-.news li { display: grid; grid-template-columns: 7.5em minmax(0, 1fr); gap: 12px; padding: 13px 0; border-bottom: 1px solid var(--rule); font-size: 15px; }
-.news time { font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Noto Serif JP", serif; font-variant-numeric: tabular-nums; }
-@media (max-width: 760px) { .news li { grid-template-columns: 1fr; gap: 0; } }
-
-/* 画面に入ったときに、写真だけを少しだけ浮かび上がらせる（12章 MO01）。JSが動いたときだけ。文字とボタンは最初から表示する */
-html.js .rv { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
-html.js .rv.in { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) { html.js .rv { opacity: 1; transform: none; transition: none; } }
 
 /* 下層ページ */
 .page-head { padding: 52px 0 40px; border-bottom: 2px solid var(--ink); }
@@ -266,3 +128,161 @@ footer p { margin-top: 4px; opacity: 0.9; }
 footer .sample-note { margin-top: 18px; font-size: 12px; opacity: 0.75; max-width: 52em; }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* ===== 店先のガラス越し ===== */
+:root { --wood: #4A3426; --wood-dk: #33241A; --wood-lt: #6B4C37; --wall: #EDE7DC; --glass: rgba(18, 16, 12, 0.56); }
+
+/* 外壁にはめ込んだ窓：上の明かり取りと、下の大きなガラス */
+.front { background: var(--wall); padding: 44px 0 36px; }
+.front .wrap { max-width: 1240px; }
+.window { position: relative; border: 22px solid var(--wood); border-bottom-width: 0; outline: 1px solid var(--wood-dk); box-shadow: inset 0 0 0 3px var(--wood-lt); }
+.transom, .pane { position: relative; overflow: hidden; background: #1A1612; }
+.transom { height: 64px; border-bottom: 16px solid var(--wood); display: flex; align-items: center; justify-content: center; }
+.pane { min-height: min(68vh, 600px); display: flex; align-items: center; }
+.transom img, .pane img { position: absolute; top: 0; height: 100%; object-fit: cover; }
+/* 写真の右側（店内の棚）をガラス越しに見せる */
+.pane > picture > img, .transom img { right: -2%; width: 190%; max-width: none; object-position: 100% 30%; }
+.transom img { object-position: 74% 18%; }
+/* 外から見たガラス：少し暗く、斜めの映り込み */
+.transom::after, .pane::after { content: ""; position: absolute; inset: 0; pointer-events: none; background:
+  linear-gradient(115deg, rgba(255,255,255,0) 0 38%, rgba(255,255,255,0.10) 38% 46%, rgba(255,255,255,0) 46% 52%, rgba(255,255,255,0.06) 52% 55%, rgba(255,255,255,0) 55%),
+  var(--glass); }
+
+/* ガラスに書いた金文字 */
+.gilt { color: #E3C37E; background: linear-gradient(180deg, #F3DDA6 0%, #E3C37E 46%, #B98E45 54%, #E9CD8E 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 1px 0 rgba(40, 26, 10, 0.9)) drop-shadow(0 0 10px rgba(0, 0, 0, 0.35)); }
+@supports not ((-webkit-background-clip: text) or (background-clip: text)) { .gilt { -webkit-text-fill-color: currentColor; background: none; } }
+.transom p { position: relative; z-index: 1; font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Noto Serif JP", serif; font-weight: 700; font-size: 15px; letter-spacing: 0.32em; }
+.lettering { position: relative; z-index: 1; width: 100%; padding: 56px 64px; display: grid; justify-items: start; }
+.lettering .name { font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Noto Serif JP", serif; font-weight: 700; font-size: clamp(30px, 4.4vw, 56px); letter-spacing: 0.06em; line-height: 1.1; }
+.lettering .rule { width: min(420px, 70%); border-top: 1px solid rgba(227, 195, 126, 0.85); border-bottom: 1px solid rgba(227, 195, 126, 0.5); padding-top: 3px; margin: 18px 0 22px; }
+.lettering h1 { font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Noto Serif JP", serif; font-weight: 700; font-size: clamp(40px, 6.4vw, 84px); line-height: 1.18; letter-spacing: 0.06em; }
+.lettering .kind { margin-top: 24px; font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Noto Serif JP", serif; font-weight: 700; font-size: clamp(15px, 1.4vw, 18px); letter-spacing: 0.16em; }
+
+/* 扉に下げた札 */
+.sign { position: absolute; z-index: 2; right: 56px; top: 0; width: 176px; text-align: center; color: #2B2420; }
+.sign::before { content: ""; display: block; width: 92px; height: 34px; margin: 0 auto -1px; border: 1px solid rgba(227, 195, 126, 0.9); border-bottom: 0; border-radius: 46px 46px 0 0 / 34px 34px 0 0; }
+.sign-board { background: #F6F0E4; border: 1px solid #2B2420; box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35); padding: 12px 10px 13px; transform: rotate(-2deg); transform-origin: 50% 0; }
+.sign-board b { display: block; font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Noto Serif JP", serif; font-size: 24px; letter-spacing: 0.18em; line-height: 1.3; }
+.sign-board span { display: block; font-size: 12px; letter-spacing: 0.06em; margin-top: 4px; }
+.sign-board.closed b { color: #8A2E22; }
+
+/* 窓の下框：営業時間と予約 */
+.sill { background: var(--wood); color: #F3EADB; border-top: 1px solid var(--wood-dk); box-shadow: inset 0 4px 0 var(--wood-lt); }
+.sill-in { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 18px 32px; padding: 22px 64px 24px; }
+.sill dl { display: flex; flex-wrap: wrap; gap: 6px 30px; font-size: 14.5px; }
+.sill dt { display: inline; font-weight: 700; margin-right: 0.6em; color: #E3C37E; }
+.sill dd { display: inline; }
+.sill .btn { border-color: #2B2420; }
+
+/* ===== 扉を開けると：棚と値札 ===== */
+.shop { background: #F7F2E9; padding: 96px 0 110px; }
+.shop-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 24px 56px; align-items: end; margin-bottom: 64px; }
+.kicker { font-size: 13px; font-weight: 700; letter-spacing: 0.16em; color: #6A5847; }
+.shop-head h2, .back h2, .counter h2 { font-size: clamp(28px, 3.4vw, 42px); font-weight: 700; margin-top: 10px; }
+.shop-head p { color: #4A4038; max-width: 34em; }
+.shelf { margin-top: 80px; }
+.shelf.first { margin-top: 0; }
+.shelf.sub { margin-top: 56px; }
+.shelf-label { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; margin-bottom: 18px; }
+.shelf-label .t { font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Noto Serif JP", serif; font-weight: 700; font-size: 44px; line-height: 1; font-variant-numeric: tabular-nums lining-nums; color: #2B2420; }
+.shelf-label .w { font-size: 14px; font-weight: 700; letter-spacing: 0.1em; }
+.shelf-label .now { font-size: 12.5px; font-weight: 700; color: #2F4A3A; border-bottom: 2px solid #D9A441; }
+.goods, .tags { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 0 28px; padding: 0 28px; }
+.goods { align-items: end; }
+.item { margin: 0; }
+.item img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; box-shadow: 0 6px 10px -6px rgba(40, 26, 14, 0.5); }
+.item.big { grid-column: span 7; }
+.item.wide { grid-column: 1 / -1; }
+.item.wide img { aspect-ratio: 2 / 1; }
+/* 棚板 */
+.board { height: 20px; position: relative; background: linear-gradient(180deg, #A47B57 0, #8C6545 55%, #6E4E35 100%); box-shadow: 0 10px 14px -8px rgba(60, 40, 24, 0.55); }
+.board::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 2px; background: rgba(255, 238, 210, 0.35); }
+/* 値札：棚板の前に差した紙 */
+.tags { margin-top: -6px; position: relative; z-index: 1; }
+.tag { background: #FFFDF8; border: 1px solid #2B2420; padding: 12px 16px 13px; box-shadow: 0 3px 0 rgba(43, 36, 32, 0.12); align-self: start; }
+.tag .n { font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Noto Serif JP", serif; font-weight: 700; font-size: 18px; line-height: 1.4; }
+.tag .p { font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Noto Serif JP", serif; font-weight: 700; font-size: 22px; line-height: 1.3; margin-top: 2px; font-variant-numeric: tabular-nums lining-nums; }
+.tag .p small { font-size: 13px; font-weight: 600; margin-right: 0.3em; }
+.tag .d { font-size: 13px; color: #4A4038; line-height: 1.7; margin-top: 6px; border-top: 1px dashed rgba(43, 36, 32, 0.35); padding-top: 6px; }
+.tag.main { grid-column: span 7; width: 62%; }
+.tag.quarter { grid-column: span 3; padding: 9px 12px 10px; }
+.tag.quarter .n { font-size: 15.5px; }
+.tag.quarter .p { font-size: 18px; }
+.badge { display: inline-block; margin-left: 10px; font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "YuGothic", "Meiryo", "Noto Sans JP", sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; vertical-align: 3px; border-bottom: 2px solid #D9A441; }
+/* 棚に立てた黒板 */
+.pop { grid-column: span 5; align-self: end; background: #2F4A3A; color: #EEF0E8; border: 8px solid #7A5A40; box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.25), 0 6px 10px -6px rgba(40, 26, 14, 0.5); padding: 22px 24px 20px; }
+.pop h3 { font-size: 21px; font-weight: 700; line-height: 1.5; color: #fff; }
+.pop p { font-size: 14.5px; line-height: 1.85; margin-top: 10px; color: #DDE3D8; }
+.pop dl { margin-top: 16px; }
+.pop dl div { display: flex; align-items: baseline; gap: 10px; border-top: 1px dashed rgba(238, 240, 232, 0.4); padding: 8px 0 2px; }
+.pop dt { font-size: 14.5px; font-weight: 700; }
+.pop dd { margin-left: auto; font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Noto Serif JP", serif; font-weight: 700; font-size: 19px; white-space: nowrap; font-variant-numeric: tabular-nums lining-nums; }
+.pop dd small { font-size: 12.5px; margin-right: 0.3em; }
+.note-ai { font-size: 12.5px; color: #6A5847; margin-top: 18px; padding: 0 28px; }
+
+/* ===== 店の奥：仕込み ===== */
+.back { background: #1E2A3A; color: #F3EEE4; padding: 100px 0; }
+.back .wrap { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 32px 56px; align-items: center; }
+.back .kicker { color: #C7CEDA; }
+.back figure { margin: 0; }
+.back img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.back p { margin-top: 16px; color: #DCE1E8; max-width: 32em; }
+.facts { margin-top: 26px; border-top: 1px solid rgba(243, 238, 228, 0.28); }
+.facts div { display: grid; grid-template-columns: 6em minmax(0, 1fr); gap: 12px; padding: 11px 0; border-bottom: 1px solid rgba(243, 238, 228, 0.28); font-size: 15px; }
+.facts dt { font-weight: 700; color: #C7CEDA; }
+.back .more { display: inline-block; margin-top: 22px; }
+
+/* ===== レジで：予約と店の情報 ===== */
+.counter { background: var(--wall); padding: 100px 0 110px; }
+.counter-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 48px 64px; align-items: start; }
+.counter .kicker { color: #6A5847; }
+.rules { margin-top: 24px; counter-reset: r; border-top: 1px solid rgba(43, 36, 32, 0.3); }
+.rules li { position: relative; padding: 13px 0 13px 2.2em; border-bottom: 1px solid rgba(43, 36, 32, 0.3); }
+.rules li::before { counter-increment: r; content: counter(r); position: absolute; left: 0; top: 10px; font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Noto Serif JP", serif; font-weight: 700; font-size: 20px; }
+.counter .info { margin-top: 24px; --rule: rgba(43, 36, 32, 0.3); }
+.counter .more { display: inline-block; margin-top: 18px; }
+.board-news { margin-top: 72px; background: #2F4A3A; color: #EEF0E8; border: 12px solid #7A5A40; box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.25), 0 10px 18px -10px rgba(40, 26, 14, 0.6); padding: 30px 36px 26px; }
+.board-news h3 { font-size: 22px; font-weight: 700; color: #fff; }
+.board-news ul { margin-top: 12px; }
+.board-news li { display: grid; grid-template-columns: 7.5em minmax(0, 1fr); gap: 12px; padding: 11px 0; border-top: 1px dashed rgba(238, 240, 232, 0.4); font-size: 15px; }
+.board-news time { font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Noto Serif JP", serif; font-variant-numeric: tabular-nums; color: #E3C37E; }
+
+@media (max-width: 860px) {
+  .front { padding: 20px 0 24px; }
+  .front .wrap { padding: 0 12px; }
+  .window { border-width: 12px; border-bottom-width: 0; }
+  .transom { height: 46px; border-bottom-width: 10px; }
+  .transom p { font-size: 12px; letter-spacing: 0.2em; }
+  .pane { min-height: 0; display: block; }
+  .pane > picture > img { right: auto; left: 0; width: 100%; object-position: 50% 50%; }
+  .lettering { padding: 132px 22px 36px; min-height: 520px; align-content: end; }
+  .sign { right: 18px; width: 132px; }
+  .sign::before { width: 70px; height: 26px; }
+  .sign-board b { font-size: 19px; }
+  .sign-board span { font-size: 11px; }
+  .sill-in { grid-template-columns: 1fr; padding: 18px 22px 20px; }
+  .sill .btn { width: 100%; }
+  .shop { padding: 64px 0 80px; }
+  .shop-head { grid-template-columns: 1fr; margin-bottom: 40px; }
+  .shelf { margin-top: 56px; }
+  .goods, .tags { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 14px; padding: 0 8px; }
+  .shelf-label .t { font-size: 36px; }
+  .tag { padding: 10px 12px 11px; }
+  .tag .n { font-size: 15.5px; }
+  .tag .p { font-size: 18px; }
+  .tag.quarter { grid-column: span 1; }
+  .tag.main { grid-column: 1 / -1; justify-self: start; width: auto; min-width: 62%; }
+  /* 写真 → 棚板 → 値札 → 黒板 の順に並べ替える */
+  .shelf.has-pop { display: flex; flex-direction: column; }
+  .shelf.has-pop .goods { display: contents; }
+  .shelf.has-pop .item.big { order: 1; padding: 0 8px; }
+  .shelf.has-pop .board { order: 2; }
+  .shelf.has-pop .tags { order: 3; }
+  .shelf.has-pop .pop { order: 4; margin-top: 26px; border-width: 6px; padding: 18px 18px 16px; }
+  .note-ai { padding: 0 8px; }
+  .back, .counter { padding: 64px 0 72px; }
+  .back .wrap, .counter-grid { grid-template-columns: 1fr; }
+  .board-news { margin-top: 48px; border-width: 8px; padding: 22px 20px 18px; }
+  .board-news li { grid-template-columns: 1fr; gap: 0; }
+}
