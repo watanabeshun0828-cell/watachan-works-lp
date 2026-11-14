@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>制作の進め方：パン屋さんのホームページができるまで｜渡邊駿</title>
-<meta name="description" content="架空の焼き菓子店のホームページを、どんな順番で、何を考えて作ったか。同業のサイトの調査から、作り直し、公開前の計測までをまとめた制作事例（自主制作）です。">
+<meta name="description" content="架空の焼き菓子店のホームページを例に、制作の進め方をまとめた事例（自主制作）。同業の調査、3つの案、試作と比較、公開後の照合と計測まで。">
 <link rel="stylesheet" href="site.css">
 <style>
   .case-figs { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin: 26px 0 10px; }
@@ -28,6 +28,17 @@
   .facts-list { display: grid; grid-template-columns: 7em 1fr; gap: 8px 16px; font-size: 14px; margin: 0; }
   .facts-list dt { color: var(--ink-soft); }
   .facts-list dd { margin: 0; }
+  .flow-list { list-style: none; counter-reset: f; padding: 0; margin: 6px 0 0; border-top: 1px solid var(--line); }
+  .flow-list li { counter-increment: f; display: grid; grid-template-columns: 3.2em 1fr; gap: 0 10px; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+  .flow-list li::before { content: counter(f, decimal-leading-zero); font-family: Georgia, serif; color: var(--ink-soft); }
+  .flow-list a { color: inherit; }
+  .flow-list small { display: block; color: var(--ink-soft); font-size: 12.5px; }
+  .history { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px 18px; margin: 22px 0 6px; }
+  .history figure { margin: 0; }
+  .history img { width: 100%; height: auto; display: block; border: 1px solid var(--line); }
+  .history figcaption { margin-top: 8px; font-size: 12.5px; color: var(--ink-soft); line-height: 1.75; }
+  .history figcaption b { display: block; color: var(--ink); font-weight: 600; }
+  @media (max-width: 700px) { .history { grid-template-columns: 1fr 1fr; } }
   .case-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
   @media (max-width: 700px) {
     .case-figs { grid-template-columns: 1fr; }
@@ -41,7 +52,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="渡邊駿｜ポートフォリオ">
 <meta property="og:title" content="制作の進め方：パン屋さんのホームページができるまで｜渡邊駿">
-<meta property="og:description" content="架空の焼き菓子店のホームページを、どんな順番で、何を考えて作ったか。同業のサイトの調査から、作り直し、公開前の計測までをまとめた制作事例（自主制作）です。">
+<meta property="og:description" content="架空の焼き菓子店のホームページを例に、制作の進め方をまとめた事例（自主制作）。同業の調査、3つの案、試作と比較、公開後の照合と計測まで。">
 <meta property="og:url" content="https://watanabeshun0828-cell.github.io/watachan-works-lp/case-bakery.html">
 <meta property="og:image" content="https://watanabeshun0828-cell.github.io/watachan-works-lp/img/og/case-bakery.jpg">
 <meta property="og:image:width" content="1200">
@@ -62,7 +73,7 @@
   <div>
     <div class="en-label">CASE ／ HP制作の進め方</div>
     <h1 class="reveal">パン屋さんのホームページが、<br>できるまで。</h1>
-    <p class="lede reveal">架空の焼き菓子店「petite douceur」のホームページを、どんな順番で、何を考えて作ったのか。調べるところから、作り直し、公開前の計測、公開後の3度の見直しまでをまとめました。実際のご依頼でも、同じ流れで進めます。</p>
+    <p class="lede reveal">架空の焼き菓子店「petite douceur」のホームページを例に、今の制作の進め方をまとめました。同業のサイトを調べるところから、3つの案を比べ、試作して見比べ、公開後に照合と計測をするまで。実際のご依頼でも、同じ流れで進めます。</p>
   </div>
 </section>
 
@@ -73,8 +84,8 @@
       <dl class="facts-list">
         <dt>想定したお店</dt><dd>家族3人で営む、町の小さな焼き菓子とパンの店</dd>
         <dt>目的</dt><dd>お店に来てもらうこと。ご予約・お取り置きを受けやすくすること</dd>
-        <dt>雰囲気</dt><dd>最初は「ポップ・親しみやすい」で作り、公開後の見直し（STEP 06〜08）で「店先・あたたかみ」に変えました</dd>
-        <dt>ページ</dt><dd>5ページ（トップ／お店について／商品／アクセス／ご予約）</dd>
+        <dt>雰囲気</dt><dd>「店先・あたたかみ」。公開後も見直しを重ね、今の形は6つ目の版です（このページの最後にまとめています）</dd>
+        <dt>ページ</dt><dd>5ページ（トップ／お店について／商品と価格／アクセス／ご予約）</dd>
       </dl>
     </div>
     <p style="margin-top:16px;font-size:12.5px;color:var(--ink-soft);">※自主制作のサンプルで、お客様からご依頼いただいた案件ではありません。お店の名前・商品・価格もすべて架空です。</p>
@@ -82,6 +93,24 @@
 </section>
 
 <section class="block tint">
+  <h2><span>FLOW</span></h2>
+  <div class="body reveal">
+    <p class="headline">進め方は、8つの段階です。</p>
+    <p>1と2は中身を決める段階、3〜6は形を決めて作る段階、7と8は公開したあとの段階です。3〜8は、このサンプルのいちばん新しい作り直し（2026年11月）を例にしています。</p>
+    <ol class="flow-list">
+      <li><span><a href="#s1">同業のお店のサイトを、先に調べる</a><small>載せる項目の一覧</small></span></li>
+      <li><span><a href="#s2">ページの数と、載せることを決める</a><small>ページごとの中身</small></span></li>
+      <li><span><a href="#s3">参考と今の形を見比べ、問題を言葉にする</a><small>直すべき点</small></span></li>
+      <li><span><a href="#s4">3つの案を出し、1つを選んでいただく</a><small>案の比較表</small></span></li>
+      <li><span><a href="#s5">最初の画面と一部だけ試作し、並べて見比べる</a><small>比較画像</small></span></li>
+      <li><span><a href="#s6">決まった形を、サイト全体に組み込む</a><small>全ページ・スマホでの確認</small></span></li>
+      <li><span><a href="#s7">公開したファイルを、1つずつ照合する</a><small>照合の結果</small></span></li>
+      <li><span><a href="#s8">表示の速さを測り、直す</a><small>計測の結果</small></span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="block" id="s1">
   <h2><span>STEP 01</span></h2>
   <div class="body reveal">
     <p class="headline">同業のお店のサイトを、先に調べる。</p>
@@ -103,7 +132,7 @@
   </div>
 </section>
 
-<section class="block">
+<section class="block tint" id="s2">
   <h2><span>STEP 02</span></h2>
   <div class="body reveal">
     <p class="headline">ページの数と、それぞれに載せることを決める。</p>
@@ -121,175 +150,118 @@
   </div>
 </section>
 
-<section class="block tint">
+<section class="block" id="s3">
   <h2><span>STEP 03</span></h2>
   <div class="body reveal">
-    <p class="headline">最初の版を作る。</p>
-    <p>ポップで親しみやすい雰囲気にするため、丸みのある文字、太い線、少しずらした影を使いました。写真の上には、白い角丸の囲みを置いています。</p>
+    <p class="headline">参考と今の形を見比べ、問題を言葉にする。</p>
+    <p>作り直す前の版を撮影し、同業のサイトや、ほかの業種で作り直したサンプルと並べて見比べました。「なんとなく古い」で終わらせず、どこが・なぜ問題なのかを言葉にしてから、案を考えます。</p>
+    <div class="table-scroll">
+      <table class="case-table wrap">
+        <tr><th>見つけた問題</th><th>なぜ問題か</th></tr>
+        <tr><td>最初の画面が定番の形</td><td>写真全体を暗くして、左に大きな見出しとボタンを置く形でした。業種が違っても使える型で、このお店でなければならない理由がありませんでした</td></tr>
+        <tr><td>同じ並びの繰り返し</td><td>5:00から18:00までの5つの段が、どれも「左に大きな時刻、右に写真と文章」でした。時刻は見出しの代わりになっているだけでした</td></tr>
+        <tr><td>パンが主役になっていない</td><td>最初の画面は店先の写真で、商品の写真は各段の中で小さく収まっていました</td></tr>
+      </table>
+    </div>
     <div class="case-figs one">
-      <figure><img src="case/before-hero.jpg" alt="最初の版のトップ画面。写真の上に白い角丸の囲みがある" loading="lazy"><figcaption><b>最初の版</b>　写真の上に、白い角丸の囲み。</figcaption></figure>
+      <figure><img src="case/v5-hero.jpg" alt="作り直す前のトップ画面。店先の写真を暗くして、左に見出しと予約のボタンがある" loading="lazy"><figcaption><b>作り直す前の版</b>　店先の写真を暗くして、左に見出しとボタン。</figcaption></figure>
     </div>
   </div>
 </section>
 
-<section class="block">
+<section class="block tint" id="s4">
   <h2><span>STEP 04</span></h2>
   <div class="body reveal">
-    <p class="headline">見てもらい、意見をもとに作り直す。</p>
-    <p>依頼者の立場で見てもらい、次の意見をもらいました（自主制作のため、依頼者役として見てもらったものです）。</p>
-    <ul class="voice-list">
-      <li>ポップの中にも、パン屋さんらしい素材感がほしい。囲みをパンの形やかまど風にするなど。</li>
-      <li>写真が落ち着いた雰囲気なので、もう少し温かみがあると、ポップな作りと合う。</li>
-      <li>動物の形のパンのような、見た目のかわいいパンがあると、雰囲気に合う。</li>
-    </ul>
-    <p>この3つを受けて、次のように作り直しました。</p>
-    <div class="case-figs">
-      <figure><img src="case/before-hero.jpg" alt="作り直す前のトップ画面" loading="lazy"><figcaption><b>前</b>　白い角丸の囲み。写真は落ち着いた色味。</figcaption></figure>
-      <figure><img src="case/after-hero.jpg" alt="作り直した後のトップ画面。囲みが山型の食パンの形になっている" loading="lazy"><figcaption><b>後</b>　囲みを山型の食パンの形に。写真を明るく、温かい色味にそろえました。</figcaption></figure>
+    <p class="headline">3つの案を出し、1つを選んでいただく。</p>
+    <p>問題を解く方向の違う案を3つ出し、それぞれの気になる点も添えます。実際のご依頼では、ここでお客様に選んでいただきます。今回は自主制作のため、自分で選びました。</p>
+    <div class="table-scroll">
+      <table class="case-table wrap">
+        <tr><th>案</th><th>中身</th><th>気になる点</th></tr>
+        <tr><td><b>A 店先のガラス越し</b>（選んだ案）</td><td>最初の画面を店のガラス戸にする。ガラスに金文字で店名、向こうに店内の棚。扉を開けると、棚に商品と値札が並ぶ</td><td>金文字の質感が出せるかは、試作で確かめる</td></tr>
+        <tr><td>B 今あるパンだけのページ</td><td>見る人の端末の時刻に合わせて、今棚にあるパンを大きく出す</td><td>時刻で見た目が変わり、紹介用の画像と実際の画面が違って見える</td></tr>
+        <tr><td>C 紙袋</td><td>最初の画面をクラフト紙の紙袋の面にし、袋から商品が出てくる見せ方にする</td><td>紙の質感を出すには、新しい写真が要る</td></tr>
+      </table>
     </div>
-    <div class="case-figs">
-      <figure><img src="case/after-animal.jpg" alt="くま・ねこ・ひよこ・かめの形のパンのイラストが並ぶ欄" loading="lazy"><figcaption><b>どうぶつパンを追加</b>　最初はイラストで描きました。その後、画像生成AIで作った写真に差し替え、「写真はイメージです（AIで生成）」と書き添えています。</figcaption></figure>
-      <figure><img src="case/after-oven.jpg" alt="れんがのかまどの形をした、ご予約の案内の囲み" loading="lazy"><figcaption><b>かまどの形の案内</b>　ご予約の案内を、れんがのかまどに。窯の口が温かく光るようにしました。</figcaption></figure>
-    </div>
-    <div class="case-figs">
-      <figure><img src="case/after-board.jpg" alt="木の枠の黒板の形をした、お知らせの欄" loading="lazy"><figcaption><b>お知らせを黒板に</b>　お店の前に置く、黒板のメニューのイメージです。</figcaption></figure>
-    </div>
-    <p style="margin-top:6px;">ページ全体で見ると、次のように変わりました。</p>
-    <div class="case-figs">
-      <figure><img src="case/before-full.jpg" alt="作り直す前のトップページ全体" loading="lazy"><figcaption><b>前</b>　トップページ全体</figcaption></figure>
-      <figure><img src="case/after-full.jpg" alt="作り直した後のトップページ全体" loading="lazy"><figcaption><b>後</b>　トップページ全体</figcaption></figure>
-    </div>
+    <p style="margin-top:18px;">Aを選んだのは、今ある写真で作れること、そして来店を決めるのに要る営業時間・定休日・予約の締め切りを、最初の画面の中に置けるからです。</p>
   </div>
 </section>
 
-<section class="block tint">
+<section class="block" id="s5">
   <h2><span>STEP 05</span></h2>
   <div class="body reveal">
-    <p class="headline">公開する前に、測って直す。</p>
-    <p>スマホでの見え方とリンク切れを確かめたうえで、Googleの計測ツール「Lighthouse」で、スマホでの表示の速さを測りました。</p>
-    <p>1回目の計測では82点でした。写真を元の大きさのまま表示していたことが、主な原因です。写真を表示の大きさに合わせて縮小し、スマホ用の小さい写真を用意して、画面の大きさで使い分けるようにしました。</p>
-    <div class="score">
-      <div><small>直す前（1回目）</small><b>82</b><small>表示の速さ</small></div>
-      <div><small>直した後（3回の真ん中の値）</small><b>97</b><small>表示の速さ</small></div>
-      <div><small>直した後</small><b>100</b><small>見やすさ・使いやすさ</small></div>
+    <p class="headline">最初の画面と一部だけ試作し、並べて見比べる。</p>
+    <p>いきなりサイト全体を作り変えず、最初の画面と、商品の棚の段だけを公開しない場所で試作しました。作り直す前の版と同じ幅で並べた画像を作り、見比べて判断していただきます。形が決まる前に全ページを作ると、方向を変えるときの手戻りが大きくなるためです。</p>
+    <div class="case-figs one">
+      <figure><img src="case/v6-compare.jpg" alt="左に作り直す前のトップページ、右に試作したトップページを並べた比較画像" loading="lazy"><figcaption><b>比較画像</b>　左が作り直す前の版、右が試作。パソコンの幅（1440px）で撮影しています。</figcaption></figure>
     </div>
-    <p style="margin-top:18px;">あわせて、検索とSNS向けの設定も入れました。店舗の名前・住所・営業時間を、検索エンジンが読み取れる形（構造化データ）でも書き込み、シェアされたときの見出しと画像も設定しています。</p>
-    <p style="font-size:12.5px;color:var(--ink-soft);">※点数は、STEP 04の版で計測したものです。計測する環境や日によって変わります。サンプルは架空のお店のため、検索結果には出さない設定にしています。</p>
   </div>
 </section>
 
-<section class="block">
+<section class="block tint" id="s6">
   <h2><span>STEP 06</span></h2>
   <div class="body reveal">
-    <p class="headline">公開後に見直し、配色と構成を作り直す。</p>
-    <p>公開したあとに見返すと、ページ全体がクリーム色とオレンジの一色に寄っていました。どの欄も「丸いアイコン → 小さなラベル → 下線つきの見出し → カードを横に並べる」という同じ並びで、生成AIで作ったサイトによくある形です。色が商品写真と重なり、パンの焼き色も目立ちませんでした。</p>
-    <p>そこで、パン屋さんのサイトの配色例と、「AIっぽい」と言われやすいデザインの特徴を調べ直しました。色の候補を3つ作り、構成と形は同じまま、色だけを差し替えて見比べています。</p>
-    <div class="case-figs one">
-      <figure><img src="case/v3-palettes.jpg" alt="同じトップ画面を、白×焦げ茶×赤、生成り×深緑×小麦色、紺×生成り×琥珀の3つの配色で並べた画像" loading="lazy"><figcaption><b>配色の3案</b>　左から、白×焦げ茶×クラスト赤／生成り×深緑×小麦色／紺×生成り×琥珀。真ん中の案を選びました。</figcaption></figure>
-    </div>
-    <p>選んだ案をもとに、次のように作り直しました。</p>
+    <p class="headline">決まった形を、サイト全体に組み込む。</p>
+    <p>試作の形が決まってから、サイト全体に組み込みます。値段・商品・営業時間・お知らせは、前の版から変えていません。組み込んだあとは、パソコンの幅（1440px・1024px）とスマホの幅（375px）で、横へのはみ出し・画像の読み込み・メニューの開閉を確かめました。</p>
     <div class="table-scroll">
       <table class="case-table wrap">
-        <tr><th>変えたこと</th><th>理由</th></tr>
-        <tr><td>配色を、生成り×深緑×小麦色に</td><td>オレンジや茶色が多いパン屋さんのサイトの中で、覚えてもらいやすくするため。緑の地には、パンの焼き色が映えます</td></tr>
-        <tr><td>太い線とずらした影は、どうぶつパンとかまどだけに</td><td>遊びのある表現を1か所に集め、ほかの欄は読みやすさを優先するため</td></tr>
-        <tr><td>最初の画面に、営業時間と予約のボタン</td><td>来る前にいちばん知りたいことを、最初に見せるため</td></tr>
-        <tr><td>焼き上がりの時間を、トップに時刻で</td><td>「売り切れ次第終了」のお店では、何時に行けば買えるかが大事なため。STEP 01で商品のページに入れた内容を、トップにも出しました</td></tr>
-        <tr><td>人気の商品は、1つを大きく</td><td>3つを同じ大きさで並べるより、まず食べてほしい1つが伝わるため</td></tr>
-        <tr><td>写真の暖色の加工をやめる</td><td>STEP 04で温かい色味にそろえましたが、全体が同じ色に寄る原因になっていたため</td></tr>
+        <tr><th>組み込んだこと</th><th>理由</th></tr>
+        <tr><td>最初の画面を、店のガラス戸に</td><td>窓枠とガラスの向こうに店内の棚を見せ、店名と見出しはガラスに書いた金文字に。写真に文字を載せるだけの定番の形をやめるため</td></tr>
+        <tr><td>扉の札が、時刻で変わる</td><td>見る人の端末の時刻で「営業中」「準備中」「本日終了」「定休日」に変わります。今行って開いているかが、最初の画面でわかるように</td></tr>
+        <tr><td>営業時間と予約を、窓の下の框に</td><td>営業時間・定休日・予約の締め切りと予約のボタンを、最初の画面の中に置くため</td></tr>
+        <tr><td>商品は、棚板と値札で並べる</td><td>8時・10時・14時の棚板に商品の写真を載せ、棚板の前に紙の値札を差しました。説明と、写真のない商品の値段は、棚に立てた黒板に。焼きあがる時刻ごとに、店の棚を見るように選べるように</td></tr>
+        <tr><td>そのあとは、店の奥 → レジ → 黒板</td><td>仕込みと祖母の代からの話、予約の決まりとお店の情報、お知らせの順。店の中を歩く順番に合わせました</td></tr>
       </table>
     </div>
     <div class="case-figs">
-      <figure><img src="case/after-hero.jpg" alt="STEP 04の版のトップ画面" loading="lazy"><figcaption><b>前（STEP 04の版）</b>　山型の食パンの囲み。写真は温かい色味。</figcaption></figure>
-      <figure><img src="case/v3-hero.jpg" alt="作り直した後のトップ画面。写真の左に店名・営業時間・予約のボタンがある" loading="lazy"><figcaption><b>後</b>　写真の左に、店名と営業時間、予約のボタン。</figcaption></figure>
-    </div>
-    <div class="case-figs">
-      <figure><img src="case/v3-bake.jpg" alt="8時・10時・14時の焼き上がりの時間を、大きな数字で並べた欄" loading="lazy"><figcaption><b>焼き上がりの時間</b>　時刻を大きく、横に並べました。</figcaption></figure>
-      <figure><img src="case/v3-visit.jpg" alt="営業時間・住所・電話の表と、ご予約・お取り置きの案内を並べた欄" loading="lazy"><figcaption><b>営業時間と予約の案内</b>　店の情報と、予約の締め切りを並べました。</figcaption></figure>
+      <figure><img src="case/v6-shelf.jpg" alt="8時の棚。棚板の上に食パンの写真、棚板の前に白い値札、横に深緑の黒板" loading="lazy"><figcaption><b>8:00の棚</b>　写真は棚板の上に、値札は棚板の前に。</figcaption></figure>
+      <figure><img src="case/v6-counter.jpg" alt="予約の決まりとお店の情報を左右に並べ、その下に木の枠の黒板でお知らせを並べた欄" loading="lazy"><figcaption><b>レジで</b>　予約の決まりとお店の情報、その下に店頭の黒板。</figcaption></figure>
     </div>
     <p style="margin-top:6px;">ページ全体で見ると、次のように変わりました。</p>
     <div class="case-figs">
-      <figure><img src="case/after-full.jpg" alt="STEP 04の版のトップページ全体" loading="lazy"><figcaption><b>前（STEP 04の版）</b>　トップページ全体</figcaption></figure>
-      <figure><img src="case/v3-full.jpg" alt="作り直した後のトップページ全体" loading="lazy"><figcaption><b>後</b>　トップページ全体</figcaption></figure>
+      <figure><img src="case/v5-full.jpg" alt="作り直す前のトップページ全体" loading="lazy"><figcaption><b>前</b>　トップページ全体</figcaption></figure>
+      <figure><img src="case/v6-full.jpg" alt="作り直した後のトップページ全体" loading="lazy"><figcaption><b>後</b>　トップページ全体</figcaption></figure>
     </div>
-    <p style="font-size:12.5px;color:var(--ink-soft);">文字と背景の色の組み合わせは、読みやすさの目安（コントラスト比4.5以上）を満たすことを計算で確かめています。</p>
   </div>
 </section>
 
-<section class="block tint">
+<section class="block" id="s7">
   <h2><span>STEP 07</span></h2>
   <div class="body reveal">
-    <p class="headline">写真と構成を見直し、お店の一日として組み直す。</p>
-    <p>STEP 06の版を見返すと、色は変わっても、形にはまだ生成AIで作ったサイトによくある特徴が残っていました。情報を角の丸い四角で囲み、ボタンや値段は丸いラベル、見出しは丸ゴシック。まず、生成AIがやりがちなデザインの失敗を48項目にまとめた点検表をもとに、囲みをやめ、罫線と時刻表で組み直しました。</p>
-    <p>それでも、安っぽさは残りました。原因を洗い出すと、いちばん大きいのは写真でした。どの写真も同じ琥珀色の光で、生成画像らしさが強く出ていたこと。商品写真は1枚の画像を切り分けたもので、高解像度の画面ではぼやけていたこと。もうひとつは、同じ並びを6回繰り返していて、ページのどこにも見せ場がなかったことです。</p>
-    <p>そこで、構図の違う3案（店先の写真が主役／紙袋と値札／お店の一日）を比べました。選んだのは、「何時に何が焼きあがるか」というこのお店ならではの事情を活かせる、お店の一日の案です。写真は、時間帯の光、文字を重ねる余白、器のそろえ方まで指定した指示文を書き、6枚とも作り直しました。</p>
-    <div class="table-scroll">
-      <table class="case-table wrap">
-        <tr><th>変えたこと</th><th>理由</th></tr>
-        <tr><td>写真を6枚作り直す</td><td>時間帯ごとの自然な光にそろえ、商品写真は表示の大きさに合う解像度で用意するため</td></tr>
-        <tr><td>最初の画面は、店先の写真に見出しを重ねる</td><td>写真と言葉を一つの場面として見せ、何のお店かを最初に伝えるため。文字の下は写真を暗くして、読みやすくしています</td></tr>
-        <tr><td>焼き上がりの時刻を、写真のすぐ下の帯に</td><td>次の焼き上がりがすぐにわかるようにするため。押すと、その時間の説明に移ります</td></tr>
-        <tr><td>時間帯ごとに、背景の色を変える</td><td>夜明け前の紺から、朝の生成り、午後の小麦色、夕方の焦げ茶へ。スクロールすると、お店の一日が進んでいくように見せるため</td></tr>
-        <tr><td>場面ごとに、組み方を変える</td><td>写真に見出しを重ねる、写真と文章を並べる、大きな文字で伝える、など。同じ並びの繰り返しをやめるため</td></tr>
-        <tr><td>見出しと時刻は明朝、角丸の囲みは使わない</td><td>丸ゴシックや角丸に頼らず、写真と言葉で親しみを出すため</td></tr>
-      </table>
+    <p class="headline">公開したファイルを、1つずつ照合する。</p>
+    <p>公開したあと、手元のファイルと公開中のファイルが同じかを、1つずつ照合します。画面を見るだけでは、上げ忘れや古いファイルの残りに気づきにくいためです。</p>
+    <p>今回は15ファイルのうち、事例ページのシェア用の画像1枚が反映されていませんでした。次の公開で上げ直し、すべて一致することを確かめました。照合のあと、ブラウザーで公開中のページを開き、新しいデザインと画像が読み込まれていることも確認しています。</p>
+  </div>
+</section>
+
+<section class="block tint" id="s8">
+  <h2><span>STEP 08</span></h2>
+  <div class="body reveal">
+    <p class="headline">表示の速さを測り、直す。</p>
+    <p>Googleの計測ツール「PageSpeed Insights」で、公開中のページをスマホの条件で測りました。1回目は91点でした。原因を調べると、スマホでは、窓の上の細い部分にパソコン用の大きな写真を使っていて、写真を2種類読み込んでいました。スマホではどちらもスマホ用の写真を使うように直し、測り直しました。</p>
+    <div class="score">
+      <div><small>直す前</small><b>91</b><small>表示の速さ</small></div>
+      <div><small>直した後</small><b>96</b><small>表示の速さ</small></div>
+      <div><small>直した後</small><b>100</b><small>見やすさ・使いやすさ</small></div>
     </div>
-    <div class="case-figs">
-      <figure><img src="case/v3-hero.jpg" alt="STEP 06の版のトップ画面" loading="lazy"><figcaption><b>前（STEP 06の版）</b>　ボタンや値段は丸い形。写真は琥珀色。</figcaption></figure>
-      <figure><img src="case/v4-hero.jpg" alt="途中の版のトップ画面。左に焼き上がりの時刻表、右に店の写真" loading="lazy"><figcaption><b>途中の版</b>　囲みをやめ、時刻表で組み直しました。写真は前のまま。</figcaption></figure>
-    </div>
-    <div class="case-figs one">
-      <figure><img src="case/v5-hero.jpg" alt="作り直した後のトップ画面。明るい店先の写真の左下に、見出しと予約のボタンが重なり、その下に焼き上がりの時刻の帯がある" loading="lazy"><figcaption><b>後</b>　作り直した店先の写真に、見出しと予約のボタンを重ねました。下の紺の帯が、毎日の焼き上がりの時刻です。</figcaption></figure>
-    </div>
-    <div class="case-figs">
-      <figure><img src="case/v5-dawn.jpg" alt="5:00の仕込みの場面。紺の背景に、生地をこねる手元の写真と見出し" loading="lazy"><figcaption><b>5:00 仕込み</b>　夜明け前の紺。写真の下端に見出しを重ねています。</figcaption></figure>
-      <figure><img src="case/v5-dusk.jpg" alt="17:00の予約の締め切りの場面。小麦色の背景に、大きな文字の見出しと予約のボタン" loading="lazy"><figcaption><b>17:00 予約の締め切り</b>　夕方の小麦色。大きな文字で伝えます。</figcaption></figure>
-    </div>
-    <div class="case-figs one">
-      <figure><img src="case/v5-change.jpg" alt="5時の紺の背景から、8時の生成りの背景へ色が移り変わる境目" loading="lazy"><figcaption><b>時間帯の境目</b>　5時の紺から、8時の生成りへ。背景の色がなめらかに移り変わります。</figcaption></figure>
-    </div>
-    <p style="margin-top:6px;">ページ全体で見ると、次のように変わりました。</p>
-    <div class="case-figs">
-      <figure><img src="case/v3-full.jpg" alt="STEP 06の版のトップページ全体" loading="lazy"><figcaption><b>前（STEP 06の版）</b>　トップページ全体</figcaption></figure>
-      <figure><img src="case/v5-full.jpg" alt="作り直した後のトップページ全体" loading="lazy"><figcaption><b>後</b>　トップページ全体</figcaption></figure>
-    </div>
-    <p style="font-size:12.5px;color:var(--ink-soft);">文字と背景の色の組み合わせは、時間帯ごとにすべて、読みやすさの目安（コントラスト比4.5以上）を満たすことを計算で確かめています。写真はすべて画像生成AIで作ったイメージです。この版の表示の速さは、スマホで95点、パソコンで100点でした（2026年11月9日、公開中のページを1回計測）。見出しのフォントを、使う文字だけ読み込む形にしてから計測しています。計測する環境や日によって変わります。</p>
+    <p style="margin-top:18px;">いちばん大きな要素が表示されるまでの時間（LCP）は、3.2秒から2.7秒になりました。</p>
+    <p style="font-size:12.5px;color:var(--ink-soft);">※2026年11月15日、公開中のトップページを、直す前と直した後に1回ずつ計測した値です。計測する環境や日によって変わります。サンプルは架空のお店のため、検索結果には出さない設定にしています。</p>
   </div>
 </section>
 
 <section class="block">
-  <h2><span>STEP 08</span></h2>
+  <h2><span>HISTORY</span></h2>
   <div class="body reveal">
-    <p class="headline">ページ全体を、店の前に立ってから中に入るまでの順番にする。</p>
-    <p>ほかの3つのサンプルを作り直したあとでSTEP 07の版を並べてみると、最初の画面の形が同じでした。写真全体を暗くして、左に大きな見出しとボタンを置く形です。業種が違っても使える型で、このお店でなければならない理由がありませんでした。もうひとつ、5:00から18:00までの段は、どれも「左に大きな時刻、右に写真と文章」の同じ並びでした。時刻は見出しの代わりになっているだけで、ページの組み方にまでは活かせていませんでした。</p>
-    <p>そこで、題材をページの仕組みそのものにする3案（店先のガラス越し／いまあるパンだけのページ／紙袋）を比べました。選んだのは、お店の前に立ってガラス越しに棚を見て、扉を開けて中に入る順番でページを組む案です。今の写真をそのまま使えます。また、来店するかどうかを決める営業時間・定休日・予約の締め切りを、最初の画面の中に置けます。</p>
-    <div class="table-scroll">
-      <table class="case-table wrap">
-        <tr><th>変えたこと</th><th>理由</th></tr>
-        <tr><td>最初の画面を、店のガラス戸に</td><td>窓枠とガラスの向こうに店内の棚を見せ、店名と見出しはガラスに書いた金文字にしました。写真に文字を載せるだけの定番の形をやめるためです</td></tr>
-        <tr><td>扉の札が、時刻で変わる</td><td>見る人の端末の時刻で「営業中」「準備中」「本日終了」「定休日」に変わります。今行って開いているかが、最初の画面でわかるようにするためです</td></tr>
-        <tr><td>営業時間と予約を、窓の下の框に</td><td>営業時間・定休日・予約の締め切りと予約のボタンを、最初の画面の中に置くためです</td></tr>
-        <tr><td>商品は、棚板と値札で並べる</td><td>8時・10時・14時の棚板に商品の写真を載せ、棚板の前に紙の値札を差しました。説明と、写真のない商品の値段は、棚に立てた黒板に書いています。焼きあがる時刻ごとに、店の棚を見るように選べるようにするためです</td></tr>
-        <tr><td>そのあとは、店の奥 → レジ → 黒板</td><td>仕込みと祖母の代からの話、予約の決まりとお店の情報、お知らせの順です。店の中を歩く順番に合わせました</td></tr>
-        <tr><td>時間帯ごとの背景の色の切替えをやめる</td><td>焼き上がりの時刻は棚の見出しで示せるようになったため、同じことを二重に伝えないようにしました</td></tr>
-      </table>
+    <p class="headline">これまでの版。</p>
+    <p>このサンプルは、公開したあとも見直しを続けています。最初はポップな作りでしたが、見返すたびに「生成AIで作ったサイトによくある形」が残っていることに気づき、作り直してきました。今の形は6つ目の版です。</p>
+    <div class="history">
+      <figure><img src="case/before-hero.jpg" alt="1つ目の版のトップ画面。写真の上に白い角丸の囲み" loading="lazy"><figcaption><b>1　最初の版</b>丸みのある文字と、写真の上の白い角丸の囲み。</figcaption></figure>
+      <figure><img src="case/after-hero.jpg" alt="2つ目の版のトップ画面。囲みが山型の食パンの形" loading="lazy"><figcaption><b>2　パンの形の囲み</b>依頼者役の意見を受け、囲みを食パンの形に。どうぶつパンを追加。</figcaption></figure>
+      <figure><img src="case/v3-hero.jpg" alt="3つ目の版のトップ画面。写真の左に店名と予約のボタン" loading="lazy"><figcaption><b>3　配色を見直す</b>一色に寄っていた色を、生成り・深緑・小麦色に。営業時間を最初の画面へ。</figcaption></figure>
+      <figure><img src="case/v4-hero.jpg" alt="4つ目の版のトップ画面。左に焼き上がりの時刻表" loading="lazy"><figcaption><b>4　時刻表</b>角丸の囲みをやめ、罫線と時刻表に。写真は前のまま。</figcaption></figure>
+      <figure><img src="case/v5-hero.jpg" alt="5つ目の版のトップ画面。店先の写真に見出しが重なる" loading="lazy"><figcaption><b>5　お店の一日</b>写真を6枚作り直し、5時から18時までの場面で組み立てる。</figcaption></figure>
+      <figure><img src="case/v6-hero.jpg" alt="6つ目の版のトップ画面。店のガラス戸に金文字で店名" loading="lazy"><figcaption><b>6　店先のガラス越し（今の版）</b>このページのSTEP 03〜08で作り直した形。</figcaption></figure>
     </div>
-    <div class="case-figs">
-      <figure><img src="case/v5-hero.jpg" alt="STEP 07の版のトップ画面" loading="lazy"><figcaption><b>前（STEP 07の版）</b>　店先の写真を暗くして、左に見出しとボタン。</figcaption></figure>
-      <figure><img src="case/v6-hero.jpg" alt="作り直した後のトップ画面。店のガラス戸に金文字で店名と見出しが書かれ、向こうにパンの棚が見える" loading="lazy"><figcaption><b>後</b>　店のガラス戸。扉の札と、窓の下の框に営業時間と予約。</figcaption></figure>
-    </div>
-    <div class="case-figs one">
-      <figure><img src="case/v6-shelf.jpg" alt="8時の棚。棚板の上に食パンの写真、棚板の前に白い値札、横に深緑の黒板" loading="lazy"><figcaption><b>8:00の棚</b>　写真は棚板の上に、値札は棚板の前に。黒板には説明と、ハーフサイズの値段を書いています。</figcaption></figure>
-    </div>
-    <div class="case-figs one">
-      <figure><img src="case/v6-counter.jpg" alt="予約の決まりとお店の情報を左右に並べ、その下に木の枠の黒板でお知らせを並べた欄" loading="lazy"><figcaption><b>レジで</b>　予約の決まりとお店の情報。その下が、店頭の黒板のお知らせです。</figcaption></figure>
-    </div>
-    <p style="margin-top:6px;">ページ全体で見ると、次のように変わりました。</p>
-    <div class="case-figs">
-      <figure><img src="case/v5-full.jpg" alt="STEP 07の版のトップページ全体" loading="lazy"><figcaption><b>前（STEP 07の版）</b>　トップページ全体</figcaption></figure>
-      <figure><img src="case/v6-full.jpg" alt="作り直した後のトップページ全体" loading="lazy"><figcaption><b>後</b>　トップページ全体</figcaption></figure>
-    </div>
-    <p style="font-size:12.5px;color:var(--ink-soft);">値段・商品・営業時間・お知らせは、STEP 07の版と同じです（すべて架空）。写真もSTEP 07で作り直したものを使っています。この版の表示の速さは、公開後に計測します。</p>
+    <p style="font-size:12.5px;color:var(--ink-soft);">写真はすべて画像生成AIで作ったイメージです。</p>
   </div>
 </section>
 
@@ -297,7 +269,7 @@
   <h2><span>NEXT</span></h2>
   <div class="body reveal">
     <p class="headline">実際のご依頼でも、同じ流れで進めます。</p>
-    <p>調べる → 構成を決める → 作る → 見ていただいて直す → 測って確かめる → 公開後も見直す。お店の方にお話をうかがいながら、この順番で一緒に作っていきます。</p>
+    <p>調べる → 中身を決める → 問題を言葉にする → 3つの案から選んでいただく → 試作を見比べる → 全体に組み込む → 公開後に照合し、測って直す。お店の方にお話をうかがいながら、この順番で一緒に作っていきます。</p>
     <div class="case-actions">
       <a class="btn line" href="hp-samples/petite-douceur/index.html">&gt; 完成したサイトを見る</a>
       <a class="btn line" href="hp.html#flow">&gt; 依頼の流れ</a>
