@@ -141,7 +141,7 @@ footer .sample-note { margin-top: 18px; font-size: 12px; opacity: 0.75; max-widt
 .pane { min-height: min(68vh, 600px); display: flex; align-items: center; }
 .transom img, .pane img { position: absolute; top: 0; height: 100%; object-fit: cover; }
 /* 写真の右側（店内の棚）をガラス越しに見せる */
-.pane > picture > img, .transom img { right: -2%; width: 190%; max-width: none; object-position: 100% 30%; }
+.pane > picture > img, .transom picture > img { right: -2%; width: 190%; max-width: none; object-position: 100% 30%; }
 .transom img { object-position: 74% 18%; }
 /* 外から見たガラス：少し暗く、斜めの映り込み */
 .transom::after, .pane::after { content: ""; position: absolute; inset: 0; pointer-events: none; background:
@@ -256,6 +256,8 @@ footer .sample-note { margin-top: 18px; font-size: 12px; opacity: 0.75; max-widt
   .transom p { font-size: 12px; letter-spacing: 0.2em; }
   .pane { min-height: 0; display: block; }
   .pane > picture > img { right: auto; left: 0; width: 100%; object-position: 50% 50%; }
+  /* スマホは明かり取りもガラスと同じ縦長の写真（hero-sp）を使い、読み込む写真を1枚にする */
+  .transom picture > img { right: auto; left: 0; width: 100%; object-position: 50% 12%; }
   .lettering { padding: 132px 22px 36px; min-height: 520px; align-content: end; }
   .sign { right: 18px; width: 132px; }
   .sign::before { width: 70px; height: 26px; }
