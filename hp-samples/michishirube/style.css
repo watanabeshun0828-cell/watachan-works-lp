@@ -49,15 +49,7 @@ ul, ol { list-style: none; }
 .sec-lead { margin-top: 12px; color: #4E5761; max-width: 38em; }
 
 /* トップ：大きな問い＋1枚のメモ（見本） */
-.fv { padding: 72px 0 80px; border-bottom: 1px solid #1C2228; }
-.fv .wrap { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 0 56px; align-items: center; }
 .fv-kind { font-size: 13.5px; color: #4E5761; }
-.fv h1 { font-size: clamp(34px, 5vw, 60px); line-height: 1.3; margin: 12px 0 18px; }
-.fv h1 .q { color: #B4462B; }
-.fv-lede { max-width: 30em; }
-.fv-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 28px; border-top: 1px solid #1C2228; }
-.fv-facts li { padding: 12px 14px 0 0; font-size: 13.5px; color: #4E5761; }
-.fv-facts b { display: block; font-size: 17px; color: #1C2228; }
 .memo { background: #FFFFFF; border: 1px solid #1C2228; padding: 24px 26px 20px; box-shadow: 10px 10px 0 rgba(28, 34, 40, 0.08); }
 .memo-head { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #1C2228; padding-bottom: 8px; }
 .memo-head b { font-size: 17px; }
@@ -70,11 +62,6 @@ ul, ol { list-style: none; }
 .memo .tag.in { color: #2F5D8A; } .memo .tag.out { color: #B4462B; }
 .memo-note { margin-top: 10px; font-size: 12px; color: #4E5761; }
 @media (max-width: 900px) {
-  .fv { padding: 40px 0 48px; }
-  .fv .wrap { grid-template-columns: 1fr; gap: 36px; }
-  .fv h1 { font-size: 30px; }
-  .fv-facts { grid-template-columns: 1fr; }
-  .fv-facts li { padding: 10px 0; border-bottom: 1px solid rgba(28,34,40,0.18); }
   .memo { box-shadow: 6px 6px 0 rgba(28, 34, 40, 0.08); }
 }
 
@@ -210,3 +197,76 @@ footer .sample-note { margin-top: 16px; font-size: 12px; opacity: 0.8; max-width
   .fstep { min-height: 0; padding: 18px 0 22px; }
 }
 @media (prefers-reduced-motion: reduce) { .flow-svg .s, .flow-svg .cash { transition: none; } }
+/* 案A 手元のお金の線（2026-11-13） */
+.cf { position: relative; display: flex; flex-direction: column; min-height: min(calc(100svh - 96px), 860px); padding: 60px 0 0; overflow: hidden; border-bottom: 1px solid #1C2228; }
+.cf-text { position: relative; z-index: 2; width: 100%; }  /* 縦並びの flex で中央に寄らないように */
+.cf h1 { font-size: clamp(36px, 5vw, 68px); line-height: 1.32; margin-top: 18px; letter-spacing: 0.01em; }
+.cf h1 .ln { display: block; width: fit-content; }
+.cf-lede { max-width: 34em; margin-top: 22px; color: #4E5761; font-size: 16.5px; }
+.cf-lede .nb:first-child { color: #1C2228; font-weight: 700; font-family: "BIZ UDPGothic", sans-serif; }
+.cf-chart { position: relative; flex: 1; min-height: 300px; margin-top: 44px;  order: 2; }
+.cf-chart svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.cf-grid { stroke: rgba(28,34,40,0.12); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.cf-zero { stroke: #4E5761; stroke-width: 1; stroke-dasharray: 6 6; vector-effect: non-scaling-stroke; }
+.cf-dip { fill: #F6E1DB; }
+.cf-line { fill: none; stroke: #1C2228; stroke-width: 3; vector-effect: non-scaling-stroke; stroke-linecap: round; }
+.cf-months { position: absolute; left: 0; right: 0; top: -2px; }
+.cf-m { position: absolute; transform: translateX(-50%); font: 700 14px/1 "BIZ UDPGothic", sans-serif; color: #4E5761; background: #F7F8F6; padding: 0 6px; }
+.cf-dot { position: absolute; width: 13px; height: 13px; margin: -6.5px 0 0 -6.5px; border-radius: 50%; background: #F7F8F6; border: 3px solid #1C2228; z-index: 1; }
+.cf-dot.low { border-color: #B4462B; background: #B4462B; }
+.cf-note { position: absolute; transform: translate(14px, -130%); font-size: 13.5px; color: #4E5761; white-space: nowrap; }
+.cf-note.low { transform: translate(-50%, 14px); color: #B4462B; font-weight: 700; font-family: "BIZ UDPGothic", sans-serif; }
+.cf-note.in { color: #2F5D8A; }
+.cf-zl { position: absolute; right: 16px; top: 70%; transform: translateY(-130%); font-size: 12.5px; color: #4E5761; }
+.cf-line.m { display: none; }
+.cf-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.cf-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 24px; max-width: 74%; }
+.cf-facts li { font-size: 13.5px; color: #4E5761; }
+.cf-facts b { display: block; font-size: 17px; color: #1C2228; }
+@media (prefers-reduced-motion: no-preference) {
+  .cf-chart svg { animation: cfdraw 1.6s cubic-bezier(.6,.1,.3,1) .2s both; }
+  .cf-dot, .cf-note, .cf-dip { animation: cffade .5s ease 1.4s both; }
+}
+@keyframes cfdraw { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes cffade { from { opacity: 0; } to { opacity: 1; } }
+
+/* 続く糸：7月のあと下へ曲がった線（左から82%）が、そのまま3つの理由をつなぐ */
+.th { position: relative; padding: 0 0 110px; }
+.th-line { position: absolute; left: 82%; top: 0; height: calc(100% - 250px); width: 3px; margin-left: -1.5px; background: #1C2228; }
+.th-wrap { position: relative; padding-top: 18px; }
+.th-wrap .sec-title { margin-top: 64px; }
+.th-lead { max-width: 36em; margin-top: 16px; color: #4E5761; }
+.th-list { margin-top: 48px; }
+.th-item { position: relative; display: grid; grid-template-columns: minmax(0, 560px); padding: 34px 0; border-top: 1px solid rgba(28,34,40,0.18); }
+.th-item:last-child { border-bottom: 1px solid rgba(28,34,40,0.18); }
+.th-n { display: block; font: 700 44px/1 "BIZ UDPGothic", sans-serif; color: #B4462B; }
+.th-item h3 { font-size: 22px; margin-top: 10px; }
+.th-item p { margin-top: 8px; color: #4E5761; }
+.th-node { position: absolute; top: 50%; left: 70%; transform: translateY(-50%); display: flex; align-items: center; gap: 0; margin: 0 !important; }
+.th-node i { position: absolute; left: 0; width: 17px; height: 17px; margin-left: -8.5px; border-radius: 50%; background: #F7F8F6; border: 3px solid #1C2228; transition: background .3s; }
+.th-item.on .th-node i { background: #B4462B; border-color: #B4462B; }
+.th-node .th-label { position: absolute; right: 22px; width: max-content; white-space: nowrap; font-size: 13px; color: #1C2228; background: #F7F8F6; padding: 2px 0 2px 8px; }
+.th-node .tag { display: inline-block; font: 700 12px/1.5 "BIZ UDPGothic", sans-serif; padding: 0 6px; margin-right: 4px; border: 1px solid currentColor; }
+.th-node .tag.in { color: #2F5D8A; } .th-node .tag.out { color: #B4462B; }
+.th-end { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 440px); gap: 40px; align-items: start; margin-top: 64px; }
+.th-end-lead { font: 700 20px/1.7 "BIZ UDPGothic", sans-serif; }
+.th-lp { margin-top: 18px; }
+.th-end .memo { position: relative; z-index: 1; }
+
+/* スマホ：線は小さく横に、糸は右端（24px）を下る */
+@media (max-width: 760px) {
+  .cf { min-height: 0; padding: 36px 0 0; }
+  .cf-chart { flex: none; height: 240px; min-height: 0; margin-top: 30px; }
+  .cf-note { font-size: 12px; }
+  .cf-note.in { transform: translate(-50%, -170%); }
+  .cf-zl { right: auto; left: 8px; transform: translateY(6px); }
+  .cf-line.d { display: none; } .cf-line.m { display: inline; }
+  .cf-facts { grid-template-columns: 1fr; max-width: none; padding-right: 44px; }
+  .cf-facts li { padding: 10px 0; border-bottom: 1px solid rgba(28,34,40,0.18); }
+  .th-line { left: 94%; }
+  .th-item { padding-right: 44px; }
+  .th-node { position: static; transform: none; margin-top: 12px !important; }
+  .th-node i { left: auto; right: -6px; margin: 0; }
+  .th-node .th-label { position: static; padding: 0; width: auto; white-space: normal; }
+  .th-end { grid-template-columns: 1fr; padding-right: 32px; }
+}
