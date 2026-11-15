@@ -21,6 +21,121 @@
 <meta name="twitter:card" content="summary_large_image">
 <!-- share:end -->
 <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+<style>
+/* 最初の画面：書いた記事そのものを見せる（案A） */
+.wfv { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 0 56px; align-items: start; padding: calc(var(--nav-h) + 56px) 34px 64px; border-bottom: 1px solid var(--line); }
+.wfv .crumb { font-family: var(--sans); font-size: 12px; letter-spacing: 0.2em; color: var(--ink-soft); text-decoration: none; }
+.wfv .en-label { margin-top: 26px; font-family: Georgia, serif; font-size: 12.5px; letter-spacing: 0.3em; color: var(--ink-soft); }
+.wfv h1 { font-weight: 500; font-size: clamp(24px, 2.6vw, 34px); line-height: 1.75; margin: 12px 0 18px; }
+.wfv .lede { font-size: 14.5px; max-width: 34em; color: var(--ink-soft); }
+.wfv .cta-row { margin-top: 26px; }
+.wfv .cta-row .btn { padding: 13px 30px; }
+.wfv .facts { padding-right: 0; }
+.wfv .anchors { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 26px; }
+.wfv .anchors a { font-family: var(--sans); font-size: 12px; letter-spacing: 0.2em; text-decoration: none; color: var(--ink-soft); border-bottom: 1px solid var(--line); padding-bottom: 2px; }
+.wfv .anchors a:hover { color: var(--ink); border-color: var(--ink); }
+
+/* 右：紙に見立てたサンプル記事 */
+.wp-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--ink); }
+.wp-cap { padding-bottom: 10px; font-family: var(--sans); font-size: 12px; letter-spacing: 0.12em; color: var(--ink-soft); }
+.wp-tabs { display: flex; }
+.wp-tabs button { min-height: 40px; padding: 8px 14px; background: transparent; border: 0; border-bottom: 3px solid transparent; font: 600 13px/1.2 var(--sans); color: var(--ink-soft); cursor: pointer; }
+.wp-tabs button:hover { color: var(--ink); }
+.wp-tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--ink); }
+.wp-tabs button:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
+.sheet { position: relative; margin-top: 18px; padding: 30px 34px 26px; background: #FFFFFF; border: 1px solid rgba(60, 63, 62, 0.14); box-shadow: 0 10px 28px rgba(60, 63, 62, 0.08); }
+.sheet .meta { display: flex; flex-wrap: wrap; gap: 4px 14px; font-family: var(--sans); font-size: 12px; color: var(--ink-soft); }
+.sheet .meta b { color: var(--ink); font-weight: 600; }
+.sheet h2.ttl { margin: 12px 0 14px; font-weight: 600; font-size: clamp(18px, 1.6vw, 21px); line-height: 1.65; letter-spacing: 0.02em; }
+.sheet .lead { position: relative; max-height: 5.4em; overflow: hidden; font-size: 14px; line-height: 1.8; }
+.sheet .lead::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1.8em; background: linear-gradient(rgba(255, 255, 255, 0), #FFFFFF); }
+.sheet .toc { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); }
+.sheet .toc p { font-family: var(--sans); font-size: 12px; letter-spacing: 0.1em; color: var(--ink-soft); }
+.sheet .toc ol { margin: 8px 0 0; padding: 0; list-style: none; counter-reset: h; }
+.sheet .toc li { counter-increment: h; display: grid; grid-template-columns: 2.2em minmax(0, 1fr); padding: 5px 0; font-size: 13.5px; line-height: 1.6; }
+.sheet .toc li::before { content: counter(h, decimal-leading-zero); font-family: Georgia, serif; color: var(--ink-soft); }
+.sheet .toc p.cont { position: relative; max-height: 9em; overflow: hidden; margin-top: 8px; font-family: var(--serif); font-size: 14px; letter-spacing: 0; line-height: 1.8; color: var(--ink); }
+.sheet .toc p.cont::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1.8em; background: linear-gradient(rgba(255, 255, 255, 0), #FFFFFF); }
+.sheet .read { display: inline-block; margin-top: 18px; font-family: var(--sans); font-size: 13px; font-weight: 600; letter-spacing: 0.08em; color: var(--ink); text-underline-offset: 4px; }
+.wp-note { margin-top: 12px; font-size: 12.5px; color: var(--ink-soft); }
+html.js .sheet[hidden] { display: none; }
+html.js .sheet:not([hidden]) { animation: wp-in 0.35s ease-out both; }
+@keyframes wp-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+/* JSが動かないとき：切り替えボタンを隠し、3本を順に並べる（JSがあるときは1本ずつ表示） */
+html:not(.js) .wp-tabs { display: none; }
+html:not(.js) .sheet + .sheet { margin-top: 14px; }
+
+@media (max-width: 900px) {
+  .wfv { grid-template-columns: 1fr; gap: 36px; padding: calc(var(--nav-h) + 26px) 22px 48px; }
+  .wfv .en-label { margin-top: 18px; }
+  .wfv h1 { font-size: 24px; margin: 10px 0 14px; }
+  .wfv .cta-row { margin-top: 20px; }
+  .wfv .cta-row .btn { flex: 1 1 140px; padding: 13px 10px; }
+  /* スマホ：記事が早く見えるよう、条件は罫線なしの1行ずつにし、ページ内リンクは省く */
+  .wfv .facts { gap: 2px 14px; margin-top: 14px; }
+  .wfv .facts span { border: 0; padding: 0; font-size: 11.5px; }
+  .wfv .anchors { display: none; }
+  .wp-head { flex-direction: column; align-items: stretch; }
+  .wp-cap { padding-bottom: 4px; }
+  .wp-tabs button { flex: 1; padding: 8px 4px; font-size: 12.5px; }
+  .sheet { padding: 22px 20px 20px; }
+  .sheet .toc li { font-size: 13px; }
+}
+@media (prefers-reduced-motion: reduce) { html.js .sheet:not([hidden]) { animation: none; } }
+
+/* 台本ページ：成果物の見本 */
+.wfv .proof-line { margin-top: 18px; padding-left: 12px; border-left: 3px solid var(--ink); font-size: 13.5px; line-height: 1.8; }
+.wfv .proof-line b { font-weight: 600; }
+.wfv .proof-line a { color: var(--ink-soft); text-underline-offset: 3px; }
+.wfv-r .wp-head { flex-direction: column; align-items: stretch; gap: 6px; }
+.wfv-r .wp-cap { padding-bottom: 0; }
+.wp-tabs { flex-wrap: wrap; }
+.wp-tabs button { padding: 8px 12px; }
+.sheet .kv { margin: 10px 0 0; padding: 0; list-style: none; }
+.sheet .kv li { display: grid; grid-template-columns: 4.5em minmax(0, 1fr); gap: 2px 14px; padding: 7px 0; border-bottom: 1px solid var(--line); font-size: 13.5px; line-height: 1.7; }
+.sheet .kv b { font-family: var(--sans); font-size: 12px; font-weight: 600; color: var(--ink-soft); padding-top: 2px; }
+.sheet .title-plan { margin-top: 10px; padding: 10px 12px; background: var(--bg-tile); font-size: 13px; line-height: 1.7; }
+.sheet .title-plan small { display: block; font-family: var(--sans); font-size: 11.5px; color: var(--ink-soft); }
+.sheet .scenes { margin: 10px 0 0; padding: 0; list-style: none; }
+.sheet .scenes li { display: grid; grid-template-columns: 3.6em minmax(0, 1fr); gap: 2px 12px; padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 13.5px; line-height: 1.7; }
+.sheet .scenes b { font-family: Georgia, serif; font-weight: 400; color: var(--ink-soft); }
+.sheet .scenes em { display: block; font-style: normal; font-family: var(--sans); font-size: 12px; color: var(--ink-soft); }
+.sheet .pnote { margin-top: 10px; font-family: var(--sans); font-size: 12px; color: var(--ink-soft); }
+.sheet .script { position: relative; max-height: 19em; overflow: hidden; margin-top: 10px; font-size: 14px; line-height: 1.85; }
+.sheet .script::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2.4em; background: linear-gradient(rgba(255, 255, 255, 0), #FFFFFF); }
+.sheet .script p { margin: 0 0 4px; }
+.sheet .script .sl { display: grid; grid-template-columns: 3.2em minmax(0, 1fr); gap: 0 10px; }
+.sheet .script .sl b { font-weight: 600; }
+.sheet .script .sl.voice span { color: var(--ink-soft); }
+.sheet .script .td { margin: 8px 0; padding: 6px 10px; background: var(--bg-tile); font-family: var(--sans); font-size: 12.5px; line-height: 1.7; }
+.sheet .legend { margin-top: 8px; font-family: var(--sans); font-size: 11.5px; color: var(--ink-soft); }
+.sheet table.cuts { width: 100%; margin-top: 10px; border-collapse: collapse; font-size: 13px; line-height: 1.65; }
+.sheet table.cuts th { white-space: nowrap; padding: 6px 8px 6px 0; border-bottom: 1px solid var(--ink); font-family: var(--sans); font-size: 11.5px; font-weight: 600; color: var(--ink-soft); text-align: left; }
+.sheet table.cuts td { padding: 7px 8px 7px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+.sheet table.cuts td:first-child { font-family: Georgia, serif; color: var(--ink-soft); white-space: nowrap; }
+.sheet table.cuts td:last-child { color: var(--ink-soft); font-size: 12.5px; }
+
+/* 書けるもの */
+.scope .cols2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 40px; margin-top: 8px; }
+.scope h4 { margin: 0 0 6px; font-family: var(--sans); font-size: 12.5px; letter-spacing: 0.12em; color: var(--ink-soft); font-weight: 600; }
+.scope ul.list { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--ink); }
+.scope ul.list li { display: grid; grid-template-columns: 1fr; gap: 0; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 14px; line-height: 1.7; }
+.scope ul.list b { font-weight: 600; }
+.scope ul.list span { color: var(--ink-soft); font-size: 13.5px; }
+.scope .reads { margin-top: 34px; }
+.scope .reads a { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 16px; align-items: baseline; padding: 14px 0; border-top: 1px solid var(--line); color: var(--ink); text-decoration: none; }
+.scope .reads a:last-child { border-bottom: 1px solid var(--line); }
+.scope .reads a:hover .t { text-decoration: underline; text-underline-offset: 4px; }
+.scope .reads .g { display: block; font-family: var(--sans); font-size: 11.5px; letter-spacing: 0.1em; color: var(--ink-soft); }
+.scope .reads .go { font-family: var(--sans); font-size: 12.5px; font-weight: 600; }
+@media (max-width: 900px) {
+  .wp-tabs button { flex: 0 0 auto; padding: 8px 10px; }
+  .scope .cols2 { grid-template-columns: 1fr; gap: 28px; }
+  .sheet table.cuts td:last-child { display: none; }
+  .sheet table.cuts th:last-child { display: none; }
+}
+</style>
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 <header class="gnav">
@@ -29,113 +144,63 @@
   <ul class="menu" id="menu"><li><a href="index.html">Home</a></li><li><a href="writer.html">Writer</a></li><li><a href="scenario.html" class="cur">Script</a></li><li><a href="lp.html">LP</a></li><li><a href="hp.html">HP</a></li><li><a href="web-design.html">Design</a></li><li><a href="video.html">Video</a></li><li><a href="ai.html">AI</a></li><li><a href="index.html#profile">Profile</a></li><li><a class="cta" href="index.html#contact">相談する</a></li></ul>
 </header>
 <main id="main">
-<section class="sub-hero"><div class="photo " data-name="img/top/tile-script.jpg"><img src="img/top/tile-script.jpg" srcset="img/top/tile-script-800.jpg 800w, img/top/tile-script.jpg 1536w" sizes="100vw" alt="窓辺の台本とペン" fetchpriority="high" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"></div></section>
-<section class="sub-title">
-  <a class="crumb" href="index.html">← HOME</a>
-  <div>
+<section class="wfv" id="top-sample" aria-labelledby="w-h1">
+  <div class="wfv-l">
+    <a class="crumb" href="index.html">← HOME</a>
     <div class="en-label">SCRIPT ／ 台本・シナリオ</div>
-    <h1 class="reveal"><span class="nb">動画の</span><em><span class="nb">台本・シナリオを</span></em><br /><span class="nb">書いています。</span></h1>
-    <p class="lede reveal"><span class="nb">YouTube朗読シナリオ、漫画動画、</span><span class="nb">ショートドラマ、解説動画の台本。</span><span class="nb">チャンネルのマニュアルや過去の台本の形式に合わせて、</span><span class="nb">プロットから本文まで担当します。</span></p>
-    <div class="cta-row reveal">
-      <a class="btn btn-primary" href="#scripts">台本のサンプルを見る</a>
-      <a class="btn btn-primary" href="#cases">制作事例を見る</a>
+    <h1 id="w-h1"><span class="nb">動画の台本を、</span><span class="nb">骨子から画像の指定まで</span><span class="nb">書いています。</span></h1>
+    <p class="lede"><span class="nb">YouTube朗読シナリオ・漫画動画・</span><span class="nb">ショートドラマ・解説動画。</span><span class="nb">骨子やプロットの段階から、</span><span class="nb">本文・ト書き・場面ごとの画像の指定まで、</span><span class="nb">チャンネルの形式に合わせてお受けします。</span></p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#contact">台本の相談をする</a>
+      <a class="btn btn-ghost" href="#scope">書けるものを見る</a>
     </div>
-    <div class="facts reveal">
+    <p class="proof-line"><b>実績</b>　YouTube解説動画のテスト台本が修正なしで承認され、本採用・継続納品。<a href="#cases">事例を見る</a></p>
+    <div class="facts">
       <span>ご連絡への返信 <b>24時間以内</b></span>
       <span>納品形式 <b>Googleドキュメント／Word</b></span>
       <span>対応ペース <b>週2〜3本が目安</b></span>
     </div>
-    <div class="anchors"><a href="#scripts">SAMPLE</a><a href="#cases">CASE</a><a href="#pricing">PRICE</a><a href="#flow">FLOW</a><a href="#faq">FAQ</a><a href="#contact">CONTACT</a></div>
+    <div class="anchors"><a href="#cases">CASE</a><a href="#scope">SCOPE</a><a href="#pricing">PRICE</a><a href="#flow">FLOW</a><a href="#faq">FAQ</a><a href="#contact">CONTACT</a></div>
   </div>
-</section>
-<section class="block" id="scripts">
-  <h2><span>台本のサンプル</span></h2>
-  <div class="body">
-<h3 class="headline reveal"><span class="nb">朗読と漫画動画、</span><span class="nb">2つの形式で</span><span class="nb">書いています。</span></h3>
-<p class="desc reveal">冒頭部分をこのページで読めます。続きは「全文を読む」からどうぞ。</p>
-
-    <div class="scripts stagger">
-      <div class="script-card reveal">
-        <div class="script-head">
-          <span class="genre">YouTube朗読シナリオ</span>
-          <h3>母のレシピノート</h3>
-          <span class="meta">約3,000字／一人称の語り・全6場</span>
-        </div>
-        <div class="xs-label">冒頭〜第1場（抜粋）</div>
-        <div class="xs" tabindex="0" aria-label="朗読シナリオの抜粋">
-<p class="ln say"><span class="who">兄</span><span class="txt">「この家、来月には売るから」</span></p>
-<p class="nar">母の四十九日の法要が終わった夜、兄はそう言って、実家の鍵を座卓に置いた。</p>
-<p class="nar">私が生まれてから十八年を過ごした家。</p>
-<p class="nar">母が最後の日まで台所に立っていた家。</p>
-<p class="nar">反論しようとした私に、兄は「お前は二十年も帰ってこなかっただろう」とだけ言って、背を向けた。</p>
-<p class="nar">その一言に、私は何も返せなかった。</p>
-<p class="nar">ところがその夜、台所の引き出しから一冊のノートが出てきた。</p>
-<p class="nar">表紙には、母の字で「おかず」とだけ書いてあった。</p>
-<p class="nar">ページをめくった私は、ある日付のところで手が止まった。</p>
-<p class="nar">そこには、私の知らなかった二十年分の母がいた。</p>
-<p class="xs-scene">第1場　実家の居間（十月・四十九日の夜）</p>
-<p class="nar">私は佐伯奈緒、四十一歳。</p>
-<p class="nar">東京の印刷会社で営業をしている。</p>
-<p class="nar">実家は、新潟の海沿いの小さな町にある。</p>
-<p class="nar">高校を出て東京の専門学校に入ってから、私はほとんど帰らなかった。</p>
-<p class="nar">最初は、仕事に慣れるまでと思っていた。</p>
-<p class="nar">それが三年になり、十年になり、気づけば母との連絡は、年に一度の年賀状と、たまの電話だけになっていた。</p>
-<p class="nar">母が倒れたと兄から連絡が来たのは、この夏のことだ。</p>
-<p class="nar">新幹線に飛び乗ったけれど、病院に着いたとき、母はもう目を開けなかった。</p>
-<p class="nar">そして今日、四十九日の法要が終わった。</p>
-<p class="nar">親戚が帰ったあとの居間で、兄の浩一が言った。</p>
-<p class="ln say"><span class="who">兄</span><span class="txt">「この家、来月には売るから。不動産屋にはもう話してある」</span></p>
-<p class="ln say"><span class="who">私</span><span class="txt">「来月？　ちょっと待ってよ。まだ荷物も片付いてないのに」</span></p>
-<p class="ln say"><span class="who">兄</span><span class="txt">「片付けは業者に頼む。お前が東京から通うわけにもいかないだろ」</span></p>
-<p class="nar">兄は四十五歳。</p>
-<p class="nar">地元で小さな定食屋をやっている。</p>
-<p class="nar">父が亡くなってからの十五年、母の通院に付き添ってきたのも、屋根の修理を手配してきたのも、全部兄だった。</p>
-<p class="nar">だから私には、強く言える立場がなかった。</p>
-<p class="ln say"><span class="who">私</span><span class="txt">「せめて、お母さんの物を一度見させて」</span></p>
-<p class="ln say"><span class="who">兄</span><span class="txt">「好きにしろ。ただ、売るのは決まりだからな」</span></p>
-<p class="nar">兄は座卓に鍵を置くと、そのまま店に戻っていった。</p>
-        </div>
-        <div class="script-foot"><a href="scripts/reading-recipe-notebook.html">全文を読む →</a></div>
-      </div>
-      <div class="script-card reveal">
-        <div class="script-head">
-          <span class="genre">漫画動画シナリオ（スカッと系）</span>
-          <h3>手柄泥棒の所長</h3>
-          <span class="meta">約2,900字／セリフ＋ト書き・全6場</span>
-        </div>
-        <div class="xs-label">冒頭〜第1場（抜粋）</div>
-        <div class="xs" tabindex="0" aria-label="漫画動画シナリオの抜粋">
-<p class="td">倉庫の事務所。黒川が、ラミネートされたチェック表を高く掲げている</p>
-<p class="ln say"><span class="who">黒川</span><span class="txt">「誤出荷ゼロ、三か月連続達成！　全部、俺が作ったこのチェック表のおかげだ」</span></p>
-<p class="ln voice"><span class="who">俺</span><span class="txt">（は？　それ、俺が作ったやつなんだけど）</span></p>
-<p class="nar">本社から来た新しい所長は、人の手柄を平気で自分のものにする男だった。</p>
-<p class="nar">そして本社の役員が視察に来る日、所長はとんでもないことを言い出した。</p>
-<p class="ln say"><span class="who">黒川</span><span class="txt">「誤出荷の原因は、パートの松田さんです。今月で契約を終わりにします」</span></p>
-<p class="xs-scene">第1場　倉庫の事務所（四月・朝礼）</p>
-<p class="td">四月の朝。千葉県の物流倉庫。事務所に出荷班の十人が集まっている</p>
-<p class="nar">俺は三浦陽太、二十八歳。</p>
-<p class="nar">この倉庫で、ネット通販の商品を出荷する班のリーダーをしている。</p>
-<p class="nar">去年の秋、うちの班は誤出荷が多いと本社から注意を受けた。</p>
-<p class="nar">そこで俺は、棚番号と商品コードを指差しで確かめるチェック表を作った。</p>
-<p class="nar">作った日付と作成者の名前は、共有フォルダのファイルにちゃんと残っている。</p>
-<p class="ln voice"><span class="who">俺</span><span class="txt">（こういうのは、記録に残しておかないとな）</span></p>
-<p class="nar">細かいことは、日報に写真つきで全部書く。俺の癖みたいなものだ。</p>
-<p class="nar">そのチェック表のおかげで、誤出荷は三か月連続でゼロになった。</p>
-<p class="nar">そして今日、本社から新しい所長が来た。</p>
-<p class="ln say"><span class="who">黒川</span><span class="txt">「今日から所長の黒川だ。本社では物流改善を担当してきた。よろしく」</span></p>
-<p class="td">黒川が、壁に貼ってあるチェック表を見つける</p>
-<p class="ln say"><span class="who">黒川</span><span class="txt">「お、これが噂のチェック表か。前の所長から話は聞いてる」</span></p>
-<p class="ln say"><span class="who">俺</span><span class="txt">「はい。去年の秋に、出荷班で…」</span></p>
-<p class="ln say"><span class="who">黒川</span><span class="txt">「本社への報告は俺がまとめておく。所長の仕事だからな」</span></p>
-<p class="ln voice"><span class="who">俺</span><span class="txt">（まあ、報告くらいは任せるか）</span></p>
-<p class="nar">このときの俺は、まだ何も分かっていなかった。</p>
-        </div>
-        <div class="script-foot"><a href="scripts/manga-credit-thief.html">全文を読む →</a></div>
-      </div>
+  <div class="wfv-r">
+    <div class="wp-head">
+      <p class="wp-cap">台本づくりの成果物（見本）</p>
+      <div class="wp-tabs" role="tablist" aria-label="成果物の種類"><button type="button" role="tab" id="wt-outline" aria-controls="ws-outline" aria-selected="true">骨子</button><button type="button" role="tab" id="wt-plot" aria-controls="ws-plot" aria-selected="false" tabindex="-1">プロット</button><button type="button" role="tab" id="wt-reading" aria-controls="ws-reading" aria-selected="false" tabindex="-1">本文（朗読）</button><button type="button" role="tab" id="wt-manga" aria-controls="ws-manga" aria-selected="false" tabindex="-1">セリフ＋ト書き</button><button type="button" role="tab" id="wt-images" aria-controls="ws-images" aria-selected="false" tabindex="-1">画像の指定</button></div>
     </div>
-  
+    <article class="sheet" role="tabpanel" id="ws-outline" aria-labelledby="wt-outline">
+      <p class="meta"><b>骨子</b><span>漫画動画の骨子（人物・設定・結末を1枚に）</span></p>
+      <h2 class="ttl">手柄泥棒の所長</h2>
+      <p class="title-plan"><small>タイトル案</small>倉庫の誤出荷をゼロにしたチェック表を、新任所長に「俺が作った」と横取りされた俺 →本社の視察当日、所長「ミスはパートのせいです」→俺「じゃあ、このメールは誰が送ったんですか？」</p><ul class="kv"><li><b>形式</b><span>YouTube漫画動画（スカッと系）／約2,900字・全6場</span></li><li><b>主人公</b><span>三浦陽太（28）物流倉庫の出荷班リーダー。何でも日報に写真つきで残す癖がある</span></li><li><b>相手</b><span>黒川修司（44）本社から来た新任の所長。人の手柄を自分のものにする</span></li><li><b>発端</b><span>主人公が作ったチェック表を、所長が「俺が作った」と社内報で発表する</span></li><li><b>山場</b><span>本社役員の視察の日、所長が誤出荷をパートの松田さんのせいにして契約を切ろうとする</span></li><li><b>決め手</b><span>ファイルの作成日の記録と、所長のメールを撮った日報。松田さんの証言</span></li><li><b>結末</b><span>所長は本社へ異動・懲戒。松田さんの契約は更新、主人公は改善チームを任される</span></li><li><b>伏線</b><span>第1場の「日報に写真つきで全部書く癖」を、第5場の反撃で回収する</span></li></ul>
+      <a class="read" href="scripts/manga-credit-thief.html">この台本を全文読む →</a>
+    </article>
+    <article class="sheet" role="tabpanel" id="ws-plot" aria-labelledby="wt-plot">
+      <p class="meta"><b>プロット</b><span>朗読シナリオのプロット（場ごとの流れ）</span></p>
+      <h2 class="ttl">母のレシピノート</h2>
+      <ol class="scenes"><li><b>第1場</b><span><em>実家の居間（十月・四十九日の夜）</em>兄が「来月には売る」と鍵を置く。二十年帰らなかった負い目で、私は言い返せない</span></li><li><b>第2場</b><span><em>実家の台所（同じ夜）</em>母の献立ノートを見つける。毎年の私の誕生日に「筑前煮　奈緒（味見）」</span></li><li><b>第3場</b><span><em>兄の定食屋「さえき」（翌日の昼）</em>兄は筑前煮のことを知っていた。厨房の壁に請求書の束</span></li><li><b>第4場</b><span><em>実家の台所（同じ日の夜）</em>ノートの最後に母の伝言。兄の店のために積み立てた通帳が見つかる</span></li><li><b>第5場</b><span><em>実家の居間（同じ夜）</em>兄が借金を打ち明ける。私は「私が借りる」と家を残すと決める</span></li><li><b>第6場</b><span><em>実家の台所（翌年・十一月十八日）</em>自分で作った筑前煮。ノートに二十年ぶりに私の名前が戻る</span></li></ol><p class="pnote">伏線と回収：筑前煮（第2場→第6場）／請求書の束（第3場→第4・5場）</p>
+      <a class="read" href="scripts/reading-recipe-notebook.html">この台本を全文読む →</a>
+    </article>
+    <article class="sheet" role="tabpanel" id="ws-reading" aria-labelledby="wt-reading">
+      <p class="meta"><b>本文（朗読）</b><span>朗読シナリオの本文（一人称の語り・冒頭）</span></p>
+      <h2 class="ttl">母のレシピノート</h2>
+      <div class="script"><p class="sl say"><b>兄</b><span>「この家、来月には売るから」</span></p><p>母の四十九日の法要が終わった夜、兄はそう言って、実家の鍵を座卓に置いた。</p><p>私が生まれてから十八年を過ごした家。</p><p>母が最後の日まで台所に立っていた家。</p><p>反論しようとした私に、兄は「お前は二十年も帰ってこなかっただろう」とだけ言って、背を向けた。</p><p>その一言に、私は何も返せなかった。</p><p>ところがその夜、台所の引き出しから一冊のノートが出てきた。</p><p>表紙には、母の字で「おかず」とだけ書いてあった。</p><p>ページをめくった私は、ある日付のところで手が止まった。</p><p>そこには、私の知らなかった二十年分の母がいた。</p></div>
+      <a class="read" href="scripts/reading-recipe-notebook.html">この台本を全文読む →</a>
+    </article>
+    <article class="sheet" role="tabpanel" id="ws-manga" aria-labelledby="wt-manga">
+      <p class="meta"><b>セリフ＋ト書き</b><span>漫画動画のセリフ＋ト書き（冒頭）</span></p>
+      <h2 class="ttl">手柄泥棒の所長</h2>
+      <div class="script"><p class="td">倉庫の事務所。黒川が、ラミネートされたチェック表を高く掲げている</p><p class="sl say"><b>黒川</b><span>「誤出荷ゼロ、三か月連続達成！　全部、俺が作ったこのチェック表のおかげだ」</span></p><p class="sl voice"><b>俺</b><span>（は？　それ、俺が作ったやつなんだけど）</span></p><p>本社から来た新しい所長は、人の手柄を平気で自分のものにする男だった。</p><p>そして本社の役員が視察に来る日、所長はとんでもないことを言い出した。</p><p class="sl say"><b>黒川</b><span>「誤出荷の原因は、パートの松田さんです。今月で契約を終わりにします」</span></p></div><p class="legend">グレーの帯＝ト書き（場面・動作）／名前つきの行＝セリフ／（ ）＝心の声</p>
+      <a class="read" href="scripts/manga-credit-thief.html">この台本を全文読む →</a>
+    </article>
+    <article class="sheet" role="tabpanel" id="ws-images" aria-labelledby="wt-images">
+      <p class="meta"><b>画像の指定</b><span>画像の指定（場面ごとに使う画像を決める・冒頭〜第2場）</span></p>
+      <h2 class="ttl">手柄泥棒の所長</h2>
+      <table class="cuts"><thead><tr><th>カット</th><th>画像（場所・人物・表情）</th><th>合わせるセリフ・語り</th></tr></thead><tbody><tr><td>01</td><td>倉庫の事務所。チェック表を高く掲げる黒川（得意げな顔）</td><td>黒川「誤出荷ゼロ、三か月連続達成！　全部、俺が作ったこのチェック表のおかげだ」</td></tr><tr><td>02</td><td>三浦の顔のアップ（あぜんとした表情）</td><td>俺（は？　それ、俺が作ったやつなんだけど）</td></tr><tr><td>03</td><td>本社役員の前で松田さんを指さす黒川。うつむく松田さん</td><td>黒川「誤出荷の原因は、パートの松田さんです。今月で契約を終わりにします」</td></tr><tr><td>04</td><td>四月の朝の倉庫。事務所に並ぶ出荷班の十人</td><td>俺は三浦陽太、二十八歳。</td></tr><tr><td>05</td><td>パソコンの画面。共有フォルダのファイル情報（作成者：三浦）</td><td>作った日付と作成者の名前は、共有フォルダのファイルにちゃんと残っている。</td></tr><tr><td>06</td><td>休憩室。スマホの社内報を見せる松田さん</td><td>松田「三浦くん、これ見た？　本社の社内報」</td></tr></tbody></table>
+      <a class="read" href="scripts/manga-credit-thief.html">この台本を全文読む →</a>
+    </article>
+    <p class="wp-note">見本は、自主制作の台本サンプル2本（朗読・漫画動画）から作っています。実在の案件・人物とは関係ありません。</p>
   </div>
 </section>
+
 <section class="block tint" id="cases">
   <h2><span>制作事例</span></h2>
   <div class="body">
@@ -180,6 +245,41 @@
     </div>
 
   
+  </div>
+</section>
+
+<section class="block scope" id="scope">
+  <h2><span>書けるもの</span></h2>
+  <div class="body">
+    <h3 class="headline reveal"><span class="nb">形式も工程も、</span><span class="nb">チャンネルに合わせて。</span></h3>
+    <p class="desc reveal">台本だけでなく、その前の骨子・プロットや、動画にするための指定まで、必要なところからお受けします。チャンネルのマニュアルや過去の台本があれば、先に読み込んで形式をそろえます。</p>
+    <div class="cols2 reveal">
+      <div>
+        <h4>形式</h4>
+        <ul class="list">
+          <li><b>YouTube朗読シナリオ</b><span>一人称の語りで進む家族もの・人間ドラマ</span></li>
+          <li><b>漫画動画</b><span>セリフとト書きで進むスカッと系など</span></li>
+          <li><b>ショートドラマ</b><span>短い尺の脚本（トライアルから契約の実績あり）</span></li>
+          <li><b>解説動画</b><span>資格試験対策などの専門分野（本採用の実績あり）</span></li>
+        </ul>
+      </div>
+      <div>
+        <h4>工程・お渡しするもの</h4>
+        <ul class="list">
+          <li><b>タイトル・サムネイル案</b><span>動画の入口になる言葉の案</span></li>
+          <li><b>骨子</b><span>人物・設定・山場・結末を1枚に</span></li>
+          <li><b>プロット</b><span>場ごとの流れと、伏線・回収の位置</span></li>
+          <li><b>本文</b><span>語り・セリフ。耳で聞いて伝わる言葉で</span></li>
+          <li><b>ト書き</b><span>場面・動作の指示。漫画や映像にしやすく</span></li>
+          <li><b>画像の指定</b><span>場面ごとに使う画像（場所・人物・表情）</span></li>
+          <li><b>形式の統一</b><span>マニュアルに合わせた表記・記号・清書</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="reads reveal">
+      <a href="scripts/reading-recipe-notebook.html"><span><span class="g">YouTube朗読シナリオ／約3,000字・全6場</span><span class="t">母のレシピノート</span></span><span class="go">全文を読む →</span></a>
+      <a href="scripts/manga-credit-thief.html"><span><span class="g">漫画動画シナリオ／約2,900字・全6場</span><span class="t">手柄泥棒の所長</span></span><span class="go">全文を読む →</span></a>
+    </div>
   </div>
 </section>
 <section class="block" id="promises">
@@ -415,6 +515,33 @@
   var base = subj.value;
   function sync() { subj.value = base + "（" + sel.value + "）"; }
   sel.addEventListener("change", sync); sync();
+})();
+</script>
+<script>
+(function () {
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.wp-tabs [role="tab"]'));
+  if (!tabs.length) return;
+  function pick(t, focus) {
+    tabs.forEach(function (b) {
+      var on = b === t;
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+      b.tabIndex = on ? 0 : -1;
+      document.getElementById(b.getAttribute('aria-controls')).hidden = !on;
+    });
+    if (focus) t.focus();
+  }
+  pick(tabs[0], false);
+  tabs.forEach(function (b, i) {
+    b.addEventListener('click', function () { pick(b, false); });
+    b.addEventListener('keydown', function (e) {
+      var n = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (e.key === 'Home') { e.preventDefault(); pick(tabs[0], true); return; }
+      if (e.key === 'End') { e.preventDefault(); pick(tabs[tabs.length - 1], true); return; }
+      if (!n) return;
+      e.preventDefault();
+      pick(tabs[(i + n + tabs.length) % tabs.length], true);
+    });
+  });
 })();
 </script>
 </body>
