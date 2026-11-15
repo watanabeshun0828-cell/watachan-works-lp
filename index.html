@@ -52,6 +52,8 @@
 .tfv .cta-row { margin-top: 26px; }
 .tfv .cta-row .btn { padding: 13px 30px; }
 .tfv .facts { padding-right: 0; }
+/* 幅の広い画面でも4つの入口が最初の画面に収まるよう、右の列の幅に上限を付ける */
+.tfv-r { width: 100%; max-width: 740px; justify-self: end; }
 .works4 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; margin: 0; padding: 0; list-style: none; }
 .works4 a { display: block; color: var(--ink); text-decoration: none; }
 .works4 .shot { display: block; aspect-ratio: 960 / 645; overflow: hidden; background: var(--bg-tile); border: 1px solid rgba(60, 63, 62, 0.12); }
@@ -123,10 +125,10 @@
   </div>
   <div class="tfv-r">
     <ul class="works4" aria-label="お受けしている仕事">
-      <li><a href="writer.html"><span class="shot"><img src="img/top/real-writer.jpg" alt="SEO記事のサンプルページ（副業の選び方の記事）" width="960" height="645" fetchpriority="high"></span><span class="w-name">記事</span><span class="w-note"><span>SEO記事・コラム・体験談エッセイ</span><span>サンプル8本</span></span></a></li>
-      <li><a href="scenario.html"><span class="shot"><img src="img/top/real-script.jpg" alt="台本のサンプルページ（朗読シナリオ「母のレシピノート」）" width="960" height="645" fetchpriority="high"></span><span class="w-name">台本・シナリオ</span><span class="w-note"><span>YouTube朗読・漫画動画の台本</span><span>サンプル2本</span></span></a></li>
-      <li><a href="lp.html"><span class="shot"><img src="samples/img/lp-bakery.jpg" alt="LPのサンプル（パン屋の予約LP）" width="960" height="645" loading="lazy"></span><span class="w-name">LP</span><span class="w-note"><span>構成・原稿・ページ制作</span><span>サンプル6点</span></span></a></li>
-      <li><a href="hp.html"><span class="shot"><img src="img/top/real-hp.jpg" alt="ホームページのサンプル（美容サロンHANA）" width="960" height="645" loading="lazy"></span><span class="w-name">ホームページ</span><span class="w-note"><span>お店・事業の数ページのサイト</span><span>サンプル4点</span></span></a></li>
+      <li><a href="writer.html"><span class="shot"><img src="img/top/real-writer.jpg" srcset="img/top/real-writer-480.jpg 480w, img/top/real-writer.jpg 960w" sizes="(max-width: 900px) 46vw, 360px" alt="SEO記事のサンプルページ（副業の選び方の記事）" width="960" height="645" fetchpriority="high"></span><span class="w-name">記事</span><span class="w-note"><span>SEO記事・コラム・体験談エッセイ</span><span>サンプル8本</span></span></a></li>
+      <li><a href="scenario.html"><span class="shot"><img src="img/top/real-script.jpg" srcset="img/top/real-script-480.jpg 480w, img/top/real-script.jpg 960w" sizes="(max-width: 900px) 46vw, 360px" alt="台本のサンプルページ（朗読シナリオ「母のレシピノート」）" width="960" height="645" fetchpriority="high"></span><span class="w-name">台本・シナリオ</span><span class="w-note"><span>YouTube朗読・漫画動画の台本</span><span>サンプル2本</span></span></a></li>
+      <li><a href="lp.html"><span class="shot"><img src="img/top/real-lp.jpg" srcset="img/top/real-lp-480.jpg 480w, img/top/real-lp.jpg 960w" sizes="(max-width: 900px) 46vw, 360px" alt="LPのサンプル（パン屋の予約LP）" width="960" height="645" loading="lazy"></span><span class="w-name">LP</span><span class="w-note"><span>構成・原稿・ページ制作</span><span>サンプル6点</span></span></a></li>
+      <li><a href="hp.html"><span class="shot"><img src="img/top/real-hp.jpg" srcset="img/top/real-hp-480.jpg 480w, img/top/real-hp.jpg 960w" sizes="(max-width: 900px) 46vw, 360px" alt="ホームページのサンプル（美容サロンHANA）" width="960" height="645" loading="lazy"></span><span class="w-name">ホームページ</span><span class="w-note"><span>お店・事業の数ページのサイト</span><span>サンプル4点</span></span></a></li>
     </ul>
   </div>
 </section>
