@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>どうぶつパン 予約BOX｜petite douceur（制作サンプル・渡邊駿）</title>
-<meta name="description" content="誕生日会やおやつの時間に。どうぶつパンを好きな組み合わせで6個・12個の箱にしてご用意する、予約BOXのLP（架空の店舗の制作サンプル）。">
+<meta name="description" content="どうぶつパンを押して箱に詰めると、数と金額がその場で分かる、予約BOXのLP（架空の店舗の制作サンプル）。">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%227%22 fill=%22%23333%22/%3E%3C/svg%3E">
 <!-- 架空のお店のサンプルのため、検索結果には出さない設定にしています（実際の納品では外します） -->
 <meta name="robots" content="noindex">
@@ -12,7 +12,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="渡邊駿の制作サンプル">
 <meta property="og:title" content="どうぶつパン 予約BOX｜petite douceur（制作サンプル・渡邊駿）">
-<meta property="og:description" content="誕生日会やおやつの時間に。どうぶつパンを好きな組み合わせで6個・12個の箱にしてご用意する、予約BOXのLP（架空の店舗の制作サンプル）。">
+<meta property="og:description" content="どうぶつパンを押して箱に詰めると、数と金額がその場で分かる、予約BOXのLP（架空の店舗の制作サンプル）。">
 <meta property="og:url" content="https://watanabeshun0828-cell.github.io/watachan-works-lp/samples/bakery.html">
 <meta property="og:image" content="https://watanabeshun0828-cell.github.io/watachan-works-lp/samples/img/og-bakery.jpg">
 <meta property="og:image:width" content="1200">
@@ -20,15 +20,16 @@
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
 <!--
-  2026-11-09 作り直し（案3「予約の注文票」）。同じお店のHP（hp-samples/petite-douceur）と配色・文字・写真をそろえた。
-  参照：プロンプトライブラリ/Web・バナー制作ナレッジ/ 00・06・09・10（D10-B 一段階ずつ進む／D08-C 紙のグラフィック）・12（PT03・MO10）
-  - 角丸の囲み・丸いボタン・丸ゴシックは使わない。架空のお客様の声は外した（09 C07）
-  - 組み合わせの選択・合計・金額・締め切りの表示はJSで補助。JSなしでも数の入力欄と、電話・フォームでの予約方法は読める
+  2026-11-15 作り直し（案A「箱に詰める」）。生成元：HP制作/lp_bakery.py ＋ bakery_lp_top.py（土台は lp_bakery_base.html）
+  - 最初の画面で、どうぶつパンを押して箱（6マス・12マス）に詰める。数・金額・おまかせはJSで表示
+  - JSが動かないときは、箱を詰め合わせの例として見せ、電話・予約フォームの案内を出す
   - 予約は送信しない（サンプル）。押したときは「送信されない」ことをはっきり表示する（09 D07）
-  前の版：LP旧版/lp_bakery_20261109_変更前/
+  - 角丸の囲み・丸いボタン・丸ゴシックは使わない。架空のお客様の声は入れない（09 C07）
+  前の版：LP旧版/bakery-lp_20261115_変更前/（2026-11-09の注文票の版）
 -->
+<script>document.documentElement.classList.add('js');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700&amp;display=swap&amp;text=%2C./0123456789BOXcdeioprtu%E3%80%81%E3%80%82%E3%81%82%E3%81%84%E3%81%86%E3%81%8A%E3%81%8B%E3%81%8D%E3%81%8F%E3%81%91%E3%81%93%E3%81%94%E3%81%95%E3%81%9B%E3%81%9F%E3%81%A1%E3%81%A4%E3%81%A7%E3%81%A9%E3%81%AA%E3%81%AB%E3%81%AD%E3%81%AE%E3%81%AF%E3%81%B2%E3%81%B6%E3%81%B9%E3%81%BE%E3%82%81%E3%82%82%E3%82%84%E3%82%88%E3%82%89%E3%82%8A%E3%82%8B%E3%82%8C%E3%82%92%E3%82%93%E3%82%A4%E3%82%AB%E3%82%B3%E3%82%B5%E3%82%B9%E3%82%BA%E3%82%BF%E3%83%81%E3%83%86%E3%83%89%E3%83%91%E3%83%96%E3%83%A1%E3%83%A7%E3%83%AB%E3%83%AD%E3%83%B3%E3%83%BC%E4%BA%88%E4%BB%98%E4%BC%9A%E5%80%8B%E5%85%A5%E5%86%85%E5%86%86%E5%8F%96%E5%8F%97%E5%95%8F%E5%A0%B1%E5%AD%90%E5%AE%B9%E5%B0%8F%E5%BA%97%E6%83%85%E6%89%8B%E6%8F%8F%E6%96%87%E6%97%A5%E6%9D%A5%E6%B3%A8%E7%94%9F%E7%A5%A8%E7%A8%8E%E7%B4%84%E8%A1%A8%E8%A8%88%E8%AA%95%E8%B3%AA%E8%BE%BC%E9%9B%86%E9%A3%9F%EF%BC%88%EF%BC%89" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700&amp;display=swap&amp;text=%2C./0123456789BOXcdeioprtu%E3%80%81%E3%80%82%E3%81%82%E3%81%84%E3%81%86%E3%81%8A%E3%81%8B%E3%81%8D%E3%81%8F%E3%81%91%E3%81%93%E3%81%94%E3%81%95%E3%81%9B%E3%81%9F%E3%81%A1%E3%81%A4%E3%81%A7%E3%81%A9%E3%81%AA%E3%81%AB%E3%81%AD%E3%81%AE%E3%81%AF%E3%81%B2%E3%81%B6%E3%81%B9%E3%81%BE%E3%82%81%E3%82%82%E3%82%84%E3%82%88%E3%82%89%E3%82%8A%E3%82%8B%E3%82%8C%E3%82%92%E3%82%93%E3%82%A4%E3%82%AB%E3%82%B3%E3%82%B5%E3%82%B9%E3%82%BA%E3%82%BF%E3%83%81%E3%83%86%E3%83%89%E3%83%91%E3%83%96%E3%83%A1%E3%83%A7%E3%83%AB%E3%83%AD%E3%83%B3%E3%83%BC%E4%BA%88%E4%BB%98%E4%BC%9A%E5%80%8B%E5%85%A5%E5%86%85%E5%86%86%E5%8F%96%E5%8F%97%E5%95%8F%E5%A0%B1%E5%AD%90%E5%AE%B9%E5%B0%8F%E5%BA%97%E6%83%85%E6%89%8B%E6%8F%8F%E6%96%87%E6%97%A5%E6%9D%A5%E6%B3%A8%E7%94%9F%E7%A5%A8%E7%A8%8E%E7%B4%84%E8%A1%A8%E8%A8%88%E8%AA%95%E8%B3%AA%E8%BE%BC%E9%9B%86%E9%A3%9F%EF%BC%88%EF%BC%89"></noscript>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700&amp;display=swap&amp;text=%2C.%2F0123456789BOXcdeioprtu%E3%80%81%E3%80%82%E3%81%82%E3%81%84%E3%81%86%E3%81%8A%E3%81%8B%E3%81%8D%E3%81%8F%E3%81%91%E3%81%93%E3%81%94%E3%81%95%E3%81%98%E3%81%99%E3%81%9B%E3%81%9F%E3%81%A1%E3%81%A3%E3%81%A4%E3%81%A7%E3%81%A8%E3%81%A9%E3%81%AA%E3%81%AB%E3%81%AD%E3%81%AE%E3%81%AF%E3%81%B1%E3%81%B2%E3%81%B3%E3%81%B6%E3%81%B8%E3%81%B9%E3%81%BE%E3%82%81%E3%82%82%E3%82%84%E3%82%87%E3%82%88%E3%82%89%E3%82%8A%E3%82%8B%E3%82%8C%E3%82%92%E3%82%93%E3%82%A4%E3%82%AB%E3%82%B3%E3%82%B5%E3%82%B9%E3%82%BA%E3%82%BF%E3%83%81%E3%83%86%E3%83%89%E3%83%90%E3%83%91%E3%83%96%E3%83%A1%E3%83%A7%E3%83%A9%E3%83%AB%E3%83%AD%E3%83%B3%E3%83%BC%E4%B8%AD%E4%BA%88%E4%BB%98%E4%BC%9A%E5%80%8B%E5%85%A5%E5%86%85%E5%86%86%E5%8F%96%E5%8F%97%E5%95%8F%E5%A0%B1%E5%A5%BD%E5%AD%90%E5%AE%B9%E5%B0%8F%E5%BA%97%E6%83%85%E6%89%8B%E6%8F%8F%E6%96%87%E6%97%A5%E6%9D%A5%E6%B3%A8%E7%94%9F%E7%A5%A8%E7%A8%8E%E7%AE%B1%E7%B4%84%E8%A1%A8%E8%A8%88%E8%A9%B0%E8%AA%95%E8%B3%AA%E8%BA%AB%E8%BE%BC%E9%81%B8%E9%9B%86%E9%A3%9F%EF%BC%88%EF%BC%89" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700&amp;display=swap&amp;text=%2C.%2F0123456789BOXcdeioprtu%E3%80%81%E3%80%82%E3%81%82%E3%81%84%E3%81%86%E3%81%8A%E3%81%8B%E3%81%8D%E3%81%8F%E3%81%91%E3%81%93%E3%81%94%E3%81%95%E3%81%98%E3%81%99%E3%81%9B%E3%81%9F%E3%81%A1%E3%81%A3%E3%81%A4%E3%81%A7%E3%81%A8%E3%81%A9%E3%81%AA%E3%81%AB%E3%81%AD%E3%81%AE%E3%81%AF%E3%81%B1%E3%81%B2%E3%81%B3%E3%81%B6%E3%81%B8%E3%81%B9%E3%81%BE%E3%82%81%E3%82%82%E3%82%84%E3%82%87%E3%82%88%E3%82%89%E3%82%8A%E3%82%8B%E3%82%8C%E3%82%92%E3%82%93%E3%82%A4%E3%82%AB%E3%82%B3%E3%82%B5%E3%82%B9%E3%82%BA%E3%82%BF%E3%83%81%E3%83%86%E3%83%89%E3%83%90%E3%83%91%E3%83%96%E3%83%A1%E3%83%A7%E3%83%A9%E3%83%AB%E3%83%AD%E3%83%B3%E3%83%BC%E4%B8%AD%E4%BA%88%E4%BB%98%E4%BC%9A%E5%80%8B%E5%85%A5%E5%86%85%E5%86%86%E5%8F%96%E5%8F%97%E5%95%8F%E5%A0%B1%E5%A5%BD%E5%AD%90%E5%AE%B9%E5%B0%8F%E5%BA%97%E6%83%85%E6%89%8B%E6%8F%8F%E6%96%87%E6%97%A5%E6%9D%A5%E6%B3%A8%E7%94%9F%E7%A5%A8%E7%A8%8E%E7%AE%B1%E7%B4%84%E8%A1%A8%E8%A8%88%E8%A9%B0%E8%AA%95%E8%B3%AA%E8%BA%AB%E8%BE%BC%E9%81%B8%E9%9B%86%E9%A3%9F%EF%BC%88%EF%BC%89"></noscript>
 <style>
 :root {
   --paper: #FBF7EF; --sheet: #FFFDF8; --ink: #22201C; --soft: #5A544B; --rule: rgba(34, 32, 28, 0.22);
@@ -223,46 +224,148 @@ footer p { margin-top: 10px; opacity: 0.85; max-width: 52em; }
   body { padding-bottom: 72px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .dock { transition: none; } }
+
+/* 最初の画面：箱に詰める */
+.box-fv { padding: 52px 0 64px; border-bottom: 1px solid var(--rule); }
+.box-fv .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 500px); gap: 0 60px; align-items: start; }
+.bf-l, .bf-r { display: flex; flex-direction: column; gap: 26px; min-width: 0; }
+.bf-head h1 { font-size: clamp(34px, 4.6vw, 56px); line-height: 1.25; margin: 10px 0 16px; }
+.bf-lede { max-width: 29em; color: var(--soft); }
+.picks { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.pick { position: relative; display: flex; flex-direction: column; align-items: flex-start; padding: 0 0 8px; background: none; border: 0; border-bottom: 1px solid var(--rule); text-align: left; font: inherit; color: inherit; cursor: pointer; }
+.pick img { width: 100%; aspect-ratio: 1; object-fit: cover; border: 1px solid var(--rule); transition: transform 0.15s ease; }
+.pick:hover img { transform: translateY(-3px); }
+.pick .pn { margin-top: 8px; font: 700 18px/1.3 var(--serif); }
+.pick .pd { font-size: 12.5px; color: var(--soft); }
+.pick .pc { position: absolute; top: 6px; right: 6px; min-width: 30px; height: 30px; padding: 0 6px; display: flex; align-items: center; justify-content: center; background: var(--ink); color: var(--paper); font: 700 16px/1 var(--serif); }
+.pick .pc[data-v="0"] { display: none; }
+.pick[aria-disabled="true"] img { opacity: 0.5; }
+.pick[aria-disabled="true"]:hover img { transform: none; }
+.picks-hint { margin-top: 12px; font-size: 13.5px; color: var(--soft); }
+.bf-sizes { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--ink); background: var(--sheet); }
+.bf-sizes label { position: relative; display: flex; justify-content: space-between; align-items: baseline; gap: 8px; padding: 11px 16px; cursor: pointer; }
+.bf-sizes label + label { border-left: 1px solid var(--ink); }
+.bf-sizes input { position: absolute; opacity: 0; pointer-events: none; }
+.bf-sizes b { font-size: 15px; }
+.bf-sizes span { font: 700 19px/1 var(--serif); white-space: nowrap; }
+.bf-sizes small { font: 400 11.5px var(--sans); }
+.bf-sizes label:has(input:checked) { background: var(--ink); color: var(--paper); }
+.bf-sizes label:has(input:focus-visible) { outline: 2px solid var(--ink); outline-offset: 3px; }
+/* 箱（上から見たクラフトの箱） */
+.box { position: relative; padding: 16px; background: #D7B98B; border: 1px solid #8A6942; box-shadow: inset 0 0 0 5px #CDAC7C; }
+.box-label { position: absolute; top: -11px; left: 22px; padding: 0 10px; background: #D7B98B; color: #4A3423; font: 600 13px/22px var(--serif); letter-spacing: 0.06em; }
+.slots { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; padding: 9px; background: #C3A06F; }
+.box[data-n="12"] .slots { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 7px; padding: 7px; }
+.slot { position: relative; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; padding: 0; background: #F3E6CC; border: 1px dashed rgba(58, 42, 30, 0.38); color: rgba(58, 42, 30, 0.42); font: 600 15px/1 var(--serif); overflow: hidden; }
+.slot.full { border: 1px solid rgba(58, 42, 30, 0.5); cursor: pointer; }
+button.slot { font: 600 15px/1 var(--serif); }
+.slot img { width: 100%; height: 100%; object-fit: cover; }
+.slot.full::after { content: "出す"; position: absolute; left: 0; right: 0; bottom: 0; padding: 4px 0; background: rgba(34, 32, 28, 0.78); color: #fff; font: 700 12px/1.2 var(--sans); text-align: center; opacity: 0; transition: opacity 0.15s; }
+.slot.full:hover::after, .slot.full:focus-visible::after { opacity: 1; }
+.slot.pop img { animation: pop 0.26s ease-out; }
+@keyframes pop { from { transform: scale(0.45); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.box-card { position: absolute; right: -16px; bottom: -20px; z-index: 2; padding: 9px 14px; background: var(--sheet); border: 1px solid var(--rule); box-shadow: 0 4px 12px rgba(34, 32, 28, 0.1); transform: rotate(4deg); font: 600 13px/1.55 var(--serif); }
+.oma-note { display: none; position: absolute; inset: 16px; z-index: 1; align-items: center; justify-content: center; text-align: center; padding: 20px; background: rgba(243, 230, 204, 0.9); font: 700 19px/1.6 var(--serif); }
+.box.oma .oma-note { display: flex; }
+.box-ex { display: none; font-size: 13px; color: var(--soft); margin-top: 0; max-width: 30em; }
+.bf-tally { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; padding-top: 8px; }
+.bf-tally #tally { font: 700 28px/1.2 var(--serif); }
+.bf-tally .msg { margin: 0; }
+.bf-price { margin-left: auto; font: 700 20px/1.2 var(--serif); }
+.bf-price small { font: 400 12px var(--sans); }
+.bf-act { display: flex; flex-wrap: wrap; gap: 12px 22px; align-items: center; margin-top: -10px; }
+.tline { padding: 0; background: none; border: 0; font: inherit; font-size: 14.5px; font-weight: 700; color: inherit; text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px; cursor: pointer; }
+.bf-foot .fv-note { margin-top: -12px; font-size: 13px; color: var(--soft); }
+.bf-foot { display: flex; flex-direction: column; gap: 22px; }
+/* JSが動かないとき：箱は詰め合わせの例として見せる */
+html:not(.js) .pick { pointer-events: none; }
+html:not(.js) .pick .pc, html:not(.js) .picks-hint, html:not(.js) .bf-tally, html:not(.js) .tline { display: none; }
+html:not(.js) .box-ex { display: block; }
+@media (max-width: 860px) {
+  .box-fv { padding: 22px 0 40px; }
+  .box-fv .wrap { display: flex; flex-direction: column; gap: 20px; }
+  .bf-l, .bf-r { display: contents; }
+  .bf-head { order: 1; } .bf-box { order: 2; } .bf-picks { order: 3; } .bf-sizes { order: 4; } .bf-foot { order: 5; } .box-ex { order: 2; }
+  .bf-head h1 { font-size: 30px; margin: 6px 0 8px; }
+  .bf-lede { font-size: 15px; line-height: 1.75; }
+  .bf-lede .sp-hide { display: none; }
+  .bf-box { margin-right: 6px; }
+  .box { padding: 12px; }
+  .box-label { left: 14px; font-size: 12px; }
+  .slots { gap: 6px; padding: 6px; }
+  .box[data-n="12"] .slots { gap: 5px; padding: 5px; }
+  .box-card { right: -8px; bottom: -16px; padding: 6px 10px; font-size: 11.5px; }
+  .oma-note { inset: 12px; font-size: 16px; }
+  .picks { gap: 8px; }
+  .pick .pd { display: none; }
+  .pick .pn { font-size: 15px; margin-top: 6px; }
+  .pick .pc { top: 4px; right: 4px; min-width: 24px; height: 24px; font-size: 14px; }
+  .picks-hint { margin-top: 8px; font-size: 13px; }
+  .bf-sizes label { flex-direction: column; gap: 4px; padding: 10px 12px; }
+  .bf-act .btn { flex: 1 1 100%; }
+  .bf-foot .fv-note { margin-top: -6px; }
+}
+@media (prefers-reduced-motion: reduce) { .slot.pop img { animation: none; } .pick img { transition: none; } }
+
+/* 予約の段：受け取り日と中身の確認 */
+.step[hidden] { display: none; }
+.mix-line { font-weight: 700; }
+.mix-imgs { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 12px; }
+.mix-imgs img { width: 44px; height: 44px; object-fit: cover; border: 1px solid var(--rule); }
 </style>
 </head>
 <body>
 <div class="sample-strip">SAMPLE LP ― 架空の店舗を想定した、渡邊駿の自主制作サンプルです。<a href="index.html">← サンプル集へ</a><a href="../index.html?type=LP%E5%88%B6%E4%BD%9C&sample=petite%20douceur%E3%81%AELP#contact">このサンプルを参考に相談する</a></div>
 <header class="top"><div class="wrap">
   <a class="brand" href="../hp-samples/petite-douceur/index.html"><b>petite douceur</b><small>焼き菓子とパンの店</small></a>
-  <a class="btn" href="#order">予約する</a>
+  <a class="btn" href="#fill">予約する</a>
 </div></header>
 
 <main>
-<section class="fv" aria-labelledby="fv-title">
-  <picture><img src="img/lp-animals.jpg" width="1600" height="800" alt="木の板に並んだ、くま・ねこ・ひよこ・かめの形のパン" fetchpriority="high"></picture>
-  <div class="wrap">
-    <p class="fv-kind">petite douceur｜どうぶつパン 予約BOX</p>
-    <h1 id="fv-title"><span class="nb">お誕生日のテーブルに、</span><span class="nb">どうぶつたちを。</span></h1>
-    <p class="fv-lede">くま、ねこ、ひよこ、かめ。手のひらサイズのどうぶつパンを、好きな組み合わせで箱に詰めてご用意します。</p>
-    <div class="fv-row">
-      <p class="fv-price">6個入り<b>1,380</b>円<small>（税込）</small></p>
-      <a class="btn" href="#order">組み合わせを選んで予約する</a>
+<section class="box-fv" id="fill" aria-labelledby="fv-title"><div class="wrap">
+  <div class="bf-l">
+    <div class="bf-head">
+      <p class="fv-kind">petite douceur｜どうぶつパン 予約BOX</p>
+      <h1 id="fv-title"><span class="nb">好きな子を、</span><span class="nb">箱いっぱいに。</span></h1>
+      <p class="bf-lede">くま、ねこ、ひよこ、かめ。手のひらサイズのどうぶつパンを、好きな数ずつ箱に詰めてご用意します。<span class="sp-hide">ひとり1個ずつ配れて、切り分けもお皿も要りません。</span></p>
     </div>
-    <p class="fv-note">ご予約は、受け取り日の3日前の17時まで。※写真はイメージです（AIで生成）</p>
+    <div class="bf-picks">
+      <div class="picks" role="group" aria-label="箱に入れるどうぶつパン">
+      <button type="button" class="pick" data-k="bear" aria-label="くまを箱に1個入れる"><img src="img/an-bear.jpg" width="400" height="400" alt="くまの形のチョコパン"><span class="pn">くま</span><span class="pd">チョコクリーム</span><span class="pc" data-v="0" aria-hidden="true">0</span></button>
+      <button type="button" class="pick" data-k="cat" aria-label="ねこを箱に1個入れる"><img src="img/an-cat.jpg" width="400" height="400" alt="ねこの形のカスタードパン"><span class="pn">ねこ</span><span class="pd">カスタード</span><span class="pc" data-v="0" aria-hidden="true">0</span></button>
+      <button type="button" class="pick" data-k="chick" aria-label="ひよこを箱に1個入れる"><img src="img/an-chick.jpg" width="400" height="400" alt="ひよこの形のメロンパン"><span class="pn">ひよこ</span><span class="pd">メロンパン</span><span class="pc" data-v="0" aria-hidden="true">0</span></button>
+      <button type="button" class="pick" data-k="turtle" aria-label="かめを箱に1個入れる"><img src="img/an-turtle.jpg" width="400" height="400" alt="かめの形のメロンパン"><span class="pn">かめ</span><span class="pd">メロンパン</span><span class="pc" data-v="0" aria-hidden="true">0</span></button>
+      </div>
+      <p class="picks-hint">押すと、箱に1個ずつ入ります。箱の中のパンを押すと、取り出せます。</p>
+    </div>
   </div>
-</section>
-
-<section class="uses" aria-labelledby="uses-title"><div class="wrap">
-  <h2 id="uses-title">こんな日に</h2>
-  <ul>
-    <li><b>お誕生日会に</b>ひとり1個ずつ配れて、切り分けもお皿も要りません。</li>
-    <li><b>小さな子にも</b>ホールケーキより小さく、食べきりやすい大きさです。</li>
-    <li><b>集まりのおやつに</b>保育園や親せきの集まりには、12個入りもあります。</li>
-  </ul>
+  <div class="bf-r">
+    <div class="bf-sizes" role="radiogroup" aria-label="箱の大きさ">
+      <label><input type="radio" name="bsize" value="6" checked><b>6個入り</b><span>1,380円<small>（税込）</small></span></label>
+      <label><input type="radio" name="bsize" value="12"><b>12個入り</b><span>2,760円<small>（税込）</small></span></label>
+    </div>
+    <div class="bf-box">
+      <div class="box" id="box" data-n="6">
+        <span class="box-label" aria-hidden="true">petite douceur</span>
+        <div class="slots" id="slots"><span class="slot full"><img src="img/an-bear.jpg" width="400" height="400" alt="くまの形のチョコパン" loading="lazy"></span><span class="slot full"><img src="img/an-cat.jpg" width="400" height="400" alt="ねこの形のカスタードパン" loading="lazy"></span><span class="slot full"><img src="img/an-chick.jpg" width="400" height="400" alt="ひよこの形のメロンパン" loading="lazy"></span><span class="slot full"><img src="img/an-bear.jpg" width="400" height="400" alt="くまの形のチョコパン" loading="lazy"></span><span class="slot full"><img src="img/an-turtle.jpg" width="400" height="400" alt="かめの形のメロンパン" loading="lazy"></span><span class="slot full"><img src="img/an-cat.jpg" width="400" height="400" alt="ねこの形のカスタードパン" loading="lazy"></span></div>
+        <p class="oma-note">お店で、<br>バランスよく詰めます。</p>
+        <p class="box-card" aria-hidden="true">おたんじょうび<br>おめでとう</p>
+      </div>
+    </div>
+    <p class="box-ex">詰め合わせの例（6個入り）。ご予約のときに、好きな数ずつお知らせください。</p>
+    <div class="bf-foot">
+      <div class="bf-tally"><b id="tally">0 / 6個</b><span class="msg" id="tally-msg" aria-live="polite"></span><span class="bf-price" id="bf-price">1,380円<small>（税込）</small></span></div>
+      <div class="bf-act"><a class="btn" href="#order" id="go">受け取り日を選ぶ</a><button type="button" class="tline" id="oma" aria-pressed="false">決めきれないときは、おまかせ</button></div>
+      <p class="fv-note">ご予約は、受け取り日の3日前の17時まで。カードは無料でお付けします。※写真はイメージです（AIで生成）。表情は手描きのため、少しずつ違います。</p>
+    </div>
+  </div>
 </div></section>
 
 <section class="order" id="order" aria-labelledby="order-title"><div class="wrap">
-  <h2 class="sec-title" id="order-title">ご予約の注文票</h2>
-  <p class="sec-lead">受け取り日、箱の大きさ、どうぶつの組み合わせの順に選んでください。選んだ内容と金額が、いちばん下にまとまります。</p>
+  <h2 class="sec-title" id="order-title">受け取り日を選んで、予約へ</h2>
+  <p class="sec-lead">箱の中身は、上で詰めたとおりにご用意します。受け取り日の10時以降にお店へお越しください。持ち運びやすい箱でお渡しし、お会計はそのとき店頭で（現金・各種キャッシュレス決済）。</p>
 
   <form class="sheet" id="order-form" novalidate>
-    <div class="sheet-head"><b>どうぶつパン 予約BOX</b><span>受け取りは店頭のみ・お支払いは受け取りのときに</span></div>
-
     <div class="step">
       <div class="step-no"><span class="n">1</span><span class="t">受け取り日</span><span class="s">受け取りは10時以降です</span></div>
       <div>
@@ -273,30 +376,12 @@ footer p { margin-top: 10px; opacity: 0.85; max-width: 52em; }
       </div>
     </div>
 
-    <div class="step">
-      <div class="step-no" id="size-title"><span class="n">2</span><span class="t">箱の大きさ</span><span class="s">どの組み合わせでも同じ料金です</span></div>
-      <div class="sizes" role="radiogroup" aria-labelledby="size-title">
-        <label class="size"><input type="radio" name="size" value="6" checked><b>6個入り</b><span class="yen">1,380円<small>（税込）</small></span><span class="use">少人数のお誕生日会や、家族のおやつに</span></label>
-        <label class="size"><input type="radio" name="size" value="12"><b>12個入り</b><span class="yen">2,760円<small>（税込）</small></span><span class="use">保育園や、親せきの集まりなど</span></label>
-      </div>
-    </div>
-
-    <div class="step">
-      <div class="step-no"><span class="n">3</span><span class="t">組み合わせ</span><span class="s">4種類から、好きな数ずつ</span></div>
+    <div class="step" id="mix-step" hidden>
+      <div class="step-no"><span class="n">2</span><span class="t">箱の中身</span><span class="s">上の箱で詰めた内容です</span></div>
       <div>
-        <ul class="animals" id="animals">
-          <li class="animal"><img src="img/an-bear.jpg" width="400" height="400" alt="くまの形のチョコパン" loading="lazy"><div><b id="l-bear">くまのチョコパン</b><p>ほんのりビターなチョコクリーム。耳はチョコ生地で焼き分けています。</p></div>
-            <div class="count"><button type="button" data-step="-1" aria-label="くまのチョコパンを1個減らす">−</button><input type="number" name="bear" value="0" min="0" max="12" inputmode="numeric" aria-labelledby="l-bear"><button type="button" data-step="1" aria-label="くまのチョコパンを1個増やす">＋</button></div></li>
-          <li class="animal"><img src="img/an-cat.jpg" width="400" height="400" alt="ねこの形のカスタードパン" loading="lazy"><div><b id="l-cat">ねこのカスタードパン</b><p>たまごたっぷりの、自家製カスタード入り。</p></div>
-            <div class="count"><button type="button" data-step="-1" aria-label="ねこのカスタードパンを1個減らす">−</button><input type="number" name="cat" value="0" min="0" max="12" inputmode="numeric" aria-labelledby="l-cat"><button type="button" data-step="1" aria-label="ねこのカスタードパンを1個増やす">＋</button></div></li>
-          <li class="animal"><img src="img/an-chick.jpg" width="400" height="400" alt="ひよこの形のメロンパン" loading="lazy"><div><b id="l-chick">ひよこのメロンパン</b><p>さくさくのクッキー生地に、小さなくちばし。</p></div>
-            <div class="count"><button type="button" data-step="-1" aria-label="ひよこのメロンパンを1個減らす">−</button><input type="number" name="chick" value="0" min="0" max="12" inputmode="numeric" aria-labelledby="l-chick"><button type="button" data-step="1" aria-label="ひよこのメロンパンを1個増やす">＋</button></div></li>
-          <li class="animal"><img src="img/an-turtle.jpg" width="400" height="400" alt="かめの形のメロンパン" loading="lazy"><div><b id="l-turtle">かめのメロンパン</b><p>甲羅がメロンパン。頭と足は、ふんわりのパン生地です。</p></div>
-            <div class="count"><button type="button" data-step="-1" aria-label="かめのメロンパンを1個減らす">−</button><input type="number" name="turtle" value="0" min="0" max="12" inputmode="numeric" aria-labelledby="l-turtle"><button type="button" data-step="1" aria-label="かめのメロンパンを1個増やす">＋</button></div></li>
-        </ul>
-        <div class="tally"><span class="sum" id="sum">0 / 6個</span><span class="msg" id="sum-msg" aria-live="polite"></span></div>
-        <label class="omakase"><input type="checkbox" id="omakase" name="omakase"><span>決めきれないときは、お店でバランスよく詰めます（おまかせ）</span></label>
-        <p class="field-note">※写真はイメージです（AIで生成）。表情はひとつずつ手で描くため、少しずつ違います。</p>
+        <p class="mix-line" id="mix-line">まだ詰めていません。</p>
+        <p class="mix-imgs" id="mix-imgs" aria-hidden="true"></p>
+        <a class="more" href="#fill">箱の中身を変える</a>
       </div>
     </div>
 
@@ -323,17 +408,7 @@ footer p { margin-top: 10px; opacity: 0.85; max-width: 52em; }
   <ul class="points">
     <li><b>手のひらサイズ</b><span>直径およそ8cm。小さな子でも食べきりやすい大きさに焼いています。</span></li>
     <li><b>表情は手描き</b><span>目や口は、焼き上がったあとに、ひとつずつ手で描いています。同じくまでも、少しずつ顔が違います。</span></li>
-    <li><b>カード付き</b><span>「おたんじょうび おめでとう」など、ひと言を書いたカードを無料でお付けします。</span></li>
   </ul>
-</div></section>
-
-<section class="block" aria-labelledby="flow-title"><div class="wrap">
-  <h2 id="flow-title">受け取りまで</h2>
-  <ol class="flow">
-    <li><span class="n">1</span><b>ご予約</b><p>受け取り日の3日前の17時まで。お電話かフォームで。</p></li>
-    <li><span class="n">2</span><b>ご来店</b><p>受け取り日の10時以降に、お店へ。持ち運びやすい箱でお渡しします。</p></li>
-    <li><span class="n">3</span><b>お会計</b><p>受け取りのときに店頭で。現金と、各種キャッシュレス決済が使えます。</p></li>
-  </ol>
 </div></section>
 
 <section class="block" aria-labelledby="faq-title"><div class="wrap">
@@ -368,24 +443,101 @@ footer p { margin-top: 10px; opacity: 0.85; max-width: 52em; }
   <p>※このページは渡邊駿の制作サンプルです。架空の店舗を想定した自主制作物で、実在のお店ではありません。価格・連絡先もすべて架空です。写真は画像生成AIで作ったイメージです。</p>
 </div></footer>
 
-<div class="dock hide" id="dock"><a class="btn" href="#order">組み合わせを選んで予約する</a></div>
+<div class="dock hide" id="dock"><a class="btn" href="#fill">組み合わせを選んで予約する</a></div>
 
 <script>
 (function () {
-  var form = document.getElementById('order-form');
-  var summary = document.getElementById('summary');
-  summary.hidden = false;
-  var dateEl = document.getElementById('pick-date'), dateMsg = document.getElementById('date-msg');
-  var sumEl = document.getElementById('sum'), sumMsg = document.getElementById('sum-msg');
-  var oma = document.getElementById('omakase'), list = document.getElementById('animals');
-  var submit = document.getElementById('submit'), result = document.getElementById('result');
   var names = { bear: 'くま', cat: 'ねこ', chick: 'ひよこ', turtle: 'かめ' };
+  var alts = { bear: 'くまの形のチョコパン', cat: 'ねこの形のカスタードパン', chick: 'ひよこの形のメロンパン', turtle: 'かめの形のメロンパン' };
+  var keys = ['bear', 'cat', 'chick', 'turtle'];
   var price = { 6: 1380, 12: 2760 };
+  var box = document.getElementById('box'), slotsEl = document.getElementById('slots');
+  var tally = document.getElementById('tally'), tmsg = document.getElementById('tally-msg');
+  var bfPrice = document.getElementById('bf-price'), go = document.getElementById('go'), omaBtn = document.getElementById('oma');
+  var picks = document.querySelectorAll('.pick');
+  var state = { n: 6, slots: [], oma: false };
+  var popIndex = -1;
+  function yen(v) { return v.toLocaleString('ja-JP') + '円'; }
+  function counts() { var c = { bear: 0, cat: 0, chick: 0, turtle: 0 }; state.slots.forEach(function (k) { c[k]++; }); return c; }
+  function mixText(c) { var a = []; keys.forEach(function (k) { if (c[k]) a.push(names[k] + ' ' + c[k] + '個'); }); return a.join('、'); }
+  function say(text, cls) { tmsg.className = 'msg' + (cls ? ' ' + cls : ''); tmsg.textContent = text; }
+
+  function render() {
+    var n = state.n, c = counts(), full = state.slots.length >= n;
+    box.setAttribute('data-n', n);
+    box.classList.toggle('oma', state.oma);
+    var html = '';
+    for (var i = 0; i < n; i++) {
+      var k = state.slots[i];
+      if (k) html += '<button type="button" class="slot full' + (i === popIndex ? ' pop' : '') + '" data-i="' + i + '" aria-label="' + (i + 1) + '個目：' + names[k] + '。押すと箱から出します"><img src="img/an-' + k + '.jpg" width="400" height="400" alt=""></button>';
+      else html += '<span class="slot" aria-hidden="true">' + (i + 1) + '</span>';
+    }
+    slotsEl.innerHTML = html;
+    popIndex = -1;
+    picks.forEach(function (p) {
+      var k = p.getAttribute('data-k'), pc = p.querySelector('.pc');
+      pc.textContent = c[k]; pc.setAttribute('data-v', c[k]);
+      p.setAttribute('aria-disabled', (full || state.oma) ? 'true' : 'false');
+      p.setAttribute('aria-label', names[k] + 'を箱に1個入れる（いま' + c[k] + '個）');
+    });
+    bfPrice.innerHTML = yen(price[n]) + '<small>（税込）</small>';
+    if (state.oma) { tally.textContent = 'おまかせ'; say('お店で' + n + '個をバランスよく詰めます。', 'ok'); }
+    else {
+      tally.textContent = state.slots.length + ' / ' + n + '個';
+      if (tmsg.dataset.keep) { /* 直前の操作の説明を残す */ }
+      else if (full) say(n + '個そろいました。', 'ok');
+      else say('あと' + (n - state.slots.length) + '個入ります。');
+    }
+    delete tmsg.dataset.keep;
+    go.textContent = (full || state.oma) ? 'この箱で、受け取り日を選ぶ' : '受け取り日を選ぶ';
+    omaBtn.setAttribute('aria-pressed', state.oma ? 'true' : 'false');
+    omaBtn.textContent = state.oma ? 'おまかせをやめて、自分で選ぶ' : '決めきれないときは、おまかせ';
+    syncOrder(c);
+  }
+
+  document.querySelector('.picks').addEventListener('click', function (e) {
+    var p = e.target.closest('.pick'); if (!p) return;
+    if (state.oma) { say('おまかせを選んでいます。自分で選ぶときは、下の「自分で選ぶ」を押してください。'); tmsg.dataset.keep = 1; return; }
+    if (state.slots.length >= state.n) {
+      say(state.n === 6 ? '箱がいっぱいです。12個入りにするか、箱の中のパンを押して取り出してください。' : '箱がいっぱいです。箱の中のパンを押すと、取り出せます。', 'ng');
+      return;
+    }
+    state.slots.push(p.getAttribute('data-k'));
+    popIndex = state.slots.length - 1;
+    render();
+  });
+  slotsEl.addEventListener('click', function (e) {
+    var s = e.target.closest('button.slot'); if (!s) return;
+    var i = +s.getAttribute('data-i'), k = state.slots[i];
+    state.slots.splice(i, 1);
+    say(names[k] + 'を1個、箱から出しました。'); tmsg.dataset.keep = 1;
+    render();
+    var next = slotsEl.querySelector('button.slot[data-i="' + Math.min(i, state.slots.length - 1) + '"]');
+    (next || document.querySelector('.pick[data-k="' + k + '"]')).focus();
+  });
+  document.querySelectorAll('input[name="bsize"]').forEach(function (r) {
+    r.addEventListener('change', function () {
+      state.n = +r.value;
+      if (state.slots.length > state.n) {
+        var out = state.slots.length - state.n;
+        state.slots = state.slots.slice(0, state.n);
+        say('6個入りにしたので、あとから入れた' + out + '個を箱から出しました。'); tmsg.dataset.keep = 1;
+      }
+      render();
+    });
+  });
+  omaBtn.addEventListener('click', function () { state.oma = !state.oma; render(); });
+
+  // 予約の段
+  var form = document.getElementById('order-form');
+  document.getElementById('summary').hidden = false;
+  document.getElementById('mix-step').hidden = false;
+  var dateEl = document.getElementById('pick-date'), dateMsg = document.getElementById('date-msg');
+  var submit = document.getElementById('submit'), result = document.getElementById('result');
   var wd = ['日', '月', '火', '水', '木', '金', '土'];
   function pad(n) { return ('0' + n).slice(-2); }
   function ymd(d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
   function label(d) { return (d.getMonth() + 1) + '月' + d.getDate() + '日（' + wd[d.getDay()] + '）'; }
-  // 選べる最初の日：今日の17時までなら3日後、17時を過ぎていれば4日後
   var now = new Date(), first = new Date(now.getFullYear(), now.getMonth(), now.getDate() + (now.getHours() < 17 ? 3 : 4));
   dateEl.min = ymd(first);
   var dateOk = false;
@@ -398,65 +550,39 @@ footer p { margin-top: 10px; opacity: 0.85; max-width: 52em; }
     if (dl < now) { dateMsg.className = 'msg ng'; dateMsg.textContent = label(d) + 'の予約は、' + label(dl) + '17時で締め切りました。' + label(first) + '以降を選んでください。'; return; }
     dateOk = true; dateMsg.className = 'msg ok'; dateMsg.textContent = label(d) + 'の予約は、' + label(dl) + '17時まで受け付けます。';
   }
-  function size() { return +form.querySelector('input[name="size"]:checked').value; }
-  function counts() {
-    var c = {}, t = 0;
-    list.querySelectorAll('input').forEach(function (i) { var v = Math.max(0, Math.min(12, parseInt(i.value, 10) || 0)); c[i.name] = v; t += v; });
-    return { c: c, t: t };
-  }
-  function update() {
-    var n = size(), k = counts(), om = oma.checked;
-    list.classList.toggle('off', om);
-    list.querySelectorAll('.count').forEach(function (box) {
-      var inp = box.querySelector('input'), v = parseInt(inp.value, 10) || 0;
-      box.querySelector('[data-step="-1"]').disabled = om || v <= 0;
-      box.querySelector('[data-step="1"]').disabled = om || k.t >= n;
-      inp.disabled = om;
-    });
-    var mixOk = false;
-    if (om) { sumEl.textContent = 'おまかせ'; sumMsg.className = 'msg ok'; sumMsg.textContent = 'お店で' + n + '個をバランスよく詰めます。'; mixOk = true; }
-    else {
-      sumEl.textContent = k.t + ' / ' + n + '個';
-      if (k.t === n) { sumMsg.className = 'msg ok'; sumMsg.textContent = n + '個そろいました。'; mixOk = true; }
-      else if (k.t < n) { sumMsg.className = 'msg'; sumMsg.textContent = 'あと' + (n - k.t) + '個選べます。'; }
-      else { sumMsg.className = 'msg ng'; sumMsg.textContent = (k.t - n) + '個多いです。減らしてください。'; }
-    }
+  function syncOrder(c) {
+    var n = state.n, mixOk = state.oma || state.slots.length === n, m = mixText(c);
+    var line = state.oma ? 'おまかせ（お店で' + n + '個をバランスよく詰めます）' : (state.slots.length ? n + '個入りに、' + m + (mixOk ? '' : '（あと' + (n - state.slots.length) + '個）') : 'まだ詰めていません。いちばん上の箱で選んでください。');
+    document.getElementById('mix-line').textContent = line;
+    document.getElementById('mix-imgs').innerHTML = state.oma ? '' : state.slots.map(function (k) { return '<img src="img/an-' + k + '.jpg" width="400" height="400" alt="" loading="lazy">'; }).join('');
     document.getElementById('s-size').textContent = n + '個入り';
-    document.getElementById('s-total').textContent = price[n].toLocaleString('ja-JP') + '円（税込）';
-    var mix = [];
-    Object.keys(names).forEach(function (key) { if (k.c[key]) mix.push(names[key] + ' ' + k.c[key] + '個'); });
-    document.getElementById('s-mix').textContent = om ? 'おまかせ（お店で詰めます）' : (mix.length ? mix.join('、') : 'まだ選ばれていません');
+    document.getElementById('s-total').textContent = yen(price[n]) + '（税込）';
+    document.getElementById('s-mix').textContent = state.oma ? 'おまかせ（お店で詰めます）' : (m || 'まだ選ばれていません');
     document.getElementById('s-date').textContent = dateOk ? label(new Date(dateEl.value + 'T00:00')) + ' 10時以降' : 'まだ選ばれていません';
     submit.disabled = !(dateOk && mixOk);
     result.hidden = true;
   }
-  list.addEventListener('click', function (e) {
-    var b = e.target.closest('button[data-step]'); if (!b) return;
-    var inp = b.parentNode.querySelector('input');
-    inp.value = Math.max(0, (parseInt(inp.value, 10) || 0) + (+b.getAttribute('data-step')));
-    update();
-  });
-  form.addEventListener('input', function (e) { if (e.target === dateEl) checkDate(); update(); });
-  form.addEventListener('change', function (e) { if (e.target === dateEl) checkDate(); update(); });
+  form.addEventListener('input', function (e) { if (e.target === dateEl) { checkDate(); syncOrder(counts()); } });
+  form.addEventListener('change', function (e) { if (e.target === dateEl) { checkDate(); syncOrder(counts()); } });
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     if (submit.disabled) return;
     result.innerHTML = '<b>制作サンプルのため、予約は送信されません。</b><br>実際のお店では、この内容のまま予約フォームへ進み、お名前と電話番号を入力して送ります。';
     result.hidden = false;
   });
-  update();
+  render();
 
-  // スマホの固定ボタン：最初の画面・注文票・お店の情報が画面に入っている間は隠す
+  // スマホの固定ボタン：最初の画面・予約の段・お店の情報が画面に入っている間は隠す
   var dock = document.getElementById('dock');
   if ('IntersectionObserver' in window) {
     var seen = {};
     var io = new IntersectionObserver(function (ents) {
-      ents.forEach(function (en) { seen[en.target.id || en.target.className.split(' ')[0]] = en.isIntersecting; });
-      dock.classList.toggle('hide', !!(seen.order || seen.block || seen.fv));
+      ents.forEach(function (en) { seen[en.target.className.split(' ')[0]] = en.isIntersecting; });
+      dock.classList.toggle('hide', !!(seen.order || seen.block || seen['box-fv']));
     }, { threshold: 0 });
     io.observe(document.getElementById('order'));
     io.observe(document.querySelector('.shop'));
-    io.observe(document.querySelector('.fv'));
+    io.observe(document.querySelector('.box-fv'));
   } else { dock.classList.remove('hide'); }
 })();
 </script>
