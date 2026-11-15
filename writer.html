@@ -20,6 +20,70 @@
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
 <!-- share:end -->
+<style>
+/* 最初の画面：書いた記事そのものを見せる（案A） */
+.wfv { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 0 56px; align-items: start; padding: calc(var(--nav-h) + 56px) 34px 64px; border-bottom: 1px solid var(--line); }
+.wfv .crumb { font-family: var(--sans); font-size: 12px; letter-spacing: 0.2em; color: var(--ink-soft); text-decoration: none; }
+.wfv .en-label { margin-top: 26px; font-family: Georgia, serif; font-size: 12.5px; letter-spacing: 0.3em; color: var(--ink-soft); }
+.wfv h1 { font-weight: 500; font-size: clamp(24px, 2.6vw, 34px); line-height: 1.75; margin: 12px 0 18px; }
+.wfv .lede { font-size: 14.5px; max-width: 34em; color: var(--ink-soft); }
+.wfv .cta-row { margin-top: 26px; }
+.wfv .cta-row .btn { padding: 13px 30px; }
+.wfv .facts { padding-right: 0; }
+.wfv .anchors { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 26px; }
+.wfv .anchors a { font-family: var(--sans); font-size: 12px; letter-spacing: 0.2em; text-decoration: none; color: var(--ink-soft); border-bottom: 1px solid var(--line); padding-bottom: 2px; }
+.wfv .anchors a:hover { color: var(--ink); border-color: var(--ink); }
+
+/* 右：紙に見立てたサンプル記事 */
+.wp-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--ink); }
+.wp-cap { padding-bottom: 10px; font-family: var(--sans); font-size: 12px; letter-spacing: 0.12em; color: var(--ink-soft); }
+.wp-tabs { display: flex; }
+.wp-tabs button { min-height: 40px; padding: 8px 14px; background: transparent; border: 0; border-bottom: 3px solid transparent; font: 600 13px/1.2 var(--sans); color: var(--ink-soft); cursor: pointer; }
+.wp-tabs button:hover { color: var(--ink); }
+.wp-tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--ink); }
+.wp-tabs button:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
+.sheet { position: relative; margin-top: 18px; padding: 30px 34px 26px; background: #FFFFFF; border: 1px solid rgba(60, 63, 62, 0.14); box-shadow: 0 10px 28px rgba(60, 63, 62, 0.08); }
+.sheet .meta { display: flex; flex-wrap: wrap; gap: 4px 14px; font-family: var(--sans); font-size: 12px; color: var(--ink-soft); }
+.sheet .meta b { color: var(--ink); font-weight: 600; }
+.sheet h2.ttl { margin: 12px 0 14px; font-weight: 600; font-size: clamp(18px, 1.6vw, 21px); line-height: 1.65; letter-spacing: 0.02em; }
+.sheet .lead { position: relative; max-height: 5.4em; overflow: hidden; font-size: 14px; line-height: 1.8; }
+.sheet .lead::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1.8em; background: linear-gradient(rgba(255, 255, 255, 0), #FFFFFF); }
+.sheet .toc { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); }
+.sheet .toc p { font-family: var(--sans); font-size: 12px; letter-spacing: 0.1em; color: var(--ink-soft); }
+.sheet .toc ol { margin: 8px 0 0; padding: 0; list-style: none; counter-reset: h; }
+.sheet .toc li { counter-increment: h; display: grid; grid-template-columns: 2.2em minmax(0, 1fr); padding: 5px 0; font-size: 13.5px; line-height: 1.6; }
+.sheet .toc li::before { content: counter(h, decimal-leading-zero); font-family: Georgia, serif; color: var(--ink-soft); }
+.sheet .toc p.cont { position: relative; max-height: 9em; overflow: hidden; margin-top: 8px; font-family: var(--serif); font-size: 14px; letter-spacing: 0; line-height: 1.8; color: var(--ink); }
+.sheet .toc p.cont::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1.8em; background: linear-gradient(rgba(255, 255, 255, 0), #FFFFFF); }
+.sheet .read { display: inline-block; margin-top: 18px; font-family: var(--sans); font-size: 13px; font-weight: 600; letter-spacing: 0.08em; color: var(--ink); text-underline-offset: 4px; }
+.wp-note { margin-top: 12px; font-size: 12.5px; color: var(--ink-soft); }
+html.js .sheet[hidden] { display: none; }
+html.js .sheet:not([hidden]) { animation: wp-in 0.35s ease-out both; }
+@keyframes wp-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+/* JSが動かないとき：切り替えボタンを隠し、3本を順に並べる（JSがあるときは1本ずつ表示） */
+html:not(.js) .wp-tabs { display: none; }
+html:not(.js) .sheet + .sheet { margin-top: 14px; }
+
+@media (max-width: 900px) {
+  .wfv { grid-template-columns: 1fr; gap: 36px; padding: calc(var(--nav-h) + 26px) 22px 48px; }
+  .wfv .en-label { margin-top: 18px; }
+  .wfv h1 { font-size: 24px; margin: 10px 0 14px; }
+  .wfv .cta-row { margin-top: 20px; }
+  .wfv .cta-row .btn { flex: 1 1 140px; padding: 13px 10px; }
+  /* スマホ：記事が早く見えるよう、条件は罫線なしの1行ずつにし、ページ内リンクは省く */
+  .wfv .facts { gap: 2px 14px; margin-top: 14px; }
+  .wfv .facts span { border: 0; padding: 0; font-size: 11.5px; }
+  .wfv .anchors { display: none; }
+  .wp-head { flex-direction: column; align-items: stretch; }
+  .wp-cap { padding-bottom: 4px; }
+  .wp-tabs button { flex: 1; padding: 8px 4px; font-size: 12.5px; }
+  .sheet { padding: 22px 20px 20px; }
+  .sheet .toc li { font-size: 13px; }
+}
+@media (prefers-reduced-motion: reduce) { html.js .sheet:not([hidden]) { animation: none; } }
+</style>
+<script>document.documentElement.classList.add('js')</script>
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
 <header class="gnav">
@@ -27,59 +91,59 @@
   <button class="burger" aria-label="メニュー" onclick="document.getElementById('menu').classList.toggle('open')"><span></span><span></span></button>
   <ul class="menu" id="menu"><li><a href="index.html">Home</a></li><li><a href="writer.html" class="cur">Writer</a></li><li><a href="scenario.html">Script</a></li><li><a href="lp.html">LP</a></li><li><a href="hp.html">HP</a></li><li><a href="web-design.html">Design</a></li><li><a href="video.html">Video</a></li><li><a href="ai.html">AI</a></li><li><a href="index.html#profile">Profile</a></li><li><a class="cta" href="index.html#contact">相談する</a></li></ul>
 </header>
-<section class="sub-hero"><div class="photo " data-name="img/top/tile-writer.jpg"><img src="img/top/tile-writer.jpg" srcset="img/top/tile-writer-800.jpg 800w, img/top/tile-writer.jpg 1536w" sizes="100vw" alt="書き物をする机" fetchpriority="high" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"></div></section>
-<section class="sub-title">
-  <a class="crumb" href="index.html">← HOME</a>
-  <div>
+<section class="wfv" id="top-sample" aria-labelledby="w-h1">
+  <div class="wfv-l">
+    <a class="crumb" href="index.html">← HOME</a>
     <div class="en-label">WRITER ／ 記事</div>
-    <h1 class="reveal"><span class="nb">キャリア・副業・</span><br /><em><span class="nb">暮らしとお金の</span></em><span class="nb">記事を書いています。</span></h1>
-    <p class="lede reveal"><span class="nb">SEO記事・コラム・体験談エッセイ。</span><span class="nb">キーワードをいただければ、</span><span class="nb">競合リサーチから見出し構成、</span><span class="nb">本文、メタディスクリプションまで担当します。</span></p>
-    <div class="cta-row reveal">
-      <a class="btn btn-primary" href="#articles">記事のサンプルを見る</a>
-      <a class="btn btn-primary" href="#pricing">料金を見る</a>
+    <h1 id="w-h1"><span class="nb">キャリア・副業・</span><span class="nb">暮らしとお金の</span><span class="nb">記事を書いています。</span></h1>
+    <p class="lede"><span class="nb">キーワードをいただければ、</span><span class="nb">競合リサーチから見出し構成、</span><span class="nb">本文、メタディスクリプション</span><span class="nb">まで担当します。</span></p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#contact">記事の相談をする</a>
+      <a class="btn btn-ghost" href="#pricing">料金の目安を見る</a>
     </div>
-    <div class="facts reveal">
+    <div class="facts">
       <span>ご連絡への返信 <b>24時間以内</b></span>
       <span>納品形式 <b>Googleドキュメント／Word</b></span>
       <span>対応ペース <b>週2〜3本が目安</b></span>
     </div>
     <div class="anchors"><a href="#articles">SAMPLE</a><a href="#cases">CASE</a><a href="#pricing">PRICE</a><a href="#flow">FLOW</a><a href="#faq">FAQ</a><a href="#contact">CONTACT</a></div>
   </div>
+  <div class="wfv-r">
+    <div class="wp-head">
+      <p class="wp-cap">書いた記事の冒頭と見出し構成</p>
+      <div class="wp-tabs" role="tablist" aria-label="記事のジャンル"><button type="button" role="tab" id="wt-career" aria-controls="ws-career" aria-selected="true">キャリア・副業</button><button type="button" role="tab" id="wt-money" aria-controls="ws-money" aria-selected="false" tabindex="-1">お金・資産形成</button><button type="button" role="tab" id="wt-life" aria-controls="ws-life" aria-selected="false" tabindex="-1">子育て・暮らし</button></div>
+    </div>
+    <article class="sheet" role="tabpanel" id="ws-career" aria-labelledby="wt-career">
+      <p class="meta"><b>キャリア・副業</b><span>SEO記事・約3,500字</span><span>競合リサーチ・見出し構成込み</span></p>
+      <h2 class="ttl"><span class="nb">30代会社員が本業と両立できる副業の選び方｜</span><span class="nb">失敗しない5つの基準</span></h2>
+      <p class="lead">「副業を始めたら本業がおろそかになった」「思ったより稼げず続かなかった」——そんな失敗をしていませんか。副業選びで失敗しないためのポイントは、いきなり「稼げる副業」を探さないことです。時間・費用・会社の規則、そして自分のスキルや目的と照らし合わせて選ぶことが大切です。この記事では、30代会社員が本業と両立できる副業を選ぶための5つの基準を解説します。</p>
+      <div class="toc"><p>見出し構成</p><ol><li>副業選びで失敗する会社員に共通する原因</li><li>本業と両立できる副業を選ぶ5つの基準</li><li>「怪しい副業」に注意する</li><li>会社員が副業で知っておきたい税金・会社バレの基礎知識</li><li>副業を探す前にやっておきたい準備</li><li>まとめ</li></ol></div>
+      <a class="read" href="article/side-job-selection-guide.html">この記事を全文読む →</a>
+    </article>
+    <article class="sheet" role="tabpanel" id="ws-money" aria-labelledby="wt-money">
+      <p class="meta"><b>お金・資産形成</b><span>SEO記事・約5,400字</span><span>金融庁などの公開情報を出典に明記</span></p>
+      <h2 class="ttl"><span class="nb">新NISAの始め方｜</span><span class="nb">会社員が知っておきたい手順・注意点・よくある疑問</span></h2>
+      <p class="lead">「新NISAを始めたいけれど、何から手をつければいいか分からない」。そう感じている会社員は多いのではないでしょうか。新NISAは、投資で得た利益が非課税になる制度で、少額からでも始められます。この記事では、会社員が新NISAを始める理由から、口座開設の具体的な手順までをまとめました。年末調整や確定申告の要否といった気になる疑問についても、順を追って紹介します。</p>
+      <div class="toc"><p>見出し構成</p><ol><li>新NISAを始めるべき理由</li><li>新NISAの始め方4ステップ</li><li>会社員が気になる新NISAの疑問</li><li>新NISAで失敗しないための注意点</li><li>「なんとなく」始めて後悔しないために</li><li>新NISAに関するよくある質問</li><li>まとめ</li></ol></div>
+      <a class="read" href="article/nisa-start-guide.html">この記事を全文読む →</a>
+    </article>
+    <article class="sheet" role="tabpanel" id="ws-life" aria-labelledby="wt-life">
+      <p class="meta"><b>子育て・暮らし</b><span>体験談エッセイ・約1,100字</span><span>一人称のエッセイ</span></p>
+      <h2 class="ttl"><span class="nb">「あの頃、私は必死だった」</span><span class="nb">――子育てを振り返って気づく、暮らしの中の小さな真実</span></h2>
+      <p class="lead">洗濯物をたたみながら、ふと手が止まることがあります。子どもの服が、もう小さくて着られなくなっていると気づいたときです。80cmのタグを見るたびに、ついこの間まで抱っこしていた重みを思い出して、少し胸がぎゅっとなるのです。</p>
+      <div class="toc"><p>本文より</p><p class="cont">子どもが小さかった頃のことを思い出そうとしても、不思議と細かい記憶があまり残っていません。妻と交代で対応していた、夜中2時間おきの授乳や夜泣きも、離乳食を10種類近く試しては毎回拒否されて落ち込んだ日々のことも、はっきりとは思い出せません。ひとつひとつの出来事としてではなく、ただ「必死だった」という感覚だけが残っています。</p></div>
+      <a class="read" href="article/parenting-reflection-essay.html">この記事を全文読む →</a>
+    </article>
+    <p class="wp-note">サンプルは、リサーチから本文まで担当した形で掲載しています。</p>
+  </div>
 </section>
 <section class="block" id="articles">
   <h2><span>記事のサンプル</span></h2>
   <div class="body">
-<h3 class="headline reveal"><span class="nb">まず、</span><span class="nb">書いたものを</span><span class="nb">読んでみてください。</span></h3>
-<p class="desc reveal">得意ジャンルから3本を選びました。リサーチ・構成・本文まで担当した形でご覧いただけます。</p>
+<h3 class="headline reveal"><span class="nb">ほかのジャンルの記事も、</span><span class="nb">読んでみてください。</span></h3>
+<p class="desc reveal">上の3本のほかに、働き方・住まい・資産・恋愛・美容の記事を載せています。どれも、リサーチ・構成・本文まで担当した形でご覧いただけます。</p>
 
-    <div class="picks stagger">
-      <a class="hero-read reveal" href="article/side-job-selection-guide.html">
-        <img src="img/genre-sidejob.jpg" alt="夜のデスクでノートパソコンに向かう情景のイラスト">
-        <div class="hero-read-body">
-          <span class="rl">キャリア・副業</span>
-          <span class="rt"><span class="nb">30代会社員が</span><span class="nb">本業と両立できる</span><span class="nb">副業の選び方</span></span>
-          <span class="rm"><span class="nb">SEO記事・約3,500字／</span><span class="nb">競合リサーチ・見出し構成込み</span></span>
-        </div>
-      </a>
-      <a class="hero-read reveal" href="article/nisa-start-guide.html">
-        <img src="img/genre-money.jpg" alt="貯金箱とグラフのイラスト">
-        <div class="hero-read-body">
-          <span class="rl">お金・資産形成</span>
-          <span class="rt"><span class="nb">新NISAの始め方｜</span><span class="nb">会社員が知っておきたい</span><span class="nb">手順・注意点</span></span>
-          <span class="rm"><span class="nb">SEO記事・約5,400字／</span><span class="nb">公的情報を出典に執筆</span></span>
-        </div>
-      </a>
-      <a class="hero-read reveal" href="article/parenting-reflection-essay.html">
-        <img src="img/genre-parenting.jpg" alt="小さな子ども服とぬいぐるみが置かれたリビングのイラスト">
-        <div class="hero-read-body">
-          <span class="rl">子育て・暮らし</span>
-          <span class="rt"><span class="nb">「あの頃、私は必死だった」</span><span class="nb">子育てを振り返って</span><span class="nb">気づく小さな真実</span></span>
-          <span class="rm"><span class="nb">体験談エッセイ・約1,100字</span></span>
-        </div>
-      </a>
-    </div>
-
-    <details class="more reveal">
+    <details class="more reveal" open>
       <summary>その他の記事サンプル（5本）</summary>
       <ul>
         <li><a href="article/career-plan-30s.html"><span class="g">キャリア・働き方／SEO記事・約2,900字</span><span class="t">30代のキャリアプランの考え方｜今から描く将来の指針</span></a></li>
@@ -365,6 +429,33 @@
   var base = subj.value;
   function sync() { subj.value = base + "（" + sel.value + "）"; }
   sel.addEventListener("change", sync); sync();
+})();
+</script>
+<script>
+(function () {
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.wp-tabs [role="tab"]'));
+  if (!tabs.length) return;
+  function pick(t, focus) {
+    tabs.forEach(function (b) {
+      var on = b === t;
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+      b.tabIndex = on ? 0 : -1;
+      document.getElementById(b.getAttribute('aria-controls')).hidden = !on;
+    });
+    if (focus) t.focus();
+  }
+  pick(tabs[0], false);
+  tabs.forEach(function (b, i) {
+    b.addEventListener('click', function () { pick(b, false); });
+    b.addEventListener('keydown', function (e) {
+      var n = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (e.key === 'Home') { e.preventDefault(); pick(tabs[0], true); return; }
+      if (e.key === 'End') { e.preventDefault(); pick(tabs[tabs.length - 1], true); return; }
+      if (!n) return;
+      e.preventDefault();
+      pick(tabs[(i + n + tabs.length) % tabs.length], true);
+    });
+  });
 })();
 </script>
 </body>
