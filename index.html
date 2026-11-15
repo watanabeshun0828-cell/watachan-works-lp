@@ -43,6 +43,62 @@
 </script>
 <!-- share:end -->
 <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+<style>
+/* トップ：頼める4つを、実物つきで最初の画面に（案A） */
+.tfv { display: grid; grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr); gap: 0 56px; align-items: center; min-height: 100vh; padding: calc(var(--nav-h) + 40px) 34px 56px; border-bottom: 1px solid var(--line); }
+.tfv .who { font-family: var(--sans); font-size: 12.5px; letter-spacing: 0.12em; color: var(--ink-soft); }
+.tfv h1 { margin: 14px 0 18px; font-weight: 500; font-size: clamp(25px, 2.7vw, 36px); line-height: 1.7; }
+.tfv .lede { max-width: 32em; font-size: 14.5px; color: var(--ink-soft); }
+.tfv .cta-row { margin-top: 26px; }
+.tfv .cta-row .btn { padding: 13px 30px; }
+.tfv .facts { padding-right: 0; }
+.works4 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; margin: 0; padding: 0; list-style: none; }
+.works4 a { display: block; color: var(--ink); text-decoration: none; }
+.works4 .shot { display: block; aspect-ratio: 960 / 645; overflow: hidden; background: var(--bg-tile); border: 1px solid rgba(60, 63, 62, 0.12); }
+.works4 .shot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.4s ease; }
+.works4 a:hover .shot img, .works4 a:focus-visible .shot img { transform: scale(1.03); }
+.works4 .w-name { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-top: 10px; padding-bottom: 6px; border-bottom: 1px solid var(--ink); font-weight: 600; font-size: 15.5px; }
+.works4 .w-name::after { content: "→"; font-weight: 400; color: var(--ink-soft); }
+.works4 a:hover .w-name::after, .works4 a:focus-visible .w-name::after { color: var(--ink); }
+.works4 .w-note { display: flex; flex-wrap: wrap; gap: 2px 12px; margin-top: 6px; font-family: var(--sans); font-size: 12px; color: var(--ink-soft); }
+.works4 a:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+
+/* 評価とお約束 */
+.proof .quote { margin: 4px 0 10px; padding: 18px 0 18px 22px; border-left: 3px solid var(--ink); font-size: clamp(18px, 1.8vw, 22px); line-height: 1.8; }
+.proof .quote-by { font-family: var(--sans); font-size: 12.5px; color: var(--ink-soft); }
+.proof .quote-by a { color: inherit; text-underline-offset: 3px; }
+.proof .vows { margin: 34px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--ink); }
+.proof .vows li { display: grid; grid-template-columns: minmax(0, 19em) minmax(0, 1fr); gap: 4px 24px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.proof .vows b { font-weight: 600; }
+.proof .vows span { font-size: 14px; color: var(--ink-soft); }
+
+/* これから（まだ実績の少ない分野） */
+.later .rows { margin: 8px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+.later .rows a { display: grid; grid-template-columns: 7em 12em minmax(0, 1fr); gap: 4px 18px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid var(--line); color: var(--ink); text-decoration: none; font-size: 14px; }
+.later .rows a:hover .l-name { text-decoration: underline; text-underline-offset: 4px; }
+.later .l-name { font-family: Georgia, serif; letter-spacing: 0.2em; }
+.later .l-state { font-family: var(--sans); font-size: 12px; color: var(--ink-soft); }
+
+@media (max-width: 1080px) and (min-width: 901px) {
+  .tfv { grid-template-columns: 1fr 1fr; gap: 0 36px; }
+}
+@media (max-width: 900px) {
+  .tfv { grid-template-columns: 1fr; gap: 30px; min-height: 0; padding: calc(var(--nav-h) + 28px) 22px 48px; }
+  .tfv h1 { font-size: 24px; margin: 10px 0 14px; }
+  .tfv .lede { font-size: 14px; }
+  .tfv .cta-row { margin-top: 20px; }
+  .tfv .cta-row .btn { flex: 1 1 140px; padding: 13px 10px; }
+  .tfv .facts { gap: 2px 14px; margin-top: 14px; }
+  .tfv .facts span { border: 0; padding: 0; font-size: 11.5px; }
+  .works4 { gap: 16px 12px; }
+  .works4 .w-name { font-size: 14px; }
+  .works4 .w-note { font-size: 11px; line-height: 1.6; gap: 0 8px; }
+  .proof .vows li { grid-template-columns: 1fr; }
+  .later .rows a { grid-template-columns: 6em minmax(0, 1fr); }
+  .later .l-desc { grid-column: 1 / -1; }
+}
+@media (prefers-reduced-motion: reduce) { .works4 .shot img { transition: none; } }
+</style>
 </head>
 <body>
 <header class="gnav">
@@ -51,110 +107,58 @@
   <ul class="menu" id="menu"><li><a href="index.html" class="cur">Home</a></li><li><a href="writer.html">Writer</a></li><li><a href="scenario.html">Script</a></li><li><a href="lp.html">LP</a></li><li><a href="hp.html">HP</a></li><li><a href="web-design.html">Design</a></li><li><a href="video.html">Video</a></li><li><a href="ai.html">AI</a></li><li><a href="index.html#profile">Profile</a></li><li><a class="cta" href="index.html#contact">相談する</a></li></ul>
 </header>
 <main id="main">
-<section class="hero" id="top">
-  <div class="hero-text">
-    <h1 class="reveal">書くことから、<br>ものづくりへ。</h1>
-    <div class="sub en reveal">writing &amp; creating</div>
-    <p class="en reveal">Writer, scenario writer and, little by little, web creator. Words first, then the page they live on.</p>
-    <a class="btn hero-btn reveal" href="#contact">&gt; 相談する</a>
+<section class="tfv" id="top" aria-labelledby="t-h1">
+  <div class="tfv-l">
+    <p class="who">渡邊 駿｜Webライター・LP／ホームページ制作</p>
+    <h1 id="t-h1"><span class="nb">記事・台本・LP・</span><span class="nb">ホームページを、</span><span class="nb">文章から作ります。</span></h1>
+    <p class="lede"><span class="nb">会社員として働きながら、</span><span class="nb">書く仕事とページ制作をお受けしています。</span><span class="nb">構成と文章を先に固めてから、</span><span class="nb">形にします。</span></p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#contact">相談する</a>
+      <a class="btn btn-ghost" href="pricing.html">料金の目安を見る</a>
+    </div>
+    <div class="facts">
+      <span>ご連絡への返信 <b>24時間以内</b></span>
+      <span>お見積もり <b>無料</b></span>
+    </div>
   </div>
-  <div class="hero-photos">
-    <div class="photo " data-name="img/top/hero-1.jpg"><img src="img/top/hero-1.jpg" srcset="img/top/hero-1-800.jpg 800w, img/top/hero-1.jpg 1536w" sizes="(max-width: 900px) 100vw, 50vw" alt="メインビジュアル1" fetchpriority="high" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"></div>
-    <div class="photo " data-name="img/top/hero-2.jpg"><img src="img/top/hero-2.jpg" srcset="img/top/hero-2-800.jpg 800w, img/top/hero-2.jpg 1536w" sizes="(max-width: 900px) 100vw, 50vw" alt="メインビジュアル2" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"></div>
+  <div class="tfv-r">
+    <ul class="works4" aria-label="お受けしている仕事">
+      <li><a href="writer.html"><span class="shot"><img src="img/top/real-writer.jpg" alt="SEO記事のサンプルページ（副業の選び方の記事）" width="960" height="645" fetchpriority="high"></span><span class="w-name">記事</span><span class="w-note"><span>SEO記事・コラム・体験談エッセイ</span><span>サンプル8本</span></span></a></li>
+      <li><a href="scenario.html"><span class="shot"><img src="img/top/real-script.jpg" alt="台本のサンプルページ（朗読シナリオ「母のレシピノート」）" width="960" height="645" fetchpriority="high"></span><span class="w-name">台本・シナリオ</span><span class="w-note"><span>YouTube朗読・漫画動画の台本</span><span>サンプル2本</span></span></a></li>
+      <li><a href="lp.html"><span class="shot"><img src="samples/img/lp-bakery.jpg" alt="LPのサンプル（パン屋の予約LP）" width="960" height="645" loading="lazy"></span><span class="w-name">LP</span><span class="w-note"><span>構成・原稿・ページ制作</span><span>サンプル6点</span></span></a></li>
+      <li><a href="hp.html"><span class="shot"><img src="img/top/real-hp.jpg" alt="ホームページのサンプル（美容サロンHANA）" width="960" height="645" loading="lazy"></span><span class="w-name">ホームページ</span><span class="w-note"><span>お店・事業の数ページのサイト</span><span>サンプル4点</span></span></a></li>
+    </ul>
   </div>
 </section>
 
-<section class="concept" id="concept">
-  <h2><span>CONCEPT</span></h2>
+<section class="block proof" id="proof">
+  <h2><span>VOICE</span></h2>
   <div class="body reveal">
-    <p>まず言葉があって、その言葉が暮らすページがある。<br>
-    記事や台本を書くところから、LP、ホームページ、デザインへと、<br>
-    できることを少しずつ広げています。</p>
-    <p>いまお受けできるのは、記事と台本、LP、ホームページです。<br>
-    WEBデザイン・動画編集・AI導入支援は、これから取り組んでいく分野です。<br>
-    気になるページから、ご覧ください。</p>
-    <p class="e">Words come first, and then the page where they live.<br>
-    Starting from articles and scripts, we are growing toward landing pages, websites and design.</p>
+    <h3 class="headline"><span class="nb">いただいた評価と、</span><span class="nb">お引き受けしたときのお約束。</span></h3>
+    <p class="quote">「クオリティの高い記事へと<br>ブラッシュアップされました」</p>
+    <p class="quote-by">クライアント様（Webメディア運営）／記事の改稿・校閲合格のあとにいただいた評価 ― <a href="writer.html#cases">修正の前と後を見る</a></p>
+    <ul class="vows">
+      <li><b>作る前に、完成の条件を決めます</b><span>作るもの・作らないもの・何ができたら完成かを、ご確認いただいてから始めます。</span></li>
+      <li><b>納品のときに、確認の記録をお渡しします</b><span>LP・ホームページでは、確かめた端末と表示の速さ、確かめられなかったことも書いてお渡しします。</span></li>
+      <li><b>24時間以内に返信します</b><span>本業があるため、平日の日中のご連絡には、夜にお返事することがあります。</span></li>
+    </ul>
   </div>
 </section>
 
-  <section class="tile a">
-    <div class="panel reveal">
-      <h3><span>WRITER</span></h3>
-      <div class="state">受付中</div>
-      <p>記事・コラムを書いています。</p>
-      <p>検索する人の悩みに寄り添う記事を、構成から仕上げまで。書いた記事と、制作の中身をご覧いただけます。</p>
-      <p class="e">Articles and columns, from outline to final draft.</p>
-      <a class="btn" href="writer.html">&gt; MORE</a>
-    </div>
-    <div class="photo " data-name="img/top/tile-writer.jpg"><img src="img/top/tile-writer.jpg" srcset="img/top/tile-writer-800.jpg 800w, img/top/tile-writer.jpg 1536w" sizes="(max-width: 900px) 100vw, 50vw" alt="書き物をする机" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"></div>
-  </section>
-  <section class="tile b">
-    <div class="photo " data-name="img/top/tile-script.jpg"><img src="img/top/tile-script.jpg" srcset="img/top/tile-script-800.jpg 800w, img/top/tile-script.jpg 1536w" sizes="(max-width: 900px) 100vw, 50vw" alt="窓辺の台本とペン" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"></div>
-    <div class="panel alt reveal">
-      <h3><span>SCRIPT</span></h3>
-      <div class="state">受付中</div>
-      <p>動画の台本・シナリオを書いています。</p>
-      <p>耳で聞いて伝わる言葉で、場面と人物を描きます。サンプルをご覧いただけます。</p>
-      <p class="e">Scripts and scenarios for video.</p>
-      <a class="btn" href="scenario.html">&gt; MORE</a>
-    </div>
-  </section>
-  <section class="tile a">
-    <div class="panel reveal">
-      <h3><span>LP</span></h3>
-      <div class="state">受付中</div>
-      <p>LPの構成・原稿・ページ制作。</p>
-      <p>伝えたい魅力が届く順番で、ページを組み立てます。雰囲気の違う、自主制作のサンプル6点をご覧いただけます。</p>
-      <p class="e">Landing page structure, copy and design.</p>
-      <a class="btn" href="lp.html">&gt; MORE</a>
-    </div>
-    <div class="photo " data-name="img/top/tile-lp.jpg"><img src="img/top/tile-lp.jpg" srcset="img/top/tile-lp-800.jpg 800w, img/top/tile-lp.jpg 1536w" sizes="(max-width: 900px) 100vw, 50vw" alt="LPのイメージ" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"></div>
-  </section>
-  <section class="tile b">
-    <div class="photo " data-name="img/top/tile-hp.jpg"><img src="img/top/tile-hp.jpg" srcset="img/top/tile-hp-800.jpg 800w, img/top/tile-hp.jpg 1536w" sizes="(max-width: 900px) 100vw, 50vw" alt="ホームページのイメージ" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"></div>
-    <div class="panel alt reveal">
-      <h3><span>HP</span></h3>
-      <div class="state">受付中</div>
-      <p>ホームページ制作。</p>
-      <p>お店や事業の案内をする、数ページのホームページを作ります。飲食店・美容サロン・コンサル・物販ブランドの、4つの自主制作サンプルをご覧いただけます。</p>
-      <p class="e">Website production.</p>
-      <a class="btn" href="hp.html">&gt; MORE</a>
-    </div>
-  </section>
-  <section class="tile a">
-    <div class="panel reveal">
-      <h3><span>DESIGN</span></h3>
-      <div class="state">サンプル公開中</div>
-      <p>WEBデザイン・バナー。</p>
-      <p>文章と相性のよい、読みやすいデザインを学んでいるところです。バナーの自主制作サンプルを公開中です。ページのデザインも、作品がそろい次第、載せていきます。</p>
-      <p class="e">Web design and banners — samples available.</p>
-      <a class="btn" href="web-design.html">&gt; MORE</a>
-    </div>
-    <div class="photo " data-name="img/top/tile-design.jpg"><img src="img/top/tile-design.jpg" srcset="img/top/tile-design-800.jpg 800w, img/top/tile-design.jpg 1536w" sizes="(max-width: 900px) 100vw, 50vw" alt="デザインのイメージ" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"></div>
-  </section>
-  <section class="tile b">
-    <div class="photo " data-name="img/top/tile-video.jpg"><img src="img/top/tile-video.jpg" srcset="img/top/tile-video-800.jpg 800w, img/top/tile-video.jpg 1536w" sizes="(max-width: 900px) 100vw, 50vw" alt="動画編集のイメージ" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"></div>
-    <div class="panel alt reveal">
-      <h3><span>VIDEO</span></h3>
-      <div class="state">準備中</div>
-      <p>PR・SNS向けのショート動画。</p>
-      <p>お店や商品のPRムービー、Instagramなどに投稿するショート動画の編集に、これから取り組んでいきます。作例ができ次第、載せていきます。</p>
-      <p class="e">Short videos for PR and social media — coming soon.</p>
-      <a class="btn" href="video.html">&gt; COMING SOON</a>
-    </div>
-  </section>
-  <section class="tile a">
-    <div class="panel reveal">
-      <h3><span>AI</span></h3>
-      <div class="state">準備中</div>
-      <p>AI導入支援。</p>
-      <p>会社員として取り組んでいる生成AIの業務活用を、これから支援として形にしていきます。実績ができ次第、載せていきます。</p>
-      <p class="e">AI adoption support — coming soon.</p>
-      <a class="btn" href="ai.html">&gt; COMING SOON</a>
-    </div>
-    <div class="photo " data-name="img/top/tile-ai.jpg"><img src="img/top/tile-ai.jpg" srcset="img/top/tile-ai-800.jpg 800w, img/top/tile-ai.jpg 1536w" sizes="(max-width: 900px) 100vw, 50vw" alt="AI活用のイメージ" loading="lazy" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"></div>
-  </section>
+
+
+<section class="block tint later" id="next">
+  <h2><span>NEXT</span></h2>
+  <div class="body reveal">
+    <h3 class="headline"><span class="nb">これから、</span><span class="nb">作例を増やしていく分野です。</span></h3>
+    <p>いまお受けしているのは、記事・台本・LP・ホームページです。次の分野は、作例ができ次第、それぞれのページに載せていきます。</p>
+    <ul class="rows">
+      <li><a href="web-design.html"><span class="l-name">DESIGN</span><span class="l-state">バナーのサンプル公開中</span><span class="l-desc">WEBデザイン・バナー</span></a></li>
+      <li><a href="video.html"><span class="l-name">VIDEO</span><span class="l-state">準備中</span><span class="l-desc">PR・SNS向けのショート動画</span></a></li>
+      <li><a href="ai.html"><span class="l-name">AI</span><span class="l-state">準備中</span><span class="l-desc">生成AIの業務活用の支援</span></a></li>
+    </ul>
+  </div>
+</section>
 
 <section class="block" id="tools">
   <h2><span>ENVIRONMENT</span></h2>
@@ -167,23 +171,6 @@
       <div class="item"><h3>COMMUNICATION</h3><p>Chatwork、Slackなど。ご指定のツールで連絡します。</p></div>
     </div>
     <p style="margin-top:24px;font-size:12.5px;color:var(--ink-soft);">上記以外のツールも、ご相談ください。</p>
-  </div>
-</section>
-
-<section class="block tint" id="next">
-  <h2><span>NEXT</span></h2>
-  <div class="body reveal">
-    <p>これから、次の2つに取り組んでいきます。</p>
-    <div class="cols">
-      <div class="item">
-        <h3>今ある仕事を、磨く</h3>
-        <p>SEO記事・台本・コラム記事のブラッシュアップ。読み手の目線でレビューと改稿を重ねて、質を上げていきます。</p>
-      </div>
-      <div class="item">
-        <h3>作例を、ポートフォリオに増やす</h3>
-        <p>ショート動画、バナーデザイン、AI導入支援。作例ができ次第、それぞれのページに載せていきます。LPとホームページは、ご依頼いただいた制作を実績として加えていきます。</p>
-      </div>
-    </div>
   </div>
 </section>
 
