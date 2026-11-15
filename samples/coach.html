@@ -56,8 +56,8 @@ ul, ol { list-style: none; }
 .cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0 18px; margin-top: 10px; }
 .col { border-top: 3px solid currentColor; padding-top: 10px; min-height: 220px; }
 .col.fact { color: #2E4B6B; } .col.feel { color: #A0482C; }
-.col h4 { font-family: "BIZ UDMincho", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif; font-size: 18px; }
-.col h4 small { font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "YuGothic", "Meiryo", "Noto Sans JP", sans-serif; font-weight: 400; font-size: 12.5px; margin-left: 6px; color: #55575C; }
+.col .ch { font-family: "BIZ UDMincho", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif; font-size: 18px; }
+.col .ch small { font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "YuGothic", "Meiryo", "Noto Sans JP", sans-serif; font-weight: 400; font-size: 12.5px; margin-left: 6px; color: #55575C; }
 .col ul { margin-top: 8px; }
 .col li { padding: 9px 12px; margin-bottom: 8px; font-size: 14.5px; color: #1E1F22; }
 .col.fact li { background: #E8EDF2; border-left: 3px solid #2E4B6B; }
@@ -164,7 +164,7 @@ footer p { margin-top: 10px; opacity: 0.85; max-width: 52em; }
 .uf-board h2 { font-size: 19px; }
 .uf-board .cols { margin-top: 10px; }
 .uf-board .col { min-height: 170px; }
-.uf-board .col h4 small { display: block; margin-left: 0; }
+.uf-board .col .ch small { display: block; margin-left: 0; }
 .uf-board .result { margin-top: 14px; }
 .uf-price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 14px; margin-top: 26px; padding-top: 14px; border-top: 1px solid #1E1F22; }
 .uf-price .serif { font-size: 34px; line-height: 1; }
@@ -223,8 +223,8 @@ html:not(.js) .uf-board .cols, html:not(.js) .uf-board h2 { display: none; }
   <div class="uf-board" aria-live="polite">
     <h2>あなたの迷いの中身</h2>
     <div class="cols">
-      <div class="col fact"><h4>事実<small>していること・起きていること</small></h4><ul id="col-fact"></ul><p class="empty" id="empty-fact">ほどいた言葉を、ここに分けます。</p></div>
-      <div class="col feel"><h4>気持ち<small>感じていること</small></h4><ul id="col-feel"></ul><p class="empty" id="empty-feel">ほどいた言葉を、ここに分けます。</p></div>
+      <div class="col fact"><h3 class="ch">事実<small>していること・起きていること</small></h3><ul id="col-fact"></ul><p class="empty" id="empty-fact">ほどいた言葉を、ここに分けます。</p></div>
+      <div class="col feel"><h3 class="ch">気持ち<small>感じていること</small></h3><ul id="col-feel"></ul><p class="empty" id="empty-feel">ほどいた言葉を、ここに分けます。</p></div>
     </div>
     <div class="result" id="result" hidden><p id="result-text"></p></div>
     <div class="uf-price"><span class="serif">3,000<small>円</small></span><p>体験セッション・60分・オンライン</p></div>
