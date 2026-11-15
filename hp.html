@@ -21,6 +21,117 @@
 <meta name="twitter:card" content="summary_large_image">
 <!-- share:end -->
 <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+<style>
+/* 最初の画面：書いた記事そのものを見せる（案A） */
+.wfv { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 0 56px; align-items: start; padding: calc(var(--nav-h) + 56px) 34px 64px; border-bottom: 1px solid var(--line); }
+.wfv .crumb { font-family: var(--sans); font-size: 12px; letter-spacing: 0.2em; color: var(--ink-soft); text-decoration: none; }
+.wfv .en-label { margin-top: 26px; font-family: Georgia, serif; font-size: 12.5px; letter-spacing: 0.3em; color: var(--ink-soft); }
+.wfv h1 { font-weight: 500; font-size: clamp(24px, 2.6vw, 34px); line-height: 1.75; margin: 12px 0 18px; }
+.wfv .lede { font-size: 14.5px; max-width: 34em; color: var(--ink-soft); }
+.wfv .cta-row { margin-top: 26px; }
+.wfv .cta-row .btn { padding: 13px 30px; }
+.wfv .facts { padding-right: 0; }
+.wfv .anchors { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 26px; }
+.wfv .anchors a { font-family: var(--sans); font-size: 12px; letter-spacing: 0.2em; text-decoration: none; color: var(--ink-soft); border-bottom: 1px solid var(--line); padding-bottom: 2px; }
+.wfv .anchors a:hover { color: var(--ink); border-color: var(--ink); }
+
+/* 右：紙に見立てたサンプル記事 */
+.wp-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--ink); }
+.wp-cap { padding-bottom: 10px; font-family: var(--sans); font-size: 12px; letter-spacing: 0.12em; color: var(--ink-soft); }
+.wp-tabs { display: flex; }
+.wp-tabs button { min-height: 40px; padding: 8px 14px; background: transparent; border: 0; border-bottom: 3px solid transparent; font: 600 13px/1.2 var(--sans); color: var(--ink-soft); cursor: pointer; }
+.wp-tabs button:hover { color: var(--ink); }
+.wp-tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--ink); }
+.wp-tabs button:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
+.sheet { position: relative; margin-top: 18px; padding: 30px 34px 26px; background: #FFFFFF; border: 1px solid rgba(60, 63, 62, 0.14); box-shadow: 0 10px 28px rgba(60, 63, 62, 0.08); }
+.sheet .meta { display: flex; flex-wrap: wrap; gap: 4px 14px; font-family: var(--sans); font-size: 12px; color: var(--ink-soft); }
+.sheet .meta b { color: var(--ink); font-weight: 600; }
+.sheet h2.ttl { margin: 12px 0 14px; font-weight: 600; font-size: clamp(18px, 1.6vw, 21px); line-height: 1.65; letter-spacing: 0.02em; }
+.sheet .lead { position: relative; max-height: 5.4em; overflow: hidden; font-size: 14px; line-height: 1.8; }
+.sheet .lead::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1.8em; background: linear-gradient(rgba(255, 255, 255, 0), #FFFFFF); }
+.sheet .toc { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); }
+.sheet .toc p { font-family: var(--sans); font-size: 12px; letter-spacing: 0.1em; color: var(--ink-soft); }
+.sheet .toc ol { margin: 8px 0 0; padding: 0; list-style: none; counter-reset: h; }
+.sheet .toc li { counter-increment: h; display: grid; grid-template-columns: 2.2em minmax(0, 1fr); padding: 5px 0; font-size: 13.5px; line-height: 1.6; }
+.sheet .toc li::before { content: counter(h, decimal-leading-zero); font-family: Georgia, serif; color: var(--ink-soft); }
+.sheet .toc p.cont { position: relative; max-height: 9em; overflow: hidden; margin-top: 8px; font-family: var(--serif); font-size: 14px; letter-spacing: 0; line-height: 1.8; color: var(--ink); }
+.sheet .toc p.cont::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1.8em; background: linear-gradient(rgba(255, 255, 255, 0), #FFFFFF); }
+.sheet .read { display: inline-block; margin-top: 18px; font-family: var(--sans); font-size: 13px; font-weight: 600; letter-spacing: 0.08em; color: var(--ink); text-underline-offset: 4px; }
+.wp-note { margin-top: 12px; font-size: 12.5px; color: var(--ink-soft); }
+html.js .sheet[hidden] { display: none; }
+html.js .sheet:not([hidden]) { animation: wp-in 0.35s ease-out both; }
+@keyframes wp-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+/* JSが動かないとき：切り替えボタンを隠し、3本を順に並べる（JSがあるときは1本ずつ表示） */
+html:not(.js) .wp-tabs { display: none; }
+html:not(.js) .sheet + .sheet { margin-top: 14px; }
+
+@media (max-width: 900px) {
+  .wfv { grid-template-columns: 1fr; gap: 36px; padding: calc(var(--nav-h) + 26px) 22px 48px; }
+  .wfv .en-label { margin-top: 18px; }
+  .wfv h1 { font-size: 24px; margin: 10px 0 14px; }
+  .wfv .cta-row { margin-top: 20px; }
+  .wfv .cta-row .btn { flex: 1 1 140px; padding: 13px 10px; }
+  /* スマホ：記事が早く見えるよう、条件は罫線なしの1行ずつにし、ページ内リンクは省く */
+  .wfv .facts { gap: 2px 14px; margin-top: 14px; }
+  .wfv .facts span { border: 0; padding: 0; font-size: 11.5px; }
+  .wfv .anchors { display: none; }
+  .wp-head { flex-direction: column; align-items: stretch; }
+  .wp-cap { padding-bottom: 4px; }
+  .wp-tabs button { flex: 1; padding: 8px 4px; font-size: 12.5px; }
+  .sheet { padding: 22px 20px 20px; }
+  .sheet .toc li { font-size: 13px; }
+}
+@media (prefers-reduced-motion: reduce) { html.js .sheet:not([hidden]) { animation: none; } }
+
+/* LP・HPページ：サンプルを選んで、見どころまで見せる（案A） */
+.gfv { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); max-width: 1500px; margin: 0 auto; gap: 0 56px; align-items: start; padding: calc(var(--nav-h) + 34px) 34px 56px; border-bottom: 1px solid var(--line); }
+.gfv-l, .gfv-r { min-width: 0; }
+.gfv .crumb { font-family: var(--sans); font-size: 12px; letter-spacing: 0.2em; color: var(--ink-soft); text-decoration: none; }
+.gfv .en-label { margin-top: 26px; font-family: Georgia, serif; font-size: 12.5px; letter-spacing: 0.3em; color: var(--ink-soft); }
+.gfv h1 { font-weight: 500; font-size: clamp(25px, 2.6vw, 34px); line-height: 1.7; margin: 12px 0 16px; }
+.gfv .lede { font-size: 14.5px; max-width: 32em; color: var(--ink-soft); }
+.gfv .price { margin-top: 22px; padding: 12px 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); font-size: 14px; line-height: 1.8; }
+.gfv .price small { display: block; font-family: var(--sans); font-size: 11.5px; letter-spacing: 0.1em; color: var(--ink-soft); }
+.gfv .price a { font-size: 13px; color: var(--ink-soft); text-underline-offset: 3px; }
+.gfv .cta-row { margin-top: 22px; }
+.gfv .cta-row .btn { padding: 13px 26px; }
+.gfv .gnote { margin-top: 16px; font-size: 12.5px; line-height: 1.8; color: var(--ink-soft); }
+.gal .sheet.gp { margin: 0; padding: 0; background: none; border: 0; box-shadow: none; }
+.gal .gshot { display: block; height: clamp(300px, calc(100vh - 400px), 470px); overflow: hidden; background: var(--bg-tile); border: 1px solid rgba(60, 63, 62, 0.14); box-shadow: 0 10px 28px rgba(60, 63, 62, 0.08); }
+.gal .gshot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.gal .gtext { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 20px; align-items: end; margin-top: 14px; }
+.gal .gmeta { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 2px 12px; font-family: var(--sans); font-size: 12px; color: var(--ink-soft); }
+.gal .gmeta b { color: var(--ink); font-weight: 600; }
+.gal h2.gttl { margin: 2px 0 0; font-weight: 600; font-size: 19px; line-height: 1.5; }
+.gal .gpoint { grid-column: 1 / 2; margin: 6px 0 0; font-size: 14px; line-height: 1.8; }
+.gal .read { grid-column: 2 / 3; grid-row: 2 / 4; align-self: end; font-family: var(--sans); font-size: 13px; font-weight: 600; letter-spacing: 0.06em; color: var(--ink); white-space: nowrap; text-underline-offset: 4px; }
+.gal .wp-tabs { display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); gap: 10px; margin: 0 0 16px; padding: 0 0 12px; border-bottom: 1px solid var(--line); }
+.gal .wp-tabs button { display: block; min-height: 0; padding: 0; border: 0; background: none; text-align: left; cursor: pointer; font: 600 11.5px/1.4 var(--sans); color: var(--ink-soft); }
+.gal .wp-tabs button img { display: block; width: 100%; height: auto; aspect-ratio: 960 / 645; object-fit: cover; object-position: 50% 45%; border: 1px solid rgba(60, 63, 62, 0.14); opacity: 0.62; transition: opacity 0.2s; }
+.gal .wp-tabs button span { display: block; margin-top: 5px; padding-top: 4px; border-top: 2px solid transparent; overflow-wrap: anywhere; }
+.gal .wp-tabs button:hover img { opacity: 0.9; }
+.gal .wp-tabs button[aria-selected="true"] { color: var(--ink); }
+.gal .wp-tabs button[aria-selected="true"] img { opacity: 1; outline: 2px solid var(--ink); outline-offset: 2px; }
+.gal .wp-tabs button[aria-selected="true"] span { border-top-color: var(--ink); }
+.gal .wp-tabs button:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+html:not(.js) .gal .sheet.gp + .sheet.gp { margin-top: 30px; }
+.more-box { margin-top: 8px; padding: 20px 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); }
+.more-box h3 { margin: 0 0 8px; font-size: 17px; }
+@media (max-width: 900px) {
+  .gfv { grid-template-columns: 1fr; gap: 28px; padding: calc(var(--nav-h) + 26px) 22px 48px; }
+  .gfv .en-label { margin-top: 18px; }
+  .gfv h1 { font-size: 24px; margin: 10px 0 12px; }
+  .gfv .lede { font-size: 14px; }
+  .gfv .price { margin-top: 16px; font-size: 13.5px; }
+  .gfv .cta-row { margin-top: 16px; }
+  .gfv .cta-row .btn { flex: 1 1 140px; padding: 13px 10px; }
+  .gal .gshot { height: auto; aspect-ratio: 960 / 645; }
+  .gal .gtext { grid-template-columns: 1fr; }
+  .gal .read { grid-column: 1 / -1; grid-row: auto; margin-top: 8px; }
+  .gal .wp-tabs { grid-template-columns: repeat(var(--n), minmax(84px, 1fr)); overflow-x: auto; gap: 8px; }
+}
+</style>
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 <header class="gnav">
@@ -29,26 +140,48 @@
   <ul class="menu" id="menu"><li><a href="index.html">Home</a></li><li><a href="writer.html">Writer</a></li><li><a href="scenario.html">Script</a></li><li><a href="lp.html">LP</a></li><li><a href="hp.html" class="cur">HP</a></li><li><a href="web-design.html">Design</a></li><li><a href="video.html">Video</a></li><li><a href="ai.html">AI</a></li><li><a href="index.html#profile">Profile</a></li><li><a class="cta" href="index.html#contact">相談する</a></li></ul>
 </header>
 <main id="main">
-<section class="sub-hero"><div class="photo " data-name="img/top/tile-hp.jpg"><img src="img/top/tile-hp.jpg" srcset="img/top/tile-hp-800.jpg 800w, img/top/tile-hp.jpg 1536w" sizes="100vw" alt="ホームページのイメージ" fetchpriority="high" onload="this.parentNode.classList.add('has-img')" onerror="this.remove()"></div></section>
-<section class="sub-title">
-  <a class="crumb" href="index.html">← HOME</a>
-  <div>
-    <div class="en-label">WEBSITE ／ SAMPLES</div>
-    <h1 class="reveal">ホームページの、<br>制作サンプル。</h1>
-    <p class="lede reveal">架空のお店や事務所を想定して作った、ホームページのサンプルを4つ公開しています。飲食店・美容サロン・コンサル・物販ブランドと、業種を変えて作りました。</p>
+<section class="gfv" id="top-sample" aria-labelledby="g-h1">
+  <div class="gfv-l">
+    <a class="crumb" href="index.html">← HOME</a>
+    <div class="en-label">WEBSITE ／ ホームページ制作</div>
+    <h1 id="g-h1"><span class="nb">お店や事業の案内を、</span><span class="nb">数ページのホームページに。</span></h1>
+    <p class="lede"><span class="nb">同じ業種のお店のサイトを調べて、</span><span class="nb">お客様が知りたい項目をそろえ、</span><span class="nb">5〜6ページで作ります。</span><span class="nb">スマホでも読みやすく。</span></p>
+    <p class="price"><small>料金の目安（税込・お見積もり無料）</small><span class="nb">小規模なお店・事業者向け</span>：<span class="nb">40,000円〜150,000円前後</span>　<a href="pricing.html">料金の目安と対応範囲</a></p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="index.html?type=hp#contact">HPの相談をする</a>
+      <a class="btn btn-ghost" href="hp-samples/petite-douceur-dynamic/index.html">動く見本を試す</a>
+    </div>
+    <p class="gnote">掲載はすべて、架空のお店・事務所を想定した自主制作のサンプルです。お客様からのご依頼による制作実績は、まだありません。</p>
+  </div>
+  <div class="gfv-r">
+  <div class="gal">
+    <div class="wp-tabs" role="tablist" aria-label="ホームページのサンプル" style="--n:4"><button type="button" role="tab" id="wt-petite" aria-controls="ws-petite" aria-selected="true"><img src="img/top/g-hp-petite-douceur-480.jpg" alt="" width="480" height="323" loading="lazy"><span>petite douceur</span></button><button type="button" role="tab" id="wt-hana" aria-controls="ws-hana" aria-selected="false" tabindex="-1"><img src="img/top/g-hp-hana-salon-480.jpg" alt="" width="480" height="323" loading="lazy"><span>HANA hair &amp; esthetic</span></button><button type="button" role="tab" id="wt-michi" aria-controls="ws-michi" aria-selected="false" tabindex="-1"><img src="img/top/g-hp-michishirube-480.jpg" alt="" width="480" height="323" loading="lazy"><span>みちしるべ経営パートナーズ</span></button><button type="button" role="tab" id="wt-te" aria-controls="ws-te" aria-selected="false" tabindex="-1"><img src="img/top/g-hp-te-shigoto-480.jpg" alt="" width="480" height="323" loading="lazy"><span>て、しごと</span></button></div>
+    <article class="sheet gp" role="tabpanel" id="ws-petite" aria-labelledby="wt-petite">
+      <a class="gshot" href="hp-samples/petite-douceur/index.html"><img src="img/top/g-hp-petite-douceur.jpg" srcset="img/top/g-hp-petite-douceur-480.jpg 480w, img/top/g-hp-petite-douceur.jpg 960w" sizes="(max-width: 900px) 92vw, 680px" alt="焼き菓子店のサイトのトップ画面（店のガラス戸に金文字で店名を書き、向こうに焼きあがったパンの棚が見えるデザイン）" width="960" height="645" fetchpriority="high"></a>
+      <div class="gtext"><p class="gmeta"><b>店先・あたたかみ</b><span>飲食｜町の小さな焼き菓子店</span></p><h2 class="gttl">petite douceur</h2><p class="gpoint">店のガラス戸を最初の画面にしました。扉の札は見る人の時刻で「営業中」「準備中」などに変わり、棚には焼き上がりの時間ごとに商品が並びます。</p><a class="read" href="hp-samples/petite-douceur/index.html">このサンプルを開く →</a></div>
+    </article>
+    <article class="sheet gp" role="tabpanel" id="ws-hana" aria-labelledby="wt-hana">
+      <a class="gshot" href="hp-samples/hana-salon/index.html"><img src="img/top/g-hp-hana-salon.jpg" srcset="img/top/g-hp-hana-salon-480.jpg 480w, img/top/g-hp-hana-salon.jpg 960w" sizes="(max-width: 900px) 92vw, 680px" alt="美容サロンのサイトのトップ画面（うしろ姿の写真に、毛先を映す小さな鏡を重ねたデザイン）" width="960" height="645" loading="lazy"></a>
+      <div class="gtext"><p class="gmeta"><b>合わせ鏡・上品</b><span>美容｜完全予約制のサロン</span></p><h2 class="gttl">HANA hair &amp; esthetic</h2><p class="gpoint">美容室で最後にする「合わせ鏡」を、ページの仕組みにしました。うしろ姿の写真に手鏡を重ね、毛先の寄りを映します。</p><a class="read" href="hp-samples/hana-salon/index.html">このサンプルを開く →</a></div>
+    </article>
+    <article class="sheet gp" role="tabpanel" id="ws-michi" aria-labelledby="wt-michi">
+      <a class="gshot" href="hp-samples/michishirube/index.html"><img src="img/top/g-hp-michishirube.jpg" srcset="img/top/g-hp-michishirube-480.jpg 480w, img/top/g-hp-michishirube.jpg 960w" sizes="(max-width: 900px) 92vw, 680px" alt="コンサルティング会社のサイトのトップ画面（手元のお金の線が画面を横切り、下へ続くデザイン）" width="960" height="645" loading="lazy"></a>
+      <div class="gtext"><p class="gmeta"><b>お金の線・明快</b><span>士業・コンサル｜中小企業向け</span></p><h2 class="gttl">みちしるべ経営パートナーズ</h2><p class="gpoint">手元のお金の線が画面を横切り、そのまま下へ続いて、お金が足りなくなる理由3つを1本の糸のように貫きます。</p><a class="read" href="hp-samples/michishirube/index.html">このサンプルを開く →</a></div>
+    </article>
+    <article class="sheet gp" role="tabpanel" id="ws-te" aria-labelledby="wt-te">
+      <a class="gshot" href="hp-samples/te-shigoto/index.html"><img src="img/top/g-hp-te-shigoto.jpg" srcset="img/top/g-hp-te-shigoto-480.jpg 480w, img/top/g-hp-te-shigoto.jpg 960w" sizes="(max-width: 900px) 92vw, 680px" alt="石鹸ブランドのサイトのトップ画面（画面全体が1枚の商品ラベルになり、全成分が大きく並ぶデザイン）" width="960" height="645" loading="lazy"></a>
+      <div class="gtext"><p class="gmeta"><b>ラベル・誠実</b><span>物販｜石鹸の小さな工房</span></p><h2 class="gttl">て、しごと</h2><p class="gpoint">最初の画面全体を、1枚の商品ラベルにしました。全成分を大きく並べ、押すと説明が開きます。</p><a class="read" href="hp-samples/te-shigoto/index.html">このサンプルを開く →</a></div>
+    </article>
+  </div>
   </div>
 </section>
+
 <section class="block" id="works">
-  <h2><span>WORKS</span></h2>
+  <h2><span>MORE</span></h2>
   <div class="body reveal">
     <p>どのサイトも5〜6ページ構成で、スマホでも読みやすい作りにしています。載せる項目は、同じ業種のお店のサイトを調べて決めました（スタッフ紹介、焼き上がりの時間、料金の目安、特定商取引法に基づく表記など）。雰囲気の違う見本として、「ラベル・誠実」「お金の線・明快」「店先・あたたかみ」「合わせ鏡・上品」の4種類を用意しました。ご依頼の際は、「このサイトの雰囲気で」とお伝えください。画像をクリックすると、サイトが開きます。</p>
-    <div class="works">
-      <a class="work" href="hp-samples/petite-douceur/index.html"><figure><img src="img/works/hp-petite-douceur.jpg" alt="焼き菓子店のサイトのトップ画面（店のガラス戸に金文字で店名を書き、向こうに焼きあがったパンの棚が見えるデザイン）" loading="lazy"><figcaption><span class="style-tag">店先・あたたかみ</span><br><b>petite douceur</b><br>飲食｜町の小さな焼き菓子店</figcaption></figure></a>
-      <a class="work" href="hp-samples/hana-salon/index.html"><figure><img src="img/works/hp-hana-salon.jpg" alt="美容サロンのサイトのトップ画面（うしろ姿の写真に、毛先を映す小さな鏡を重ねたデザイン）" loading="lazy"><figcaption><span class="style-tag">合わせ鏡・上品</span><br><b>HANA hair &amp; esthetic</b><br>美容｜完全予約制のサロン</figcaption></figure></a>
-      <a class="work" href="hp-samples/michishirube/index.html"><figure><img src="img/works/hp-michishirube.jpg" alt="コンサルティング会社のサイトのトップ画面（手元のお金の線が画面を横切り、下へ続くデザイン）" loading="lazy"><figcaption><span class="style-tag">お金の線・明快</span><br><b>みちしるべ経営パートナーズ</b><br>士業・コンサル｜中小企業向け</figcaption></figure></a>
-      <a class="work" href="hp-samples/te-shigoto/index.html"><figure><img src="img/works/hp-te-shigoto.jpg" alt="石鹸ブランドのサイトのトップ画面（画面全体が1枚の商品ラベルになり、全成分が大きく並ぶデザイン）" loading="lazy"><figcaption><span class="style-tag">ラベル・誠実</span><br><b>て、しごと</b><br>物販｜石鹸の小さな工房</figcaption></figure></a>
-    </div>
-    <div class="reveal" style="margin-top:34px;padding:24px 26px;border:1px solid var(--line,rgba(0,0,0,.18));border-radius:8px;">
+    
+    <div class="reveal more-box">
       <h3 style="margin:0 0 8px;font-size:17px;">動きのあるホームページも、お作りできます</h3>
       <p style="margin:0 0 14px;font-size:14.5px;line-height:1.9;">パン屋さんの見本を、ブラウザの中で動く仕組みを入れて作りました。いまの営業状況（営業中・定休日）の自動表示、お知らせの絞り込み、商品の検索と並べ替え、ご予約の合計金額の自動計算、入力チェックと確認画面を試せます。お店の情報は、1つのファイルの文字を直すだけで更新できる作りです。</p>
       <p style="margin:0;"><a class="btn line" href="hp-samples/petite-douceur-dynamic/index.html">&gt; 動く見本を試す（パン屋さん）</a></p>
@@ -80,30 +213,6 @@
         <p>ご連絡には24時間以内にお返事します。本業があるため、平日の日中のご連絡には、夜にお返事することがあります。</p>
       </div>
     </div>
-  </div>
-</section>
-<section class="block" id="seo">
-  <h2><span>SEO</span></h2>
-  <div class="body reveal">
-    <p class="headline">検索で見つけてもらうための、基本の設定をして納品します。</p>
-    <p>ホームページは、「◯◯市 パン屋」のように、地域の名前と業種で探されることが多くあります。お店の名前・住所・営業時間を、どのページでも同じ書き方にそろえることも大事にしています。</p>
-    <div class="cols">
-      <div class="item"><h3>検索結果に出る文章</h3><p>ページごとに、タイトルと説明文を書き分けます。検索結果で、中身が伝わる要約にします。</p></div>
-      <div class="item"><h3>探される言葉で、見出しを</h3><p>SEO記事を書いている経験から、「どんな言葉で探されるか」を調べて、見出しと本文に入れます。</p></div>
-      <div class="item"><h3>見出しと写真の整理</h3><p>大見出しは1ページに1つ。見出しの順番を整え、写真には内容が分かる説明（代替テキスト）を付けます。</p></div>
-      <div class="item"><h3>スマホと表示の速さ</h3><p>スマホで読みやすい作りにし、写真は軽くして、表示を速くします。</p></div>
-      <div class="item"><h3>SNSでシェアされたとき</h3><p>シェアされたときに出る見出し・説明・画像を設定します。</p></div>
-      <div class="item"><h3>店舗情報を、検索エンジンにも</h3><p>住所・電話・営業時間を、検索エンジンが読み取れる形（構造化データ）でも書き込みます。Googleマップに載っている情報と、ずれがないかも確かめます。</p></div>
-    </div>
-    <div class="note" style="margin-top:30px;max-width:none;"><b>サンプルで、実際に測りました（2026年10月24日）</b><br>Googleの計測ツール「Lighthouse」で、公開中のページを、スマホでの表示を想定して3回ずつ測りました（点数は3回の真ん中の値）。対象はHPサンプル4つ（各トップページ）です。
-      <div class="table-scroll" style="margin-top:12px;"><table style="width:100%;border-collapse:collapse;font-size:13.5px;">
-        <tr><td style="padding:8px 0;border-bottom:1px solid var(--line);">表示の速さ</td><td style="padding:8px 0;border-bottom:1px solid var(--line);text-align:right;">97〜100点</td></tr>
-        <tr><td style="padding:8px 0;border-bottom:1px solid var(--line);">見やすさ・使いやすさ（アクセシビリティ）</td><td style="padding:8px 0;border-bottom:1px solid var(--line);text-align:right;">すべて100点</td></tr>
-        <tr><td style="padding:8px 0;border-bottom:1px solid var(--line);">安全で正しい作り（ベストプラクティス）</td><td style="padding:8px 0;border-bottom:1px solid var(--line);text-align:right;">すべて100点</td></tr>
-      </table></div>
-      <span style="font-size:12.5px;color:var(--ink-soft);">検索（SEO）の項目は、サンプルを検索結果に出さない設定にしているぶんだけ減点になり、それ以外の確認項目はすべて通っています。点数は計測する環境や日によって多少変わります。</span></div>
-    <div class="note" style="margin-top:30px;"><b>お約束できないこと</b><br>検索の順位は、競合するサイトや、サイトを運営している期間、更新の頻度などでも変わります。そのため、上位表示のお約束はしていません。</div>
-    <p style="margin-top:18px;font-size:12.5px;color:var(--ink-soft);">※サンプルは架空のお店なので、検索結果には出さない設定（noindex）にしています。それ以外の設定は、各ページのソースで確かめられます。</p>
   </div>
 </section>
 <section class="block tint">
@@ -144,6 +253,30 @@
       <li><h3>公開</h3><p>ご用意いただいたサーバーにサイトを載せて、公開するところまで行います。サイトのファイル一式と、確かめた端末や表示の速さをまとめた確認の記録もお渡しします。公開後1か月以内の文字・画像の差し替えは無料です。</p></li>
     </ol>
     <p style="margin-top:18px;font-size:13px;color:var(--ink-soft);">5ページ前後の場合、ヒアリングから納品までおよそ21営業日が目安です（内容によって変わります）。</p>
+  </div>
+</section>
+<section class="block" id="seo">
+  <h2><span>SEO</span></h2>
+  <div class="body reveal">
+    <p class="headline">検索で見つけてもらうための、基本の設定をして納品します。</p>
+    <p>ホームページは、「◯◯市 パン屋」のように、地域の名前と業種で探されることが多くあります。お店の名前・住所・営業時間を、どのページでも同じ書き方にそろえることも大事にしています。</p>
+    <div class="cols">
+      <div class="item"><h3>検索結果に出る文章</h3><p>ページごとに、タイトルと説明文を書き分けます。検索結果で、中身が伝わる要約にします。</p></div>
+      <div class="item"><h3>探される言葉で、見出しを</h3><p>SEO記事を書いている経験から、「どんな言葉で探されるか」を調べて、見出しと本文に入れます。</p></div>
+      <div class="item"><h3>見出しと写真の整理</h3><p>大見出しは1ページに1つ。見出しの順番を整え、写真には内容が分かる説明（代替テキスト）を付けます。</p></div>
+      <div class="item"><h3>スマホと表示の速さ</h3><p>スマホで読みやすい作りにし、写真は軽くして、表示を速くします。</p></div>
+      <div class="item"><h3>SNSでシェアされたとき</h3><p>シェアされたときに出る見出し・説明・画像を設定します。</p></div>
+      <div class="item"><h3>店舗情報を、検索エンジンにも</h3><p>住所・電話・営業時間を、検索エンジンが読み取れる形（構造化データ）でも書き込みます。Googleマップに載っている情報と、ずれがないかも確かめます。</p></div>
+    </div>
+    <div class="note" style="margin-top:30px;max-width:none;"><b>サンプルで、実際に測りました（2026年10月24日）</b><br>Googleの計測ツール「Lighthouse」で、公開中のページを、スマホでの表示を想定して3回ずつ測りました（点数は3回の真ん中の値）。対象はHPサンプル4つ（各トップページ）です。
+      <div class="table-scroll" style="margin-top:12px;"><table style="width:100%;border-collapse:collapse;font-size:13.5px;">
+        <tr><td style="padding:8px 0;border-bottom:1px solid var(--line);">表示の速さ</td><td style="padding:8px 0;border-bottom:1px solid var(--line);text-align:right;">97〜100点</td></tr>
+        <tr><td style="padding:8px 0;border-bottom:1px solid var(--line);">見やすさ・使いやすさ（アクセシビリティ）</td><td style="padding:8px 0;border-bottom:1px solid var(--line);text-align:right;">すべて100点</td></tr>
+        <tr><td style="padding:8px 0;border-bottom:1px solid var(--line);">安全で正しい作り（ベストプラクティス）</td><td style="padding:8px 0;border-bottom:1px solid var(--line);text-align:right;">すべて100点</td></tr>
+      </table></div>
+      <span style="font-size:12.5px;color:var(--ink-soft);">検索（SEO）の項目は、サンプルを検索結果に出さない設定にしているぶんだけ減点になり、それ以外の確認項目はすべて通っています。点数は計測する環境や日によって多少変わります。</span></div>
+    <div class="note" style="margin-top:30px;"><b>お約束できないこと</b><br>検索の順位は、競合するサイトや、サイトを運営している期間、更新の頻度などでも変わります。そのため、上位表示のお約束はしていません。</div>
+    <p style="margin-top:18px;font-size:12.5px;color:var(--ink-soft);">※サンプルは架空のお店なので、検索結果には出さない設定（noindex）にしています。それ以外の設定は、各ページのソースで確かめられます。</p>
   </div>
 </section>
 <section class="block" id="faq">
@@ -202,6 +335,33 @@
     ents.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("visible"); io.unobserve(en.target); } });
   }, { threshold: 0.08 });
   els.forEach(function (e) { io.observe(e); });
+})();
+</script>
+<script>
+(function () {
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.wp-tabs [role="tab"]'));
+  if (!tabs.length) return;
+  function pick(t, focus) {
+    tabs.forEach(function (b) {
+      var on = b === t;
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+      b.tabIndex = on ? 0 : -1;
+      document.getElementById(b.getAttribute('aria-controls')).hidden = !on;
+    });
+    if (focus) t.focus();
+  }
+  pick(tabs[0], false);
+  tabs.forEach(function (b, i) {
+    b.addEventListener('click', function () { pick(b, false); });
+    b.addEventListener('keydown', function (e) {
+      var n = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (e.key === 'Home') { e.preventDefault(); pick(tabs[0], true); return; }
+      if (e.key === 'End') { e.preventDefault(); pick(tabs[tabs.length - 1], true); return; }
+      if (!n) return;
+      e.preventDefault();
+      pick(tabs[(i + n + tabs.length) % tabs.length], true);
+    });
+  });
 })();
 </script>
 </body>
