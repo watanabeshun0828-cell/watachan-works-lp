@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 404ページはどの階層のURLでも表示されるため、リンクと読み込みの基準をサイトの入口に固定する -->
+<base href="/watachan-works-lp/">
+<title>ページが見つかりません - 渡邊駿｜記事・LP・HP制作</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="article.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%227%22 fill=%22%235f5f5c%22/%3E%3Ctext x=%2216%22 y=%2222%22 font-size=%2217%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Georgia,serif%22%3ES%3C/text%3E%3C/svg%3E">
+<style>
+.nf-list { list-style: none; margin: 8px 0 0; border-top: 1px solid var(--ink); }
+.nf-list li { border-bottom: 1px solid var(--line); }
+.nf-list a { display: grid; grid-template-columns: 10em minmax(0, 1fr); gap: 4px 20px; align-items: baseline; padding: 16px 0; color: var(--ink); text-decoration: none; }
+.nf-list a:hover .nf-name, .nf-list a:focus-visible .nf-name { text-decoration: underline; text-underline-offset: 4px; }
+.nf-name { font-weight: 600; white-space: nowrap; }
+.nf-name::after { content: " →"; color: var(--ink-soft); }
+.nf-note { font-size: 13.5px; color: var(--ink-soft); }
+.nf-alt { margin: 28px 0 72px; font-size: 14px; color: var(--ink-soft); }
+.nf-alt a { color: inherit; }
+@media (max-width: 600px) {
+  .nf-list a { grid-template-columns: 1fr; padding: 14px 0; }
+}
+</style>
+</head>
+<body>
+
+<header class="gnav">
+  <a class="logo" href="index.html">SHUN WATANABE<small>writing &amp; creating</small></a>
+  <button class="burger" aria-label="メニュー" onclick="document.getElementById('menu').classList.toggle('open')"><span></span><span></span></button>
+  <ul class="menu" id="menu"><li><a href="index.html">Home</a></li><li><a href="writer.html">Writer</a></li><li><a href="scenario.html">Script</a></li><li><a href="lp.html">LP</a></li><li><a href="hp.html">HP</a></li><li><a href="web-design.html">Design</a></li><li><a href="video.html">Video</a></li><li><a href="ai.html">AI</a></li><li><a href="index.html#profile">Profile</a></li><li><a class="cta" href="index.html#contact">相談する</a></li></ul>
+</header>
+
+<header class="head">
+  <div class="wrap">
+    <span class="eyebrow">404 ／ ページが見つかりません</span>
+    <h1><span class="nb">お探しのページが、</span><span class="nb">見つかりませんでした。</span></h1>
+    <p class="desc">アドレスが変わったか、ページがなくなった可能性があります。お手数ですが、下の一覧からお探しください。</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <ul class="nf-list">
+    <li><a href="index.html"><span class="nf-name">トップページ</span><span class="nf-note">できること・プロフィール・ご相談の入口</span></a></li>
+    <li><a href="writer.html"><span class="nf-name">記事</span><span class="nf-note">SEO記事・コラムの実績</span></a></li>
+    <li><a href="scenario.html"><span class="nf-name">台本・シナリオ</span><span class="nf-note">YouTube動画の台本の実績</span></a></li>
+    <li><a href="lp.html"><span class="nf-name">LP制作</span><span class="nf-note">LPのサンプルと進め方</span></a></li>
+    <li><a href="hp.html"><span class="nf-name">HP制作</span><span class="nf-note">ホームページのサンプルと進め方</span></a></li>
+    <li><a href="pricing.html"><span class="nf-name">料金の目安</span><span class="nf-note">金額の幅と、金額が変わるところ</span></a></li>
+    <li><a href="index.html#contact"><span class="nf-name">ご相談</span><span class="nf-note">問い合わせフォーム（24時間以内にお返事します）</span></a></li>
+  </ul>
+  <p class="nf-alt">探しているページが見つからないときは、<a href="index.html#contact">問い合わせフォーム</a>か、<a href="https://crowdworks.jp/public/employees/7075436" target="_blank" rel="noopener">クラウドワークスのプロフィール</a>からお知らせください。</p>
+</main>
+
+<footer>
+  <div><a href="index.html">HOME</a><a href="writer.html">WRITER</a><a href="scenario.html">SCRIPT</a><a href="lp.html">LP</a><a href="hp.html">HP</a><a href="web-design.html">DESIGN</a><a href="video.html">VIDEO</a><a href="ai.html">AI</a><a href="https://note.com/famous_abelia230" target="_blank" rel="noopener">NOTE</a></div>
+  <div>© 2026 Shun Watanabe</div>
+</footer>
+</body>
+</html>
