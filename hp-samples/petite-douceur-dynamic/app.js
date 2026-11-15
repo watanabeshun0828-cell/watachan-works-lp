@@ -184,10 +184,10 @@
     var name = $("f-name").value.trim(), mail = $("f-mail").value.trim(), tel = $("f-tel").value.trim();
     if (!name) bad("e-name", "お名前を入力してください。", $("f-name"));
     if (!mail) bad("e-mail", "メールアドレスを入力してください。", $("f-mail"));
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)) bad("e-mail", "メールアドレスの形式を確認してください（例：example@mail.com）。", $("f-mail"));
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)) bad("e-mail", "メールアドレスの形式を確認してください（例：example@example.com）。", $("f-mail"));
     var digits = tel.replace(/[\s\-ー－()（）]/g, "");
     if (!tel) bad("e-tel", "電話番号を入力してください。", $("f-tel"));
-    else if (!/^0\d{9,10}$/.test(digits)) bad("e-tel", "電話番号は、ハイフンありでも、なしでも、入力できます（例：090-1234-5678）。", $("f-tel"));
+    else if (!/^0\d{9,10}$/.test(digits)) bad("e-tel", "電話番号は、ハイフンありでも、なしでも、入力できます（例：090-0000-0000）。", $("f-tel"));
     if (!dateEl.value) bad("e-date", "受け取り日を選んでください。", dateEl);
     if (!timeEl.value) bad("e-time", "受け取り時間を選んでください。", timeEl);
     if (total() === 0) bad("e-order", "ご注文の商品を、1つ以上選んでください。", $("order-list").querySelector("button"));
