@@ -1,0 +1,123 @@
+/* ポートフォリオ共通の土台（2026-11-19）
+   色：生成り・墨・ライム／文字：見出しは明朝（しっぽり明朝→ヒラギノ明朝）、本文はゴシック
+   方針：囲みのカードを使わず、余白・整列・罫線・写真の大きさで区切る。角は立てる。
+   ページを移すときは site.css の代わりにこのファイルを読み込む */
+
+:root {
+  --paper: #F7F4EC;
+  --paper-2: #EFEBE0;
+  --accent-pale: #EEF2DE;
+  --ink: #242520;
+  --ink-2: #555950;
+  --line: rgba(36, 37, 32, 0.16);
+  --line-2: rgba(36, 37, 32, 0.28);
+  --accent: #B5DC3C;
+  --accent-ink: #1F2A14;
+  --action: #242520;
+  --action-hover: #3A3C34;
+  --serif: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+  --serif-sys: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif; /* 小さな見出し用（読み込みなし） */
+  --sans: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", system-ui, sans-serif;
+  --num: Georgia, "Times New Roman", serif;
+  --gutter: clamp(20px, 4vw, 56px);
+  --space: clamp(72px, 9vw, 136px);
+  --max: 1240px;
+  --nav-h: 68px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: calc(var(--nav-h) + 12px); }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body { background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.8; letter-spacing: 0.03em; -webkit-font-smoothing: antialiased; font-feature-settings: "palt" 0; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+ul, ol { list-style: none; }
+.nb { display: inline-block; }
+.skip { position: absolute; left: -9999px; top: 8px; z-index: 100; padding: 8px 14px; background: var(--ink); color: #fff; }
+.skip:focus { left: 8px; }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+/* ── 幅と区切り ── */
+.wrap { max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter); }
+.sec { padding-block: var(--space); }
+.sec + .sec { border-top: 1px solid var(--line); }
+.sec.pale { background: var(--accent-pale); border-top: 0; }
+.sec.pale + .sec { border-top: 0; }
+
+/* ── 見出しの組 ── */
+.label { font-family: var(--num); font-size: 13px; letter-spacing: 0.28em; color: var(--ink-2); }
+.title { margin-top: 10px; font-family: var(--serif); font-weight: 500; font-size: clamp(26px, 2.6vw, 36px); line-height: 1.5; letter-spacing: 0.06em; }
+.title small { display: block; margin-top: 4px; font-family: var(--num); font-size: 13px; letter-spacing: 0.24em; color: var(--ink-2); }
+.lede { max-width: 38em; margin-top: 16px; font-size: 16px; line-height: 1.9; color: var(--ink-2); }
+.mark { background: linear-gradient(transparent 64%, var(--accent) 64%, var(--accent) 92%, transparent 92%); }
+
+/* ── リンク・ボタン ── */
+.link { color: var(--ink); font-size: 15px; letter-spacing: 0.05em; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+.link:hover, .link:focus-visible { text-underline-offset: 0.34em; }
+@media (prefers-reduced-motion: no-preference) { .link { transition: text-underline-offset 160ms ease-out; } }
+.btn { display: inline-block; background: var(--action); color: #fff; text-decoration: none; border: 0; cursor: pointer; font-family: var(--sans); font-size: 15px; letter-spacing: 0.12em; line-height: 1.6; padding: 16px 36px; text-align: center; }
+.btn:hover { background: var(--action-hover); }
+.btn:focus-visible { outline-offset: 3px; }
+
+/* ── ヘッダー ── */
+.gh { position: sticky; top: 0; z-index: 50; background: rgba(247, 244, 236, 0.94); border-bottom: 1px solid transparent; }
+.gh.scrolled { border-bottom-color: var(--line); }
+.gh .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: var(--nav-h); }
+.brand { display: flex; align-items: baseline; gap: 14px; text-decoration: none; color: var(--ink); white-space: nowrap; }
+.brand b { font-family: var(--serif); font-weight: 500; font-size: 19px; letter-spacing: 0.16em; }
+.brand span { font-size: 12px; letter-spacing: 0.08em; color: var(--ink-2); }
+.gnav { display: flex; align-items: center; gap: 30px; }
+.gnav ul { display: flex; gap: 28px; }
+.gnav ul a { font-size: 14px; letter-spacing: 0.08em; text-decoration: none; color: var(--ink); padding: 6px 0; }
+.gnav ul a:hover, .gnav ul a[aria-current="page"] { text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 3px; text-underline-offset: 0.5em; }
+.gnav .btn { font-size: 14px; padding: 10px 20px; letter-spacing: 0.1em; }
+.menu-btn { display: none; }
+
+/* ── 写真の枠（生成画像を入れる場所） ── */
+.photo { position: relative; margin: 0; background: var(--paper-2); overflow: hidden; }
+.photo picture { display: block; width: 100%; height: 100%; }
+.photo img { width: 100%; height: 100%; object-fit: cover; }
+.photo.empty { display: grid; place-items: center; color: var(--ink-2); font-size: 13px; letter-spacing: 0.08em; text-align: center; padding: 20px; background: repeating-linear-gradient(135deg, var(--paper-2) 0 14px, #E8E3D6 14px 15px); }
+.photo-note { margin-top: 8px; font-size: 12.5px; color: var(--ink-2); letter-spacing: 0.04em; }
+
+/* ── 罫線の一覧 ── */
+.rules { border-top: 1px solid var(--ink); }
+.rules > li, .rules > div { border-bottom: 1px solid var(--line); }
+
+/* ── フッター ── */
+.gf { padding-block: 64px 40px; border-top: 1px solid var(--line); font-size: 14px; }
+.gf .cols { display: grid; grid-template-columns: minmax(0, 1.4fr) repeat(2, minmax(0, 1fr)); gap: 32px 48px; }
+.gf .brand { margin-bottom: 14px; }
+.gf p { color: var(--ink-2); line-height: 1.9; }
+.gf h2 { font-family: var(--num); font-weight: 400; font-size: 12.5px; letter-spacing: 0.26em; color: var(--ink-2); margin-bottom: 12px; }
+.gf ul a { display: inline-block; padding: 4px 0; text-decoration: none; }
+.gf ul a:hover { text-decoration: underline; text-underline-offset: 0.3em; }
+.gf .bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 12.5px; color: var(--ink-2); }
+
+/* ── ふわっと表示（JSが動くときだけ） ── */
+.js .reveal { opacity: 0; transform: translateY(14px); }
+.js .reveal.visible { opacity: 1; transform: none; transition: opacity 0.7s ease, transform 0.7s ease; }
+@media (prefers-reduced-motion: reduce) { .js .reveal { opacity: 1; transform: none; } }
+
+/* ── スマホ ── */
+@media (max-width: 900px) {
+  :root { --nav-h: 60px; }
+  body { font-size: 15.5px; }
+  .brand span { display: none; }
+  .gnav { gap: 12px; }
+  .gnav .btn { padding: 9px 14px; font-size: 13px; letter-spacing: 0.06em; }
+  /* JSなし：メニューはヘッダーの下に横並び */
+  .gh .wrap { flex-wrap: wrap; height: auto; min-height: var(--nav-h); padding-block: 10px; }
+  .gnav ul { order: 3; width: 100%; gap: 20px; overflow-x: auto; padding-bottom: 4px; }
+  .gnav ul a { font-size: 13.5px; white-space: nowrap; }
+  /* JSあり：メニューボタンで開閉 */
+  .js .gh .wrap { flex-wrap: nowrap; height: var(--nav-h); padding-block: 0; }
+  .js .menu-btn { display: grid; place-items: center; width: 44px; height: 44px; margin-right: -10px; background: none; border: 0; cursor: pointer; }
+  .js .menu-btn span { display: block; width: 22px; height: 1.5px; background: var(--ink); box-shadow: 0 7px 0 var(--ink); transform: translateY(-3.5px); }
+  .js .gnav ul { display: none; position: absolute; left: 0; right: 0; top: var(--nav-h); flex-direction: column; gap: 0; padding: 6px var(--gutter) 18px; background: var(--paper); border-bottom: 1px solid var(--line); overflow: visible; }
+  .js .gnav ul a { display: block; padding: 13px 0; font-size: 15.5px; border-bottom: 1px solid var(--line); }
+  .js .gh.open .gnav ul { display: flex; }
+  .gf .cols { grid-template-columns: 1fr 1fr; }
+  .gf .cols > div:first-child { grid-column: 1 / -1; }
+}

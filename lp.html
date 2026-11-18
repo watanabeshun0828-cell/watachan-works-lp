@@ -5,7 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LP制作｜渡邊駿</title>
 <meta name="description" content="LPの構成・原稿と、ページとしての制作サンプルを公開しています。">
-<link rel="stylesheet" href="site.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500&display=swap&text=%2646%3AAEFHIKLNOPRSTWacdeghinoprstuy%E3%80%81%E3%80%82%E3%81%84%E3%81%86%E3%81%88%E3%81%8A%E3%81%8B%E3%81%8D%E3%81%8F%E3%81%91%E3%81%93%E3%81%94%E3%81%97%E3%81%99%E3%81%9F%E3%81%A0%E3%81%A1%E3%81%A4%E3%81%A6%E3%81%A7%E3%81%A8%E3%81%AB%E3%81%AE%E3%81%AF%E3%81%B9%E3%81%BE%E3%81%BF%E3%82%81%E3%82%82%E3%82%88%E3%82%89%E3%82%8A%E3%82%8B%E3%82%8F%E3%82%92%E3%82%B9%E3%82%BA%E3%83%83%E3%83%86%E3%83%88%E3%83%8A%E3%83%91%E3%83%97%E3%83%BC%E4%BC%9D%E4%BD%9C%E4%BE%9D%E5%85%AC%E5%88%B6%E5%89%8D%E5%8F%97%E5%93%81%E5%95%8F%E5%96%B6%E5%9F%BA%E5%AE%88%E5%AE%9A%E5%BC%95%E6%88%90%E6%96%99%E6%9C%AC%E6%A4%9C%E6%A7%8B%E6%B8%A1%E7%9B%B8%E7%A9%8D%E7%B4%8D%E7%B4%A2%E7%B5%8C%E8%91%89%E8%A6%8B%E8%A8%80%E8%A8%AD%E8%AB%87%E8%B3%AA%E9%82%8A%E9%87%91%E9%96%8B%E9%A0%BC%E9%A7%BF%EF%BC%88%EF%BC%89">
+<link rel="stylesheet" href="base.css">
 <!-- share:start -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%227%22 fill=%22%235f5f5c%22/%3E%3Ctext x=%2216%22 y=%2222%22 font-size=%2217%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Georgia,serif%22%3ES%3C/text%3E%3C/svg%3E">
 <link rel="canonical" href="https://watanabeshun0828-cell.github.io/watachan-works-lp/lp.html">
@@ -20,333 +23,270 @@
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
 <!-- share:end -->
-<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+<script>document.documentElement.classList.add("js")</script>
 <style>
-/* 最初の画面：書いた記事そのものを見せる（案A） */
-.wfv { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 0 56px; align-items: start; padding: calc(var(--nav-h) + 56px) 34px 64px; border-bottom: 1px solid var(--line); }
-.wfv .crumb { font-family: var(--sans); font-size: 12px; letter-spacing: 0.2em; color: var(--ink-soft); text-decoration: none; }
-.wfv .en-label { margin-top: 26px; font-family: Georgia, serif; font-size: 12.5px; letter-spacing: 0.3em; color: var(--ink-soft); }
-.wfv h1 { font-weight: 500; font-size: clamp(24px, 2.6vw, 34px); line-height: 1.75; margin: 12px 0 18px; }
-.wfv .lede { font-size: 14.5px; max-width: 34em; color: var(--ink-soft); }
-.wfv .cta-row { margin-top: 26px; }
-.wfv .cta-row .btn { padding: 13px 30px; }
-.wfv .facts { padding-right: 0; }
-.wfv .anchors { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 26px; }
-.wfv .anchors a { font-family: var(--sans); font-size: 12px; letter-spacing: 0.2em; text-decoration: none; color: var(--ink-soft); border-bottom: 1px solid var(--line); padding-bottom: 2px; }
-.wfv .anchors a:hover { color: var(--ink); border-color: var(--ink); }
+/* ── サービスのページ（LP制作・HP制作）の部品 ── */
+.phead { padding-block: clamp(48px, 7vw, 104px) clamp(40px, 5vw, 72px); }
+.phead .grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr); gap: 40px clamp(32px, 5vw, 72px); align-items: center; }
+.phead .feat { margin: 0; }
+.phead .feat a { display: block; border: 1px solid var(--line); }
+.phead .feat figcaption { margin-top: 10px; font-size: 13px; color: var(--ink-2); }
+.crumbs { font-size: 13px; color: var(--ink-2); }
+.crumbs a { color: inherit; text-underline-offset: 0.25em; }
+.phead .label { margin-top: 26px; }
+.phead h1 { margin-top: 14px; font-family: var(--serif); font-weight: 500; font-size: clamp(30px, 1rem + 2.2vw, 46px); line-height: 1.4; letter-spacing: 0.04em; }
+.phead .lede { font-size: 17px; max-width: 34em; }
+.phead .price { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 4px 24px; max-width: 760px; margin-top: 32px; padding-block: 16px; border-block: 1px solid var(--line); font-size: 15px; }
+.phead .price dt { color: var(--ink-2); font-size: 13.5px; padding-top: 2px; }
+.phead .price dd b { font-family: var(--num); font-weight: 400; font-size: 19px; letter-spacing: 0.02em; }
+.phead .price .more { grid-column: 1 / -1; font-size: 13.5px; }
+.phead .act { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 32px; margin-top: 30px; }
+.phead .own { margin-top: 18px; font-size: 13.5px; color: var(--ink-2); max-width: 44em; }
 
-/* 右：紙に見立てたサンプル記事 */
-.wp-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--ink); }
-.wp-cap { padding-bottom: 10px; font-family: var(--sans); font-size: 12px; letter-spacing: 0.12em; color: var(--ink-soft); }
-.wp-tabs { display: flex; }
-.wp-tabs button { min-height: 40px; padding: 8px 14px; background: transparent; border: 0; border-bottom: 3px solid transparent; font: 600 13px/1.2 var(--sans); color: var(--ink-soft); cursor: pointer; }
-.wp-tabs button:hover { color: var(--ink); }
-.wp-tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--ink); }
-.wp-tabs button:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
-.sheet { position: relative; margin-top: 18px; padding: 30px 34px 26px; background: #FFFFFF; border: 1px solid rgba(60, 63, 62, 0.14); box-shadow: 0 10px 28px rgba(60, 63, 62, 0.08); }
-.sheet .meta { display: flex; flex-wrap: wrap; gap: 4px 14px; font-family: var(--sans); font-size: 12px; color: var(--ink-soft); }
-.sheet .meta b { color: var(--ink); font-weight: 600; }
-.sheet h2.ttl { margin: 12px 0 14px; font-weight: 600; font-size: clamp(18px, 1.6vw, 21px); line-height: 1.65; letter-spacing: 0.02em; }
-.sheet .lead { position: relative; max-height: 5.4em; overflow: hidden; font-size: 14px; line-height: 1.8; }
-.sheet .lead::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1.8em; background: linear-gradient(rgba(255, 255, 255, 0), #FFFFFF); }
-.sheet .toc { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); }
-.sheet .toc p { font-family: var(--sans); font-size: 12px; letter-spacing: 0.1em; color: var(--ink-soft); }
-.sheet .toc ol { margin: 8px 0 0; padding: 0; list-style: none; counter-reset: h; }
-.sheet .toc li { counter-increment: h; display: grid; grid-template-columns: 2.2em minmax(0, 1fr); padding: 5px 0; font-size: 13.5px; line-height: 1.6; }
-.sheet .toc li::before { content: counter(h, decimal-leading-zero); font-family: Georgia, serif; color: var(--ink-soft); }
-.sheet .toc p.cont { position: relative; max-height: 9em; overflow: hidden; margin-top: 8px; font-family: var(--serif); font-size: 14px; letter-spacing: 0; line-height: 1.8; color: var(--ink); }
-.sheet .toc p.cont::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1.8em; background: linear-gradient(rgba(255, 255, 255, 0), #FFFFFF); }
-.sheet .read { display: inline-block; margin-top: 18px; font-family: var(--sans); font-size: 13px; font-weight: 600; letter-spacing: 0.08em; color: var(--ink); text-underline-offset: 4px; }
-.wp-note { margin-top: 12px; font-size: 12.5px; color: var(--ink-soft); }
-html.js .sheet[hidden] { display: none; }
-html.js .sheet:not([hidden]) { animation: wp-in 0.35s ease-out both; }
-@keyframes wp-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
-/* JSが動かないとき：切り替えボタンを隠し、3本を順に並べる（JSがあるときは1本ずつ表示） */
-html:not(.js) .wp-tabs { display: none; }
-html:not(.js) .sheet + .sheet { margin-top: 14px; }
+.works-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(48px, 6vw, 80px) clamp(28px, 4vw, 56px); margin-top: 44px; }
+.wk a.shot { display: block; aspect-ratio: 960 / 645; overflow: hidden; border: 1px solid var(--line); background: var(--paper-2); }
+.wk a.shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+@media (prefers-reduced-motion: no-preference) { .wk a.shot img { transition: transform 0.5s ease; } }
+.wk a.shot:hover img, .wk a.shot:focus-visible img { transform: scale(1.03); }
+.wk .meta { display: flex; flex-wrap: wrap; gap: 2px 14px; margin-top: 16px; font-size: 13px; color: var(--ink-2); }
+.wk .meta b { color: var(--ink); font-weight: 600; }
+.wk-name { margin-top: 6px; font-family: var(--serif); font-weight: 500; font-size: 22px; letter-spacing: 0.04em; line-height: 1.5; }
+.wk p { margin-top: 8px; font-size: 15px; line-height: 1.85; color: var(--ink-2); }
+.wk .open { display: inline-block; margin-top: 10px; }
+.works-notes { margin-top: 40px; font-size: 13.5px; color: var(--ink-2); }
+.works-notes p + p { margin-top: 6px; }
+.dyn { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 16px 48px; align-items: end; margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--ink); }
+.dyn h3 { font-family: var(--serif-sys); font-weight: 500; font-size: 21px; line-height: 1.6; }
+.dyn p { margin-top: 10px; font-size: 15px; line-height: 1.9; color: var(--ink-2); max-width: 44em; }
+.dyn small { display: block; margin-top: 8px; font-size: 13px; color: var(--ink-2); }
+
+.rows2 { margin-top: 36px; }
+.rows2 > li, .rows2 > div { display: grid; grid-template-columns: minmax(0, 20em) minmax(0, 1fr); gap: 4px 36px; padding: 20px 0; }
+.rows2 b, .rows2 dt { font-family: var(--serif-sys); font-weight: 500; font-size: 18px; line-height: 1.7; }
+.rows2 span, .rows2 dd { font-size: 15px; line-height: 1.9; color: var(--ink-2); }
+.steps { counter-reset: st; margin-top: 36px; }
+.steps li { counter-increment: st; display: grid; grid-template-columns: 3.2em minmax(0, 16em) minmax(0, 1fr); gap: 4px 28px; padding: 20px 0; }
+.steps li::before { content: counter(st, decimal-leading-zero); font-family: var(--num); font-size: 15px; color: var(--ink-2); padding-top: 3px; }
+.steps b { font-family: var(--serif-sys); font-weight: 500; font-size: 18px; line-height: 1.7; }
+.steps span { font-size: 15px; line-height: 1.9; color: var(--ink-2); }
+.small-note { margin-top: 16px; font-size: 13.5px; color: var(--ink-2); }
+.status { margin-top: 28px; padding: 4px 0 4px 24px; border-left: 4px solid var(--accent); max-width: 50em; font-size: 15.5px; line-height: 1.95; }
+.status b { font-weight: 600; }
+.measure { margin-top: 48px; max-width: 760px; }
+.measure h3 { font-family: var(--serif-sys); font-weight: 500; font-size: 18px; }
+.measure p { margin-top: 8px; font-size: 14.5px; line-height: 1.9; color: var(--ink-2); }
+.measure table { width: 100%; margin-top: 14px; border-collapse: collapse; border-top: 1px solid var(--ink); font-size: 15px; }
+.measure td { padding: 12px 0; border-bottom: 1px solid var(--line); }
+.measure td:last-child { text-align: right; font-family: var(--num); white-space: nowrap; padding-left: 16px; }
+.measure small { display: block; margin-top: 10px; font-size: 13px; color: var(--ink-2); line-height: 1.8; }
+.cannot { margin-top: 36px; max-width: 760px; padding: 4px 0 4px 24px; border-left: 4px solid var(--line-2); font-size: 15px; line-height: 1.9; }
+.cannot b { display: block; font-weight: 600; }
+.faq { margin-top: 36px; }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary { position: relative; list-style: none; cursor: pointer; padding: 20px 40px 20px 0; font-family: var(--serif-sys); font-weight: 500; font-size: 18px; line-height: 1.6; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "＋"; position: absolute; right: 4px; top: 20px; font-family: var(--sans); font-size: 18px; color: var(--ink-2); }
+.faq details[open] summary::after { content: "−"; }
+.faq .a { padding: 0 40px 22px 0; font-size: 15px; line-height: 1.95; color: var(--ink-2); max-width: 46em; }
+.cta-band { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px 48px; align-items: center; }
+.cta-band p { margin-top: 10px; font-size: 16px; color: var(--ink-2); }
 
 @media (max-width: 900px) {
-  .wfv { grid-template-columns: 1fr; gap: 36px; padding: calc(var(--nav-h) + 26px) 22px 48px; }
-  .wfv .en-label { margin-top: 18px; }
-  .wfv h1 { font-size: 24px; margin: 10px 0 14px; }
-  .wfv .cta-row { margin-top: 20px; }
-  .wfv .cta-row .btn { flex: 1 1 140px; padding: 13px 10px; }
-  /* スマホ：記事が早く見えるよう、条件は罫線なしの1行ずつにし、ページ内リンクは省く */
-  .wfv .facts { gap: 2px 14px; margin-top: 14px; }
-  .wfv .facts span { border: 0; padding: 0; font-size: 11.5px; }
-  .wfv .anchors { display: none; }
-  .wp-head { flex-direction: column; align-items: stretch; }
-  .wp-cap { padding-bottom: 4px; }
-  .wp-tabs button { flex: 1; padding: 8px 4px; font-size: 12.5px; }
-  .sheet { padding: 22px 20px 20px; }
-  .sheet .toc li { font-size: 13px; }
-}
-@media (prefers-reduced-motion: reduce) { html.js .sheet:not([hidden]) { animation: none; } }
-
-/* LP・HPページ：サンプルを選んで、見どころまで見せる（案A） */
-.gfv { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); max-width: 1500px; margin: 0 auto; gap: 0 56px; align-items: start; padding: calc(var(--nav-h) + 34px) 34px 56px; border-bottom: 1px solid var(--line); }
-.gfv-l, .gfv-r { min-width: 0; }
-.gfv .crumb { font-family: var(--sans); font-size: 12px; letter-spacing: 0.2em; color: var(--ink-soft); text-decoration: none; }
-.gfv .en-label { margin-top: 26px; font-family: Georgia, serif; font-size: 12.5px; letter-spacing: 0.3em; color: var(--ink-soft); }
-.gfv h1 { font-weight: 500; font-size: clamp(25px, 2.6vw, 34px); line-height: 1.7; margin: 12px 0 16px; }
-.gfv .lede { font-size: 14.5px; max-width: 32em; color: var(--ink-soft); }
-.gfv .price { margin-top: 22px; padding: 12px 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); font-size: 14px; line-height: 1.8; }
-.gfv .price small { display: block; font-family: var(--sans); font-size: 11.5px; letter-spacing: 0.1em; color: var(--ink-soft); }
-.gfv .price a { font-size: 13px; color: var(--ink-soft); text-underline-offset: 3px; }
-.gfv .cta-row { margin-top: 22px; }
-.gfv .cta-row .btn { padding: 13px 26px; }
-.gfv .gnote { margin-top: 16px; font-size: 12.5px; line-height: 1.8; color: var(--ink-soft); }
-.gal .sheet.gp { margin: 0; padding: 0; background: none; border: 0; box-shadow: none; }
-.gal .gshot { display: block; height: clamp(300px, calc(100vh - 400px), 470px); overflow: hidden; background: var(--bg-tile); border: 1px solid rgba(60, 63, 62, 0.14); box-shadow: 0 10px 28px rgba(60, 63, 62, 0.08); }
-.gal .gshot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
-.gal .gtext { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 20px; align-items: end; margin-top: 14px; }
-.gal .gmeta { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 2px 12px; font-family: var(--sans); font-size: 12px; color: var(--ink-soft); }
-.gal .gmeta b { color: var(--ink); font-weight: 600; }
-.gal h2.gttl { margin: 2px 0 0; font-weight: 600; font-size: 19px; line-height: 1.5; }
-.gal .gpoint { grid-column: 1 / 2; margin: 6px 0 0; font-size: 14px; line-height: 1.8; }
-.gal .read { grid-column: 2 / 3; grid-row: 2 / 4; align-self: end; font-family: var(--sans); font-size: 13px; font-weight: 600; letter-spacing: 0.06em; color: var(--ink); white-space: nowrap; text-underline-offset: 4px; }
-.gal .wp-tabs { display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); gap: 10px; margin: 0 0 16px; padding: 0 0 12px; border-bottom: 1px solid var(--line); }
-.gal .wp-tabs button { display: block; min-height: 0; padding: 0; border: 0; background: none; text-align: left; cursor: pointer; font: 600 11.5px/1.4 var(--sans); color: var(--ink-soft); }
-.gal .wp-tabs button img { display: block; width: 100%; height: auto; aspect-ratio: 960 / 645; object-fit: cover; object-position: 50% 45%; border: 1px solid rgba(60, 63, 62, 0.14); opacity: 0.62; transition: opacity 0.2s; }
-.gal .wp-tabs button span { display: block; margin-top: 5px; padding-top: 4px; border-top: 2px solid transparent; overflow-wrap: anywhere; }
-.gal .wp-tabs button:hover img { opacity: 0.9; }
-.gal .wp-tabs button[aria-selected="true"] { color: var(--ink); }
-.gal .wp-tabs button[aria-selected="true"] img { opacity: 1; outline: 2px solid var(--ink); outline-offset: 2px; }
-.gal .wp-tabs button[aria-selected="true"] span { border-top-color: var(--ink); }
-.gal .wp-tabs button:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
-html:not(.js) .gal .sheet.gp + .sheet.gp { margin-top: 30px; }
-.more-box { margin-top: 8px; padding: 20px 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); }
-.more-box h3 { margin: 0 0 8px; font-size: 17px; }
-@media (max-width: 900px) {
-  .gfv { grid-template-columns: 1fr; gap: 28px; padding: calc(var(--nav-h) + 26px) 22px 48px; }
-  .gfv .en-label { margin-top: 18px; }
-  .gfv h1 { font-size: 24px; margin: 10px 0 12px; }
-  .gfv .lede { font-size: 14px; }
-  .gfv .price { margin-top: 16px; font-size: 13.5px; }
-  .gfv .cta-row { margin-top: 16px; }
-  .gfv .cta-row .btn { flex: 1 1 140px; padding: 13px 10px; }
-  .gal .gshot { height: auto; aspect-ratio: 960 / 645; }
-  .gal .gtext { grid-template-columns: 1fr; }
-  .gal .read { grid-column: 1 / -1; grid-row: auto; margin-top: 8px; }
-  .gal .wp-tabs { grid-template-columns: repeat(var(--n), minmax(84px, 1fr)); overflow-x: auto; gap: 8px; }
+  .phead .lede { font-size: 16px; }
+  .phead .grid { grid-template-columns: 1fr; }
+  .phead .feat { order: 2; }
+  .phead .price { grid-template-columns: 1fr; }
+  .phead .act .btn { flex: 1 1 100%; }
+  .works-grid { grid-template-columns: 1fr; gap: 48px; }
+  .dyn { grid-template-columns: 1fr; }
+  .rows2 > li, .rows2 > div { grid-template-columns: 1fr; }
+  .steps li { grid-template-columns: 2.6em minmax(0, 1fr); }
+  .steps span { grid-column: 2; }
+  .cta-band { grid-template-columns: 1fr; }
+  .cta-band .btn { width: 100%; }
 }
 </style>
-<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
-<header class="gnav">
-  <a class="logo" href="index.html">SHUN WATANABE<small>writing &amp; creating</small></a>
-  <button class="burger" aria-label="メニュー" onclick="document.getElementById('menu').classList.toggle('open')"><span></span><span></span></button>
-  <ul class="menu" id="menu"><li><a href="index.html">Home</a></li><li><a href="writer.html">Writer</a></li><li><a href="scenario.html">Script</a></li><li><a href="lp.html" class="cur">LP</a></li><li><a href="hp.html">HP</a></li><li><a href="web-design.html">Design</a></li><li><a href="video.html">Video</a></li><li><a href="ai.html">AI</a></li><li><a href="index.html#profile">Profile</a></li><li><a class="cta" href="index.html#contact">相談する</a></li></ul>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="gh" id="gh">
+  <div class="wrap">
+    <a class="brand" href="index.html"><b>渡邊 駿</b><span>ホームページ・LP制作／記事・台本の執筆</span></a>
+    <nav class="gnav" aria-label="メインメニュー">
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="gmenu" aria-label="メニューを開く"><span></span></button>
+      <ul id="gmenu"><li><a href="index.html#services">できること</a></li><li><a href="index.html#case">事例・見本</a></li><li><a href="index.html#process">制作の流れ</a></li><li><a href="pricing.html">料金</a></li></ul>
+      <a class="btn" href="index.html#contact">相談する</a>
+    </nav>
+  </div>
 </header>
 <main id="main">
-<section class="gfv" id="top-sample" aria-labelledby="g-h1">
-  <div class="gfv-l">
-    <a class="crumb" href="index.html">← HOME</a>
-    <div class="en-label">LANDING PAGE ／ LP制作</div>
+<section class="phead" aria-labelledby="g-h1">
+  <div class="wrap grid">
+   <div>
+    <p class="crumbs"><a href="index.html">トップ</a>　／　LP制作</p>
+    <p class="label">LANDING PAGE</p>
     <h1 id="g-h1"><span class="nb">伝わるLPを、</span><span class="nb">言葉と構成から。</span></h1>
     <p class="lede"><span class="nb">商品やサービスをひとつに絞り、</span><span class="nb">魅力が届く順番で</span><span class="nb">構成と原稿を組み立てて、</span><span class="nb">ページにします。</span></p>
-    <p class="price"><small>料金の目安（税込・お見積もり無料）</small><span class="nb">一式（構成・文章・デザイン・制作）</span>：<span class="nb">50,000円〜100,000円前後</span><br>文章だけ：<span class="nb">15,000円〜30,000円前後</span>　<a href="pricing.html">料金の目安と対応範囲</a></p>
-    <div class="cta-row">
-      <a class="btn btn-primary" href="index.html?type=lp#contact">LPの相談をする</a>
-      <a class="btn btn-ghost" href="samples/index.html">サンプルの一覧</a>
-    </div>
-    <p class="gnote">サンプルはすべて、架空のお店・サービスを想定した自主制作です。お客様の声・料金・事例も架空です。</p>
-  </div>
-  <div class="gfv-r">
-  <div class="gal">
-    <div class="wp-tabs" role="tablist" aria-label="LPのサンプル" style="--n:6"><button type="button" role="tab" id="wt-bakery" aria-controls="ws-bakery" aria-selected="true"><img src="img/top/g-lp-bakery-480.jpg" alt="" width="480" height="323" loading="lazy"><span>petite douceur</span></button><button type="button" role="tab" id="wt-salon" aria-controls="ws-salon" aria-selected="false" tabindex="-1"><img src="img/top/g-lp-salon-480.jpg" alt="" width="480" height="323" loading="lazy"><span>HANA hair &amp; esthetic</span></button><button type="button" role="tab" id="wt-consult" aria-controls="ws-consult" aria-selected="false" tabindex="-1"><img src="img/top/g-lp-consult-480.jpg" alt="" width="480" height="323" loading="lazy"><span>みちしるべ経営パートナーズ</span></button><button type="button" role="tab" id="wt-natural" aria-controls="ws-natural" aria-selected="false" tabindex="-1"><img src="img/top/g-lp-natural-480.jpg" alt="" width="480" height="323" loading="lazy"><span>て、しごと</span></button><button type="button" role="tab" id="wt-coach" aria-controls="ws-coach" aria-selected="false" tabindex="-1"><img src="img/top/g-lp-coach-480.jpg" alt="" width="480" height="323" loading="lazy"><span>RE:START coaching</span></button><button type="button" role="tab" id="wt-saas" aria-controls="ws-saas" aria-selected="false" tabindex="-1"><img src="img/top/g-lp-saas-480.jpg" alt="" width="480" height="323" loading="lazy"><span>Synapse</span></button></div>
-    <article class="sheet gp" role="tabpanel" id="ws-bakery" aria-labelledby="wt-bakery">
-      <a class="gshot" href="samples/bakery.html"><img src="samples/img/lp-bakery.jpg" srcset="img/top/g-lp-bakery-480.jpg 480w, samples/img/lp-bakery.jpg 960w" sizes="(max-width: 900px) 92vw, 680px" alt="焼き菓子店のLPのトップ画面（どうぶつパンを押して箱に詰めるデザイン）" width="960" height="645" fetchpriority="high"></a>
-      <div class="gtext"><p class="gmeta"><b>あたたかみ・箱詰め</b><span>飲食｜どうぶつパンの予約BOX</span></p><h2 class="gttl">petite douceur</h2><p class="gpoint">パンを押すと、箱に1個ずつ入ります。6個入り・12個入りを切り替えると、残りの数と合計金額がその場で変わります。</p><a class="read" href="samples/bakery.html">このサンプルを開く →</a></div>
-    </article>
-    <article class="sheet gp" role="tabpanel" id="ws-salon" aria-labelledby="wt-salon">
-      <a class="gshot" href="samples/salon.html"><img src="samples/img/lp-salon.jpg" srcset="img/top/g-lp-salon-480.jpg 480w, samples/img/lp-salon.jpg 960w" sizes="(max-width: 900px) 92vw, 680px" alt="美容サロンのLPのトップ画面（エステティシャンの最初の質問を大きく置き、答えを選ぶと返事が出るデザイン）" width="960" height="645" loading="lazy"></a>
-      <div class="gtext"><p class="gmeta"><b>会話・やわらか</b><span>美容｜はじめてコース</span></p><h2 class="gttl">HANA hair &amp; esthetic</h2><p class="gpoint">エステティシャンの最初の質問に、近い答えを選ぶと返事が出ます。70分の流れを目盛りで示し、読んでいる段がわかります。</p><a class="read" href="samples/salon.html">このサンプルを開く →</a></div>
-    </article>
-    <article class="sheet gp" role="tabpanel" id="ws-consult" aria-labelledby="wt-consult">
-      <a class="gshot" href="samples/consult.html"><img src="samples/img/lp-consult.jpg" srcset="img/top/g-lp-consult-480.jpg 480w, samples/img/lp-consult.jpg 960w" sizes="(max-width: 900px) 92vw, 680px" alt="コンサルティング会社のLPのトップ画面（入金までの月数を選ぶと、手元のお金の線が描き直されるデザイン）" width="960" height="645" loading="lazy"></a>
-      <div class="gtext"><p class="gmeta"><b>入金月・明快</b><span>コンサル｜資金繰りの無料相談</span></p><h2 class="gttl">みちしるべ経営パートナーズ</h2><p class="gpoint">売上が入金されるまでの月数を選ぶと、手元のお金の線が描き直され、お金がいちばん少なくなる月がわかります。</p><a class="read" href="samples/consult.html">このサンプルを開く →</a></div>
-    </article>
-    <article class="sheet gp" role="tabpanel" id="ws-natural" aria-labelledby="wt-natural">
-      <a class="gshot" href="samples/natural.html"><img src="samples/img/lp-natural.jpg" srcset="img/top/g-lp-natural-480.jpg 480w, samples/img/lp-natural.jpg 960w" sizes="(max-width: 900px) 92vw, 680px" alt="石鹸ブランドのLPのトップ画面（2種類の全成分を同じ行にそろえ、違う2つだけを目立たせるデザイン）" width="960" height="645" loading="lazy"></a>
-      <div class="gtext"><p class="gmeta"><b>比べる・誠実</b><span>物販｜お試しミニセット</span></p><h2 class="gttl">て、しごと</h2><p class="gpoint">2種類の石鹸の全成分を同じ行にそろえ、違う2つだけを目立たせました。どちらから使うかの目安も添えています。</p><a class="read" href="samples/natural.html">このサンプルを開く →</a></div>
-    </article>
-    <article class="sheet gp" role="tabpanel" id="ws-coach" aria-labelledby="wt-coach">
-      <a class="gshot" href="samples/coach.html"><img src="samples/img/lp-coach.jpg" srcset="img/top/g-lp-coach-480.jpg 480w, samples/img/lp-coach.jpg 960w" sizes="(max-width: 900px) 92vw, 680px" alt="コーチングのLPのトップ画面（ひと続きの迷いの文をほどいて、事実と気持ちに分けるデザイン）" width="960" height="645" loading="lazy"></a>
-      <div class="gtext"><p class="gmeta"><b>ほどく・静か</b><span>個人サービス｜体験セッション</span></p><h2 class="gttl">RE:START coaching</h2><p class="gpoint">ひと続きの迷いの文をほどいて、言葉ごとに「事実」「気持ち」に分けられます。分けると、申し込みボタンの言葉が変わります。</p><a class="read" href="samples/coach.html">このサンプルを開く →</a></div>
-    </article>
-    <article class="sheet gp" role="tabpanel" id="ws-saas" aria-labelledby="wt-saas">
-      <a class="gshot" href="samples/cyber.html"><img src="samples/img/lp-saas.jpg" srcset="img/top/g-lp-saas-480.jpg 480w, samples/img/lp-saas.jpg 960w" sizes="(max-width: 900px) 92vw, 680px" alt="SaaSのLPのトップ画面（チャットに流れた投稿を、毎朝の要約1枚にまとめるデザイン）" width="960" height="645" loading="lazy"></a>
-      <div class="gtext"><p class="gmeta"><b>まとめる・すっきり</b><span>SaaS｜14日間の無料トライアル</span></p><h2 class="gttl">Synapse</h2><p class="gpoint">チャットに流れた投稿8件を、押すと毎朝の要約1枚にまとめます。要約の各行から、元の投稿をたどれます。</p><a class="read" href="samples/cyber.html">このサンプルを開く →</a></div>
-    </article>
-  </div>
+    <dl class="price"><dt>一式（構成・文章・デザイン・制作）</dt><dd><b>50,000円</b>〜<b>100,000円</b>前後</dd><dt>文章だけ</dt><dd><b>15,000円</b>〜<b>30,000円</b>前後</dd><p class="more">料金の目安（税込・お見積もり無料）　<a class="link" href="pricing.html">料金の目安と対応範囲</a></p></dl>
+    <div class="act"><a class="btn" href="index.html?type=lp#contact">LPの相談をする</a><a class="link" href="samples/index.html">サンプルの一覧</a></div>
+    <p class="own">サンプルはすべて、架空のお店・サービスを想定した自主制作です。お客様の声・料金・事例も架空です。</p>
+   </div>
+   <figure class="feat"><a href="samples/bakery.html"><img src="samples/img/lp-bakery.jpg" srcset="img/top/g-lp-bakery-480.jpg 480w, samples/img/lp-bakery.jpg 960w" sizes="(max-width: 900px) 92vw, 560px" alt="焼き菓子店のLPのトップ画面（どうぶつパンを押して箱に詰めるデザイン）" width="960" height="645" fetchpriority="high"></a><figcaption>代表の見本：petite douceur（飲食｜どうぶつパンの予約BOX）</figcaption></figure>
   </div>
 </section>
 
-<section class="block tint" id="works">
-  <h2><span>MORE</span></h2>
-  <div class="body reveal">
-    <p>どのLPも、商品やサービスをひとつに絞り、「悩みへの共感 → 中身の説明 → 安心できる材料 → 申し込み」の流れで組み立てています。ご依頼の際は、「このLPの雰囲気で」とお伝えください。</p>
+<section class="sec" id="works" aria-labelledby="works-h">
+  <div class="wrap">
+    <p class="label">WORKS</p>
+    <h2 class="title" id="works-h">見本（6）</h2>
+    <p class="lede">どのLPも、商品やサービスをひとつに絞り、「悩みへの共感 → 中身の説明 → 安心できる材料 → 申し込み」の流れで組み立てています。ご依頼の際は、「このLPの雰囲気で」とお伝えください。</p>
+    <div class="works-grid">
+      <article class="wk reveal">
+        <a class="shot" href="samples/bakery.html" aria-label="petite douceurの見本を開く"><img src="samples/img/lp-bakery.jpg" srcset="img/top/g-lp-bakery-480.jpg 480w, samples/img/lp-bakery.jpg 960w" sizes="(max-width: 900px) 92vw, 580px" alt="焼き菓子店のLPのトップ画面（どうぶつパンを押して箱に詰めるデザイン）" width="960" height="645" loading="lazy"></a>
+        <p class="meta"><b>あたたかみ・箱詰め</b><span>飲食｜どうぶつパンの予約BOX</span></p>
+        <h3 class="wk-name">petite douceur</h3>
+        <p>パンを押すと、箱に1個ずつ入ります。6個入り・12個入りを切り替えると、残りの数と合計金額がその場で変わります。</p>
+        <a class="link open" href="samples/bakery.html">見本を開く →</a>
+      </article>
+      <article class="wk reveal">
+        <a class="shot" href="samples/salon.html" aria-label="HANA hair & estheticの見本を開く"><img src="samples/img/lp-salon.jpg" srcset="img/top/g-lp-salon-480.jpg 480w, samples/img/lp-salon.jpg 960w" sizes="(max-width: 900px) 92vw, 580px" alt="美容サロンのLPのトップ画面（エステティシャンの最初の質問を大きく置き、答えを選ぶと返事が出るデザイン）" width="960" height="645" loading="lazy"></a>
+        <p class="meta"><b>会話・やわらか</b><span>美容｜はじめてコース</span></p>
+        <h3 class="wk-name">HANA hair &amp; esthetic</h3>
+        <p>エステティシャンの最初の質問に、近い答えを選ぶと返事が出ます。70分の流れを目盛りで示し、読んでいる段がわかります。</p>
+        <a class="link open" href="samples/salon.html">見本を開く →</a>
+      </article>
+      <article class="wk reveal">
+        <a class="shot" href="samples/consult.html" aria-label="みちしるべ経営パートナーズの見本を開く"><img src="samples/img/lp-consult.jpg" srcset="img/top/g-lp-consult-480.jpg 480w, samples/img/lp-consult.jpg 960w" sizes="(max-width: 900px) 92vw, 580px" alt="コンサルティング会社のLPのトップ画面（入金までの月数を選ぶと、手元のお金の線が描き直されるデザイン）" width="960" height="645" loading="lazy"></a>
+        <p class="meta"><b>入金月・明快</b><span>コンサル｜資金繰りの無料相談</span></p>
+        <h3 class="wk-name">みちしるべ経営パートナーズ</h3>
+        <p>売上が入金されるまでの月数を選ぶと、手元のお金の線が描き直され、お金がいちばん少なくなる月がわかります。</p>
+        <a class="link open" href="samples/consult.html">見本を開く →</a>
+      </article>
+      <article class="wk reveal">
+        <a class="shot" href="samples/natural.html" aria-label="て、しごとの見本を開く"><img src="samples/img/lp-natural.jpg" srcset="img/top/g-lp-natural-480.jpg 480w, samples/img/lp-natural.jpg 960w" sizes="(max-width: 900px) 92vw, 580px" alt="石鹸ブランドのLPのトップ画面（2種類の全成分を同じ行にそろえ、違う2つだけを目立たせるデザイン）" width="960" height="645" loading="lazy"></a>
+        <p class="meta"><b>比べる・誠実</b><span>物販｜お試しミニセット</span></p>
+        <h3 class="wk-name">て、しごと</h3>
+        <p>2種類の石鹸の全成分を同じ行にそろえ、違う2つだけを目立たせました。どちらから使うかの目安も添えています。</p>
+        <a class="link open" href="samples/natural.html">見本を開く →</a>
+      </article>
+      <article class="wk reveal">
+        <a class="shot" href="samples/coach.html" aria-label="RE:START coachingの見本を開く"><img src="samples/img/lp-coach.jpg" srcset="img/top/g-lp-coach-480.jpg 480w, samples/img/lp-coach.jpg 960w" sizes="(max-width: 900px) 92vw, 580px" alt="コーチングのLPのトップ画面（ひと続きの迷いの文をほどいて、事実と気持ちに分けるデザイン）" width="960" height="645" loading="lazy"></a>
+        <p class="meta"><b>ほどく・静か</b><span>個人サービス｜体験セッション</span></p>
+        <h3 class="wk-name">RE:START coaching</h3>
+        <p>ひと続きの迷いの文をほどいて、言葉ごとに「事実」「気持ち」に分けられます。分けると、申し込みボタンの言葉が変わります。</p>
+        <a class="link open" href="samples/coach.html">見本を開く →</a>
+      </article>
+      <article class="wk reveal">
+        <a class="shot" href="samples/cyber.html" aria-label="Synapseの見本を開く"><img src="samples/img/lp-saas.jpg" srcset="img/top/g-lp-saas-480.jpg 480w, samples/img/lp-saas.jpg 960w" sizes="(max-width: 900px) 92vw, 580px" alt="SaaSのLPのトップ画面（チャットに流れた投稿を、毎朝の要約1枚にまとめるデザイン）" width="960" height="645" loading="lazy"></a>
+        <p class="meta"><b>まとめる・すっきり</b><span>SaaS｜14日間の無料トライアル</span></p>
+        <h3 class="wk-name">Synapse</h3>
+        <p>チャットに流れた投稿8件を、押すと毎朝の要約1枚にまとめます。要約の各行から、元の投稿をたどれます。</p>
+        <a class="link open" href="samples/cyber.html">見本を開く →</a>
+      </article>
+    </div>
+
+    <div class="works-notes"><p>※お客様の声・料金・事例なども含め、すべて架空です。うち4つは、<a href="hp.html">HPのサンプル</a>と同じお店を想定しています。</p></div>
     
-    <p style="margin-top:24px;font-size:13px;color:var(--ink-soft);">※お客様の声・料金・事例なども含め、すべて架空です。うち4つは、<a href="hp.html">HPのサンプル</a>と同じお店を想定しています。</p>
-    <p style="margin-top:20px;"><a class="btn line" href="samples/index.html">&gt; ALL SAMPLES</a></p>
   </div>
 </section>
-<section class="block" id="promise">
-  <h2><span>PROMISE</span></h2>
-  <div class="body">
-    <h3 class="headline reveal"><span class="nb">お引き受けしたら、</span><span class="nb">この4つを守ります。</span></h3>
-    <div class="promises stagger">
-      <div class="promise reveal">
-        <h3>同業のページを、先に調べます</h3>
-        <p>同じ商品やサービスを扱うLPを調べ、伝える順番と、載せる材料を決めてから作り始めます。</p>
-      </div>
-      <div class="promise reveal">
-        <h3>作る前に、完成の条件を決めます</h3>
-        <p>今回作るもの、作らないもの、何ができたら完成かを1枚にまとめ、ご確認いただいてから作り始めます。文章もデザインの前に固めるので、後から大きく作り直すことを防げます。</p>
-      </div>
-      <div class="promise reveal">
-        <h3>納品のときに、確認の記録をお渡しします</h3>
-        <p>スマホとパソコンでの見え方、ボタンや入力欄の動き、Googleの計測ツールで測った表示の速さを確かめ、結果を数字で書きます。確かめられなかったことも、そのまま書きます。</p>
-      </div>
-      <div class="promise reveal">
-        <h3>24時間以内に返信します</h3>
-        <p>ご連絡には24時間以内にお返事します。本業があるため、平日の日中のご連絡には、夜にお返事することがあります。</p>
-      </div>
+
+<section class="sec" id="promise" aria-labelledby="promise-h">
+  <div class="wrap">
+    <p class="label">PROMISE</p>
+    <h2 class="title" id="promise-h"><span class="nb">お引き受けしたら、</span><span class="nb">この4つを守ります。</span></h2>
+    <ul class="rules rows2 reveal"><li><b>同業のページを、先に調べます</b><span>同じ商品やサービスを扱うLPを調べ、伝える順番と、載せる材料を決めてから作り始めます。</span></li><li><b>作る前に、完成の条件を決めます</b><span>今回作るもの、作らないもの、何ができたら完成かを1枚にまとめ、ご確認いただいてから作り始めます。文章もデザインの前に固めるので、後から大きく作り直すことを防げます。</span></li><li><b>納品のときに、確認の記録をお渡しします</b><span>スマホとパソコンでの見え方、ボタンや入力欄の動き、Googleの計測ツールで測った表示の速さを確かめ、結果を数字で書きます。確かめられなかったことも、そのまま書きます。</span></li><li><b>24時間以内に返信します</b><span>ご連絡には24時間以内にお返事します。本業があるため、平日の日中のご連絡には、夜にお返事することがあります。</span></li></ul>
+  </div>
+</section>
+
+<section class="sec" id="price" aria-labelledby="price-h">
+  <div class="wrap">
+    <p class="label">PRICE</p>
+    <h2 class="title" id="price-h">料金は、ご相談のうえお見積もりします。</h2>
+    <p class="lede">目安は、構成・文章・デザイン・ページ制作まで一式で50,000円〜100,000円前後、文章だけのご依頼で15,000円〜30,000円前後（税込）です。内容をうかがってから、無料でお見積もりします。いまは、実績としてご紹介させていただけるモニターを先着3名様まで募集しています（料金はご相談ください）。</p>
+    <p class="small-note"><a class="link" href="pricing.html#guide">料金の目安と対応範囲を見る</a></p>
+  </div>
+</section>
+
+<section class="sec pale" id="flow" aria-labelledby="flow-h">
+  <div class="wrap">
+    <p class="label">FLOW</p>
+    <h2 class="title" id="flow-h"><span class="nb">ご相談から公開まで、</span><span class="nb">6つのステップです。</span></h2>
+    <ol class="rules steps reveal"><li><b>ご相談</b><span>フォームかクラウドワークスのメッセージで、商品・サービスと、LPの目的（予約・申し込み・問い合わせなど）をお知らせください。</span></li><li><b>ヒアリング・お見積もり</b><span>誰に向けたページか、商品の強み、参考にしたいサンプルの雰囲気をうかがい、お見積もりと納期をご提示します。何ができたら完成かも、ここで一緒に決めます。</span></li><li><b>構成と文章の確認</b><span>ページの流れ（見出しの順番）と文章をお見せします。デザインに入る前に、ここで内容を固めます。</span></li><li><b>デザイン・制作</b><span>選んでいただいた雰囲気で、ページを作ります。スマホでの見え方も、同時に作ります。</span></li><li><b>確認・修正</b><span>実際のページをURLでご確認いただき、ご指摘をもとに直します（修正は標準で1〜3回です。増やしたい場合はご相談ください）。</span></li><li><b>納品・公開</b><span>ページのファイル一式をお渡しします。ご希望があれば、ご用意いただいたサーバーに載せて公開するところまで行います。確かめた端末や表示の速さをまとめた確認の記録も、一緒にお渡しします。公開後1か月以内の文字・画像の差し替えは無料です。</span></li></ol>
+    <p class="small-note">1ページ一式の場合、ヒアリングから納品までおよそ14営業日が目安です（内容によって変わります）。</p>
+  </div>
+</section>
+
+<section class="sec" id="seo" aria-labelledby="seo-h">
+  <div class="wrap">
+    <p class="label">SEO</p>
+    <h2 class="title" id="seo-h">検索で見つけてもらうための、基本の設定をして納品します。</h2>
+    <p class="lede">LPは、検索よりも広告やSNSから来る人が中心になりやすいページです。そのため、検索の設定に加えて、表示の速さと、広告の言葉とページの言葉がそろっていることを大事にしています。</p>
+    <dl class="rules rows2 reveal"><div><dt>検索結果に出る文章</dt><dd>ページごとに、タイトルと説明文を書き分けます。検索結果で、中身が伝わる要約にします。</dd></div><div><dt>探される言葉で、見出しを</dt><dd>SEO記事を書いている経験から、「どんな言葉で探されるか」を調べて、見出しと本文に入れます。</dd></div><div><dt>見出しと写真の整理</dt><dd>大見出しは1ページに1つ。見出しの順番を整え、写真には内容が分かる説明（代替テキスト）を付けます。</dd></div><div><dt>スマホと表示の速さ</dt><dd>スマホで読みやすい作りにし、写真は軽くして、表示を速くします。</dd></div><div><dt>SNSでシェアされたとき</dt><dd>シェアされたときに出る見出し・説明・画像を設定します。</dd></div><div><dt>広告の言葉と、ページをそろえる</dt><dd>広告やSNSで見た言葉が、ページを開いてすぐに目に入るように作ります。来た人が「思っていたページと違う」と感じないためです。</dd></div></dl>
+    <div class="measure">
+      <h3>サンプルで、実際に測りました（2026年10月24日）</h3>
+      <p>Googleの計測ツール「Lighthouse」で、公開中のページを、スマホでの表示を想定して3回ずつ測りました（点数は3回の真ん中の値）。対象はLPサンプル6本です。</p>
+      <table><tr><td>表示の速さ</td><td>96〜100点</td></tr><tr><td>見やすさ・使いやすさ（アクセシビリティ）</td><td>すべて100点</td></tr><tr><td>安全で正しい作り（ベストプラクティス）</td><td>すべて100点</td></tr></table>
+      <small>検索（SEO）の項目は、サンプルを検索結果に出さない設定にしているぶんだけ減点になり、それ以外の確認項目はすべて通っています。点数は計測する環境や日によって多少変わります。</small>
     </div>
+    <div class="cannot"><b>お約束できないこと</b>検索の順位は、競合するサイトや、サイトを運営している期間、更新の頻度などでも変わります。そのため、上位表示のお約束はしていません。</div>
+    <p class="small-note">※サンプルは架空のお店なので、検索結果には出さない設定（noindex）にしています。それ以外の設定は、各ページのソースで確かめられます。</p>
   </div>
 </section>
-<section class="block" id="price">
-  <h2><span>PRICE</span></h2>
-  <div class="body reveal">
-    <p class="headline">料金は、ご相談のうえお見積もりします。</p>
-    <p>目安は、構成・文章・デザイン・ページ制作まで一式で50,000円〜100,000円前後、文章だけのご依頼で15,000円〜30,000円前後（税込）です。内容をうかがってから、無料でお見積もりします。いまは、実績としてご紹介させていただけるモニターを先着3名様まで募集しています（料金はご相談ください）。</p>
-    <a class="btn line" href="pricing.html#guide">&gt; 料金の目安と対応範囲を見る</a>
+
+<section class="sec" id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <p class="label">FAQ</p>
+    <h2 class="title" id="faq-h"><span class="nb">ご依頼の前に、</span><span class="nb">よくいただく質問。</span></h2>
+    <div class="rules faq"><details><summary>写真がありません。</summary><p class="a">素材サイトの写真を使って作れます。お店や商品のお写真があれば、雰囲気がいちばん伝わります。AIで作った画像を使う場合は、事前にお伝えしてご相談します。</p></details><details><summary>サーバーやドメインが、よく分かりません。</summary><p class="a">ページを置く場所（サーバー）と、ページの住所（ドメイン）は、お客様の名義でご用意いただきます。選び方や取り方は、ご説明します。費用はお客様のご負担です。</p></details><details><summary>公開したあと、自分で文章を直せますか？</summary><p class="a">HTMLで作るため、ご自身での文字の差し替えには少しコツが要ります。公開後1か月以内の差し替えは無料、その後は1回3,000円〜でお受けします。ご自身で更新したい場合は、STUDIO・WordPressでの制作をご相談ください。</p></details><details><summary>広告の出稿も、お願いできますか？</summary><p class="a">広告の出稿・運用はお受けしていません。広告の文とページの言葉をそろえるお手伝いはできます。</p></details><details><summary>支払いはいつですか？</summary><p class="a">クラウドワークス経由のご依頼は、クラウドワークスの仮払いの仕組みに沿って進めます。直接のご依頼は、お見積もりのときにご相談して決めます。</p></details><details><summary>AIは使っていますか？</summary><p class="a">構成の整理や下書き、ページを作るコードの作成で、補助として使うことがあります。文章とデザインの仕上げ、表示の確認は、必ず自分の目で行います。</p></details><details><summary>検索で上位に表示されますか？</summary><p class="a">上位表示のお約束はしていません。検索で見つけてもらうための基本の設定をして納品します（<a class="link" href="#seo">SEOの欄</a>をご覧ください）。</p></details></div>
   </div>
 </section>
-<section class="block tint" id="flow">
-  <h2><span>FLOW</span></h2>
-  <div class="body">
-    <h3 class="headline reveal"><span class="nb">ご相談から公開まで、</span><span class="nb">6つのステップです。</span></h3>
-    <ol class="flow reveal">
-      <li><h3>ご相談</h3><p>フォームかクラウドワークスのメッセージで、商品・サービスと、LPの目的（予約・申し込み・問い合わせなど）をお知らせください。</p></li>
-      <li><h3>ヒアリング・お見積もり</h3><p>誰に向けたページか、商品の強み、参考にしたいサンプルの雰囲気をうかがい、お見積もりと納期をご提示します。何ができたら完成かも、ここで一緒に決めます。</p></li>
-      <li><h3>構成と文章の確認</h3><p>ページの流れ（見出しの順番）と文章をお見せします。デザインに入る前に、ここで内容を固めます。</p></li>
-      <li><h3>デザイン・制作</h3><p>選んでいただいた雰囲気で、ページを作ります。スマホでの見え方も、同時に作ります。</p></li>
-      <li><h3>確認・修正</h3><p>実際のページをURLでご確認いただき、ご指摘をもとに直します（修正は標準で1〜3回です。増やしたい場合はご相談ください）。</p></li>
-      <li><h3>納品・公開</h3><p>ページのファイル一式をお渡しします。ご希望があれば、ご用意いただいたサーバーに載せて公開するところまで行います。確かめた端末や表示の速さをまとめた確認の記録も、一緒にお渡しします。公開後1か月以内の文字・画像の差し替えは無料です。</p></li>
-    </ol>
-    <p style="margin-top:18px;font-size:13px;color:var(--ink-soft);">1ページ一式の場合、ヒアリングから納品までおよそ14営業日が目安です（内容によって変わります）。</p>
-  </div>
-</section>
-<section class="block" id="seo">
-  <h2><span>SEO</span></h2>
-  <div class="body reveal">
-    <p class="headline">検索で見つけてもらうための、基本の設定をして納品します。</p>
-    <p>LPは、検索よりも広告やSNSから来る人が中心になりやすいページです。そのため、検索の設定に加えて、表示の速さと、広告の言葉とページの言葉がそろっていることを大事にしています。</p>
-    <div class="cols">
-      <div class="item"><h3>検索結果に出る文章</h3><p>ページごとに、タイトルと説明文を書き分けます。検索結果で、中身が伝わる要約にします。</p></div>
-      <div class="item"><h3>探される言葉で、見出しを</h3><p>SEO記事を書いている経験から、「どんな言葉で探されるか」を調べて、見出しと本文に入れます。</p></div>
-      <div class="item"><h3>見出しと写真の整理</h3><p>大見出しは1ページに1つ。見出しの順番を整え、写真には内容が分かる説明（代替テキスト）を付けます。</p></div>
-      <div class="item"><h3>スマホと表示の速さ</h3><p>スマホで読みやすい作りにし、写真は軽くして、表示を速くします。</p></div>
-      <div class="item"><h3>SNSでシェアされたとき</h3><p>シェアされたときに出る見出し・説明・画像を設定します。</p></div>
-      <div class="item"><h3>広告の言葉と、ページをそろえる</h3><p>広告やSNSで見た言葉が、ページを開いてすぐに目に入るように作ります。来た人が「思っていたページと違う」と感じないためです。</p></div>
+
+<section class="sec pale" id="contact-cta" aria-labelledby="cta-h">
+  <div class="wrap cta-band">
+    <div>
+      <p class="label">CONTACT</p>
+      <h2 class="title" id="cta-h">LP制作のご相談</h2>
+      <p>ご相談は、こちらからどうぞ。「こんなこと頼めるかな」という段階でも大丈夫です。</p>
     </div>
-    <div class="note" style="margin-top:30px;max-width:none;"><b>サンプルで、実際に測りました（2026年10月24日）</b><br>Googleの計測ツール「Lighthouse」で、公開中のページを、スマホでの表示を想定して3回ずつ測りました（点数は3回の真ん中の値）。対象はLPサンプル6本です。
-      <div class="table-scroll" style="margin-top:12px;"><table style="width:100%;border-collapse:collapse;font-size:13.5px;">
-        <tr><td style="padding:8px 0;border-bottom:1px solid var(--line);">表示の速さ</td><td style="padding:8px 0;border-bottom:1px solid var(--line);text-align:right;">96〜100点</td></tr>
-        <tr><td style="padding:8px 0;border-bottom:1px solid var(--line);">見やすさ・使いやすさ（アクセシビリティ）</td><td style="padding:8px 0;border-bottom:1px solid var(--line);text-align:right;">すべて100点</td></tr>
-        <tr><td style="padding:8px 0;border-bottom:1px solid var(--line);">安全で正しい作り（ベストプラクティス）</td><td style="padding:8px 0;border-bottom:1px solid var(--line);text-align:right;">すべて100点</td></tr>
-      </table></div>
-      <span style="font-size:12.5px;color:var(--ink-soft);">検索（SEO）の項目は、サンプルを検索結果に出さない設定にしているぶんだけ減点になり、それ以外の確認項目はすべて通っています。点数は計測する環境や日によって多少変わります。</span></div>
-    <div class="note" style="margin-top:30px;"><b>お約束できないこと</b><br>検索の順位は、競合するサイトや、サイトを運営している期間、更新の頻度などでも変わります。そのため、上位表示のお約束はしていません。</div>
-    <p style="margin-top:18px;font-size:12.5px;color:var(--ink-soft);">※サンプルは架空のお店なので、検索結果には出さない設定（noindex）にしています。それ以外の設定は、各ページのソースで確かめられます。</p>
-  </div>
-</section>
-<section class="block" id="faq">
-  <h2><span>FAQ</span></h2>
-  <div class="body">
-    <h3 class="headline reveal"><span class="nb">ご依頼の前に、</span><span class="nb">よくいただく質問。</span></h3>
-    <div class="faq reveal">
-      <details>
-        <summary>写真がありません。</summary>
-        <p class="a">素材サイトの写真を使って作れます。お店や商品のお写真があれば、雰囲気がいちばん伝わります。AIで作った画像を使う場合は、事前にお伝えしてご相談します。</p>
-      </details>
-      <details>
-        <summary>サーバーやドメインが、よく分かりません。</summary>
-        <p class="a">ページを置く場所（サーバー）と、ページの住所（ドメイン）は、お客様の名義でご用意いただきます。選び方や取り方は、ご説明します。費用はお客様のご負担です。</p>
-      </details>
-      <details>
-        <summary>公開したあと、自分で文章を直せますか？</summary>
-        <p class="a">HTMLで作るため、ご自身での文字の差し替えには少しコツが要ります。公開後1か月以内の差し替えは無料、その後は1回3,000円〜でお受けします。ご自身で更新したい場合は、STUDIO・WordPressでの制作をご相談ください。</p>
-      </details>
-      <details>
-        <summary>広告の出稿も、お願いできますか？</summary>
-        <p class="a">広告の出稿・運用はお受けしていません。広告の文とページの言葉をそろえるお手伝いはできます。</p>
-      </details>
-      <details>
-        <summary>支払いはいつですか？</summary>
-        <p class="a">クラウドワークス経由のご依頼は、クラウドワークスの仮払いの仕組みに沿って進めます。直接のご依頼は、お見積もりのときにご相談して決めます。</p>
-      </details>
-      <details>
-        <summary>AIは使っていますか？</summary>
-        <p class="a">構成の整理や下書き、ページを作るコードの作成で、補助として使うことがあります。文章とデザインの仕上げ、表示の確認は、必ず自分の目で行います。</p>
-      </details>
-      <details>
-        <summary>検索で上位に表示されますか？</summary>
-        <p class="a">上位表示のお約束はしていません。検索で見つけてもらうための基本の設定をして納品します（<a href="#seo">SEOの欄</a>をご覧ください）。</p>
-      </details>
-    </div>
-  </div>
-</section>
-<section class="block tint" id="contact-cta">
-  <h2><span>CONTACT</span></h2>
-  <div class="body reveal">
-    <p>ご相談は、こちらからどうぞ。「こんなこと頼めるかな」という段階でも大丈夫です。</p>
-    <a class="btn" href="index.html?type=lp#contact">&gt; CONTACT</a>
+    <a class="btn" href="index.html?type=lp#contact">LPの相談をする</a>
   </div>
 </section>
 </main>
-<footer>
-  <div><a href="index.html">HOME</a><a href="writer.html">WRITER</a><a href="scenario.html">SCRIPT</a><a href="lp.html">LP</a><a href="hp.html">HP</a><a href="web-design.html">DESIGN</a><a href="video.html">VIDEO</a><a href="ai.html">AI</a><a href="https://note.com/famous_abelia230" target="_blank" rel="noopener">NOTE</a></div>
-  <div>© 2026 Shun Watanabe</div>
+<footer class="gf">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="brand" href="index.html"><b>渡邊 駿</b></a>
+        <p>ホームページ・LP制作と、記事・台本の執筆。<br>個人事業主・小さなお店のご相談をお受けしています。</p>
+      </div>
+      <div>
+        <h2>WORKS</h2>
+        <ul><li><a href="hp.html">ホームページ制作</a></li><li><a href="lp.html">LP制作</a></li><li><a href="writer.html">記事・コラム</a></li><li><a href="scenario.html">動画台本・シナリオ</a></li><li><a href="case-bakery.html">制作事例</a></li></ul>
+      </div>
+      <div>
+        <h2>INFO</h2>
+        <ul><li><a href="pricing.html">料金</a></li><li><a href="web-design.html">バナー（見本）</a></li><li><a href="https://note.com/famous_abelia230" target="_blank" rel="noopener">note ↗</a></li><li><a href="https://crowdworks.jp/public/employees/7075436" target="_blank" rel="noopener">クラウドワークス ↗</a></li></ul>
+      </div>
+    </div>
+    <div class="bottom"><span>© 2026 Shun Watanabe</span></div>
+  </div>
 </footer>
 <script>
 (function () {
+  var gh = document.getElementById("gh"), btn = gh.querySelector(".menu-btn");
+  function close() { gh.classList.remove("open"); btn.setAttribute("aria-expanded", "false"); btn.setAttribute("aria-label", "メニューを開く"); }
+  btn.addEventListener("click", function () {
+    var open = gh.classList.toggle("open");
+    btn.setAttribute("aria-expanded", open); btn.setAttribute("aria-label", open ? "メニューを閉じる" : "メニューを開く");
+  });
+  gh.querySelectorAll("#gmenu a").forEach(function (a) { a.addEventListener("click", close); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && gh.classList.contains("open")) { close(); btn.focus(); } });
+  var onScroll = function () { gh.classList.toggle("scrolled", window.scrollY > 8); };
+  window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
   var els = document.querySelectorAll(".reveal");
   if (!("IntersectionObserver" in window)) { els.forEach(function (e) { e.classList.add("visible"); }); return; }
-  var io = new IntersectionObserver(function (ents) {
-    ents.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("visible"); io.unobserve(en.target); } });
-  }, { threshold: 0.08 });
+  var io = new IntersectionObserver(function (ents) { ents.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("visible"); io.unobserve(en.target); } }); }, { threshold: 0.08 });
   els.forEach(function (e) { io.observe(e); });
-})();
-</script>
-<script>
-(function () {
-  var tabs = Array.prototype.slice.call(document.querySelectorAll('.wp-tabs [role="tab"]'));
-  if (!tabs.length) return;
-  function pick(t, focus) {
-    tabs.forEach(function (b) {
-      var on = b === t;
-      b.setAttribute('aria-selected', on ? 'true' : 'false');
-      b.tabIndex = on ? 0 : -1;
-      document.getElementById(b.getAttribute('aria-controls')).hidden = !on;
-    });
-    if (focus) t.focus();
-  }
-  pick(tabs[0], false);
-  tabs.forEach(function (b, i) {
-    b.addEventListener('click', function () { pick(b, false); });
-    b.addEventListener('keydown', function (e) {
-      var n = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
-      if (e.key === 'Home') { e.preventDefault(); pick(tabs[0], true); return; }
-      if (e.key === 'End') { e.preventDefault(); pick(tabs[tabs.length - 1], true); return; }
-      if (!n) return;
-      e.preventDefault();
-      pick(tabs[(i + n + tabs.length) % tabs.length], true);
-    });
-  });
 })();
 </script>
 </body>
