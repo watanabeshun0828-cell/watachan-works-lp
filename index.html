@@ -8,7 +8,7 @@
 <meta name="google-site-verification" content="MT3a87TeZhdsmsGMunaXD7atpWkkSz_w2mpIPX1duj8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500&display=swap&text=LP%E3%80%81%E3%80%82%E3%81%84%E3%81%88%E3%81%8B%E3%81%8D%E3%81%93%E3%81%9F%E3%81%A7%E3%81%A8%E3%81%AB%E3%81%BE%E3%82%89%E3%82%8B%E3%82%8F%E3%82%92%E3%82%AA%E3%82%B3%E3%82%B7%E3%82%B8%E3%83%8A%E3%83%9A%E3%83%9B%E3%83%A0%E3%83%A9%E3%83%AA%E3%83%BB%E3%83%BC%E4%BA%8B%E4%BC%9D%E4%BD%9C%E5%88%B6%E5%8B%95%E5%8E%9F%E5%8F%B0%E5%AE%8C%E6%88%90%E6%9C%AC%E7%94%BB%E7%A8%BF%E8%A8%98%E9%9D%A2">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500&display=swap&text=LP%E3%80%81%E3%80%82%E3%81%84%E3%81%88%E3%81%8A%E3%81%8B%E3%81%8D%E3%81%8F%E3%81%91%E3%81%93%E3%81%94%E3%81%97%E3%81%99%E3%81%9F%E3%81%A0%E3%81%A6%E3%81%A7%E3%81%A8%E3%81%AB%E3%81%AE%E3%81%BE%E3%82%84%E3%82%89%E3%82%8B%E3%82%8C%E3%82%8F%E3%82%92%E3%82%AA%E3%82%B3%E3%82%B7%E3%82%B8%E3%83%8A%E3%83%9A%E3%83%9B%E3%83%A0%E3%83%A9%E3%83%AA%E3%83%BB%E3%83%BC%E4%BA%8B%E4%BC%9D%E4%BD%9C%E4%BE%8B%E4%BE%A1%E5%88%86%E5%88%B6%E5%8B%95%E5%8E%9F%E5%8F%97%E5%8F%B0%E5%A2%83%E5%A2%97%E5%AE%8C%E5%BC%95%E6%88%90%E6%9C%AC%E6%9D%9F%E6%A5%AD%E6%B8%A1%E7%92%B0%E7%94%BB%E7%9B%B8%E7%A8%BF%E7%B4%84%E8%A8%98%E8%A9%95%E8%AB%87%E9%82%8A%E9%87%8E%E9%9D%A2%E9%A7%BF">
 <link rel="stylesheet" href="site.css">
 <!-- share:start -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%227%22 fill=%22%235f5f5c%22/%3E%3Ctext x=%2216%22 y=%2222%22 font-size=%2217%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Georgia,serif%22%3ES%3C/text%3E%3C/svg%3E">
@@ -168,30 +168,56 @@ a:focus-visible, label:focus-within, .btn:focus-visible { outline: 2px solid var
   .ask { grid-template-columns: 1fr; }
   .ask .btn-main { text-align: center; }
   }
-/* 見出しだけしっぽり明朝（使う文字だけ読み込む）。読めないときはヒラギノ明朝・游明朝 */
-.hero-d h1, .sec-title, .svc-list .n { font-family: "Shippori Mincho", var(--serif); }
-
-/* 評価とお約束 */
-.proof .quote { margin: 4px 0 10px; padding: 18px 0 18px 22px; border-left: 3px solid var(--ink); font-size: clamp(18px, 1.8vw, 22px); line-height: 1.8; }
-.proof .quote-by { font-family: var(--sans); font-size: 12.5px; color: var(--ink-soft); }
-.proof .quote-by a { color: inherit; text-underline-offset: 3px; }
-.proof .vows { margin: 34px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--ink); }
-.proof .vows li { display: grid; grid-template-columns: minmax(0, 19em) minmax(0, 1fr); gap: 4px 24px; padding: 14px 0; border-bottom: 1px solid var(--line); }
-.proof .vows b { font-weight: 600; }
-.proof .vows span { font-size: 14px; color: var(--ink-soft); }
-
-/* これから（まだ実績の少ない分野） */
-.later .rows { margin: 8px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
-.later .rows a { display: grid; grid-template-columns: 7em 12em minmax(0, 1fr); gap: 4px 18px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid var(--line); color: var(--ink); text-decoration: none; font-size: 14px; }
-.later .rows a:hover .l-name { text-decoration: underline; text-underline-offset: 4px; }
-.later .l-name { font-family: Georgia, serif; letter-spacing: 0.2em; }
-.later .l-state { font-family: var(--sans); font-size: 12px; color: var(--ink-soft); }
-
+/* ── 下の段（評価〜フォーム）：上の段と同じ、ラベル＋明朝の見出し＋罫線 ── */
+.low { padding: var(--space) var(--gutter); border-top: 1px solid var(--line); }
+.low-body { margin-top: 26px; }
+.low-lede { max-width: 40em; font-family: var(--sans); font-size: 15px; line-height: 1.85; color: var(--ink-soft); letter-spacing: 0.03em; }
+.voice { margin: 0; padding: 4px 0 4px 24px; border-left: 4px solid var(--lime); }
+.voice p { font-size: clamp(20px, 2vw, 26px); line-height: 1.75; letter-spacing: 0.06em; }
+.voice-by { margin-top: 14px; font-family: var(--sans); font-size: 13.5px; line-height: 1.8; color: var(--ink-soft); }
+.voice-by .link { font-size: 13.5px; }
+.vows { margin: 40px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--ink); }
+.vows li { display: grid; grid-template-columns: minmax(0, 21em) minmax(0, 1fr); gap: 4px 28px; padding: 20px 0; border-bottom: 1px solid var(--line); }
+.vows b { font-weight: 600; font-size: 16.5px; line-height: 1.7; }
+.vows span { font-family: var(--sans); font-size: 15px; line-height: 1.8; color: var(--ink-soft); }
+.rows { margin: 26px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--ink); }
+.rows a { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 14em) 2em; gap: 4px 28px; align-items: baseline; padding: 18px 0; border-bottom: 1px solid var(--line); color: var(--ink); text-decoration: none; }
+.rows .r-name { font-size: 17px; letter-spacing: 0.06em; }
+.rows .r-state { font-family: var(--sans); font-size: 13.5px; color: var(--ink-soft); }
+.rows .go { color: var(--sky); font-family: var(--sans); font-size: 18px; text-align: right; }
+.rows a:hover .r-name, .rows a:focus-visible .r-name { text-decoration: underline; text-decoration-color: var(--lime); text-decoration-thickness: 3px; text-underline-offset: 0.25em; }
+.env { margin: 26px 0 0; border-top: 1px solid var(--ink); }
+.env div { display: grid; grid-template-columns: minmax(0, 12em) minmax(0, 1fr); gap: 4px 28px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.env dt { font-size: 16px; letter-spacing: 0.06em; }
+.env dd { margin: 0; font-family: var(--sans); font-size: 15px; line-height: 1.8; color: var(--ink-soft); }
+.sec-title small { display: block; margin-top: 4px; font-family: Georgia, serif; font-size: 13px; letter-spacing: 0.24em; color: var(--ink-soft); }
+.prof-text { max-width: 40em; }
+.prof-text p { font-family: var(--sans); font-size: 15.5px; line-height: 1.95; letter-spacing: 0.03em; }
+.prof-text p + p { margin-top: 1.2em; }
+.prof-tags { margin-top: 24px; font-family: var(--sans); font-size: 14px; letter-spacing: 0.08em; color: var(--ink-soft); }
+.prof-tags i { font-style: normal; margin: 0 0.5em; color: var(--line); }
+.prof-note { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; margin-top: 18px; font-family: var(--sans); font-size: 14px; color: var(--ink-soft); }
+/* フォーム：左に案内、右に入力欄 */
+.contact { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr); gap: 0 clamp(32px, 6vw, 96px); padding: var(--space) var(--gutter); background: var(--sky-pale); }
+.contact .sec-title { padding-left: 0; font-family: "Shippori Mincho", var(--serif); font-weight: 500; font-size: clamp(24px, 2.6vw, 34px); letter-spacing: 0.06em; }
+.contact .c-head .low-lede { margin-top: 6px; }
+.contact .body { padding: 0; max-width: 620px; }
+.contact form { margin-top: 0; }
+.contact .field label { font-size: 13px; letter-spacing: 0.1em; color: var(--ink); }
+.contact .field input, .contact .field textarea, .contact .field select { font-family: var(--sans); font-size: 15px; border-color: rgba(36, 37, 32, 0.28); }
+.contact .field input:focus, .contact .field textarea:focus, .contact .field select:focus { outline: 2px solid var(--sky); outline-offset: 0; }
+.contact .btn { display: block; width: 100%; margin-top: 8px; background: var(--sky); font-size: 15px; letter-spacing: 0.12em; line-height: 1.6; padding: 16px 20px; }
+.contact .btn:hover { background: var(--sky-dark); }
 @media (max-width: 900px) {
-  .proof .vows li { grid-template-columns: 1fr; }
-  .later .rows a { grid-template-columns: 6em minmax(0, 1fr); }
-  .later .l-desc { grid-column: 1 / -1; }
+  .vows li, .env div { grid-template-columns: 1fr; }
+  .rows a { grid-template-columns: minmax(0, 1fr) 2em; }
+  .rows .r-state { grid-column: 1; }
+  .rows .go { grid-column: 2; grid-row: 1; }
+  .contact { grid-template-columns: 1fr; gap: 24px; }
 }
+/* 見出しだけしっぽり明朝（使う文字だけ読み込む）。読めないときはヒラギノ明朝・游明朝 */
+.hero-d h1, .sec-title, .svc-list .n, .voice p { font-family: "Shippori Mincho", var(--serif); }
+
 </style>
 </head>
 <body>
@@ -287,12 +313,12 @@ a:focus-visible, label:focus-within, .btn:focus-visible { outline: 2px solid var
   </div>
 </section>
 
-<section class="block proof" id="proof">
-  <h2><span>VOICE</span></h2>
-  <div class="body reveal">
-    <h3 class="headline"><span class="nb">いただいた評価と、</span><span class="nb">お引き受けしたときのお約束。</span></h3>
-    <p class="quote">「クオリティの高い記事へと<br>ブラッシュアップされました」</p>
-    <p class="quote-by">クライアント様（Webメディア運営）／記事の改稿・校閲合格のあとにいただいた評価 ― <a href="writer.html#cases">修正の前と後を見る</a></p>
+<section class="low" id="proof" aria-labelledby="proof-h">
+  <p class="sec-label">VOICE</p>
+  <h2 class="sec-title" id="proof-h"><span class="nb">いただいた評価と、</span><span class="nb">お引き受けしたときのお約束。</span></h2>
+  <div class="low-body reveal">
+    <blockquote class="voice"><p>「クオリティの高い記事へと<br>ブラッシュアップされました」</p></blockquote>
+    <p class="voice-by">クライアント様（Webメディア運営）／記事の改稿・校閲合格のあとにいただいた評価 ― <a class="link" href="writer.html#cases">修正の前と後を見る</a></p>
     <ul class="vows">
       <li><b>作る前に、完成の条件を決めます</b><span>作るもの・作らないもの・何ができたら完成かを、ご確認いただいてから始めます。</span></li>
       <li><b>納品のときに、確認の記録をお渡しします</b><span>LP・ホームページでは、確かめた端末と表示の速さ、確かめられなかったことも書いてお渡しします。</span></li>
@@ -301,50 +327,53 @@ a:focus-visible, label:focus-within, .btn:focus-visible { outline: 2px solid var
   </div>
 </section>
 
-
-
-<section class="block tint later" id="next">
-  <h2><span>NEXT</span></h2>
-  <div class="body reveal">
-    <h3 class="headline"><span class="nb">これから、</span><span class="nb">作例を増やしていく分野です。</span></h3>
-    <p>いまお受けしているのは、記事・台本・LP・ホームページです。次の分野は、作例ができ次第、それぞれのページに載せていきます。</p>
+<section class="low" id="next" aria-labelledby="next-h">
+  <p class="sec-label">NEXT</p>
+  <h2 class="sec-title" id="next-h"><span class="nb">これから、</span><span class="nb">作例を増やしていく分野です。</span></h2>
+  <div class="low-body reveal">
+    <p class="low-lede">いまお受けしているのは、記事・台本・LP・ホームページです。次の分野は、作例ができ次第、それぞれのページに載せていきます。</p>
     <ul class="rows">
-      <li><a href="web-design.html"><span class="l-name">DESIGN</span><span class="l-state">バナーのサンプル公開中</span><span class="l-desc">WEBデザイン・バナー</span></a></li>
-      <li><a href="video.html"><span class="l-name">VIDEO</span><span class="l-state">準備中</span><span class="l-desc">PR・SNS向けのショート動画</span></a></li>
-      <li><a href="ai.html"><span class="l-name">AI</span><span class="l-state">準備中</span><span class="l-desc">生成AIの業務活用の支援</span></a></li>
+      <li><a href="web-design.html"><span class="r-name">WEBデザイン・バナー</span><span class="r-state">バナーのサンプル公開中</span><span class="go" aria-hidden="true">→</span></a></li>
+      <li><a href="video.html"><span class="r-name">PR・SNS向けのショート動画</span><span class="r-state">準備中</span><span class="go" aria-hidden="true">→</span></a></li>
+      <li><a href="ai.html"><span class="r-name">生成AIの業務活用の支援</span><span class="r-state">準備中</span><span class="go" aria-hidden="true">→</span></a></li>
     </ul>
   </div>
 </section>
 
-<section class="block" id="tools">
-  <h2><span>ENVIRONMENT</span></h2>
-  <div class="body reveal">
-    <p>使用するデバイスやツールは、ご指定に合わせて対応できます。</p>
-    <div class="cols">
-      <div class="item"><h3>DEVICE</h3><p>MacBook</p></div>
-      <div class="item"><h3>DESIGN &amp; VIDEO</h3><p>Adobe（Premiere Pro・Photoshop・Illustratorなど）</p></div>
-      <div class="item"><h3>DOCUMENT</h3><p>Googleドキュメント・スプレッドシート、Microsoft Office（Word・Excel・PowerPoint）</p></div>
-      <div class="item"><h3>COMMUNICATION</h3><p>Chatwork、Slackなど。ご指定のツールで連絡します。</p></div>
+<section class="low" id="tools" aria-labelledby="tools-h">
+  <p class="sec-label">ENVIRONMENT</p>
+  <h2 class="sec-title" id="tools-h">作業の環境</h2>
+  <div class="low-body reveal">
+    <p class="low-lede">使用するデバイスやツールは、ご指定に合わせて対応できます。上記以外のツールも、ご相談ください。</p>
+    <dl class="env">
+      <div><dt>デバイス</dt><dd>MacBook</dd></div>
+      <div><dt>デザイン・動画</dt><dd>Adobe（Premiere Pro・Photoshop・Illustratorなど）</dd></div>
+      <div><dt>書類</dt><dd>Googleドキュメント・スプレッドシート、Microsoft Office（Word・Excel・PowerPoint）</dd></div>
+      <div><dt>連絡</dt><dd>Chatwork、Slackなど。ご指定のツールで連絡します。</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="low" id="profile" aria-labelledby="profile-h">
+  <p class="sec-label">PROFILE</p>
+  <h2 class="sec-title" id="profile-h">渡邊 駿<small>WATANABE SHUN</small></h2>
+  <div class="low-body reveal">
+    <div class="prof-text">
+      <p>会社員として働きながら、副業でライターをしています。家族と過ごす「当たり前」を守りたくて副業を学び始め、どの仕事の土台にも「文章」があると知りました。以来、記事と動画台本を中心に、書く仕事を一つずつ手がけています。</p>
+      <p>本業があるぶん、一度に多くの案件はお受けしていません。修正のやりとりに時間を使えたほうが、仕上がりが良くなるからです。休日は鉄道旅行で、知らない街を歩いています。</p>
     </div>
-    <p style="margin-top:24px;font-size:12.5px;color:var(--ink-soft);">上記以外のツールも、ご相談ください。</p>
+    <p class="prof-tags">SEO記事<i>／</i>動画台本<i>／</i>シナリオ<i>／</i>LP<i>／</i>HP</p>
+    <p class="prof-note"><a class="link" href="https://note.com/famous_abelia230" target="_blank" rel="noopener">note ↗</a><span>noteでは、案件獲得の過程や日々の気づきを書いています。</span></p>
   </div>
 </section>
 
-<section class="profile" id="profile">
-  <h2><span>PROFILE</span></h2>
-  <div class="body reveal">
-    <div class="name">渡邊 駿<small>WATANABE SHUN</small></div>
-    <p style="margin-top:24px;">会社員として働きながら、副業でライターをしています。家族と過ごす「当たり前」を守りたくて副業を学び始め、どの仕事の土台にも「文章」があると知りました。以来、記事と動画台本を中心に、書く仕事を一つずつ手がけています。</p>
-    <p>本業があるぶん、一度に多くの案件はお受けしていません。修正のやりとりに時間を使えたほうが、仕上がりが良くなるからです。休日は鉄道旅行で、知らない街を歩いています。</p>
-    <div class="chips"><span>SEO記事</span><span>動画台本</span><span>シナリオ</span><span>LP</span><span>HP</span></div>
-    <div class="sns reveal"><a href="https://note.com/famous_abelia230" target="_blank" rel="noopener">NOTE ↗</a><span>noteでは、案件獲得の過程や日々の気づきを書いています。</span></div>
+<section class="contact" id="contact" aria-labelledby="contact-h">
+  <div class="c-head">
+    <p class="sec-label">CONTACT</p>
+    <h2 class="sec-title" id="contact-h">制作のご相談</h2>
+    <p class="low-lede">記事・台本・LP・ホームページなど、どのご相談でもこちらからどうぞ。「こんなこと頼めるかな」という段階でも大丈夫です。24時間以内にお返事します。</p>
   </div>
-</section>
-
-<section class="contact" id="contact">
-  <h2><span>CONTACT</span></h2>
   <div class="body reveal">
-    <p>記事・台本・LP・ホームページなど、どのご相談でもこちらからどうぞ。「こんなこと頼めるかな」という段階でも大丈夫です。24時間以内にお返事します。</p>
     <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
       <input type="hidden" name="access_key" value="1663e859-395f-426f-b2ee-bc2f1cb81d98">
       <input type="hidden" name="subject" value="【渡邊駿】ポートフォリオからのお問い合わせ">
