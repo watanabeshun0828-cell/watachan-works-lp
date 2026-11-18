@@ -6,6 +6,9 @@
 <title>渡邊駿｜ポートフォリオ（ライティング・台本・LP・HP）</title>
 <meta name="description" content="渡邊駿のポートフォリオ。Webライター（記事）・台本シナリオ・LP制作・HP制作のページから、制作サンプルと料金をご覧いただけます。WEBデザインは自主制作サンプルを公開中、動画編集・AI導入支援は準備中です。">
 <meta name="google-site-verification" content="MT3a87TeZhdsmsGMunaXD7atpWkkSz_w2mpIPX1duj8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500&display=swap&text=LP%E3%80%81%E3%80%82%E3%81%84%E3%81%88%E3%81%8B%E3%81%8D%E3%81%93%E3%81%9F%E3%81%A7%E3%81%A8%E3%81%AB%E3%81%BE%E3%82%89%E3%82%8B%E3%82%8F%E3%82%92%E3%82%AA%E3%82%B3%E3%82%B7%E3%82%B8%E3%83%8A%E3%83%9A%E3%83%9B%E3%83%A0%E3%83%A9%E3%83%AA%E3%83%BB%E3%83%BC%E4%BA%8B%E4%BC%9D%E4%BD%9C%E5%88%B6%E5%8B%95%E5%8E%9F%E5%8F%B0%E5%AE%8C%E6%88%90%E6%9C%AC%E7%94%BB%E7%A8%BF%E8%A8%98%E9%9D%A2">
 <link rel="stylesheet" href="site.css">
 <!-- share:start -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%227%22 fill=%22%235f5f5c%22/%3E%3Ctext x=%2216%22 y=%2222%22 font-size=%2217%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Georgia,serif%22%3ES%3C/text%3E%3C/svg%3E">
@@ -44,26 +47,129 @@
 <!-- share:end -->
 <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 <style>
-/* トップ：頼める4つを、実物つきで最初の画面に（案A） */
-.tfv { display: grid; grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr); gap: 0 56px; align-items: center; min-height: 100vh; padding: calc(var(--nav-h) + 40px) 34px 56px; border-bottom: 1px solid var(--line); }
-.tfv .who { font-family: var(--sans); font-size: 12.5px; letter-spacing: 0.12em; color: var(--ink-soft); }
-.tfv h1 { margin: 14px 0 18px; font-weight: 500; font-size: clamp(25px, 2.7vw, 36px); line-height: 1.7; }
-.tfv .lede { max-width: 32em; font-size: 14.5px; color: var(--ink-soft); }
-.tfv .cta-row { margin-top: 26px; }
-.tfv .cta-row .btn { padding: 13px 30px; }
-.tfv .facts { padding-right: 0; }
-/* 幅の広い画面でも4つの入口が最初の画面に収まるよう、右の列の幅に上限を付ける */
-.tfv-r { width: 100%; max-width: 740px; justify-self: end; }
-.works4 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; margin: 0; padding: 0; list-style: none; }
-.works4 a { display: block; color: var(--ink); text-decoration: none; }
-.works4 .shot { display: block; aspect-ratio: 960 / 645; overflow: hidden; background: var(--bg-tile); border: 1px solid rgba(60, 63, 62, 0.12); }
-.works4 .shot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.4s ease; }
-.works4 a:hover .shot img, .works4 a:focus-visible .shot img { transform: scale(1.03); }
-.works4 .w-name { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-top: 10px; padding-bottom: 6px; border-bottom: 1px solid var(--ink); font-weight: 600; font-size: 15.5px; }
-.works4 .w-name::after { content: "→"; font-weight: 400; color: var(--ink-soft); }
-.works4 a:hover .w-name::after, .works4 a:focus-visible .w-name::after { color: var(--ink); }
-.works4 .w-note { display: flex; flex-wrap: wrap; gap: 2px 12px; margin-top: 6px; font-family: var(--sans); font-size: 12px; color: var(--ink-soft); }
-.works4 a:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+/* トップ（2026-11-19）：大きな明朝と余白、代表事例1件、罫線の一覧、原稿→構成案→完成画面。色は墨×ライム */
+:root {
+  --bg: #F7F4EC; --bg-tile: #EFEBE0; --ink: #242520; --ink-soft: #555950; --line: rgba(36, 37, 32, 0.18);
+  --sky: #242520; --sky-dark: #3A3C34; --sky-pale: #EEF2DE; --lime: #B5DC3C; --lime-ink: #1F2A14;
+  --btn: #242520; --gutter: clamp(20px, 4vw, 48px); --space: clamp(56px, 8vw, 112px);
+}
+body { background: var(--bg); color: var(--ink); }
+.gnav { background: rgba(247, 244, 236, 0.9); padding: 0 var(--gutter); }
+.menu a { opacity: 1; }
+.menu a.cta { background: var(--sky); color: #fff; }
+.menu a.cta:hover { background: var(--sky-dark); }
+a:focus-visible, label:focus-within, .btn:focus-visible { outline: 2px solid var(--sky); outline-offset: 3px; }
+.sans { font-family: var(--sans); }
+.eyebrow { font-family: var(--sans); font-size: 13px; letter-spacing: 0.12em; color: var(--ink-soft); line-height: 1.7; }
+.sec-label { font-family: Georgia, serif; font-size: 13px; letter-spacing: 0.3em; color: var(--ink-soft); }
+.sec-title { margin: 10px 0 14px; font-weight: 500; font-size: clamp(24px, 2.6vw, 34px); line-height: 1.5; letter-spacing: 0.06em; }
+.sec-lede { max-width: 40em; font-family: var(--sans); font-size: 16px; line-height: 1.8; color: var(--ink-soft); letter-spacing: 0.03em; }
+.link { color: var(--sky); font-family: var(--sans); font-size: 15px; letter-spacing: 0.06em; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+.link:hover, .link:focus-visible { text-underline-offset: 0.32em; }
+@media (prefers-reduced-motion: no-preference) { .link { transition: text-underline-offset 160ms ease-out; } }
+.mark { background: linear-gradient(transparent 64%, var(--lime) 64%, var(--lime) 92%, transparent 92%); }
+.btn-main { display: inline-block; background: var(--sky); color: #fff; text-decoration: none; font-family: var(--sans); font-size: 15px; letter-spacing: 0.12em; line-height: 1.6; padding: 16px 34px; transition: background 0.2s; }
+.btn-main:hover { background: var(--sky-dark); }
+
+/* ── ヒーロー：大きな明朝と余白 ── */
+.hero-d { padding: calc(var(--nav-h) + clamp(48px, 8vw, 110px)) var(--gutter) 0; }
+.hero-d h1 { margin: 18px 0 26px; font-weight: 500; font-size: clamp(36px, 1.5rem + 3.4vw, 68px); line-height: 1.35; letter-spacing: 0.04em; }
+.hero-d .sup { max-width: 34em; font-family: var(--sans); font-size: 16.5px; line-height: 1.85; letter-spacing: 0.03em; }
+.hero-d .sup span { color: var(--ink-soft); }
+.hero-d .act { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 30px; margin-top: 32px; }
+.hero-d .hint { margin-top: 14px; font-family: var(--sans); font-size: 13px; color: var(--ink-soft); letter-spacing: 0.04em; }
+
+/* ── 代表例：画面を大きく1点、下に何を変えたか ── */
+.case-d { padding: clamp(48px, 7vw, 96px) var(--gutter) var(--space); }
+.case-d .frame { margin-left: clamp(0px, 9vw, 160px); }
+.case-d .tag { display: flex; flex-wrap: wrap; gap: 4px 18px; margin-bottom: 12px; font-family: var(--sans); font-size: 13px; letter-spacing: 0.06em; color: var(--ink-soft); }
+.case-d .tag b { color: var(--ink); font-weight: 600; }
+.case-d .tag .own { border: 1px solid var(--ink-soft); padding: 0 8px; }
+.case-d figure { margin: 0; border: 1px solid var(--line); }
+.case-d figure img { display: block; width: 100%; height: auto; }
+.case-d .why { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 32px; margin-top: 26px; }
+.case-d .why div { border-top: 1px solid var(--ink); padding-top: 14px; }
+.case-d .why b { display: block; font-weight: 600; font-size: 16px; line-height: 1.7; }
+.case-d .why p { margin-top: 6px; font-family: var(--sans); font-size: 14.5px; line-height: 1.8; color: var(--ink-soft); letter-spacing: 0.02em; }
+.case-d .foot { display: flex; flex-wrap: wrap; gap: 8px 28px; align-items: baseline; margin-top: 22px; font-family: var(--sans); font-size: 13.5px; color: var(--ink-soft); }
+.case-d .foot b { font-family: Georgia, serif; font-weight: 400; font-size: 19px; color: var(--ink); }
+
+/* ── できること：罫線で区切った一覧 ── */
+.svc { padding: var(--space) var(--gutter); border-top: 4px solid var(--lime); }
+.svc-list { margin: 30px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--ink); }
+.svc-list a { display: grid; grid-template-columns: minmax(0, 15em) minmax(0, 1fr) minmax(0, 9em) 2em; gap: 6px 28px; align-items: baseline; padding: 24px 0; border-bottom: 1px solid var(--line); color: var(--ink); text-decoration: none; }
+.svc-list .n { line-height: 1.5; font-weight: 500; font-size: clamp(20px, 1.9vw, 25px); letter-spacing: 0.08em; }
+.svc-list .n small { display: block; margin-top: 2px; font-family: var(--sans); font-size: 13px; letter-spacing: 0.04em; color: var(--ink-soft); }
+.svc-list .d { font-family: var(--sans); font-size: 15px; line-height: 1.8; letter-spacing: 0.02em; }
+.svc-list .s { font-family: var(--sans); font-size: 13.5px; color: var(--ink-soft); }
+.svc-list .go { color: var(--sky); font-family: var(--sans); font-size: 20px; text-align: right; }
+.svc-list a:hover .n, .svc-list a:focus-visible .n { text-decoration: underline; text-decoration-color: var(--lime); text-decoration-thickness: 3px; text-underline-offset: 0.25em; }
+
+/* ── 原稿 → 構成案 → 完成画面：切り替え（CSSだけで動く） ── */
+.proc { padding: var(--space) var(--gutter); background: var(--sky-pale); }
+.sw { margin-top: 30px; }
+.sw input { position: absolute; opacity: 0; pointer-events: none; }
+.sw .tabs { display: flex; gap: 0; border-bottom: 1px solid var(--ink); }
+.sw .tabs label { position: relative; padding: 12px 22px 12px 0; margin-right: 22px; cursor: pointer; font-size: 17px; letter-spacing: 0.08em; color: var(--ink-soft); }
+.sw .tabs label small { font-family: Georgia, serif; font-size: 12px; margin-right: 8px; letter-spacing: 0.1em; }
+.sw .tabs label::after { content: ""; position: absolute; left: 0; right: 22px; bottom: -1px; height: 4px; background: transparent; }
+.sw .tabs .arrow { padding: 12px 22px 12px 0; color: var(--ink-soft); font-family: var(--sans); }
+#v1:checked ~ .tabs label[for="v1"], #v2:checked ~ .tabs label[for="v2"], #v3:checked ~ .tabs label[for="v3"] { color: var(--ink); }
+#v1:checked ~ .tabs label[for="v1"]::after, #v2:checked ~ .tabs label[for="v2"]::after, #v3:checked ~ .tabs label[for="v3"]::after { background: var(--sky); }
+#v1:focus-visible ~ .tabs label[for="v1"], #v2:focus-visible ~ .tabs label[for="v2"], #v3:focus-visible ~ .tabs label[for="v3"] { outline: 2px solid var(--sky); outline-offset: 2px; }
+.sw .panel { display: none; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 0 44px; align-items: start; padding-top: 28px; }
+#v1:checked ~ .p1, #v2:checked ~ .p2, #v3:checked ~ .p3 { display: grid; }
+.sw .say b { display: block; font-weight: 600; font-size: 18px; line-height: 1.7; }
+.sw .say p { margin-top: 10px; font-family: var(--sans); font-size: 15px; line-height: 1.85; color: var(--ink-soft); }
+.sw .say small { display: block; margin-top: 10px; font-family: var(--sans); font-size: 12.5px; color: var(--ink-soft); }
+.paper { background: #fff; border: 1px solid var(--line); padding: 30px 32px; }
+.paper .h { font-size: 24px; letter-spacing: 0.1em; line-height: 1.6; }
+.paper .s { margin-top: 4px; font-size: 16px; color: var(--ink-soft); }
+.paper dl { display: grid; grid-template-columns: 3.4em minmax(0, 1fr); gap: 4px 10px; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line); font-family: var(--sans); font-size: 15px; line-height: 1.7; }
+.paper dt { color: var(--ink-soft); }
+.paper dd { margin: 0; }
+.plan { margin: 0; padding: 0; list-style: none; counter-reset: pl; background: #fff; border: 1px solid var(--line); }
+.plan li { counter-increment: pl; display: grid; grid-template-columns: 3em minmax(0, 1fr); padding: 13px 24px 13px 18px; border-bottom: 1px solid var(--line); font-size: 16px; line-height: 1.7; }
+.plan li:last-child { border-bottom: 0; }
+.plan li::before { content: counter(pl, decimal-leading-zero); font-family: Georgia, serif; font-size: 13px; color: var(--sky); padding-top: 3px; }
+.plan li span { display: block; font-family: var(--sans); font-size: 13.5px; color: var(--ink-soft); }
+.shot { position: relative; margin: 0; border: 1px solid var(--line); }
+.shot img { display: block; width: 100%; height: auto; }
+.shot .pin { position: absolute; left: 9.8%; top: 83%; transform: translate(-50%, -50%); display: grid; place-items: center; width: 30px; height: 30px; background: var(--lime); color: var(--lime-ink); font-family: Georgia, serif; font-size: 15px; outline: 2px solid #fff; }
+.shot .box { position: absolute; left: 9.6%; right: 31%; top: 86.4%; height: 10%; outline: 3px solid var(--lime); outline-offset: 1px; pointer-events: none; }
+
+/* ── 制作の流れ・相談 ── */
+.flow-d { margin: 54px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); border-top: 1px solid var(--ink); counter-reset: fl; }
+.flow-d li { counter-increment: fl; padding: 14px 14px 16px 0; font-size: 15.5px; line-height: 1.65; }
+.flow-d li::before { content: counter(fl, decimal-leading-zero); display: block; font-family: Georgia, serif; font-size: 13px; color: var(--sky); margin-bottom: 4px; }
+.flow-d li span { display: block; font-family: var(--sans); font-size: 12.5px; color: var(--ink-soft); }
+.ask { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 18px 40px; align-items: center; margin-top: 40px; padding-top: 26px; border-top: 1px solid var(--line); }
+.ask p { font-family: var(--sans); font-size: 15px; line-height: 1.85; color: var(--ink-soft); }
+.ask p b { color: var(--ink); font-weight: 600; }
+
+
+@media (max-width: 900px) {
+  .hero-d .sup { font-size: 16px; }
+  .hero-d .act .btn-main { flex: 1 1 100%; text-align: center; }
+  .case-d .frame { margin-left: 0; }
+  .case-d .why { grid-template-columns: 1fr; gap: 18px; }
+  .svc-list a { grid-template-columns: minmax(0, 1fr) 2em; padding: 20px 0; }
+  .svc-list .d, .svc-list .s { grid-column: 1; }
+  .svc-list .go { grid-column: 2; grid-row: 1; }
+  .sw .tabs { overflow-x: auto; }
+  .sw .tabs label { padding-right: 12px; margin-right: 12px; font-size: 15.5px; white-space: nowrap; }
+  .sw .tabs label::after { right: 12px; }
+  .sw .tabs .arrow { display: none; }
+  .sw .panel { grid-template-columns: 1fr; gap: 20px; }
+  .paper { padding: 22px 20px; }
+  .paper .h { font-size: 20px; }
+  .flow-d { grid-template-columns: 1fr 1fr; }
+  .flow-d li { border-bottom: 1px solid var(--line); }
+  .ask { grid-template-columns: 1fr; }
+  .ask .btn-main { text-align: center; }
+  }
+/* 見出しだけしっぽり明朝（使う文字だけ読み込む）。読めないときはヒラギノ明朝・游明朝 */
+.hero-d h1, .sec-title, .svc-list .n { font-family: "Shippori Mincho", var(--serif); }
 
 /* 評価とお約束 */
 .proof .quote { margin: 4px 0 10px; padding: 18px 0 18px 22px; border-left: 3px solid var(--ink); font-size: clamp(18px, 1.8vw, 22px); line-height: 1.8; }
@@ -81,25 +187,11 @@
 .later .l-name { font-family: Georgia, serif; letter-spacing: 0.2em; }
 .later .l-state { font-family: var(--sans); font-size: 12px; color: var(--ink-soft); }
 
-@media (max-width: 1080px) and (min-width: 901px) {
-  .tfv { grid-template-columns: 1fr 1fr; gap: 0 36px; }
-}
 @media (max-width: 900px) {
-  .tfv { grid-template-columns: 1fr; gap: 30px; min-height: 0; padding: calc(var(--nav-h) + 28px) 22px 48px; }
-  .tfv h1 { font-size: 24px; margin: 10px 0 14px; }
-  .tfv .lede { font-size: 14px; }
-  .tfv .cta-row { margin-top: 20px; }
-  .tfv .cta-row .btn { flex: 1 1 140px; padding: 13px 10px; }
-  .tfv .facts { gap: 2px 14px; margin-top: 14px; }
-  .tfv .facts span { border: 0; padding: 0; font-size: 11.5px; }
-  .works4 { gap: 16px 12px; }
-  .works4 .w-name { font-size: 14px; }
-  .works4 .w-note { font-size: 11px; line-height: 1.6; gap: 0 8px; }
   .proof .vows li { grid-template-columns: 1fr; }
   .later .rows a { grid-template-columns: 6em minmax(0, 1fr); }
   .later .l-desc { grid-column: 1 / -1; }
 }
-@media (prefers-reduced-motion: reduce) { .works4 .shot img { transition: none; } }
 </style>
 </head>
 <body>
@@ -109,27 +201,89 @@
   <ul class="menu" id="menu"><li><a href="index.html" class="cur">Home</a></li><li><a href="writer.html">Writer</a></li><li><a href="scenario.html">Script</a></li><li><a href="lp.html">LP</a></li><li><a href="hp.html">HP</a></li><li><a href="web-design.html">Design</a></li><li><a href="video.html">Video</a></li><li><a href="ai.html">AI</a></li><li><a href="index.html#profile">Profile</a></li><li><a class="cta" href="index.html#contact">相談する</a></li></ul>
 </header>
 <main id="main">
-<section class="tfv" id="top" aria-labelledby="t-h1">
-  <div class="tfv-l">
-    <p class="who">渡邊 駿｜Webライター・LP／ホームページ制作</p>
-    <h1 id="t-h1"><span class="nb">記事・台本・LP・</span><span class="nb">ホームページを、</span><span class="nb">文章から作ります。</span></h1>
-    <p class="lede"><span class="nb">会社員として働きながら、</span><span class="nb">書く仕事とページ制作をお受けしています。</span><span class="nb">構成と文章を先に固めてから、</span><span class="nb">形にします。</span></p>
-    <div class="cta-row">
-      <a class="btn btn-primary" href="#contact">相談する</a>
-      <a class="btn btn-ghost" href="pricing.html">料金の目安を見る</a>
+<section class="hero-d" id="top" aria-labelledby="d-h1">
+  <p class="eyebrow">渡邊 駿｜ホームページ・LP制作と、記事・台本の執筆</p>
+  <h1 id="d-h1"><span class="nb">伝えたいことを、</span><span class="nb"><span class="mark">伝わる</span>ページに。</span></h1>
+  <p class="sup">個人事業主・小さなお店のホームページやLPを、構成と文章の整理から作ります。<span>Webメディア・YouTubeチャンネルの記事と台本もお受けしています。</span></p>
+  <div class="act">
+    <a class="btn-main" href="#contact">制作について相談する</a>
+    <a class="link" href="#services">できることを見る</a>
+  </div>
+  <p class="hint">ご連絡への返信は24時間以内。お見積もりは無料です。</p>
+</section>
+
+<section class="case-d" id="case" aria-label="代表の事例">
+  <div class="frame">
+    <p class="tag"><b>ホームページの見本</b><span>焼き菓子とパンの店「petite douceur」</span><span class="own">自主制作・お店は架空</span></p>
+    <figure><img src="case/v6-hero.jpg" alt="焼き菓子店の見本ホームページの最初の画面。ガラス戸に金文字の店名と見出し、右上に営業中の札、下の帯に営業時間・定休日・予約の締め切りと予約のボタン" width="974" height="654" fetchpriority="high"></figure>
+    <div class="why">
+      <div><b>何を変えたか</b><p>写真の上に文字を置くだけの形をやめ、店名と見出しをガラス戸の金文字にしました。</p></div>
+      <div><b>どう伝わるか</b><p>扉の札が見る人の時刻で「営業中」「本日終了」などに変わり、今行って開いているかがわかります。</p></div>
+      <div><b>読む順番</b><p>ガラス戸、棚、店の奥、レジと、店の中を歩く順に並べました。</p></div>
     </div>
-    <div class="facts">
-      <span>ご連絡への返信 <b>24時間以内</b></span>
-      <span>お見積もり <b>無料</b></span>
+    <p class="foot"><span>表示の速さ（スマホ）<b>91</b> → <b>96</b></span><a class="link" href="case-bakery.html">できるまでの8つの段階を読む</a></p>
+  </div>
+</section>
+
+<section class="svc" id="services" aria-labelledby="svc-h">
+  <p class="sec-label">SERVICES</p>
+  <h2 class="sec-title" id="svc-h">できること</h2>
+  <ul class="svc-list">
+    <li><a href="hp.html"><span class="n">ホームページ制作<small>お店・事業の数ページのサイト</small></span><span class="d">文章の作成から、デザイン、スマホ対応、ご用意いただいたサーバーへの公開まで。</span><span class="s">見本4つ＋動く見本</span><span class="go" aria-hidden="true">→</span></a></li>
+    <li><a href="lp.html"><span class="n">LP制作<small>ひとつの商品・サービスの申込ページ</small></span><span class="d">構成、文章、デザイン、ページの制作、スマホ対応まで。文章だけのご依頼もお受けします。</span><span class="s">見本6つ</span><span class="go" aria-hidden="true">→</span></a></li>
+    <li><a href="writer.html"><span class="n">記事・コラム<small>Webメディア・ブログ</small></span><span class="d">SEO記事、コラム、体験談エッセイ。競合の調査、見出しの構成、本文、検索結果に出る説明文まで。</span><span class="s">サンプル8本</span><span class="go" aria-hidden="true">→</span></a></li>
+    <li><a href="scenario.html"><span class="n">動画台本・シナリオ<small>YouTubeチャンネル</small></span><span class="d">朗読シナリオ、漫画動画、ショートドラマ、解説動画。骨子の段階から、本文とト書きまで。</span><span class="s">サンプル2本</span><span class="go" aria-hidden="true">→</span></a></li>
+  </ul>
+</section>
+
+<section class="proc" id="process" aria-labelledby="proc-h">
+  <p class="sec-label">PROCESS</p>
+  <h2 class="sec-title" id="proc-h"><span class="nb">原稿から、</span><span class="nb">完成画面まで。</span></h2>
+  <p class="sec-lede">ページを作る前の、何を載せるか決まっていない段階からご相談いただけます。上のパン屋さんの見本で、作る順番を切り替えて見られます。</p>
+  <div class="sw">
+    <input type="radio" name="view" id="v1">
+    <input type="radio" name="view" id="v2">
+    <input type="radio" name="view" id="v3" checked>
+    <div class="tabs" role="presentation">
+      <label for="v1"><small>01</small>原稿</label><span class="arrow" aria-hidden="true">→</span>
+      <label for="v2"><small>02</small>構成案</label><span class="arrow" aria-hidden="true">→</span>
+      <label for="v3"><small>03</small>完成画面</label>
+    </div>
+    <div class="panel p1">
+      <div class="paper">
+        <p class="h">今日も、小さな窯から。</p>
+        <p class="s">家族3人で営む、町の焼き菓子店</p>
+        <dl><dt>営業</dt><dd>8:00〜18:00（売り切れ次第終了）</dd><dt>定休</dt><dd>火曜日</dd><dt>予約</dt><dd>受け取りの前日17時まで</dd></dl>
+      </div>
+      <div class="say"><b>伝えることを、先に文章にします。</b><p>デザインに入る前に、お店の言葉と、来る前に知りたい情報をそろえます。同業のお店のサイトを調べて、「焼き上がりの時間」と「取り置きの締め切り」を足しました。</p><small>※完成したページの文言を抜き出して並べています</small></div>
+    </div>
+    <div class="panel p2">
+      <ol class="plan">
+        <li><div>ガラス戸<span>店名・見出し・営業中の札</span></div></li>
+        <li><div>窓の下<span>営業時間・定休日・予約の締め切りと、予約のボタン</span></div></li>
+        <li><div>棚<span>8時・10時・14時の焼き上がり</span></div></li>
+        <li><div>店の奥<span>仕込みと、祖母の代からの話</span></div></li>
+        <li><div>レジ・黒板<span>予約の決まり、お店の情報、お知らせ</span></div></li>
+      </ol>
+      <div class="say"><b>読む順番を決めます。</b><p>この見本では、店の中を歩く順番に合わせました。順番と中身をご確認いただいてから、デザインに進みます。</p></div>
+    </div>
+    <div class="panel p3">
+      <figure class="shot"><img src="case/v6-hero.jpg" alt="完成したトップ画面。下の帯の、営業時間・定休日・予約の締め切りの部分を枠で示している" width="974" height="654" loading="lazy"><span class="box" aria-hidden="true"></span><span class="pin" aria-hidden="true">1</span></figure>
+      <div class="say"><b>1　来店の前に知りたいことを、予約ボタンの手前に置きました。</b><p>営業時間・定休日・予約の締め切りを、ボタンと同じ帯に並べています。読んでから予約に進めるように、スクロールしなくても見える場所にしました。</p></div>
     </div>
   </div>
-  <div class="tfv-r">
-    <ul class="works4" aria-label="お受けしている仕事">
-      <li><a href="writer.html"><span class="shot"><img src="img/top/real-writer.jpg" srcset="img/top/real-writer-480.jpg 480w, img/top/real-writer.jpg 960w" sizes="(max-width: 900px) 46vw, 360px" alt="SEO記事のサンプルページ（副業の選び方の記事）" width="960" height="645" fetchpriority="high"></span><span class="w-name">記事</span><span class="w-note"><span>SEO記事・コラム・体験談エッセイ</span><span>サンプル8本</span></span></a></li>
-      <li><a href="scenario.html"><span class="shot"><img src="img/top/real-script.jpg" srcset="img/top/real-script-480.jpg 480w, img/top/real-script.jpg 960w" sizes="(max-width: 900px) 46vw, 360px" alt="台本のサンプルページ（朗読シナリオ「母のレシピノート」）" width="960" height="645" fetchpriority="high"></span><span class="w-name">台本・シナリオ</span><span class="w-note"><span>YouTube朗読・漫画動画の台本</span><span>サンプル2本</span></span></a></li>
-      <li><a href="lp.html"><span class="shot"><img src="img/top/real-lp.jpg" srcset="img/top/real-lp-480.jpg 480w, img/top/real-lp.jpg 960w" sizes="(max-width: 900px) 46vw, 360px" alt="LPのサンプル（パン屋の予約LP）" width="960" height="645" loading="lazy"></span><span class="w-name">LP</span><span class="w-note"><span>構成・原稿・ページ制作</span><span>サンプル6点</span></span></a></li>
-      <li><a href="hp.html"><span class="shot"><img src="img/top/real-hp.jpg" srcset="img/top/real-hp-480.jpg 480w, img/top/real-hp.jpg 960w" sizes="(max-width: 900px) 46vw, 360px" alt="ホームページのサンプル（美容サロンHANA）" width="960" height="645" loading="lazy"></span><span class="w-name">ホームページ</span><span class="w-note"><span>お店・事業の数ページのサイト</span><span>サンプル4点</span></span></a></li>
-    </ul>
+
+  <ol class="flow-d" aria-label="ご依頼の流れ">
+    <li>ご相談<span>フォームから</span></li>
+    <li>ヒアリング・お見積もり<span>無料</span></li>
+    <li>完成の条件と、構成・文章の確認</li>
+    <li>執筆・制作</li>
+    <li>確認・修正<span>標準1〜3回</span></li>
+    <li>納品・公開</li>
+  </ol>
+  <div class="ask">
+    <p>最初のご相談では、<b>ご依頼の種類・ご希望の時期・参考にしたいサンプル</b>がわかると進めやすくなります。決まっていない項目があっても大丈夫です。</p>
+    <a class="btn-main" href="#contact">制作について相談する</a>
   </div>
 </section>
 
