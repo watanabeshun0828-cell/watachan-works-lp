@@ -1,0 +1,108 @@
+/* 前のデザインのページを、共通の土台（base.css）に合わせる上書き（2026-11-19）
+   読み込み順：site.css（前の部品）→ base.css（土台）→ このファイル
+   ページごとに作り直すまでの橋渡し。左に英字ラベルを置く2列の組み方を、上の段と同じ「ラベル＋明朝の見出し＋罫線」にそろえる */
+
+:root {
+  --bg: var(--paper);
+  --bg-tile: var(--paper-2);
+  --bg-tile2: var(--paper-2);
+  --ink-soft: var(--ink-2);
+  --btn: var(--action);
+  --line: rgba(36, 37, 32, 0.16);
+}
+body { font-family: var(--sans); font-size: 16px; line-height: 1.8; letter-spacing: 0.03em; }
+mark { background: linear-gradient(transparent 58%, rgba(181, 220, 60, 0.6) 58%); padding: 0 2px; }
+
+/* 共通ヘッダーと前の部品の名前がぶつかる所 */
+.gh .gnav { position: static; inset: auto; height: auto; padding: 0; background: none; -webkit-backdrop-filter: none; backdrop-filter: none; z-index: auto; }
+/* 料金・記事のページ専用の .wrap（幅720px）や、固定ヘッダー用の上の余白を、共通ヘッダーとフッターには効かせない */
+body { padding-top: 0 !important; }
+.gh .wrap, .gf .wrap { max-width: var(--max); padding-inline: var(--gutter); margin-inline: auto; }
+.gh .gnav ul a, .gh .brand, .gh .btn { white-space: nowrap; word-break: keep-all; }
+
+/* ふわっと表示：JSが動くときだけ隠す */
+.reveal { opacity: 1; transform: none; }
+.js .reveal { opacity: 0; transform: translateY(14px); }
+.js .reveal.visible { opacity: 1; transform: none; transition: opacity 0.7s ease, transform 0.7s ease; }
+@media (prefers-reduced-motion: reduce) { .js .reveal { opacity: 1; transform: none; } }
+
+/* ── ページの冒頭 ── */
+.sub-hero { padding-top: 0; max-width: var(--max); margin: clamp(24px, 4vw, 48px) auto 0; padding-inline: var(--gutter); }
+.sub-hero .photo { min-height: 0; aspect-ratio: 974 / 654; max-height: 62vh; background: var(--paper-2); border: 1px solid var(--line); }
+.sub-hero .photo img { position: static; object-position: top; }
+.sub-title { display: block; max-width: var(--max); margin-inline: auto; padding: clamp(40px, 6vw, 88px) var(--gutter) clamp(32px, 4vw, 56px); }
+.sub-title .crumb { display: inline-block; padding: 0; font-size: 13px; letter-spacing: 0.04em; color: var(--ink-2); text-decoration: underline; text-underline-offset: 0.25em; }
+.sub-title .en-label { margin: 24px 0 0; font-family: var(--num); font-size: 13px; letter-spacing: 0.28em; color: var(--ink-2); }
+.sub-title h1 { padding: 0; margin: 12px 0 0; font-family: var(--serif); font-weight: 500; font-size: clamp(30px, 1rem + 2.2vw, 46px); line-height: 1.4; letter-spacing: 0.04em; }
+.sub-title p.lede, .sub-title .lede { padding: 0; margin-top: 18px; font-size: 17px; line-height: 1.9; color: var(--ink-2); max-width: 36em; }
+.sub-title .anchors { padding: 0; }
+.sub-title .anchors a { font-size: 13.5px; letter-spacing: 0.06em; }
+.wfv { max-width: var(--max); margin-inline: auto; padding: clamp(40px, 6vw, 88px) var(--gutter) clamp(48px, 6vw, 80px); border-bottom: 0; }
+.wfv .crumb { font-size: 13px; letter-spacing: 0.04em; text-decoration: underline; text-underline-offset: 0.25em; }
+.wfv .en-label { font-family: var(--num); font-size: 13px; letter-spacing: 0.28em; }
+.wfv h1 { font-family: var(--serif); font-size: clamp(30px, 1rem + 2.2vw, 46px); line-height: 1.4; letter-spacing: 0.04em; }
+.wfv .lede { font-size: 17px; line-height: 1.9; }
+.facts span { border: 0; padding: 0; font-size: 13.5px; letter-spacing: 0.04em; }
+.cta-row .btn, .wfv .cta-row .btn { padding: 16px 32px; font-size: 15px; letter-spacing: 0.1em; }
+
+/* ── 本文の段：2列 → 1列（ラベル・見出し・本文） ── */
+.block, .profile, .contact, .concept { display: block; max-width: var(--max); margin-inline: auto; padding: var(--space) var(--gutter); border-top: 1px solid var(--line); }
+.block.tint { background: none; }
+.block h2, .profile h2, .contact h2, .concept h2 { padding: 0; font-family: var(--num); font-weight: 400; font-size: 13px; letter-spacing: 0.28em; color: var(--ink-2); }
+.block h2 span, .profile h2 span, .contact h2 span, .concept h2 span { border: 0; padding: 0; }
+.block .body, .profile .body, .contact .body, .concept .body { padding: 0; max-width: none; margin-top: 12px; font-size: 16px; }
+.block .body > p { max-width: 40em; margin-bottom: 1.4em; }
+.block .headline, .profile .headline { margin: 0 0 22px; font-family: var(--serif); font-weight: 500; font-size: clamp(24px, 2.4vw, 34px); line-height: 1.5; letter-spacing: 0.06em; }
+.block .desc { font-size: 15px; color: var(--ink-2); }
+.contact { background: var(--accent-pale); box-shadow: 0 0 0 100vmax var(--accent-pale); clip-path: inset(0 -100vmax); border-top: 0; }
+.contact .body { max-width: 620px; }
+
+/* ── 囲みのカード → 上に罫線だけ ── */
+.cols, .promises { gap: 8px 36px; }
+.cols .item, .block.tint .cols .item, .promise { background: none; border: 0; border-top: 1px solid var(--ink); padding: 16px 0 10px; }
+.cols .item h3, .promise h3 { font-family: var(--serif-sys); font-weight: 500; font-size: 18px; line-height: 1.6; letter-spacing: 0.04em; }
+.cols .item p, .promise p { font-size: 15px; line-height: 1.85; color: var(--ink-2); }
+.note, .first-offer { background: none; border: 0; border-left: 4px solid var(--accent); padding: 4px 0 4px 24px; font-size: 15.5px; line-height: 1.95; max-width: 46em; }
+.first-offer-badge { border-color: var(--ink); }
+.first-offer h3 { font-family: var(--serif-sys); font-size: 19px; }
+.first-offer p { font-size: 15px; }
+.samples a b { font-family: var(--serif-sys); font-size: 18px; }
+.script-card { background: none; }
+.xs { background: #fff; border-block: 1px solid var(--line); font-size: 15px; }
+.ba-diff { font-size: 15px; background: var(--paper-2); }
+.ba-diff.after { border-left-color: var(--accent); }
+.case-body dl { font-size: 15.5px; }
+.case-quote { font-family: var(--serif-sys); font-size: 19px; }
+
+/* ── 流れ・質問・表 ── */
+.flow h3 { font-family: var(--serif-sys); font-weight: 500; font-size: 18px; }
+.flow p { font-size: 15px; line-height: 1.85; }
+.faq summary, details summary { font-family: var(--serif-sys); font-size: 17px; }
+.faq .a { font-size: 15px; line-height: 1.95; max-width: 46em; }
+details.more .t { font-size: 16px; }
+.price-table th { font-size: 13px; letter-spacing: 0.08em; }
+.price-table td { font-size: 15px; }
+.price-table .amount { font-family: var(--num); font-size: 18px; }
+.price-table .sub { font-size: 13.5px; }
+
+/* ── ボタン ── */
+.btn { margin-top: 0; }
+.block .btn, .crosslink-box .btn { display: inline-block; padding: 16px 36px; font-size: 15px; letter-spacing: 0.12em; }
+.btn.line, .btn-ghost { background: transparent; color: var(--ink) !important; border: 1px solid var(--ink); }
+.btn.line:hover, .btn-ghost:hover { background: var(--ink); color: #fff !important; }
+.btn-primary { background: var(--action); color: #fff; }
+.sns a { border-color: var(--ink); font-size: 13px; letter-spacing: 0.1em; }
+
+/* ── プロフィール・フォーム ── */
+.profile .name { font-family: var(--serif); font-size: 28px; letter-spacing: 0.1em; }
+.profile .body { max-width: 760px; }
+.profile .chips span { border: 0; padding: 0; font-size: 14px; }
+.field label { font-size: 14px; letter-spacing: 0.06em; color: var(--ink); }
+.field input, .field textarea, .field select { font-family: var(--sans); font-size: 16px; border-color: var(--line-2); }
+
+@media (max-width: 900px) {
+  .sub-title, .block { padding-left: var(--gutter); padding-right: var(--gutter); }
+  .wfv { padding-left: var(--gutter); padding-right: var(--gutter); }
+  .block h2 { margin-bottom: 0; }
+  .sub-title .crumb { margin-bottom: 0; }
+}
