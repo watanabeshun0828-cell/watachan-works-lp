@@ -37,7 +37,7 @@
 .news-list h3 { font-size: 16.5px; margin: 6px 0 4px; }
 .news-list p { font-size: 14px; color: var(--ink-soft); }
 .tag { font-size: 12px; font-weight: 600; border: 1px solid var(--ink); border-radius: 999px; padding: 1px 10px; color: var(--ink); }
-.badge { display: inline-block; font-size: 11.5px; font-weight: 700; background: var(--accent-2); color: var(--on-accent); border-radius: 999px; padding: 1px 10px; letter-spacing: 0.04em; }
+.badge { display: inline-block; font-size: 12px; font-weight: 700; background: var(--accent-2); color: var(--on-accent); border-radius: 999px; padding: 1px 10px; letter-spacing: 0.04em; }
 .badge.new { background: var(--accent); }
 
 /* 商品の道具 */
@@ -45,11 +45,11 @@
 .tool-row { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
 .field { display: block; font-size: 13.5px; font-weight: 600; flex: 1 1 220px; }
 .field > span { display: block; margin-bottom: 4px; }
-.field em { font-style: normal; font-size: 11px; font-weight: 700; background: var(--accent-text); color: #fff; border-radius: 3px; padding: 1px 6px; margin-left: 8px; vertical-align: 1px; }
+.field em { font-style: normal; font-size: 12px; font-weight: 700; background: var(--accent-text); color: #fff; border-radius: 3px; padding: 1px 6px; margin-left: 8px; vertical-align: 1px; }
 .field input, .field select, .field textarea { width: 100%; font: inherit; font-size: 15px; padding: 10px 12px; border: 2px solid var(--ink); border-radius: 6px; background: #fff; color: var(--ink); }
 .count { text-align: center; font-size: 13px; color: var(--ink-soft); margin-top: 12px; }
 .products .card { position: relative; }
-.products .cat { display: inline-block; font-size: 11.5px; font-weight: 700; color: var(--accent-text); letter-spacing: 0.08em; margin-bottom: 2px; }
+.products .cat { display: inline-block; font-size: 12px; font-weight: 700; color: var(--accent-text); letter-spacing: 0.08em; margin-bottom: 2px; }
 .zoom { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
 .noimg { aspect-ratio: 4 / 3; display: flex; align-items: center; justify-content: center; background: var(--paper-deep); font-family: "Hiragino Mincho ProN", serif; font-size: 20px; letter-spacing: 0.1em; color: var(--accent-text); }
 .empty { grid-column: 1 / -1; text-align: center; color: var(--ink-soft); padding: 30px 0; }
@@ -67,13 +67,13 @@
 .err:empty { display: none; }
 .order { border: 1px solid var(--line); border-radius: 8px; padding: 14px 18px; margin: 0 0 18px; }
 .order legend { font-size: 13.5px; font-weight: 700; padding: 0 8px; }
-.order legend em { font-style: normal; font-size: 11px; font-weight: 700; background: var(--accent-text); color: #fff; border-radius: 3px; padding: 1px 6px; margin-left: 8px; }
+.order legend em { font-style: normal; font-size: 12px; font-weight: 700; background: var(--accent-text); color: #fff; border-radius: 3px; padding: 1px 6px; margin-left: 8px; }
 .order-list { list-style: none; padding: 0; }
 .order-list li { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--line-soft); }
 .o-name { font-size: 14.5px; font-weight: 600; line-height: 1.5; }
 .o-name small { display: block; font-size: 12.5px; font-weight: 400; color: var(--ink-soft); }
 .stepper { display: inline-flex; align-items: center; gap: 0; border: 2px solid var(--ink); border-radius: 999px; overflow: hidden; flex: none; }
-.stepper button { width: 38px; height: 38px; border: 0; background: var(--paper-deep); font-size: 18px; font-weight: 700; color: var(--ink); cursor: pointer; }
+.stepper button { width: 44px; height: 44px; border: 0; background: var(--paper-deep); font-size: 18px; font-weight: 700; color: var(--ink); cursor: pointer; }
 .stepper button:hover { background: var(--accent-2); }
 .stepper output { min-width: 40px; text-align: center; font-weight: 700; font-size: 15px; }
 .total { display: flex; justify-content: space-between; align-items: baseline; margin-top: 14px; font-size: 14px; }
@@ -115,3 +115,11 @@ dialog::backdrop { background: rgba(40, 24, 12, 0.55); }
   .zoom { overflow: hidden; }
 }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } }
+
+/* 2026-11-19 スマホで押しやすく（点検 K08）：上の帯のリンクと店名を、押せる高さ44px前後に */
+.sample-strip a { display: inline-block; padding: 9px 4px; }
+a.brand { display: inline-flex; align-items: center; min-height: 44px; }
+fieldset.order { min-width: 0; }
+.order-list li > :first-child { min-width: 0; }
+.o-name { word-break: auto-phrase; line-break: strict; }
+@media (max-width: 420px) { .stepper output { min-width: 30px; } .form { padding: 20px 12px; } .order { padding: 12px 10px; } .o-name { font-size: 14px; } }
