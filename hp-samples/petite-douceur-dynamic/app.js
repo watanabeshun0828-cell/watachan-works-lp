@@ -60,21 +60,7 @@
     body.innerHTML = html;
   }
 
-  /* ── 3. 今日の焼き上がり（次の焼き上がりを強調） */
-  function renderBakes() {
-    var now = nowJST(), h = SHOP.hours[now.wd], list = $("bake-list"), lead = $("bake-lead"), nextIdx = -1;
-    if (!h) { lead.textContent = "本日は定休日です。次の営業日に、またお越しください。"; }
-    else {
-      for (var i = 0; i < SHOP.bakes.length; i++) { if (toMin(SHOP.bakes[i].time) > now.minutes) { nextIdx = i; break; } }
-      if (nextIdx >= 0) { var diff = toMin(SHOP.bakes[nextIdx].time) - now.minutes; lead.textContent = "次の焼き上がりは " + SHOP.bakes[nextIdx].time.replace(/^0/, "") + "（あと" + Math.floor(diff / 60) + "時間" + (diff % 60) + "分）です。"; }
-      else { lead.textContent = "本日の焼き上がりは、すべて終わりました。"; }
-    }
-    list.innerHTML = SHOP.bakes.map(function (b, i) {
-      var past = h && toMin(b.time) <= now.minutes, cls = (i === nextIdx ? ' class="next"' : (past ? ' class="past"' : ''));
-      return "<li" + cls + '><span class="t">' + b.time.replace(/^0/, "") + "</span><div><b>" + b.label + "</b>" +
-        (i === nextIdx ? '<p><span class="badge">次の焼き上がり</span></p>' : (past ? "<p>焼き上がり済み（売り切れの場合があります）</p>" : "")) + "</div></li>";
-    }).join("");
-  }
+  /* ── 3. 焼き上がりの時刻表示は、2026-11-20にやめました（時刻を前面に出さない方針にそろえる） */
 
   /* ── 4. お知らせ（種類で切り替え・NEW表示） */
   var newsTag = "すべて";
@@ -226,14 +212,14 @@
 
   /* ── スクロールの演出（動きを減らす設定の人には、出さない） */
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var heroBg = document.querySelector(".hero-full .bg"), nav = document.querySelector(".site-nav"), bar = $("progress");
+  var heroBg = document.querySelector(".hero-full .bg img"), nav = document.querySelector(".site-nav"), bar = $("progress");
   var alts = document.querySelectorAll("section.alt"), ticking = false;
   function onScroll() {
     var y = window.scrollY, h = document.documentElement.scrollHeight - window.innerHeight;
     if (bar) bar.style.transform = "scaleX(" + (h > 0 ? y / h : 0) + ")";
     nav.classList.toggle("scrolled", y > 10);
     if (!reduce) {
-      if (heroBg && y < window.innerHeight * 1.2) heroBg.style.transform = "translate3d(0," + (y * 0.35) + "px,0) scale(1.08)"; // 背景を、文字よりゆっくり動かす
+      if (heroBg && y < window.innerHeight * 1.2) heroBg.style.transform = "translate3d(0," + (y * 0.25) + "px,0) scale(1.06)"; // 背景を、文字よりゆっくり動かす
       for (var i = 0; i < alts.length; i++) {
         var r = alts[i].getBoundingClientRect();
         if (r.bottom > 0 && r.top < window.innerHeight) alts[i].style.backgroundPosition = "0 " + (r.top * -0.15) + "px"; // 麦の模様が、ゆっくり流れる
@@ -246,7 +232,7 @@
   // 見出し・カード・お知らせを、画面に入ったときに、ふわっと表示する
   function markReveal() {
     if (reduce || !("IntersectionObserver" in window)) return;
-    var els = document.querySelectorAll(".section-head, .demo-box, .news-list li, .products .card, .timeline li, .form, .hours-table");
+    var els = document.querySelectorAll(".section-head, .demo-list li, .news-list li, .products .card, .form, .hours-table");
     els.forEach(function (el) {
       if (el.classList.contains("reveal")) return;
       el.classList.add("reveal");
@@ -262,7 +248,7 @@
   ["products", "news-list"].forEach(function (id) { new MutationObserver(markReveal).observe($(id), { childList: true }); });
 
   /* ── 起動 */
-  renderStatus(); renderHours(); renderBakes(); renderNews(); renderCats(); renderProducts(); renderOrder(); syncOrder(); setDateMin();
+  renderStatus(); renderHours(); renderNews(); renderCats(); renderProducts(); renderOrder(); syncOrder(); setDateMin();
   markReveal(); onScroll();
-  setInterval(function () { renderStatus(); renderBakes(); }, 30000); // 30秒ごとに、営業状況を更新
+  setInterval(function () { renderStatus(); }, 30000); // 30秒ごとに、営業状況を更新
 })();
