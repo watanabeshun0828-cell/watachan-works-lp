@@ -55,16 +55,16 @@ ul, ol { list-style: none; }
 .btn.dark { background: var(--ink); color: var(--paper); }
 .btn.dark:hover { background: var(--navy); }
 .btn[disabled] { background: #E7E1D6; color: var(--soft); border-color: var(--rule); cursor: not-allowed; }
-.more { font-weight: 700; text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px; }
+.more { display: inline-flex; align-items: center; min-height: 44px; font-weight: 700; text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px; }
 
 /* サンプルの帯とヘッダー */
 .sample-strip { background: var(--ink); color: var(--paper); font-size: 12px; text-align: center; padding: 7px 16px; }
-.sample-strip a { display: inline-block; white-space: nowrap; margin-left: 12px; }
+.sample-strip a { display: inline-block; padding: 4px 0; white-space: nowrap; margin-left: 12px; }
 .top { position: sticky; top: 0; z-index: 30; background: var(--paper); border-bottom: 1px solid var(--ink); }
 .top .wrap { height: 60px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .brand { text-decoration: none; display: flex; align-items: baseline; gap: 12px; white-space: nowrap; }
 .brand b { font-family: var(--serif); font-size: 21px; font-weight: 600; letter-spacing: 0.03em; }
-.brand small { font-size: 11.5px; color: var(--soft); letter-spacing: 0.1em; }
+.brand small { font-size: 12px; color: var(--soft); letter-spacing: 0.1em; }
 .top .btn { min-height: 40px; padding: 8px 16px; font-size: 14px; }
 @media (max-width: 600px) { .brand small { display: none; } }
 
@@ -248,7 +248,7 @@ footer p { margin-top: 10px; opacity: 0.85; max-width: 52em; }
 .bf-sizes input { position: absolute; opacity: 0; pointer-events: none; }
 .bf-sizes b { font-size: 15px; }
 .bf-sizes span { font: 700 19px/1 var(--serif); white-space: nowrap; }
-.bf-sizes small { font: 400 11.5px var(--sans); }
+.bf-sizes small { font: 400 12px var(--sans); }
 .bf-sizes label:has(input:checked) { background: var(--ink); color: var(--paper); }
 .bf-sizes label:has(input:focus-visible) { outline: 2px solid var(--ink); outline-offset: 3px; }
 /* 箱（上から見たクラフトの箱） */
@@ -294,7 +294,7 @@ html:not(.js) .box-ex { display: block; }
   .box-label { left: 14px; font-size: 12px; }
   .slots { gap: 6px; padding: 6px; }
   .box[data-n="12"] .slots { gap: 5px; padding: 5px; }
-  .box-card { right: -8px; bottom: -16px; padding: 6px 10px; font-size: 11.5px; }
+  .box-card { right: -8px; bottom: -16px; padding: 6px 10px; font-size: 12px; }
   .oma-note { inset: 12px; font-size: 16px; }
   .picks { gap: 8px; }
   .pick .pd { display: none; }

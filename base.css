@@ -121,3 +121,6 @@ ul, ol { list-style: none; }
   .gf .cols { grid-template-columns: 1fr 1fr; }
   .gf .cols > div:first-child { grid-column: 1 / -1; }
 }
+
+/* 2026-11-20 押しやすさ */
+.status a { display: inline-block; padding: 4px 0; }

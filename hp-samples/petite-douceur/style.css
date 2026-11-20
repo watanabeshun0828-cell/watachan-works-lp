@@ -15,12 +15,12 @@ ul, ol { list-style: none; }
 
 /* サンプルの帯・ナビ */
 .sample-strip { background: var(--ink); color: var(--paper); font-size: 12px; letter-spacing: 0.04em; text-align: center; padding: 7px 16px; }
-.sample-strip a { display: inline-block; white-space: nowrap; color: inherit; margin-left: 12px; }
+.sample-strip a { display: inline-block; padding: 4px 0; white-space: nowrap; color: inherit; margin-left: 12px; }
 .site-nav { position: sticky; top: 0; z-index: 50; background: var(--paper); border-bottom: 1px solid var(--ink); }
 .nav-inner { max-width: 1120px; margin: 0 auto; padding: 0 40px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .brand { display: flex; align-items: baseline; gap: 12px; text-decoration: none; min-width: 0; }
 .brand-text { font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Noto Serif JP", serif; font-size: 21px; font-weight: 600; letter-spacing: 0.03em; white-space: nowrap; }
-.brand small { font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "YuGothic", "Meiryo", "Noto Sans JP", sans-serif; font-size: 11.5px; letter-spacing: 0.12em; color: var(--ink-soft); font-weight: 400; margin-left: 12px; }
+.brand small { font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "YuGothic", "Meiryo", "Noto Sans JP", sans-serif; font-size: 12px; letter-spacing: 0.12em; color: var(--ink-soft); font-weight: 400; margin-left: 12px; }
 .nav-links { display: flex; gap: 26px; align-items: center; }
 .nav-links a { font-size: 14px; text-decoration: none; color: var(--ink); white-space: nowrap; padding: 6px 0; }
 .nav-links a.cur { border-bottom: 2px solid var(--ink); }

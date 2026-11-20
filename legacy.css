@@ -106,3 +106,7 @@ details.more .t { font-size: 16px; }
   .block h2 { margin-bottom: 0; }
   .sub-title .crumb { margin-bottom: 0; }
 }
+
+/* 2026-11-20 押しやすさ：戻りリンク・全文リンク・帯の中のリンクを24px以上に */
+.sub-title .crumb, .wfv .crumb { padding-top: 10px; padding-bottom: 10px; margin-top: -10px; margin-bottom: -10px; }
+a.read { display: inline-block; padding: 10px 0; }

@@ -1,3 +1,4 @@
+:root { --accent-text: #7A4F10; }
 /* 動く見本の追加スタイル（基本の色・文字は、../petite-douceur/style.css を使います） */
 
 /* 営業状況バッジ */
@@ -104,6 +105,7 @@ dialog::backdrop { background: rgba(40, 24, 12, 0.55); }
 .progress { position: fixed; top: 0; left: 0; right: 0; height: 4px; background: var(--accent); transform: scaleX(0); transform-origin: 0 50%; z-index: 100; }
 .site-nav { transition: box-shadow .25s ease; }
 .site-nav.scrolled { box-shadow: 0 6px 18px rgba(67, 41, 27, 0.12); }
+.hero-full { overflow: hidden; }
 .hero-full .bg { will-change: transform; transform: scale(1.08); }
 .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s cubic-bezier(.2, .7, .2, 1); }
 .reveal.in { opacity: 1; transform: none; }
