@@ -111,8 +111,8 @@
 .plan li::before { content: counter(pl, decimal-leading-zero); font-family: var(--num); font-size: 13px; color: var(--ink-2); padding-top: 3px; }
 .plan li span { display: block; font-family: var(--sans); font-size: 13.5px; color: var(--ink-2); }
 .shot { position: relative; margin: 0; border: 1px solid var(--line); }
-.shot .pin { position: absolute; left: 6.4%; top: 81%; transform: translate(-50%, -50%); display: grid; place-items: center; width: 30px; height: 30px; background: var(--accent); color: var(--accent-ink); font-family: var(--num); font-size: 15px; outline: 2px solid #fff; }
-.shot .box { position: absolute; left: 6%; right: 6%; top: 82.2%; height: 9.4%; outline: 3px solid var(--accent); outline-offset: 1px; pointer-events: none; }
+.shot .pin { position: absolute; left: 6.4%; top: 91%; transform: translate(-50%, -50%); display: grid; place-items: center; width: 30px; height: 30px; background: var(--accent); color: var(--accent-ink); font-family: var(--num); font-size: 15px; outline: 2px solid #fff; }
+.shot .box { position: absolute; left: 6%; right: 6%; top: 92%; height: 7.4%; outline: 3px solid var(--accent); outline-offset: 1px; pointer-events: none; }
 .flow { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); margin-top: 56px; border-top: 1px solid var(--ink); counter-reset: fl; }
 .flow li { counter-increment: fl; padding: 14px 14px 16px 0; font-family: var(--serif-sys); font-size: 16px; line-height: 1.65; }
 .flow li::before { content: counter(fl, decimal-leading-zero); display: block; font-family: var(--num); font-size: 13px; color: var(--ink-2); margin-bottom: 4px; }
@@ -221,12 +221,12 @@
 <section class="case" id="case" aria-label="代表の事例">
   <div class="wrap">
     <div class="frame">
-      <p class="tag"><b>ホームページの見本</b><span>どうぶつパンと焼き菓子の店「petite douceur」</span><span class="own">自主制作・お店は架空</span></p>
-      <figure><img src="case/v7-hero.jpg" alt="パン屋の見本ホームページの最初の画面。子どもの背の高さの棚に並ぶどうぶつパンの写真をページいっぱいに使い、床の上に見出し、下の帯に営業時間・お休み・駐車場・駅からの道" width="974" height="654" fetchpriority="high"></figure>
+      <p class="tag"><b>ホームページの見本</b><span>北海道小麦と発酵バターのパン屋「petite douceur」</span><span class="own">自主制作・お店は架空</span></p>
+      <figure><img src="case/v8-hero.jpg" alt="パン屋の見本ホームページの最初の画面。食パンやクロワッサンが並ぶ木の棚の写真をページいっぱいに使い、左の壁に見出し、下の帯に営業時間・定休日・駐車場・駅からの道" width="974" height="654" fetchpriority="high"></figure>
       <div class="why">
         <div><b>どう調べたか</b><p>実在のパン屋さんのサイト13件を観察し、駐車場の載せ方やお知らせの更新の頻度を記録しました。</p></div>
         <div><b>何を変えたか</b><p>毎日の書き換えが要る仕掛けをやめ、変わらない情報だけで作り直しました。毎日の焼き上がりはInstagramに任せています。</p></div>
-        <div><b>どう伝わるか</b><p>営業・お休み・駐車場・駅からを、最初の画面に並べました。値札を押すと、パンの中身とアレルギーが出ます。</p></div>
+        <div><b>どう伝わるか</b><p>営業・お休み・駐車場・駅からを、最初の画面に並べました。写真の値札には、名前と値段を手書き風に入れています。</p></div>
       </div>
       <p class="foot"><span>売りの違うパン屋を<b>3</b>店</span><a class="link" href="case-bakery.html">できるまでの8つの段階を読む</a></p>
     </div>
@@ -263,25 +263,25 @@
       </div>
       <div class="panel p1">
         <div class="paper">
-          <p class="h">顔は、ぜんぶ手描きです</p>
-          <p class="s">どうぶつパンと焼き菓子の店</p>
-          <dl><dt>営業</dt><dd>8:00〜18:00（売り切れ次第終了）</dd><dt>お休み</dt><dd>火曜日</dd><dt>駐車場</dt><dd>店の前に2台</dd></dl>
+          <p class="h">毎日のパンを、北海道の小麦と発酵バターで。</p>
+          <p class="s">北海道小麦と発酵バターのパン屋</p>
+          <dl><dt>営業</dt><dd>8:00〜18:00（売り切れ次第終了）</dd><dt>定休日</dt><dd>火曜日</dd><dt>駐車場</dt><dd>店の前に2台</dd></dl>
         </div>
         <div class="say"><b>伝えることを、先に文章にします。</b><p>デザインに入る前に、お店の言葉と、来る前に知りたい情報をそろえます。実在のパン屋さんのサイトを観察して、「駐車場」と「駅から」を最初の画面に足しました。</p><small>※完成したページの文言を抜き出して並べています</small></div>
       </div>
       <div class="panel p2">
         <ol class="plan">
-          <li><div>最初の画面<span>店内の写真に見出し、営業・お休み・駐車場・駅から</span></div></li>
-          <li><div>お知らせ<span>1行だけ。期限が来ると自動で消える</span></div></li>
-          <li><div>どうぶつパン<span>値札を押すと、中身とアレルギー</span></div></li>
-          <li><div>子ども連れ・黒板<span>来やすい理由、季節の焼き菓子、Instagram</span></div></li>
-          <li><div>外観・取り置き<span>赤い扉と駐車場、取り置きの決まり</span></div></li>
+          <li><div>最初の画面<span>商品棚の写真に見出し、営業・定休日・駐車場・駅から</span></div></li>
+          <li><div>店のこと<span>北海道の小麦、発酵バター、朝4時からの仕込み</span></div></li>
+          <li><div>メニュー<span>食パン、クロワッサン、焼き菓子、どうぶつパン、ドリンク</span></div></li>
+          <li><div>お子さま連れの方へ<span>低い棚と踏み台、ベビーカー、駐車場</span></div></li>
+          <li><div>アクセス<span>外観と駐車場、取り置き、Instagram</span></div></li>
         </ol>
-        <div class="say"><b>読む順番を決めます。</b><p>この見本では、来る前に知りたい順番に並べました。順番と中身をご確認いただいてから、デザインに進みます。</p></div>
+        <div class="say"><b>読む順番を決めます。</b><p>実在のパン屋さんのサイトに多い「写真 → 店の考え → メニュー → 店の情報」の順に並べました。順番と中身をご確認いただいてから、デザインに進みます。</p></div>
       </div>
       <div class="panel p3">
-        <figure class="shot"><img src="case/v7-hero.jpg" alt="完成したトップ画面。下の帯の、営業時間・お休み・駐車場・駅からの部分を枠で示している" width="974" height="654" loading="lazy"><span class="box" aria-hidden="true"></span><span class="pin" aria-hidden="true">1</span></figure>
-        <div class="say"><b>1　来店の前に知りたいことを、最初の画面に置きました。</b><p>営業時間・お休み・駐車場・駅からを、写真の下の帯に並べています。調べた13件のお店では、駐車場をここに出している店はありませんでした。</p></div>
+        <figure class="shot"><img src="case/v8-hero.jpg" alt="完成したトップ画面。下の帯の、営業時間・定休日・駐車場・駅からの部分を枠で示している" width="974" height="654" loading="lazy"><span class="box" aria-hidden="true"></span><span class="pin" aria-hidden="true">1</span></figure>
+        <div class="say"><b>1　来店の前に知りたいことを、最初の画面に置きました。</b><p>営業時間・定休日・駐車場・駅からを、写真の下の帯に並べています。調べた13件のお店では、駐車場をここに出している店はありませんでした。</p></div>
       </div>
     </div>
     <ol class="flow" aria-label="ご依頼の流れ">
