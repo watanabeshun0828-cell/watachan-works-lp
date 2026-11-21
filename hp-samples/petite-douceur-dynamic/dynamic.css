@@ -2,15 +2,16 @@
    静的な見本（HP制作/pd_top.py）と同じ色・文字・写真。このファイルだけで表示する。
    色：生成り #FBF7F0／生成り2 #F4EDE2／ココア #3B2A22／補足 #6B5A4E／トマト #C8452F（ボタン）・#A8371F（小さな文字）／黄 #F2C94C（印） */
 :root {
-  --bg: #FBF7F0; --bg2: #F4EDE2; --ink: #3B2A22; --soft: #6B5A4E; --rule: rgba(59, 42, 34, .16);
-  --acc: #C8452F; --acc2: #A8371F; --yel: #F2C94C; --ok: #2E6B3F;
+  --bg: #F8F1E7; --bg2: #EFE4D4; --ink: #3A2B22; --soft: #6B5A4E; --rule: rgba(58, 43, 34, .18);
+  --acc: #A84E2A; --acc2: #8A3E20; --yel: #4D5C41; --ok: #2F6B45;
+  --serif: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
   --sans: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 80px; }
 body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.85; letter-spacing: .02em; -webkit-font-smoothing: antialiased; }
 h1, h2, h3, p, dd, dt, li { word-break: auto-phrase; line-break: strict; }
-h1, h2, h3 { font-weight: 800; line-height: 1.45; letter-spacing: .01em; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.5; letter-spacing: .05em; }
 .nb { display: inline-block; }
 a { color: inherit; }
 ul, ol { list-style: none; }
@@ -22,7 +23,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 :focus-visible { outline: 3px solid var(--acc); outline-offset: 2px; }
 [hidden] { display: none !important; }
 
-.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 12px 26px; background: var(--acc); color: #fff; border: 1px solid var(--acc); font-weight: 700; font-size: 15px; text-decoration: none; cursor: pointer; }
+.btn { border-radius: 4px; display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 12px 26px; background: var(--acc); color: #fff; border: 1px solid var(--acc); font-weight: 700; font-size: 15px; text-decoration: none; cursor: pointer; }
 .btn:hover { background: var(--acc2); }
 .btn.ghost { background: transparent; color: var(--ink); border-color: var(--ink); }
 .btn.ghost:hover { background: var(--ink); color: #fff; }
@@ -38,7 +39,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .site-nav { position: sticky; top: 0; z-index: 40; background: var(--bg); border-bottom: 1px solid var(--rule); }
 .site-nav.scrolled { box-shadow: 0 1px 0 var(--rule); }
 .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-.brand { white-space: nowrap; font-size: 22px; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 12px; min-height: 44px; }
+.brand { white-space: nowrap; font-family: var(--serif); font-size: 23px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 12px; min-height: 44px; }
 .brand small { font-size: 12px; font-weight: 400; color: var(--soft); letter-spacing: .06em; }
 .nav-links { display: flex; align-items: center; gap: 24px; font-size: 14.5px; }
 .nav-links a { text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; }
@@ -51,10 +52,10 @@ button, input, select, textarea { font: inherit; color: inherit; }
 /* 最初の画面：写真をページいっぱいに、床の上に文字 */
 .hero-full { position: relative; height: clamp(560px, calc(88vh - 40px), 820px); overflow: hidden; }
 .hero-full .bg { position: absolute; inset: 0; display: block; overflow: hidden; }
-.hero-full .bg img { width: 100%; height: 100%; object-fit: cover; object-position: 28% 50%; will-change: transform; transform: scale(1.06); }
-.hero-full::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 46% 56% at 80% 52%, rgba(251,247,240,.86) 0%, rgba(251,247,240,.62) 55%, rgba(251,247,240,0) 100%); z-index: 1; }
-.hero-copy { position: absolute; z-index: 2; right: calc(max(0px, (100vw - 1200px) / 2) + 40px); top: 16%; width: min(460px, 40vw); }
-.hero-copy h1 { font-size: clamp(32px, 3.8vw, 50px); line-height: 1.32; margin-top: 10px; }
+.hero-full .bg img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 60%; will-change: transform; transform: scale(1.06); }
+.hero-full::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(248,241,231,.92) 0%, rgba(248,241,231,.84) 34%, rgba(248,241,231,.45) 48%, rgba(248,241,231,0) 60%); z-index: 1; }
+.hero-copy { position: absolute; z-index: 2; left: calc(max(0px, (100vw - 1200px) / 2) + 40px); top: 50%; translate: 0 -50%; width: min(460px, 42vw); }
+.hero-copy h1 { font-size: clamp(28px, 3.2vw, 44px); line-height: 1.55; margin-top: 10px; }
 .hero-copy .lede { margin-top: 16px; font-size: 16.5px; }
 .btn-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-top: 24px; }
 .ph-note { position: absolute; right: 12px; bottom: 12px; font-size: 12px; background: rgba(251,247,240,.9); padding: 2px 8px; z-index: 3; }
@@ -97,7 +98,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .news-list li { padding: 18px 0; border-bottom: 1px solid var(--rule); }
 .news-head { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; font-size: 14px; color: var(--soft); }
 .news-head .tag { border: 1px solid var(--soft); padding: 0 8px; font-size: 13px; color: var(--ink); }
-.badge { display: inline-block; background: var(--yel); color: var(--ink); font-size: 12px; font-weight: 800; padding: 0 8px; letter-spacing: .06em; }
+.badge { display: inline-block; background: var(--yel); color: #fff; font-size: 12px; font-weight: 800; padding: 0 8px; letter-spacing: .06em; }
 .news-list h3 { font-size: 18px; margin-top: 4px; }
 .news-list p { margin-top: 2px; font-size: 15px; color: var(--soft); }
 
@@ -106,14 +107,13 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .field { display: block; }
 .field > span { display: block; font-size: 14.5px; font-weight: 700; margin-bottom: 6px; }
 .field em { font-style: normal; font-size: 12px; font-weight: 700; background: var(--acc2); color: #fff; padding: 1px 6px; margin-left: 8px; }
-.field input, .field select, .field textarea { width: 100%; min-height: 52px; padding: 12px 14px; font-size: 16px; background: #fff; border: 1px solid var(--soft); border-radius: 0; }
+.field input, .field select, .field textarea { width: 100%; min-height: 52px; padding: 12px 14px; font-size: 16px; background: #fff; border: 1px solid var(--soft); border-radius: 4px; }
 .field textarea { min-height: 110px; resize: vertical; }
 .count { margin-top: 12px; font-size: 14px; color: var(--soft); }
 .products { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px 24px; margin-top: 20px; }
 .card { background: transparent; }
 .zoom { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
 .zoom img, .noimg { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
-.card.animal .zoom img { aspect-ratio: 1 / 1; }
 .noimg { display: grid; place-items: center; background: #EDE3D3; color: var(--soft); font-weight: 700; font-size: 14px; letter-spacing: .1em; border: 1px solid var(--rule); }
 .card-body { padding-top: 12px; }
 .card .cat { font-size: 13px; font-weight: 700; color: var(--acc2); letter-spacing: .08em; }
@@ -150,7 +150,7 @@ fieldset.order legend em { font-style: normal; font-size: 12px; font-weight: 700
 .hours-table { width: 100%; border-collapse: collapse; font-size: 15.5px; }
 .hours-table th { text-align: left; font-size: 13px; color: var(--soft); font-weight: 400; padding: 8px 0; border-bottom: 2px solid var(--ink); }
 .hours-table td { padding: 11px 0; border-bottom: 1px solid var(--rule); }
-.hours-table tr.today td { font-weight: 800; background: rgba(242, 201, 76, .22); }
+.hours-table tr.today td { font-weight: 800; background: rgba(77, 92, 65, .12); }
 .hours-table .badge { margin-left: 8px; }
 .info { margin-top: 18px; }
 .info div { display: grid; grid-template-columns: 6em minmax(0, 1fr); gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--rule); font-size: 15px; }
@@ -187,10 +187,10 @@ dialog::backdrop { background: rgba(31, 27, 24, .55); }
   .nav-links a { min-height: 48px; border-bottom: 1px solid var(--rule); }
   .nav-links .cta { justify-content: center; margin-top: 10px; border-bottom: 0; }
   .hero-full { height: auto; overflow: visible; }
-  .hero-full .bg { position: relative; inset: auto; aspect-ratio: 16 / 10; overflow: hidden; }
+  .hero-full .bg { position: relative; inset: auto; aspect-ratio: 6 / 5; overflow: hidden; }
   .hero-full .bg::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 40%; background: linear-gradient(to bottom, rgba(251,247,240,0), var(--bg)); }
   .hero-full::after { display: none; }
-  .hero-copy { position: relative; right: auto; top: auto; width: auto; margin: -40px 20px 0; }
+  .hero-copy { position: relative; left: auto; right: auto; top: auto; translate: none; width: auto; margin: -40px 20px 0; }
   .ph-note { top: 12px; bottom: auto; }
   .demo-intro { padding: 56px 0; }
   .demo-list { grid-template-columns: 1fr 1fr; }

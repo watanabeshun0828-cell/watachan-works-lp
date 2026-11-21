@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>どうぶつパン 予約BOX｜petite douceur（制作サンプル・渡邊駿）</title>
-<meta name="description" content="どうぶつパンを押して箱に詰めると、数と金額がその場で分かる、予約BOXのLP（架空の店舗の制作サンプル）。">
+<title>焼き菓子ギフトBOX｜petite douceur（制作サンプル・渡邊駿）</title>
+<meta name="description" content="発酵バターで焼いた焼き菓子を、好きな数ずつ箱に詰めて予約できる、焼き菓子ギフトBOXのLP（架空の店舗の制作サンプル）。押すと箱に入り、数と金額がその場で分かります。">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%227%22 fill=%22%23333%22/%3E%3C/svg%3E">
 <!-- 架空のお店のサンプルのため、検索結果には出さない設定にしています（実際の納品では外します） -->
 <meta name="robots" content="noindex">
 <link rel="canonical" href="https://watanabeshun0828-cell.github.io/watachan-works-lp/samples/bakery.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="渡邊駿の制作サンプル">
-<meta property="og:title" content="どうぶつパン 予約BOX｜petite douceur（制作サンプル・渡邊駿）">
-<meta property="og:description" content="どうぶつパンを押して箱に詰めると、数と金額がその場で分かる、予約BOXのLP（架空の店舗の制作サンプル）。">
+<meta property="og:title" content="焼き菓子ギフトBOX｜petite douceur（制作サンプル・渡邊駿）">
+<meta property="og:description" content="発酵バターで焼いた焼き菓子を、好きな数ずつ箱に詰めて予約できる、焼き菓子ギフトBOXのLP（架空の店舗の制作サンプル）。押すと箱に入り、数と金額がその場で分かります。">
 <meta property="og:url" content="https://watanabeshun0828-cell.github.io/watachan-works-lp/samples/bakery.html">
 <meta property="og:image" content="https://watanabeshun0828-cell.github.io/watachan-works-lp/samples/img/og-bakery.jpg">
 <meta property="og:image:width" content="1200">
@@ -21,23 +21,26 @@
 <meta name="twitter:card" content="summary_large_image">
 <!--
   2026-11-15 作り直し（案A「箱に詰める」）。生成元：HP制作/lp_bakery.py ＋ bakery_lp_top.py（土台は lp_bakery_base.html）
-  - 最初の画面で、どうぶつパンを押して箱（6マス・12マス）に詰める。数・金額・おまかせはJSで表示
+  - 最初の画面で、品物（11/21 から焼き菓子）を押して箱（6マス・12マス）に詰める。数・金額・おまかせはJSで表示
   - JSが動かないときは、箱を詰め合わせの例として見せ、電話・予約フォームの案内を出す
   - 予約は送信しない（サンプル）。押したときは「送信されない」ことをはっきり表示する（09 D07）
   - 角丸の囲み・丸いボタン・丸ゴシックは使わない。架空のお客様の声は入れない（09 C07）
   前の版：LP旧版/bakery-lp_20261115_変更前/（2026-11-09の注文票の版）
 -->
 <!--
-  2026-11-20 見た目をそろえた：同じ店のHP（hp-samples/petite-douceur、HP制作/pd_top.py）と色・文字・写真を同じにした。
-  明朝の見出し・小麦色・紺の段 → ゴシックの見出し・トマト色のボタン・ココア色の段。写真はHPのどうぶつパン（bk-*.jpg）。
-  箱に詰める仕組み・文章は変えていない。前の版：LP旧版/bakery-lp_20261120_変更前/
+  2026-11-21 焼き菓子ギフトBOXに変更（社長の判断）。お店の作り直し（v3：北海道小麦と発酵バターのパン屋）に合わせ、
+  色・文字を同じ店のHP（HP制作/pd_v3_pages.py）とそろえた：生成り・赤茶のボタン・明朝の見出し。品物は焼き菓子5種（切り抜き samples/img/gift-*.webp）。
+  箱に詰める仕組みは同じ。前の版：LP旧版/bakery-lp_20261121_変更前/（どうぶつパン予約BOX・トマト色）
 -->
 <script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700&amp;display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700&amp;display=swap"></noscript>
 <style>
 :root {
   --paper: #FBF7EF; --sheet: #FFFDF8; --ink: #22201C; --soft: #5A544B; --rule: rgba(34, 32, 28, 0.22);
   --navy: #1E2A3A; --navy-ink: #F3EEE4; --navy-soft: #C7CEDA; --wheat: #D9A441; --wheat-dark: #C99232; --wheat-light: #E2B866;
   --brown: #3A2A1E; --brown-ink: #F3E6D0; --brown-soft: #D2C2A8; --alert: #8E2F1E;
+  --serif: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
   --sans: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "YuGothic", "Meiryo", "Noto Sans JP", sans-serif;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -231,14 +234,14 @@ footer p { margin-top: 10px; opacity: 0.85; max-width: 52em; }
 .box-fv { padding: 52px 0 64px; border-bottom: 1px solid var(--rule); }
 .box-fv .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 500px); gap: 0 60px; align-items: start; }
 .bf-l, .bf-r { display: flex; flex-direction: column; gap: 26px; min-width: 0; }
-.bf-head h1 { font-size: clamp(34px, 4.6vw, 56px); line-height: 1.25; margin: 10px 0 16px; }
+.bf-head h1 { font-size: clamp(30px, 3.6vw, 46px); line-height: 1.35; margin: 10px 0 16px; }
 .bf-lede { max-width: 29em; color: var(--soft); }
-.picks { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.picks { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
 .pick { position: relative; display: flex; flex-direction: column; align-items: flex-start; padding: 0 0 8px; background: none; border: 0; border-bottom: 1px solid var(--rule); text-align: left; font: inherit; color: inherit; cursor: pointer; }
-.pick img { width: 100%; aspect-ratio: 1; object-fit: cover; border: 1px solid var(--rule); transition: transform 0.15s ease; }
+.pick img { width: 100%; aspect-ratio: 1; object-fit: contain; padding: 8%; background: #F3E6CC; border: 1px solid var(--rule); transition: transform 0.15s ease; }
 .pick:hover img { transform: translateY(-3px); }
-.pick .pn { margin-top: 8px; font: 700 18px/1.3 var(--serif); }
-.pick .pd { font-size: 12.5px; color: var(--soft); }
+.pick .pn { margin-top: 8px; font: 600 13px/1.35 var(--serif); letter-spacing: 0; white-space: nowrap; }
+.pick .pd { font-size: 12px; color: var(--soft); white-space: nowrap; }
 .pick .pc { position: absolute; top: 6px; right: 6px; min-width: 30px; height: 30px; padding: 0 6px; display: flex; align-items: center; justify-content: center; background: var(--ink); color: var(--paper); font: 700 16px/1 var(--serif); }
 .pick .pc[data-v="0"] { display: none; }
 .pick[aria-disabled="true"] img { opacity: 0.5; }
@@ -261,7 +264,7 @@ footer p { margin-top: 10px; opacity: 0.85; max-width: 52em; }
 .slot { position: relative; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; padding: 0; background: #F3E6CC; border: 1px dashed rgba(58, 42, 30, 0.38); color: rgba(58, 42, 30, 0.42); font: 600 15px/1 var(--serif); overflow: hidden; }
 .slot.full { border: 1px solid rgba(58, 42, 30, 0.5); cursor: pointer; }
 button.slot { font: 600 15px/1 var(--serif); }
-.slot img { width: 100%; height: 100%; object-fit: cover; }
+.slot img { width: 100%; height: 100%; object-fit: contain; padding: 9%; filter: drop-shadow(0 3px 3px rgba(58,42,30,.25)); }
 .slot.full::after { content: "出す"; position: absolute; left: 0; right: 0; bottom: 0; padding: 4px 0; background: rgba(34, 32, 28, 0.78); color: #fff; font: 700 12px/1.2 var(--sans); text-align: center; opacity: 0; transition: opacity 0.15s; }
 .slot.full:hover::after, .slot.full:focus-visible::after { opacity: 1; }
 .slot.pop img { animation: pop 0.26s ease-out; }
@@ -298,9 +301,9 @@ html:not(.js) .box-ex { display: block; }
   .box[data-n="12"] .slots { gap: 5px; padding: 5px; }
   .box-card { right: -8px; bottom: -16px; padding: 6px 10px; font-size: 12px; }
   .oma-note { inset: 12px; font-size: 16px; }
-  .picks { gap: 8px; }
+  .picks { gap: 12px 10px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .pick .pd { display: none; }
-  .pick .pn { font-size: 15px; margin-top: 6px; }
+  .pick .pn { font-size: 12px; margin-top: 6px; }
   .pick .pc { top: 4px; right: 4px; min-width: 24px; height: 24px; font-size: 14px; }
   .picks-hint { margin-top: 8px; font-size: 13px; }
   .bf-sizes label { flex-direction: column; gap: 4px; padding: 10px 12px; }
@@ -313,30 +316,32 @@ html:not(.js) .box-ex { display: block; }
 .step[hidden] { display: none; }
 .mix-line { font-weight: 700; }
 .mix-imgs { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 12px; }
-.mix-imgs img { width: 44px; height: 44px; object-fit: cover; border: 1px solid var(--rule); }
+.mix-imgs img { width: 44px; height: 44px; object-fit: contain; padding: 3px; background: #F3E6CC; border: 1px solid var(--rule); }
 
-/* 2026-11-20 見た目をHPの見本にそろえる（色・文字） */
+/* 2026-11-21 見た目をHPの見本（v3）にそろえる */
 :root {
-  --paper: #FBF7F0; --sheet: #FFFFFF; --ink: #3B2A22; --soft: #6B5A4E; --rule: rgba(59, 42, 34, 0.2);
-  --navy: #3B2A22; --navy-ink: #FBF7F0; --navy-soft: #D9CBBE;
-  --wheat: #C8452F; --wheat-dark: #A8371F; --wheat-light: #F2C94C;
-  --brown: #F4EDE2; --brown-ink: #3B2A22; --brown-soft: #6B5A4E; --alert: #A8371F;
-  --serif: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "YuGothic", "Meiryo", "Noto Sans JP", sans-serif;
+  --paper: #F8F1E7; --sheet: #FFFDF9; --ink: #3A2B22; --soft: #6B5A4E; --rule: rgba(58, 43, 34, 0.18);
+  --navy: #3A2B22; --navy-ink: #F8F1E7; --navy-soft: #D9CBBB;
+  --wheat: #A84E2A; --wheat-dark: #8A3E20; --wheat-light: #E9C9A0;
+  --brown: #EFE4D4; --brown-ink: #3A2B22; --brown-soft: #6B5A4E; --alert: #9A3B1C;
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .23 0 0 0 0 .17 0 0 0 0 .13 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
-h1, h2, h3, .serif { font-weight: 800; letter-spacing: 0.01em; }
-.brand b, footer b { font-weight: 800; }
-.btn { color: #fff; border-color: var(--wheat); }
+body { background: var(--paper) var(--grain); }
+h1, h2, h3, .serif { font-weight: 600; letter-spacing: 0.05em; }
+.btn { color: #fff; border-color: var(--wheat); border-radius: 4px; }
 .btn:hover { border-color: var(--wheat-dark); }
 .btn.dark { border-color: var(--ink); }
+.shop { background: var(--brown) var(--grain); }
 .shop dl, .shop dt, .shop dd { border-color: var(--rule); }
-footer { background: #2A1F19; color: #F4EDE2; }
+footer { background: #2E221B; color: #EFE5D8; }
 a[href^="tel:"] { display: inline-block; padding: 12px 0; margin: -12px 0; }
+.box-card { font-family: var(--serif); }
 </style>
 </head>
 <body>
 <div class="sample-strip">SAMPLE LP ― 架空の店舗を想定した、渡邊駿の自主制作サンプルです。<a href="index.html">← サンプル集へ</a><a href="../index.html?type=LP%E5%88%B6%E4%BD%9C&sample=petite%20douceur%E3%81%AELP#contact">このサンプルを参考に相談する</a></div>
 <header class="top"><div class="wrap">
-  <a class="brand" href="../hp-samples/petite-douceur/index.html"><b>petite douceur</b><small>焼き菓子とパンの店</small></a>
+  <a class="brand" href="../hp-samples/petite-douceur/index.html"><b>petite douceur</b><small>北海道小麦と発酵バターのパン屋</small></a>
   <a class="btn" href="#fill">予約する</a>
 </div></header>
 
@@ -344,38 +349,39 @@ a[href^="tel:"] { display: inline-block; padding: 12px 0; margin: -12px 0; }
 <section class="box-fv" id="fill" aria-labelledby="fv-title"><div class="wrap">
   <div class="bf-l">
     <div class="bf-head">
-      <p class="fv-kind">petite douceur｜どうぶつパン 予約BOX</p>
-      <h1 id="fv-title"><span class="nb">好きな子を、</span><span class="nb">箱いっぱいに。</span></h1>
-      <p class="bf-lede">くま、ねこ、ひよこ、かめ。手のひらサイズのどうぶつパンを、好きな数ずつ箱に詰めてご用意します。<span class="sp-hide">ひとり1個ずつ配れて、切り分けもお皿も要りません。</span></p>
+      <p class="fv-kind">petite douceur｜焼き菓子ギフトBOX</p>
+      <h1 id="fv-title"><span class="nb">好きな焼き菓子を、</span><span class="nb">箱いっぱいに。</span></h1>
+      <p class="bf-lede">発酵バターで焼いた、バターサンド、ガレット、マドレーヌ。好きなものを好きな数ずつ、紙箱に詰めてご用意します。<span class="sp-hide">手みやげや、季節のごあいさつに。</span></p>
     </div>
     <div class="bf-picks">
-      <div class="picks" role="group" aria-label="箱に入れるどうぶつパン">
-      <button type="button" class="pick" data-k="bear" aria-label="くまを箱に1個入れる"><img src="../hp-samples/petite-douceur/img/bk-bear.jpg" width="400" height="400" alt="くまの形のチョコパン"><span class="pn">くま</span><span class="pd">チョコクリーム</span><span class="pc" data-v="0" aria-hidden="true">0</span></button>
-      <button type="button" class="pick" data-k="cat" aria-label="ねこを箱に1個入れる"><img src="../hp-samples/petite-douceur/img/bk-cat.jpg" width="400" height="400" alt="ねこの形のカスタードパン"><span class="pn">ねこ</span><span class="pd">カスタード</span><span class="pc" data-v="0" aria-hidden="true">0</span></button>
-      <button type="button" class="pick" data-k="chick" aria-label="ひよこを箱に1個入れる"><img src="../hp-samples/petite-douceur/img/bk-chick.jpg" width="400" height="400" alt="ひよこの形のメロンパン"><span class="pn">ひよこ</span><span class="pd">メロンパン</span><span class="pc" data-v="0" aria-hidden="true">0</span></button>
-      <button type="button" class="pick" data-k="turtle" aria-label="かめを箱に1個入れる"><img src="../hp-samples/petite-douceur/img/bk-turtle.jpg" width="400" height="400" alt="かめの形のメロンパン"><span class="pn">かめ</span><span class="pd">メロンパン</span><span class="pc" data-v="0" aria-hidden="true">0</span></button>
+      <div class="picks" role="group" aria-label="箱に入れる焼き菓子">
+      <button type="button" class="pick" data-k="butter" aria-label="バターサンドを箱に1個入れる"><img src="img/gift-butter.webp" width="440" height="440" alt="キャラメルとバタークリームをはさんだバターサンド"><span class="pn">バターサンド</span><span class="pd">キャラメル</span><span class="pc" data-v="0" aria-hidden="true">0</span></button>
+      <button type="button" class="pick" data-k="galette" aria-label="ガレットを箱に1個入れる"><img src="img/gift-galette.webp" width="440" height="440" alt="格子の模様のガレット・ブルトンヌ"><span class="pn">ガレット</span><span class="pd">厚焼き</span><span class="pc" data-v="0" aria-hidden="true">0</span></button>
+      <button type="button" class="pick" data-k="madeleine" aria-label="マドレーヌを箱に1個入れる"><img src="img/gift-madeleine.webp" width="440" height="440" alt="貝の形のマドレーヌ"><span class="pn">マドレーヌ</span><span class="pd">はちみつ</span><span class="pc" data-v="0" aria-hidden="true">0</span></button>
+      <button type="button" class="pick" data-k="cookie" aria-label="クッキーを箱に1個入れる"><img src="img/gift-cookie.webp" width="440" height="440" alt="チョコチップクッキー"><span class="pn">クッキー</span><span class="pd">チョコチップ</span><span class="pc" data-v="0" aria-hidden="true">0</span></button>
+      <button type="button" class="pick" data-k="cake" aria-label="パウンドを箱に1個入れる"><img src="img/gift-cake.webp" width="440" height="440" alt="ドライフルーツのパウンドケーキ"><span class="pn">パウンド</span><span class="pd">フルーツ</span><span class="pc" data-v="0" aria-hidden="true">0</span></button>
       </div>
-      <p class="picks-hint">押すと、箱に1個ずつ入ります。箱の中のパンを押すと、取り出せます。</p>
+      <p class="picks-hint">押すと、箱に1個ずつ入ります。箱の中のお菓子を押すと、取り出せます。</p>
     </div>
   </div>
   <div class="bf-r">
     <div class="bf-sizes" role="radiogroup" aria-label="箱の大きさ">
-      <label><input type="radio" name="bsize" value="6" checked><b>6個入り</b><span>1,380円<small>（税込）</small></span></label>
-      <label><input type="radio" name="bsize" value="12"><b>12個入り</b><span>2,760円<small>（税込）</small></span></label>
+      <label><input type="radio" name="bsize" value="6" checked><b>6個入り</b><span>1,680円<small>（税込）</small></span></label>
+      <label><input type="radio" name="bsize" value="12"><b>12個入り</b><span>3,240円<small>（税込）</small></span></label>
     </div>
     <div class="bf-box">
       <div class="box" id="box" data-n="6">
         <span class="box-label" aria-hidden="true">petite douceur</span>
-        <div class="slots" id="slots"><span class="slot full"><img src="../hp-samples/petite-douceur/img/bk-bear.jpg" width="400" height="400" alt="くまの形のチョコパン" loading="lazy"></span><span class="slot full"><img src="../hp-samples/petite-douceur/img/bk-cat.jpg" width="400" height="400" alt="ねこの形のカスタードパン" loading="lazy"></span><span class="slot full"><img src="../hp-samples/petite-douceur/img/bk-chick.jpg" width="400" height="400" alt="ひよこの形のメロンパン" loading="lazy"></span><span class="slot full"><img src="../hp-samples/petite-douceur/img/bk-bear.jpg" width="400" height="400" alt="くまの形のチョコパン" loading="lazy"></span><span class="slot full"><img src="../hp-samples/petite-douceur/img/bk-turtle.jpg" width="400" height="400" alt="かめの形のメロンパン" loading="lazy"></span><span class="slot full"><img src="../hp-samples/petite-douceur/img/bk-cat.jpg" width="400" height="400" alt="ねこの形のカスタードパン" loading="lazy"></span></div>
+        <div class="slots" id="slots"><span class="slot full"><img src="img/gift-butter.webp" width="440" height="440" alt="キャラメルとバタークリームをはさんだバターサンド" loading="lazy"></span><span class="slot full"><img src="img/gift-galette.webp" width="440" height="440" alt="格子の模様のガレット・ブルトンヌ" loading="lazy"></span><span class="slot full"><img src="img/gift-madeleine.webp" width="440" height="440" alt="貝の形のマドレーヌ" loading="lazy"></span><span class="slot full"><img src="img/gift-butter.webp" width="440" height="440" alt="キャラメルとバタークリームをはさんだバターサンド" loading="lazy"></span><span class="slot full"><img src="img/gift-cookie.webp" width="440" height="440" alt="チョコチップクッキー" loading="lazy"></span><span class="slot full"><img src="img/gift-cake.webp" width="440" height="440" alt="ドライフルーツのパウンドケーキ" loading="lazy"></span></div>
         <p class="oma-note">お店で、<br>バランスよく詰めます。</p>
-        <p class="box-card" aria-hidden="true">おたんじょうび<br>おめでとう</p>
+        <p class="box-card" aria-hidden="true">いつも<br>ありがとう</p>
       </div>
     </div>
     <p class="box-ex">詰め合わせの例（6個入り）。ご予約のときに、好きな数ずつお知らせください。</p>
     <div class="bf-foot">
-      <div class="bf-tally"><b id="tally">0 / 6個</b><span class="msg" id="tally-msg" aria-live="polite"></span><span class="bf-price" id="bf-price">1,380円<small>（税込）</small></span></div>
+      <div class="bf-tally"><b id="tally">0 / 6個</b><span class="msg" id="tally-msg" aria-live="polite"></span><span class="bf-price" id="bf-price">1,680円<small>（税込）</small></span></div>
       <div class="bf-act"><a class="btn" href="#order" id="go">受け取り日を選ぶ</a><button type="button" class="tline" id="oma" aria-pressed="false">決めきれないときは、おまかせ</button></div>
-      <p class="fv-note">ご予約は、受け取り日の3日前の17時まで。カードは無料でお付けします。※写真はイメージです（AIで生成）。表情は手描きのため、少しずつ違います。</p>
+      <p class="fv-note">ご予約は、受け取り日の3日前の17時まで。のしとメッセージカードは無料でお付けします。日持ちはどれも5日ほど。※写真はイメージです（AIで生成）。</p>
     </div>
   </div>
 </div></section>
@@ -410,7 +416,7 @@ a[href^="tel:"] { display: inline-block; padding: 12px 0; margin: -12px 0; }
         <dt>受け取り日</dt><dd id="s-date">まだ選ばれていません</dd>
         <dt>箱</dt><dd id="s-size">6個入り</dd>
         <dt>組み合わせ</dt><dd id="s-mix">まだ選ばれていません</dd>
-        <dt>金額</dt><dd class="total" id="s-total">1,380円（税込）</dd>
+        <dt>金額</dt><dd class="total" id="s-total">1,680円（税込）</dd>
       </dl>
       <div class="actions">
         <button class="btn" type="submit" id="submit" disabled>この内容で予約フォームへ進む</button>
@@ -423,20 +429,21 @@ a[href^="tel:"] { display: inline-block; padding: 12px 0; margin: -12px 0; }
 </div></section>
 
 <section class="block" aria-labelledby="points-title"><div class="wrap">
-  <h2 id="points-title"><span class="nb">小さな手で、</span><span class="nb">食べきれるように。</span></h2>
+  <h2 id="points-title"><span class="nb">手みやげに、</span><span class="nb">ちょうどいい箱。</span></h2>
   <ul class="points">
-    <li><b>手のひらサイズ</b><span>直径およそ8cm。小さな子でも食べきりやすい大きさに焼いています。</span></li>
-    <li><b>表情は手描き</b><span>目や口は、焼き上がったあとに、ひとつずつ手で描いています。同じくまでも、少しずつ顔が違います。</span></li>
+    <li><b>発酵バター</b><span>北海道産の小麦と、香りの強い発酵バター。箱を開けたときに、バターの香りが広がります。</span></li>
+    <li><b>日持ち5日ほど</b><span>どれも個包装です。週末の手みやげや、少し先のごあいさつにも使えます。</span></li>
+    <li><b>のし・カード無料</b><span>「いつもありがとう」など、ひと言を書いたカードや、のしをお付けします。</span></li>
   </ul>
 </div></section>
 
 <section class="block" aria-labelledby="faq-title"><div class="wrap">
   <h2 id="faq-title">よくある質問</h2>
   <div class="faq">
-    <details><summary>当日でも買えますか？</summary><p>どうぶつパンは店頭にも並びますが、数に限りがあります。箱でのご用意は、ご予約のみ承っています。</p></details>
+    <details><summary>当日でも買えますか？</summary><p>焼き菓子は店頭にも並びますが、箱でのご用意はご予約のみ承っています。</p></details>
     <details><summary>13個以上は頼めますか？</summary><p>お電話でご相談ください。</p></details>
-    <details><summary>アレルギーの確認はできますか？</summary><p>小麦・卵・乳を使っています。くわしい材料は、お気軽にお問い合わせください。</p></details>
-    <details><summary>いつまでに食べればよいですか？</summary><p>受け取った日のうちに、お召し上がりください。クリームが入っているため、持ち歩きの時間が長いときは保冷剤をお付けします。</p></details>
+    <details><summary>アレルギーの確認はできますか？</summary><p>どれも小麦・卵・乳を使っています。同じ厨房で落花生とくるみも扱っています。くわしい材料は、お気軽にお問い合わせください。</p></details>
+    <details><summary>日持ちはどのくらいですか？</summary><p>どれも、焼いた日から5日ほどです。直射日光と高温多湿をさけて保存してください。</p></details>
     <details><summary>組み合わせは、あとから変えられますか？</summary><p>受け取り日の3日前の17時までなら、お電話で変更できます。</p></details>
     <details><summary>発送はできますか？</summary><p>申し訳ありません。店頭での受け取りのみです。</p></details>
   </div>
@@ -462,14 +469,13 @@ a[href^="tel:"] { display: inline-block; padding: 12px 0; margin: -12px 0; }
   <p>※このページは渡邊駿の制作サンプルです。架空の店舗を想定した自主制作物で、実在のお店ではありません。価格・連絡先もすべて架空です。写真は画像生成AIで作ったイメージです。</p>
 </div></footer>
 
-<div class="dock hide" id="dock"><a class="btn" href="#fill">組み合わせを選んで予約する</a></div>
+<div class="dock hide" id="dock"><a class="btn" href="#fill">焼き菓子を選んで予約する</a></div>
 
 <script>
 (function () {
-  var names = { bear: 'くま', cat: 'ねこ', chick: 'ひよこ', turtle: 'かめ' };
-  var alts = { bear: 'くまの形のチョコパン', cat: 'ねこの形のカスタードパン', chick: 'ひよこの形のメロンパン', turtle: 'かめの形のメロンパン' };
-  var keys = ['bear', 'cat', 'chick', 'turtle'];
-  var price = { 6: 1380, 12: 2760 };
+  var names = { butter: 'バターサンド', galette: 'ガレット', madeleine: 'マドレーヌ', cookie: 'クッキー', cake: 'パウンドケーキ' };
+  var keys = ['butter', 'galette', 'madeleine', 'cookie', 'cake'];
+  var price = { 6: 1680, 12: 3240 };
   var box = document.getElementById('box'), slotsEl = document.getElementById('slots');
   var tally = document.getElementById('tally'), tmsg = document.getElementById('tally-msg');
   var bfPrice = document.getElementById('bf-price'), go = document.getElementById('go'), omaBtn = document.getElementById('oma');
@@ -477,7 +483,7 @@ a[href^="tel:"] { display: inline-block; padding: 12px 0; margin: -12px 0; }
   var state = { n: 6, slots: [], oma: false };
   var popIndex = -1;
   function yen(v) { return v.toLocaleString('ja-JP') + '円'; }
-  function counts() { var c = { bear: 0, cat: 0, chick: 0, turtle: 0 }; state.slots.forEach(function (k) { c[k]++; }); return c; }
+  function counts() { var c = {}; keys.forEach(function (k) { c[k] = 0; }); state.slots.forEach(function (k) { c[k]++; }); return c; }
   function mixText(c) { var a = []; keys.forEach(function (k) { if (c[k]) a.push(names[k] + ' ' + c[k] + '個'); }); return a.join('、'); }
   function say(text, cls) { tmsg.className = 'msg' + (cls ? ' ' + cls : ''); tmsg.textContent = text; }
 
@@ -488,7 +494,7 @@ a[href^="tel:"] { display: inline-block; padding: 12px 0; margin: -12px 0; }
     var html = '';
     for (var i = 0; i < n; i++) {
       var k = state.slots[i];
-      if (k) html += '<button type="button" class="slot full' + (i === popIndex ? ' pop' : '') + '" data-i="' + i + '" aria-label="' + (i + 1) + '個目：' + names[k] + '。押すと箱から出します"><img src="../hp-samples/petite-douceur/img/bk-' + k + '.jpg" width="400" height="400" alt=""></button>';
+      if (k) html += '<button type="button" class="slot full' + (i === popIndex ? ' pop' : '') + '" data-i="' + i + '" aria-label="' + (i + 1) + '個目：' + names[k] + '。押すと箱から出します"><img src="img/gift-' + k + '.webp" width="440" height="440" alt=""></button>';
       else html += '<span class="slot" aria-hidden="true">' + (i + 1) + '</span>';
     }
     slotsEl.innerHTML = html;
@@ -518,7 +524,7 @@ a[href^="tel:"] { display: inline-block; padding: 12px 0; margin: -12px 0; }
     var p = e.target.closest('.pick'); if (!p) return;
     if (state.oma) { say('おまかせを選んでいます。自分で選ぶときは、下の「自分で選ぶ」を押してください。'); tmsg.dataset.keep = 1; return; }
     if (state.slots.length >= state.n) {
-      say(state.n === 6 ? '箱がいっぱいです。12個入りにするか、箱の中のパンを押して取り出してください。' : '箱がいっぱいです。箱の中のパンを押すと、取り出せます。', 'ng');
+      say(state.n === 6 ? '箱がいっぱいです。12個入りにするか、箱の中のお菓子を押して取り出してください。' : '箱がいっぱいです。箱の中のお菓子を押すと、取り出せます。', 'ng');
       return;
     }
     state.slots.push(p.getAttribute('data-k'));
@@ -573,7 +579,7 @@ a[href^="tel:"] { display: inline-block; padding: 12px 0; margin: -12px 0; }
     var n = state.n, mixOk = state.oma || state.slots.length === n, m = mixText(c);
     var line = state.oma ? 'おまかせ（お店で' + n + '個をバランスよく詰めます）' : (state.slots.length ? n + '個入りに、' + m + (mixOk ? '' : '（あと' + (n - state.slots.length) + '個）') : 'まだ詰めていません。いちばん上の箱で選んでください。');
     document.getElementById('mix-line').textContent = line;
-    document.getElementById('mix-imgs').innerHTML = state.oma ? '' : state.slots.map(function (k) { return '<img src="../hp-samples/petite-douceur/img/bk-' + k + '.jpg" width="400" height="400" alt="" loading="lazy">'; }).join('');
+    document.getElementById('mix-imgs').innerHTML = state.oma ? '' : state.slots.map(function (k) { return '<img src="img/gift-' + k + '.webp" width="440" height="440" alt="" loading="lazy">'; }).join('');
     document.getElementById('s-size').textContent = n + '個入り';
     document.getElementById('s-total').textContent = yen(price[n]) + '（税込）';
     document.getElementById('s-mix').textContent = state.oma ? 'おまかせ（お店で詰めます）' : (m || 'まだ選ばれていません');

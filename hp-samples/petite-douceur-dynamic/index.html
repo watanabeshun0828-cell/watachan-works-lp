@@ -6,10 +6,13 @@
 <title>petite douceur｜ブラウザで動くHP見本（制作サンプル）</title>
 <meta name="description" content="営業状況の自動表示、お知らせの絞り込み、商品の検索、ご予約の合計金額の自動計算など、ブラウザ側で動く仕組みを入れたホームページの見本です（架空の店舗の制作サンプル）。">
 <meta name="robots" content="noindex">
-<!-- 2026-11-20 作り直し：静的な見本（どうぶつパンと焼き菓子の店）と見た目・写真・お店の情報をそろえた。
+<!-- 2026-11-21 お店の作り直し（v3：北海道小麦と発酵バターのパン屋）に合わせ、色・文字・写真・品ぞろえを更新。前の版：LP旧版/petite-douceur-dynamic_20261121_変更前/
+     2026-11-20 作り直し：静的な見本と見た目・写真・お店の情報をそろえた。
      古い ../petite-douceur/style.css には頼らず、このフォルダの dynamic.css だけで表示する。焼き上がりの時刻表示はやめた。
      前の版：LP旧版/petite-douceur-dynamic_20261120_変更前/ -->
-<link rel="stylesheet" href="dynamic.css?v=20261120c">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600&display=swap">
+<link rel="stylesheet" href="dynamic.css?v=20261121">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%227%22 fill=%22%23333%22/%3E%3C/svg%3E">
 </head>
 <body>
@@ -17,7 +20,7 @@
 <a class="skip" href="#main">本文へ</a>
 <div class="progress" id="progress" aria-hidden="true"></div>
 <nav class="site-nav" aria-label="サイト内"><div class="nav-inner">
-  <a class="brand" href="#top">petite douceur<small>どうぶつパンと焼き菓子の店</small></a>
+  <a class="brand" href="#top">petite douceur<small>北海道小麦と発酵バターのパン屋</small></a>
   <button class="burger" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-links"><span></span><span></span></button>
   <ul class="nav-links" id="nav-links">
     <li><a href="#news">お知らせ</a></li>
@@ -29,11 +32,11 @@
 
 <main id="main">
 <header class="hero-full" id="top">
-  <picture class="bg"><source type="image/webp" srcset="../petite-douceur/img/pd-kidshelf-wide.webp 1536w, ../petite-douceur/img/pd-kidshelf-wide-960.webp 960w" sizes="100vw"><img src="../petite-douceur/img/pd-kidshelf-wide.jpg" srcset="../petite-douceur/img/pd-kidshelf-wide.jpg 1536w, ../petite-douceur/img/pd-kidshelf-wide-960.jpg 960w" sizes="100vw" alt="子どもの目の高さの棚に、くま・ねこ・ひよこ・かめのどうぶつパンが並ぶ店内（写真はイメージ）" width="1536" height="1024" fetchpriority="high"></picture>
+  <picture class="bg"><source media="(max-width: 900px)" type="image/webp" srcset="../petite-douceur/img/pd-shelf-m.webp 960w, ../petite-douceur/img/pd-shelf-m-640.webp 640w" sizes="100vw"><source media="(max-width: 900px)" srcset="../petite-douceur/img/pd-shelf-m.jpg 960w, ../petite-douceur/img/pd-shelf-m-640.jpg 640w" sizes="100vw"><source type="image/webp" srcset="../petite-douceur/img/pd-shelf.webp 1536w, ../petite-douceur/img/pd-shelf-960.webp 960w" sizes="100vw"><img src="../petite-douceur/img/pd-shelf.jpg" srcset="../petite-douceur/img/pd-shelf.jpg 1536w, ../petite-douceur/img/pd-shelf-960.jpg 960w" sizes="100vw" alt="朝の光が入る店内の木の棚に、食パン、クロワッサン、カンパーニュ、バゲット、焼き菓子、どうぶつパンが並んでいる（写真はイメージ）" width="1536" height="1024" fetchpriority="high"></picture>
   <div class="hero-copy">
     <div class="status" id="status" role="status" aria-live="polite" data-state="loading"><span class="dot" aria-hidden="true"></span><span class="status-main">営業状況を確かめています…</span><span class="status-sub"></span></div>
-    <p class="eyebrow">どうぶつパンと焼き菓子の店</p>
-    <h1><span class="nb">顔は、</span><span class="nb">ぜんぶ手描きです</span></h1>
+    <p class="eyebrow">北海道小麦と発酵バターのパン屋</p>
+    <h1><span class="nb">毎日のパンを、</span><br><span class="nb">北海道の小麦と</span><br><span class="nb">発酵バターで。</span></h1>
     <p class="lede">いま開いているか、何があるか、取り置きの合計がいくらか。このページの中で、すぐに確かめられます。</p>
     <div class="btn-row"><a class="btn" href="#reserve">取り置きのご予約</a><a class="link" href="#menu">商品を見る</a></div>
   </div>
@@ -64,7 +67,7 @@
   <div class="tools">
     <div class="chips" role="group" aria-label="商品の種類" id="cat-chips"></div>
     <div class="tool-row">
-      <label class="field"><span>名前で探す</span><input type="search" id="q" placeholder="例：メロン" autocomplete="off"></label>
+      <label class="field"><span>名前で探す</span><input type="search" id="q" placeholder="例：クロワッサン" autocomplete="off"></label>
       <label class="field"><span>並べ替え</span>
         <select id="sort">
           <option value="default">おすすめ順</option>
@@ -76,7 +79,7 @@
     <p class="count" id="count" role="status" aria-live="polite"></p>
   </div>
   <div class="products" id="products"></div>
-  <p class="note">どうぶつパンと焼き菓子は、小麦・卵・乳を使っています。食パンは卵を使っていません。写真はイメージです（生成画像）。</p>
+  <p class="note">食パンとバゲット・カンパーニュは、卵を使っていません。クロワッサン・焼き菓子・どうぶつパンは、小麦・卵・乳を使っています。写真はイメージです（生成画像）。</p>
 </div></section>
 
 <section class="sec" id="reserve" aria-labelledby="reserve-h"><div class="wrap">

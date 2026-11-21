@@ -16,19 +16,18 @@ window.SHOP = {
   }
 };
 
-// 商品（image が空の商品は、文字だけのカードになります）
+// 商品（image が空の商品は、文字だけのカードになります）。2026-11-21：お店の作り直し（v3）に合わせた品ぞろえ
 var IMG = "../petite-douceur/img/";
 window.PRODUCTS = [
-  { id: "bear",     cat: "どうぶつパン", name: "くまのチョコパン",     desc: "ほんのりビターなチョコクリーム。顔はチョコで、ひとつずつ描いています。", price: 220, unit: "1個", image: IMG + "bk-bear.jpg" },
-  { id: "cat",      cat: "どうぶつパン", name: "ねこのカスタードパン", desc: "たまごたっぷりの自家製カスタード。耳の先がいちばん香ばしいところです。", price: 240, unit: "1個", image: IMG + "bk-cat.jpg" },
-  { id: "chick",    cat: "どうぶつパン", name: "ひよこのメロンパン",   desc: "さくさくのクッキー生地に、小さなくちばし。4種でいちばん軽いパンです。", price: 200, unit: "1個", image: IMG + "bk-chick.jpg" },
-  { id: "turtle",   cat: "どうぶつパン", name: "かめのメロンパン",     desc: "甲羅がメロンパン、頭と足はふんわりした生地。4種でいちばん大きいパンです。", price: 260, unit: "1個", image: IMG + "bk-turtle.jpg" },
-  { id: "butter",   cat: "焼き菓子",     name: "バターサンド",         desc: "発酵バターのクリームと、ほろ苦いキャラメル。箱入り（4個・6個）もあります。", price: 320, unit: "1個", image: IMG + "bk-butter-800.jpg" },
-  { id: "financier",cat: "焼き菓子",     name: "フィナンシェ",         desc: "焦がしバターの香り。日持ちは5日ほどです。", price: 240, unit: "1個", image: "" },
-  { id: "galette",  cat: "焼き菓子",     name: "ガレット・ブルトンヌ", desc: "厚めに焼いた、ざくざくとした食感のバタークッキー。", price: 260, unit: "1枚", image: "" },
+  { id: "bread",    cat: "パン",         name: "毎日の食パン",         desc: "北海道産小麦100%。卵を使わない角食パン。毎朝8時に焼き上がります。", price: 480, unit: "1斤", image: IMG + "bk-bread-800.jpg" },
+  { id: "croissant",cat: "パン",         name: "クロワッサン",         desc: "発酵バターで層を重ねて。焼き上がりは8時と11時です。", price: 280, unit: "1個", image: IMG + "pd-p-croissant.jpg" },
+  { id: "campagne", cat: "パン",         name: "カンパーニュ",         desc: "粉をふった、皮の香ばしい田舎パン。半分からお分けします。", price: 520, unit: "1/2", image: IMG + "pd-p-campagne.jpg" },
+  { id: "baguette", cat: "パン",         name: "バゲット",             desc: "外はばりっと、中はもっちり。夕方までに売り切れることがあります。", price: 320, unit: "1本", image: IMG + "pd-p-baguette.jpg" },
+  { id: "butter",   cat: "焼き菓子",     name: "バターサンド",         desc: "発酵バターのクリームと、ほろ苦いキャラメル。", price: 320, unit: "1個", image: IMG + "bk-butter-800.jpg" },
+  { id: "galette",  cat: "焼き菓子",     name: "ガレット・ブルトンヌ", desc: "厚めに焼いた、ざくざくのバタークッキー。", price: 260, unit: "1枚", image: IMG + "pd-p-galette.jpg" },
   { id: "set",      cat: "焼き菓子",     name: "冬の焼き菓子セット",   desc: "5種類の詰め合わせ。前日17時までのご予約で、のしをお付けします。", price: 1480, unit: "1箱", image: IMG + "bk-set-800.jpg" },
-  { id: "bread",    cat: "パン",         name: "毎日の食パン",         desc: "卵を使わない角食パン。前の晩に仕込んだ生地で、耳までやわらかく焼きます。", price: 480, unit: "1斤", image: IMG + "bk-bread-800.jpg" },
-  { id: "half",     cat: "パン",         name: "ハーフサイズ食パン",   desc: "毎日の食パンを、食べきりやすい半分のサイズで。", price: 260, unit: "半斤", image: "" }
+  { id: "bear",     cat: "どうぶつパン", name: "くまのチョコパン",     desc: "棚のいちばん下の段に。顔はひとつずつ手で描いています。", price: 220, unit: "1個", image: IMG + "bk-bear.jpg" },
+  { id: "cat",      cat: "どうぶつパン", name: "ねこのカスタードパン", desc: "平飼い卵の自家製カスタード入り。", price: 240, unit: "1個", image: IMG + "bk-cat.jpg" }
 ];
 
 // お知らせ。daysAgo は「何日前の投稿か」（サンプルでは、いつ開いても NEW が見えるよう、日数で書いています。
@@ -36,6 +35,6 @@ window.PRODUCTS = [
 window.NEWS = [
   { daysAgo: 1,  tag: "新商品",   title: "冬の焼き菓子セットを始めました", body: "シュトーレンは12月だけのお取り扱いです。箱入りは前日17時までにご予約ください。" },
   { daysAgo: 4,  tag: "お休み",   title: "年末年始は、12月29日から1月4日までお休みします", body: "取り置きは、12月28日の受け取り分まで承ります。" },
-  { daysAgo: 9,  tag: "お知らせ", title: "店の前の駐車場に、白い線を引き直しました", body: "前向きで2台停められます。1台分の幅は2.5mです。" },
+  { daysAgo: 9,  tag: "新商品",   title: "クロワッサンの焼き上がりを、1日2回にしました", body: "8時と11時に焼き上がります。取り置きは前日17時まで承ります。" },
   { daysAgo: 21, tag: "お知らせ", title: "ホームページを新しくしました", body: "営業状況や、ご予約が、見やすくなりました。" }
 ];
