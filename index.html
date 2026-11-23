@@ -137,6 +137,8 @@
 .field { display: flex; flex-direction: column; gap: 6px; }
 .field label { font-size: 14px; letter-spacing: 0.06em; }
 .field .opt { margin-left: 4px; color: var(--ink-2); font-size: 13px; }
+.field .req { margin-left: 4px; color: #A0463B; font-size: 13px; }
+.form-note { margin: 4px 0 2px; font-size: 13px; line-height: 1.8; color: var(--ink-2); }
 .field input, .field textarea, .field select { font: inherit; font-size: 16px; background: #fff; border: 1px solid var(--line-2); padding: 12px 14px; color: var(--ink); border-radius: 0; }
 .field textarea { min-height: 140px; resize: vertical; }
 .field input:focus, .field textarea:focus, .field select:focus { outline: 2px solid var(--ink); outline-offset: 0; }
@@ -426,12 +428,13 @@
       <input type="hidden" name="access_key" value="1663e859-395f-426f-b2ee-bc2f1cb81d98">
       <input type="hidden" name="subject" value="【渡邊 駿】ポートフォリオからのお問い合わせ">
       <input type="checkbox" name="botcheck" class="honey" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
-      <div class="field"><label for="cf-name">お名前</label><input type="text" id="cf-name" name="name" placeholder="山田 太郎" required aria-describedby="cf-name-err"><p class="field-error" id="cf-name-err" hidden></p></div>
-      <div class="field"><label for="cf-email">返信先メールアドレス</label><input type="email" id="cf-email" name="email" placeholder="you@example.com" required aria-describedby="cf-email-err"><p class="field-error" id="cf-email-err" hidden></p></div>
-      <div class="field"><label for="cf-type">ご依頼の種類</label><select id="cf-type" name="ご依頼の種類"><option value="記事">記事</option><option value="台本・シナリオ">台本・シナリオ</option><option value="LP制作">LP制作</option><option value="HP制作">HP制作</option><option value="その他・まだ決まっていない" selected>その他・まだ決まっていない</option></select></div>
-      <div class="field"><label for="cf-timing">ご希望の時期</label><select id="cf-timing" name="ご希望の時期"><option value="できるだけ早く">できるだけ早く</option><option value="1か月以内">1か月以内</option><option value="2〜3か月以内">2〜3か月以内</option><option value="時期は決まっていない">時期は決まっていない</option></select></div>
+      <div class="field"><label for="cf-name">お名前<span class="req">（必須）</span></label><input type="text" id="cf-name" name="name" placeholder="山田 太郎" required aria-describedby="cf-name-err"><p class="field-error" id="cf-name-err" hidden></p></div>
+      <div class="field"><label for="cf-email">返信先メールアドレス<span class="req">（必須）</span></label><input type="email" id="cf-email" name="email" placeholder="you@example.com" required aria-describedby="cf-email-err"><p class="field-error" id="cf-email-err" hidden></p></div>
+      <div class="field"><label for="cf-type">ご依頼の種類<span class="opt">（任意）</span></label><select id="cf-type" name="ご依頼の種類"><option value="記事">記事</option><option value="台本・シナリオ">台本・シナリオ</option><option value="LP制作">LP制作</option><option value="HP制作">HP制作</option><option value="その他・まだ決まっていない" selected>その他・まだ決まっていない</option></select></div>
+      <div class="field"><label for="cf-timing">ご希望の時期<span class="opt">（任意）</span></label><select id="cf-timing" name="ご希望の時期"><option value="時期は決まっていない" selected>時期は決まっていない</option><option value="できるだけ早く">できるだけ早く</option><option value="1か月以内">1か月以内</option><option value="2〜3か月以内">2〜3か月以内</option></select></div>
       <div class="field"><label for="cf-sample">参考にしたいサンプル<span class="opt">（任意）</span></label><input type="text" id="cf-sample" name="参考にしたいサンプル" placeholder="例）パン屋さんのHP、コンサルのLP など"></div>
-      <div class="field"><label for="cf-message">ご相談内容</label><textarea id="cf-message" name="message" placeholder="ご相談の内容を、わかる範囲でどうぞ（分量やご予算の目安など）" required aria-describedby="cf-message-err"></textarea><p class="field-error" id="cf-message-err" hidden></p></div>
+      <div class="field"><label for="cf-message">ご相談内容<span class="req">（必須）</span></label><textarea id="cf-message" name="message" placeholder="ご相談の内容を、わかる範囲でどうぞ（分量やご予算の目安など）" required aria-describedby="cf-message-err"></textarea><p class="field-error" id="cf-message-err" hidden></p></div>
+      <p class="form-note">ご入力いただいた内容は、ご相談への返信とお見積もりのためだけに使います。送信には、外部のフォームサービス（Web3Forms）を使っています。</p>
       <button type="submit" class="btn">この内容で送信する</button>
       <div class="form-status" id="form-status" role="status" aria-live="polite" tabindex="-1"></div>
     </form>
@@ -498,7 +501,7 @@
     }).then(function (r) { return r.json(); }).then(function (d) {
       clearTimeout(timer);
       if (!d.success) return fail();
-      form.querySelectorAll(".field, button[type=submit]").forEach(function (el) { el.style.display = "none"; });
+      form.querySelectorAll(".field, .form-note, button[type=submit]").forEach(function (el) { el.style.display = "none"; });
       show("ok",
         "<p class=\"fs-head\">送信しました。ありがとうございます。</p>" +
         "<p>24時間以内に、<b>" + esc(data.email) + "</b> あてにお返事します。届かないときは、迷惑メールのフォルダもご確認ください。</p>" +
