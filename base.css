@@ -64,9 +64,12 @@ ul, ol { list-style: none; }
 .gh { position: sticky; top: 0; z-index: 50; background: rgba(247, 244, 236, 0.94); border-bottom: 1px solid transparent; }
 .gh.scrolled { border-bottom-color: var(--line); }
 .gh .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: var(--nav-h); }
-.brand { display: flex; align-items: baseline; gap: 14px; text-decoration: none; color: var(--ink); white-space: nowrap; }
-.brand b { font-family: var(--serif); font-weight: 500; font-size: 19px; letter-spacing: 0.16em; }
-.brand span { font-size: 12px; letter-spacing: 0.08em; color: var(--ink-2); }
+/* 屋号ロゴ（2026-11-23）：ペン先とページのマーク＋ Page（立体）wright（斜体）。文字は Georgia（読み込みなし） */
+.brand { display: flex; align-items: center; gap: 9px; text-decoration: none; color: var(--ink); white-space: nowrap; }
+.brand .mk { width: 26px; height: 26px; flex: none; margin-top: -2px; }
+.brand b { font-family: var(--num); font-weight: 400; font-size: 23px; letter-spacing: 0.01em; line-height: 1; }
+.brand b i { font-style: italic; }
+.brand span { margin-left: 8px; font-size: 12px; letter-spacing: 0.08em; color: var(--ink-2); }
 .gnav { display: flex; align-items: center; gap: 30px; }
 .gnav ul { display: flex; gap: 28px; }
 .gnav ul a { font-size: 14px; letter-spacing: 0.08em; text-decoration: none; color: var(--ink); padding: 6px 0; }
@@ -104,7 +107,9 @@ ul, ol { list-style: none; }
 @media (max-width: 900px) {
   :root { --nav-h: 60px; }
   body { font-size: 15.5px; }
-  .brand span { display: none; }
+  .gh .brand span { display: none; }
+  .brand b { font-size: 21px; }
+  .brand .mk { width: 24px; height: 24px; }
   .gnav { gap: 12px; }
   .gnav .btn { padding: 9px 14px; font-size: 13px; letter-spacing: 0.06em; }
   /* JSなし：メニューはヘッダーの下に横並び */
