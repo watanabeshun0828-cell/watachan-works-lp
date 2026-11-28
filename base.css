@@ -134,6 +134,7 @@ ul, ol { list-style: none; }
   .gnav .dd-btn, html:not(.js) .gnav .dd-menu { display: none !important; }
   html:not(.js) .gh .gnav { flex: 1 1 100%; flex-wrap: wrap; justify-content: flex-end; min-width: 0; } /* JSなし：メニューを画面幅に収める */
   html:not(.js) .gh .gnav > ul { min-width: 0; }
+  html:not(.js) .gh { position: static; } /* JSなし：高くなったヘッダーを上に貼りつけない */
   /* JSあり：メニューボタンで開閉 */
   .js .gh .wrap { flex-wrap: nowrap; height: var(--nav-h); padding-block: 0; }
   .js .menu-btn { display: grid; place-items: center; width: 44px; height: 44px; margin-right: -10px; background: none; border: 0; cursor: pointer; }
