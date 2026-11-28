@@ -67,15 +67,30 @@ ul, ol { list-style: none; }
 /* 屋号ロゴ（2026-11-23）：ペン先とページのマーク＋ Page（立体）wright（斜体）。文字は Georgia（読み込みなし） */
 .brand { display: flex; align-items: center; gap: 9px; text-decoration: none; color: var(--ink); white-space: nowrap; }
 .brand .mk { width: 26px; height: 26px; flex: none; margin-top: -2px; }
+.gh .brand, .gf .brand { min-height: 32px; } /* 2026-11-28 押せる所を24px以上に */
 .brand b { font-family: var(--num); font-weight: 400; font-size: 23px; letter-spacing: 0.01em; line-height: 1; }
 .brand b i { font-style: italic; }
 .brand span { margin-left: 8px; font-size: 12px; letter-spacing: 0.08em; color: var(--ink-2); }
 .gnav { display: flex; align-items: center; gap: 30px; }
-.gnav ul { display: flex; gap: 28px; }
-.gnav ul a { font-size: 14px; letter-spacing: 0.08em; text-decoration: none; color: var(--ink); padding: 6px 0; }
-.gnav ul a:hover, .gnav ul a[aria-current="page"] { text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 3px; text-underline-offset: 0.5em; }
+.gnav > ul { display: flex; align-items: center; gap: 26px; }
+.gnav > ul > li > a { font-size: 14px; letter-spacing: 0.08em; text-decoration: none; color: var(--ink); padding: 6px 0; }
+.gnav > ul > li > a:hover, .gnav > ul > li > a[aria-current="page"], .gnav .dd.here > .dd-top { text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 3px; text-underline-offset: 0.5em; }
 .gnav .btn { font-size: 14px; padding: 10px 20px; letter-spacing: 0.1em; }
 .menu-btn { display: none; }
+/* 開くメニュー（2026-11-28）：ライティング▾・Web制作▾。動きは nav.js。JSなしは指を乗せる／Tabで入ると開く */
+.gnav .dd { position: relative; display: flex; align-items: center; gap: 0; }
+.gnav .dd-btn { display: grid; place-items: center; width: 26px; height: 32px; padding: 0; border: 0; background: none; color: var(--ink); cursor: pointer; }
+.gnav .dd-btn::before { content: ""; width: 7px; height: 7px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-2px) rotate(45deg); transition: transform 0.15s; }
+.gnav .dd.dd-open .dd-btn::before { transform: translateY(2px) rotate(225deg); }
+.gnav .dd-menu { display: none; position: absolute; top: 100%; left: -18px; min-width: 230px; padding: 8px 0; background: var(--paper); border: 1px solid var(--line-2); box-shadow: 0 12px 28px rgba(36, 37, 32, 0.08); z-index: 60; }
+.gnav .dd-menu::before { content: ""; position: absolute; left: 0; right: 0; top: -12px; height: 12px; }
+.gnav .dd-menu a { display: block; padding: 11px 20px; font-size: 14px; letter-spacing: 0.04em; color: var(--ink); text-decoration: none; white-space: nowrap; }
+.gnav .dd-menu li:first-child a { font-weight: 700; border-bottom: 1px solid var(--line); margin-bottom: 4px; }
+.gnav .dd-menu a:hover, .gnav .dd-menu a:focus-visible { background: var(--paper-2); }
+.gnav .dd-menu a[aria-current="page"] { box-shadow: inset 3px 0 0 var(--accent); }
+.gnav .dd.dd-open .dd-menu, html:not(.js) .gnav .dd:focus-within .dd-menu { display: block; }
+@media (hover: hover) { .gnav .dd:hover .dd-menu { display: block; } } /* 指で押す端末では、:hover が残って閉じなくなるため */
+@media (max-width: 1200px) { .gh .brand span { display: none; } }
 
 /* ── 写真の枠（生成画像を入れる場所） ── */
 .photo { position: relative; margin: 0; background: var(--paper-2); overflow: hidden; }
@@ -90,7 +105,7 @@ ul, ol { list-style: none; }
 
 /* ── フッター ── */
 .gf { padding-block: 64px 40px; border-top: 1px solid var(--line); font-size: 14px; }
-.gf .cols { display: grid; grid-template-columns: minmax(0, 1.4fr) repeat(2, minmax(0, 1fr)); gap: 32px 48px; }
+.gf .cols { display: grid; grid-template-columns: minmax(0, 1.3fr) repeat(3, minmax(0, 1fr)); gap: 32px 40px; }
 .gf .brand { margin-bottom: 14px; }
 .gf p { color: var(--ink-2); line-height: 1.9; }
 .gf h2 { font-family: var(--num); font-weight: 400; font-size: 12.5px; letter-spacing: 0.26em; color: var(--ink-2); margin-bottom: 12px; }
@@ -114,15 +129,25 @@ ul, ol { list-style: none; }
   .gnav .btn { padding: 9px 14px; font-size: 13px; letter-spacing: 0.06em; }
   /* JSなし：メニューはヘッダーの下に横並び */
   .gh .wrap { flex-wrap: wrap; height: auto; min-height: var(--nav-h); padding-block: 10px; }
-  .gnav ul { order: 3; width: 100%; gap: 20px; overflow-x: auto; padding-bottom: 4px; }
-  .gnav ul a { font-size: 13.5px; white-space: nowrap; }
+  .gnav > ul { order: 3; width: 100%; gap: 20px; overflow-x: auto; padding-bottom: 4px; }
+  .gnav > ul > li > a { font-size: 13.5px; white-space: nowrap; }
+  .gnav .dd-btn, html:not(.js) .gnav .dd-menu { display: none !important; }
+  html:not(.js) .gh .gnav { flex: 1 1 100%; flex-wrap: wrap; justify-content: flex-end; min-width: 0; } /* JSなし：メニューを画面幅に収める */
+  html:not(.js) .gh .gnav > ul { min-width: 0; }
   /* JSあり：メニューボタンで開閉 */
   .js .gh .wrap { flex-wrap: nowrap; height: var(--nav-h); padding-block: 0; }
   .js .menu-btn { display: grid; place-items: center; width: 44px; height: 44px; margin-right: -10px; background: none; border: 0; cursor: pointer; }
   .js .menu-btn span { display: block; width: 22px; height: 1.5px; background: var(--ink); box-shadow: 0 7px 0 var(--ink); transform: translateY(-3.5px); }
-  .js .gnav ul { display: none; position: absolute; left: 0; right: 0; top: var(--nav-h); flex-direction: column; gap: 0; padding: 6px var(--gutter) 18px; background: var(--paper); border-bottom: 1px solid var(--line); overflow: visible; }
-  .js .gnav ul a { display: block; padding: 13px 0; font-size: 15.5px; border-bottom: 1px solid var(--line); }
-  .js .gh.open .gnav ul { display: flex; }
+  .js .gnav > ul { display: none; position: absolute; left: 0; right: 0; top: var(--nav-h); flex-direction: column; align-items: stretch; gap: 0; padding: 6px var(--gutter) 18px; background: var(--paper); border-bottom: 1px solid var(--line); overflow-y: auto; max-height: calc(100vh - var(--nav-h)); }
+  .js .gnav > ul > li > a { display: block; padding: 13px 0; font-size: 15.5px; border-bottom: 1px solid var(--line); }
+  .js .gh.open .gnav > ul { display: flex; }
+  /* スマホ：開いたメニューの中では、ライティング／Web制作を見出しにして中の項目を並べる */
+  .js .gnav .dd { display: block; }
+  .js .gnav .dd > .dd-top { font-family: var(--num); font-size: 12.5px; letter-spacing: 0.22em; color: var(--ink-2); padding: 18px 0 6px; border-bottom: 0; text-decoration: none; }
+  .js .gh .gnav .dd-menu { display: block; position: static; min-width: 0; padding: 0; border: 0; box-shadow: none; background: none; }
+  .js .gh .gnav .dd-menu::before { display: none; }
+  .js .gnav .dd-menu a { padding: 12px 0 12px 14px; font-size: 15px; border-bottom: 1px solid var(--line); white-space: normal; }
+  .js .gnav .dd-menu li:first-child a { font-weight: 700; margin-bottom: 0; }
   .gf .cols { grid-template-columns: 1fr 1fr; }
   .gf .cols > div:first-child { grid-column: 1 / -1; }
 }

@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pagewright（渡邊 駿）｜ホームページ・LP制作のポートフォリオ</title>
-<meta name="description" content="渡邊 駿のポートフォリオ。ホームページ・LPを、構成と文章の整理から制作します。パン屋・サロン・SaaSなど、目的と表現の違う制作見本（自主制作）と、記事・動画台本の執筆サンプルをご覧いただけます。">
+<title>Pagewright（渡邊 駿）｜記事・台本の執筆と、ホームページ・LP制作</title>
+<meta name="description" content="Pagewright（渡邊 駿）のポートフォリオ。SEO記事・コラム・動画台本の執筆と、ホームページ・LPの制作をしています。ライティングのページと、Web制作のページから、サンプル・料金の目安・ご相談フォームをご覧いただけます。">
 <meta name="google-site-verification" content="MT3a87TeZhdsmsGMunaXD7atpWkkSz_w2mpIPX1duj8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -193,6 +193,29 @@
   .prof { grid-template-columns: 1fr; gap: 28px; }
   .contact { grid-template-columns: 1fr; }
 }
+/* 2026-11-28 トップを入口に：自己紹介と、ライティング／Web制作の2つの入口 */
+.hub { padding-block: clamp(56px, 8vw, 104px) clamp(28px, 4vw, 48px); }
+.hub .eyebrow { font-size: 13.5px; letter-spacing: 0.12em; color: var(--ink-2); margin-bottom: 18px; }
+.hub h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(30px, 4.4vw, 54px); line-height: 1.45; letter-spacing: 0.04em; max-width: 18em; }
+.hub .sup { margin-top: 22px; max-width: 40em; font-size: 16px; line-height: 2; color: var(--ink-2); }
+.doors-sec { padding-top: 0; }
+.doors { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 4vw, 56px); padding-top: 40px; background: linear-gradient(var(--ink), var(--ink)) no-repeat center top / calc(100% - 2 * var(--gutter)) 1px; }
+.door { display: flex; flex-direction: column; }
+.door-th { display: block; aspect-ratio: 16 / 10; overflow: hidden; border: 1px solid var(--line-2); background: var(--paper-2); margin-bottom: 22px; }
+.door-th img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.4s ease; }
+.door-th:hover img { transform: scale(1.02); }
+.door .label { margin-bottom: 4px; }
+.door-h { font-family: var(--serif); font-weight: 500; font-size: clamp(24px, 2.6vw, 32px); letter-spacing: 0.06em; }
+.door-what { margin-top: 12px; line-height: 1.95; }
+.door-facts { margin-top: 16px; border-top: 1px solid var(--line); }
+.door-facts li { padding: 10px 0 10px 18px; border-bottom: 1px solid var(--line); font-size: 14.5px; line-height: 1.8; color: var(--ink-2); position: relative; }
+.door-facts li::before { content: ""; position: absolute; left: 2px; top: 1.15em; width: 7px; height: 7px; background: var(--accent); }
+.door-go { margin-top: auto; padding-top: 24px; }
+.door-sub { display: flex; flex-wrap: wrap; gap: 6px 20px; margin-top: 14px; font-size: 14px; }
+.door-sub .link { display: inline-block; padding: 4px 0; }
+.moved { margin-top: 40px; font-size: 13.5px; color: var(--ink-2); }
+@media (prefers-reduced-motion: reduce) { .door-th img { transition: none; } }
+@media (max-width: 900px) { .doors { grid-template-columns: 1fr; padding-top: 28px; } .door + .door { padding-top: 28px; border-top: 1px solid var(--line); } }
 </style>
 <!-- share:start -->
 <link rel="icon" href="img/brand/favicon.svg" type="image/svg+xml">
@@ -201,8 +224,8 @@
 <link rel="canonical" href="https://watanabeshun0828-cell.github.io/watachan-works-lp/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Pagewright（渡邊 駿）">
-<meta property="og:title" content="Pagewright（渡邊 駿）｜ホームページ・LP制作のポートフォリオ">
-<meta property="og:description" content="渡邊 駿のポートフォリオ。ホームページ・LPを、構成と文章の整理から制作します。パン屋・サロン・SaaSなど、目的と表現の違う制作見本（自主制作）と、記事・動画台本の執筆サンプルをご覧いただけます。">
+<meta property="og:title" content="Pagewright（渡邊 駿）｜記事・台本の執筆と、ホームページ・LP制作">
+<meta property="og:description" content="Pagewright（渡邊 駿）のポートフォリオ。SEO記事・コラム・動画台本の執筆と、ホームページ・LPの制作をしています。ライティングのページと、Web制作のページから、サンプル・料金の目安・ご相談フォームをご覧いただけます。">
 <meta property="og:url" content="https://watanabeshun0828-cell.github.io/watachan-works-lp/">
 <meta property="og:image" content="https://watanabeshun0828-cell.github.io/watachan-works-lp/img/og/index.jpg">
 <meta property="og:image:width" content="1200">
@@ -245,155 +268,54 @@
 <a class="skip" href="#main">本文へ移動</a>
 <header class="gh" id="gh">
   <div class="wrap">
-    <a class="brand" href="index.html" aria-label="Pagewright（渡邊 駿）トップへ"><svg class="mk" width="26" height="26" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path d="M17 7H39L47 15V24C47 36 39 46 32 59C25 46 17 36 17 24Z" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linejoin="round"/><path d="M39 7V15H47Z" fill="#B5DC3C" stroke="currentColor" stroke-width="2.8" stroke-linejoin="round"/><circle cx="32" cy="32" r="3.4" fill="currentColor"/><path d="M32 35V58M22 20H34" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><b>Page<i>wright</i></b><span>ホームページ・LP制作／記事・台本の執筆</span></a>
+    <a class="brand" href="index.html" aria-label="Pagewright（渡邊 駿）トップへ"><svg class="mk" width="26" height="26" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path d="M17 7H39L47 15V24C47 36 39 46 32 59C25 46 17 36 17 24Z" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linejoin="round"/><path d="M39 7V15H47Z" fill="#B5DC3C" stroke="currentColor" stroke-width="2.8" stroke-linejoin="round"/><circle cx="32" cy="32" r="3.4" fill="currentColor"/><path d="M32 35V58M22 20H34" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><b>Page<i>wright</i></b><span>記事・台本の執筆／ホームページ・LP制作</span></a>
     <nav class="gnav" aria-label="メインメニュー">
       <button class="menu-btn" type="button" aria-expanded="false" aria-controls="gmenu" aria-label="メニューを開く"><span></span></button>
-      <ul id="gmenu"><li><a href="#works">制作事例・見本</a></li><li><a href="#services">できること</a></li><li><a href="#process">設計の例</a></li><li><a href="pricing.html">料金</a></li></ul>
+      <ul id="gmenu"><li class="dd"><a class="dd-top" href="writing.html">ライティング</a><button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-writing" aria-label="ライティングのページ一覧を開く"></button><ul class="dd-menu" id="dd-writing"><li><a href="writing.html">ライティングのページ</a></li><li><a href="writer.html">記事・コラム</a></li><li><a href="scenario.html">台本・シナリオ</a></li></ul></li><li class="dd"><a class="dd-top" href="web.html">Web制作</a><button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-web" aria-label="Web制作のページ一覧を開く"></button><ul class="dd-menu" id="dd-web"><li><a href="web.html">Web制作のページ</a></li><li><a href="hp.html">ホームページ制作</a></li><li><a href="lp.html">LP制作</a></li><li><a href="case-bakery.html">制作事例（パン屋）</a></li><li><a href="web-design.html">バナー（見本）</a></li></ul></li><li><a href="pricing.html">料金</a></li><li><a href="https://note.com/pagewright" target="_blank" rel="noopener">note ↗</a></li></ul>
       <a class="btn" href="#contact">相談する</a>
     </nav>
   </div>
 </header>
 <main id="main">
 
-<section class="hero" id="top" aria-labelledby="h1">
-  <div class="wrap hero-grid">
-    <div class="hero-text">
-      <p class="eyebrow"><span class="nb">個人事業主・小さなお店のための、</span><span class="nb">ホームページ・LP制作</span></p>
-      <h1 id="h1"><span class="nb">伝える順番から、</span><span class="nb"><span class="mark">ページ</span>をつくる。</span></h1>
-      <p class="sup">ホームページ・LPを、構成と文章の整理から制作します。何を載せるか決まっていない段階から、ご相談いただけます。</p>
-    </div>
-    <figure class="hero-shot">
-      <a class="pc" href="hp-samples/petite-douceur/index.html" aria-label="代表の見本 petite douceur のサイトを開く"><picture><source type="image/webp" srcset="img/top/hero-pd-760.webp 760w, img/top/hero-pd.webp 1280w" sizes="(max-width: 900px) 92vw, 680px"><img src="img/top/hero-pd.jpg" srcset="img/top/hero-pd-760.jpg 760w, img/top/hero-pd.jpg 1280w" sizes="(max-width: 900px) 92vw, 680px" alt="パン屋の見本ホームページの最初の画面。食パンやクロワッサンが並ぶ木の棚の写真をページいっぱいに使い、左に見出し、下の帯に営業時間・定休日・駐車場・駅から" width="1280" height="800" fetchpriority="high" decoding="async"></picture></a>
-      <span class="sp"><picture><source type="image/webp" srcset="img/top/hero-pd-sp.webp 375w" sizes="(max-width: 900px) 26vw, 160px"><img src="img/top/hero-pd-sp.jpg" srcset="img/top/hero-pd-sp.jpg 375w" sizes="(max-width: 900px) 26vw, 160px" alt="同じサイトのスマホの画面" width="375" height="740" loading="lazy" decoding="async"></picture></span>
-      <figcaption><b>petite douceur</b><span>パン屋のホームページ（自主制作・お店は架空）</span></figcaption>
-    </figure>
-    <div class="hero-act">
-      <div class="act">
-        <a class="btn" href="#contact">制作について相談する</a>
-        <a class="link" href="#works">制作事例・見本を見る</a>
-      </div>
-      <p class="facts"><span>ご連絡への返信 <b>24時間以内</b></span><span>お見積もり <b>無料</b></span></p>
-    </div>
+<section class="hub" id="top" aria-labelledby="h1">
+  <div class="wrap">
+    <p class="eyebrow">Pagewright（ページライト）｜渡邊 駿</p>
+    <h1 id="h1"><span class="nb">記事と台本を書き、</span><span class="nb">ホームページとLPを</span><span class="nb">つくっています。</span></h1>
+    <p class="sup">SEO記事・コラム・動画台本の執筆と、ホームページ・LPの制作をしています。どちらも、伝えたいことを調べて、伝える順番を決めて、文章にするところから始めます。</p>
   </div>
 </section>
 
-<section class="sec" id="works" aria-labelledby="works-h">
-  <span id="case"></span><!-- ほかのページのメニュー（index.html#case）からの行き先 -->
-  <div class="wrap">
-    <div class="sec-head">
-      <div><p class="label">WORKS</p><h2 class="title" id="works-h"><span class="nb">目的も、表現も違う</span><span class="nb">3つの見本</span></h2></div>
-      <p class="lede">来店してもらうためのサイト、初めての予約を受けるLP、事業者向けの無料トライアルのLP。画面を押すと、完成したサイトが開きます。</p>
-    </div>
-    <ol class="work-list">
-  <li class="work reveal">
-    <a class="th" href="hp-samples/petite-douceur/index.html"><img src="img/top/g-hp-petite-douceur.jpg" srcset="img/top/g-hp-petite-douceur-480.jpg 480w, img/top/g-hp-petite-douceur.jpg 960w" sizes="(max-width: 900px) 92vw, (max-width: 1080px) 46vw, 380px" alt="パン屋のホームページの最初の画面。商品棚の写真に見出しと、営業時間などの帯" width="960" height="645" loading="lazy"></a>
-    <p class="meta"><span class="kind">ホームページ</span><span>飲食｜パン屋</span></p>
-    <h3>petite douceur</h3>
-    <p class="use">お店に来てもらうための4ページのサイト</p>
-    <p class="idea">商品棚の写真をいっぱいに使い、営業時間・定休日・駐車場・駅からを、最初の画面の帯にまとめました。</p>
-    <p class="own">自主制作（架空のお店・会社を想定した見本）</p>
-    <p class="links"><a class="link" href="hp-samples/petite-douceur/index.html">サイトを開く</a><a class="link" href="case-bakery.html">制作の解説を読む</a></p>
-  </li>
-  <li class="work reveal">
-    <a class="th" href="samples/salon.html"><img src="samples/img/lp-salon.jpg" srcset="img/top/g-lp-salon-480.jpg 480w, samples/img/lp-salon.jpg 960w" sizes="(max-width: 900px) 92vw, (max-width: 1080px) 46vw, 380px" alt="美容サロンの、はじめてコースのLPの最初の画面" width="960" height="645" loading="lazy"></a>
-    <p class="meta"><span class="kind">LP</span><span>美容｜サロン</span></p>
-    <h3>HANA hair &amp; esthetic</h3>
-    <p class="use">はじめてコースの予約を受けるLP</p>
-    <p class="idea">エステティシャンの最初の質問に近い答えを選ぶと、返事が出ます。70分の流れを目盛りで示し、読んでいる段がわかります。</p>
-    <p class="own">自主制作（架空のお店・会社を想定した見本）</p>
-    <p class="links"><a class="link" href="samples/salon.html">サイトを開く</a><a class="link" href="lp.html">LP制作のページで見る</a></p>
-  </li>
-  <li class="work reveal">
-    <a class="th" href="samples/cyber.html"><img src="samples/img/lp-saas.jpg" srcset="img/top/g-lp-saas-480.jpg 480w, samples/img/lp-saas.jpg 960w" sizes="(max-width: 900px) 92vw, (max-width: 1080px) 46vw, 380px" alt="チャット要約のSaaSの、無料トライアルのLPの最初の画面" width="960" height="645" loading="lazy"></a>
-    <p class="meta"><span class="kind">LP</span><span>IT｜事業者向けSaaS</span></p>
-    <h3>Synapse</h3>
-    <p class="use">14日間の無料トライアルの申込を受けるLP</p>
-    <p class="idea">チャットに流れた投稿8件を、押すと毎朝の要約1枚にまとめます。要約の各行から、元の投稿をたどれます。</p>
-    <p class="own">自主制作（架空のお店・会社を想定した見本）</p>
-    <p class="links"><a class="link" href="samples/cyber.html">サイトを開く</a><a class="link" href="lp.html">LP制作のページで見る</a></p>
-  </li>
-    </ol>
-    <p class="more-works"><a class="link" href="hp.html">ホームページの見本をすべて見る（6件）</a><a class="link" href="lp.html">LPの見本をすべて見る（6件）</a><a class="link" href="hp-samples/petite-douceur-dynamic/index.html">動く見本を試す</a></p>
+<section class="sec doors-sec" id="doors" aria-label="ライティングとWeb制作">
+  <div class="wrap doors">
+    <article class="door">
+      <a class="door-th" href="writing.html" tabindex="-1" aria-hidden="true"><img src="img/top/real-writer-480.jpg" srcset="img/top/real-writer-480.jpg 480w, img/top/real-writer.jpg 960w" sizes="(max-width: 900px) 92vw, 560px" alt="" width="960" height="645" loading="lazy"></a>
+      <p class="label">WRITING</p>
+      <h2 class="door-h">ライティング</h2>
+      <p class="door-what">SEO記事・コラム・体験談エッセイと、YouTube朗読・漫画動画・ショートドラマの台本。</p>
+      <ul class="door-facts">
+        <li>キャリア・副業・暮らしとお金の記事を中心に、サンプル8本を全文で読めます</li>
+        <li>記事の改稿で「クオリティの高い記事へとブラッシュアップされました」と評価をいただきました</li>
+        <li>解説動画の台本は、テスト提出が修正なしで承認され、本採用になりました</li>
+      </ul>
+      <p class="door-go"><a class="btn" href="writing.html">ライティングのページへ</a></p>
+      <p class="door-sub"><a class="link" href="writer.html">記事・コラム</a><a class="link" href="scenario.html">台本・シナリオ</a></p>
+    </article>
+    <article class="door">
+      <a class="door-th" href="web.html" tabindex="-1" aria-hidden="true"><img src="img/top/hero-pd-760.jpg" srcset="img/top/hero-pd-760.jpg 760w, img/top/hero-pd.jpg 1280w" sizes="(max-width: 900px) 92vw, 560px" alt="" width="1280" height="800" loading="lazy"></a>
+      <p class="label">WEB</p>
+      <h2 class="door-h">Web制作</h2>
+      <p class="door-what">お店・事業のホームページと、ひとつの商品・サービスの申込LP。構成と文章の整理から、デザイン・ページ制作・スマホ対応まで。</p>
+      <ul class="door-facts">
+        <li>パン屋・サロン・SaaSなど、目的と表現の違う見本を開いて試せます</li>
+        <li>パン屋の見本は、調査から公開後の見直しまでを制作事例にまとめています</li>
+        <li>見本はすべて自主制作（架空のお店・会社）です</li>
+      </ul>
+      <p class="door-go"><a class="btn" href="web.html">Web制作のページへ</a></p>
+      <p class="door-sub"><a class="link" href="hp.html">ホームページ制作</a><a class="link" href="lp.html">LP制作</a><a class="link" href="case-bakery.html">制作事例</a></p>
+    </article>
   </div>
-</section>
-
-<section class="sec pale" id="services" aria-labelledby="svc-h">
-  <div class="wrap">
-    <p class="label">SERVICES</p>
-    <h2 class="title" id="svc-h">できること</h2>
-    <ul class="svc-main">
-      <li><a href="hp.html"><span class="n">ホームページ制作</span><span class="t">お店・事業の数ページのサイト</span><span class="d">構成と文章の作成から、デザイン、スマホ対応、ご用意いただいたサーバーへの公開まで。</span><span class="go">詳しく見る →</span></a></li>
-      <li><a href="lp.html"><span class="n">LP制作</span><span class="t">ひとつの商品・サービスの申込ページ</span><span class="d">構成、文章、デザイン、ページの制作、スマホ対応まで。文章だけのご依頼もお受けします。</span><span class="go">詳しく見る →</span></a></li>
-    </ul>
-    <p class="svc-sub"><span>記事・コラム、動画台本・シナリオの執筆もお受けしています。</span><a class="link" href="writer.html">記事・コラム</a><a class="link" href="scenario.html">動画台本・シナリオ</a></p>
-    <p class="flow-h">ご依頼の流れ</p>
-    <ol class="flow" aria-label="ご依頼の流れ">
-      <li>ご相談<span>フォームから</span></li>
-      <li>ヒアリング・お見積もり<span>無料</span></li>
-      <li>完成の条件と、構成・文章の確認</li>
-      <li>執筆・制作</li>
-      <li>確認・修正<span>標準1〜3回</span></li>
-      <li>納品・公開</li>
-    </ol>
-    <p class="price-note">料金の目安は、<a class="link" href="pricing.html">料金のページ</a>にまとめています。</p>
-  </div>
-</section>
-
-<section class="sec" id="process" aria-labelledby="proc-h">
-  <div class="wrap">
-    <p class="label">DESIGN NOTE</p>
-    <h2 class="title" id="proc-h"><span class="nb">構成と文章を決めてから、</span><span class="nb">画面にする。</span></h2>
-    <p class="lede">代表作品のパン屋の見本で、作る順番を切り替えて見られます。何を載せるか決まっていない段階から、この順番で一緒に整理します。</p>
-    <div class="sw">
-      <input type="radio" name="view" id="v1">
-      <input type="radio" name="view" id="v2">
-      <input type="radio" name="view" id="v3" checked>
-      <div class="tabs" role="presentation">
-        <label for="v1"><small>01</small>原稿</label><span class="arrow" aria-hidden="true">→</span>
-        <label for="v2"><small>02</small>構成案</label><span class="arrow" aria-hidden="true">→</span>
-        <label for="v3"><small>03</small>完成画面</label>
-      </div>
-      <div class="panel p1">
-        <div class="paper">
-          <p class="h">毎日のパンを、北海道の小麦と発酵バターで。</p>
-          <p class="s">北海道小麦と発酵バターのパン屋</p>
-          <dl><dt>営業</dt><dd>8:00〜18:00（売り切れ次第終了）</dd><dt>定休日</dt><dd>火曜日</dd><dt>駐車場</dt><dd>店の前に2台</dd></dl>
-        </div>
-        <div class="say"><b>伝えることを、先に文章にします。</b><p>デザインに入る前に、お店の言葉と、来る前に知りたい情報をそろえます。実在のパン屋さんのサイトを観察して、「駐車場」と「駅から」を最初の画面に足しました。</p><small>※完成したページの文言を抜き出して並べています</small></div>
-      </div>
-      <div class="panel p2">
-        <ol class="plan">
-          <li><div>最初の画面<span>商品棚の写真に見出し、営業・定休日・駐車場・駅から</span></div></li>
-          <li><div>店のこと<span>北海道の小麦、発酵バター、朝4時からの仕込み</span></div></li>
-          <li><div>メニュー<span>食パン、クロワッサン、焼き菓子、どうぶつパン、ドリンク</span></div></li>
-          <li><div>お子さま連れの方へ<span>低い棚と踏み台、ベビーカー、駐車場</span></div></li>
-          <li><div>アクセス<span>外観と駐車場、取り置き、Instagram</span></div></li>
-        </ol>
-        <div class="say"><b>読む順番を決めます。</b><p>実在のパン屋さんのサイトに多い「写真 → 店の考え → メニュー → 店の情報」の順に並べました。順番と中身をご確認いただいてから、デザインに進みます。</p></div>
-      </div>
-      <div class="panel p3">
-        <figure class="shot"><img src="case/v8-hero.jpg" alt="完成したトップ画面。下の帯の、営業時間・定休日・駐車場・駅からの部分を枠で示している" width="974" height="654" loading="lazy"><span class="box" aria-hidden="true"></span><span class="pin" aria-hidden="true">1</span></figure>
-        <div class="say"><b>1　来店の前に知りたいことを、最初の画面に置きました。</b><p>営業時間・定休日・駐車場・駅からを、写真の下の帯に並べています。調べた13件のお店では、駐車場をここに出している店はありませんでした。</p></div>
-      </div>
-    </div>
-    <p class="design-foot"><span>実在のお店のサイトの調査、3つの案の比較、改訂の記録は、制作事例のページにまとめています。</span><a class="link" href="case-bakery.html">制作事例を読む</a></p>
-  </div>
-</section>
-
-<section class="sec pale" id="proof" aria-labelledby="proof-h">
-  <div class="wrap">
-    <p class="label">VOICE</p>
-    <h2 class="title" id="proof-h">いただいた評価</h2>
-    <blockquote class="voice reveal"><p>「クオリティの高い記事へと<br>ブラッシュアップされました」</p></blockquote>
-    <p class="voice-by"><b>記事制作への評価</b>です。Webメディアを運営するクライアント様から、記事の改稿（校閲合格のあと）にいただきました。<a class="link" href="writer.html#cases">修正の前と後を見る</a></p>
-    <p class="voice-note">ホームページ・LPは、いまは自主制作の見本のみで、お客様からの評価はまだありません。</p>
-    <p class="vows-h">お引き受けしたときのお約束</p>
-    <ul class="vows">
-      <li><b>作る前に、完成の条件を決めます</b><span>作るもの・作らないもの・何ができたら完成かを、ご確認いただいてから始めます。</span></li>
-      <li><b>納品のときに、確認の記録をお渡しします</b><span>LP・ホームページでは、確かめた端末と表示の速さ、確かめられなかったことも書いてお渡しします。</span></li>
-      <li><b>24時間以内に返信します</b><span>本業があるため、平日の日中のご連絡には、夜にお返事することがあります。</span></li>
-    </ul>
-  </div>
+  <p class="wrap moved"><span id="works"></span><span id="case"></span><span id="services"></span><span id="process"></span>ホームページ・LPの見本、できること、設計の例は、<a class="link" href="web.html#works">Web制作のページ</a>に移りました。</p>
 </section>
 
 <section class="sec" id="profile" aria-labelledby="profile-h">
@@ -402,17 +324,12 @@
       <p class="label">PROFILE</p>
       <h2 class="title" id="profile-h">渡邊 駿<small>WATANABE SHUN</small></h2>
       <p class="yago">Pagewright（ページライト）は、渡邊 駿の屋号です。page（ページ）と wright（作り手）を合わせました。wright は write（書く）と同じ音です。</p>
-      <p class="lead-p">記事・動画台本の執筆経験をもとに、ホームページやLPの構成・文章・制作をお受けしています。伝えたい内容と順番を整理し、ページにまとめます。</p>
+      <p class="lead-p">記事・動画台本の執筆と、ホームページ・LPの制作をお受けしています。調べて、順番を決めて、文章にする。どちらの仕事も、この3つが土台です。</p>
       <p>本業があるため、一度に多くの案件はお受けしていません。修正のやりとりに時間を使えたほうが、仕上がりが良くなるからです。</p>
       <p class="life">会社員として働きながら、副業で書く仕事を始めました。家族と過ごす時間を守りたくて副業を学び、どの仕事の土台にも文章があると知ったのがきっかけです。休日は鉄道旅行で、知らない街を歩いています。</p>
-      <p class="tags">ホームページ<i>／</i>LP<i>／</i>SEO記事<i>／</i>動画台本<i>／</i>シナリオ</p>
+      <p class="tags">SEO記事<i>／</i>コラム<i>／</i>動画台本<i>／</i>ホームページ<i>／</i>LP</p>
       <p class="note"><a class="link" href="https://note.com/pagewright" target="_blank" rel="noopener">note ↗</a><span>noteでは、案件獲得の過程や日々の気づきを書いています。</span></p>
     </div>
-    <figure class="writing reveal">
-      <a href="writer.html"><img src="img/top/real-writer-480.jpg" srcset="img/top/real-writer-480.jpg 480w, img/top/real-writer.jpg 960w" sizes="(max-width: 900px) 46vw, 280px" alt="記事のサンプルページ（副業の選び方の記事）" width="960" height="645" loading="lazy"></a>
-      <a href="scenario.html"><img src="img/top/real-script-480.jpg" srcset="img/top/real-script-480.jpg 480w, img/top/real-script.jpg 960w" sizes="(max-width: 900px) 46vw, 280px" alt="台本のサンプルページ（朗読シナリオ「母のレシピノート」）" width="960" height="645" loading="lazy"></a>
-      <figcaption>これまで書いてきた記事と台本のサンプル（左：記事、右：朗読シナリオ）</figcaption>
-    </figure>
   </div>
 </section>
 
@@ -420,7 +337,7 @@
   <div class="wrap contact">
     <div>
       <p class="label">CONTACT</p>
-      <h2 class="title" id="contact-h">制作のご相談</h2>
+      <h2 class="title" id="contact-h">ご相談</h2>
       <p class="lede">記事・台本・LP・ホームページなど、どのご相談でもこちらからどうぞ。「こんなこと頼めるかな」という段階でも大丈夫です。24時間以内にお返事します。</p>
     </div>
     <div>
@@ -453,6 +370,8 @@
   try {
     var q = new URLSearchParams(location.search);
     var typ = q.get("type"), smp = q.get("sample"), sel = document.getElementById("cf-type");
+    var ALIAS = { hp: "HP制作", lp: "LP制作", article: "記事", writing: "記事", script: "台本・シナリオ" };
+    if (typ && ALIAS[typ.toLowerCase()]) typ = ALIAS[typ.toLowerCase()];
     if (typ && Array.prototype.some.call(sel.options, function (o) { return o.value === typ; })) sel.value = typ;
     if (smp) document.getElementById("cf-sample").value = smp.slice(0, 60);
   } catch (err) {}
@@ -528,18 +447,22 @@
     <div class="cols">
       <div>
         <a class="brand" href="index.html" aria-label="Pagewright（渡邊 駿）トップへ"><svg class="mk" width="26" height="26" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path d="M17 7H39L47 15V24C47 36 39 46 32 59C25 46 17 36 17 24Z" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linejoin="round"/><path d="M39 7V15H47Z" fill="#B5DC3C" stroke="currentColor" stroke-width="2.8" stroke-linejoin="round"/><circle cx="32" cy="32" r="3.4" fill="currentColor"/><path d="M32 35V58M22 20H34" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><b>Page<i>wright</i></b><span class="who">渡邊 駿</span></a>
-        <p>ホームページ・LP制作と、記事・台本の執筆。<br>個人事業主・小さなお店のご相談をお受けしています。</p>
+        <p>記事・台本の執筆と、ホームページ・LP制作。<br>個人事業主・小さなお店のご相談をお受けしています。</p>
       </div>
       <div>
-        <h2>WORKS</h2>
-        <ul><li><a href="hp.html">ホームページ制作</a></li><li><a href="lp.html">LP制作</a></li><li><a href="writer.html">記事・コラム</a></li><li><a href="scenario.html">動画台本・シナリオ</a></li><li><a href="case-bakery.html">制作事例</a></li></ul>
+        <h2>WRITING</h2>
+        <ul><li><a href="writing.html">ライティングのページ</a></li><li><a href="writer.html">記事・コラム</a></li><li><a href="scenario.html">台本・シナリオ</a></li></ul>
+      </div>
+      <div>
+        <h2>WEB</h2>
+        <ul><li><a href="web.html">Web制作のページ</a></li><li><a href="hp.html">ホームページ制作</a></li><li><a href="lp.html">LP制作</a></li><li><a href="case-bakery.html">制作事例（パン屋）</a></li><li><a href="web-design.html">バナー（見本）</a></li></ul>
       </div>
       <div>
         <h2>INFO</h2>
-        <ul><li><a href="pricing.html">料金</a></li><li><a href="web-design.html">バナー（見本）</a></li><li><a href="https://note.com/pagewright" target="_blank" rel="noopener">note ↗</a></li><li><a href="https://crowdworks.jp/public/employees/7075436" target="_blank" rel="noopener">クラウドワークス ↗</a></li></ul>
+        <ul><li><a href="pricing.html">料金</a></li><li><a href="#contact">相談する</a></li><li><a href="https://note.com/pagewright" target="_blank" rel="noopener">note ↗</a></li><li><a href="https://crowdworks.jp/public/employees/7075436" target="_blank" rel="noopener">クラウドワークス ↗</a></li></ul>
       </div>
     </div>
-    <div class="bottom"><span>© 2026 Pagewright（渡邊 駿）</span><span>見本のサイトに使っている写真は、生成画像によるイメージです。</span></div>
+    <div class="bottom"><span>© 2026 Pagewright（渡邊 駿）</span></div>
   </div>
 </footer>
 <script>
@@ -573,5 +496,6 @@
   sel.addEventListener("change", sync); sync();
 })();
 </script>
+<script src="nav.js" defer></script>
 </body>
 </html>

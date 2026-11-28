@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- 2026-11-28 サイト分割で新設：ライティングの専用ページ（送るためのURL）。記事は writer.html、台本は scenario.html から組み替えた。設計：LP制作/設計_サイト分割_ライター用とWeb制作用_2026-11-28.md -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ライティング（記事・台本）｜Pagewright（渡邊 駿）</title>
+<meta name="description" content="Pagewright（渡邊 駿）のライティングのページ。SEO記事・コラム・体験談エッセイと、YouTube朗読シナリオ・漫画動画・ショートドラマの台本。記事と台本のサンプル、いただいた評価、料金の目安、ご相談フォーム。">
+<link rel="stylesheet" href="site.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500&display=swap">
+<link rel="stylesheet" href="base.css?v=pw1">
+<link rel="stylesheet" href="legacy.css">
+<style>
+/* 最初の画面：書いた記事そのものを見せる（案A） */
+.wfv { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 0 56px; align-items: start; padding: calc(var(--nav-h) + 56px) 34px 64px; border-bottom: 1px solid var(--line); }
+.wfv .crumb { font-family: var(--sans); font-size: 12px; letter-spacing: 0.2em; color: var(--ink-soft); text-decoration: none; }
+.wfv .en-label { margin-top: 26px; font-family: Georgia, serif; font-size: 12.5px; letter-spacing: 0.3em; color: var(--ink-soft); }
+.wfv h1 { font-weight: 500; font-size: clamp(24px, 2.6vw, 34px); line-height: 1.75; margin: 12px 0 18px; }
+.wfv .lede { font-size: 14.5px; max-width: 34em; color: var(--ink-soft); }
+.wfv .cta-row { margin-top: 26px; }
+.wfv .cta-row .btn { padding: 13px 30px; }
+.wfv .facts { padding-right: 0; }
+.wfv .anchors { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 26px; }
+.wfv .anchors a { font-family: var(--sans); font-size: 12px; letter-spacing: 0.2em; text-decoration: none; color: var(--ink-soft); border-bottom: 1px solid var(--line); padding-bottom: 2px; }
+.wfv .anchors a:hover { color: var(--ink); border-color: var(--ink); }
+
+/* 右：紙に見立てたサンプル記事 */
+.wp-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--ink); }
+.wp-cap { padding-bottom: 10px; font-family: var(--sans); font-size: 12px; letter-spacing: 0.12em; color: var(--ink-soft); }
+.wp-tabs { display: flex; }
+.wp-tabs button { min-height: 40px; padding: 8px 14px; background: transparent; border: 0; border-bottom: 3px solid transparent; font: 600 13px/1.2 var(--sans); color: var(--ink-soft); cursor: pointer; }
+.wp-tabs button:hover { color: var(--ink); }
+.wp-tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--ink); }
+.wp-tabs button:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
+.sheet { position: relative; margin-top: 18px; padding: 30px 34px 26px; background: #FFFFFF; border: 1px solid rgba(60, 63, 62, 0.14); box-shadow: 0 10px 28px rgba(60, 63, 62, 0.08); }
+.sheet .meta { display: flex; flex-wrap: wrap; gap: 4px 14px; font-family: var(--sans); font-size: 12px; color: var(--ink-soft); }
+.sheet .meta b { color: var(--ink); font-weight: 600; }
+.sheet h2.ttl { margin: 12px 0 14px; font-weight: 600; font-size: clamp(18px, 1.6vw, 21px); line-height: 1.65; letter-spacing: 0.02em; }
+.sheet .lead { position: relative; max-height: 5.4em; overflow: hidden; font-size: 14px; line-height: 1.8; }
+.sheet .lead::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1.8em; background: linear-gradient(rgba(255, 255, 255, 0), #FFFFFF); }
+.sheet .toc { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); }
+.sheet .toc p { font-family: var(--sans); font-size: 12px; letter-spacing: 0.1em; color: var(--ink-soft); }
+.sheet .toc ol { margin: 8px 0 0; padding: 0; list-style: none; counter-reset: h; }
+.sheet .toc li { counter-increment: h; display: grid; grid-template-columns: 2.2em minmax(0, 1fr); padding: 5px 0; font-size: 13.5px; line-height: 1.6; }
+.sheet .toc li::before { content: counter(h, decimal-leading-zero); font-family: Georgia, serif; color: var(--ink-soft); }
+.sheet .toc p.cont { position: relative; max-height: 9em; overflow: hidden; margin-top: 8px; font-family: var(--serif); font-size: 14px; letter-spacing: 0; line-height: 1.8; color: var(--ink); }
+.sheet .toc p.cont::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1.8em; background: linear-gradient(rgba(255, 255, 255, 0), #FFFFFF); }
+.sheet .read { display: inline-block; margin-top: 18px; font-family: var(--sans); font-size: 13px; font-weight: 600; letter-spacing: 0.08em; color: var(--ink); text-underline-offset: 4px; }
+.wp-note { margin-top: 12px; font-size: 12.5px; color: var(--ink-soft); }
+html.js .sheet[hidden] { display: none; }
+html.js .sheet:not([hidden]) { animation: wp-in 0.35s ease-out both; }
+@keyframes wp-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+/* JSが動かないとき：切り替えボタンを隠し、3本を順に並べる（JSがあるときは1本ずつ表示） */
+html:not(.js) .wp-tabs { display: none; }
+html:not(.js) .sheet + .sheet { margin-top: 14px; }
+
+@media (max-width: 900px) {
+  .wfv { grid-template-columns: 1fr; gap: 36px; padding: calc(var(--nav-h) + 26px) 22px 48px; }
+  .wfv .en-label { margin-top: 18px; }
+  .wfv h1 { font-size: 24px; margin: 10px 0 14px; }
+  .wfv .cta-row { margin-top: 20px; }
+  .wfv .cta-row .btn { flex: 1 1 140px; padding: 13px 10px; }
+  /* スマホ：記事が早く見えるよう、条件は罫線なしの1行ずつにし、ページ内リンクは省く */
+  .wfv .facts { gap: 2px 14px; margin-top: 14px; }
+  .wfv .facts span { border: 0; padding: 0; font-size: 12px; }
+  .wfv .anchors { display: none; }
+  .wp-head { flex-direction: column; align-items: stretch; }
+  .wp-cap { padding-bottom: 4px; }
+  .wp-tabs button { flex: 1; padding: 8px 4px; font-size: 12.5px; }
+  .sheet { padding: 22px 20px 20px; }
+  .sheet .toc li { font-size: 13px; }
+}
+@media (prefers-reduced-motion: reduce) { html.js .sheet:not([hidden]) { animation: none; } }
+/* 2026-11-28 writing.html：新しいフォームの必須表示・案内、屋号の1文 */
+.field .req { margin-left: 4px; color: #A0463B; font-size: 13px; }
+.form-note { margin: 4px 0 2px; font-size: 13px; line-height: 1.8; color: var(--ink-2); }
+.yago-w { margin-top: 14px; font-size: 13.5px; line-height: 1.85; color: var(--ink-2); padding-left: 12px; border-left: 2px solid var(--accent); }
+</style>
+<script>document.documentElement.classList.add('js')</script>
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+<!-- share:start -->
+<link rel="icon" href="img/brand/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="img/brand/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="img/brand/apple-touch-icon.png">
+<link rel="canonical" href="https://watanabeshun0828-cell.github.io/watachan-works-lp/writing.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Pagewright（渡邊 駿）">
+<meta property="og:title" content="ライティング（記事・台本）｜Pagewright（渡邊 駿）">
+<meta property="og:description" content="Pagewright（渡邊 駿）のライティングのページ。SEO記事・コラム・体験談エッセイと、YouTube朗読シナリオ・漫画動画・ショートドラマの台本。記事と台本のサンプル、いただいた評価、料金の目安、ご相談フォーム。">
+<meta property="og:url" content="https://watanabeshun0828-cell.github.io/watachan-works-lp/writing.html">
+<meta property="og:image" content="https://watanabeshun0828-cell.github.io/watachan-works-lp/img/og/writing.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<!-- share:end -->
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="gh" id="gh">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Pagewright（渡邊 駿）トップへ"><svg class="mk" width="26" height="26" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path d="M17 7H39L47 15V24C47 36 39 46 32 59C25 46 17 36 17 24Z" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linejoin="round"/><path d="M39 7V15H47Z" fill="#B5DC3C" stroke="currentColor" stroke-width="2.8" stroke-linejoin="round"/><circle cx="32" cy="32" r="3.4" fill="currentColor"/><path d="M32 35V58M22 20H34" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><b>Page<i>wright</i></b><span>記事・台本の執筆／ホームページ・LP制作</span></a>
+    <nav class="gnav" aria-label="メインメニュー">
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="gmenu" aria-label="メニューを開く"><span></span></button>
+      <ul id="gmenu"><li class="dd here"><a class="dd-top" href="writing.html">ライティング</a><button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-writing" aria-label="ライティングのページ一覧を開く"></button><ul class="dd-menu" id="dd-writing"><li><a href="writing.html" aria-current="page">ライティングのページ</a></li><li><a href="writer.html">記事・コラム</a></li><li><a href="scenario.html">台本・シナリオ</a></li></ul></li><li class="dd"><a class="dd-top" href="web.html">Web制作</a><button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-web" aria-label="Web制作のページ一覧を開く"></button><ul class="dd-menu" id="dd-web"><li><a href="web.html">Web制作のページ</a></li><li><a href="hp.html">ホームページ制作</a></li><li><a href="lp.html">LP制作</a></li><li><a href="case-bakery.html">制作事例（パン屋）</a></li><li><a href="web-design.html">バナー（見本）</a></li></ul></li><li><a href="pricing.html">料金</a></li><li><a href="https://note.com/pagewright" target="_blank" rel="noopener">note ↗</a></li></ul>
+      <a class="btn" href="#contact">相談する</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="wfv" id="top-sample" aria-labelledby="w-h1">
+  <div class="wfv-l">
+    <a class="crumb" href="index.html">← HOME</a>
+    <div class="en-label">WRITING ／ 記事・台本</div>
+    <h1 id="w-h1"><span class="nb">記事と、</span><span class="nb">動画の台本を</span><span class="nb">書いています。</span></h1>
+    <p class="lede"><span class="nb">キャリア・副業・</span><span class="nb">暮らしとお金の</span><span class="nb">SEO記事やコラム、</span><span class="nb">YouTube朗読・</span><span class="nb">漫画動画・</span><span class="nb">ショートドラマの台本。</span><span class="nb">キーワードや骨子の段階から、</span><span class="nb">リサーチ・構成・本文まで</span><span class="nb">お受けします。</span></p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#contact">執筆の相談をする</a>
+      <a class="btn btn-ghost" href="#pricing">料金の目安を見る</a>
+    </div>
+    <div class="facts">
+      <span>ご連絡への返信 <b>24時間以内</b></span>
+      <span>納品形式 <b>Googleドキュメント／Word</b></span>
+      <span>対応ペース <b>週2〜3本が目安</b></span>
+    </div>
+    <div class="anchors"><a href="#articles">ARTICLE</a><a href="#scripts">SCRIPT</a><a href="#cases">CASE</a><a href="#pricing">PRICE</a><a href="#flow">FLOW</a><a href="#faq">FAQ</a><a href="#contact">CONTACT</a></div>
+  </div>
+  <div class="wfv-r">
+    <div class="wp-head">
+      <p class="wp-cap">書いた記事の冒頭と見出し構成</p>
+      <div class="wp-tabs" role="tablist" aria-label="記事のジャンル"><button type="button" role="tab" id="wt-career" aria-controls="ws-career" aria-selected="true">キャリア・副業</button><button type="button" role="tab" id="wt-money" aria-controls="ws-money" aria-selected="false" tabindex="-1">お金・資産形成</button><button type="button" role="tab" id="wt-life" aria-controls="ws-life" aria-selected="false" tabindex="-1">子育て・暮らし</button></div>
+    </div>
+    <article class="sheet" role="tabpanel" id="ws-career" aria-labelledby="wt-career">
+      <p class="meta"><b>キャリア・副業</b><span>SEO記事・約3,500字</span><span>競合リサーチ・見出し構成込み</span></p>
+      <h2 class="ttl"><span class="nb">30代会社員が本業と両立できる副業の選び方｜</span><span class="nb">失敗しない5つの基準</span></h2>
+      <p class="lead">「副業を始めたら本業がおろそかになった」「思ったより稼げず続かなかった」——そんな失敗をしていませんか。副業選びで失敗しないためのポイントは、いきなり「稼げる副業」を探さないことです。時間・費用・会社の規則、そして自分のスキルや目的と照らし合わせて選ぶことが大切です。この記事では、30代会社員が本業と両立できる副業を選ぶための5つの基準を解説します。</p>
+      <div class="toc"><p>見出し構成</p><ol><li>副業選びで失敗する会社員に共通する原因</li><li>本業と両立できる副業を選ぶ5つの基準</li><li>「怪しい副業」に注意する</li><li>会社員が副業で知っておきたい税金・会社バレの基礎知識</li><li>副業を探す前にやっておきたい準備</li><li>まとめ</li></ol></div>
+      <a class="read" href="article/side-job-selection-guide.html">この記事を全文読む →</a>
+    </article>
+    <article class="sheet" role="tabpanel" id="ws-money" aria-labelledby="wt-money">
+      <p class="meta"><b>お金・資産形成</b><span>SEO記事・約5,400字</span><span>金融庁などの公開情報を出典に明記</span></p>
+      <h2 class="ttl"><span class="nb">新NISAの始め方｜</span><span class="nb">会社員が知っておきたい手順・注意点・よくある疑問</span></h2>
+      <p class="lead">「新NISAを始めたいけれど、何から手をつければいいか分からない」。そう感じている会社員は多いのではないでしょうか。新NISAは、投資で得た利益が非課税になる制度で、少額からでも始められます。この記事では、会社員が新NISAを始める理由から、口座開設の具体的な手順までをまとめました。年末調整や確定申告の要否といった気になる疑問についても、順を追って紹介します。</p>
+      <div class="toc"><p>見出し構成</p><ol><li>新NISAを始めるべき理由</li><li>新NISAの始め方4ステップ</li><li>会社員が気になる新NISAの疑問</li><li>新NISAで失敗しないための注意点</li><li>「なんとなく」始めて後悔しないために</li><li>新NISAに関するよくある質問</li><li>まとめ</li></ol></div>
+      <a class="read" href="article/nisa-start-guide.html">この記事を全文読む →</a>
+    </article>
+    <article class="sheet" role="tabpanel" id="ws-life" aria-labelledby="wt-life">
+      <p class="meta"><b>子育て・暮らし</b><span>体験談エッセイ・約1,100字</span><span>一人称のエッセイ</span></p>
+      <h2 class="ttl"><span class="nb">「あの頃、私は必死だった」</span><span class="nb">――子育てを振り返って気づく、暮らしの中の小さな真実</span></h2>
+      <p class="lead">洗濯物をたたみながら、ふと手が止まることがあります。子どもの服が、もう小さくて着られなくなっていると気づいたときです。80cmのタグを見るたびに、ついこの間まで抱っこしていた重みを思い出して、少し胸がぎゅっとなるのです。</p>
+      <div class="toc"><p>本文より</p><p class="cont">子どもが小さかった頃のことを思い出そうとしても、不思議と細かい記憶があまり残っていません。妻と交代で対応していた、夜中2時間おきの授乳や夜泣きも、離乳食を10種類近く試しては毎回拒否されて落ち込んだ日々のことも、はっきりとは思い出せません。ひとつひとつの出来事としてではなく、ただ「必死だった」という感覚だけが残っています。</p></div>
+      <a class="read" href="article/parenting-reflection-essay.html">この記事を全文読む →</a>
+    </article>
+    <p class="wp-note">サンプルは、リサーチから本文まで担当した形で掲載しています。</p>
+  </div>
+</section>
+<section class="block" id="articles">
+  <h2><span>記事のサンプル</span></h2>
+  <div class="body">
+<h3 class="headline reveal"><span class="nb">ほかのジャンルの記事も、</span><span class="nb">読んでみてください。</span></h3>
+<p class="desc reveal">上の3本のほかに、働き方・住まい・資産・恋愛・美容の記事を載せています。どれも、リサーチ・構成・本文まで担当した形でご覧いただけます。</p>
+
+    <details class="more reveal" open>
+      <summary>その他の記事サンプル（5本）</summary>
+      <ul>
+        <li><a href="article/career-plan-30s.html"><span class="g">キャリア・働き方／SEO記事・約2,900字</span><span class="t">30代のキャリアプランの考え方｜今から描く将来の指針</span></a></li>
+        <li><a href="article/first-rental-contract-tips.html"><span class="g">住まい・暮らし／SEO記事・約3,900字</span><span class="t">初めての賃貸契約で注意すべきポイントを解説</span></a></li>
+        <li><a href="article/executive-asset-review.html"><span class="g">資産形成・経営者向け／コラム・約2,600字</span><span class="t">50代を迎える前に、経営者が「資産の設計図」を見直すべき理由</span></a></li>
+        <li><a href="article/long-distance-relationship-tips.html"><span class="g">恋愛・結婚／SEO記事・約3,400字</span><span class="t">遠距離恋愛を継続するコツ｜長続きするカップルの工夫</span></a></li>
+        <li><a href="article/skincare-wanderer-essay.html"><span class="g">美容・コスメ／体験談エッセイ・約1,000字</span><span class="t">スキンケア迷子だった私が、やっと「これでいい」と思えるまで</span></a></li>
+      </ul>
+    </details>
+  
+  </div>
+</section>
+<section class="block" id="scripts">
+  <h2><span>台本のサンプル</span></h2>
+  <div class="body">
+<h3 class="headline reveal"><span class="nb">骨子から、</span><span class="nb">場面ごとの画像の指定まで。</span></h3>
+<p class="desc reveal">YouTube朗読シナリオ・漫画動画・ショートドラマ・解説動画の台本を書いています。チャンネルのマニュアルや過去の台本があれば、先に読み込んで形式をそろえます。下の2本は自主制作の台本サンプルです（実在の案件・人物とは関係ありません）。</p>
+    <details class="more reveal" open>
+      <summary>台本のサンプル（2本）</summary>
+      <ul>
+        <li><a href="scripts/reading-recipe-notebook.html"><span class="g">YouTube朗読シナリオ／約3,000字・全6場</span><span class="t">母のレシピノート</span></a></li>
+        <li><a href="scripts/manga-credit-thief.html"><span class="g">漫画動画シナリオ／約2,900字・全6場</span><span class="t">手柄泥棒の所長</span></a></li>
+      </ul>
+    </details>
+    <p class="desc reveal" style="margin-top:18px;">骨子・プロット・セリフとト書き・画像の指定など、工程ごとの見本は<a href="scenario.html">台本・シナリオのページ</a>で見られます。</p>
+  </div>
+</section>
+<section class="block tint" id="cases">
+  <h2><span>制作事例</span></h2>
+  <div class="body">
+<h3 class="headline reveal"><span class="nb">ご依頼の内容と、</span><span class="nb">対応したこと。</span></h3>
+<p class="desc reveal">何を求められ、どう対応し、どう評価されたか。脚色せずそのまま載せています。</p>
+
+    <div class="case reveal">
+      <div class="case-tag">
+        WEB ARTICLE
+        <span class="client">クライアント様<br />（Webメディア運営）</span>
+        <span class="case-seal">納品・高評価</span>
+      </div>
+      <div class="case-body">
+        <dl>
+          <dt>課題</dt>
+          <dd>「残業削減・業務効率化AIツール紹介」記事。初稿は具体性に欠ける指摘を受けた。</dd>
+          <dt>施策</dt>
+          <dd>複数の読者視点でのレビューを実施し、指摘された「具体性不足・表現の重複」を改稿で解消。</dd>
+          <dt>結果</dt>
+          <dd class="result">校閲合格・納品。「クオリティの高い記事へとブラッシュアップされました」と高評価をいただいた。</dd>
+        </dl>
+        <div class="ba-diff before" style="margin-top:18px;">
+          <span class="diff-label">Before（初稿）</span>
+          たとえば会議の音声から議事録の下書きを自動生成したり、箇条書きのメモから資料の構成案を作成したりと、活用の幅は広がっています。
+        </div>
+        <div class="ba-diff after">
+          <span class="diff-label">After（改稿・提出した原稿のまま）</span>
+          たとえば、<mark>これまで音声を聞き返しながら1時間ほどかけていた議事録作成</mark>も、AIに下書きを作らせて仕上げるだけなら<mark>30分ほどに縮まった</mark>という声もあります。
+        </div>
+        <p class="ba-note" style="margin-top:8px;font-size:12.5px;color:var(--ink-2);">※改稿の一文は、提出した原稿をそのまま載せています。時間の数字は、記事の中で「声」として紹介した目安で、調査に基づく値ではありません。</p>
+      </div>
+    </div>
+    <div class="case reveal">
+      <div class="case-tag">
+        VIDEO SCRIPT
+        <span class="client">クライアント様<br />（YouTubeチャンネル運営）</span>
+        <span class="case-seal">本採用・継続納品</span>
+      </div>
+      <div class="case-body">
+        <dl>
+          <dt>課題</dt>
+          <dd>専門分野（資格試験対策）のYouTube台本。既存の色分けハイライト・参考文献の引用形式など、細かい独自フォーマットへの対応が求められた。</dd>
+          <dt>施策</dt>
+          <dd>過去の承認済みサンプルを分析し、フォーマット・トーン・引用ルールを忠実に再現。実在の競合予備校の情報をWeb検索で裏取りしたうえで構成。</dd>
+          <dt>結果</dt>
+          <dd class="result">テスト提出後、修正なしで承認。その後、本採用となり、継続して台本2本を納品しました。契約は、先方のチャンネル運営の終了により完了しています。</dd>
+        </dl>
+        <p class="case-quote">「特に修正等ございません」</p>
+      </div>
+    </div>
+
+    <div class="case reveal">
+      <div class="case-tag">
+        SCRIPT
+        <span class="client">クライアント様<br />（映像制作・ショートドラマ）</span>
+        <span class="case-seal">プロット・脚本を納品</span>
+      </div>
+      <div class="case-body">
+        <dl>
+          <dt>課題</dt>
+          <dd>未経験からの脚本トライアル案件。短尺ドラマ特有のテンポ・構成が求められた。</dd>
+          <dt>施策</dt>
+          <dd>「詐欺師は、嘘しかつけない」というプロット・脚本一式を制作し提出。</dd>
+          <dt>結果</dt>
+          <dd class="result">プロットと脚本一式を納品し、トライアルの報酬をいただいて完了しました。</dd>
+        </dl>
+      </div>
+    </div>
+
+  
+  </div>
+</section>
+<section class="block" id="promises">
+  <h2><span>進め方のお約束</span></h2>
+  <div class="body">
+<h3 class="headline reveal"><span class="nb">お引き受けしたら、</span><span class="nb">この3つを守ります。</span></h3>
+
+    <div class="promises stagger">
+      <div class="promise reveal">
+        <h3>ご指定の型を、先に読み込みます</h3>
+        <p>マニュアルや過去の承認済み原稿があれば、書き始める前に読み込み、形式・トーン・表記を合わせます。</p>
+      </div>
+      <div class="promise reveal">
+        <h3>事実は、原文で確かめます</h3>
+        <p>制度や数字は、省庁などの公的情報の原文で確認してから書きます。下書きをそのまま納品することはありません。</p>
+      </div>
+      <div class="promise reveal">
+        <h3>24時間以内に返信します</h3>
+        <p>ご連絡には24時間以内にお返事します。お引き受けした案件は、締切より早めに初稿をお出しします。</p>
+      </div>
+    </div>
+  
+  </div>
+</section>
+<section class="profile" id="profile">
+  <h2><span>PROFILE</span></h2>
+  <div class="body reveal">
+    <div class="name">渡邊 駿<small>WATANABE SHUN</small></div>
+    <p class="yago-w">Pagewright（ページライト）は、渡邊 駿の屋号です。page（ページ）と wright（作り手）を合わせました。wright は write（書く）と同じ音です。</p>
+    <div style="margin-top:24px;"><p>会社員として働きながら、副業でライターをしています。家族との時間を守るために副業を学び始め、どの仕事の土台にも「文章」があると知りました。以来、記事と動画台本を中心に、書く仕事を一つずつ手がけています。</p>
+<p>本業があるぶん、一度に多くの案件はお受けしていません。修正のやりとりに時間を使えたほうが、仕上がりが良くなるからです。休日は鉄道旅行で知らない街を歩いています。</p></div>
+    <div class="chips"><span>SEO記事</span><span>コラム</span><span>体験談エッセイ</span><span>朗読シナリオ</span><span>漫画動画</span><span>ショートドラマ</span></div>
+    <div class="sns"><a href="https://note.com/pagewright" target="_blank" rel="noopener">NOTE ↗</a><span>noteでは、案件獲得の過程や日々の気づきを書いています。</span></div>
+  </div>
+</section>
+<section class="block tint" id="pricing">
+  <h2><span>料金の目安</span></h2>
+  <div class="body">
+<h3 class="headline reveal"><span class="nb">内容と分量に</span><span class="nb">合わせて、</span><span class="nb">お見積もりします。</span></h3>
+<p class="desc reveal">料金は、ご相談のうえお見積もりします。文字数や、構成案づくり・入稿を含めるかで変わるため、下の金額は目安の幅です。お見積もりは無料です。</p>
+
+    <div class="table-scroll reveal" style="margin-bottom:32px;">
+      <table class="price-table">
+        <thead><tr><th>内容</th><th>料金の目安</th></tr></thead>
+        <tbody>
+          <tr><td>SEO記事・コラム（1本）<span class="sub">2,500〜5,000文字ほど（修正1〜3回つき）</span></td><td class="amount">5,000円〜15,000円前後</td></tr>
+          <tr><td>LP原稿（文章のみ）<span class="sub">構成から文章まで。デザインや制作はご自身・別の方が行う場合</span></td><td class="amount">15,000円〜30,000円前後</td></tr>
+          <tr><td>SNS投稿文・プロフィール文</td><td class="amount">8,000円〜15,000円前後</td></tr>
+          <tr><td>動画台本・シナリオ（1本）<span class="sub">朗読・漫画動画・ショートドラマ・解説動画。形式・文字数・本数をうかがってお見積もり</span></td><td class="amount">ご相談</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="first-offer reveal">
+      <span class="first-offer-badge">モニター募集</span>
+      <h3><span class="nb">実績としてご紹介させて</span><span class="nb">いただける方を、募集しています。</span></h3>
+      <p>記事のご依頼を、先着3名様までモニターとしてお受けします。<strong>料金はご相談ください。</strong>実績として記事の内容やお仕事の分野をご紹介させていただくことが条件です（お名前・社名の掲載可否はご相談に応じます）。</p>
+    </div>
+
+    <div class="pricing-link reveal">
+      <a class="btn btn-primary" href="pricing.html">料金の目安と、金額が変わるところを見る ↗</a>
+    </div>
+  
+  </div>
+</section>
+<section class="block" id="flow">
+  <h2><span>依頼の流れ</span></h2>
+  <div class="body">
+<h3 class="headline reveal"><span class="nb">ご相談から納品まで、</span><span class="nb">6つのステップです。</span></h3>
+
+    <ol class="flow reveal">
+      <li><h3>ご相談</h3><p>フォームかクラウドワークスのメッセージで、内容・分量・ご希望の納期をお知らせください。</p></li>
+      <li><h3>内容・型のすり合わせ</h3><p>読者像や目的、マニュアル・過去の原稿の有無をうかがい、お見積もりと納期をご提示します。</p></li>
+      <li><h3>見出し構成の確認</h3><p>本文の前に、見出し構成をお見せします。方向性がずれないよう、ここで一度ご確認いただきます。</p></li>
+      <li><h3>初稿の提出</h3><p>締切より早めにお出しします。</p></li>
+      <li><h3>修正</h3><p>ご指摘をもとに直します。修正は標準で1〜3回です。増やしたい場合はご相談ください。</p></li>
+      <li><h3>納品</h3><p>Googleドキュメント／Wordでお渡しします。</p></li>
+    </ol>
+  
+  </div>
+</section>
+<section class="block tint" id="faq">
+  <h2><span>よくある質問</span></h2>
+  <div class="body">
+<h3 class="headline reveal"><span class="nb">ご依頼の前に、</span><span class="nb">よくいただく質問。</span></h3>
+
+    <div class="faq reveal">
+      <details>
+        <summary>AIは使っていますか？</summary>
+        <p class="a">下調べや構成の整理、下書きの段階で、補助として使うことがあります。納品する原稿は自分の手で書き直し、事実確認と表現の仕上げは必ず自分の目で行います。AIの利用について決まりがある場合は、着手前にお知らせください。</p>
+      </details>
+      <details>
+        <summary>修正は何回まで対応できますか？</summary>
+        <p class="a">1〜3回の修正を含めてお見積もりします。回数を増やしたい場合も、ご相談ください。</p>
+      </details>
+      <details>
+        <summary>月に何本お願いできますか？</summary>
+        <p class="a">週2〜3本が目安です。文字数やジャンルによって変わりますので、ご相談ください。</p>
+      </details>
+      <details>
+        <summary>マニュアルや決まった書式がありますが、合わせてもらえますか？</summary>
+        <p class="a">合わせられます。過去に承認された記事をお送りいただけると、形式・トーンをより早く正確に再現できます。</p>
+      </details>
+      <details>
+        <summary>書いた記事を実績として公開しますか？</summary>
+        <p class="a">ご許可をいただいたものだけを掲載します。お名前・媒体名を出さない形での掲載もご相談いただけます。</p>
+      </details>
+    </div>
+  
+  </div>
+</section>
+<section class="block tint" id="other">
+  <h2><span>OTHER</span></h2>
+  <div class="body reveal"><div class="crosslink-box">
+      <p>ホームページ・LPの制作もしています。<small>構成と文章の整理から、デザイン・ページ制作まで</small></p>
+      <a class="btn btn-ghost" href="web.html">Web制作のページへ →</a>
+    </div></div>
+</section>
+<section class="contact" id="contact">
+  <h2><span>CONTACT</span></h2>
+  <div class="body reveal">
+    <p>キーワードや読者像、台本の骨子が決まっていない段階でも構いません。一緒に整理するところから始めます。24時間以内にお返事します。</p>
+    <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+      <input type="hidden" name="access_key" value="1663e859-395f-426f-b2ee-bc2f1cb81d98">
+      <input type="hidden" name="subject" value="【渡邊 駿】ポートフォリオからのお問い合わせ">
+      <input type="checkbox" name="botcheck" class="honey" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+      <div class="field"><label for="cf-name">お名前<span class="req">（必須）</span></label><input type="text" id="cf-name" name="name" placeholder="山田 太郎" required aria-describedby="cf-name-err"><p class="field-error" id="cf-name-err" hidden></p></div>
+      <div class="field"><label for="cf-email">返信先メールアドレス<span class="req">（必須）</span></label><input type="email" id="cf-email" name="email" placeholder="you@example.com" required aria-describedby="cf-email-err"><p class="field-error" id="cf-email-err" hidden></p></div>
+      <div class="field"><label for="cf-type">ご依頼の種類<span class="opt">（任意）</span></label><select id="cf-type" name="ご依頼の種類"><option value="記事" selected>記事</option><option value="台本・シナリオ">台本・シナリオ</option><option value="LP制作">LP制作</option><option value="HP制作">HP制作</option><option value="その他・まだ決まっていない">その他・まだ決まっていない</option></select></div>
+      <div class="field"><label for="cf-timing">ご希望の時期<span class="opt">（任意）</span></label><select id="cf-timing" name="ご希望の時期"><option value="時期は決まっていない" selected>時期は決まっていない</option><option value="できるだけ早く">できるだけ早く</option><option value="1か月以内">1か月以内</option><option value="2〜3か月以内">2〜3か月以内</option></select></div>
+      <div class="field"><label for="cf-sample">参考にしたいサンプル<span class="opt">（任意）</span></label><input type="text" id="cf-sample" name="参考にしたいサンプル" placeholder="例）キャリアプランの記事、朗読シナリオ など"></div>
+      <div class="field"><label for="cf-message">ご相談内容<span class="req">（必須）</span></label><textarea id="cf-message" name="message" placeholder="テーマやキーワード、文字数・本数・納期の目安など、わかる範囲でどうぞ" required aria-describedby="cf-message-err"></textarea><p class="field-error" id="cf-message-err" hidden></p></div>
+      <p class="form-note">ご入力いただいた内容は、ご相談への返信とお見積もりのためだけに使います。送信には、外部のフォームサービス（Web3Forms）を使っています。</p>
+      <button type="submit" class="btn">この内容で送信する</button>
+      <div class="form-status" id="form-status" role="status" aria-live="polite" tabindex="-1"></div>
+    </form>
+    <p class="alt-contact">クラウドワークスからのご連絡も受け付けています → <a href="https://crowdworks.jp/public/employees/7075436" target="_blank" rel="noopener">プロフィール</a></p>
+  </div>
+</section>
+<script>
+(function () {
+  var form = document.getElementById("contact-form"), status = document.getElementById("form-status");
+  if (!form) return;
+  var btn = form.querySelector("button[type=submit]"), BTN = btn.textContent;
+  var CW = "https://crowdworks.jp/public/employees/7075436";
+
+  // サンプルの「このサンプルを参考に相談する」から来たとき、種類と参考サンプルを入れておく（あとから変更できる）
+  try {
+    var q = new URLSearchParams(location.search);
+    var typ = q.get("type"), smp = q.get("sample"), sel = document.getElementById("cf-type");
+    var ALIAS = { hp: "HP制作", lp: "LP制作", article: "記事", writing: "記事", script: "台本・シナリオ" };
+    if (typ && ALIAS[typ.toLowerCase()]) typ = ALIAS[typ.toLowerCase()];
+    if (typ && Array.prototype.some.call(sel.options, function (o) { return o.value === typ; })) sel.value = typ;
+    if (smp) document.getElementById("cf-sample").value = smp.slice(0, 60);
+  } catch (err) {}
+
+  var MSG = {
+    "cf-name": { empty: "お名前を入力してください。" },
+    "cf-email": { empty: "返信先のメールアドレスを入力してください。", bad: "メールアドレスの形で入力してください（例：you@example.com）。" },
+    "cf-message": { empty: "ご相談内容を入力してください。短くても大丈夫です。" }
+  };
+  function check(el) {
+    var m = MSG[el.id], err = document.getElementById(el.id + "-err"), text = "";
+    if (!el.value.trim()) text = m.empty;
+    else if (el.validity && el.validity.typeMismatch) text = m.bad;
+    err.textContent = text; err.hidden = !text;
+    if (text) el.setAttribute("aria-invalid", "true"); else el.removeAttribute("aria-invalid");
+    return !text;
+  }
+  Object.keys(MSG).forEach(function (id) {
+    var el = document.getElementById(id);
+    el.addEventListener("input", function () { if (el.getAttribute("aria-invalid")) check(el); });
+    el.addEventListener("blur", function () { if (el.value) check(el); });
+  });
+  function show(kind, html) {
+    status.innerHTML = html;
+    status.className = "form-status show " + kind;
+  }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var first = null;
+    Object.keys(MSG).forEach(function (id) { var el = document.getElementById(id); if (!check(el) && !first) first = el; });
+    if (first) {
+      show("err", "入力が必要なところがあります。赤い文字の案内をご確認ください。");
+      first.focus();
+      return;
+    }
+    var data = Object.fromEntries(new FormData(form).entries());
+    btn.disabled = true; btn.textContent = "送信しています…";
+    show("", "送信しています。このままお待ちください。");
+    var ctl = window.AbortController ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctl) ctl.abort(); }, 15000);
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify(data), signal: ctl ? ctl.signal : undefined
+    }).then(function (r) { return r.json(); }).then(function (d) {
+      clearTimeout(timer);
+      if (!d.success) return fail();
+      form.querySelectorAll(".field, .form-note, button[type=submit]").forEach(function (el) { el.style.display = "none"; });
+      show("ok",
+        "<p class=\"fs-head\">送信しました。ありがとうございます。</p>" +
+        "<p>24時間以内に、<b>" + esc(data.email) + "</b> あてにお返事します。届かないときは、迷惑メールのフォルダもご確認ください。</p>" +
+        "<dl class=\"fs-sum\"><dt>ご依頼の種類</dt><dd>" + esc(data["ご依頼の種類"]) + "</dd><dt>ご希望の時期</dt><dd>" + esc(data["ご希望の時期"]) + "</dd>" +
+        (data["参考にしたいサンプル"] ? "<dt>参考にしたいサンプル</dt><dd>" + esc(data["参考にしたいサンプル"]) + "</dd>" : "") + "</dl>" +
+        "<p>書き足したいことがあれば、お返事のメールにそのまま返信してください。</p>");
+      form.reset();
+      status.focus();
+    }).catch(function () { clearTimeout(timer); fail(); });
+    function fail() {
+      show("err",
+        "<p class=\"fs-head\">送信できませんでした。</p>" +
+        "<p>入力した内容はそのまま残っています。通信の状態を確かめて、もう一度「この内容で送信する」を押してください。</p>" +
+        "<p>何度か試してもうまくいかないときは、<a href=\"" + CW + "\" target=\"_blank\" rel=\"noopener\">クラウドワークスのプロフィール</a>からメッセージをお送りください。</p>");
+      btn.disabled = false; btn.textContent = BTN;
+      status.focus();
+    }
+  });
+})();
+</script>
+</main>
+<footer class="gf">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="brand" href="index.html" aria-label="Pagewright（渡邊 駿）トップへ"><svg class="mk" width="26" height="26" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path d="M17 7H39L47 15V24C47 36 39 46 32 59C25 46 17 36 17 24Z" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linejoin="round"/><path d="M39 7V15H47Z" fill="#B5DC3C" stroke="currentColor" stroke-width="2.8" stroke-linejoin="round"/><circle cx="32" cy="32" r="3.4" fill="currentColor"/><path d="M32 35V58M22 20H34" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><b>Page<i>wright</i></b><span class="who">渡邊 駿</span></a>
+        <p>記事・台本の執筆と、ホームページ・LP制作。<br>個人事業主・小さなお店のご相談をお受けしています。</p>
+      </div>
+      <div>
+        <h2>WRITING</h2>
+        <ul><li><a href="writing.html">ライティングのページ</a></li><li><a href="writer.html">記事・コラム</a></li><li><a href="scenario.html">台本・シナリオ</a></li></ul>
+      </div>
+      <div>
+        <h2>WEB</h2>
+        <ul><li><a href="web.html">Web制作のページ</a></li><li><a href="hp.html">ホームページ制作</a></li><li><a href="lp.html">LP制作</a></li><li><a href="case-bakery.html">制作事例（パン屋）</a></li><li><a href="web-design.html">バナー（見本）</a></li></ul>
+      </div>
+      <div>
+        <h2>INFO</h2>
+        <ul><li><a href="pricing.html">料金</a></li><li><a href="#contact">相談する</a></li><li><a href="https://note.com/pagewright" target="_blank" rel="noopener">note ↗</a></li><li><a href="https://crowdworks.jp/public/employees/7075436" target="_blank" rel="noopener">クラウドワークス ↗</a></li></ul>
+      </div>
+    </div>
+    <div class="bottom"><span>© 2026 Pagewright（渡邊 駿）</span></div>
+  </div>
+</footer>
+<script>
+(function () {
+  var els = document.querySelectorAll(".reveal");
+  if (!("IntersectionObserver" in window)) { els.forEach(function (e) { e.classList.add("visible"); }); return; }
+  var io = new IntersectionObserver(function (ents) {
+    ents.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("visible"); io.unobserve(en.target); } });
+  }, { threshold: 0.08 });
+  els.forEach(function (e) { io.observe(e); });
+})();
+</script>
+<script>
+// ご依頼の種類：URLの ?type= で最初から選んだ状態にし、メールの件名にも入れる
+(function () {
+  var sel = document.getElementById("cf-type"), subj = document.querySelector('#contact-form input[name="subject"]');
+  if (!sel || !subj) return;
+  var map = { article: "記事", script: "台本・シナリオ", lp: "LP制作", hp: "HP制作", other: "その他・まだ決まっていない" };
+  var t = new URLSearchParams(location.search).get("type");
+  if (map[t]) sel.value = map[t];
+  var base = subj.value;
+  function sync() { subj.value = base + "（" + sel.value + "）"; }
+  sel.addEventListener("change", sync); sync();
+})();
+</script>
+<script>
+(function () {
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.wp-tabs [role="tab"]'));
+  if (!tabs.length) return;
+  function pick(t, focus) {
+    tabs.forEach(function (b) {
+      var on = b === t;
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+      b.tabIndex = on ? 0 : -1;
+      document.getElementById(b.getAttribute('aria-controls')).hidden = !on;
+    });
+    if (focus) t.focus();
+  }
+  pick(tabs[0], false);
+  tabs.forEach(function (b, i) {
+    b.addEventListener('click', function () { pick(b, false); });
+    b.addEventListener('keydown', function (e) {
+      var n = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (e.key === 'Home') { e.preventDefault(); pick(tabs[0], true); return; }
+      if (e.key === 'End') { e.preventDefault(); pick(tabs[tabs.length - 1], true); return; }
+      if (!n) return;
+      e.preventDefault();
+      pick(tabs[(i + n + tabs.length) % tabs.length], true);
+    });
+  });
+})();
+</script>
+<script>
+(function () {
+  var gh = document.getElementById("gh"), btn = gh.querySelector(".menu-btn");
+  function close() { gh.classList.remove("open"); btn.setAttribute("aria-expanded", "false"); btn.setAttribute("aria-label", "メニューを開く"); }
+  btn.addEventListener("click", function () {
+    var open = gh.classList.toggle("open");
+    btn.setAttribute("aria-expanded", open); btn.setAttribute("aria-label", open ? "メニューを閉じる" : "メニューを開く");
+  });
+  gh.querySelectorAll("#gmenu a").forEach(function (a) { a.addEventListener("click", close); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && gh.classList.contains("open")) { close(); btn.focus(); } });
+  var onScroll = function () { gh.classList.toggle("scrolled", window.scrollY > 8); };
+  window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+  var els = document.querySelectorAll(".reveal");
+  if (!("IntersectionObserver" in window)) { els.forEach(function (e) { e.classList.add("visible"); }); return; }
+  var io = new IntersectionObserver(function (ents) { ents.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("visible"); io.unobserve(en.target); } }); }, { threshold: 0.08 });
+  els.forEach(function (e) { io.observe(e); });
+})();
+</script>
+<script src="nav.js" defer></script>
+</body>
+</html>

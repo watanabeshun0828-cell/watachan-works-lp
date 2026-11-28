@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- 2026-11-28 サイト分割で新設：HP・LP制作の専用ページ（送るためのURL）。中身は旧トップ（index.html）から移した。設計：LP制作/設計_サイト分割_ライター用とWeb制作用_2026-11-28.md -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ホームページ・LP制作｜Pagewright（渡邊 駿）</title>
+<meta name="description" content="Pagewright（渡邊 駿）のホームページ・LP制作のページ。構成と文章の整理から、デザイン・ページ制作・スマホ対応まで。パン屋・サロン・SaaSなど、目的と表現の違う制作見本（自主制作）と、料金の目安・ご相談フォーム。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500&display=swap">
+<link rel="stylesheet" href="base.css?v=pw1">
+<script>document.documentElement.classList.add("js")</script>
+<style>
+/* ── トップだけの部品（2026-11-23 HP・LP制作を主役に作り直し。前の版：LP旧版/index_20261123_変更前/） ──
+   明朝は冒頭と段の大見出しだけ。サービス名・説明・工程・フォームはゴシック。黄緑（--accent）は「選んでいる状態」と「注目箇所」だけに使う。 */
+.nb { display: inline-block; }
+.hero { padding-block: clamp(32px, 4.5vw, 64px) clamp(28px, 3.5vw, 48px); }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.18fr); grid-template-areas: "text shot" "act shot"; gap: 0 clamp(32px, 5vw, 72px); align-items: center; }
+.hero-text { grid-area: text; align-self: end; }
+.hero-act { grid-area: act; align-self: start; }
+.hero-shot { grid-area: shot; }
+.hero .eyebrow { font-size: 14px; letter-spacing: 0.08em; color: var(--ink-2); }
+.hero h1 { margin-top: 18px; font-family: var(--serif); font-weight: 500; font-size: clamp(32px, 4.1vw, 54px); line-height: 1.4; letter-spacing: 0.04em; }
+.hero .sup { max-width: 30em; margin-top: 24px; font-size: 16.5px; line-height: 1.95; }
+.hero .act { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 30px; margin-top: 32px; }
+.hero .facts { display: flex; flex-wrap: wrap; gap: 4px 28px; margin-top: 20px; font-size: 13.5px; color: var(--ink-2); }
+.hero .facts b { color: var(--ink); font-weight: 600; }
+.hero-shot { position: relative; margin: 0; padding: 0 0 6% 0; }
+.hero-shot .pc { display: block; border: 1px solid var(--line-2); box-shadow: 0 18px 40px rgba(36, 37, 32, 0.12); background: #fff; }
+.hero-shot .pc img { display: block; width: 100%; height: auto; }
+.hero-shot .sp { position: absolute; right: -2%; bottom: 0; width: 23%; border: 5px solid var(--ink); border-radius: 14px; overflow: hidden; background: #fff; box-shadow: 0 14px 30px rgba(36, 37, 32, 0.2); }
+.hero-shot .sp img { display: block; width: 100%; height: auto; }
+.hero-shot figcaption { margin-top: 14px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; font-size: 13.5px; color: var(--ink-2); padding-right: 26%; }
+.hero-shot figcaption b { color: var(--ink); font-weight: 600; }
+
+/* 3作品 */
+.sec-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 8px 48px; align-items: end; }
+.sec-head .lede { margin-top: 0; }
+.work-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 48px clamp(20px, 2.6vw, 36px); margin-top: 40px; counter-reset: wk; }
+.work { counter-increment: wk; display: flex; flex-direction: column; }
+.work .th { display: block; aspect-ratio: 960 / 645; overflow: hidden; border: 1px solid var(--line-2); background: var(--paper-2); }
+.work .th img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+@media (prefers-reduced-motion: no-preference) { .work .th img { transition: transform 0.5s ease; } }
+.work .th:hover img, .work .th:focus-visible img { transform: scale(1.03); }
+.work .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin-top: 18px; font-size: 13px; color: var(--ink-2); }
+.work .meta::before { content: "0" counter(wk); font-family: var(--num); font-size: 14px; color: var(--ink); }
+.work .kind { background: var(--ink); color: #fff; padding: 1px 9px; font-size: 12px; letter-spacing: 0.08em; }
+.work h3 { margin-top: 8px; font-family: var(--sans); font-weight: 700; font-size: 21px; line-height: 1.4; letter-spacing: 0.02em; }
+.work .use { margin-top: 4px; font-size: 14px; color: var(--ink-2); }
+.work .idea { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); font-size: 15px; line-height: 1.85; }
+.work .own { margin-top: 10px; font-size: 12.5px; color: var(--ink-2); }
+.work .links { display: flex; flex-wrap: wrap; gap: 4px 22px; margin-top: auto; padding-top: 14px; font-size: 14.5px; }
+.more-works { display: flex; flex-wrap: wrap; gap: 6px 32px; margin-top: 44px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 14.5px; }
+
+/* できること（コンパクトに） */
+.svc-main { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 28px; border-top: 1px solid var(--ink); }
+.svc-main li + li { border-left: 1px solid var(--line); }
+.svc-main a { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 16px; padding: 20px 24px 22px 0; color: var(--ink); text-decoration: none; }
+.svc-main li + li a { padding-left: 24px; }
+.svc-main .n { font-weight: 700; font-size: 19px; }
+.svc-main .t { grid-column: 1; font-size: 13.5px; color: var(--ink-2); }
+.svc-main .d { grid-column: 1 / 3; margin-top: 6px; font-size: 14.5px; line-height: 1.8; }
+.svc-main .go { grid-column: 2; grid-row: 1; font-size: 14px; white-space: nowrap; align-self: center; }
+.svc-main a:hover .n, .svc-main a:focus-visible .n { text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 3px; text-underline-offset: 0.3em; }
+.svc-sub { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 22px; padding: 16px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); font-size: 14.5px; color: var(--ink-2); }
+.flow { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); margin-top: 32px; counter-reset: fl; }
+.flow-h { margin-top: 36px; font-size: 14px; font-weight: 700; letter-spacing: 0.06em; }
+.flow li { counter-increment: fl; padding: 10px 12px 12px 0; border-top: 1px solid var(--ink); font-size: 14.5px; line-height: 1.6; }
+.flow li::before { content: counter(fl, decimal-leading-zero); display: block; font-family: var(--num); font-size: 12.5px; color: var(--ink-2); margin-bottom: 2px; }
+.flow li span { display: block; font-size: 12.5px; color: var(--ink-2); }
+.flow-h + .flow { margin-top: 10px; }
+.price-note { margin-top: 18px; font-size: 14px; color: var(--ink-2); }
+
+/* 代表作品の設計意図（原稿→構成案→完成画面） */
+.sw { margin-top: 28px; }
+.sw input { position: absolute; opacity: 0; pointer-events: none; }
+.sw .tabs { display: flex; border-bottom: 1px solid var(--ink); }
+.sw .tabs label { position: relative; padding: 12px 22px 12px 0; margin-right: 22px; cursor: pointer; font-family: var(--sans); font-weight: 600; font-size: 16px; letter-spacing: 0.06em; color: var(--ink-2); }
+.sw .tabs label small { font-family: var(--num); font-weight: 400; font-size: 12px; margin-right: 8px; letter-spacing: 0.1em; }
+.sw .tabs label::after { content: ""; position: absolute; left: 0; right: 22px; bottom: -1px; height: 5px; }
+.sw .tabs .arrow { padding: 12px 22px 12px 0; color: var(--ink-2); }
+#v1:checked ~ .tabs label[for="v1"], #v2:checked ~ .tabs label[for="v2"], #v3:checked ~ .tabs label[for="v3"] { color: var(--ink); }
+#v1:checked ~ .tabs label[for="v1"]::after, #v2:checked ~ .tabs label[for="v2"]::after, #v3:checked ~ .tabs label[for="v3"]::after { background: var(--accent); }
+#v1:focus-visible ~ .tabs label[for="v1"], #v2:focus-visible ~ .tabs label[for="v2"], #v3:focus-visible ~ .tabs label[for="v3"] { outline: 2px solid var(--ink); outline-offset: 2px; }
+.sw .panel { display: none; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 0 48px; align-items: start; padding-top: 28px; }
+#v1:checked ~ .p1, #v2:checked ~ .p2, #v3:checked ~ .p3 { display: grid; }
+.sw .say b { display: block; font-weight: 700; font-size: 17.5px; line-height: 1.6; }
+.sw .say p { margin-top: 10px; font-size: 15px; line-height: 1.9; color: var(--ink-2); }
+.sw .say small { display: block; margin-top: 10px; font-size: 12.5px; color: var(--ink-2); }
+.paper { background: #fff; border: 1px solid var(--line); padding: 30px 32px; }
+.paper .h { font-family: var(--serif-sys); font-size: 23px; letter-spacing: 0.08em; line-height: 1.6; }
+.paper .s { margin-top: 4px; font-family: var(--serif-sys); font-size: 15px; color: var(--ink-2); }
+.paper dl { display: grid; grid-template-columns: 3.4em minmax(0, 1fr); gap: 4px 10px; margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 15px; line-height: 1.7; }
+.paper dt { color: var(--ink-2); }
+.paper dd { margin: 0; }
+.plan { counter-reset: pl; background: #fff; border: 1px solid var(--line); }
+.plan li { counter-increment: pl; display: grid; grid-template-columns: 3em minmax(0, 1fr); padding: 12px 22px 12px 18px; border-bottom: 1px solid var(--line); font-size: 15.5px; font-weight: 600; line-height: 1.7; }
+.plan li:last-child { border-bottom: 0; }
+.plan li::before { content: counter(pl, decimal-leading-zero); font-family: var(--num); font-weight: 400; font-size: 13px; color: var(--ink-2); padding-top: 3px; }
+.plan li span { display: block; font-weight: 400; font-size: 13.5px; color: var(--ink-2); }
+.shot { position: relative; margin: 0; border: 1px solid var(--line); }
+.shot .pin { position: absolute; left: 6.4%; top: 91%; transform: translate(-50%, -50%); display: grid; place-items: center; width: 30px; height: 30px; background: var(--accent); color: var(--accent-ink); font-family: var(--num); font-size: 15px; outline: 2px solid #fff; }
+.shot .box { position: absolute; left: 6%; right: 6%; top: 92%; height: 7.4%; outline: 3px solid var(--accent); outline-offset: 1px; pointer-events: none; }
+.design-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 32px; margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 14.5px; color: var(--ink-2); }
+
+/* 評価 */
+.voice { margin-top: 24px; padding: 4px 0 4px 24px; border-left: 4px solid var(--accent); }
+.voice p { font-family: var(--serif); font-size: clamp(20px, 2vw, 26px); line-height: 1.75; letter-spacing: 0.05em; }
+.voice-by { margin-top: 12px; font-size: 13.5px; line-height: 1.8; color: var(--ink-2); }
+.voice-by b { color: var(--ink); font-weight: 600; }
+.voice-note { margin-top: 10px; font-size: 13.5px; color: var(--ink-2); }
+.vows-h { margin-top: 40px; font-size: 15px; font-weight: 700; letter-spacing: 0.06em; }
+.vows { margin-top: 10px; border-top: 1px solid var(--ink); }
+.vows li { display: grid; grid-template-columns: minmax(0, 20em) minmax(0, 1fr); gap: 4px 32px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.vows b { font-weight: 700; font-size: 15.5px; line-height: 1.7; }
+.vows span { font-size: 14.5px; line-height: 1.8; color: var(--ink-2); }
+
+/* プロフィール */
+.prof { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0 clamp(32px, 5vw, 80px); align-items: start; }
+.prof .text p { max-width: 34em; font-size: 15.5px; line-height: 1.95; }
+.prof .text p.lead-p { font-size: 17px; color: var(--ink); }
+.prof .text p + p { margin-top: 1.1em; }
+.prof .text .life { color: var(--ink-2); }
+.prof .title { margin-bottom: 22px; }
+.prof .yago { margin: -8px 0 20px; font-size: 13.5px; line-height: 1.85; color: var(--ink-2); padding-left: 12px; border-left: 2px solid var(--accent); }
+.prof .tags { margin-top: 22px; font-size: 13.5px; letter-spacing: 0.04em; color: var(--ink-2); }
+.prof .tags i { font-style: normal; margin: 0 0.5em; color: var(--line-2); }
+.prof .note { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; margin-top: 16px; font-size: 14px; color: var(--ink-2); }
+.writing { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 0; }
+.writing a { display: block; border: 1px solid var(--line-2); overflow: hidden; background: #fff; }
+.writing img { display: block; width: 100%; aspect-ratio: 960 / 645; object-fit: cover; object-position: top; }
+.writing figcaption { grid-column: 1 / -1; font-size: 13px; color: var(--ink-2); }
+
+.contact { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr); gap: 32px clamp(32px, 6vw, 96px); }
+.contact form { display: flex; flex-direction: column; gap: 18px; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label { font-size: 14px; letter-spacing: 0.06em; }
+.field .opt { margin-left: 4px; color: var(--ink-2); font-size: 13px; }
+.field .req { margin-left: 4px; color: #A0463B; font-size: 13px; }
+.form-note { margin: 4px 0 2px; font-size: 13px; line-height: 1.8; color: var(--ink-2); }
+.field input, .field textarea, .field select { font: inherit; font-size: 16px; background: #fff; border: 1px solid var(--line-2); padding: 12px 14px; color: var(--ink); border-radius: 0; }
+.field textarea { min-height: 140px; resize: vertical; }
+.field input:focus, .field textarea:focus, .field select:focus { outline: 2px solid var(--ink); outline-offset: 0; }
+.field select { appearance: none; -webkit-appearance: none; background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23555' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat right 14px center; padding-right: 38px; }
+.field-error { margin: 0; font-size: 13.5px; color: #A0463B; }
+.field-error::before { content: "！ "; font-weight: 700; }
+.field [aria-invalid="true"] { border-color: #A0463B; outline: 1px solid #A0463B; }
+.contact .btn { width: 100%; margin-top: 6px; }
+.form-status { display: none; font-size: 14px; line-height: 1.8; }
+.form-status.show { display: block; }
+.form-status:focus { outline: none; }
+.form-status p + p { margin-top: 6px; }
+.form-status .fs-head { font-weight: 700; }
+.form-status.ok { border-top: 2px solid #3F6B54; padding-top: 14px; }
+.form-status.ok .fs-head { color: #3F6B54; }
+.form-status.err { color: #A0463B; }
+.form-status.err a { color: inherit; }
+.alt-contact { margin-top: 18px; font-size: 13.5px; color: var(--ink-2); }
+.honey { position: absolute; left: -9999px; }
+
+/* 段の余白に強弱：作品の段は広く、案内の段は詰める */
+#works { padding-block: clamp(40px, 5vw, 64px) clamp(64px, 8vw, 112px); border-top: 1px solid var(--line); }
+#services { padding-block: clamp(52px, 6vw, 80px); }
+#proof { padding-block: clamp(52px, 6vw, 84px); }
+
+@media (max-width: 1080px) {
+  .work-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; grid-template-areas: "text" "shot" "act"; gap: 28px; }
+  .hero h1 { font-size: clamp(32px, 6vw, 46px); }
+  .hero .sup { font-size: 15.5px; margin-top: 18px; }
+  .hero .act { margin-top: 0; }
+  .hero .act .btn { flex: 1 1 100%; }
+  .hero-shot { padding-bottom: 10%; }
+  .hero-shot .sp { width: 27%; right: 0; border-width: 4px; border-radius: 10px; }
+  .hero-shot figcaption { padding-right: 30%; }
+  .sec-head { grid-template-columns: 1fr; }
+  .work-list { grid-template-columns: 1fr; gap: 44px; }
+  .svc-main { grid-template-columns: 1fr; }
+  .svc-main li + li { border-left: 0; border-top: 1px solid var(--line); }
+  .svc-main li + li a { padding-left: 0; }
+  .flow { grid-template-columns: 1fr 1fr; gap: 0 14px; }
+  .sw .tabs { overflow-x: auto; }
+  .sw .tabs label { padding-right: 12px; margin-right: 12px; font-size: 15px; white-space: nowrap; }
+  .sw .tabs label::after { right: 12px; }
+  .sw .tabs .arrow { display: none; }
+  .sw .panel { grid-template-columns: 1fr; gap: 20px; }
+  .paper { padding: 22px 20px; }
+  .paper .h { font-size: 20px; }
+  .vows li { grid-template-columns: 1fr; }
+  .prof { grid-template-columns: 1fr; gap: 28px; }
+  .contact { grid-template-columns: 1fr; }
+}
+/* 2026-11-28 web.html：料金の目安・ライティングへの案内 */
+.price-rows { border-top: 1px solid var(--ink); margin-top: 28px; }
+.price-rows > div { display: flex; justify-content: space-between; gap: 24px; padding: 18px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+.price-rows dt { font-weight: 700; }
+.price-rows dt small { display: block; font-weight: 400; font-size: 13.5px; color: var(--ink-2); margin-top: 4px; }
+.price-rows dd { white-space: nowrap; font-family: var(--num); font-size: 18px; }
+.cross { padding-block: 0 72px; }
+.cross-p { display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: baseline; padding-top: 24px; border-top: 1px solid var(--line); color: var(--ink-2); font-size: 14.5px; }
+@media (max-width: 900px) { .price-rows > div { flex-direction: column; gap: 6px; } }
+</style>
+<!-- share:start -->
+<link rel="icon" href="img/brand/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="img/brand/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="img/brand/apple-touch-icon.png">
+<link rel="canonical" href="https://watanabeshun0828-cell.github.io/watachan-works-lp/web.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Pagewright（渡邊 駿）">
+<meta property="og:title" content="ホームページ・LP制作｜Pagewright（渡邊 駿）">
+<meta property="og:description" content="Pagewright（渡邊 駿）のホームページ・LP制作のページ。構成と文章の整理から、デザイン・ページ制作・スマホ対応まで。パン屋・サロン・SaaSなど、目的と表現の違う制作見本（自主制作）と、料金の目安・ご相談フォーム。">
+<meta property="og:url" content="https://watanabeshun0828-cell.github.io/watachan-works-lp/web.html">
+<meta property="og:image" content="https://watanabeshun0828-cell.github.io/watachan-works-lp/img/og/web.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<!-- share:end -->
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="gh" id="gh">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Pagewright（渡邊 駿）トップへ"><svg class="mk" width="26" height="26" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path d="M17 7H39L47 15V24C47 36 39 46 32 59C25 46 17 36 17 24Z" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linejoin="round"/><path d="M39 7V15H47Z" fill="#B5DC3C" stroke="currentColor" stroke-width="2.8" stroke-linejoin="round"/><circle cx="32" cy="32" r="3.4" fill="currentColor"/><path d="M32 35V58M22 20H34" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><b>Page<i>wright</i></b><span>記事・台本の執筆／ホームページ・LP制作</span></a>
+    <nav class="gnav" aria-label="メインメニュー">
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="gmenu" aria-label="メニューを開く"><span></span></button>
+      <ul id="gmenu"><li class="dd"><a class="dd-top" href="writing.html">ライティング</a><button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-writing" aria-label="ライティングのページ一覧を開く"></button><ul class="dd-menu" id="dd-writing"><li><a href="writing.html">ライティングのページ</a></li><li><a href="writer.html">記事・コラム</a></li><li><a href="scenario.html">台本・シナリオ</a></li></ul></li><li class="dd here"><a class="dd-top" href="web.html">Web制作</a><button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-web" aria-label="Web制作のページ一覧を開く"></button><ul class="dd-menu" id="dd-web"><li><a href="web.html" aria-current="page">Web制作のページ</a></li><li><a href="hp.html">ホームページ制作</a></li><li><a href="lp.html">LP制作</a></li><li><a href="case-bakery.html">制作事例（パン屋）</a></li><li><a href="web-design.html">バナー（見本）</a></li></ul></li><li><a href="pricing.html">料金</a></li><li><a href="https://note.com/pagewright" target="_blank" rel="noopener">note ↗</a></li></ul>
+      <a class="btn" href="#contact">相談する</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<section class="hero" id="top" aria-labelledby="h1">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <p class="eyebrow"><span class="nb">個人事業主・小さなお店のための、</span><span class="nb">ホームページ・LP制作</span></p>
+      <h1 id="h1"><span class="nb">伝える順番から、</span><span class="nb"><span class="mark">ページ</span>をつくる。</span></h1>
+      <p class="sup">ホームページ・LPを、構成と文章の整理から制作します。何を載せるか決まっていない段階から、ご相談いただけます。</p>
+    </div>
+    <figure class="hero-shot">
+      <a class="pc" href="hp-samples/petite-douceur/index.html" aria-label="代表の見本 petite douceur のサイトを開く"><picture><source type="image/webp" srcset="img/top/hero-pd-760.webp 760w, img/top/hero-pd.webp 1280w" sizes="(max-width: 900px) 92vw, 680px"><img src="img/top/hero-pd.jpg" srcset="img/top/hero-pd-760.jpg 760w, img/top/hero-pd.jpg 1280w" sizes="(max-width: 900px) 92vw, 680px" alt="パン屋の見本ホームページの最初の画面。食パンやクロワッサンが並ぶ木の棚の写真をページいっぱいに使い、左に見出し、下の帯に営業時間・定休日・駐車場・駅から" width="1280" height="800" fetchpriority="high" decoding="async"></picture></a>
+      <span class="sp"><picture><source type="image/webp" srcset="img/top/hero-pd-sp.webp 375w" sizes="(max-width: 900px) 26vw, 160px"><img src="img/top/hero-pd-sp.jpg" srcset="img/top/hero-pd-sp.jpg 375w" sizes="(max-width: 900px) 26vw, 160px" alt="同じサイトのスマホの画面" width="375" height="740" loading="lazy" decoding="async"></picture></span>
+      <figcaption><b>petite douceur</b><span>パン屋のホームページ（自主制作・お店は架空）</span></figcaption>
+    </figure>
+    <div class="hero-act">
+      <div class="act">
+        <a class="btn" href="#contact">制作について相談する</a>
+        <a class="link" href="#works">制作事例・見本を見る</a>
+      </div>
+      <p class="facts"><span>ご連絡への返信 <b>24時間以内</b></span><span>お見積もり <b>無料</b></span></p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="works" aria-labelledby="works-h">
+  <span id="case"></span><!-- ほかのページのメニュー（index.html#case）からの行き先 -->
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="label">WORKS</p><h2 class="title" id="works-h"><span class="nb">目的も、表現も違う</span><span class="nb">3つの見本</span></h2></div>
+      <p class="lede">来店してもらうためのサイト、初めての予約を受けるLP、事業者向けの無料トライアルのLP。画面を押すと、完成したサイトが開きます。</p>
+    </div>
+    <ol class="work-list">
+  <li class="work reveal">
+    <a class="th" href="hp-samples/petite-douceur/index.html"><img src="img/top/g-hp-petite-douceur.jpg" srcset="img/top/g-hp-petite-douceur-480.jpg 480w, img/top/g-hp-petite-douceur.jpg 960w" sizes="(max-width: 900px) 92vw, (max-width: 1080px) 46vw, 380px" alt="パン屋のホームページの最初の画面。商品棚の写真に見出しと、営業時間などの帯" width="960" height="645" loading="lazy"></a>
+    <p class="meta"><span class="kind">ホームページ</span><span>飲食｜パン屋</span></p>
+    <h3>petite douceur</h3>
+    <p class="use">お店に来てもらうための4ページのサイト</p>
+    <p class="idea">商品棚の写真をいっぱいに使い、営業時間・定休日・駐車場・駅からを、最初の画面の帯にまとめました。</p>
+    <p class="own">自主制作（架空のお店・会社を想定した見本）</p>
+    <p class="links"><a class="link" href="hp-samples/petite-douceur/index.html">サイトを開く</a><a class="link" href="case-bakery.html">制作の解説を読む</a></p>
+  </li>
+  <li class="work reveal">
+    <a class="th" href="samples/salon.html"><img src="samples/img/lp-salon.jpg" srcset="img/top/g-lp-salon-480.jpg 480w, samples/img/lp-salon.jpg 960w" sizes="(max-width: 900px) 92vw, (max-width: 1080px) 46vw, 380px" alt="美容サロンの、はじめてコースのLPの最初の画面" width="960" height="645" loading="lazy"></a>
+    <p class="meta"><span class="kind">LP</span><span>美容｜サロン</span></p>
+    <h3>HANA hair &amp; esthetic</h3>
+    <p class="use">はじめてコースの予約を受けるLP</p>
+    <p class="idea">エステティシャンの最初の質問に近い答えを選ぶと、返事が出ます。70分の流れを目盛りで示し、読んでいる段がわかります。</p>
+    <p class="own">自主制作（架空のお店・会社を想定した見本）</p>
+    <p class="links"><a class="link" href="samples/salon.html">サイトを開く</a><a class="link" href="lp.html">LP制作のページで見る</a></p>
+  </li>
+  <li class="work reveal">
+    <a class="th" href="samples/cyber.html"><img src="samples/img/lp-saas.jpg" srcset="img/top/g-lp-saas-480.jpg 480w, samples/img/lp-saas.jpg 960w" sizes="(max-width: 900px) 92vw, (max-width: 1080px) 46vw, 380px" alt="チャット要約のSaaSの、無料トライアルのLPの最初の画面" width="960" height="645" loading="lazy"></a>
+    <p class="meta"><span class="kind">LP</span><span>IT｜事業者向けSaaS</span></p>
+    <h3>Synapse</h3>
+    <p class="use">14日間の無料トライアルの申込を受けるLP</p>
+    <p class="idea">チャットに流れた投稿8件を、押すと毎朝の要約1枚にまとめます。要約の各行から、元の投稿をたどれます。</p>
+    <p class="own">自主制作（架空のお店・会社を想定した見本）</p>
+    <p class="links"><a class="link" href="samples/cyber.html">サイトを開く</a><a class="link" href="lp.html">LP制作のページで見る</a></p>
+  </li>
+    </ol>
+    <p class="more-works"><a class="link" href="hp.html">ホームページの見本をすべて見る（6件）</a><a class="link" href="lp.html">LPの見本をすべて見る（6件）</a><a class="link" href="hp-samples/petite-douceur-dynamic/index.html">動く見本を試す</a></p>
+  </div>
+</section>
+
+<section class="sec pale" id="services" aria-labelledby="svc-h">
+  <div class="wrap">
+    <p class="label">SERVICES</p>
+    <h2 class="title" id="svc-h">できること</h2>
+    <ul class="svc-main">
+      <li><a href="hp.html"><span class="n">ホームページ制作</span><span class="t">お店・事業の数ページのサイト</span><span class="d">構成と文章の作成から、デザイン、スマホ対応、ご用意いただいたサーバーへの公開まで。</span><span class="go">詳しく見る →</span></a></li>
+      <li><a href="lp.html"><span class="n">LP制作</span><span class="t">ひとつの商品・サービスの申込ページ</span><span class="d">構成、文章、デザイン、ページの制作、スマホ対応まで。文章だけのご依頼もお受けします。</span><span class="go">詳しく見る →</span></a></li>
+    </ul>
+    <p class="flow-h">ご依頼の流れ</p>
+    <ol class="flow" aria-label="ご依頼の流れ">
+      <li>ご相談<span>フォームから</span></li>
+      <li>ヒアリング・お見積もり<span>無料</span></li>
+      <li>完成の条件と、構成・文章の確認</li>
+      <li>執筆・制作</li>
+      <li>確認・修正<span>標準1〜3回</span></li>
+      <li>納品・公開</li>
+    </ol>
+    <p class="price-note">料金の目安は、<a class="link" href="pricing.html">料金のページ</a>にまとめています。</p>
+  </div>
+</section>
+
+<section class="sec" id="process" aria-labelledby="proc-h">
+  <div class="wrap">
+    <p class="label">DESIGN NOTE</p>
+    <h2 class="title" id="proc-h"><span class="nb">構成と文章を決めてから、</span><span class="nb">画面にする。</span></h2>
+    <p class="lede">代表作品のパン屋の見本で、作る順番を切り替えて見られます。何を載せるか決まっていない段階から、この順番で一緒に整理します。</p>
+    <div class="sw">
+      <input type="radio" name="view" id="v1">
+      <input type="radio" name="view" id="v2">
+      <input type="radio" name="view" id="v3" checked>
+      <div class="tabs" role="presentation">
+        <label for="v1"><small>01</small>原稿</label><span class="arrow" aria-hidden="true">→</span>
+        <label for="v2"><small>02</small>構成案</label><span class="arrow" aria-hidden="true">→</span>
+        <label for="v3"><small>03</small>完成画面</label>
+      </div>
+      <div class="panel p1">
+        <div class="paper">
+          <p class="h">毎日のパンを、北海道の小麦と発酵バターで。</p>
+          <p class="s">北海道小麦と発酵バターのパン屋</p>
+          <dl><dt>営業</dt><dd>8:00〜18:00（売り切れ次第終了）</dd><dt>定休日</dt><dd>火曜日</dd><dt>駐車場</dt><dd>店の前に2台</dd></dl>
+        </div>
+        <div class="say"><b>伝えることを、先に文章にします。</b><p>デザインに入る前に、お店の言葉と、来る前に知りたい情報をそろえます。実在のパン屋さんのサイトを観察して、「駐車場」と「駅から」を最初の画面に足しました。</p><small>※完成したページの文言を抜き出して並べています</small></div>
+      </div>
+      <div class="panel p2">
+        <ol class="plan">
+          <li><div>最初の画面<span>商品棚の写真に見出し、営業・定休日・駐車場・駅から</span></div></li>
+          <li><div>店のこと<span>北海道の小麦、発酵バター、朝4時からの仕込み</span></div></li>
+          <li><div>メニュー<span>食パン、クロワッサン、焼き菓子、どうぶつパン、ドリンク</span></div></li>
+          <li><div>お子さま連れの方へ<span>低い棚と踏み台、ベビーカー、駐車場</span></div></li>
+          <li><div>アクセス<span>外観と駐車場、取り置き、Instagram</span></div></li>
+        </ol>
+        <div class="say"><b>読む順番を決めます。</b><p>実在のパン屋さんのサイトに多い「写真 → 店の考え → メニュー → 店の情報」の順に並べました。順番と中身をご確認いただいてから、デザインに進みます。</p></div>
+      </div>
+      <div class="panel p3">
+        <figure class="shot"><img src="case/v8-hero.jpg" alt="完成したトップ画面。下の帯の、営業時間・定休日・駐車場・駅からの部分を枠で示している" width="974" height="654" loading="lazy"><span class="box" aria-hidden="true"></span><span class="pin" aria-hidden="true">1</span></figure>
+        <div class="say"><b>1　来店の前に知りたいことを、最初の画面に置きました。</b><p>営業時間・定休日・駐車場・駅からを、写真の下の帯に並べています。調べた13件のお店では、駐車場をここに出している店はありませんでした。</p></div>
+      </div>
+    </div>
+    <p class="design-foot"><span>実在のお店のサイトの調査、3つの案の比較、改訂の記録は、制作事例のページにまとめています。</span><a class="link" href="case-bakery.html">制作事例を読む</a></p>
+  </div>
+</section>
+
+<section class="sec pale" id="proof" aria-labelledby="proof-h">
+  <div class="wrap">
+    <p class="label">VOICE</p>
+    <h2 class="title" id="proof-h">いただいた評価</h2>
+    <blockquote class="voice reveal"><p>「クオリティの高い記事へと<br>ブラッシュアップされました」</p></blockquote>
+    <p class="voice-by"><b>記事制作への評価</b>です。Webメディアを運営するクライアント様から、記事の改稿（校閲合格のあと）にいただきました。<a class="link" href="writer.html#cases">修正の前と後を見る</a></p>
+    <p class="voice-note">ホームページ・LPは、いまは自主制作の見本のみで、お客様からの評価はまだありません。</p>
+    <p class="vows-h">お引き受けしたときのお約束</p>
+    <ul class="vows">
+      <li><b>作る前に、完成の条件を決めます</b><span>作るもの・作らないもの・何ができたら完成かを、ご確認いただいてから始めます。</span></li>
+      <li><b>納品のときに、確認の記録をお渡しします</b><span>LP・ホームページでは、確かめた端末と表示の速さ、確かめられなかったことも書いてお渡しします。</span></li>
+      <li><b>24時間以内に返信します</b><span>本業があるため、平日の日中のご連絡には、夜にお返事することがあります。</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="pricing" aria-labelledby="price-h">
+  <div class="wrap">
+    <p class="label">PRICE</p>
+    <h2 class="title" id="price-h">料金の目安</h2>
+    <p class="lede">料金は、ご相談のうえお見積もりします（無料）。原稿をご用意いただけるか、文章からお任せいただくかなどで変わるため、下の金額は目安の幅です。</p>
+    <dl class="price-rows">
+      <div><dt>ホームページ制作<small>小規模なお店・事業者向け。1〜5ページほど</small></dt><dd>40,000円〜150,000円前後</dd></div>
+      <div><dt>LP制作（1ページ）<small>構成・文章・デザイン・ページ制作・スマホ対応まで一式</small></dt><dd>50,000円〜100,000円前後</dd></div>
+      <div><dt>LP原稿（文章のみ）<small>構成から文章まで。デザインや制作はご自身・別の方が行う場合</small></dt><dd>15,000円〜30,000円前後</dd></div>
+      <div><dt>ページの追加<small>スタッフ紹介・よくある質問など（1ページあたり）</small></dt><dd>10,000円前後</dd></div>
+    </dl>
+    <p class="price-note">含まれるもの・含まれないもの、金額が変わるところは、<a class="link" href="pricing.html">料金のページ</a>にまとめています。</p>
+  </div>
+</section>
+
+<section class="sec" id="profile" aria-labelledby="profile-h">
+  <div class="wrap prof">
+    <div class="text reveal">
+      <p class="label">PROFILE</p>
+      <h2 class="title" id="profile-h">渡邊 駿<small>WATANABE SHUN</small></h2>
+      <p class="yago">Pagewright（ページライト）は、渡邊 駿の屋号です。page（ページ）と wright（作り手）を合わせました。wright は write（書く）と同じ音です。</p>
+      <p class="lead-p">記事・動画台本の執筆経験をもとに、ホームページやLPの構成・文章・制作をお受けしています。伝えたい内容と順番を整理し、ページにまとめます。</p>
+      <p>本業があるため、一度に多くの案件はお受けしていません。修正のやりとりに時間を使えたほうが、仕上がりが良くなるからです。</p>
+      <p class="life">会社員として働きながら、副業で書く仕事を始めました。家族と過ごす時間を守りたくて副業を学び、どの仕事の土台にも文章があると知ったのがきっかけです。休日は鉄道旅行で、知らない街を歩いています。</p>
+      <p class="tags">ホームページ<i>／</i>LP<i>／</i>構成<i>／</i>文章<i>／</i>スマホ対応</p>
+      <p class="note"><a class="link" href="https://note.com/pagewright" target="_blank" rel="noopener">note ↗</a><span>noteでは、案件獲得の過程や日々の気づきを書いています。</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="contact" aria-labelledby="contact-h">
+  <div class="wrap contact">
+    <div>
+      <p class="label">CONTACT</p>
+      <h2 class="title" id="contact-h">ホームページ・LP制作のご相談</h2>
+      <p class="lede">何を載せるか決まっていない段階でも大丈夫です。作りたいもの・使いたい時期・ご予算の考えを、分かる範囲でお聞かせください。24時間以内にお返事します。</p>
+    </div>
+    <div>
+      <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+      <input type="hidden" name="access_key" value="1663e859-395f-426f-b2ee-bc2f1cb81d98">
+      <input type="hidden" name="subject" value="【渡邊 駿】ポートフォリオからのお問い合わせ">
+      <input type="checkbox" name="botcheck" class="honey" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+      <div class="field"><label for="cf-name">お名前<span class="req">（必須）</span></label><input type="text" id="cf-name" name="name" placeholder="山田 太郎" required aria-describedby="cf-name-err"><p class="field-error" id="cf-name-err" hidden></p></div>
+      <div class="field"><label for="cf-email">返信先メールアドレス<span class="req">（必須）</span></label><input type="email" id="cf-email" name="email" placeholder="you@example.com" required aria-describedby="cf-email-err"><p class="field-error" id="cf-email-err" hidden></p></div>
+      <div class="field"><label for="cf-type">ご依頼の種類<span class="opt">（任意）</span></label><select id="cf-type" name="ご依頼の種類"><option value="記事">記事</option><option value="台本・シナリオ">台本・シナリオ</option><option value="LP制作">LP制作</option><option value="HP制作" selected>HP制作</option><option value="その他・まだ決まっていない">その他・まだ決まっていない</option></select></div>
+      <div class="field"><label for="cf-timing">ご希望の時期<span class="opt">（任意）</span></label><select id="cf-timing" name="ご希望の時期"><option value="時期は決まっていない" selected>時期は決まっていない</option><option value="できるだけ早く">できるだけ早く</option><option value="1か月以内">1か月以内</option><option value="2〜3か月以内">2〜3か月以内</option></select></div>
+      <div class="field"><label for="cf-sample">参考にしたいサンプル<span class="opt">（任意）</span></label><input type="text" id="cf-sample" name="参考にしたいサンプル" placeholder="例）パン屋さんのHP、コンサルのLP など"></div>
+      <div class="field"><label for="cf-message">ご相談内容<span class="req">（必須）</span></label><textarea id="cf-message" name="message" placeholder="ご相談の内容を、わかる範囲でどうぞ（分量やご予算の目安など）" required aria-describedby="cf-message-err"></textarea><p class="field-error" id="cf-message-err" hidden></p></div>
+      <p class="form-note">ご入力いただいた内容は、ご相談への返信とお見積もりのためだけに使います。送信には、外部のフォームサービス（Web3Forms）を使っています。</p>
+      <button type="submit" class="btn">この内容で送信する</button>
+      <div class="form-status" id="form-status" role="status" aria-live="polite" tabindex="-1"></div>
+    </form>
+      <p class="alt-contact">クラウドワークスからのご連絡も受け付けています → <a class="link" href="https://crowdworks.jp/public/employees/7075436" target="_blank" rel="noopener">プロフィール</a></p>
+    </div>
+  </div>
+</section>
+<section class="sec cross" aria-label="記事・台本の執筆">
+  <div class="wrap"><p class="cross-p"><span>記事・コラム、動画台本・シナリオの執筆もしています。</span><a class="link" href="writing.html">ライティングのページへ</a></p></div>
+</section>
+<script>
+(function () {
+  var form = document.getElementById("contact-form"), status = document.getElementById("form-status");
+  if (!form) return;
+  var btn = form.querySelector("button[type=submit]"), BTN = btn.textContent;
+  var CW = "https://crowdworks.jp/public/employees/7075436";
+
+  // サンプルの「このサンプルを参考に相談する」から来たとき、種類と参考サンプルを入れておく（あとから変更できる）
+  try {
+    var q = new URLSearchParams(location.search);
+    var typ = q.get("type"), smp = q.get("sample"), sel = document.getElementById("cf-type");
+    var ALIAS = { hp: "HP制作", lp: "LP制作", article: "記事", writing: "記事", script: "台本・シナリオ" };
+    if (typ && ALIAS[typ.toLowerCase()]) typ = ALIAS[typ.toLowerCase()];
+    if (typ && Array.prototype.some.call(sel.options, function (o) { return o.value === typ; })) sel.value = typ;
+    if (smp) document.getElementById("cf-sample").value = smp.slice(0, 60);
+  } catch (err) {}
+
+  var MSG = {
+    "cf-name": { empty: "お名前を入力してください。" },
+    "cf-email": { empty: "返信先のメールアドレスを入力してください。", bad: "メールアドレスの形で入力してください（例：you@example.com）。" },
+    "cf-message": { empty: "ご相談内容を入力してください。短くても大丈夫です。" }
+  };
+  function check(el) {
+    var m = MSG[el.id], err = document.getElementById(el.id + "-err"), text = "";
+    if (!el.value.trim()) text = m.empty;
+    else if (el.validity && el.validity.typeMismatch) text = m.bad;
+    err.textContent = text; err.hidden = !text;
+    if (text) el.setAttribute("aria-invalid", "true"); else el.removeAttribute("aria-invalid");
+    return !text;
+  }
+  Object.keys(MSG).forEach(function (id) {
+    var el = document.getElementById(id);
+    el.addEventListener("input", function () { if (el.getAttribute("aria-invalid")) check(el); });
+    el.addEventListener("blur", function () { if (el.value) check(el); });
+  });
+  function show(kind, html) {
+    status.innerHTML = html;
+    status.className = "form-status show " + kind;
+  }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var first = null;
+    Object.keys(MSG).forEach(function (id) { var el = document.getElementById(id); if (!check(el) && !first) first = el; });
+    if (first) {
+      show("err", "入力が必要なところがあります。赤い文字の案内をご確認ください。");
+      first.focus();
+      return;
+    }
+    var data = Object.fromEntries(new FormData(form).entries());
+    btn.disabled = true; btn.textContent = "送信しています…";
+    show("", "送信しています。このままお待ちください。");
+    var ctl = window.AbortController ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctl) ctl.abort(); }, 15000);
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify(data), signal: ctl ? ctl.signal : undefined
+    }).then(function (r) { return r.json(); }).then(function (d) {
+      clearTimeout(timer);
+      if (!d.success) return fail();
+      form.querySelectorAll(".field, .form-note, button[type=submit]").forEach(function (el) { el.style.display = "none"; });
+      show("ok",
+        "<p class=\"fs-head\">送信しました。ありがとうございます。</p>" +
+        "<p>24時間以内に、<b>" + esc(data.email) + "</b> あてにお返事します。届かないときは、迷惑メールのフォルダもご確認ください。</p>" +
+        "<dl class=\"fs-sum\"><dt>ご依頼の種類</dt><dd>" + esc(data["ご依頼の種類"]) + "</dd><dt>ご希望の時期</dt><dd>" + esc(data["ご希望の時期"]) + "</dd>" +
+        (data["参考にしたいサンプル"] ? "<dt>参考にしたいサンプル</dt><dd>" + esc(data["参考にしたいサンプル"]) + "</dd>" : "") + "</dl>" +
+        "<p>書き足したいことがあれば、お返事のメールにそのまま返信してください。</p>");
+      form.reset();
+      status.focus();
+    }).catch(function () { clearTimeout(timer); fail(); });
+    function fail() {
+      show("err",
+        "<p class=\"fs-head\">送信できませんでした。</p>" +
+        "<p>入力した内容はそのまま残っています。通信の状態を確かめて、もう一度「この内容で送信する」を押してください。</p>" +
+        "<p>何度か試してもうまくいかないときは、<a href=\"" + CW + "\" target=\"_blank\" rel=\"noopener\">クラウドワークスのプロフィール</a>からメッセージをお送りください。</p>");
+      btn.disabled = false; btn.textContent = BTN;
+      status.focus();
+    }
+  });
+})();
+</script>
+</main>
+<footer class="gf">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="brand" href="index.html" aria-label="Pagewright（渡邊 駿）トップへ"><svg class="mk" width="26" height="26" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path d="M17 7H39L47 15V24C47 36 39 46 32 59C25 46 17 36 17 24Z" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linejoin="round"/><path d="M39 7V15H47Z" fill="#B5DC3C" stroke="currentColor" stroke-width="2.8" stroke-linejoin="round"/><circle cx="32" cy="32" r="3.4" fill="currentColor"/><path d="M32 35V58M22 20H34" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg><b>Page<i>wright</i></b><span class="who">渡邊 駿</span></a>
+        <p>記事・台本の執筆と、ホームページ・LP制作。<br>個人事業主・小さなお店のご相談をお受けしています。</p>
+      </div>
+      <div>
+        <h2>WRITING</h2>
+        <ul><li><a href="writing.html">ライティングのページ</a></li><li><a href="writer.html">記事・コラム</a></li><li><a href="scenario.html">台本・シナリオ</a></li></ul>
+      </div>
+      <div>
+        <h2>WEB</h2>
+        <ul><li><a href="web.html">Web制作のページ</a></li><li><a href="hp.html">ホームページ制作</a></li><li><a href="lp.html">LP制作</a></li><li><a href="case-bakery.html">制作事例（パン屋）</a></li><li><a href="web-design.html">バナー（見本）</a></li></ul>
+      </div>
+      <div>
+        <h2>INFO</h2>
+        <ul><li><a href="pricing.html">料金</a></li><li><a href="#contact">相談する</a></li><li><a href="https://note.com/pagewright" target="_blank" rel="noopener">note ↗</a></li><li><a href="https://crowdworks.jp/public/employees/7075436" target="_blank" rel="noopener">クラウドワークス ↗</a></li></ul>
+      </div>
+    </div>
+    <div class="bottom"><span>© 2026 Pagewright（渡邊 駿）</span></div>
+  </div>
+</footer>
+<script>
+(function () {
+  var gh = document.getElementById("gh"), btn = gh.querySelector(".menu-btn");
+  function close() { gh.classList.remove("open"); btn.setAttribute("aria-expanded", "false"); btn.setAttribute("aria-label", "メニューを開く"); }
+  btn.addEventListener("click", function () {
+    var open = gh.classList.toggle("open");
+    btn.setAttribute("aria-expanded", open); btn.setAttribute("aria-label", open ? "メニューを閉じる" : "メニューを開く");
+  });
+  gh.querySelectorAll("#gmenu a").forEach(function (a) { a.addEventListener("click", close); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && gh.classList.contains("open")) { close(); btn.focus(); } });
+  var onScroll = function () { gh.classList.toggle("scrolled", window.scrollY > 8); };
+  window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+  var els = document.querySelectorAll(".reveal");
+  if (!("IntersectionObserver" in window)) { els.forEach(function (e) { e.classList.add("visible"); }); return; }
+  var io = new IntersectionObserver(function (ents) { ents.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("visible"); io.unobserve(en.target); } }); }, { threshold: 0.08 });
+  els.forEach(function (e) { io.observe(e); });
+})();
+</script>
+<script>
+// ご依頼の種類：URLの ?type= で最初から選んだ状態にし、メールの件名にも入れる
+(function () {
+  var sel = document.getElementById("cf-type"), subj = document.querySelector('#contact-form input[name="subject"]');
+  if (!sel || !subj) return;
+  var map = { article: "記事", script: "台本・シナリオ", lp: "LP制作", hp: "HP制作", other: "その他・まだ決まっていない" };
+  var t = new URLSearchParams(location.search).get("type");
+  if (map[t]) sel.value = map[t];
+  var base = subj.value;
+  function sync() { subj.value = base + "（" + sel.value + "）"; }
+  sel.addEventListener("change", sync); sync();
+})();
+</script>
+<script src="nav.js" defer></script>
+</body>
+</html>
